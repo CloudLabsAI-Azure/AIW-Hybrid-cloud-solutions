@@ -20,7 +20,7 @@ Hyper-V is Microsoft's hardware virtualization product. It lets you create and r
      
     ![](media/guestvms.png "Guest VMs")
 
-1. In this exescise, you will onboard the ubuntu-k8s VM and the MicroK8s kubernetes cluster to Azure ARC. From the start menu of the ARCHOST VM, search for putty and open it with double click or other way.
+1. In this exescise, we will learn to onboard the Linux VMs and local kubernetes cluster to Azure Arc. So, here we will onboard **ubuntu-k8s** VM and the **MicroK8s** kubernetes cluster to Azure ARC. From the start menu of the ARCHOST VM, search for **putty** and open it with double click or other way.
 
     ![](media/startputty.png "Search Putty")
      
@@ -28,6 +28,10 @@ Hyper-V is Microsoft's hardware virtualization product. It lets you create and r
 
     ![](media/putty-enter-ip.png "Enter ubuntu-k8s VM private IP")
     
-1. Enter the ubuntu-k8s vm username - ```demouser``` in **login as** and then hit **Enter**. Now, enter the password - ```demo@pass123``` and press **Enter**. Note: Password will be hidden and not be visible in terminal, don't worry about that.
+1. Enter the ubuntu-k8s vm username - ```demouser``` in **login as** and then hit **Enter**. Now, enter the password - ```demo@pass123``` and press **Enter**. Remember password will be hidden and not be visible in terminal, don't worry about that.
 
     ![](media/enter-ubuntu-k8s-credentials.png "Enter ubuntu-k8s credentials")
+    
+    > Note: To paste any value in Putty terminal, just copy the values from anywhere and then right click on the Terminal to paste the copied value.
+    
+1. 
