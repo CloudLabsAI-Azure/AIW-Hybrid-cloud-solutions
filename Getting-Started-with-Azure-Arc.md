@@ -78,10 +78,19 @@ In this task, we will learn to onboard local kubernetes cluster to Azure Arc. So
 
  > Note: If you have closed the putty after completing **task 2**, then perform first 6 steps of task 2 again and then jump to this task. 
 
-1. Update the Arc enabled Kubernetes CLI extensions:
+1. Now, we need to run the commands as demouser instead of root user, if you are logged in as root user, enter ```exit``` command to get back on **demouser**.
+
+    ![](media/exit-from-root.png "Exit root user")
+
+1. Update the Arc enabled Kubernetes CLI extensions, if there will be any update these commands will update the k8s extensions.
     ```az extension update --name connectedk8s
        az extension update --name k8sconfiguration
     ```
+    ![](media/update-k8s-extensions.png "Update Az k8s extensions")
+    
+1. Now, check the status of Kubernetes cluster by running ```microk8s.status``` as demouser in **ubuntu-k8s** vm. You can proceed further if it is running, if it is in stopped state, you may have to run ```microk8s start``` command to run the kubernetes cluster.
+
+    ![](media/k8s-status.png "check cluster cluster")
     
 1. 
 
