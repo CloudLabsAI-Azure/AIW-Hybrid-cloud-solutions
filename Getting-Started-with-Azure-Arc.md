@@ -56,12 +56,22 @@ In this task, we will learn to onboard the Linux VMs and local kubernetes cluste
 
     ```wget https://aka.ms/azcmagent -O ~/install_linux_azcmagent.sh```
     
-    ![](media/dowload-arc-agent.png "Download ARC Linux Agent")
+    ![](media/download-arc-agent.png "Download ARC Linux Agent")
     
-1. 
+1. Install Azure Arc agent by running : ```bash ~/install_linux_azcmagent.sh```
+
+    ![](media/run-installation.png "Install ARC Agent")
     
+1. Once the installation is successful, you will see following message in terminal **Latest version of azcmagent is installed**.
 
-
+    ![](media/arcagent-installed.png "ARC Agent latest version installed")    
+    
+1. Finally, connect the ubuntu-k8s machine to Azure Arc. Run following connect command.  Once you run the below command, it will take few minutes to onboard the machine to Azure Arc. 
+    
+    ```azcmagent connect --resource-group $ResourseGroup --tenant-id $TenantID --location $location --subscription-id $SubscriptionId -i $AppID -p $AppSecret```
+      > Remember, we are using variables declared earlier in step 5. If you have connect with new putty session, you may have to run steps 4,5,6 again.
+     
+    ![](media/connected-azure-arc.png "Connected to Arc")
 
 ## Task 3: Onboard Kubernetes Cluster to Azure Arc
 In this task, we will learn to onboard local kubernetes cluster to Azure Arc. So, here we onboard **MicroK8s** kubernetes cluster to Azure ARC which is hosted on **ubuntu-k8s** VM .
