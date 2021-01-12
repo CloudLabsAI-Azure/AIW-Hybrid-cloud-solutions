@@ -14,11 +14,11 @@ Hyper-V is Microsoft's hardware virtualization product. It lets you create and r
 
     ![](media/archost-localserver.png "ARCHOST Server")
 
-1. You will find two guest virtual machines running on the Hyper-V manager. Following are teh list of guest virtual machines with private ip address.
+1. You will find two guest virtual machines running on the Hyper-V manager. Find list of guest virtual machines with private ip address.
      * ubuntu-k8s - 192.168.0.8
      * winvm - 192.168.0.5
      
-        ![](media/guestvms.png "Guest VMs")
+    ![](media/guestvms.png "Guest VMs")
 
 1. In this exescise, you will onboard the ubuntu-k8s VM and the MicroK8s kubernetes cluster to Azure ARC. From the start menu of the ARCHOST VM, search for putty and open it with double click or any other way.
 
