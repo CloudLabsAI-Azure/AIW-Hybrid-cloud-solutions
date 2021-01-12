@@ -104,7 +104,6 @@ In this task, we will learn to onboard local kubernetes cluster to Azure Arc. So
     
 1. Once the previous command executed successfully, check the **provisioningstate** in output, it should be in succeeded status.
 
-    ![](media/k8s-connected.png "Kubernetes Cluster Connected")
-    
+    ![](media/k8s-connected1.png "Kubernetes Cluster Connected")
     
 You have successfully onboarded ubuntu-k8s vm and microk8s-cluster kubernetes cluster to Azure Arc.
