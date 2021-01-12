@@ -92,15 +92,19 @@ In this task, we will learn to onboard local kubernetes cluster to Azure Arc. So
 
     ![](media/k8s-status-running.png "check cluster cluster")
     
-1. Connect the Kubernetes cluster to Azure Arc by executing the following command:
-
-    > Note: Replace the XXXXXX with the deploymentID provided in the environment details section on Lab Environment tab on the right.
-
-      ```az connectedk8s connect --name microk8s-cluster --resource-group Azure-Arc-XXXXXX -l eastus```
-    
-    ![](media/k8s-status-running.png "check cluster status")
-    
 1. There is file ```installArcAgentLinux.txt``` on ARCHOST VM desktop 💻. Open that and copy first 7 lines and paste in putty to declare the values of AppID, AppSecret, TenantID, SubscriptionID, ResourceGroup and location and then **login to azure** using 7th line. You can also find the values of these variables in **Environment Details** tab and then use in next steps.
 
     ![](media/login-to-azure.png "Login to Azure")
     
+1. Connect the Kubernetes cluster to Azure Arc by executing the following command, once you run teh command, it will take few minutes to onboard Kubernetes Cluster to onboard to Azure Arc.
+
+      ```az connectedk8s connect --name microk8s-cluster --resource-group $ResourseGroup -l $location```
+    
+    ![](media/connect-k8s.png "Connect Kubernetes")
+    
+1. Once the previous command executed successfully, check the **provisioningstate** in output, it should be in succeeded status.
+
+    ![](media/k8s-connected.png "Kubernetes Cluster Connected")
+    
+    
+You have successfully onboarded ubuntu-k8s vm and microk8s-cluster kubernetes cluster to Azure Arc.
