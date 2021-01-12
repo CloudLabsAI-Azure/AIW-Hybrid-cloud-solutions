@@ -15,8 +15,8 @@ Hyper-V is Microsoft's hardware virtualization product. It lets you create and r
     ![](media/archost-localserver.png "ARCHOST Server")
 
 1. You will find two guest virtual machines running on the Hyper-V manager. Find list of guest virtual machines with private ip address.
-     * ubuntu-k8s - 192.168.0.8
-     * winvm - 192.168.0.5
+     * **ubuntu-k8s** - ```192.168.0.8```
+     * **winvm** - ```192.168.0.5```
      
     ![](media/guestvms.png "Guest VMs")
 
@@ -28,4 +28,6 @@ Hyper-V is Microsoft's hardware virtualization product. It lets you create and r
 
     ![](media/putty-enter-ip.png "Enter ubuntu-k8s VM private IP")
     
-1. 
+1. Enter the ubuntu-k8s vm username - ```demouser``` in **login as** and then hit **Enter**. Now, enter the password - ```demo@pass123``` and press **Enter**. Note: Password will be hidden and not be visible in terminal, don't worry about that.
+
+    ![](media/enter-ubuntu-k8s-credentials.png "Enter ubuntu-k8s credentials")
