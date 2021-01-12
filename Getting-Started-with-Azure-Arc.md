@@ -74,7 +74,14 @@ In this task, we will learn to onboard the Linux VMs and local kubernetes cluste
     ![](media/connected-azure-arc.png "Connected to Arc")
 
 ## Task 3: Onboard Kubernetes Cluster to Azure Arc
-In this task, we will learn to onboard local kubernetes cluster to Azure Arc. So, here we onboard **MicroK8s** kubernetes cluster to Azure ARC which is hosted on **ubuntu-k8s** VM .
+In this task, we will learn to onboard local kubernetes cluster to Azure Arc. So, here we onboard **MicroK8s** kubernetes cluster to Azure ARC which is hosted on **ubuntu-k8s** VM . For this task, Microk8s kubernetes cluster is already configured, also Arc enabled CLI extensions are installed.
 
-1. From the start menu of the ARCHOST VM, search for **putty** and open it with double click or other way.
+If you have closed the putty after completing **task 2**, then perform first 6 steps of task 2 again and then jump to this task. 
+
+1. Update the Arc enabled Kubernetes CLI extensions:
+    ```az extension update --name connectedk8s
+       az extension update --name k8sconfiguration
+    ```
+    
+1. 
 
