@@ -20,8 +20,12 @@ Hyper-V is Microsoft's hardware virtualization product. It lets you create and r
      
     ![](media/guestvms.png "Guest VMs")
 
-1. In this exescise, you will onboard the ubuntu-k8s VM and the MicroK8s kubernetes cluster to Azure ARC. From the start menu of the ARCHOST VM, search for putty and open it with double click or any other way.
+1. In this exescise, you will onboard the ubuntu-k8s VM and the MicroK8s kubernetes cluster to Azure ARC. From the start menu of the ARCHOST VM, search for putty and open it with double click or other way.
 
     ![](media/startputty.png "Search Putty")
      
+1. In Putty Configuration tool, enter the **ubuntu-k8s** VM private IP - ```192.168.0.8```, make sure the Port value is ```22```. Once you entered the private IP of the ubuntuk8s vm, click on the Open to lunch the terminal.
+
+    ![](media/putty-enter-ip.png "Enter ubuntu-k8s VM private IP")
     
+1. 
