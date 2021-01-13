@@ -106,4 +106,30 @@ In this task, we will learn to onboard local kubernetes cluster to Azure Arc. So
 
     ![](media/k8s-connected1.png "Kubernetes Cluster Connected")
     
-You have successfully onboarded ubuntu-k8s vm and microk8s-cluster kubernetes cluster to Azure Arc.
+
+## Task 4: Verify if the Kubernetes cluster is connected to Azure Arc
+
+In this task, you will verify if the Kubernetes cluster is connected to Azure Arc and in healthy state.
+
+1. Verify whether the cluster is connected by running the following command:
+   
+   ```
+   az connectedk8s list -g $ResourseGroup -o table
+   ```
+     
+   ![](media/check-k8s-connection.png "Varify Micro-k8s cluster is connected")
+   
+2. You can also View this resource on the Azure portal. Navigate to https://portal.azure.com, login with the credentials provided in the Lab Environment Tab on the right. Once you have the portal open in your browser, navigate to the resource group and there will be a resource with type **Azure Arc enabled Kubernetes resource**
+
+   ![](media/varify-in-azure.png "Varify in Azure")
+
+2. Azure Arc enabled Kubernetes deploys a few operators into the azure-arc namespace. You can view these deployments and pods by running the command:
+
+
+   ```
+   kubectl -n azure-arc get deployments,pods
+   ```
+   
+   The output should be similar as shown:
+   
+   ![](media/get-pods.png)
