@@ -67,7 +67,15 @@ In this Exercise you will onboard SQL Server to Arc using Azure Portal and Power
   
 1. After some time you will see that the script execution is completed. Make sure that you see the below output.
 
-  ![](media/completed.png "sqlsearch").
+  ![](media/completed.png "sqlsearch")
+  
+1. Now go back to azure portal and search for the **SQL Server -Azure Arc**, You will be able to see 1 one resource that we just created using powershell script in previous step.
+
+  ![](media/sqlvm.png "sqlsearch")
+  
+1. Select the **SQLVM** resource and now you can see the dashboard of **SQLVM** SQL Server -Azure Arc.
+
+    ![](media/dashsql.png "sqlsearch")
  
 
     
