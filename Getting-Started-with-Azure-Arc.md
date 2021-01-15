@@ -16,7 +16,7 @@ Hyper-V is Microsoft's hardware virtualization product. It lets you create and r
 
 1. You will find two guest virtual machines running on the Hyper-V manager. Find list of guest virtual machines with private ip address.
      * **ubuntu-k8s** - ```192.168.0.8```
-     * **winvm** - ```192.168.0.5```
+     * **sqlvm** - ```192.168.0.4```
      
     ![](media/guestvms.png "Guest VMs")
     
