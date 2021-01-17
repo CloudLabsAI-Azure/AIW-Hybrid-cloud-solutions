@@ -14,13 +14,13 @@ GitOps, as it relates to Kubernetes, is the practice of declaring the desired st
 
 ## Task 2: Deploy App using az k8sconfiguration
 
-1. Using the Azure CLI extension for k8sconfiguration, link connected cluster to personal git repository. Provide this configuration a name cluster-config, instruct the agent to deploy the operator in the cluster-config namespace, and give the operator cluster-admin permissions. 
+1. Using the Azure CLI extension for **k8sconfiguration**, link connected cluster to personal git repository. Provide this configuration a name **cluster-config**, instruct the agent to deploy the operator in the **cluster-config** namespace, and give the operator **cluster-admin** permissions. 
 
-1. From the start menu of the ARCHOST VM, search for **putty** and open it with double click or other way.
+1. From the start menu of the **ARCHOST** VM, search for **putty** and open it with double click or other way.
 
     ![](.././media/startputty.png "Search Putty")
      
-1. In Putty Configuration tool, enter the **ubuntu-k8s** VM private IP - ```192.168.0.8```, make sure the Port value is ```22```. Once you entered the private IP of the ubuntuk8s vm, click on the Open to lunch the terminal.
+1. In Putty Configuration tool, enter the **ubuntu-k8s** VM private IP - ```192.168.0.8```, make sure the Port value is ```22```. Once you entered the private IP of the **ubuntuk8s** vm, click on the Open to lunch the terminal.
 
     ![](.././media/putty-enter-ip.png "Enter ubuntu-k8s VM private IP")
     
@@ -30,7 +30,7 @@ GitOps, as it relates to Kubernetes, is the practice of declaring the desired st
     
     > Note: To paste any value in Putty terminal, just copy the values from anywhere and then right click on the terminal to paste the copied value.
     
-1. Login to Azure using follwing command:
+1. Login to **Azure** using follwing command:
    
      ```./azlogin.sh```
    
@@ -52,7 +52,7 @@ GitOps, as it relates to Kubernetes, is the practice of declaring the desired st
 
 ## Task 3: Validate the sourceControlConfiguration
 
-1. Validate whether the sourceControlConfiguration was successfully created and the compliance state is Installed. If it is pending, retry the same command again after sometime.
+1. Validate whether the **sourceControlConfiguration** was successfully created and the **compliance** state is Installed. If it is pending, retry the same command again after sometime.
 
    ```
    az k8sconfiguration show --resource-group Azure-Arc-XXXXXX --name cluster-config --cluster-name AzureArcAKSCluster1 --cluster-type connectedClusters
@@ -79,7 +79,7 @@ GitOps, as it relates to Kubernetes, is the practice of declaring the desired st
   
    ![](./images/azure-arc-11.png) 
    
-2. The flux operator will be deployed to cluster-config namespace, as directed by our sourceControlConfig:
+2. The **flux operator** will be deployed to **cluster-config** namespace, as directed by our **sourceControlConfig**:
       
     ```
     kubectl -n cluster-config get deploy  -o wide
@@ -100,14 +100,14 @@ GitOps, as it relates to Kubernetes, is the practice of declaring the desired st
    ```
 ## Task 5: Make changes to cluster declarations in the Git repo.
 
-1.  Run the following command in Powershell window and confirm that the Age is the same for both azure-vote-back and azure-vote-front apps. It will be same since the deployment was done through az k8sconfiguration command.
+1.  Run the following command in Powershell window and confirm that the Age is the same for both **azure-vote-back** and **azure-vote-front** apps. It will be same since the deployment was done through **az k8sconfiguration** command.
 
     ```
     kubectl get pods 
     ```
     ![](./images/arc-0032.png)   
 
-2. Browse to the forked repo of https://github.com/Azure/arc-k8s-demo
+2. Browse to the **forked** repo of ```https://github.com/Azure/arc-k8s-demo```
 
 3. Navigate to **cluster-apps->azure-vote.yaml** and edit the yaml file
 
