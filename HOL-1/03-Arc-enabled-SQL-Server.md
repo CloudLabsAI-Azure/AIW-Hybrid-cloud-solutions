@@ -1,11 +1,11 @@
-## Exercise 2: Onboard SQL Server to Arc
+## Exercise 3: Onboard SQL Server to Arc
 In this Exercise you will onboard SQL Server to Azure Arc using Azure Portal and Powershell.
 
 ## Task 1: Login To Azure Portal
 
 1. In the **LabVM/ARCHost VM**, click on Azure portal shortcut of Microsoft Edge browser which is created on desktop.
   
-    ![](media/0.png "edge")
+    ![](.././media/0.png "edge")
    
 1. On **Sign in to Micsoft Azure** tab you will see login screen, in that enter following **Email/Username** and then click on **Next**. 
    * Email/Username: <inject key="AzureAdUserEmail"></inject>
@@ -21,17 +21,17 @@ In this Exercise you will onboard SQL Server to Azure Arc using Azure Portal and
       
 1. Click in search blade and search for ```SQL Server```, select **SQL Server - Azure Arc**.
  
-    ![](media/sqlserver.png "sqlsearch")
+    ![](.././media/sqlserver.png "sqlsearch")
    
 1. Click on the **Create SQL Server - Azure Arc** button to create the **SQL Server- Azure Arc**. 
  
-    ![](media/createsql.png "sqlsearch")
+    ![](.././media/createsql.png "sqlsearch")
    
 1. You will see the prerequistes page, you can explore the page and just click on the **Next: Server details** button.
     
     - **Note**: We have already completed the prerequistes part for you. 
     
-    ![](media/presql.png "sqlsearch")
+    ![](.././media/presql.png "sqlsearch")
    
 1. On the **Server Details** blade enter the below details.
  
@@ -41,7 +41,7 @@ In this Exercise you will onboard SQL Server to Azure Arc using Azure Portal and
     - Operating Systems: Select **windows**.
       Now click on next button.
    
-    ![](media/detailssql.png "sqlsearch")
+    ![](.././media/detailssql.png "sqlsearch")
    
 1. Leave default for tags blade and click on **Next: Run Script** button.
  
@@ -49,13 +49,13 @@ In this Exercise you will onboard SQL Server to Azure Arc using Azure Portal and
  
      > **Note:** You dont have to do anything here, we have already downloaded this script inside you VM.
     
-    ![](media/runsql.png "sqlsearch")
+    ![](.././media/runsql.png "sqlsearch")
      
 ## Task 2: Register Azure Arc enabled SQL Server.
 
 1. From your **LabVM/ARCHost VM**, Open **Windows Powershell** icon from the desktop.
  
-    ![](media/powershell.png "sqlsearch")
+    ![](.././media/powershell.png "sqlsearch")
   
 1. Run the below command to change the directory to where the Script is download.
  
@@ -69,22 +69,17 @@ In this Exercise you will onboard SQL Server to Azure Arc using Azure Portal and
 
 1. After running the command you will see the script started running.
 
-    ![](media/run.png "sqlsearch")
+    ![](.././media/run.png "sqlsearch")
   
 1. After some time you will see that the script execution is completed. Make sure that you see the below output.
 
-    ![](media/completed.png "sqlsearch")
+    ![](.././media/completed.png "sqlsearch")
   
 1. Go back to azure portal and search for the **SQL Server -Azure Arc**, You will be able to see 1 one resource that we just created using powershell script in previous step.
 
-    ![](media/sqlvm.png "sqlsearch")
+    ![](.././media/sqlvm.png "sqlsearch")
   
  1. Select the **SQLVM** resource and now you can see the dashboard of **SQLVM** SQL Server -Azure Arc.
 
-    ![](media/dashsql.png "sqlsearch")
+    ![](.././media/dashsql.png "sqlsearch")
  
-
-    
- 
-   
-   
