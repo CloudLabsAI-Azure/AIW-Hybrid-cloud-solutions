@@ -55,17 +55,17 @@ GitOps, as it relates to Kubernetes, is the practice of declaring the desired st
 1. Validate whether the **sourceControlConfiguration** was successfully created and the **compliance** state is Installed. If it is pending, retry the same command again after sometime.
 
    ```
-   az k8sconfiguration show --resource-group Azure-Arc-XXXXXX --name cluster-config --cluster-name AzureArcAKSCluster1 --cluster-type connectedClusters
+   az k8sconfiguration show --resource-group $ResourseGroup --name cluster-config --cluster-name microk8s-cluster --cluster-type connectedClusters
    ```
      > Note: that the sourceControlConfiguration resource is updated with compliance status, messages, and debugging information in the output.
 
    The output should be as shown:
 
-   ![](.././media/arc-0024.png) 
+   ![](.././media/05.png) 
   
-2. Navigate to **Azure-Arc RG->AzureArcAKSCluster1->Configurations**. Ensure that the operator state status should show as **Installed**.
+2. Navigate to **azure-arc RG->microk8s-cluster->GitOps**. Ensure that the operator state status should show as **Installed**.
 
-   ![](.././media/azure-arc-10.png) 
+   ![](.././media/06.png) 
   
 ## Task 4:  Validate the Kubernetes configuration
 
@@ -77,7 +77,7 @@ GitOps, as it relates to Kubernetes, is the practice of declaring the desired st
  
    The output shows that team-a, team-b, itops, and cluster-config namespaces have been created as shown:
   
-   ![](.././media/azure-arc-11.png) 
+   ![](.././media/07.png) 
    
 2. The **flux operator** will be deployed to **cluster-config** namespace, as directed by our **sourceControlConfig**:
       
@@ -87,17 +87,14 @@ GitOps, as it relates to Kubernetes, is the practice of declaring the desired st
    
     The output should be as shown:
    
-    ![](.././media/azure-arc-12.png) 
+    ![](.././media/08.png) 
   
 3. You can explore the other resources deployed as part of the configuration repository by running the following commands:
 
    ```
    kubectl -n team-a get cm -o yaml
    ```
-   
-   ```
-   kubectl -n itops get all
-   ```
+
 ## Task 5: Make changes to cluster declarations in the Git repo.
 
 1.  Run the following command in Powershell window and confirm that the Age is the same for both **azure-vote-back** and **azure-vote-front** apps. It will be same since the deployment was done through **az k8sconfiguration** command.
@@ -105,7 +102,7 @@ GitOps, as it relates to Kubernetes, is the practice of declaring the desired st
     ```
     kubectl get pods 
     ```
-    ![](.././media/arc-0032.png)   
+    ![](.././media/09.png)
 
 2. Browse to the **forked** repo of ```https://github.com/Azure/arc-k8s-demo```
 
