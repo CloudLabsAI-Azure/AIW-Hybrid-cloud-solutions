@@ -108,11 +108,11 @@ GitOps, as it relates to Kubernetes, is the practice of declaring the desired st
 
 3. Navigate to **cluster-apps->azure-vote.yaml** and edit the yaml file
 
-   ![](.././media/azure-arc-15.png)   
+   ![](.././media/10.png)   
 
-4. Change the cpu request from 250 to **280** in line 62 
+4. Change the cpu request from 250 to **280** in line 72 and then from the buttom click on **Commit changes** to save the chnages in cpu request.
 
-   ![](.././media/azure-arc-16.png)   
+   ![](.././media/11.png)   
 
 ## Task 6: Verify changes are deployed to the cluster.
 
@@ -121,7 +121,7 @@ GitOps, as it relates to Kubernetes, is the practice of declaring the desired st
     ```
     kubectl get pods 
     ```
-    ![](.././media/arc-0033.png) 
+    ![](.././media/12.png) 
     
     Observe in the above image that the previous pod is terminated and a new pod is created based on the updated configuration
 
@@ -130,10 +130,12 @@ GitOps, as it relates to Kubernetes, is the practice of declaring the desired st
     ```
     kubectl get pod <podname> -o yaml
     ```
-    ![](.././media/arc-0034.png)   
+    Example: ```kubectl get pod azure-vote-front-5779f4d696-fm22j -o yaml```
+   
+    ![](.././media/13.png)   
     
     Observe the CPU request value that you updated in the previous steps in the output as shown:
     
-    ![](.././media/arc-0035.png)   
+    ![](.././media/14.png)   
 
 
