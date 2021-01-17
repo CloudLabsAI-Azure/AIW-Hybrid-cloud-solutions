@@ -34,7 +34,7 @@ GitOps, as it relates to Kubernetes, is the practice of declaring the desired st
    
      ```./azlogin.sh```
    
-   ![](.././media/02.png)
+   ![](.././media/03.png)
 
 1. Run the following command:
 
