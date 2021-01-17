@@ -4,23 +4,49 @@ GitOps, as it relates to Kubernetes, is the practice of declaring the desired st
 
 ## Task 1: Create a Configuration
 
-1. Fork the repository https://github.com/Azure/arc-k8s-demo to your personal github account. As you will be making changes to the files in the repository.
+1. Launch the following GitHub repository url ```https://github.com/Azure/arc-k8s-demo```. On upper right cornor you will see **Sign in** and **Sign up** options, if you already have a github account then click on **Sign in**, otherwise **Sign up**.
+
+   ![](.././media/01.png) 
+
+2. Now, from the upper right cornor, click on the **Fork** to fork the repository to your GitHub account.
+
+   ![](.././media/02.png)
 
 ## Task 2: Deploy App using az k8sconfiguration
 
 1. Using the Azure CLI extension for k8sconfiguration, link connected cluster to personal git repository. Provide this configuration a name cluster-config, instruct the agent to deploy the operator in the cluster-config namespace, and give the operator cluster-admin permissions. 
 
-2. Run the following command:
-   - Replace the XXXXXX with the deploymentID provided in the environment details page
-   - Replace **your personal github account name** with your personal github account that you are using to perform the lab.
+1. From the start menu of the ARCHOST VM, search for **putty** and open it with double click or other way.
+
+    ![](.././media/startputty.png "Search Putty")
+     
+1. In Putty Configuration tool, enter the **ubuntu-k8s** VM private IP - ```192.168.0.8```, make sure the Port value is ```22```. Once you entered the private IP of the ubuntuk8s vm, click on the Open to lunch the terminal.
+
+    ![](.././media/putty-enter-ip.png "Enter ubuntu-k8s VM private IP")
+    
+1. Enter the **ubuntu-k8s** vm username - ```demouser``` in **login as** and then hit **Enter**. Now, enter the password - ```demo@pass123``` and press **Enter**. Remember password will be hidden and not be visible in terminal, don't worry about that.
+
+    ![](.././media/enter-ubuntu-k8s-credentials.png "Enter ubuntu-k8s credentials")
+    
+    > Note: To paste any value in Putty terminal, just copy the values from anywhere and then right click on the terminal to paste the copied value.
+    
+1. Login to Azure using follwing command:
+   
+     ```./azlogin.sh```
+   
+   ![](.././media/02.png)
+
+1. Run the following command:
+
+   - Replace **your personal github account name** with your personal github account that you are using to perform the lab and Signed in above.
 
    ```
-   az k8sconfiguration create --name cluster-config --cluster-name AzureArcAKSCluster1 --resource-group Azure-Arc-XXXXXX --operator-instance-name cluster-config --operator-namespace cluster-config --repository-url https://github.com/<your personal github account name>/arc-k8s-demo --scope cluster --cluster-type connectedClusters
+   az k8sconfiguration create --name cluster-config --cluster-name microk8s-cluster --resource-group $ResourseGroup --operator-instance-name cluster-config --operator-namespace cluster-config --repository-url https://github.com/<your personal github account name>/arc-k8s-demo --scope cluster --cluster-type connectedClusters
    ```
    
    The output should be as shown:
 
-   ![](./images/arc-0023.png) 
+   ![](./images/04.png) 
    
      > Note: Wait for 5 mins before performing the next step
 
