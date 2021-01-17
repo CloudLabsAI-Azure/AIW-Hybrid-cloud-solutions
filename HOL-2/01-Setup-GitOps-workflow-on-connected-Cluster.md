@@ -46,7 +46,7 @@ GitOps, as it relates to Kubernetes, is the practice of declaring the desired st
    
    The output should be as shown:
 
-   ![](./images/04.png) 
+   ![](.././media/04.png) 
    
      > Note: Wait for 5 mins before performing the next step
 
@@ -61,11 +61,11 @@ GitOps, as it relates to Kubernetes, is the practice of declaring the desired st
 
    The output should be as shown:
 
-   ![](./images/arc-0024.png) 
+   ![](.././media/arc-0024.png) 
   
 2. Navigate to **Azure-Arc RG->AzureArcAKSCluster1->Configurations**. Ensure that the operator state status should show as **Installed**.
 
-   ![](./images/azure-arc-10.png) 
+   ![](.././media/azure-arc-10.png) 
   
 ## Task 4:  Validate the Kubernetes configuration
 
@@ -77,7 +77,7 @@ GitOps, as it relates to Kubernetes, is the practice of declaring the desired st
  
    The output shows that team-a, team-b, itops, and cluster-config namespaces have been created as shown:
   
-   ![](./images/azure-arc-11.png) 
+   ![](.././media/azure-arc-11.png) 
    
 2. The **flux operator** will be deployed to **cluster-config** namespace, as directed by our **sourceControlConfig**:
       
@@ -87,7 +87,7 @@ GitOps, as it relates to Kubernetes, is the practice of declaring the desired st
    
     The output should be as shown:
    
-    ![](./images/azure-arc-12.png) 
+    ![](.././media/azure-arc-12.png) 
   
 3. You can explore the other resources deployed as part of the configuration repository by running the following commands:
 
@@ -105,17 +105,17 @@ GitOps, as it relates to Kubernetes, is the practice of declaring the desired st
     ```
     kubectl get pods 
     ```
-    ![](./images/arc-0032.png)   
+    ![](.././media/arc-0032.png)   
 
 2. Browse to the **forked** repo of ```https://github.com/Azure/arc-k8s-demo```
 
 3. Navigate to **cluster-apps->azure-vote.yaml** and edit the yaml file
 
-   ![](./images/azure-arc-15.png)   
+   ![](.././media/azure-arc-15.png)   
 
 4. Change the cpu request from 250 to **280** in line 62 
 
-   ![](./images/azure-arc-16.png)   
+   ![](.././media/azure-arc-16.png)   
 
 ## Task 6: Verify changes are deployed to the cluster.
 
@@ -124,7 +124,7 @@ GitOps, as it relates to Kubernetes, is the practice of declaring the desired st
     ```
     kubectl get pods 
     ```
-    ![](./images/arc-0033.png) 
+    ![](.././media/arc-0033.png) 
     
     Observe in the above image that the previous pod is terminated and a new pod is created based on the updated configuration
 
@@ -133,10 +133,10 @@ GitOps, as it relates to Kubernetes, is the practice of declaring the desired st
     ```
     kubectl get pod <podname> -o yaml
     ```
-    ![](./images/arc-0034.png)   
+    ![](.././media/arc-0034.png)   
     
     Observe the CPU request value that you updated in the previous steps in the output as shown:
     
-    ![](./images/arc-0035.png)   
+    ![](.././media/arc-0035.png)   
 
 
