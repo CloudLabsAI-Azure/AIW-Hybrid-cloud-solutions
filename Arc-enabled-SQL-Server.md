@@ -4,11 +4,11 @@ In this Exercise you will onboard SQL Server to Arc using Azure Portal and Power
 ## Task 1: Login To Azure Portal.
 
 
- 1: On you Jumpbox VM, Open Azure portal shortcut from the VM desktop.
+ 1. On you Jumpbox VM, Open Azure portal shortcut from the VM desktop.
   
    ![](media/0.png "edge")
    
- 1: copy your azure credentials from the lab environment page to login to azure portal.
+ 1. copy your azure credentials from the lab environment page to login to azure portal.
   
    ![](media/1.png "login")
    
@@ -57,7 +57,7 @@ In this Exercise you will onboard SQL Server to Arc using Azure Portal and Power
  
     ![](media/powershell.png "sqlsearch")
   
- 1. Nw run the below command to change the directory to where the Script is download.
+ 1. Now run the below command to change the directory to where the Script is download.
   
      ``` C:\LabFiles ```
  1. After change the directory to Lab files, Run the below command to run the script inside the Labvm.
