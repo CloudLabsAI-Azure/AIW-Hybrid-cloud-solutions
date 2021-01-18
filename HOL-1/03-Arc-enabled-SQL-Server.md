@@ -83,3 +83,18 @@ In this Exercise you will onboard SQL Server to Azure Arc using Azure Portal and
 
     ![](.././media/dashsql.png "sqlsearch")
  
+ 
+## Task 3: Configure SQL Assessment on an Azure Arc enabled SQL Server instance.
+
+ 1. Now On **SQLVM** Azure Arc - SQL Server resource Select the **Environment Health** under settings from left side menu.
+    * **Account Type:** Select **Domain User Account** from the drop down menu.
+    Now click on the **Download configuration Script** button to donwload the Powershell script.
+    
+    [](.././media/sqlvm.png "sqlsearch")
+    
+ 1. Now you will see one powershell script is downloaded.
+   
+    [](.././media/download.png "sqlsearch")
+ 
+    
+    
