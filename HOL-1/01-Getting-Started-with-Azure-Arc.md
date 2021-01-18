@@ -160,3 +160,42 @@ Policies can be applied to ARC servers the same way they are applied to Microsof
 1. From **Assign policy Basics** blade, select **ellipse(...)**  from **Policy Definitions**.
 
     ![](.././media/select-ellipse.png)
+    
+1. Search for ```Deploy Log Analytics``` in **Available Definitions** and then select **Deploy Log Analytics agent for Linux VMs**.
+
+    ![](.././media/deployloganalytics.png)
+    
+1. After selecting the policy defination, move to the **Parameters** blade by clicking on **Next** button from the bottom.
+
+    ![](.././media/basic-next.png)
+    
+1. In **Log Analytics Workspace**, select the existing workspace with prefix **LogAnalyticsWS-** from available list and then click on **Next**.
+
+    ![](.././media/select-existing-ws.png)
+
+1. On **Remediation** blade, enable the checkbox for **Create a remediation task** and then click on **Review + create** button.
+
+    ![](.././media/review-and-create.png)
+    
+1. On **Review + create** blade, select **Create**.
+
+    ![](.././media/create-policy-assignment.png)
+    
+1. Now, once the policy assignment is created, you will see Deploy Log Analytics Workspace for lInux on assigned policies list in Compliant state, it can also take some time to convert in **Compliant** state.
+
+    ![](.././media/ws-compliant.png)    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
