@@ -100,7 +100,7 @@ In this Exercise you will onboard SQL Server to Azure Arc using Azure Portal and
     
  1. Now click on **Create** button to continue.
  
-   ![](.././media/create.png "sqlsearch")
+    ![](.././media/create.png "sqlsearch")
    
  1. At this step you have to enter Log analytics workspace ID and key to install the MMA in the **SQLVM**.
  
@@ -110,9 +110,9 @@ In this Exercise you will onboard SQL Server to Azure Arc using Azure Portal and
  
  1. Now enter the Workspace ID and Key that you copied from previoud step. and click on **Review + Create** button. 
  
-   ![](.././media/create1.png "sqlsearch")
+    ![](.././media/create1.png "sqlsearch")
    
-   After few minutes the deployment will get completed and you can continue with the next task.
+    After few minutes the deployment will get completed and you can continue with the next task.
  
  1. Now go to **SQLVM** Azure Arc - SQL Server resource and Select the **Environment Health** under settings from left side menu.
     
