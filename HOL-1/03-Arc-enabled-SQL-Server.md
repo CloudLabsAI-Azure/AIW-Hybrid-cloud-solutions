@@ -35,11 +35,11 @@ In this Exercise you will onboard SQL Server to Azure Arc using Azure Portal and
    
 1. On the **Server Details** blade enter the below details.
  
-    - Subscription: Leave default
-    - Resource group: Select **Azure-arc-SUFFIX** from dropdown list.
-    - Region: Select same region as Resource group.
-    - Operating Systems: Select **windows**.
-      Now click on next button.
+     - Subscription: Leave default
+     - Resource group: Select **Azure-arc-SUFFIX** from dropdown list.
+     - Region: Select same region as Resource group.
+     - Operating Systems: Select **windows**.
+       Now click on next button.
    
     ![](.././media/detailssql.png "sqlsearch")
    
