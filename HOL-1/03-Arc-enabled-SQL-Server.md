@@ -86,6 +86,12 @@ In this Exercise you will onboard SQL Server to Azure Arc using Azure Portal and
  
 ## Task 3: Run on-demand SQL Assessment.
 
+
+
+ 1. Search for Log analytics workspace and select **Agent management** from the left side meny and copy the value of **Workspace ID** and **Primary Key** and save in a notepad for later use.
+ 
+    ![](.././media/log.png "sqlsearch")
+
  1. Open Azure Portal and go to Resource group **azure-arc-SUFFIX** and search for **SQLVM* Server and select.
  
     ![](.././media/sqlserver.png "sqlsearch") 
@@ -103,11 +109,7 @@ In this Exercise you will onboard SQL Server to Azure Arc using Azure Portal and
     ![](.././media/create.png "sqlsearch")
    
  1. At this step you have to enter Log analytics workspace ID and key to install the MMA in the **SQLVM**.
- 
- 1. Search for Log analytics workspace and select **Agent management** from the left side meny and copy the value of **Workspace ID** and **Primary Key** and save in a notepad for later use.
- 
-    ![](.././media/log.png "sqlsearch")
- 
+  
  1. Now enter the Workspace ID and Key that you copied from previoud step. and click on **Review + Create** button. 
  
     ![](.././media/create1.png "sqlsearch")
