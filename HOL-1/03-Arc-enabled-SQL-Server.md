@@ -84,9 +84,39 @@ In this Exercise you will onboard SQL Server to Azure Arc using Azure Portal and
     ![](.././media/dashsql.png "sqlsearch")
  
  
-## Task 3: Configure SQL Assessment on an Azure Arc enabled SQL Server instance.
+## Task 3: Run on-demand SQL Assessment.
 
- 1. Now On **SQLVM** Azure Arc - SQL Server resource Select the **Environment Health** under settings from left side menu.
+ 1. Open Azure Portal and go to Resource group **azure-arc-SUFFIX** and search for **SQLVM* Server and select.
+ 
+    ![](.././media/sqlserver.png "sqlsearch") 
+    
+ 1. Now Click on the **Extension** button from the left side menu and click on **Add** button to add a new extension.
+ 
+    ![](.././media/mma.png "sqlsearch")
+    
+ 1. Select the **Log Analytics Agent - Azure Arc** extension.
+ 
+    ![](.././media/extension1.png "sqlsearch")
+    
+ 1. Now click on **Create** button to continue.
+ 
+   ![](.././media/create.png "sqlsearch")
+   
+ 1. At this step you have to enter Log analytics workspace ID and key to install the MMA in the **SQLVM**.
+ 
+ 1. Search for Log analytics workspace and select **Agent management** from the left side meny and copy the value of **Workspace ID** and **Primary Key** and save in a notepad for later use.
+ 
+    ![](.././media/log.png "sqlsearch")
+ 
+ 1. Now enter the Workspace ID and Key that you copied from previoud step. and click on **Review + Create** button. 
+ 
+   ![](.././media/create1.png "sqlsearch")
+   
+   After few minutes the deployment will get completed and you can continue with the next task.
+ 
+ 1. Now go to **SQLVM** Azure Arc - SQL Server resource and Select the **Environment Health** under settings from left side menu.
+    
+    Now Select the below details:
     * **Account Type:** Select **Domain User Account** from the drop down menu.
     Now click on the **Download configuration Script** button to donwload the Powershell script.
     
@@ -96,13 +126,13 @@ In this Exercise you will onboard SQL Server to Azure Arc using Azure Portal and
    
     [](.././media/download.png "sqlsearch")
     
- 1. Now Open the powershell from your LABVM Desktop and run this command to copy this script in the **SQLVM**.
+ 1. Now Open the powershell from your LABVM Desktop and run this command to copy this script in the **SQLVM** Machine.
     
     ``` Copy-VMFile "sqlvm" -SourcePath "C:\Users\arcadmin\DownloadsAddSqlAssessment.ps1" -DestinationPath "C:\LabFiles\DownloadsAddSqlAssessment.ps1" -CreateFullPath -FileSource Host ```
     
- 1. Now Open your **SQLVM** from the Hyper-v Manager and enter **demo@pass123** as password and login.
+ 1. Now Open your **SQLVM** from the Hyper-v Manager and enter **demo@pass123** to login.
  
- 1. Open File explorer in the **SQLVM** and navigate to **C:\LabFiles\** this directory and right click on **DownloadsAddSqlAssessment.ps1** and select **Run with powershell**.
+ 1. Open File explorer in the **SQLVM** and navigate to **C:\LabFiles\** this directory and right click on **DownloadsAddSqlAssessment.ps1** powershell script and select **Run with powershell** to run the powershell script to schdule the task that will generate the assessment and logs.
  
     [](.././media/file.png "sqlsearch")
     
