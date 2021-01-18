@@ -7,7 +7,7 @@ In this Exercise you will onboard SQL Server to Azure Arc using Azure Portal and
   
     ![](.././media/0.png "edge")
    
-1. On **Sign in to Micsoft Azure** tab you will see login screen, in that enter following **Email/Username** and then click on **Next**. 
+1. On **Sign in to Microsoft Azure** tab you will see login screen, in that enter following **Email/Username** and then click on **Next**. 
    * Email/Username: <inject key="AzureAdUserEmail"></inject>
    
 1. Now enter the following **Password** and click on **Sign in**.
@@ -27,9 +27,9 @@ In this Exercise you will onboard SQL Server to Azure Arc using Azure Portal and
  
     ![](.././media/createsql.png "sqlsearch")
    
-1. You will see the prerequistes page, you can explore the page and just click on the **Next: Server details** button.
+1. You will see the prerequisite page, you can explore the page and just click on the **Next: Server details** button.
     
-    - **Note**: We have already completed the prerequistes part for you. 
+    - **Note**: We have already completed the prerequisite part for you. 
     
     ![](.././media/presql.png "sqlsearch")
    
@@ -88,7 +88,7 @@ In this Exercise you will onboard SQL Server to Azure Arc using Azure Portal and
 
 
 
- 1. Search for Log analytics workspace and select **Agent management** from the left side meny and copy the value of **Workspace ID** and **Primary Key** and save in a notepad for later use.
+ 1. Search for Log analytics workspace and select **Agent management** from the left side menu and copy the value of **Workspace ID** and **Primary Key** and save in a notepad for later use.
  
     ![](.././media/log.png "sqlsearch")
 
@@ -109,17 +109,17 @@ In this Exercise you will onboard SQL Server to Azure Arc using Azure Portal and
    
  1. At this step you have to enter Log analytics workspace ID and key to install the MMA in the **SQLVM**.
   
- 1. Now enter the Workspace ID and Key that you copied from previoud step. and click on **Review + Create** button. 
+ 1. Now enter the Workspace ID and Key that you copied from previous step. and click on **Review + Create** button. 
  
     ![](.././media/create1.png "sqlsearch")
    
-    After few minutes the deployment will get completed and you can continue with the next task.
+    After few minutes the deployment will get complete, and you can continue with the next task.
  
  1. Now go to **SQLVM** Azure Arc - SQL Server resource and Select the **Environment Health** under settings from left side menu.
     
-    Now Select the below details:
+    Now select the below details:
     * **Account Type:** Select **Domain User Account** from the drop down menu.
-    Now click on the **Download configuration Script** button to donwload the Powershell script.
+    Now click on the **Download configuration Script** button to download the Powershell script.
     
     [](.././media/sqlvm.png "sqlsearch")
     
@@ -133,7 +133,7 @@ In this Exercise you will onboard SQL Server to Azure Arc using Azure Portal and
     
  1. Now Open your **SQLVM** from the Hyper-v Manager and enter **demo@pass123** to login.
  
- 1. Open File explorer in the **SQLVM** and navigate to **C:\LabFiles\** this directory and right click on **DownloadsAddSqlAssessment.ps1** powershell script and select **Run with powershell** to run the powershell script to schdule the task that will generate the assessment and logs.
+ 1. Open File explorer in the **SQLVM** and navigate to **C:\LabFiles\** this directory and right click on **DownloadsAddSqlAssessment.ps1** powershell script and select **Run with powershell** to run the powershell script to schedule the task that will generate the assessment and logs.
  
     [](.././media/file.png "sqlsearch")
     
