@@ -95,6 +95,20 @@ In this Exercise you will onboard SQL Server to Azure Arc using Azure Portal and
  1. Now you will see one powershell script is downloaded.
    
     [](.././media/download.png "sqlsearch")
+    
+ 1. Now Open the powershell from your LABVM Desktop and run this command to copy this script in the **SQLVM**.
+    
+    ``` Copy-VMFile "sqlvm" -SourcePath "C:\Users\arcadmin\DownloadsAddSqlAssessment.ps1" -DestinationPath "C:\LabFiles\DownloadsAddSqlAssessment.ps1" -CreateFullPath -FileSource Host ```
+    
+ 1. Now Open your **SQLVM** from the Hyper-v Manager and enter **demo@pass123** as password and login.
+ 
+ 1. Open File explorer in the **SQLVM** and navigate to **C:\LabFiles\** this directory and right click on **DownloadsAddSqlAssessment.ps1** and select **Run with powershell**.
+ 
+    [](.././media/file.png "sqlsearch")
+    
+ 1. After running the Powershell script, Navigate to **C:\sqlserver\SQLAssessment** directory in File explorer and you will be able to see some files and folders. These are the assessments and logs that is generated using the powershell script.
+ 
+ 
  
     
     
