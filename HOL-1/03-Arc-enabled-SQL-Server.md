@@ -94,7 +94,7 @@ In this Exercise you will onboard SQL Server to Azure Arc using Azure Portal and
 
  1. Open Azure Portal and go to Resource group **azure-arc-SUFFIX** and search for **SQLVM* Server and select.
  
-    ![](.././media/sqlserver.png "sqlsearch") 
+    ![](.././media/sqlserver1.png "sqlsearch") 
     
  1. Now Click on the **Extension** button from the left side menu and click on **Add** button to add a new extension.
  
@@ -106,7 +106,6 @@ In this Exercise you will onboard SQL Server to Azure Arc using Azure Portal and
     
  1. Now click on **Create** button to continue.
  
-    ![](.././media/create.png "sqlsearch")
    
  1. At this step you have to enter Log analytics workspace ID and key to install the MMA in the **SQLVM**.
   
