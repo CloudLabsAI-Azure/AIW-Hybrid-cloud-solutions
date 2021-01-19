@@ -233,14 +233,7 @@ In this task, you will  configure and collect data from your Linux machine by en
 
     ![](.././media/performance-matrix.png)
     
-1. Click on **Map** and review the **ubuntu-k8s** with few running **Progresses**
+1. Click on **Map** and review the **ubuntu-k8s** with few running **Progresses**. Also, you can explore machine properties from right. If there will be any **Alerts** you can check it by clicking on **Alerts** in right 👉.
 
-
-
-
-
-
-
-
-
-
+    ![](.././media/map.png)
+    
