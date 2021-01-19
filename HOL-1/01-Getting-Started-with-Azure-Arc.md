@@ -203,7 +203,38 @@ In this task, you will  configure and collect data from your Linux machine by en
 
     ![](.././media/ubuntu-k8s-server.png)
 
-1. 
+1. Select **Insights** from **Monitoring** options.
+
+    ![](.././media/insights-option.png)
+    
+1. Click on the **Enable** on Insights blade.
+
+    ![](.././media/enable-insights.png)
+
+1. On the Azure Monitor **Insights Onboarding** page, choose the existing **Log Analytics Workspace** named like ```LogAnaliticsWS-{Suffix}``` and then click on **Enable**.
+
+    ![](.././media/enable-insights2.png)
+
+1. Once you click on **Enable** button, you can see a notification on bell icon(🔔) in top right corner: **validationg deployment** and then **Submitting deployment** and finally **Deployment in progress**. Deployment will take approx 15-20 minutes to deploy the insights for Ubuntu-k8s VM as extensions are being installed on your connected machine (ubuntu-k8s).
+
+    ![](.././media/submitting-deployment.png)
+    
+1. On Azure Arc ubuntu-k8s Insights blade, you will see **Insights deployment in progress... Please wait.** Once the deployment is completed, you will see a notification on upper right corner that **Deployment succeeded**.
+
+    ![](.././media/insights-dep-in-prog.png)
+
+    ![](.././media/deployment-succeeded.png)
+
+1. Once the **Deployment is succeeded**, go back to the **Insights** blade for ubuntu-k8s VM and then refresh the page once, you may have to re-click on **Enable** button and refresh the page again to see the Insights. Data will take approx 10 minutes to being routed to the Insights from your Linux machine: ubuntu-k8s.
+
+    ![](.././media/deployment-succeeded.png)
+
+1. Once the Insights are ready, click on the **Performance** to review Logical Disk Operations, CPU Utilization, Available Memory, Logical Disk IOPS, Logical Disk MB/s and much more. It exciting to see the **graphical representation** on VM performance, whether the VM is deployed on-prem, on other cloud provider platforms or any edge technologies.
+
+    ![](.././media/performance-matrix.png)
+    
+1. Click on **Map** and review the **ubuntu-k8s** with few running **Progresses**
+
 
 
 
