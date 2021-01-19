@@ -185,9 +185,13 @@ Policies can be applied to ARC servers the same way they are applied to Microsof
 
     ![](.././media/ws-compliant.png)    
 
+## Task 6: Monitor Arc Enabled machines with Azure Monitor
 
+Azure Monitor can collect data directly from your hybrid machines into a Log Analytics workspace for detailed analysis and correlation. Typically this would entail installing the Log Analytics agent on the machine using a script, manually, or automated method following your configuration management standards. Arc enabled servers recently introduced support to install the Log Analytics and Dependency agent VM extensions for Windows and Linux, enabling Azure Monitor to collect data from your non-Azure VMs.
 
+In this task, you will  configure and collect data from your Linux machine by enabling Azure Monitor for VMs following a simplified set of steps, which streamlines the experience and takes a shorter amount of time.
 
+1. 
 
 
 
