@@ -191,9 +191,19 @@ Azure Monitor can collect data directly from your hybrid machines into a Log Ana
 
 In this task, you will  configure and collect data from your Linux machine by enabling Azure Monitor for VMs following a simplified set of steps, which streamlines the experience and takes a shorter amount of time.
 
+1. From the Azure Poral ```http://portal.azure.com/```, search for ```Azure Arc``` from search box and then click **Azure Arc**. 
+
+    ![](.././media/searchAzureArc.png)
+    
+1. Select **Servers** from the options on Azure Arc blade.
+
+    ![](.././media/select-servers.png)
+    
+1. Explore **ubuntu-k8s** server from connected machines. 
+
+    ![](.././media/ubuntu-k8s-server.png)
+
 1. 
-
-
 
 
 
