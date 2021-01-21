@@ -35,14 +35,19 @@ Using this approach, you use the Azure Policy Deploy Log Analytics agent to Linu
      
     ![](.././media/as-05.png)
     
- 1. Click on the **Overview** on Azure Sentinel blade and you will start seeing few insight after few minutes, if you don't see teh insights wait for few minutes and then refresh the browser tab.
+ 1. Click on the **Overview** on Azure Sentinel blade and you will start seeing insights after few minutes, if you don't see teh insights wait for few minutes and then refresh the browser tab.
     
-    ![](.././media/as-0.png)
+    ![](.././media/as-07.png)
     
+1. Now, click on the **Workbooks** from the left pane and search for ```Linux machines``` and select **Linux machines** from the search result.
     
-    ![](.././media/as-0.png)
+    ![](.././media/as-06.png)
     
-    ![](.././media/as-0.png)
+1. Then from lower left corner of the Azure portal click on the **Save** and then **ok** to save the workbook. 
+ 
+    ![](.././media/as-08.png)
+    
+
     
     
     
