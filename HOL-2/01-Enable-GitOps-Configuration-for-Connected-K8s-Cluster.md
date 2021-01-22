@@ -1,4 +1,4 @@
-# Exercise 1: Enable GitOps Configuration on connected K8s Cluster
+# Exercise 4: Enable GitOps Configuration on connected K8s Cluster
 
 GitOps, as it relates to Kubernetes, is the practice of declaring the desired state of Kubernetes configuration (deployments, namespaces, etc.) in a Git repository followed by a polling and pull-based deployment of these configurations to the cluster using an operator. In this exercise, you will deploy a sample kubernetes app using az k8sconfiguration command and gitops and also update the configuration in the repository which you have linked to connected cluster and verify if cluster is getting updated based on the changes made.
 You will be using the Kubernetes cluster with which you connected in the earlier exercise.
