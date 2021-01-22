@@ -18,7 +18,7 @@ Hyper-V is Microsoft's hardware virtualization product. It lets you create and r
      * **ubuntu-k8s** - ```192.168.0.8```
      * **sqlvm** - ```192.168.0.4```
      
-    ![](.././media/guestvms.png "Guest VMs")
+    ![](.././media/guestvms1.png "Guest VMs")
     
 ## Task 2: Onboard Linux Machine to Azure Arc
 
