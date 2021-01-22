@@ -13,7 +13,7 @@ This feature in Azure Arc enabled servers allows you to deploy the Log Analytics
 #### Using Azure Policy:
 Using this approach, you use the Azure Policy Deploy Log Analytics agent to Linux or Windows Azure Arc machines built-in policy to audit if the Arc enabled server has the Log Analytics agent installed. If the agent is not installed, it automatically deploys it using a remediation task. Alternatively, if you plan to monitor the machines with Azure Monitor for VMs, instead use the Enable Azure Monitor for VMs initiative to install and configure the Log Analytics agent.
 
-  > Note: We have already installed Log Analytics Agent to Linux VM - ubuntu-k8s in previous exercise, you can [go back](./01-Getting-Started-with-Azure-Arc.md#task-5-create-a-policy-assignment-to-identify-compliantnon-compliant-resources) review it for a revision
+  > Note: We have already installed Log Analytics Agent to Linux VM - ubuntu-k8s in previous exercise, you can [go back](./01-Getting-Started-with-Azure-Arc.md#task-5-create-a-policy-assignment-to-identify-compliantnon-compliant-resources) and review it.
 
 1. Search for ```Azure Sentinel``` on the Azure portal and then select the **Azure Sentinel** from the search result.
 
