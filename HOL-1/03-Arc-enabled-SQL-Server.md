@@ -133,7 +133,7 @@ In this exercise, you will onboard SQL Server to Azure Arc using Azure Portal an
  
  1. Open File explorer in the **SQLVM** and navigate to **C:\LabFiles\** this directory and right-click on **DownloadsAddSqlAssessment.ps1** PowerShell script and select **Run with PowerShell** to run the PowerShell script to schedule the task, which will generate the assessment and logs.
  
-     [](.././media/file.png "run")
+    [](.././media/file.png "run")
     
  1. After running the PowerShell script, navigate to **C:\sqlserver\SQLAssessment** directory in File Explorer, and you will be able to see some files and folders. These are the assessments and logs that are generated using the PowerShell script.
  
