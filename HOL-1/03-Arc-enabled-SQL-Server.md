@@ -75,7 +75,7 @@ In this Exercise you will onboard SQL Server to Azure Arc using Azure Portal and
 
     ![](.././media/completed.png "sqlsearch")
   
-1. Go back to azure portal and search for the **SQL Server -Azure Arc**, You will be able to see 1 one resource that we just created using PowerShell script in previous step.
+1. Go back to azure portal and search for the **SQL Server -Azure Arc**, You will be able to see one resource that we just created using PowerShell script in previous step.
 
     ![](.././media/sqlvm.png "sqlsearch")
   
