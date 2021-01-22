@@ -77,7 +77,7 @@ In this exercise, you will onboard SQL Server to Azure Arc using Azure Portal an
   
 1. Go back to the Azure portal and search for **SQL Server -Azure Arc**. You will see one resource that we just created using the PowerShell script in the previous step.
 
-    ![](.././media/sqlvm.png "sqlsearch")
+    ![](.././media/sqlvm11new.png "sqlsearch")
   
  1. Select the **SQLVM** resource and, now you can see the dashboard of **SQLVM** SQL Server -Azure Arc from Azure Portal.
 
