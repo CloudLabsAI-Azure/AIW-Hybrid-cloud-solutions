@@ -108,7 +108,7 @@ In this exercise, you will onboard SQL Server to Azure Arc using Azure Portal an
    
  1. At this step, you must enter Log analytics workspace ID and a key to install the MMA in the **SQLVM**.
   
- 1. Now enter the Workspace ID and Key that you copied from the previous step. and click on **Review + Create** button. 
+ 1. Now enter the Workspace ID and Key that you copied from the previous step, and click on **Review + Create** button. 
  
     ![](.././media/create1.png "sqlsearch")
    
