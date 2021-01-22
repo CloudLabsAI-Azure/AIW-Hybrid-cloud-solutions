@@ -92,7 +92,7 @@ In this Exercise you will onboard SQL Server to Azure Arc using Azure Portal and
  
     ![](.././media/log.png "sqlsearch")
 
- 1. Open Azure Portal and go to Resource group **azure-arc** and search for **SQLVM* Server and select.
+ 1. Open Azure Portal and go to Resource group **azure-arc** and search for **SQLVM** Server and select.
  
     ![](.././media/sqlserver1.png "sqlsearch") 
     
