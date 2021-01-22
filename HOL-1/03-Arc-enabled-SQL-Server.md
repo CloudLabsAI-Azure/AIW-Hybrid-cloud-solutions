@@ -19,7 +19,7 @@ In this exercise, you will onboard SQL Server to Azure Arc using Azure Portal an
 
 1. If **Welcome to Microsoft Azure** pop-up window appears, click **Maybe Later** to skip the tour.
       
-1. Click in search blade and search for ```SQL Server```, select **SQL Server - Azure Arc**.
+1. Click on search blade at the top and search for ```SQL Server```, select **SQL Server - Azure Arc**.
  
     ![](.././media/sqlserver.png "sqlsearch")
    
