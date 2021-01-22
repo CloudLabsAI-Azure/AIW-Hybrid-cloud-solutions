@@ -1,9 +1,9 @@
 # Exercise 2: Onboard Azure Arc enabled servers to Azure Sentinel and Security Center
 
-This exercise is intended to help you onboard your Azure Arc enabled server to Azure Sentinel and start collecting security-related events. Azure Sentinel provides a single solution for alert detection, threat visibility, proactive hunting, and threat response across the enterprise.
+In this exercise, you will see how to onboard your Azure Arc enabled server to Azure Sentinel and start collecting security-related events. Azure Sentinel provides a single solution for alert detection, threat visibility, proactive hunting, and threat response across the enterprise.
 
 ## Task 1: Onboard Azure Arc enabled servers to Azure Sentinel
-Azure Sentinel comes with a number of connectors for Microsoft solutions, available out of the box and providing real-time integration. For physical and virtual machines, you can install the Log Analytics agent that collects the logs and forwards them to Azure Sentinel. Arc enabled servers supports deploying the Log Analytics agent using the following methods:
+Azure Sentinel comes with several connectors for Microsoft solutions, available out of the box and providing real-time integration. For physical and virtual machines, you can install the Log Analytics agent that collects the logs and forwards them to Azure Sentinel. Arc enabled servers supports deploying the Log Analytics agent using the following methods:
 #### Using the VM extensions framework:
 This feature in Azure Arc enabled servers allows you to deploy the Log Analytics agent VM extension to a non-Azure Windows and/or Linux server. VM extensions can be managed using the following methods on your hybrid machines or servers managed by Arc enabled servers:
  * The Azure portal
@@ -15,7 +15,7 @@ Using this approach, you use the Azure Policy Deploy Log Analytics agent to Linu
 
   > Note: We have already installed Log Analytics Agent to Linux VM - ubuntu-k8s in previous exercise, you can [go back](./01-Getting-Started-with-Azure-Arc.md#task-5-create-a-policy-assignment-to-identify-compliantnon-compliant-resources) review it for a revision
 
-1. Search for ```Azure Sentinel``` on Azure portal and then select the **Azure Sentinel** from the search result.
+1. Search for ```Azure Sentinel``` on the Azure portal and then select the **Azure Sentinel** from the search result.
 
     ![](.././media/as-01.png)
     
@@ -23,11 +23,11 @@ Using this approach, you use the Azure Policy Deploy Log Analytics agent to Linu
 
     ![](.././media/as-02.png)
     
-1. Select the existing log analytics workspace shown named ```LogAnalyticsWS-xxxxxx``` and then click on **Add** button.
+1. Select the existing log analytics workspace shown named ```LogAnalyticsWS-xxxxxx``` and then click on the **Add** button.
 
     ![](.././media/as-03.png)
     
- 1. You will see a notification on upper right corner **Adding Azure Sentinel**. It will take few second to add.
+ 1. You will see a notification on the upper right corner **Adding Azure Sentinel**. It will take few seconds to add.
  
     ![](.././media/as-04.png)
     
@@ -35,7 +35,7 @@ Using this approach, you use the Azure Policy Deploy Log Analytics agent to Linu
      
     ![](.././media/as-05.png)
  
- 1. Click on the **Overview** on Azure Sentinel blade and you will start seeing insights after few minutes, if you don't see teh insights wait for few minutes and then refresh the browser tab.
+ 1. Click on the **Overview** on Azure Sentinel blade and you will start seeing insights after few minutes, if you don't see the insights wait for few minutes and then refresh the browser tab.
     
     ![](.././media/as-07.png)
     
@@ -43,19 +43,19 @@ Using this approach, you use the Azure Policy Deploy Log Analytics agent to Linu
     
     ![](.././media/as-06.png)
     
-1. Then from lower left corner of the Azure portal click on the **Save** and then **ok** to save the workbook. 
+1. Then from the lower-left corner of the Azure portal click on the **Save** and then **ok** to save the workbook. 
  
     ![](.././media/as-08.png)
     
-1. Now, go back to **Azure Sentinel Overview** blade and click on **INSIGHTSMETER** to query the **ubuntu-k8s** vm inghts. Count of **Events** could be different on your Azure Sentinel Dashboard.
+1. Now, go back to **Azure Sentinel Overview** blade and click on **INSIGHTSMETER** to query the **ubuntu-k8s** VM insights. Count of **Events** could be different on your Azure Sentinel Dashboard.
 
     ![](.././media/as-09.png)
     
-1. You will see **Results** for ```union InsightsMetrics``` in query explorer. You can see oprations around Network, Logical Disk, Memory and Processor for **ubuntu-k8s** vm.
+1. You will see **Results** for ```union InsightsMetrics``` in query explorer. You can see operations around Network, Logical Disk, Memory, and Processor for **ubuntu-k8s** VM.
 
     ![](.././media/as-10.png)
     
-1. Let us check for **ubuntu-k8s** processes by running following query, you can change the time range limit as well to see teh result of a specific time interval. You can scroll right on the **Results** section and see more details and description about the each and every process. 
+1. Let us check for **ubuntu-k8s** processes by running the following query, you can change the time range limit as well to see the result of a specific time interval. You can scroll right on the **Results** section and see more details and descriptions about every process. 
 
       ```
       VMProcess 
@@ -65,12 +65,10 @@ Using this approach, you use the Azure Policy Deploy Log Analytics agent to Linu
 
     ![](.././media/as-11.png)   
     
-1. You can save the query for later use, by clicking on **Save** button and then provide any name for the query **Name** and **Category**, then **Save**.
+1. You can save the query for later use, by clicking on the **Save** button and then provide any name for the query **Name** and **Category**, then **Save**.
 
     ![](.././media/as-12.png) 
 
-1. You can see and run the saved **queries** by browsing to **Query Explore** and then **Saved Queries**.
+1. You can see and run the saved **queries** by browsing to **Query Explorer** and then **Saved Queries**.
 
     ![](.././media/as-13.png) 
-
-    
