@@ -71,6 +71,6 @@ Using this approach, you use the Azure Policy Deploy Log Analytics agent to Linu
 
 1. You can see and run the saved **queries** by browsing to **Query Explore** and then **Saved Queries**.
 
-    ![](.././media/as-12.png) 
+    ![](.././media/as-13.png) 
 
     
