@@ -1,4 +1,4 @@
-# Exercise 1: Connect On-Prem Servers to Azure with Arc
+# Exercise 1: Getting started with Azure Arc
 
 Azure Arc extends Azure Resource Manager capabilities to Linux and Windows servers, as well as Kubernetes clusters on any infrastructure across on-premises, multi-cloud, and edge. With Azure Arc, customers can also run Azure data services anywhere, realizing the benefits of cloud innovation, including always up-to-date data capabilities, deployment in seconds (rather than hours), and dynamic scalability on any infrastructure. Azure Arc for servers is currently in public preview.
 
