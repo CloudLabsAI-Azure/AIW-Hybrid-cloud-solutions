@@ -83,8 +83,9 @@ In this task, we will learn to onboard local kubernetes cluster to Azure Arc. So
     ![](.././media/exit-from-root.png "Exit root user")
 
 1. Update the Arc enabled Kubernetes CLI extensions, if there will be any update these commands will update the k8s extensions.
-    ```az extension update --name connectedk8s
-       az extension update --name k8sconfiguration
+    ```
+    az extension update --name connectedk8s
+    az extension update --name k8sconfiguration
     ```
     ![](.././media/update-k8s-extensions.png "Update Az k8s extensions")
     
