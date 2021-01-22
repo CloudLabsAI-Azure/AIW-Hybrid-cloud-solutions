@@ -87,7 +87,6 @@ In this exercise, you will onboard SQL Server to Azure Arc using Azure Portal an
 ## Task 3: Run on-demand SQL Assessment.
 
 
-
  1. Search for Log analytics workspace and select **Agent management** from the left side menu and copy the value of **Workspace ID** and **Primary Key** and save in a notepad for later use.
  
     ![](.././media/log.png "sqlsearch")
