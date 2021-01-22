@@ -115,13 +115,24 @@ In this task, you will verify if the Kubernetes cluster is connected to Azure Ar
    ```
      
    ![](.././media/check-k8s-connection.png "Varify Micro-k8s cluster is connected")
+
+1. On **Sign in to Microsoft Azure** tab you will see login screen, in that enter following **Email/Username** and then click on **Next**. 
+   * Email/Username: <inject key="AzureAdUserEmail"></inject>
    
-1. You can also View this resource on the Azure portal. Navigate to https://portal.azure.com, login with the credentials provided in the Lab Environment Tab on the right. Once you have the portal open in your browser, navigate to the resource group and there will be a resource with type **Azure Arc enabled Kubernetes resource**
+1. Now enter the following **Password** and click on **Sign in**.
+   * Password: <inject key="AzureAdUserPassword"></inject>
+   
+1. If you see the pop-up **Stay Signed in?**, click No
+
+1. If you see the pop-up **You have free Azure Advisor recommendations!**, close the window to continue the lab.
+
+1. If **Welcome to Microsoft Azure** popup window appears, click **Maybe Later** to skip the tour.
+
+1. Navigate to the Resource Group from the Azure portal navigate section and Cloick on teh Resource Group named **Azure-ARC** and there will be a resource with type **Azure Arc enabled Kubernetes resource**
 
    ![](.././media/varify-in-azure.png "Varify in Azure")
 
 1. Azure Arc enabled Kubernetes deploys a few operators into the azure-arc namespace. You can view these deployments and pods by running the command:
-
 
    ```
    kubectl -n azure-arc get deployments,pods
