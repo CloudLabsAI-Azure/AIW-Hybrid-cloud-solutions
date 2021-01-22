@@ -115,7 +115,11 @@ In this task, you will verify if the Kubernetes cluster is connected to Azure Ar
    ```
      
    ![](.././media/check-k8s-connection.png "Varify Micro-k8s cluster is connected")
-
+   
+1. 1. In the **LabVM/ARCHost VM**, click on Azure portal shortcut of Microsoft Edge browser which is created on desktop.
+  
+    ![](.././media/0.png "edge")
+    
 1. On **Sign in to Microsoft Azure** tab you will see login screen, in that enter following **Email/Username** and then click on **Next**. 
    * Email/Username: <inject key="AzureAdUserEmail"></inject>
    
