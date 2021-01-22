@@ -55,7 +55,7 @@ In this Exercise you will onboard SQL Server to Azure Arc using Azure Portal and
 
 1. From your **LabVM/ARCHost VM**, Open **Windows PowerShell** icon from the desktop.
  
-    ![](.././media/PowerShell.png "sqlsearch")
+    ![](.././media/powershell.png "sqlsearch")
   
 1. Run the below command to change the directory to where the Script is download.
  
@@ -138,5 +138,4 @@ In this Exercise you will onboard SQL Server to Azure Arc using Azure Portal and
     [](.././media/file.png "sqlsearch")
     
  1. After running the PowerShell script, navigate to **C:\sqlserver\SQLAssessment** directory in File explorer and you will be able to see some files and folders. These are the assessments and logs that is generated using the PowerShell script.
- 
  
