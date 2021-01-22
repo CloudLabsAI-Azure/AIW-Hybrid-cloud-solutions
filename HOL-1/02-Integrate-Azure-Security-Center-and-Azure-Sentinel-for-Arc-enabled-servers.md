@@ -34,7 +34,7 @@ Using this approach, you use the Azure Policy Deploy Log Analytics agent to Linu
  1. Once the Azure Sentinel is added you will see another notification: **Successfully added Azure Sentinel**.
      
     ![](.././media/as-05.png)
-    
+ 
  1. Click on the **Overview** on Azure Sentinel blade and you will start seeing insights after few minutes, if you don't see teh insights wait for few minutes and then refresh the browser tab.
     
     ![](.././media/as-07.png)
@@ -47,7 +47,30 @@ Using this approach, you use the Azure Policy Deploy Log Analytics agent to Linu
  
     ![](.././media/as-08.png)
     
+1. Now, go back to **Azure Sentinel Overview** blade and click on **INSIGHTSMETER** to query the **ubuntu-k8s** vm inghts. Count of **Events** could be different on your Azure Sentinel Dashboard.
 
+    ![](.././media/as-09.png)
     
+1. You will see **Results** for ```union InsightsMetrics``` in query explorer. You can see oprations around Network, Logical Disk, Memory and Processor for **ubuntu-k8s** vm.
+
+    ![](.././media/as-10.png)
     
+1. Let us check for **ubuntu-k8s** processes by running following query, you can change the time range limit as well to see teh result of a specific time interval. You can scroll right on the **Results** section and see more details and description about the each and every process. 
+
+      ```
+      VMProcess 
+      | where TimeGenerated > ago(24h) 
+      | limit 10
+      ```
+
+    ![](.././media/as-11.png)   
+    
+1. You can save the query for later use, by clicking on **Save** button and then provide any name for the query **Name** and **Category**, then **Save**.
+
+    ![](.././media/as-12.png) 
+
+1. You can see and run the saved **queries** by browsing to **Query Explore** and then **Saved Queries**.
+
+    ![](.././media/as-12.png) 
+
     
