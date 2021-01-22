@@ -120,7 +120,7 @@ In this task, you will verify if the Kubernetes cluster is connected to Azure Ar
   
     ![](.././media/0.png "edge")
     
-1. On **Sign in to Microsoft Azure** tab you will see login screen, in that enter following **Email/Username** and then click on **Next**. 
+1. On **Sign into Microsoft Azure** tab you will see login screen, in that enter following **Email/Username** and then click on **Next**. 
    * Email/Username: <inject key="AzureAdUserEmail"></inject>
    
 1. Now enter the following **Password** and click on **Sign in**.
@@ -132,7 +132,7 @@ In this task, you will verify if the Kubernetes cluster is connected to Azure Ar
 
 1. If **Welcome to Microsoft Azure** popup window appears, click **Maybe Later** to skip the tour.
 
-1. Navigate to the Resource Group from the Azure portal navigate section and Cloick on teh Resource Group named **Azure-ARC** and there will be a resource with type **Azure Arc enabled Kubernetes resource**
+1. Navigate to the Resource Group from the Azure portal navigate section and Click on the Resource Group named **azure-arc** and there will be a resource with type **Azure Arc enabled Kubernetes resource**
 
    ![](.././media/varify-in-azure.png "Varify in Azure")
 
@@ -147,7 +147,7 @@ In this task, you will verify if the Kubernetes cluster is connected to Azure Ar
    ![](.././media/get-pods.png)
    
 ## Task 5: Create a policy assignment to identify compliant/non-compliant resources
-Policies can be applied to ARC servers the same way they are applied to Microsoft Azure virtual machines. Policies can be applied to ensure the Azure resources are compliant with established practices such as ensuring that all resources are tagged with an owner. Initiatives can be applied to ensure the server operating systems are compliant such as ensuring the time zone is set correctly on a Microsoft Windows server or a software package is installed on a Linux server. The initiatives use a publish policy to deploy a configuration requirement and an audit policy to check if the requirement has been met. In this task, we will br deploying the **Log Analytics Workspace** using policy on ubuntu-k8s machine, which you onboarded earlier to Azure Arc.
+Policies can be applied to ARC servers the same way they are applied to Microsoft Azure virtual machines. Policies can be applied to ensure the Azure resources are compliant with established practices such as ensuring that all resources are tagged with an owner. Initiatives can be applied to ensure the server operating systems are compliant such as ensuring the time zone is set correctly on a Microsoft Windows server or a software package is installed on a Linux server. The initiatives use a publish policy to deploy a configuration requirement and an audit policy to check if the requirement has been met. In this task, we will be deploying the **Log Analytics Workspace** using policy on ubuntu-k8s machine, which you onboarded earlier to Azure Arc.
 
 1. From the Azure Poral ```http://portal.azure.com/```, search for ```Azure Arc``` from search box and then click **Azure Arc**. 
 
@@ -177,7 +177,7 @@ Policies can be applied to ARC servers the same way they are applied to Microsof
 
     ![](.././media/deployloganalytics.png)
     
-1. After selecting the policy defination, move to the **Parameters** blade by clicking on **Next** button from the bottom.
+1. After selecting the policy definition, move to the **Parameters** blade by clicking on **Next** button from the bottom.
 
     ![](.././media/basic-next.png)
     
@@ -193,13 +193,13 @@ Policies can be applied to ARC servers the same way they are applied to Microsof
 
     ![](.././media/create-policy-assignment.png)
     
-1. Now, once the policy assignment is created, you will see Deploy Log Analytics Workspace for lInux on assigned policies list in Compliant state, it can also take some time to convert in **Compliant** state.
+1. Now, once the policy assignment is created, you will see Deploy Log Analytics Workspace for linux on assigned policies list in Compliant state, it can also take some time to convert in **Compliant** state.
 
     ![](.././media/ws-compliant.png)    
 
 ## Task 6: Monitor Arc Enabled machines with Azure Monitor
 
-Azure Monitor can collect data directly from your hybrid machines into a Log Analytics workspace for detailed analysis and correlation. Typically this would entail installing the Log Analytics agent on the machine using a script, manually, or automated method following your configuration management standards. Arc enabled servers recently introduced support to install the Log Analytics and Dependency agent VM extensions for Windows and Linux, enabling Azure Monitor to collect data from your non-Azure VMs.
+Azure Monitor can collect data directly from your hybrid machines into a Log Analytics workspace for detailed analysis and correlation. Typically, this would entail installing the Log Analytics agent on the machine using a script, manually, or automated method following your configuration management standards. Arc enabled servers recently introduced support to install the Log Analytics and Dependency agent VM extensions for Windows and Linux, enabling Azure Monitor to collect data from your non-Azure VMs.
 
 In this task, you will  configure and collect data from your Linux machine by enabling Azure Monitor for VMs following a simplified set of steps, which streamlines the experience and takes a shorter amount of time.
 
