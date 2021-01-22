@@ -19,7 +19,7 @@ In this exercise, you will onboard SQL Server to Azure Arc using Azure Portal an
 
 1. If **Welcome to Microsoft Azure** pop-up window appears, click **Maybe Later** to skip the tour.
       
-1. Click on search blade at the top and search for ```SQL Server```, select **SQL Server - Azure Arc**.
+1. Click on the search blade at the top and search for ```SQL Server```, select **SQL Server - Azure Arc**.
  
     ![](.././media/sqlserver.png "sqlsearch")
    
@@ -57,11 +57,11 @@ In this exercise, you will onboard SQL Server to Azure Arc using Azure Portal an
  
     ![](.././media/powershell.png "sqlsearch")
   
-1. Run the below command to change the directory to where the Script is download.
+1. Then, run the below command to change the directory to where the Script gets downloaded.
  
      ``` cd C:\LabFiles ```
      
-1. After changing the directory to **Lab files**, Run the below command:
+1. After changing the directory to **Lab files**, run the command given below:
 
      ``` .\Execute-RegisterSqlServerArc.ps1 ```
      
