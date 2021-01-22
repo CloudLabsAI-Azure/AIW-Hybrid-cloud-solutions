@@ -75,11 +75,11 @@ In this exercise, you will onboard SQL Server to Azure Arc using Azure Portal an
 
     ![](.././media/completed.png "sqlsearch")
   
-1. Go back to the Azure portal and search for the **SQL Server -Azure Arc**. You will see one resource that we just created using the PowerShell script in the previous step.
+1. Go back to the Azure portal and search for **SQL Server -Azure Arc**. You will see one resource that we just created using the PowerShell script in the previous step.
 
     ![](.././media/sqlvm.png "sqlsearch")
   
- 1. Select the **SQLVM** resource and, now you can see the dashboard of **SQLVM** SQL Server -Azure Arc.
+ 1. Select the **SQLVM** resource and, now you can see the dashboard of **SQLVM** SQL Server -Azure Arc from Azure Portal.
 
     ![](.././media/dashsql.png "sqlsearch")
  
@@ -87,7 +87,7 @@ In this exercise, you will onboard SQL Server to Azure Arc using Azure Portal an
 ## Task 3: Run on-demand SQL Assessment.
 
 
- 1. Search for Log analytics workspace and select **Agent management** from the left side menu and copy the value of **Workspace ID** and **Primary Key** and save in a notepad for later use.
+ 1. Search for Log analytics workspace, then select **Agents management** from the left side menu and copy the value of **Workspace ID** and **Primary Key** and save in a notepad for later use.
  
     ![](.././media/log.png "sqlsearch")
 
