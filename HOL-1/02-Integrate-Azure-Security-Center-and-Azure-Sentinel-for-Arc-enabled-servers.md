@@ -23,11 +23,11 @@ Using this approach, you use the Azure Policy Deploy Log Analytics agent to Linu
 
     ![](.././media/as-02.png)
     
-1. Select the existing log analytics workspace shown named ```LogAnaliticsWS-xxxxxx``` and then click on **Add** button.
+1. Select the existing log analytics workspace shown named ```LogAnalyticsWS-xxxxxx``` and then click on **Add** button.
 
     ![](.././media/as-03.png)
     
- 1. You will see a notification on upper right cornor **Adding Azure Sentinel**. It will take few second to add.
+ 1. You will see a notification on upper right corner **Adding Azure Sentinel**. It will take few second to add.
  
     ![](.././media/as-04.png)
     
