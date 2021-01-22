@@ -91,9 +91,9 @@ In this exercise, you will onboard SQL Server to Azure Arc using Azure Portal an
  
     ![](.././media/log.png "sqlsearch")
 
- 1. Open Azure Portal and go to Resource group **azure-arc** and search for **SQLVM** Server and select.
+ 1. Open Azure Portal and go to Resource group **azure-arc-SUFFIX** and search for **SQLVM** Server and select.
  
-    ![](.././media/sqlserver1.png "sqlsearch") 
+    ![](.././media/sqlserver.png "sqlsearch") 
     
  1. Now click on the **Extension** button from the left side menu and click on the **Add** button to add a new extension.
  
