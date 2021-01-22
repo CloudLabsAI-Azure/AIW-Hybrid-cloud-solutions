@@ -8,7 +8,7 @@ Hyper-V is Microsoft's hardware virtualization product. It lets you create and r
 
 1. You can see a virtual machine desktop 💻 (LabVM/ARCHOST) is loaded in the left side in your browser. Use this virtual machine throughout the workshop to perform the the lab. You can also connect to the virtual machine using RDP using the ARCHOST VM credentials provided on **Environment Details** tab. Double click on the **Hyper-V Manager** for VM desktop to start the Hyper-V Manager
 
-    ![](.././media/cloudlab-vm-guide.png "Lab Environment")
+    ![](.././media/cloudlab-vm-guidev1.png "Lab Environment")
 
 1. Select **ARCHOST** to connect with Local Hyper-V server. In your Machine there could be a unique suffix added at end of **ARCHOST**, something like **ARCHOST-XXXXXX**.
 
