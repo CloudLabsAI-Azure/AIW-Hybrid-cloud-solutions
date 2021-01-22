@@ -41,7 +41,7 @@ In this Exercise you will onboard SQL Server to Azure Arc using Azure Portal and
      - Operating Systems: Select **windows**.
        Now click on next button.
    
-    ![](.././media/detailssql.png "sqlsearch")
+    ![](.././media/detailsql.png "sqlsearch")
    
 1. Leave default for tags blade and click on **Next: Run Script** button.
  
