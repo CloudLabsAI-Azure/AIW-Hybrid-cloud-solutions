@@ -135,7 +135,7 @@ In this task, you will verify if the Kubernetes cluster is connected to Azure Ar
 
 1. Navigate to the Resource Group from the Azure portal navigate section and Click on the Resource Group named **azure-arc** and there will be a resource with type **Azure Arc enabled Kubernetes resource**
 
-   ![](.././media/varify-in-azure.png "Varify in Azure")
+   ![](.././media/varify-in-azure1.png "Varify in Azure")
 
 1. Azure Arc enabled Kubernetes deploys a few operators into the azure-arc namespace. You can view these deployments and pods by running the command:
 
@@ -152,7 +152,7 @@ Policies can be applied to ARC servers the same way they are applied to Microsof
 
 1. From the Azure Portal ```http://portal.azure.com/```, search for ```Azure Arc``` from the search box and then click **Azure Arc**. 
 
-    ![](.././media/searchAzureArc.png)
+    ![](.././media/searchAzureArc1.png)
     
 1. Select **Servers** from the options on the Azure Arc blade.
 
@@ -160,7 +160,7 @@ Policies can be applied to ARC servers the same way they are applied to Microsof
     
 1. Explore the **ubuntu-k8s** server from connected machines. 
 
-    ![](.././media/ubuntu-k8s-server.png)
+    ![](.././media/ubuntu-k8s-server1.png)
     
 1. From **ubuntu-k8s** server blade, select **Policies** under **Operations**.
 
@@ -206,7 +206,7 @@ In this task, you will configure and collect data from your Linux machine by ena
 
 1. From the Azure Portal ```http://portal.azure.com/```, search for ```Azure Arc``` from the search box and then click **Azure Arc**. 
 
-    ![](.././media/searchAzureArc.png)
+    ![](.././media/searchAzureArc1.png)
     
 1. Select **Servers** from the options on the Azure Arc blade.
 
@@ -214,7 +214,7 @@ In this task, you will configure and collect data from your Linux machine by ena
     
 1. Explore the **ubuntu-k8s** server from connected machines. 
 
-    ![](.././media/ubuntu-k8s-server.png)
+    ![](.././media/ubuntu-k8s-server1.png)
 
 1. Select **Insights** from **Monitoring** options.
 
@@ -240,7 +240,7 @@ In this task, you will configure and collect data from your Linux machine by ena
 
 1. Once the **Deployment is succeeded**, go back to the **Insights** blade for ubuntu-k8s VM and then refresh the page once, you may have to re-click on the **Enable** button and refresh the page again to see the Insights. Data will take approx 10 minutes to be routed to the Insights from your Linux machine: ubuntu-k8s.
 
-    ![](.././media/deployment-succeeded.png)
+    ![](.././media/insight11.png)
 
 1. Once the Insights are ready, click on the **Performance** to review Logical Disk Operations, CPU Utilization, Available Memory, Logical Disk IOPS, Logical Disk MB/s, and much more. It is exciting to see the **graphical representation** on VM performance, whether the VM is deployed on-prem, on other cloud provider platforms, or any edge technologies.
 
