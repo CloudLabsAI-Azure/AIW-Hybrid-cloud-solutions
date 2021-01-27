@@ -81,7 +81,7 @@ In this exercise, you will onboard SQL Server to Azure Arc using Azure Portal an
   
  1. Select the **SQLVM** resource and, now you can see the dashboard of **SQLVM** SQL Server -Azure Arc from Azure Portal.
 
-    ![](.././media/dashsql.png "sqlsearch")
+    ![](.././media/dashsql1.png "sqlsearch")
  
  
 ## Task 3: Run on-demand SQL Assessment.
