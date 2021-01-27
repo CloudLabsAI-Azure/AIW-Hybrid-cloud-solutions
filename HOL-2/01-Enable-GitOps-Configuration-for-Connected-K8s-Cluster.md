@@ -42,7 +42,7 @@ You will be using the Kubernetes cluster with which you connected in the earlier
    - Replace **your personal github account name** with your personal github account that you are using to perform the lab and Signed in above.
 
    ```
-   az k8sconfiguration create --name cluster-config --cluster-name microk8s-cluster --resource-group $ResourseGroup --operator-instance-name cluster-config --operator-namespace cluster-config --repository-url https://github.com/<your personal github account name>/arc-k8s-demo --scope cluster --cluster-type connectedClusters
+   az k8sconfiguration create --name cluster-config --cluster-name microk8s-cluster --resource-group $ResourceGroup --operator-instance-name cluster-config --operator-namespace cluster-config --repository-url https://github.com/<your personal github account name>/arc-k8s-demo --scope cluster --cluster-type connectedClusters
    ```
    
    The output should be as shown:
