@@ -56,7 +56,7 @@ You will be using the Kubernetes cluster with which you connected in the earlier
 1. Validate whether the **sourceControlConfiguration** was successfully created and the **compliance** state is Installed. If it is pending, retry the same command again after sometime.
 
    ```
-   az k8sconfiguration show --resource-group $ResourseGroup --name cluster-config --cluster-name microk8s-cluster --cluster-type connectedClusters
+   az k8sconfiguration show --resource-group $ResourceGroup --name cluster-config --cluster-name microk8s-cluster --cluster-type connectedClusters
    ```
      > Note: that the sourceControlConfiguration resource is updated with compliance status, messages, and debugging information in the output.
 
