@@ -6,7 +6,7 @@ In this task you will select an existing policy definition and create a policy a
 
 1. From the Azure Portal ```https://portal.azure.com```, navigate to the resource group you have access to and click on microk8s-cluster resource. 
 
-    ![](.././media/015.png)
+    ![](.././media/0151.png)
 
 1. From the **Kuberenetes Azure Arc** blade, click on **Go to Policies** under Configure Azure Policy.
 
