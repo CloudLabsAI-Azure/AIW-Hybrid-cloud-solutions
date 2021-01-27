@@ -127,7 +127,7 @@ In this exercise, you will onboard SQL Server to Azure Arc using Azure Portal an
     
  1. Now, open the PowerShell from your LABVM Desktop and run this command to copy this script in the **SQLVM** Machine.
     
-    ``` Copy-VMFile "sqlvm" -SourcePath "C:\Users\arcadmin\DownloadsAddSqlAssessment.ps1" -DestinationPath "C:\LabFiles\DownloadsAddSqlAssessment.ps1" -CreateFullPath -FileSource Host ```
+    ``` Copy-VMFile "sqlvm" -SourcePath "C:\Users\arcadmin\Downloads\AddSqlAssessment.ps1" -DestinationPath "C:\LabFiles\AddSqlAssessment.ps1" -CreateFullPath -FileSource Host ```
     
  1. Now, open your **SQLVM** from the Hyper-VManager and enter **demo@pass123** to login.
  
