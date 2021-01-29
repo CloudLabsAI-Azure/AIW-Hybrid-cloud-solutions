@@ -73,17 +73,27 @@ In this task, we will learn to onboard the Linux VMs and local Kubernetes cluste
 
 In this task, we will learn to onboard the local Kubernetes cluster to Azure Arc. So, here we onboard **MicroK8s** Kubernetes cluster to Azure ARC which is hosted on **ubuntu-k8s** VM. For this task, the Microk8s Kubernetes cluster is already configured, also Arc enabled CLI extensions are installed.
 
- > Note: If you have closed the putty after completing **task 2**, then perform the first 6 steps of task 2 again and then jump to this task. 
+ > Note: If you have closed the putty after completing **task 2**, then perform the first 6 steps of task 2 again and then jump to this task. Also, all steps need to be performed with root user in ubuntu-k8s vm.
 
-1. Now, we need to run the commands as demouser instead of root user, if you are logged in as root user, enter ```exit``` command to get back on **demouser**.
+1. Install helm using following commands:
 
-    ![](.././media/exit-from-root.png "Exit root user")
+    ```
+    curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3
+    chmod 700 get_helm.sh
+    ./get_helm.sh
+    
+    ```
+    
+    ![](.././media/installhelm.png "installhelm")
 
 1. Update the Arc enabled Kubernetes CLI extensions, if there will be any update these commands will update the k8s extensions.
+
     ```
     az extension update --name connectedk8s
     az extension update --name k8sconfiguration
+    
     ```
+    
     ![](.././media/update-k8s-extensions.png "Update Az k8s extensions")
     
 1. Now, check the status of the Kubernetes cluster by running ```microk8s.status``` as demouser in **ubuntu-k8s** VM. You can proceed further if it is running. If it is in a stopped state, you may have to run ```microk8s start``` command to run the Kubernetes cluster.
@@ -102,8 +112,7 @@ In this task, we will learn to onboard the local Kubernetes cluster to Azure Arc
     
 1. Once the previous command executed successfully, check the **provisioning state** in output, it should be in succeeded status.
 
-    ![](.././media/k8s-connected1.png "Kubernetes Cluster Connected")
-    
+    ![](.././media/k8s-connected1.png "Kubernetes Cluster Connected")    
 
 ## Task 4: Verify if the Kubernetes cluster is connected to Azure Arc
 
