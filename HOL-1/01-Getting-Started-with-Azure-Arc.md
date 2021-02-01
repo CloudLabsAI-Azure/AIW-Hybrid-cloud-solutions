@@ -1,6 +1,6 @@
 # Exercise 1: Getting started with Azure Arc
 
-Azure Arc extends Azure Resource Manager capabilities to Linux and Windows servers, as well as Kubernetes clusters on any infrastructure across on-premises, multi-cloud, and edge. With Azure Arc, customers can also run Azure data services anywhere, realizing the benefits of cloud innovation, including always up-to-date data capabilities, deployment in seconds (rather than hours), and dynamic scalability on any infrastructure. Azure Arc for servers is currently in public preview.
+Azure Arc extends Azure Resource Manager capabilities to Linux and Windows servers, as well as Kubernetes clusters on any infrastructure across on-premises, multi-cloud, and edge. With Azure Arc, customers can also run Azure data services anywhere, realizing the benefits of cloud innovation, including always up-to-date data capabilities, deployment in seconds (rather than hours), and dynamic scalability on any infrastructure. 
 
 ## Task 1: Login and become familiar with Hyper-V Infrastructure
 
@@ -9,6 +9,30 @@ Hyper-V is Microsoft's hardware virtualization product. It lets you create and r
 1. You can see a virtual machine desktop 💻 (LabVM/ARCHOST) is loaded on the left side in your browser. Use this virtual machine throughout the workshop to perform the lab. You can also connect to the virtual machine using RDP using the ARCHOST VM credentials provided on the **Environment Details** tab. Double click on the **Hyper-V Manager** from VM desktop to start the Hyper-V Manager
 
     ![](.././media/cloudlab-vm-guidev1.png "Lab Environment")
+
+1. In the **LabVM/ARCHost VM**, click on the Azure portal shortcut of Microsoft Edge browser which is created on the desktop.
+  
+    ![](.././media/0.png "edge")
+    
+1. On the **Sign into Microsoft Azure** tab you will see the login screen, in that enter following **Email/Username** and then click on **Next**. 
+   * Email/Username: <inject key="AzureAdUserEmail"></inject>
+   
+1. Now enter the following **Password** and click on **Sign in**.
+   * Password: <inject key="AzureAdUserPassword"></inject>
+   
+1. If you see the pop-up **Stay Signed in?**, click No
+
+1. If you see the pop-up **You have free Azure Advisor recommendations!**, close the window to continue the lab.
+
+1. If **Welcome to Microsoft Azure** popup window appears, click **Maybe Later** to skip the tour.
+
+1. Navigate to the Resource Group from the Azure portal navigate section.
+
+    ![](.././media/navigate-resource-group.png "Select Resource Group from Navigate Option")    
+
+1. Click on the Resource Group named **azure-arc**. You will be using this resource group through out the lab.
+
+    ![](.././media/azure-arc-rg.png "Select azure-arc Resource Group")
 
 1. Select **ARCHOST** to connect with the Local Hyper-V server. In your Machine, there could be a unique suffix added at end of **ARCHOST**, something like **ARCHOST-XXXXXX**.
 
@@ -22,7 +46,7 @@ Hyper-V is Microsoft's hardware virtualization product. It lets you create and r
     
 ## Task 2: Onboard Linux Machine to Azure Arc
 
-In this task, we will learn to onboard the Linux VMs and local Kubernetes cluster to Azure Arc. So, here we will onboard **ubuntu-k8s** VM to Azure ARC.
+In this task, we will learn to onboard the Linux VMs and local Kubernetes cluster to Azure Arc. So, here we will onboard **ubuntu-k8s** VM to Azure Arc.
 
 1. From the start menu of the ARCHOST VM, search for **putty** and open it with a double click or another way.
 
@@ -50,17 +74,23 @@ In this task, we will learn to onboard the Linux VMs and local Kubernetes cluste
     
 1. Now, download the Azure Arc installation package for Linux, run the below command:
 
-    ```wget https://aka.ms/azcmagent -O ~/install_linux_azcmagent.sh```
+    ```
+    wget https://aka.ms/azcmagent -O ~/install_linux_azcmagent.sh
+    ```
     
-    ![](.././media/download-arc-agent.png "Download ARC Linux Agent")
+    ![](.././media/download-arc-agent.png "Download Arc Linux Agent")
     
-1. Install Azure Arc agent by running : ```bash ~/install_linux_azcmagent.sh```
+1. Install Azure Arc agent by running :
 
-    ![](.././media/run-installation.png "Install ARC Agent")
+    ```
+    bash ~/install_linux_azcmagent.sh
+    ```
+
+    ![](.././media/run-installation.png "Install Arc Agent")
     
 1. Once the installation is successful, you will see the following message in terminal **Latest version of azcmagent is installed**.
 
-    ![](.././media/arcagent-installed.png "ARC Agent latest version installed")    
+    ![](.././media/arcagent-installed.png "Arc Agent latest version installed")    
     
 1. Finally, connect the ubuntu-k8s machine to Azure Arc. Run following connect command.  Once you run the below command, it will take few minutes to onboard the machine to Azure Arc. 
     
