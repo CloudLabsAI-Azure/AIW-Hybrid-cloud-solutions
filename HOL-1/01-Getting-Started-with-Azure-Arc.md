@@ -12,7 +12,7 @@ Hyper-V is Microsoft's hardware virtualization product. It lets you create and r
 
 1. In the **LabVM/ARCHost VM**, click on the Azure portal shortcut of Microsoft Edge browser which is created on the desktop.
   
-    ![](.././media/0.png "edge")
+    ![](.././media/select-azureportal.png "Select Azure Portal")
     
 1. On the **Sign into Microsoft Azure** tab you will see the login screen, in that enter following **Email/Username** and then click on **Next**. 
    * Email/Username: <inject key="AzureAdUserEmail"></inject>
@@ -162,7 +162,7 @@ In this task, you will verify if the Kubernetes cluster is connected to Azure Ar
    
 1. In the **LabVM/ARCHost VM**, click on the Azure portal shortcut of Microsoft Edge browser which is created on the desktop.
   
-    ![](.././media/0.png "edge")
+    ![](.././media/select-azureportal.png "edge")
     
 1. On the **Sign into Microsoft Azure** tab you will see the login screen, in that enter following **Email/Username** and then click on **Next**. 
    * Email/Username: <inject key="AzureAdUserEmail"></inject>
