@@ -6,7 +6,7 @@ Azure Arc extends Azure Resource Manager capabilities to Linux and Windows serve
 
 Hyper-V is Microsoft's hardware virtualization product. It lets you create and run a software version of a computer, called a virtual machine. Each virtual machine acts like a complete computer, running an operating system and programs. When you need computing resources, virtual machines give you more flexibility, help save time and money, and are a more efficient way to use hardware than just running one operating system on physical hardware. In this task, you will walk through an on-prem environment that is hosted on Hyper-V. You will find three virtual machines hosted on the Hyper-V server, which you will onboard to Azure Arc and play around with.
 
-1. You can see a virtual machine desktop 💻 (LabVM/ARCHOST) is loaded on the left side in your browser. Use this virtual machine throughout the workshop to perform the lab. You can also connect to the virtual machine using RDP using the ARCHOST VM credentials provided on the **Environment Details** tab. Double click on the **Hyper-V Manager** from VM desktop to start the Hyper-V Manager
+1. You can see a virtual machine desktop 💻 (LabVM/ARCHOST) is loaded on the left side in your browser. Use this virtual machine throughout the workshop to perform the lab. You can also connect to the virtual machine using RDP using the ARCHOST VM credentials provided on the **Environment Details** tab.
 
     ![](.././media/cloudlab-vm-guidev1.png "Lab Environment")
 
@@ -33,6 +33,10 @@ Hyper-V is Microsoft's hardware virtualization product. It lets you create and r
 1. Click on the Resource Group named **azure-arc**. You will be using this resource group through out the lab.
 
     ![](.././media/azure-arc-rg.png "Select azure-arc Resource Group")
+
+1. Double click on the **Hyper-V Manager** from VM desktop to start the Hyper-V Manager.
+
+    ![](.././media/select-hyper-v.png "Select hyper-v from desktop")
 
 1. Select **ARCHOST** to connect with the Local Hyper-V server. In your Machine, there could be a unique suffix added at end of **ARCHOST**, something like **ARCHOST-XXXXXX**.
 
