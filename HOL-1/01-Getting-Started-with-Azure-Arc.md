@@ -80,6 +80,7 @@ In this task, we will learn to onboard the Linux VMs and local Kubernetes cluste
 
     ```
     wget https://aka.ms/azcmagent -O ~/install_linux_azcmagent.sh
+
     ```
     
     ![](.././media/download-arc-agent.png "Download Arc Linux Agent")
@@ -88,6 +89,7 @@ In this task, we will learn to onboard the Linux VMs and local Kubernetes cluste
 
     ```
     bash ~/install_linux_azcmagent.sh
+
     ```
 
     ![](.././media/run-installation.png "Install Arc Agent")
@@ -98,10 +100,21 @@ In this task, we will learn to onboard the Linux VMs and local Kubernetes cluste
     
 1. Finally, connect the ubuntu-k8s machine to Azure Arc. Run following connect command.  Once you run the below command, it will take few minutes to onboard the machine to Azure Arc. 
     
-    ```azcmagent connect --resource-group $ResourceGroup --tenant-id $TenantID --location $location --subscription-id $SubscriptionId -i $AppID -p $AppSecret```
+    ```
+    azcmagent connect --resource-group $ResourceGroup --tenant-id $TenantID --location $location --subscription-id $SubscriptionId -i $AppID -p $AppSecret
+
+    ```
       > Remember, we are using variables declared earlier in step 5. If you have connected with a new putty session, you may have to run steps 4,5,6 again.
      
     ![](.././media/connected-azure-arc.png "Connected to Arc")
+
+1. Let's varify the onboarding of **ubuntu-k8s** server on Azure Arc from Azure portal. Switch to the browser tab where you have logged in already in step 1 and browse **azure-arc** resource group to verify the **ubuntu-k8s** resource got created of resource type: **Server - Azure Arc**. Click on **ubuntu-k8s**.
+
+    ![](.././media/varify-onboard-arc-ubuntuk8s.png "ubuntu k8s onboarded")
+
+1. On **ubuntu-k8s** Server - Azure Arc **Overview**, varify the status is **Connected**, also other details can be checked from this tab like Computer name, Operating system, Operating system version and Agent version. 
+
+    ![](.././media/ubuntu-k8s-overview-status.png "ubuntu k8s onboard status check")
 
 ## Task 3: Onboard Kubernetes Cluster to Azure Arc
 
@@ -140,7 +153,10 @@ In this task, we will learn to onboard the local Kubernetes cluster to Azure Arc
     
 1. Connect the Kubernetes cluster to Azure Arc by executing the following command, once you run the command, it will take few minutes to onboard Kubernetes Cluster to onboard to Azure Arc.
 
-      ```az connectedk8s connect --name microk8s-cluster --resource-group $ResourceGroup -l $location```
+      ```
+      az connectedk8s connect --name microk8s-cluster --resource-group $ResourceGroup -l $location
+      
+      ```
     
     ![](.././media/connect-k8s.png "Connect Kubernetes")
     
@@ -156,6 +172,7 @@ In this task, you will verify if the Kubernetes cluster is connected to Azure Ar
    
    ```
    az connectedk8s list -g $ResourceGroup -o table
+
    ```
      
    ![](.././media/check-k8s-connection.png "Varify Micro-k8s cluster is connected")
@@ -191,7 +208,7 @@ In this task, you will verify if the Kubernetes cluster is connected to Azure Ar
    ![](.././media/get-pods.png)
    
 ## Task 5: Create a policy assignment to identify compliant/non-compliant resources
-Policies can be applied to ARC servers the same way they are applied to Microsoft Azure virtual machines. Policies can be applied to ensure the Azure resources are compliant with established practices such as ensuring that all resources are tagged with an owner. Initiatives can be applied to ensure the server operating systems are compliant such as ensuring the time zone is set correctly on a Microsoft Windows server or a software package is installed on a Linux server. The initiatives use a publish policy to deploy a configuration requirement and an audit policy to check if the requirement has been met. In this task, we will be deploying the **Log Analytics Workspace** using policy on ubuntu-k8s machine, which you onboarded earlier to Azure Arc.
+Policies can be applied to Arc enabled servers the same way they are applied to Microsoft Azure virtual machines. Policies can be applied to ensure the Azure resources are compliant with established practices such as ensuring that all resources are tagged with an owner. Initiatives can be applied to ensure the server operating systems are compliant such as ensuring the time zone is set correctly on a Microsoft Windows server or a software package is installed on a Linux server. The initiatives use a publish policy to deploy a configuration requirement and an audit policy to check if the requirement has been met. In this task, we will be deploying the **Log Analytics Workspace** using policy on ubuntu-k8s machine, which you onboarded earlier to Azure Arc.
 
 1. From the Azure Portal ```http://portal.azure.com/```, search for ```Azure Arc``` from the search box and then click **Azure Arc**. 
 
@@ -292,4 +309,3 @@ In this task, you will configure and collect data from your Linux machine by ena
 1. Click on **Map** and review the **ubuntu-k8s** with few running **Progresses**. Also, you can explore machine properties from the right. If there will be any **Alerts** you can check it by clicking on **Alerts** in right 👉.
 
     ![](.././media/map.png)
-    
