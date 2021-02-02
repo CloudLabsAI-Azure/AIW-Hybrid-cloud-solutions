@@ -147,10 +147,6 @@ In this task, we will learn to onboard the local Kubernetes cluster to Azure Arc
 
     ![](.././media/k8s-status-running.png "check cluster cluster")
     
-1. There is a file ```installArcAgentLinux.txt``` on ARCHOST VM desktop 💻. Open that and copy the first 7 lines and paste in putty to declare the values of AppID, AppSecret, TenantID, SubscriptionID, ResourceGroup, and location and then **login to azure** using the 7th line. You can also find the values of these variables in the **Environment Details** tab and then use them in the next steps.
-
-    ![](.././media/login-to-azure.png "Login to Azure")
-    
 1. Connect the Kubernetes cluster to Azure Arc by executing the following command, once you run the command, it will take few minutes to onboard Kubernetes Cluster to onboard to Azure Arc.
 
       ```
@@ -177,23 +173,7 @@ In this task, you will verify if the Kubernetes cluster is connected to Azure Ar
      
    ![](.././media/check-k8s-connection.png "Varify Micro-k8s cluster is connected")
    
-1. In the **LabVM/ARCHost VM**, click on the Azure portal shortcut of Microsoft Edge browser which is created on the desktop.
-  
-    ![](.././media/select-azureportal.png "edge")
-    
-1. On the **Sign into Microsoft Azure** tab you will see the login screen, in that enter following **Email/Username** and then click on **Next**. 
-   * Email/Username: <inject key="AzureAdUserEmail"></inject>
-   
-1. Now enter the following **Password** and click on **Sign in**.
-   * Password: <inject key="AzureAdUserPassword"></inject>
-   
-1. If you see the pop-up **Stay Signed in?**, click No
-
-1. If you see the pop-up **You have free Azure Advisor recommendations!**, close the window to continue the lab.
-
-1. If **Welcome to Microsoft Azure** popup window appears, click **Maybe Later** to skip the tour.
-
-1. Navigate to the Resource Group from the Azure portal navigate section and Click on the Resource Group named **azure-arc** and there will be a resource with type **Azure Arc enabled Kubernetes resource**
+1. Navigate to the Resource Group from the Azure portal navigate section and Click on the Resource Group named **azure-arc** and there will be a resource **microk8s-cluster** of resource type **Azure Arc enabled Kubernetes resource**.
 
    ![](.././media/varify-in-azure1.png "Varify in Azure")
 
@@ -201,6 +181,7 @@ In this task, you will verify if the Kubernetes cluster is connected to Azure Ar
 
    ```
    kubectl -n azure-arc get deployments,pods
+
    ```
    
    The output should be similar as shown:
