@@ -112,7 +112,7 @@ In this task, we will learn to onboard the Linux VMs and local Kubernetes cluste
 
     ![](.././media/varify-onboard-arc-ubuntuk8s.png "ubuntu k8s onboarded")
 
-1. On **ubuntu-k8s** Server - Azure Arc **Overview**, varify the status is **Connected**, also other details can be checked from this tab like Computer name, Operating system, Operating system version and Agent version. 
+1. On **ubuntu-k8s** Server - Azure Arc **Overview**, varify the status is **Connected**, also other details can be checked from this tab like Computer name, Operating system, Operating system version and Agent version of ubuntu machine. 
 
     ![](.././media/ubuntu-k8s-overview-status.png "ubuntu k8s onboard status check")
 
