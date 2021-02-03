@@ -85,11 +85,11 @@ You can connect your non-Azure computers in any of the following ways:
 
 1. From the Getting Started tab, scroll down and select **Upgrade**.
 
-    ![](.././media/select-inventory.png)
-    
+    ![](.././media/upgrade-security-center.png)
+ 
 1. Click on **Inventory** from the **Security Center**.
 
-    ![](.././media/upgrade-security-center.png)
+    ![](.././media/select-inventory.png)
     
 1. From the **Inventory** tab, click on the **Add non-Azure servers**.
 
