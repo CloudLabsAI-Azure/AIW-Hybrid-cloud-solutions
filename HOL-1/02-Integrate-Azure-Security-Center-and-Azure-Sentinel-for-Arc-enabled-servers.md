@@ -73,7 +73,7 @@ Using this approach, you use the Azure Policy Deploy Log Analytics agent to Linu
 
     ![](.././media/as-13.png) 
     
-## Enable Azure Security Center
+## Task 2: Enable Azure Security Center
 Security Center can monitor the security posture of your non-Azure computers, but first you need to connect them to Azure.
 You can connect your non-Azure computers in any of the following ways:
   * Using Azure Arc enabled servers **(recommended)**
@@ -85,7 +85,7 @@ You can connect your non-Azure computers in any of the following ways:
 
 1. From the Getting Started tab, scroll down and select **Upgrade**.
 
-    ![](.././media/upgrade-security-center.png)
+    ![](.././media/select-inventory.png)
     
 1. Click on **Inventory** from the **Security Center**.
 
@@ -103,5 +103,5 @@ You can connect your non-Azure computers in any of the following ways:
 
     ![](.././media/ss-ubuntuk8s-monitor.png)
     
- 
+1. 
 
