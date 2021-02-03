@@ -72,3 +72,36 @@ Using this approach, you use the Azure Policy Deploy Log Analytics agent to Linu
 1. You can see and run the saved **queries** by browsing to **Query Explorer** and then **Saved Queries**.
 
     ![](.././media/as-13.png) 
+    
+## Enable Azure Security Center
+Security Center can monitor the security posture of your non-Azure computers, but first you need to connect them to Azure.
+You can connect your non-Azure computers in any of the following ways:
+  * Using Azure Arc enabled servers **(recommended)**
+  * From Security Center's pages in the Azure portal **(Getting started and Inventory)**
+ 
+1. Search for **Security Center** in Azure portal search bar and then click on **Security Center**.
+    
+    ![](.././media/search-security-center.png)
+
+1. From the Getting Started tab, scroll down and select **Upgrade**.
+
+    ![](.././media/upgrade-security-center.png)
+    
+1. Click on **Inventory** from the **Security Center**.
+
+    ![](.././media/upgrade-security-center.png)
+    
+1. From the **Inventory** tab, click on the **Add non-Azure servers**.
+
+    ![](.././media/add-non-azure-servers.png)
+    
+1. On **Onboard servers to Security Center** click on **Upgrade** to upgrade the existing log analytics workspace **LogAnalyticWS-xxxxx**.
+
+    ![](.././media/upgrade-log-analytics.png)
+    
+1. Now, go back to **Inventory** tab and then you will see few connected resources. You can also find the **ubuntu-k8s** Arc enabled servers is available in the resources list because **LogAnalytics** agent is already enabled for it and the same Log Analytics workspace is connected to Security Center. 
+
+    ![](.././media/ss-ubuntuk8s-monitor.png)
+    
+ 
+
