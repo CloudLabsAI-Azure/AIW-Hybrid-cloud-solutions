@@ -27,15 +27,15 @@ Using this approach, you use the Azure Policy Deploy Log Analytics agent to Linu
 
     ![](.././media/as-031.png)
     
- 1. You will see a notification on the upper right corner **Adding Azure Sentinel**. It will take few seconds to add.
+1. You will see a notification on the upper right corner **Adding Azure Sentinel**. It will take few seconds to add.
  
     ![](.././media/as-041.png)
     
- 1. Once the Azure Sentinel is added you will see another notification: **Successfully added Azure Sentinel**.
+1. Once the Azure Sentinel is added you will see another notification: **Successfully added Azure Sentinel**.
      
     ![](.././media/as-05.png)
  
- 1. Click on the **Overview** on Azure Sentinel blade and you will start seeing insights after few minutes, if you don't see the insights wait for few minutes and then refresh the browser tab.
+1. Click on the **Overview** on Azure Sentinel blade and you will start seeing insights after few minutes, if you don't see the insights wait for few minutes and then refresh the browser tab.
     
     ![](.././media/as-07.png)
     
