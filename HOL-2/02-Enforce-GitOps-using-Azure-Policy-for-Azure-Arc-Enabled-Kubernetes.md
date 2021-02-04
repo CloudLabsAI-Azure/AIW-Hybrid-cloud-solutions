@@ -1,5 +1,6 @@
-# Exercise 5: Enforce GitOps using Azure Policy for Azure Arc Enabled Kubernetes
-In this exercise, you will see how to use Azure Policy to enforce that each Microsoft.Kubernetes/connectedclusters resource or Git-Ops enabled Microsoft.ContainerService/managedClusters resource has specific Microsoft.KubernetesConfiguration/sourceControlConfigurations applied on it.
+# Exercise 5: Enforce GitOps using Azure Policy for Azure Arc enabled Kubernetes.
+Contoso’s Central IT team also want to ensure that any new distribution site is quickly ready to set up and start operations with the applications they need. Leveraging Azure Policy, they are able to ensure that any new Kubernetes cluster is automatically connected to the same Git repository where the applications are configured so these can be deployed to the new cluster without any manual intervention from DevOps teams.
+In this exercise, you will see how to use Azure Policy to enforce that each Azure Arc enabled Kubernetes cluster has specific GitOps configurations applied on it.
 
 ## Task 1: Create a Policy Assignment
 In this task you will select an existing policy definition and create a policy assignment. When creating the policy assignment you set the scope for the assignment: this will be the Azure Arc enabled Kubernetes Cluster. You will also set the parameters for the sourceControlConfiguration that will be created. Once the assignment is created the Policy engine will identify all connectedCluster or managedCluster resources that are located within the scope and will apply the sourceControlConfiguration to each one.
