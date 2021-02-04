@@ -83,7 +83,7 @@ You can connect your non-Azure computers in any of the following ways:
     
     ![](.././media/search-security-center.png)
 
-1. From the Getting Started tab, scroll down and select **Upgrade**.
+1. From the Getting Started tab, scroll down and select **skip**.
 
     ![](.././media/upgrade-security-center.png)
  
@@ -95,13 +95,11 @@ You can connect your non-Azure computers in any of the following ways:
 
     ![](.././media/add-non-azure-servers.png)
     
-1. On **Onboard servers to Security Center** click on **Upgrade** to upgrade the existing log analytics workspace **LogAnalyticWS-xxxxx**.
+1. On **Onboard servers to Security Center** click on **Upgrade** to upgrade the existing log analytics workspace **LogAnalyticWS-xxxxx**. This will allow azure defender protect for your resources.
 
     ![](.././media/upgrade-log-analytics.png)
     
-1. Now, go back to **Inventory** tab and then you will see few connected resources. You can also find the **ubuntu-k8s** Arc enabled servers is available in the resources list because **LogAnalytics** agent is already enabled for it and the same Log Analytics workspace is connected to Security Center. 
+1. Now, go back to **Inventory** tab and then you will see few connected resources. You can also find the **ubuntu-k8s** Arc enabled servers is available in the resources list because **LogAnalytics** agent is already enabled for it and the same Log Analytics workspace is connected to Security Center. Agent monitoring will take few minutes to update and show **Monitored** for Arc enabled server **ubuntu-k8s** as shown in below screen.  
 
     ![](.././media/ss-ubuntuk8s-monitor.png)
     
-1. 
-
