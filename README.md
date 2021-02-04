@@ -13,24 +13,17 @@ The following labs provide you a quick and easy way to get started with Azure Ar
 
 With Azure Arc, Contoso can unify inventory, governance, and compliance ensuring consistency for their entire IT landscape. They already take advantage of the core management capabilities such as tagging, update management, governance with Azure Policy, monitoring with Azure Monitor, security with Azure Defender, and more for their Azure workloads but would like to extend these same capabilities to their resources outside Azure. By onboarding their servers and Kubernetes clusters running outside Azure to Azure Arc, Contoso can take advantage of all the Azure Resource Manager (ARM) capabilities mentioned above. In addition, with Azure Arc enabled Kubernetes, Contoso can guarantee Kubernetes deployments and app consistency through GitOps-based configuration management for their Kubernetes clusters in Azure, on-premises and in other clouds.
 Leveraging Azure Arc enabled data services, Contoso is interested in implementing cloud-native, evergreen versions of SQL and PostgreSQL Hyperscale to reduce the management overhead and deploy their applications and databases anywhere with elastic scale.
-
 Let’s take the journey together with Contoso and see how easy it is to accomplish all the above with Azure Arc.
+#### Click on each of the scenarios below to see the specific instructions to do the lab:
 
-Click on each of the scenarios below to see the specific instructions to do the lab :
-
-[Hands-on Lab 1](./HOL-1): In this lab, you’ll learn to onboard a virtual machine and Kubernetes cluster, both running on-premises, to Azure Arc, apply a few Azure Policies, enable monitoring, and alerts as well as Integrate Azure Security Center and Azure Sentinel to your on-premises resources. You’ll also be able to deploy a SQL Server on the VM, connect it to Arc and explore SQL Assessments for this resource.
-
-[Hands-on Lab 2](./HOL-2): In this lab, you’ll learn to deploy GitOps configurations to the Kubernetes cluster that you onboarded to Arc earlier and enable Azure Policy add-on for Kubernetes to the same cluster.
-
-[Hands-on Lab 3](./HOL-3): In this lab, you’ll leverage the same Arc enabled Kubernetes cluster from the previous labs to deploy the Azure Arc data controller, Azure SQL Managed Instance & Azure PostgreSQL Hyperscale.
-
+  * [Hands-on Lab 1](./HOL-1): In this lab, you’ll learn to onboard a virtual machine and Kubernetes cluster, both running on-premises, to Azure Arc, apply a few Azure Policies, enable monitoring, and alerts as well as Integrate Azure Security Center and Azure Sentinel to your on-premises resources. You’ll also be able to deploy a SQL Server on the VM, connect it to Arc and explore SQL Assessments for this resource.
+  * [Hands-on Lab 2](./HOL-2): In this lab, you’ll learn to deploy GitOps configurations to the Kubernetes cluster that you onboarded to Arc earlier and enable Azure Policy add-on for Kubernetes to the same cluster.
+  * [Hands-on Lab 3](./HOL-3): In this lab, you’ll leverage the same Arc enabled Kubernetes cluster from the previous labs to deploy the Azure Arc data controller, Azure SQL Managed Instance & Azure PostgreSQL Hyperscale.
 
 Click on each of the scenarios below to see the specific instructions to do the lab :
 
 **Hands-on Lab 1** :  In this lab, you’ll learn to onboard a virtual machine and Kubernetes cluster, both running on-premises, to Azure Arc, apply a few Azure Policies, enable monitoring, and alerts as well as Integrate Azure Security Center and Azure Sentinel to your on-premises resources. You’ll also be able to deploy a SQL Server on the VM, connect it to Arc and explore SQL Assessments for this resource.
-
 **Hands-on Lab 2** :  In this lab, you’ll learn to deploy GitOps configurations to the Kubernetes cluster that you onboarded to Arc earlier and enable Azure Policy add-on for Kubernetes to the same cluster.
-
 **Hands-on Lab 3** :  In this lab, you’ll leverage the same Arc enabled Kubernetes cluster from the previous labs to deploy the Azure Arc data controller, Azure SQL Managed Instance & Azure PostgreSQL Hyperscale.
 
 
