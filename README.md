@@ -1,5 +1,4 @@
-![](media/Arc-logo.png)
-# Azure Arc Hands-on Labs
+# Azure Arc Hands-on Labs                                                                                     ![](media/Arc-logo.png)
 
 ## What is Azure Arc?
 For customers who want to simplify complex and distributed environments across on-premises, edge, and multi-cloud, [Azure Arc](https://azure.microsoft.com/services/azure-arc/) enables deployment of Azure services anywhere and extends Azure management to any infrastructure. 
