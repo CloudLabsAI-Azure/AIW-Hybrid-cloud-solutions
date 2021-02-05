@@ -206,7 +206,7 @@ Policies can be applied to Arc enabled servers the same way they are applied to 
 
 1. From the Azure Portal ```http://portal.azure.com/```, search for ```Azure Arc``` from the search box and then click **Azure Arc**. 
 
-    ![](.././media/searchAzureArc1.png)
+    ![](.././media/searchAzureArc1v2.png)
     
 1. Select **Servers** from the options on the Azure Arc blade.
 
