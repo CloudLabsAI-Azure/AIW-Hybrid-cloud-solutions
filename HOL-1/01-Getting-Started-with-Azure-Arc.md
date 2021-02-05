@@ -151,6 +151,12 @@ In this task, we will learn to onboard the local Kubernetes cluster to Azure Arc
     ![](.././media/k8s-status-running.png "check cluster cluster")
 
 1. Update kube config file.
+     ```
+     cd $HOME
+     mkdir .kube
+     cd .kube
+     microk8s config > config
+     ```
 
     ![](.././media/kube.png "kube") 
 
