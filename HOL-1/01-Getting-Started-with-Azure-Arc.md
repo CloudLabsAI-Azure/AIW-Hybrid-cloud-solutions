@@ -149,7 +149,11 @@ In this task, we will learn to onboard the local Kubernetes cluster to Azure Arc
 1. Now, check the status of the Kubernetes cluster by running ```microk8s.status``` as demouser in **ubuntu-k8s** VM. You can proceed further if it is running. If it is in a stopped state, you may have to run ```microk8s start``` command to run the Kubernetes cluster.
 
     ![](.././media/k8s-status-running.png "check cluster cluster")
-    
+
+1. Update kube config file.
+
+    ![](.././media/kube.png "kube") 
+
 1. Connect the Kubernetes cluster to Azure Arc by executing the following command, once you run the command, it will take few minutes to onboard Kubernetes Cluster to onboard to Azure Arc.
 
       ```
