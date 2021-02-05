@@ -7,7 +7,7 @@ GitOps, as it relates to Kubernetes, is the practice of declaring the desired st
 
 ## Task 1: Create a Configuration
 
-1. Launch the following GitHub repository url ```https://github.com/Azure/arc-k8s-demo```. On upper right cornor you will see **Sign in** and **Sign up** options, if you already have a github account then click on **Sign in**, otherwise **Sign up**.
+1. Launch the following GitHub repository url ```https://github.com/Azure/arc-k8s-demo```. On upper right corner you will see **Sign in** and **Sign up** options, if you already have a github account then click on **Sign in**, otherwise **Sign up**.
 
    ![](.././media/01.png) 
 
