@@ -5,7 +5,7 @@ In addition to managing and monitoring their Kubernetes clusters, Contoso’s ce
 GitOps, as it relates to Kubernetes, is the practice of declaring the desired state of Kubernetes configuration (deployments, namespaces, etc.) in a Git repository followed by a polling and pull-based deployment of these configurations to the cluster using an operator. In this exercise, you will deploy a sample kubernetes app using az k8sconfiguration command and gitops and also update the configuration in the repository which you have linked to connected cluster and verify if cluster is getting updated based on the changes made. You will be using the Kubernetes cluster with which you connected in the earlier exercise.
 
 
-## Task 1: Create a Configuration
+## Task 1: Fork the GitHub Arc K8s demo repository
 
 1. Launch the following GitHub repository url ```https://github.com/Azure/arc-k8s-demo```. On upper right corner you will see **Sign in** and **Sign up** options, if you already have a github account then click on **Sign in**, otherwise **Sign up**.
 
