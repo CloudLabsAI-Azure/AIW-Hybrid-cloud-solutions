@@ -185,6 +185,7 @@ Now that we have onboarded the Linux VM to Azure Arc and verified, let us onboar
    mkdir .kube
    cd .kube
    microk8s config > config
+   cd ..
    ```
 
    ![](.././media/kube.png "kube") 
@@ -195,11 +196,11 @@ Now that we have onboarded the Linux VM to Azure Arc and verified, let us onboar
    az connectedk8s connect --name microk8s-cluster --resource-group $ResourceGroup -l $location
    ```
     
-   ![](.././media/connect-k8s.png "Connect Kubernetes")
+   ![](.././media/connect-k8sv2.png "Connect Kubernetes")
     
 1. Once the previous command is executed successfully, the **provisioning state** in output will show as succeeded.
 
-   ![](.././media/k8s-connected1.png "Kubernetes Cluster Connected")    
+   ![](.././media/k8s-connectedv2.png "Kubernetes Cluster Connected")    
 
 ## Task 4: Verify if the Kubernetes cluster is connected to Azure Arc
 
@@ -211,7 +212,7 @@ Now let us verify if the Kubernetes cluster is connected to Azure Arc and is in 
    az connectedk8s list -g $ResourceGroup -o table
    ```
      
-   ![](.././media/check-k8s-connection.png "Varify Micro-k8s cluster is connected")
+   ![](.././media/check-k8s-connectionv2.png "Varify Micro-k8s cluster is connected")
    
 1. Navigate to the Resource Group from the Azure portal navigation pane and click on the Resource Group named **azure-arc**. Look for the resource named **microk8s-cluster** of resource type **Azure Arc enabled Kubernetes resource**.
 
