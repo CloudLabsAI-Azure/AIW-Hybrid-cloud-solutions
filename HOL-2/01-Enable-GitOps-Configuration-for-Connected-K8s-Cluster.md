@@ -33,11 +33,9 @@ GitOps, as it relates to Kubernetes, is the practice of declaring the desired st
     
     > Note: To paste any value in Putty terminal, just copy the values from anywhere and then right click on the terminal to paste the copied value.
     
-1. Login to **Azure** using follwing command:
+1. There is file installArcAgentLinux.txt on ARCHOST VM desktop 💻. Open the file and copy the first 7 lines and paste in putty to declare the values of AppID, AppSecret, TenantID, SubscriptionID, ResourceGroup, and location, and then log into azure using the 7th line. You can also find the values of these variables in the Environment Details tab and then use them in the next steps.
    
-     ```./azlogin.sh```
-   
-   ![](.././media/03.png)
+   ![](.././media/variableazlogin.png)
 
 1. Run the following command:
 
