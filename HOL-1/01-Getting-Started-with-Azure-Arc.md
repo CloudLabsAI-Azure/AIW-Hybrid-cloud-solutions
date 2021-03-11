@@ -253,7 +253,7 @@ Policies can be applied to Arc enabled servers the same way they are applied to 
     
 1. In **Assign policy** window **Basics** blade, select **ellipse(...)**  from **Policy Definitions**.
 
-    ![](.././media/select-ellipse.png)
+    ![](.././media/select-ellipsev2.png)
     
 1. Search for ```Deploy Log Analytics``` in **Available Definitions** and then select **Deploy Log Analytics agent for Linux VMs**.
 
@@ -261,19 +261,23 @@ Policies can be applied to Arc enabled servers the same way they are applied to 
     
 1. After selecting the policy definition, move to the **Parameters** blade by clicking on the **Next** button at the bottom.
 
-    ![](.././media/basic-next.png)
+    ![](.././media/basic-nextv2.png)
     
 1. Under the **Log Analytics Workspace**, select the existing workspace with prefix **LogAnalyticsWS-** from the available list and then click on **Next**.
 
-    ![](.././media/select-existing-ws.png)
+    ![](.././media/select-existing-wsv2.png)
 
-1. On the **Remediation** blade, enable the checkbox for **Create a remediation task** and then click on the **Review + create** button.
+1. On the **Remediation** blade, enable the checkbox for **Create a remediation task** and then click on the **Next** button.
 
-    ![](.././media/review-and-create.png)
+    ![](.././media/remediation-next.png)
+    
+1. On **Non-compliance messages** blade, enter following message ```Log Analytics agent is not installed```. This message will be displayed when linux machine will be non compliant. Now, click on teh **Review + create**.
+
+    ![](.././media/non-com-message.png)
     
 1. On **Review + create** blade, select **Create**.
 
-    ![](.././media/create-policy-assignment.png)
+    ![](.././media/createv2.png)
     
 1. Now, once the policy assignment is created, you will see Deploy Log Analytics Workspace for Linux on the assigned policies list in Compliant state. It can also take some time to change to **Compliant** state.
 
