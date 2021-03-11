@@ -5,7 +5,7 @@ In the last excercise we had worked around security measures andmonitoring, so n
 
 1. In the **LabVM/ARCHost VM**, click on the Azure portal shortcut of Microsoft Edge browser which is present on the desktop.
   
-    ![](.././media/0.png "edge")
+    ![](.././media/select-azureportal.png "Select Azure Portal")
    
 1. On the **Sign in to Microsoft Azure** tab, you will see the login screen. Provide the following **Email/Username** and then click on **Next**.
 
