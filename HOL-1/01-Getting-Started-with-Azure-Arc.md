@@ -305,7 +305,7 @@ In this task, let's configure and collect data from your Linux machine by enabli
 
     ![](.././media/insights-option.png)
     
-1. Click on the **Enable** on Insights blade.
+1. Click on the **Enable** on Insights blade. You may have to scroll down to see teh **Enable** button.
 
     ![](.././media/enable-insights.png)
 
