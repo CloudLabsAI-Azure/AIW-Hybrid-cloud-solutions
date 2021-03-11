@@ -112,7 +112,7 @@ In the last excercise we had worked around security measures andmonitoring, so n
    
 1. At this step, you must enter Log analytics workspace ID and a key to install the MMA in the **SQLVM**.
   
-1. Now enter the Workspace ID and Key that you copied from the previous step, and click on **Review + Create** button. 
+1. Now enter the Workspace ID and Key that you copied from the previous step, and click on **Review + Create** button and then click on **Create** on nextr window.
  
    ![](.././media/create1.png "sqlsearch")
   
