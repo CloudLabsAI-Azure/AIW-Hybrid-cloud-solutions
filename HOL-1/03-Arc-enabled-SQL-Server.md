@@ -140,7 +140,7 @@ In the last excercise we had worked around security measures andmonitoring, so n
 
 1. After the command is successfully completed, open your **SQLVM** from the Hyper-VManager and enter password **demo@pass123** to login.
  
-1. Open File explorer in the **SQLVM** and navigate to **C:\LabFiles\** this directory and right-click on **DownloadsAddSqlAssessment.ps1** PowerShell script and select **Run with PowerShell** to run the PowerShell script to schedule the task which will generate the assessment and logs.
+1. Open File explorer in the **SQLVM** and navigate to **C:\LabFiles\** this directory and right-click on **AddSqlAssessment.ps1** PowerShell script and select **Run with PowerShell** to run the PowerShell script to schedule the task which will generate the assessment and logs.
  
    ![](.././media/file.png "run")
     
