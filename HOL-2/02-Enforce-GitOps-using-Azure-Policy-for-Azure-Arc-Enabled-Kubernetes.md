@@ -20,11 +20,11 @@ In this task you will select an existing policy definition and create a policy a
 
 1. On the Basics Tab, click on the ellipses (…) to the right of **Policy definition**.
 
-    ![](.././media/17.png)
+    ![](.././media/17v2.png)
 
 1. In the **Search** window for available definitions, type ```GitOps``` and select the one called **Deploy GitOps to Kubernetes cluster**.  Click the blue **Select** button below.
 
-    ![](.././media/18.png)
+    ![](.././media/18v2.png)
 
 1. Click **Next** at the bottom of the window.
 
@@ -39,15 +39,15 @@ In this task you will select an existing policy definition and create a policy a
     - Set the **Enable helm** option to **false**
     - **Leave the other options set to default**
      
-    ![](.././media/19.png)
+    ![](.././media/19v2.png)
    
-1. Select the **Create a remediation task** check box and then click **Review+create** 
+1. Select the **Create a remediation task** check box and then click **Review+create**, skip the Non-compliance messages.
 
-    ![](.././media/20.png)
+    ![](.././media/20v2.png)
      
-1. Click Create.
+1. Click **Create**.
 
-    ![](.././media/21.png)
+    ![](.././media/21v2.png)
 
 1. Navigate to **Azure-Arc RG** -> **microk8s-cluster** -> **Policies**.
 
