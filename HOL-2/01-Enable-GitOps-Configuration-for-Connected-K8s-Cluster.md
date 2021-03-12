@@ -32,6 +32,16 @@ GitOps, as it relates to Kubernetes, is the practice of declaring the desired st
     ![](.././media/enter-ubuntu-k8s-credentials.png "Enter ubuntu-k8s credentials")
     
     > Note: To paste any value in Putty terminal, just copy the values from anywhere and then right click on the terminal to paste the copied value.
+
+1. Login with Sudo. Run followingh command and provide the Password `demo@pass123`.
+
+   ```
+   sudo su
+   ```
+   
+   ```
+   demo@pass123
+   ```
     
 1. There is file installArcAgentLinux.txt on ARCHOST VM desktop 💻. Open the file and copy the first 7 lines and paste in putty to declare the values of AppID, AppSecret, TenantID, SubscriptionID, ResourceGroup, and location, and then log into azure using the 7th line. You can also find the values of these variables in the Environment Details tab and then use them in the next steps.
    
