@@ -279,7 +279,7 @@ Policies can be applied to Arc enabled servers the same way they are applied to 
 
     ![](.././media/createv2.png)
     
-1. Now, once the policy assignment is created, you will see Deploy Log Analytics Workspace for Linux on the assigned policies list in Compliant state. It can also take some time to change to **Compliant** state.
+1. Now, once the policy assignment is created, you will see Deploy Log Analytics Workspace for Linux on the assigned policies list in Compliant state. It will deploy the Log Analytics Workspace in **ubuntu-k8s** Hyper-V guest VM. Once Log Analytics Workspace is deployed in the ubuntu-k8s VM, compliance state will be updated to **Compliant**. It will take 20-30 minutes.
 
     ![](.././media/ws-compliant.png)    
 
