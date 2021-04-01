@@ -53,7 +53,7 @@ You can use the Azure Policy Deploy Log Analytics agent to Linux or Windows Azur
 
    ![](.././media/as-09.png)
     
-1. You will see **Results** for ```union InsightsMetrics``` in query explorer. You can see operations around Network, Logical Disk, Memory, and Processor for **ubuntu-k8s** VM.
+1. You will see **Results** for ```union InsightsMetrics``` in query explorer. You can see operations around Network, Logical Disk, Memory, and Processor for **ubuntu-k8s** VM. If you won't see the results then try zoom in to change screen size.
 
    ![](.././media/as-10.png)
     
@@ -85,10 +85,6 @@ You can connect your non-Azure computers in any of the following ways:
     
    ![](.././media/search-security-center.png)
 
-1. From the Getting Started tab, scroll down and select **skip**.
-
-   ![](.././media/upgrade-security-center.png)
- 
 1. Click on **Inventory** from the **Security Center**.
 
    ![](.././media/select-inventory.png)
