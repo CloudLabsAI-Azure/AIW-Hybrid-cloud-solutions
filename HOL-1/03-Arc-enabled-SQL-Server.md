@@ -96,7 +96,7 @@ In the last excercise we had worked around security measures andmonitoring, so n
  
    ![](.././media/log.png "sqlsearch")
 
-1. Open Azure Portal and go to Resource group **azure-arc-SUFFIX** and search for **SQLVM** Server and select **SQL Server - Azure ARC**.
+1. Open Azure Portal and go to Resource group **azure-arc** and search for **SQLVM** Server and select **SQL Server - Azure ARC**.
  
    ![](.././media/sqlserver.png "sqlsearch") 
     
