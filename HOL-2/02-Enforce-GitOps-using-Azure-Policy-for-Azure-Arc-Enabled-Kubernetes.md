@@ -43,17 +43,18 @@ In this task you will select an existing policy definition and create a policy a
    
 1. Select the **Create a remediation task** check box and then click **Review+create**, skip the Non-compliance messages.
 
-    ![](.././media/20v2.png)
+    ![](.././media/gitops2.png)
      
 1. Click **Create**.
 
-    ![](.././media/21v2.png)
+    ![](.././media/gitops3.png)
 
 1. Navigate to **Azure-Arc RG** -> **microk8s-cluster** -> **Policies**.
 
-1. You can check if your cluster is **compliant** or **not** against **“[Preview]:Deploy GitOps to Kubernetes cluster”** policy you assigned in previous step by looking at the Compliance State Column. It will be **Compliant**. If it is shows **Not started** then you have to run the **remediation task** again by clicking on the policy -> Create Remediation Task -> Remediate.
+1. You can check if your cluster is **compliant** or **not** against **“Configure Kubernetes clusters with specified GitOps configuration using no secrets
+”** policy you assigned in previous step by looking at the Compliance State Column. It will be **Compliant**. If it is shows **Not started** then you have to run the **remediation task** again by clicking on the policy -> Create Remediation Task -> Remediate.
 
-     ![](.././media/25.png)
+     ![](.././media/gitops4.png)
      
    > **Note**: The Compliant shows as **non-compliant**, you will need to create a remediation task in the next task and after sometime you will see the complaint state changed to **Compliant**
    
