@@ -143,6 +143,13 @@ In the last excercise we had worked around security measures andmonitoring, so n
 1. Open File explorer in the **SQLVM** and navigate to **C:\LabFiles\** this directory and right-click on **AddSqlAssessment.ps1** PowerShell script and select **Run with PowerShell** to run the PowerShell script to schedule the task which will generate the assessment and logs.
  
    ![](.././media/file.png "run")
+   
+1. Enter the below Schduled Task username and Password on powershell window and press enter to run the scipt.
+
+   * SchduledTaskUserName: Administrator
+   * SchduledTaskPassword: demo@pass123 
+   
+   ![](.././media/file1.png "run")
     
 1. After running the PowerShell script, navigate to **C:\sqlserver\SQLAssessment** directory in File Explorer, and you will be able to see some files and folders. These are the assessments and logs that are generated using the PowerShell script.
 
