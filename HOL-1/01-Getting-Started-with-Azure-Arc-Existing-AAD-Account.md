@@ -32,10 +32,20 @@ Hyper-V is Microsoft's hardware virtualization product. It lets you create and r
 1. Navigate to the Resource Group in the Azure portal navigate section.
 
     ![](.././media/navigate-resource-group.png "Select Resource Group from Navigate Option")    
+  
+1. Click on the azure-arc Resource group and confirm whether you have all the below resources deployed successfully.
 
-1. Click on the Resource Group named **azure-arc**. You will be using this resource group through out the lab.
+   ![](images/resources.PNG "Resource groups")
 
-    ![](.././media/azure-arc-rg.png "Select azure-arc Resource Group")
+   * In the Resource group we have one **Virtual Machine**, **Kubernetes Service**, **Storage account** and **Log Analytics workspace** deployed.
+
+   * **Virtual Machine**: You will be using the Virtual Machine which is already open on the left side of the page to perform all the Lab exercises.
+
+   * **Kubernetes Services**: We have already deployed the Azure Arc Data controller on to the Kubernetes Service and in later exercises we will be deploying Azure arc enabled data resources on to the Kubernetes cluster using Azure Arc data services.
+
+   * **Storage Account**: You will use this storage account to backup and restore the database to SQL MI.
+   
+   * **Log Analytics workspace**: You will be using this Log Analytics workspace to upload and view the logs generated from both Postgres Hyperscale and SQL MI servers.
 
 1. Double click on the **Hyper-V Manager** from VM desktop to start the Hyper-V Manager.
 
