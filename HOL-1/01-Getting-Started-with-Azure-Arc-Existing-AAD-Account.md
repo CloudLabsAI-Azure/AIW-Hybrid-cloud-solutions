@@ -35,7 +35,7 @@ Hyper-V is Microsoft's hardware virtualization product. It lets you create and r
   
 1. Click on the azure-arc Resource group and confirm whether you have all the below resources deployed successfully.
 
-   ![](media/resources.PNG "Resource groups")
+   ![](.././resources.PNG "Resource groups")
 
    * In the Resource group we have one **Virtual Machine**, **Kubernetes Service**, **Storage account** and **Log Analytics workspace** deployed.
 
