@@ -101,7 +101,7 @@ You can connect your non-Azure computers in any of the following ways:
 
    ![](.././media/upgrade-log-analytics.png)
     
-1. Now, go back to **Inventory** tab and then you will see few connected resources. You can also find the **ubuntu-k8s** Arc enabled server is available in the resources list because **LogAnalytics** agent is already enabled for it and the same Log Analytics workspace is connected to Security Center. Agent monitoring will take few minutes to update and show status as **Monitored** for Arc enabled server **ubuntu-k8s** as shown in below screen.  
+1. Now, go back to **Inventory** tab and then you will see few connected resources. You can also find the **ubuntu-k8s** Arc enabled server is available in the resources list because **LogAnalytics** agent is already enabled for it and the same Log Analytics workspace is connected to Security Center. Agent monitoring will take few minutes to update and show status as **Monitored** for Arc enabled server **ubuntu-k8s** as shown in below screen. If you still now able to see Monitored for ubuntu-k8s, continue with next exercise and check on this later.  
 
    ![](.././media/ss-ubuntuk8s-monitor.png)
 
