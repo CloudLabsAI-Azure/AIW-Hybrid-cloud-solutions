@@ -114,7 +114,7 @@ In the last excercise we had worked around security measures andmonitoring, so n
     
 1. Now click on the **Create** button to continue. 
    
-1. At this step, you must enter Log analytics workspace ID and a key to install the MMA in the **SQLVM**.
+1. At this step, you must enter Log analytics workspace ID and a key to install the MMA in the **sqlvm**.
   
 1. Now, enter the Workspace ID and Key that you copied from the previous step, and click on **Review + Create** button and then click on **Create** on next window.
  
@@ -136,13 +136,23 @@ In the last excercise we had worked around security measures andmonitoring, so n
    
    ![](.././media/download.png "download")
     
-1. Open the PowerShell by clicking on the **Windows Powershell** from your LABVM Desktop and run this command to copy this script in the **SQLVM** machine.
+1. Open the PowerShell by clicking on the **Windows Powershell** from your LABVM Desktop and run this command to copy this script in the **sqlvm** machine.
     
    ```
    Copy-VMFile "sqlvm" -SourcePath "C:\Users\arcadmin\Downloads\AddSqlAssessment.ps1" -DestinationPath "C:\LabFiles\AddSqlAssessment.ps1" -CreateFullPath -FileSource Host
    ```
 
-1. After the command is successfully completed, open your **SQLVM** from the Hyper-VManager and enter password **demo@pass123** to login.
+1. After the command is successfully completed, open **sqlvm** from the Hyper-V Manager with double click on **sqlvm**.
+
+   ![](.././media/opensqlvm.png "opensqlvm")
+   
+1. On Connect to sqlvm box scroll the bar towards teh small to open the vm in smallest window and then click on **Connect** button.
+
+    ![](.././media/scalsqlvm.png "scalsqlvm")
+
+1. Enter password **demo@pass123** and press **Enter** button to login. Then, you can resize the sqlvm window size as per confort.
+   
+   ![](.././media/entervmpassword.png "entervmpassword")
  
 1. Open File explorer in the **SQLVM** and navigate to **C:\LabFiles\** this directory and right-click on **AddSqlAssessment.ps1** PowerShell script and select **Run with PowerShell** to run the PowerShell script to schedule the task which will generate the assessment and logs.
  
