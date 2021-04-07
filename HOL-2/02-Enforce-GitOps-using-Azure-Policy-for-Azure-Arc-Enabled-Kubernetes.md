@@ -52,7 +52,7 @@ In this task you will select an existing policy definition and create a policy a
 1. Navigate to **Azure-Arc RG** -> **microk8s-cluster** -> **Policies**.
 
 1. You can check if your cluster is **compliant** or **not** against **“Configure Kubernetes clusters with specified GitOps configuration using no secrets
-”** policy you assigned in previous step by looking at the Compliance State Column. It will be **Compliant**. If it is shows **Not started** then you have to run the **remediation task** again by clicking on the policy -> Create Remediation Task -> Remediate.
+”** policy you assigned in previous step by looking at the Compliance State Column. It will be **Compliant** in 15-20 Minutes, sometime can take more than that also. If it is shows **Not started** then you have to run the **remediation task** again by clicking on the policy -> Create Remediation Task -> Remediate.
 
      ![](.././media/gitops4.png)
      
