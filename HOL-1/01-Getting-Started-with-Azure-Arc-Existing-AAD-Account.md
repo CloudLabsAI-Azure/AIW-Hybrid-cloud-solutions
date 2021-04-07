@@ -93,7 +93,7 @@ Now let's onboard the Linux VMs and local Kubernetes cluster to Azure Arc. So, h
     
     ![](.././media/root-login.png "Root Login")
     
-1. There is file installArcAgentLinux.txt on ARCHOST VM desktop 💻. Open the file and copy the first 7 lines and paste in putty to declare the values of AppID, AppSecret, TenantID, SubscriptionID, ResourceGroup, and location, and then log into azure using the 7th line. You can also find the values of these variables in the **Environment Details** tab and then use them in the next steps.
+1. There is file `installArcAgentLinux.txt` on ARCHOST VM desktop 💻. Open the file and copy the first 7 lines and paste in putty to declare the values of AppID, AppSecret, TenantID, SubscriptionID, ResourceGroup, and location, and then log into azure using the 7th line. You can also find the values of these variables in the **Environment Details** tab and then use them in the next steps.
 
     ![](.././media/variableazlogin.png "azlogin")
     
