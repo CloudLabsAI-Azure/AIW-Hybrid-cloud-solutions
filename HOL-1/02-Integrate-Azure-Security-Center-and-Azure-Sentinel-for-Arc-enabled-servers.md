@@ -84,6 +84,10 @@ You can connect your non-Azure computers in any of the following ways:
 1. Search for **Security Center** in Azure portal search bar and then click on **Security Center**.
     
    ![](.././media/search-security-center.png)
+   
+1. From the Getting Started tab, scroll down and select **skip**.
+
+   ![](.././media/upgrade-security-center.png)
 
 1. Click on **Inventory** from the **Security Center**.
 
