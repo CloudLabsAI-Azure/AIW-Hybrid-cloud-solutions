@@ -54,7 +54,7 @@ Hyper-V is Microsoft's hardware virtualization product. It lets you create and r
     
 ## Task 2: Onboard Linux Machine to Azure Arc
 
-Now let's onboard the Linux VMs and local Kubernetes cluster to Azure Arc. So, here we will onboard **ubuntu-k8s** VM to Azure Arc.
+Now, let's onboard the Linux VMs and local Kubernetes cluster to Azure Arc. So, here we will onboard **ubuntu-k8s** VM to Azure Arc.
 
 1. From the start menu of the ARCHOST VM, search for **putty** and open it.
 
@@ -138,7 +138,7 @@ Now let's onboard the Linux VMs and local Kubernetes cluster to Azure Arc. So, h
 
 ## Task 3: Onboard Kubernetes Cluster to Azure Arc
 
-Now that we have onboarded the Linux VM to Azure Arc and verified, let us onboard the local Kubernetes cluster to Azure Arc. So, here we onboard **MicroK8s** Kubernetes cluster to Azure Arc which is hosted on **ubuntu-k8s** VM. We alreaddy have the Microk8s Kubernetes cluster ready and configured, and also Arc enabled CLI extensions are installed.
+We have onboarded the Linux VM to Azure Arc and verified, let us onboard the local Kubernetes cluster to Azure Arc. So, here we onboard **MicroK8s** Kubernetes cluster to Azure Arc which is hosted on **ubuntu-k8s** VM. We alreaddy have the Microk8s Kubernetes cluster ready and configured, and also Arc enabled CLI extensions are installed.
 
    > **Note** : If you have closed the putty after completing **task 2**, then perform the first 6 steps of task 2 again and then return to perform this task. Make sure that you perform all steps with root user in ubuntu-k8s vm.
 
