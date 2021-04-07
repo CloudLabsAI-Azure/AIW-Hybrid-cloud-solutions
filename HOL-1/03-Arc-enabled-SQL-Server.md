@@ -96,11 +96,15 @@ In the last excercise we had worked around security measures andmonitoring, so n
  
    ![](.././media/log.png "sqlsearch")
 
-1. Open Azure Portal and go to Resource group **azure-arc** and search for **SQLVM** Server and select **SQL Server - Azure ARC**.
+1. Now, search for **Servers - Azure Arc** from search box and click on **Servers - Azure Arc**.
  
-   ![](.././media/sqlserver.png "sqlsearch") 
+   ![](.././media/server-azure-arc-search.png "server-azure-arc-search") 
+   
+1. Select **sqlvm** from the list of Azure Arc servers.
+
+   ![](.././media/select-sql-vm.png "select-sql-vm")
     
-1. Now click on the **Extension** button from the left side menu and click on the **Add** button to add a new extension.
+1. Click on the **Extension** button from the left side menu and click on the **Add** button to add a new extension.
  
    ![](.././media/mma.png "sqlsearch")
     
