@@ -161,6 +161,19 @@ We have onboarded the Linux VM to Azure Arc and verified in task 2. Now, you wil
     
    ![](.././media/installhelm.png "installhelm")
 
+
+1. Then, you will add the az extensions required for K8s by running below command
+
+    ```
+    az extension add --name customlocation
+    ```
+
+1. Next, you will run the below command to upgrade the Azure CLI version
+
+    ```
+    az upgrade -y
+    ```
+
 1. Update the Arc enabled Kubernetes CLI extensions, so that we use the lastest k8s extensions for the lab.
 
    ```
