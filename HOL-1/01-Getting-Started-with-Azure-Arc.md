@@ -52,6 +52,8 @@ Hyper-V is Microsoft's hardware virtualization product. It lets you create and r
      
     ![](.././media/guestvms1.png "Guest VMs")
     
+   > **Note**: If you see VMs are in stopped state and when you click on Start button and VMs are not getting start then right click on VM name and then delete the saved state. Now, start the VMs.
+    
 ## Task 2: Onboard Linux Machine to Azure Arc
 
 Now, let's onboard the Linux VMs and local Kubernetes cluster to Azure Arc. So, here we will onboard **ubuntu-k8s** VM to Azure Arc.
