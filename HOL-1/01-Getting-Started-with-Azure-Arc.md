@@ -181,7 +181,7 @@ We have onboarded the Linux VM to Azure Arc and verified in task 2. Now, you wil
 
    ![](.././media/k8s-status-running.png "check cluster cluster")
 
-1. now update kube config file.
+1. Update kube config file.
 
    ```
    cd $HOME
