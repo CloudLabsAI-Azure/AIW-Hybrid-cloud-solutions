@@ -61,6 +61,8 @@ Hyper-V is Microsoft's hardware virtualization product. It lets you create and r
      
     ![](.././media/guestvms1.png "Guest VMs")
     
+    > **Note**: If you see VMs are in stopped state and when you click on Start button and VMs are not getting start then right click on VM name and then delete the saved state. Now, start the VMs.
+    
 ## Task 2: Onboard Linux Machine to Azure Arc
 
 Now let's onboard the Linux VMs and local Kubernetes cluster to Azure Arc. So, here we will onboard **ubuntu-k8s** VM to Azure Arc.
@@ -142,6 +144,7 @@ Now let's onboard the Linux VMs and local Kubernetes cluster to Azure Arc. So, h
    ![](.././media/varify-onboard-arc-ubuntuk8s.png "ubuntu k8s onboarded")
 
 1. On **ubuntu-k8s** Server - Azure Arc **Overview** page, verify that the status is **Connected**. Let's also check other details from this tab like Computer name, Operating system, Operating system version and Agent version of ubuntu machine. 
+   > **Note**: Operating system and Agent version are getting updates very frequently, it may not match with below screenshot.
 
    ![](.././media/ubuntu-k8s-overview-status.png "ubuntu k8s onboard status check")
 
