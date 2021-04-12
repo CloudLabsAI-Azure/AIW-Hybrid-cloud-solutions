@@ -135,9 +135,10 @@ Now, let's onboard the Linux VMs and local Kubernetes cluster to Azure Arc. So, 
    ![](.././media/varify-onboard-arc-ubuntuk8s.png "ubuntu k8s onboarded")
 
 1. On **ubuntu-k8s** Server - Azure Arc **Overview** page, verify that the status is **Connected**. Let's also check other details from this tab like Computer name, Operating system, Operating system version and Agent version of ubuntu machine. 
+   > **Note**: Operating system and Agent version are getting updates very frequently, it may not match with below screenshot.
 
-   ![](.././media/ubuntu-k8s-overview-status.png "ubuntu k8s onboard status check")
-
+   ![](.././media/ubuntu-k8s-overview-status.png "ubuntu k8s onboard status check")   
+   
 ## Task 3: Onboard Kubernetes Cluster to Azure Arc
 
 We have onboarded the Linux VM to Azure Arc and verified in task 2. Now, you will onboard the local Kubernetes cluster to Azure Arc. So, here we onboard **MicroK8s** Kubernetes cluster to Azure Arc which is hosted on **ubuntu-k8s** VM. We alreaddy have the Microk8s Kubernetes cluster ready and configured, and also Arc enabled CLI extensions are installed.
