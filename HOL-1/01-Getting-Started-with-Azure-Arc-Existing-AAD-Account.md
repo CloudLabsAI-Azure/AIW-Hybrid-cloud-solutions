@@ -61,11 +61,11 @@ Hyper-V is Microsoft's hardware virtualization product. It lets you create and r
      
     ![](.././media/guestvms1.png "Guest VMs")
     
-    > **Note**: If you see VMs are in stopped state and when you click on Start button and VMs are not getting start then right click on VM name and then delete the saved state. Now, start the VMs.
+    > **Note**: If you see VMs are in stopped state, and when you click on Start button and VMs are not getting started or if it is throwing any error. Then, right click on VM name and then click on Delete saved state. After that, you can start the VMs and proceed to next task.
     
 ## Task 2: Onboard Linux Machine to Azure Arc
 
-Now let's onboard the Linux VMs and local Kubernetes cluster to Azure Arc. So, here we will onboard **ubuntu-k8s** VM to Azure Arc.
+Now let's onboard the Linux Machine which has the local Kubernetes cluster to Azure Arc. So, here we will onboard **ubuntu-k8s** VM to Azure Arc.
 
 1. From the start menu of the ARCHOST VM, search for **putty** and open it.
 
@@ -158,7 +158,7 @@ Now let's onboard the Linux VMs and local Kubernetes cluster to Azure Arc. So, h
 
 ## Task 3: Onboard Kubernetes Cluster to Azure Arc
 
-We have onboarded the Linux VM to Azure Arc and verified in task 2. Now, you will onboard the local Kubernetes cluster to Azure Arc. So, here we onboard **MicroK8s** Kubernetes cluster to Azure Arc which is hosted on **ubuntu-k8s** VM. We alreaddy have the Microk8s Kubernetes cluster ready and configured, and also Arc enabled CLI extensions are installed.
+We have onboarded the Linux VM to Azure Arc and verified in task 2. Now, you will onboard the local Kubernetes cluster to Azure Arc. So, here we onboard **MicroK8s** Kubernetes cluster to Azure Arc which is hosted on **ubuntu-k8s** VM. We already have the Microk8s Kubernetes cluster ready and configured with the Arc enabled CLI extensions.
 
    > **Note** : If you have closed the putty after completing **task 2**, then perform the first 8 steps of task 2 again and then return to perform this task. Make sure that you perform all steps with root user in ubuntu-k8s vm.
 
@@ -172,14 +172,14 @@ We have onboarded the Linux VM to Azure Arc and verified in task 2. Now, you wil
     
    ![](.././media/installhelm.png "installhelm")
 
-1. Next, run the below command to upgrade the Azure CLI version and customlocation extension for Az CLI.
+1. Next, you have to run the below command to upgrade the Azure CLI version and customlocation extension for Az CLI.
 
     ```
     az upgrade -y
     az extension add --name customlocation
     ```
 
-1. Update the Arc enabled Kubernetes CLI extensions, so that we use the lastest k8s extensions for the lab.
+1. Then, update the Arc enabled Kubernetes CLI extensions, to ensure that we are always using the lastest k8s extensions.
 
    ```
    az extension update --name connectedk8s
@@ -191,7 +191,7 @@ We have onboarded the Linux VM to Azure Arc and verified in task 2. Now, you wil
     
    ![](.././media/update-k8s-extensions.png "Update Az k8s extensions")
     
-1. Now, check the status of the Kubernetes cluster by running ```microk8s.status``` as demouser in **ubuntu-k8s** VM. You can proceed further if it is running. If it is in a stopped state, you may have to run ```microk8s start``` command to run the Kubernetes cluster.
+1. Now, you can check the status of the Kubernetes cluster by running ```microk8s.status``` in **ubuntu-k8s** VM. You can proceed further if the status is running. If it is in a stopped state, you may have to run ```microk8s start``` command to restart the Kubernetes cluster.
 
    - Command to check the status of the Kubernetes cluster
      ```
