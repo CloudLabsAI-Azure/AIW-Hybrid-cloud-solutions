@@ -61,11 +61,11 @@ Hyper-V is Microsoft's hardware virtualization product. It lets you create and r
      
     ![](.././media/guestvms1.png "Guest VMs")
     
-    > **Note**: If you see VMs are in stopped state, and when you click on Start button and VMs are not getting started or if it is throwing any error. Then, right click on VM name and then click on Delete saved state. After that, you can start the VMs and proceed to next task.
+    > **Note**: If you see VMs are in stopped state, and when you click on Start button, if VMs are not getting started or if it is throwing any error. Then, right click on Virtual Machine in stopped state and then click on **Delete saved state..**. After that, you can start the VMs and proceed to next task.
     
 ## Task 2: Onboard Linux Machine to Azure Arc
 
-Now let's onboard the Linux Machine which has the local Kubernetes cluster to Azure Arc. So, here we will onboard **ubuntu-k8s** VM to Azure Arc.
+Now, let's onboard the Linux Machine which has the local Kubernetes cluster to Azure Arc. So, here we will onboard **ubuntu-k8s** VM to Azure Arc.
 
 1. From the start menu of the ARCHOST VM, search for **putty** and open it.
 
