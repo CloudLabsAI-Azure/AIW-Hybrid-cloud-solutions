@@ -14,11 +14,11 @@ Hyper-V is Microsoft's hardware virtualization product. It lets you create and r
 
     ![](.././media/cloudlab-vm-guidev1.png "Lab Environment")
 
-1. In the **LabVM/ARCHost VM**, click on the Azure portal shortcut of Microsoft Edge browser which is created on the desktop.
+1. In the **LabVM/ARCHost VM**, double click on the Azure portal shortcut of Microsoft Edge browser which is provided on the desktop.
   
     ![](.././media/select-azureportal.png "Select Azure Portal")
     
-1. On the **Sign into Microsoft Azure** tab you will see the login screen, in that enter following **Email/Username** and then click on **Next**. 
+1. On the **Sign into Microsoft Azure** tab, you will see the login prompt. Enter the following **Email/Username** and then click on **Next**. 
    * Email/Username: <inject key="AzureAdUserEmail"></inject>
    
 1. Now, enter the **Password** which you have already received for the above account.
@@ -33,7 +33,7 @@ Hyper-V is Microsoft's hardware virtualization product. It lets you create and r
 
     ![](.././media/navigate-resource-group.png "Select Resource Group from Navigate Option")    
   
-1. Click on the azure-arc Resource group and confirm whether you have all the below resources deployed successfully.
+1. Click on the azure-arc Resource group and confirm whether you have total 10 records to confirm all the below resources are deployed successfully.
 
    ![](https://raw.githubusercontent.com/CloudLabsAI-Azure/AVW-Arc/main/media/resources.png)
 
@@ -45,13 +45,13 @@ Hyper-V is Microsoft's hardware virtualization product. It lets you create and r
 
    * **Storage Account**: You will use this storage account to backup and restore the database to SQL MI.
    
-   * **Log Analytics workspace**: You will be using this Log Analytics workspace to upload and view the logs generated from both Postgres Hyperscale and SQL MI servers.
+   * **Log Analytics workspace**: You will be using one of the Log Analytics workspace to upload and view the logs generated from both Postgres Hyperscale and SQL MI servers.
 
-1. Double click on the **Hyper-V Manager** from VM desktop to start the Hyper-V Manager.
+1. Now, double click on the **Hyper-V Manager** from the desktop of the provided Virtual Machine to start the Hyper-V Manager.
 
     ![](.././media/select-hyper-v.png "Select hyper-v from desktop")
 
-1. Select **ARCHOST** to connect with the Local Hyper-V server. In your machine, there will be a unique suffix added at end of **ARCHOST**, something like **ARCHOST-XXXXXX**.
+1. Then, you need to Select **ARCHOST** to connect with the Local Hyper-V server. In your machine, there will be a unique suffix added at end of **ARCHOST**, something like **ARCHOST-<inject key="DeploymentID/Suffix" />**.
 
     ![](.././media/archost-localserver.png "ARCHOST Server")
 
