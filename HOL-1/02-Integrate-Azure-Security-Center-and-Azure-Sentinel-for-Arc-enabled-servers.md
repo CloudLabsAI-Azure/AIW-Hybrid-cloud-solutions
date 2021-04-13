@@ -1,6 +1,6 @@
 # HOL-1: Exercise 2: Onboard Azure Arc enabled servers to Azure Sentinel and Security Center
 
-In the last excercise we had completed the onboarding of Linux VM and Kubernetes cluster on Azure Arc and verified it. Now let's see how to onboard your Azure Arc enabled server to Azure Sentinel and start collecting security-related events. Azure Sentinel provides a single solution for alert detection, threat visibility, proactive hunting, and threat response across the enterprise.
+In the last excercise, we had enabled Linux Machine and Kubernetes cluster on Azure Arc and verified it. Now let's see how to onboard your Azure Arc enabled server to Azure Sentinel and start collecting security-related events. Azure Sentinel provides a single solution for alert detection, threat visibility, proactive hunting, and threat response across the enterprise.
 
 ## Task 1: Onboard Azure Arc enabled servers to Azure Sentinel
 Azure Sentinel comes with several connectors for Microsoft solutions, available out of the box and providing real-time integration. For physical and virtual machines, you can install the Log Analytics agent that collects the logs and forwards them to Azure Sentinel. Arc enabled servers supports deploying the Log Analytics agent using the following methods:
@@ -15,21 +15,21 @@ This feature in Azure Arc enabled servers allows you to deploy the Log Analytics
 #### Using Azure Policy:
 You can use the Azure Policy Deploy Log Analytics agent to Linux or Windows Azure Arc machines built-in policy to audit if the Arc enabled server has the Log Analytics agent installed. If the agent is not installed, it automatically deploys it using a remediation task. Alternatively, if you plan to monitor the machines with Azure Monitor for VMs, instead use the Enable Azure Monitor for VMs initiative to install and configure the Log Analytics agent.
 
-  > **Note** : We have already installed Log Analytics Agent into the Linux VM - ubuntu-k8s in the previous exercise, you can refer **task 5** in the previous exercise to review it.
+  > **Note** : You have already installed Log Analytics Agent into the Linux VM - ubuntu-k8s in the previous exercise. You can refer **Task 5** in the previous exercise to review it again.
 
-1. Search for ```Azure Sentinel``` on the Azure portal and then select the **Azure Sentinel** from the search result.
+1. Search for ```Azure Sentinel``` on the Azure portal and, then select the **Azure Sentinel** from the search result.
 
    ![](.././media/as-01.png)
     
-1. On **Azure Sentinel** blade, click on **+ Create** to add a workspace. 
+1. On **Azure Sentinel** blade, click on **+ Add** to add Azure Sentinel to a workspace. 
 
-   ![](.././media/as-02v2.png)
+   ![](.././media/as-02v2-1.png)
     
-1. Select the existing log analytics workspace shown named ```LogAnalyticsWS-xxxxxx``` and then click on the **Add** button.
+1. Select the existing log analytics workspace shown named LogAnalyticsWS-<inject key="DeploymentID/Suffix" /> and then click on the **Add** button.
 
    ![](.././media/as-031.png)
     
-1. You will see a notification on the upper right corner **Adding Azure Sentinel**. It will take a few seconds to add.
+1. You will see a notification on the upper right corner **Adding Azure Sentinel**. It will take around 1 minutes to get added.
  
    ![](.././media/as-041.png)
     
@@ -45,25 +45,29 @@ You can use the Azure Policy Deploy Log Analytics agent to Linux or Windows Azur
     
    ![](.././media/as-06.png)
     
-1. Then from the bottom-left corner of the Azure portal click on **Save** and then on **OK** to save the workbook. 
+1. Then from the bottom-right corner of the Azure portal, click on **Save** and then on **OK** to save the workbook. 
  
    ![](.././media/as-08.png)
     
-1. Now, go back to **Azure Sentinel Overview** blade and click on **INSIGHTSMETER** to query the **ubuntu-k8s** VM insights. Count of **Events** could be different on your Azure Sentinel Dashboard.
+1. Now, go back to **Azure Sentinel Overview** blade by clicking on Overview under General section on the left and, then click on **INSIGHTSMETER** to query the **ubuntu-k8s** VM insights. Count of **Events** could be different on your Azure Sentinel Dashboard.
 
    ![](.././media/as-09.png)
     
-1. You will see **Results** for ```union InsightsMetrics``` in query explorer. You can see operations around Network, Logical Disk, Memory, and Processor for **ubuntu-k8s** VM. If you won't see the results then try zoom out to reduce screen size and you will see the outcome.
+1. You will see **Results** for ```union InsightsMetrics``` in query explorer. You can see operations around Network, Logical Disk, Memory, and Processor for **ubuntu-k8s** VM. If you are not able to see the results, then try to adjust the query editor size and you will be able to see the outcome.
 
    ![](.././media/as-10.png)
     
 1. Let us check for **ubuntu-k8s** processes by running the following query, you can change the time range limit as well to see the result of a specific time interval. You can scroll right on the **Results** section and see more details and descriptions about every process. 
+
+  > Note: The data might take around 30 mins to get populated. If you don't find the data, you can skip to Task 2: Enable Azure Security Center and come back later to this task to re-execute the query and filter the data.
 
    ```
    VMProcess 
    | where TimeGenerated > ago(24h) 
    | limit 10
    ```
+
+  > Note: In the above query, against TimeGenerated,  ago(24h) means "24 hour ago" so this query only returns records from the last 24 hours.
 
    ![](.././media/as-11.png)   
     
@@ -85,7 +89,7 @@ You can connect your non-Azure computers in any of the following ways:
     
    ![](.././media/search-security-center.png)
    
-1. From the Getting Started tab, scroll down and select **skip**.
+1. From the Getting Started page, scroll down and then select **skip**.
 
    ![](.././media/upgrade-security-center.png)
 
