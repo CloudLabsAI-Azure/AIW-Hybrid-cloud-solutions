@@ -107,11 +107,11 @@ Now, let's onboard the Linux Machine which has the local Kubernetes cluster to A
     
 1. Next, you have to navigate back to the Desktop of the provided virtual Machine ARCHOST VM 💻, and then click on `installArcAgentLinux.txt` file to open it.
 
+   ![](.././media/variableazlogin.gif "Install Arc Agent")
+
 1. Then, select the first 7 lines and, then right click and copy. 
 
 1. Then, go back to putty session and paste it in ubuntu-k8s VM by doing right click and it will start getting executed. 
-
-   ![](.././media/variableazlogin.gif "Install Arc Agent")
 
 1. Once it is executed, you have declared the values of AppID, AppSecret, TenantID, SubscriptionID, ResourceGroup, and location, and then logged into azure using the 7th line. You can also find the values of these variables in the **Environment Details** tab. These variables are required for the next steps.
 
