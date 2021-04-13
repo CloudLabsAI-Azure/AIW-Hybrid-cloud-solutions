@@ -105,9 +105,9 @@ Now, let's onboard the Linux Machine which has the local Kubernetes cluster to A
     
     ![](.././media/root-login.png "Root Login")
     
-1. On the Desktop of the provided virtual Machine ARCHOST VM 💻, click on `installArcAgentLinux.txt` file.
+1. Next, you have to navigate back to the Desktop of the provided virtual Machine ARCHOST VM 💻, and then click on `installArcAgentLinux.txt` file to open it.
 
-1. Open the file and select the first 7 lines and then right click and copy. 
+1. Then, select the first 7 lines and, then right click and copy. 
 
 1. Then, go back to putty session and paste it in ubuntu-k8s VM by doing right click and it will start getting executed. 
 
