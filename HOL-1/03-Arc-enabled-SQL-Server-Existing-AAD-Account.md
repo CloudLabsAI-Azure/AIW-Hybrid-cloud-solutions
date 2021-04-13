@@ -1,23 +1,9 @@
 # HOL-1: Exercise 3: Onboard SQL Server to Arc
-In the last excercise we had worked around security measures andmonitoring, so now let's onboard SQL Server to Azure Arc using Azure Portal and PowerShell commands.
+In the last excercise, you have seen how to enable security measures and monitoring for Arc enabled servers. In this exercise, you will onboard SQL Server to Azure Arc using Azure Portal and PowerShell commands.
 
 ## Task 1: Login To Azure Portal
 
-1. In the **LabVM/ARCHost VM**, click on the Azure portal shortcut of Microsoft Edge browser which is present on the desktop.
-  
-    ![](.././media/select-azureportal.png "Select Azure Portal")
-   
-1. On the **Sign in to Microsoft Azure** tab, you will see the login screen. Provide the following **Email/Username** and then click on **Next**.
-
-   * Email/Username: <inject key="AzureAdUserEmail"></inject>
-   
-1. Now, enter the **Password** which you have already received for the above account.
-   
-1. If you see the pop-up **Stay Signed in?**, click No.
-
-1. If you see the pop-up **You have free Azure Advisor recommendations!**, close the window to continue the lab.
-
-1. If **Welcome to Microsoft Azure** pop-up window appears, click on **Maybe Later** to skip the tour.
+1. Navigate back to Azure Portal which you have already opened in the previous exercises.
       
 1. Click on the search blade at the top and search for ```SQL Server```, select **SQL Server - Azure Arc**.
  
@@ -36,11 +22,11 @@ In the last excercise we had worked around security measures andmonitoring, so n
 1. On the **Server Details** blade, enter the below details.
  
    - Subscription: Leave default
-   - Resource group: Select **azure-arc-SUFFIX** from dropdown list.
+   - Resource group: Select **azure-arc** from dropdown list.
    - Region: Select same region as the Resource group.
    - Operating Systems: Select **Windows**.
 
-     Now click on the Next button.
+     Now click on the **Next:Tags** button.
    
    ![](.././media/detailsql.png "sqlsearch")
    
@@ -48,7 +34,7 @@ In the last excercise we had worked around security measures andmonitoring, so n
  
 1. On the **Script** blade, explore the given script. We will be using this PowerShell script to **Register Azure Arc enabled SQL Server** later.
  
-   > **Note** : You can skip the script download from here. We have already downloaded this script inside the Lab VM for you.
+   > **Note** : You can skip the script download from here by clicking on ```x``` at the top right as we have already downloaded this script inside the Lab VM for you.
     
    ![](.././media/runsql.png "sqlsearch")
      
