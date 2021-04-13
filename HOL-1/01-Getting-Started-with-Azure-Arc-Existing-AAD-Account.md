@@ -143,7 +143,7 @@ Now let's onboard the Linux VMs and local Kubernetes cluster to Azure Arc. So, h
    azcmagent connect --resource-group $ResourceGroup --tenant-id $TenantID --location $location --subscription-id $SubscriptionId -i $AppID -p $AppSecret
    ```
 
-   > Remember, we are using variables declared earlier in step 5. If you have connected with a new putty session, you may have to run steps 4,5 and 6 again.
+   > Remember, we are using variables declared earlier in step 8. If you have connected with a new putty session, you may have to run steps 4 to 9 again.
      
    ![](.././media/connected-azure-arc.png "Connected to Arc")
 
@@ -160,7 +160,7 @@ Now let's onboard the Linux VMs and local Kubernetes cluster to Azure Arc. So, h
 
 We have onboarded the Linux VM to Azure Arc and verified in task 2. Now, you will onboard the local Kubernetes cluster to Azure Arc. So, here we onboard **MicroK8s** Kubernetes cluster to Azure Arc which is hosted on **ubuntu-k8s** VM. We alreaddy have the Microk8s Kubernetes cluster ready and configured, and also Arc enabled CLI extensions are installed.
 
-   > **Note** : If you have closed the putty after completing **task 2**, then perform the first 6 steps of task 2 again and then return to perform this task. Make sure that you perform all steps with root user in ubuntu-k8s vm.
+   > **Note** : If you have closed the putty after completing **task 2**, then perform the first 8 steps of task 2 again and then return to perform this task. Make sure that you perform all steps with root user in ubuntu-k8s vm.
 
 1. Install helm using following commands:
 
