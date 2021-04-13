@@ -330,7 +330,7 @@ In this task, let's configure and collect data from your Linux machine by enabli
 
     ![](.././media/enable-insights.png)
 
-1. On the Azure Monitor **Insights Onboarding** page, choose the existing **Log Analytics Workspace**  `LogAnalyticsWS-<inject key="DeploymentID/Suffix" />` and then click on **Enable** button.
+1. On the Azure Monitor **Insights Onboarding** page, choose the existing **Log Analytics Workspace**  LogAnalyticsWS-<inject key="DeploymentID/Suffix" /> and then click on **Enable** button.
 
     ![](.././media/enable-insights2.png)
 
