@@ -137,7 +137,7 @@ Now, let's onboard the Linux Machine which has the local Kubernetes cluster to A
 
    ![](.././media/arcagent-installed.png "Arc Agent latest version installed")    
     
-1. Finally, connect the ubuntu-k8s machine to Azure Arc. Run following connect command.  Once you run the below command, it will take few minutes to onboard the machine to Azure Arc. 
+1. Finally, connect the ubuntu-k8s machine to Azure Arc by running the connect command given below.  Once you run the command given below, it will take 1-2 minutes to onboard the machine to Azure Arc. 
     
    ```
    azcmagent connect --resource-group $ResourceGroup --tenant-id $TenantID --location $location --subscription-id $SubscriptionId -i $AppID -p $AppSecret
@@ -147,12 +147,16 @@ Now, let's onboard the Linux Machine which has the local Kubernetes cluster to A
      
    ![](.././media/connected-azure-arc.png "Connected to Arc")
 
-1. Let's verify the onboarding of **ubuntu-k8s** server on Azure Arc from Azure portal. Switch to the browser tab where you have logged into Azure portal already in step 1 and browse **azure-arc** resource group to verify whether the **ubuntu-k8s** resource of resource type: **Server - Azure Arc** got created. Click on the resource to get more information.
+1. Let's verify the onboarding of **ubuntu-k8s** server on Azure Arc from Azure portal. Switch to the browser tab where you have logged into Azure portal already in step 1 and browse TO **azure-arc** resource group
+
+1. Now click on Refresh from the azure-arc overview page.
+
+1. Then search and verify if **ubuntu-k8s** resource of resource type: **Server - Azure Arc** got created. Click on the resource to get more information.
 
    ![](.././media/varify-onboard-arc-ubuntuk8s.png "ubuntu k8s onboarded")
 
-1. On **ubuntu-k8s** Server - Azure Arc **Overview** page, verify that the status is **Connected**. Let's also check other details from this tab like Computer name, Operating system, Operating system version and Agent version of ubuntu machine. 
-   > **Note**: Operating system and Agent version are getting updates very frequently, it may not match with below screenshot.
+1. On **ubuntu-k8s** Server - Azure Arc **Overview** page, verify that the status is **Connected**. You can also check other details from this tab like Computer name, Operating system, Operating system version and Agent version of ubuntu machine. 
+   > **Note**: Operating system and Agent version that you see may not match with the provided screenshot if there were any updaes to the Agent/ OS Version.
 
    ![](.././media/ubuntu-k8s-overview-status.png "ubuntu k8s onboard status check")
 
@@ -162,7 +166,7 @@ We have onboarded the Linux VM to Azure Arc and verified in task 2. Now, you wil
 
    > **Note** : If you have closed the putty after completing **task 2**, then perform the first 8 steps of task 2 again and then return to perform this task. Make sure that you perform all steps with root user in ubuntu-k8s vm.
 
-1. Install helm using following commands:
+1. To install helm, you need to run the following commands within the terminal of ubuntu-k8s VM that is opened in putty:
 
    ```
    curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3
@@ -172,14 +176,14 @@ We have onboarded the Linux VM to Azure Arc and verified in task 2. Now, you wil
     
    ![](.././media/installhelm.png "installhelm")
 
-1. Next, you have to run the below command to upgrade the Azure CLI version and customlocation extension for Az CLI.
+1. Next, you have to run the below command to ensure the Azure CLI version and customlocation extension for Az CLI are the latest.
 
     ```
     az upgrade -y
     az extension add --name customlocation
     ```
 
-1. Then, update the Arc enabled Kubernetes CLI extensions, to ensure that we are always using the lastest k8s extensions.
+1. Then, you will update the Arc enabled Kubernetes CLI extensions to ensure that we are always using the lastest k8s extensions for Azure CLI.
 
    ```
    az extension update --name connectedk8s
@@ -191,7 +195,7 @@ We have onboarded the Linux VM to Azure Arc and verified in task 2. Now, you wil
     
    ![](.././media/update-k8s-extensions.png "Update Az k8s extensions")
     
-1. Now, you can check the status of the Kubernetes cluster by running ```microk8s.status``` in **ubuntu-k8s** VM. You can proceed further if the status is running. If it is in a stopped state, you may have to run ```microk8s start``` command to restart the Kubernetes cluster.
+1. Now, you can check the status of the Kubernetes cluster by running ```microk8s.status``` in **ubuntu-k8s** VM. To check the status once the command is executed, you have to scroll up to top of the output to view the status. If the status is **microk8s is running**, you can proceed to the next step. But, if it is in a stopped state, you have to run ```microk8s start``` command to restart the Kubernetes cluster.
 
    - Command to check the status of the Kubernetes cluster
      ```
@@ -205,7 +209,7 @@ We have onboarded the Linux VM to Azure Arc and verified in task 2. Now, you wil
 
    ![](.././media/k8s-status-running.png "check cluster cluster")
 
-1. Update kube config file.
+1. Next, you will write the config file to $HOME/.kube directory by executing the below command.
 
    ```
    cd $HOME
@@ -217,7 +221,7 @@ We have onboarded the Linux VM to Azure Arc and verified in task 2. Now, you wil
 
    ![](.././media/kube.png "kube") 
 
-1. Connect the Kubernetes cluster to Azure Arc by executing the following command. This command will take few minutes to onboard Kubernetes cluster to Azure Arc.
+1. Now, you will Connect the Kubernetes cluster to Azure Arc by executing the below command. This command will take few minutes to onboard Kubernetes cluster to Azure Arc.
 
    ```
    az connectedk8s connect --name microk8s-cluster --resource-group $ResourceGroup -l $location
@@ -241,11 +245,13 @@ Now let us verify if the Kubernetes cluster is connected to Azure Arc and is in 
      
    ![](.././media/check-k8s-connectionv2.png "Varify Micro-k8s cluster is connected")
    
-1. Navigate to the Resource Group from the Azure portal navigation pane and click on the Resource Group named **azure-arc**. Look for the resource named **microk8s-cluster** of resource type **Azure Arc enabled Kubernetes resource**.
+1. Navigate to the Resource Group from the Azure portal navigation pane and click on the Resource Group named **azure-arc**. 
+
+1. Click on Refresh on the azure-arc overview page and then look for the resource named **microk8s-cluster** of resource type **Azure Arc enabled Kubernetes resource**.
 
    ![](.././media/varify-in-azure1.png "Varify in Azure")
 
-1. Azure Arc enabled Kubernetes deploys a few operators into the azure-arc namespace. You can view these deployments and pods by running the command in the command prompt:
+1. Azure Arc enabled Kubernetes deploys a few operators into the azure-arc namespace. You can view these deployments and pods by running the command in the terminal of the ubunte-k8s VM:
 
    ```
    kubectl -n azure-arc get deployments,pods
@@ -262,15 +268,15 @@ Policies can be applied to Arc enabled servers the same way they are applied to 
 
     ![](.././media/searchAzureArc1v2.png)
     
-1. Select **Servers** from the options on the Azure Arc blade.
+1. Select **Servers** from the options on the left side of the Azure Arc blade.
 
     ![](.././media/select-servers.png)
     
-1. Explore the **ubuntu-k8s** server from connected machines. 
+1. Click on the **ubuntu-k8s** server from connected machines. 
 
     ![](.././media/ubuntu-k8s-server1.png)
     
-1. From **ubuntu-k8s** server blade, select **Policies** under **Operations** section.
+1. From **ubuntu-k8s** server blade, select **Policies** under **Operations** section on the left side.
 
     ![](.././media/select-policies.png)
     
@@ -278,11 +284,11 @@ Policies can be applied to Arc enabled servers the same way they are applied to 
 
     ![](.././media/assign-policies.png)
     
-1. In **Assign policy** window **Basics** blade, select **ellipse(...)**  from **Policy Definitions**.
+1. In **Assign policy** window, under **Basics** section, select **ellipse(...)**  from **Policy Definitions**.
 
     ![](.././media/select-ellipsev2.png)
     
-1. Search for ```Deploy Log Analytics``` in **Available Definitions** and then select **Deploy Log Analytics agent for Linux VMs**.
+1. Search for ```Deploy Log Analytics``` in **Available Definitions** and then click on **Deploy Log Analytics agent for Linux VMs** and then click on **Select** button at the bottom.
 
     ![](.././media/deployloganalytics.png)
     
@@ -290,7 +296,7 @@ Policies can be applied to Arc enabled servers the same way they are applied to 
 
     ![](.././media/basic-nextv2.png)
     
-1. Under the **Log Analytics Workspace**, select the existing workspace with prefix **LogAnalyticsWS-** from the available list and then click on **Next**.
+1. Under the **Log Analytics Workspace**, select the existing workspace **LogAnalyticsWS-<inject key="DeploymentID/Suffix" />** from the available list and then click on **Next**.
 
     ![](.././media/select-existing-wsv2.png)
 
@@ -298,15 +304,15 @@ Policies can be applied to Arc enabled servers the same way they are applied to 
 
     ![](.././media/remediation-next.png)
     
-1. On **Non-compliance messages** blade, enter following message ```Log Analytics agent is not installed```. This message will be displayed when linux machine will be non compliant. Now, click on teh **Review + create**.
+1. On **Non-compliance messages** blade, enter following message ```Log Analytics agent is not installed```. This message will be displayed when linux machine will be non compliant. Now, click on the **Review + create**.
 
     ![](.././media/non-com-message.png)
     
-1. On **Review + create** blade, select **Create**.
+1. On **Review + create** blade, select **Create** to confirm.
 
     ![](.././media/createv2.png)
     
-1. Now, once the policy assignment is created, you will see Deploy Log Analytics Workspace for Linux on the assigned policies list in Compliant state. It will deploy the Log Analytics Workspace in **ubuntu-k8s** Hyper-V guest VM. Once Log Analytics Workspace is deployed in the ubuntu-k8s VM, compliance state will be updated to **Compliant**. It will take 20-30 minutes.
+1. Now, once the policy assignment is created, you will see Deploy Log Analytics Workspace for Linux on the assigned policies list in **Not started** state. It will start to deploy the Log Analytics Agent in **ubuntu-k8s** Hyper-V guest VM. Once Log Analytics Agent is deployed in the ubuntu-k8s VM, compliance state will be updated to **Compliant**. It will take around 20-30 minutes for the process. You can move ahead to the next task and come back later to check the compliance state.
 
     ![](.././media/ws-compliant.png)    
 
@@ -316,27 +322,15 @@ Azure Monitor can collect data directly from your hybrid machines into a Log Ana
 
 In this task, let's configure and collect data from your Linux machine by enabling Azure Monitor for VMs following a simplified set of steps, which streamlines the experience and takes a shorter amount of time.
 
-1. From the Azure Portal, search for ```Azure Arc``` from the search box and then click on it. 
-
-    ![](.././media/searchAzureArc1v2.png)
-    
-1. Select **Servers** from the options on the Azure Arc blade.
-
-    ![](.././media/select-servers.png)
-    
-1. Explore the **ubuntu-k8s** server from connected machines. 
-
-    ![](.././media/ubuntu-k8s-server1.png)
-
-1. From **ubuntu-k8s** server blade, select **Insights** under **Monitoring** section.
+1. In the Azure Portal, from **ubuntu-k8s** Server - Azure Arc blade, select **Insights** under **Monitoring** section on the left.
 
     ![](.././media/insights-option.png)
     
-1. Click on the **Enable** on Insights blade. You may have to scroll down to see teh **Enable** button.
+1. Click on the **Enable** on Insights blade. You may have to scroll down to see the **Enable** button.
 
     ![](.././media/enable-insights.png)
 
-1. On the Azure Monitor **Insights Onboarding** page, choose the existing **Log Analytics Workspace** named like ```LogAnalyticsWS-{Suffix}``` and then click on **Enable**.
+1. On the Azure Monitor **Insights Onboarding** page, choose the existing **Log Analytics Workspace**  ```LogAnalyticsWS-<inject key="DeploymentID/Suffix" />``` and then click on **Enable** button.
 
     ![](.././media/enable-insights2.png)
 
@@ -344,7 +338,7 @@ In this task, let's configure and collect data from your Linux machine by enabli
 
     ![](.././media/submitting-deployment.png)
     
-1. On Azure Arc ubuntu-k8s Insights blade, you will see **Insights deployment in progress... Please wait.**. Once the deployment is completed, you will see a notification on the upper right corner that says **Deployment succeeded**.
+1. On Azure Arc ubuntu-k8s Insights blade, you will see **Insights deployment is in progress... Please wait.** notification. Once the deployment is completed, you will see a notification on the upper right corner that says **Deployment succeeded**.
 
     ![](.././media/insights-dep-in-prog.png)
 
@@ -353,6 +347,8 @@ In this task, let's configure and collect data from your Linux machine by enabli
 1. Once the deployment is succeeded, go back to the **Insights** blade for ubuntu-k8s VM and then refresh the page once, you may have to re-click on the **Enable** button and refresh the page again to see the Insights. Data will take around 10 minutes to be routed to the Insights from your Linux machine: ubuntu-k8s.
 
     ![](.././media/insight11.png)
+
+    > Note: By this time, the Compliance state of the policy also might have changed. While you wait for the insights to come up, you can check the compliance state in Policies under **Operations** section on the left or you can move on to the next page and come back later to view the insights.
 
 1. Once the Insights are ready, click on the **Performance** blade to review Logical Disk Operations, CPU Utilization, Available Memory, Logical Disk IOPS, Logical Disk MB/s, and much more. It is exciting to see the **graphical representation** on VM performance, whether the VM is deployed on-prem, on other cloud provider platforms, or any edge technologies.
 
