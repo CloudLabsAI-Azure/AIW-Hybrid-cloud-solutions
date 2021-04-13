@@ -16,8 +16,8 @@ With Azure Arc, Contoso can unify inventory, governance, and compliance ensuring
 Leveraging Azure Arc enabled data services, Contoso is interested in implementing cloud-native, evergreen versions of SQL and PostgreSQL Hyperscale to reduce the management overhead and deploy their applications and databases anywhere with elastic scale.
 Let’s take the journey together with Contoso and see how easy it is to accomplish all the above with Azure Arc.
 
-## Click on each of the scenarios below to see the specific instructions to do the lab:
+## In the next pages, you will be covering each of the scenarios below with specific instructions to perform the lab:
 
-  * [Hands-on Lab 1](./HOL-1): First, let's start by learning how to onboard a virtual machine and Kubernetes cluster, both running on-premises, to Azure Arc, apply a few Azure Policies, enable monitoring, and alerts as well as Integrate Azure Security Center and Azure Sentinel to your on-premises resources. You’ll also be able to deploy an SQL Server on the VM, connect it to Arc and explore SQL Assessments for this resource.
+  * [Hands-on Lab 1](./HOL-1): First, let's start by learning how to onboard a virtual machine and Kubernetes cluster, both running on-premises, to Azure Arc, then apply a few Azure Policies, enable monitoring, and alerts as well as Integrate Azure Security Center and Azure Sentinel to your on-premises resources. You’ll also be able to deploy an SQL Server on the VM, connect it to Arc and explore SQL Assessments for this resource.
   * [Hands-on Lab 2](./HOL-2): In this lab, you’ll learn to deploy GitOps configurations to the Kubernetes cluster that you onboarded to Arc earlier and enable Azure Policy add-on for Kubernetes to the same cluster.
   * [Hands-on Lab 3](https://github.com/CloudLabsAI-Azure/AVW-Arc-enabled-dataservices/blob/aiw-arc/Instructions/README.md): In this lab, you will deploy the Azure Arc data controller, Azure SQL Managed Instance & Azure PostgreSQL Hyperscale to an existing Kubernetes cluster.
