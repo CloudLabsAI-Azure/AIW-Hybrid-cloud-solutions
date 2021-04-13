@@ -117,7 +117,7 @@ Now, let's onboard the Linux Machine which has the local Kubernetes cluster to A
 
     ![](.././media/variableazlogin.png "azlogin")
     
-1. Now, download the Azure Arc installation package for Linux, run the below command:
+1. Now, to download the Azure Arc installation package for Linux, run the below command:
 
    ```
    wget https://aka.ms/azcmagent -O ~/install_linux_azcmagent.sh
@@ -125,7 +125,7 @@ Now, let's onboard the Linux Machine which has the local Kubernetes cluster to A
     
    ![](.././media/download-arc-agent.png "Download Arc Linux Agent")
     
-1. Install Azure Arc agent by running :
+1. Then, to install Azure Arc agent on the VM, run the below command :
 
    ```
    bash ~/install_linux_azcmagent.sh
