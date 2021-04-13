@@ -51,7 +51,7 @@ Hyper-V is Microsoft's hardware virtualization product. It lets you create and r
 
     ![](.././media/select-hyper-v.png "Select hyper-v from desktop")
 
-1. Then, you need to Select **ARCHOST** to connect with the Local Hyper-V server. In your machine, there will be a unique suffix added at end of **ARCHOST**, something like **ARCHOST-<inject key="DeploymentID/Suffix" />**.
+1. Then, you need to Select **ARCHOST-<inject key="DeploymentID/Suffix" />** to connect with the Local Hyper-V server.
 
     ![](.././media/archost-localserver.png "ARCHOST Server")
 
