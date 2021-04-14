@@ -107,7 +107,7 @@ GitOps, as it relates to Kubernetes, is the practice of declaring the desired st
 
    ![](.././media/05.png) 
   
-2. Navigate to **azure-arc RG->microk8s-cluster->GitOps**. Ensure that the operator state status should show as **Installed**.
+2. In the Azure Portal which you have opened in the browser window, navigate to Resource group **azure-arc** RG-> Resource **microk8s-cluster** -> **GitOps**. Ensure that the operator state status is **Installed**.
 
    ![](.././media/06.png) 
   
@@ -122,6 +122,8 @@ GitOps, as it relates to Kubernetes, is the practice of declaring the desired st
    The output shows that team-a, team-b, itops, and cluster-config namespaces have been created as shown:
   
    ![](.././media/07.png) 
+
+   > Note: Flux is the operator that makes GitOps happen in your cluster. It ensures that the cluster config matches the one in git and automates your deployments.
    
 2. The **flux operator** will be deployed to **cluster-config** namespace, as directed by our **sourceControlConfig**:
       
