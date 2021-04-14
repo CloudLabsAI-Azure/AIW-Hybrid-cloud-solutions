@@ -158,20 +158,23 @@ After config-agent has installed the flux instance, resources held in the git re
 
    ![](.././media/10.png)   
 
-4. Change the cpu request from 250 to **280** in line 72 and then scroll down to the buttom and click on **Commit changes** to confirm the changes to cpu request.
+4. Change the cpu request from 250 to **120** in line 27 and line 72 and then scroll down to the buttom and click on **Commit changes** to confirm the changes to cpu request.
 
-   ![](.././media/11.png)   
+   ![](.././media/11.png)
+   
 
 ## Task 6: Verify changes are deployed to the cluster.
 
-1.  Run the following command and copy the pod name starting with **azure-vote-front-**
+1.  Run the following command in the SSH Session that you have opened to ubuntu-k8s VM from Putty and copy the pod name starting with **azure-vote-front-**
 
     ```
     kubectl get pods 
     ```
     ![](.././media/12.png) 
     
-    Observe in the above image that the previous pod is terminated and a new pod is created based on the updated configuration
+    Observe in the above image that the previous pod is terminated and a new pod is created based on the updated configuration.
+
+   > ```Note```: If you don't see any change, retry running the command after a couple of minutes
 
 2.  Replace the pod name that you copied in the previous step and run the command
  
