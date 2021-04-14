@@ -6,7 +6,7 @@ In this exercise, you will see how to use Azure Policy to enforce that each Azur
 ## Task 1: Create a Policy Assignment
 In this task you will select an existing policy definition and create a policy assignment. When creating the policy assignment you set the scope for the assignment: this will be the Azure Arc enabled Kubernetes Cluster. You will also set the parameters for the sourceControlConfiguration that will be created. Once the assignment is created the Policy engine will identify all connectedCluster or managedCluster resources that are located within the scope and will apply the sourceControlConfiguration to each one.
 
-1. From the Azure Portal ```https://portal.azure.com```, navigate to the resource group you have access to and click on microk8s-cluster resource. 
+1. From the Azure Portal ```https://portal.azure.com```, navigate to the resource group ```azure-arc``` and click on **microk8s-cluster** resource. 
 
     ![](.././media/0151.png)
 
