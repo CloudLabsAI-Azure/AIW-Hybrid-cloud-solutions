@@ -153,10 +153,26 @@ In the last excercise we had worked around security measures andmonitoring, so n
 1. Enter password **demo@pass123** and press **Enter** button to login. Then, you can resize the sqlvm window size as per confort.
    
    ![](.././media/entervmpassword.png "entervmpassword")
+   
+1. Click on Start Menu and search for **SQL Server 2019 Configuration Manger** and open SQL Server 2019 Configuration Manger.
+
+   ![](.././media/sql1.png "run")
+
+1. Now Select **SQL Server Network configuration** and Double click on **Protocol for MSSQLSERVER**.
+
+   ![](.././media/sql2.png "run")
+ 
+1. Now Right click on the **TCP/IP** and select **Enable**. You will get one Warning Pop-up select okay on the pop-up.
+ 
+   ![](.././media/sql3.png "run")
+ 
+1. After enabling the TCP/iP port select **SQL Server Services** from left side menu and right click on **SQL Server** and select Restart. This will restart the SQL Service and apply the TCP/IP port.
+
+   ![](.././media/sql4.png "run")
  
 1. Open File explorer in the **sqlvm** and navigate to **C:\LabFiles\** this directory and right-click on **AddSqlAssessment.ps1** PowerShell script and select **Run with PowerShell** to run the PowerShell script to schedule the task which will generate the assessment and logs.
  
-   ![](.././media/file.png "run")
+   ![](.././media/sql5.png "run")
    
 1. Enter the below Schduled Task username and Password on powershell window and press enter to run the scipt.
 
