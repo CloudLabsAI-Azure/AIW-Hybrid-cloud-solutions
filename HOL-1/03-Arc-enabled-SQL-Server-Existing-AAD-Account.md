@@ -173,6 +173,8 @@ In the last excercise, you have seen how to enable security measures and monitor
 1. After running the PowerShell script, navigate to **C:\sql_assessment** directory in File Explorer.
    > Note: If you are not able to find the directory then wait for 1 or 2 minutes.
 
+   ![](.././media/ment0.png "run")
+
 1. Now go to the directory **C:\sql_assessment\work_dir\SQLAssessment\SQLAssessment_0414202110171817_Targets_1\041420210317** and run the **run.cmd** file to trigger the assessment task.
 
     ![](.././media/runcmd.png "run")
