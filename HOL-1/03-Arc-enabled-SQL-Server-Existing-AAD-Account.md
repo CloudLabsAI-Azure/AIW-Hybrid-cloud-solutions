@@ -170,24 +170,31 @@ In the last excercise, you have seen how to enable security measures and monitor
    
    ![](.././media/file1.png "run")
     
-1. After running the PowerShell script, navigate to **C:\sql_assessment** directory in File Explorer, and you will be able to see some files and folders. These are the assessments and logs that are generated using the PowerShell script.
+1. After running the PowerShell script, navigate to **C:\sql_assessment** directory in File Explorer.
+   > Note: If you are not able to find the directory then wait for 1 or 2 minutes.
+
+1. Now go to the directory **C:\sql_assessment\work_dir\SQLAssessment\SQLAssessment_0414202110171817_Targets_1\041420210317** and run the **run.cmd** file to trigger the assessment task.
+
+    ![](.././media/runcmd.png "run")
+    
+1. Now go to the directory **C:\sql_assessment\work_dir\SQLAssessment\SQLAssessment_0414202110171817_Targets_1** you will be able to see some files and folders created. These are the assessments and logs that are generated using the PowerShell script.    
 
     ![](.././media/file12.png "run")
     
 1. To view the SQL Assessment in Azure Portal, Navigate back to Azure Portal .
 
-   ![](.././media/ment1.png "run")
-
 1. Now navigate to **azure-arc** Resource group and then select resource **SQLVM** with type  **SQL Server- Azure Arc**. 
+
+    ![](.././media/ment1.png "run")
 
 1. Now open Environment Health option from left side under Settings section and Click on **View SQL Assessment results**.
     > Note: The View SQL Assessment results button remains disabled until the results are ready in Log Analytics. This process might take up to two hours after the data files are processed on the target machine.
    
-   ![](.././media/ment2.png "run")
+   ![](.././media/ment3.png "run")
    
 1. Once the Assessment results are available it will look like below.
     > Note: Now you can move to the next Exercise, you don't have to wait here to the Assessment complete.
-   ![](.././media/ment3.png "run")
+   ![](.././media/ment4.png "run")
    
 
 ## In this exercise, you have covered the following:
