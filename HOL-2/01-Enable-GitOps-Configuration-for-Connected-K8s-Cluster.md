@@ -123,7 +123,7 @@ GitOps, as it relates to Kubernetes, is the practice of declaring the desired st
   
    ![](.././media/07.png) 
 
-   > Note: Flux is the operator that makes GitOps happen in your cluster. It ensures that the cluster config matches the one in git and automates your deployments.
+   > ```Info```: Flux is the operator that makes GitOps happen in your cluster. It ensures that the cluster config matches the one in git and automates your deployments.
    
 2. The **flux operator** will be deployed to **cluster-config** namespace, as directed by our **sourceControlConfig**:
       
