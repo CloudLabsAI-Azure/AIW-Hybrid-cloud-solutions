@@ -30,29 +30,29 @@ In this task you will select an existing policy definition and create a policy a
 
 1. Provide the following details under **Parameters** tab and Click **Next**
     - Configuration resource name: **cluster-config**
-           ```
-           cluster-config
-           ```
+      ```
+      cluster-config
+      ```
     - Operator resource name: **cluster-config**
-           ```
-           cluster-config
-           ```
+      ```
+      cluster-config
+      ```
     - Operator namespace: **cluster-config**
-           ```
-           cluster-config
-           ```
+      ```
+      cluster-config
+      ```
     - Operator scope: **cluster**
-           ```
-           clusterg
-           ```
+      ```
+      cluster
+      ```
     - Operator type: **Flux**
-           ```
-           Flux
-           ```
+      ```
+      Flux
+      ```
     - Operator Parameters: **--git-readonly**
-           ```
-           --git-readonly
-           ```
+      ```
+      --git-readonly
+      ```
     - Repository URL: The forked repo name of **https://github.com/Azure/arc-k8s-demo** that you are using for performing the lab
     - Set the **Enable helm** option to **false**
     - **Leave the other options set to default**
