@@ -71,6 +71,6 @@ In this task you will select an existing policy definition and create a policy a
 
      ![](.././media/gitops4.png)
      
-   > **Note**: If the compliance state shows as **non-compliant**, you will need to create a remediation task in the next task and after sometime you will see the complaint state changed to **Compliant**
+   > **Note**: If the compliance state shows as **non-compliant** even after 1- 15 minutes, you will need to create a remediation task in the next task and after sometime you will see the complaint state changed to **Compliant**
    
 You don't have to wait for the compliance state to change. You can move ahead to the next exercise and later come back to this page to review the state.
