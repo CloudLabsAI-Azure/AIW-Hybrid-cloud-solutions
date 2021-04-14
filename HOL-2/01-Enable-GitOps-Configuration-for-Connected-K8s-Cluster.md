@@ -82,7 +82,7 @@ GitOps, as it relates to Kubernetes, is the practice of declaring the desired st
    
      > **Note**: Wait for 5 mins before performing the next step
 
-     > ```**Info**``` - Once you execute the above command, the manifests in your forked repository provision a few namespaces, deploy workloads, and provide some team-specific configuration. Using this repository with GitOps creates the following resources on your kubernetes cluster:
+     > ```Info``` - Once you execute the above command, the manifests in your forked repository provision a few namespaces, deploy workloads, and provide some team-specific configuration. Using this repository with GitOps creates the following resources on your kubernetes cluster:
 
      > *Namespaces*: cluster-config, team-a, team-b
      
