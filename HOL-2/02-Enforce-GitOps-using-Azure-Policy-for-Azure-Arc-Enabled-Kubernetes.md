@@ -30,11 +30,11 @@ In this task you will select an existing policy definition and create a policy a
 
 1. Provide the following details under **Parameters** tab and Click **Next**
     - Configuration resource name: **cluster-config**
-    ```
+    ```bash
     cluster-config
     ```
     - Operator resource name: **cluster-config**
-      ```
+      ```bash
       cluster-config
       ```
     - Operator namespace: **cluster-config**
