@@ -196,6 +196,7 @@ In the last excercise, you have seen how to enable security measures and monitor
    
 1. Once the Assessment results are available it will look like below.
     > Note: Now you can move to the next Exercise, you don't have to wait here to the Result appear.
+
    ![](.././media/ment4.png "run")
    
 
