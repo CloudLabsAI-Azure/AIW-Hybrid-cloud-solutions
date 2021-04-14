@@ -182,7 +182,7 @@ In the last excercise we had worked around security measures andmonitoring, so n
    ![](.././media/file1.png "run")
     
 1. After running the PowerShell script, navigate to **C:\sqlserver\SQLAssessment** directory in File Explorer, and you will be able to see some files and folders. These are the assessments and logs that are generated using the PowerShell script.
-  **Note: This can take 10 20 minutes to see the folder and logs in this directory.
+  > **Note** : This can take 10 20 minutes to see the folder and logs in this directory.
 
 
    ![](.././media/file12.png "run")
