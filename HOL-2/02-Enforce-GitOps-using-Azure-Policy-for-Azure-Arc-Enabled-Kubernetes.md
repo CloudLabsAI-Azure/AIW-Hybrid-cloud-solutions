@@ -28,7 +28,7 @@ In this task you will select an existing policy definition and create a policy a
 
 1. Click **Next** at the bottom of the window.
 
-1. Provide the following details under **Parameters** tab and Click **Next**
+1. Provide the following details under **Parameters** tab
     - Configuration resource name: **cluster-config**
       ```bash
       cluster-config
@@ -54,6 +54,8 @@ In this task you will select an existing policy definition and create a policy a
     - **Leave the other options set to default**
      
     ![](.././media/19v2.png)
+
+1. Then, Click on **Next** from the bottom of the page.
    
 1. Select the **Create a remediation task** check box and then click **Review+create**, skip the Non-compliance messages.
 
