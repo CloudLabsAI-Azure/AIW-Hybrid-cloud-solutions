@@ -187,7 +187,7 @@ After config-agent has installed the flux instance, resources held in the git re
     
     Observe the CPU request value that you updated in the previous steps in the output as shown:
     
-    ![](.././media/14.png)   
+    ![](.././media/cpu2.png)   
 
 In this exercise, you have seen how to enable GitOps Configuration on connected K8s Cluster and how it works.
 
