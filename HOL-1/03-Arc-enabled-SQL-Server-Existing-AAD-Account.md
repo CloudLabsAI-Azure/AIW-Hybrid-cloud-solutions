@@ -177,7 +177,7 @@ In the last excercise, you have seen how to enable security measures and monitor
 
     ![](.././media/runcmd.png "run")
     
-1. Now go to the directory **C:\sql_assessment\work_dir\SQLAssessment\SQLAssessment_0414202110171817_Targets_1** you will be able to see some files and folders created. These are the assessments and logs that are generated using the PowerShell script.    
+1. Now go to the directory **C:\sql_assessment\work_dir\SQLAssessment\SQLAssessment_0414202110171817_Targets_1** and you will be able to see some files and folders created. These are the assessments and logs that are generated using the PowerShell script.    
 
     ![](.././media/file12.png "run")
     
@@ -193,7 +193,7 @@ In the last excercise, you have seen how to enable security measures and monitor
    ![](.././media/ment3.png "run")
    
 1. Once the Assessment results are available it will look like below.
-    > Note: Now you can move to the next Exercise, you don't have to wait here to the Assessment complete.
+    > Note: Now you can move to the next Exercise, you don't have to wait here to the Result appear.
    ![](.././media/ment4.png "run")
    
 
