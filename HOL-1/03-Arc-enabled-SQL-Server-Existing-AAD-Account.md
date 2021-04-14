@@ -142,11 +142,26 @@ In the last excercise, you have seen how to enable security measures and monitor
    
    ![](.././media/entervmpassword.png "entervmpassword")
  
-1. Open File explorer from within the **sqlvm** and navigate to **C:\LabFiles\** directory and right-click on **AddSqlAssessment.ps1** PowerShell script and select **Run with PowerShell** to run the PowerShell script to schedule the task which will generate the assessment and logs.
+1. Click on Start Menu and search for **SQL Server 2019 Configuration Manger** and open SQL Server 2019 Configuration Manger.
 
-      > Note: If the script execution doesn't start, re-run the powershell script again.
+   ![](.././media/sql1.png "run")
+
+1. Now Select **SQL Server Network configuration** and Double click on **Protocol for MSSQLSERVER**.
+
+   ![](.././media/sql2.png "run")
  
-   ![](.././media/file.png "run")
+1. Now Right click on the **TCP/IP** and select **Enable**. You will get one Warning Pop-up select okay on the pop-up.
+ 
+   ![](.././media/sql3.png "run")
+ 
+1. After enabling the TCP/iP port select **SQL Server Services** from left side menu and right click on **SQL Server** and select Restart. This will restart the SQL Service and apply the TCP/IP port.
+
+   ![](.././media/sql4.png "run")
+ 
+1. Open File explorer in the **sqlvm** and navigate to **C:\LabFiles\** this directory and right-click on **AddSqlAssessment.ps1** PowerShell script and select **Run with PowerShell** to run the PowerShell script to schedule the task which will generate the assessment and logs.
+    > Note: If the script execution doesn't start, re-run the powershell script again.
+ 
+   ![](.././media/sql5.png "run")
    
 1. Type the below Schduled Task username and Password on powershell window and press enter to run the scipt.
 
@@ -158,6 +173,22 @@ In the last excercise, you have seen how to enable security measures and monitor
 1. After running the PowerShell script, navigate to **C:\sql_assessment** directory in File Explorer, and you will be able to see some files and folders. These are the assessments and logs that are generated using the PowerShell script.
 
     ![](.././media/file12.png "run")
+    
+1. To view the SQL Assessment in Azure Portal, Navigate back to Azure Portal .
+
+   ![](.././media/ment1.png "run")
+
+1. Now navigate to **azure-arc** Resource group and then select resource **SQLVM** with type  **SQL Server- Azure Arc**. 
+
+1. Now open Environment Health option from left side under Settings section and Click on **View SQL Assessment results**.
+    > Note: The View SQL Assessment results button remains disabled until the results are ready in Log Analytics. This process might take up to two hours after the data files are processed on the target machine.
+   
+   ![](.././media/ment2.png "run")
+   
+1. Once the Assessment results are available it will look like below.
+    > Note: Now you can move to the next Exercise, you don't have to wait here to the Assessment complete.
+   ![](.././media/ment3.png "run")
+   
 
 ## In this exercise, you have covered the following:
  
