@@ -14,15 +14,15 @@ In this task you will select an existing policy definition and create a policy a
 
     ![](.././media/15.png)
 
-1. Click **Assign policy**.
+1. Now, Click on **Assign policy**.
 
     ![](.././media/16.png)
 
-1. On the Basics Tab, click on the ellipses (…) to the right of **Policy definition**.
+1. On the Basics section, click on the ellipses (…) to the right of **Policy definition**.
 
     ![](.././media/17v2.png)
 
-1. In the **Search** window for available definitions, type ```GitOps``` and select the one called **Configure Kubernetes clusters with specified GitOps configuration using no secrets**.  Click the blue **Select** button below.
+1. In the **Search** window for available definitions, type ```GitOps``` and select the one named **Configure Kubernetes clusters with specified GitOps configuration using no secrets**.  Then, click on the blue **Select** button below.
 
     ![](.././media/gitops.png)
 
@@ -30,12 +30,30 @@ In this task you will select an existing policy definition and create a policy a
 
 1. Provide the following details under **Parameters** tab and Click **Next**
     - Configuration resource name: **cluster-config**
+           ```
+           cluster-config
+           ```
     - Operator resource name: **cluster-config**
+           ```
+           cluster-config
+           ```
     - Operator namespace: **cluster-config**
+           ```
+           cluster-config
+           ```
     - Operator scope: **cluster**
+           ```
+           clusterg
+           ```
     - Operator type: **Flux**
+           ```
+           Flux
+           ```
     - Operator Parameters: **--git-readonly**
-    - Repository URL: The forked repo of **https://github.com/Azure/arc-k8s-demo** that you are using for performing the lab
+           ```
+           --git-readonly
+           ```
+    - Repository URL: The forked repo name of **https://github.com/Azure/arc-k8s-demo** that you are using for performing the lab
     - Set the **Enable helm** option to **false**
     - **Leave the other options set to default**
      
