@@ -73,3 +73,4 @@ In this task you will select an existing policy definition and create a policy a
      
    > **Note**: If the compliance state shows as **non-compliant**, you will need to create a remediation task in the next task and after sometime you will see the complaint state changed to **Compliant**
    
+Now, you move on to the next page.
