@@ -28,13 +28,23 @@ GitOps, as it relates to Kubernetes, is the practice of declaring the desired st
 
     ![](.././media/putty-enter-ip.png "Enter ubuntu-k8s VM private IP")
     
-1. Enter the **ubuntu-k8s** vm username - ```demouser``` in **login as** and then hit **Enter**. Now, enter the password - ```demo@pass123``` and press **Enter**. Remember password will be hidden and not be visible in terminal, don't worry about that.
+1. Enter the **ubuntu-k8s** vm username - ```demouser``` in **login as** and then hit **Enter**. 
+
+   ```
+   demouser
+   ```
+
+1. Now, enter the password - ```demo@pass123``` and press **Enter**. Remember password will be hidden and will not be visible in terminal.
+
+   ```
+   demo@pass123
+   ```
 
     ![](.././media/enter-ubuntu-k8s-credentials.png "Enter ubuntu-k8s credentials")
     
     > Note: To paste any value in Putty terminal, just copy the values from anywhere and then right click on the terminal to paste the copied value.
 
-1. Login with Sudo. Run followingh command and provide the Password `demo@pass123`.
+1. Login with Sudo. Run following command and provide the Password `demo@pass123`.
 
    ```
    sudo su
@@ -44,16 +54,24 @@ GitOps, as it relates to Kubernetes, is the practice of declaring the desired st
    demo@pass123
    ```
     
-1. There is file installArcAgentLinux.txt on ARCHOST VM desktop 💻. Open the file and copy the first 7 lines and paste in putty to declare the values of AppID, AppSecret, TenantID, SubscriptionID, ResourceGroup, and location, and then log into azure using the 7th line. You can also find the values of these variables in the Environment Details tab and then use them in the next steps.
-   
-   ![](.././media/variableazlogin.png)
+1. Next, you have to navigate back to the Desktop of the provided virtual Machine ARCHOST VM 💻, and then click on `installArcAgentLinux.txt` file to open it.
 
-1. Run the following command:
+   ![](.././media/variableazlogin.gif "Install Arc Agent")
 
-   - Replace **your personal github account name** with your personal github account that you are using to perform the lab and Signed in above.
+1. Then, select the first 7 lines and, then right click and copy. 
+
+1. Then, go back to putty session and paste it in ubuntu-k8s VM by doing right click and it will start getting executed. 
+
+1. Once it is executed, you have declared the values of AppID, AppSecret, TenantID, SubscriptionID, ResourceGroup, and location, and then logged into azure using the 7th line. You can also find the values of these variables in the **Environment Details** tab. These variables are required for the next steps.
+
+    ![](.././media/variableazlogin.png "azlogin")
+
+1. Copy the below command to a notepad and then replace as mentioned below and run the command in ubuntu-k8s VM SSH session that is opened in putty:
+
+   - You have to replace **<githubusername>** in the below command with your github account username that you are using to perform the lab and signed in above.
 
    ```
-   az k8sconfiguration create --name cluster-config --cluster-name microk8s-cluster --resource-group $ResourceGroup --operator-instance-name cluster-config --operator-namespace cluster-config --repository-url https://github.com/<your personal github account name>/arc-k8s-demo --scope cluster --cluster-type connectedClusters
+   az k8sconfiguration create --name cluster-config --cluster-name microk8s-cluster --resource-group $ResourceGroup --operator-instance-name cluster-config --operator-namespace cluster-config --repository-url https://github.com/<githubusername>/arc-k8s-demo --scope cluster --cluster-type connectedClusters
    ```
    
    The output should be as shown:
@@ -62,16 +80,28 @@ GitOps, as it relates to Kubernetes, is the practice of declaring the desired st
    
      > Note: Wait for 5 mins before performing the next step
 
+     > **More information** - Once you execute the above command, the manifests in your forked repository provision a few namespaces, deploy workloads, and provide some team-specific configuration. Using this repository with GitOps creates the following resources on your kubernetes cluster:
+
+     > *Namespaces*: cluster-config, team-a, team-b
+     
+     > *Deployment*: cluster-config/azure-vote
+
+     > *ConfigMap*: team-a/endpoints
+     
+     > The config-agent polls Azure for new or updated configurations.
+
 ## Task 3: Validate the sourceControlConfiguration
 
-1. Validate whether the **sourceControlConfiguration** was successfully created and the **compliance** state is Installed. If it is pending, retry the same command again after sometime.
+1. Now, to validate whether the **sourceControlConfiguration** was successfully created and the **compliance** state is Installed, you have to run the command given below. 
+   
+   > Note: If the state is pending, retry the same command again after every 1 minute.
 
    ```
    az k8sconfiguration show --resource-group $ResourceGroup --name cluster-config --cluster-name microk8s-cluster --cluster-type connectedClusters
    ```
      > Note: that the sourceControlConfiguration resource is updated with compliance status, messages, and debugging information in the output.
 
-   The output should be as shown:
+   The output should include the following value as given here: ```"complianceState": "Installed"```
 
    ![](.././media/05.png) 
   
