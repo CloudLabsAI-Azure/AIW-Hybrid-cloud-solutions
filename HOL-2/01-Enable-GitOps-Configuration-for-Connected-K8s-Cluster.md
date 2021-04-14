@@ -101,7 +101,7 @@ GitOps, as it relates to Kubernetes, is the practice of declaring the desired st
    ```
    az k8sconfiguration show --resource-group $ResourceGroup --name cluster-config --cluster-name microk8s-cluster --cluster-type connectedClusters
    ```
-     > Note: that the sourceControlConfiguration resource is updated with compliance status, messages, and debugging information in the output.
+     > **Note**: that the sourceControlConfiguration resource is updated with compliance status, messages, and debugging information in the output.
 
    The output should include the following value as given here: ```"complianceState": "Installed"```
 
@@ -145,14 +145,14 @@ After config-agent has installed the flux instance, resources held in the git re
 
 ## Task 5: Make changes to cluster declarations in the Git repo.
 
-1.  Run the following command in Powershell window and confirm that the Age is the same for both **azure-vote-back** and **azure-vote-front** apps. It will be same since the deployment was done through **az k8sconfiguration** command.
+1.  Run the following command in SSH session that is already opened to the ubuntu-k8s from putty and confirm that the Age is the same for both **azure-vote-back** and **azure-vote-front** apps. It will be same since the deployment was done through **az k8sconfiguration** command.
 
     ```
     kubectl get pods 
     ```
     ![](.././media/09.png)
 
-2. Browse to the **forked** repo of ```https://github.com/Azure/arc-k8s-demo```
+2. Browse to the **forked** repo of ```https://github.com/Azure/arc-k8s-demo```, which will be in the following format: ```https://github.com/<yourGitHubaccountusername>/arc-k8s-demo```
 
 3. Navigate to **cluster-apps->azure-vote.yaml** and edit the yaml file
 
