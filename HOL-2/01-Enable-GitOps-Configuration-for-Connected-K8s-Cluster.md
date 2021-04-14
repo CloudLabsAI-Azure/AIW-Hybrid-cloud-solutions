@@ -160,7 +160,7 @@ After config-agent has installed the flux instance, resources held in the git re
 
 4. Change the cpu request from 250 to **120** in line 27 and line 72 and then scroll down to the buttom and click on **Commit changes** to confirm the changes to cpu request.
 
-   ![](.././media/11.png)
+   ![](.././media/cpu.png)
    
 
 ## Task 6: Verify changes are deployed to the cluster.
