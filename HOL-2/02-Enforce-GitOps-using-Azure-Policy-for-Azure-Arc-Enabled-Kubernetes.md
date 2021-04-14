@@ -30,9 +30,9 @@ In this task you will select an existing policy definition and create a policy a
 
 1. Provide the following details under **Parameters** tab and Click **Next**
     - Configuration resource name: **cluster-config**
-      ```
-      cluster-config
-      ```
+    ```
+    cluster-config
+    ```
     - Operator resource name: **cluster-config**
       ```
       cluster-config
