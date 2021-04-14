@@ -66,15 +66,17 @@ GitOps, as it relates to Kubernetes, is the practice of declaring the desired st
 
     ![](.././media/variableazlogin.png "azlogin")
 
-1. Copy the below command to a notepad and then replace as mentioned below and run the command in ubuntu-k8s VM SSH session that is opened in putty:
-
-   - You have to replace **<githubusername>** in the below command with your github account username that you are using to perform the lab and signed in above.
+1. Copy the below command to any text editor
 
    ```
    az k8sconfiguration create --name cluster-config --cluster-name microk8s-cluster --resource-group $ResourceGroup --operator-instance-name cluster-config --operator-namespace cluster-config --repository-url https://github.com/<githubusername>/arc-k8s-demo --scope cluster --cluster-type connectedClusters
    ```
+
+1. Then, replace as mentioned below and run the command in ubuntu-k8s VM SSH session that is opened in putty:
+
+   - You have to replace **<githubusername>** in the previous command with your username of the GitHub account to which you had forked the repository. 
    
-   The output should be as shown:
+   Once you execute, the output will be as shown:
 
    ![](.././media/04.png) 
    
