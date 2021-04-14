@@ -336,7 +336,7 @@ In this task, let's configure and collect data from your Linux machine by enabli
 
 1. Once you click on the **Enable** button, you can see a notification on the bell icon(🔔) in the top right corner: which says **validating deployment** and then changes to **Submitting deployment** and finally **Deployment in progress**. Deployment will take approx 15-20 minutes to deploy the insights for Ubuntu-k8s VM as extensions are being installed on your connected machine (ubuntu-k8s).
 
-    > Note: If you are still seeing Enable button even after clicking on, do not worry, once the extensions are installed, it will automatically change. You can move on to the next task.
+    > Note: If you are still seeing Enable button even after clicking on Enable. Once the extensions are installed, it will automatically change. You can move on to the next task.
 
     ![](.././media/submitting-deployment.png)
     
