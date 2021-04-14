@@ -113,7 +113,11 @@ GitOps, as it relates to Kubernetes, is the practice of declaring the desired st
   
 ## Task 4:  Validate the Kubernetes configuration
 
-1. After config-agent has installed the flux instance, resources held in the git repository should begin to flow to the cluster. Check to see that the namespaces, deployments, and resources are created by **Running the following command:**
+After config-agent has installed the flux instance, resources held in the git repository should begin to flow to the cluster. 
+
+   > ```Info```: Flux is the operator that makes GitOps happen in your cluster. It ensures that the cluster config matches the one in git and automates your deployments.
+
+1. To verify that the namespaces, deployments, and resources are created, **run the following command** in the SSH Session opened to the ubuntu-k8s VM from putty:
 
    ```
    kubectl get ns --show-labels
@@ -122,8 +126,6 @@ GitOps, as it relates to Kubernetes, is the practice of declaring the desired st
    The output shows that team-a, team-b, itops, and cluster-config namespaces have been created as shown:
   
    ![](.././media/07.png) 
-
-   > ```Info```: Flux is the operator that makes GitOps happen in your cluster. It ensures that the cluster config matches the one in git and automates your deployments.
    
 2. The **flux operator** will be deployed to **cluster-config** namespace, as directed by our **sourceControlConfig**:
       
