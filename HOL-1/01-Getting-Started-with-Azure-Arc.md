@@ -53,8 +53,29 @@ Hyper-V is Microsoft's hardware virtualization product. It lets you create and r
     ![](.././media/guestvms1.png "Guest VMs")
     
    > **Note**: If you see VMs are in stopped state and when you click on Start button and VMs are not getting start then right click on VM name and then delete the saved state. Now, start the VMs.
+   > 
+
+## Task 2: Register Resource Provider.
+
+   In this task you will have to register the resource provider for the available subscription, Please note that most of the subscriptions will already have the resource provider reegistered.
+   > Note: This exercise is only required if the Resource provider is not registered.
     
-## Task 2: Onboard Linux Machine to Azure Arc
+1. Login to Azure portal if not done already, and search for **Subscriptions** in search box.
+
+   ![](.././media/subscription.png "Guest VMs")
+
+1. Now scroll down from the left side menu and select ** Resource Providers** under Settings.
+
+   ![](.././media/rp.png "Guest VMs")
+   
+1. Now you can search the required resource provider and select or click on the resource provider and click on the register button, if the resource provider is already registered you will be able to see **Registered** after the name of the resource Provider.
+
+   ![](.././media/rp1.png "Guest VMs")
+   
+   ![](.././media/rp2.png "Guest VMs")
+   
+    
+## Task 3: Onboard Linux Machine to Azure Arc
 
 Now, let's onboard the Linux VMs and local Kubernetes cluster to Azure Arc. So, here we will onboard **ubuntu-k8s** VM to Azure Arc.
 
@@ -139,7 +160,7 @@ Now, let's onboard the Linux VMs and local Kubernetes cluster to Azure Arc. So, 
 
    ![](.././media/ubuntu-k8s-overview-status.png "ubuntu k8s onboard status check")   
    
-## Task 3: Onboard Kubernetes Cluster to Azure Arc
+## Task 4: Onboard Kubernetes Cluster to Azure Arc
 
 We have onboarded the Linux VM to Azure Arc and verified in task 2. Now, you will onboard the local Kubernetes cluster to Azure Arc. So, here we onboard **MicroK8s** Kubernetes cluster to Azure Arc which is hosted on **ubuntu-k8s** VM. We alreaddy have the Microk8s Kubernetes cluster ready and configured, and also Arc enabled CLI extensions are installed.
 
@@ -205,7 +226,7 @@ We have onboarded the Linux VM to Azure Arc and verified in task 2. Now, you wil
 
    ![](.././media/k8s-connectedv2.png "Kubernetes Cluster Connected")    
 
-## Task 4: Verify if the Kubernetes cluster is connected to Azure Arc
+## Task 5: Verify if the Kubernetes cluster is connected to Azure Arc
 
 Now let us verify if the Kubernetes cluster is connected to Azure Arc and is in a healthy state.
 
@@ -231,7 +252,7 @@ Now let us verify if the Kubernetes cluster is connected to Azure Arc and is in 
    
    ![](.././media/get-pods.png)
    
-## Task 5: Create a policy assignment to identify compliant/non-compliant resources
+## Task 6: Create a policy assignment to identify compliant/non-compliant resources
 Policies can be applied to Arc enabled servers the same way they are applied to Microsoft Azure virtual machines. Policies are applied to ensure that the Azure resources are compliant with established practices such as ensuring that all resources are tagged with an owner. Initiatives can be applied to ensure the server operating systems are compliant such as ensuring the time zone is set correctly on a Microsoft Windows server or a software package is installed on a Linux server. The initiatives use a publish policy to deploy a configuration requirement and an audit policy to check if the requirement has been met. In this task, let's deploy the **Log Analytics Workspace** using policy on ubuntu-k8s machine, which was onboarded earlier to Azure Arc.
 
 1. From the Azure Portal, search for ```Azure Arc``` from the search box and then click on it. 
@@ -286,7 +307,7 @@ Policies can be applied to Arc enabled servers the same way they are applied to 
 
     ![](.././media/ws-compliant.png)    
 
-## Task 6: Monitor Arc Enabled machines with Azure Monitor
+## Task 7: Monitor Arc Enabled machines with Azure Monitor
 
 Azure Monitor can collect data directly from your hybrid machines into a Log Analytics workspace for detailed analysis and correlation. Typically, this would entail installing the Log Analytics agent on the machine using a script, manually, or automatically following your configuration management standards. Arc enabled servers recently introduced support to install the Log Analytics and Dependency agent VM extensions for Windows and Linux, enabling Azure Monitor to collect data from your non-Azure VMs.
 
