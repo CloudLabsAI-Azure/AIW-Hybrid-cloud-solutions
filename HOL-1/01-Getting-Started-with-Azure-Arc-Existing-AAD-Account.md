@@ -80,7 +80,7 @@ Hyper-V is Microsoft's hardware virtualization product. It lets you create and r
 
    ![](.././media/rp1.png "Guest VMs")
    
-   ![](.././media/rp1.png "Guest VMs")
+   ![](.././media/rp2.png "Guest VMs")
    
     
 ## Task 3: Onboard Linux Machine to Azure Arc
