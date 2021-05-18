@@ -125,7 +125,7 @@ Now, let's onboard the Linux VMs and local Kubernetes cluster to Azure Arc. So, 
 
    ```
 
-    get https://aka.ms/azcmagent -O ~/install_linux_azcmagent.sh
+    wget https://aka.ms/azcmagent -O ~/install_linux_azcmagent.sh
    ```
     
    ![](.././media/download-arc-agent.png "Download Arc Linux Agent")
