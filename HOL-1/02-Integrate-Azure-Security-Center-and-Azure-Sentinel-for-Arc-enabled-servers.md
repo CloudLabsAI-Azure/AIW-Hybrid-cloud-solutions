@@ -110,7 +110,8 @@ You can connect your non-Azure computers in any of the following ways:
 
 1. You can also find the **ubuntu-k8s** Arc enabled server  available in the resources list because **LogAnalytics** agent is already enabled for it and the same Log Analytics workspace is connected to Security Center. 
 
-  > Note: Agent monitoring will take few minutes to update and show status as **Monitored** for Arc enabled server **ubuntu-k8s** as shown in below screen. You can continue to the next exercise and come back later to check on this.  
+  > Note: Agent monitoring will take few minutes to update and show status as **Monitored** for Arc enabled server **ubuntu-k8s** as shown in below screen. You can continue to the next exercise and come back later to check on this. 
+  > Please note that due to some latest updates the status is not changing to **Monitored** for Arc enabled server **ubuntu-k8s**, this is a temporary issue and will fixed in future updates.   
 
    ![](.././media/ss-ubuntuk8s-monitor.png)
 
