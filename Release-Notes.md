@@ -1,3 +1,3 @@
 # Release Notes
 
-### There is no new updates in this month till now
+- No updates in August 2021
