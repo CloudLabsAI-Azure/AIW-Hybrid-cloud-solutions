@@ -1,4 +1,3 @@
-# Azure Virtual Workshop: Hybrid Cloud Solution
+# Release Notes
 
-## August 2021 (No Planned updates)
-### Lab Guide Updates 
+- No updates in August 2021
