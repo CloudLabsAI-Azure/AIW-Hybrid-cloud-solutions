@@ -1,0 +1,70 @@
+[
+    {
+      "Name": "Azure Immersion Workshop: Hybrid Cloud Solutions",
+      "Language": "English",
+      "BaseURL": "https://github.com/CloudLabsAI-Azure/hybridworkshop",
+      "Files": [
+        {
+          "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/main/README.md",
+          "Order": 1
+        },
+        {
+          "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/main/HOL-1/01-Getting-Started-with-Azure-Arc-Existing-AAD-Account.md",
+          "Order": 2
+        },
+        {
+          "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/main/HOL-1/02-Integrate-Azure-Security-Center-and-Azure-Sentinel-for-Arc-enabled-servers.md",
+          "Order": 3
+        },
+        {
+          "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/main/HOL-1/03-Arc-enabled-SQL-Server-Existing-AAD-Account.md",
+          "Order": 4
+        },
+        {
+          "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/main/HOL-2/01-Enable-GitOps-Configuration-for-Connected-K8s-Cluster.md",
+          "Order": 5
+        },
+        {
+          "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/main/HOL-2/02-Enforce-GitOps-using-Azure-Policy-for-Azure-Arc-Enabled-Kubernetes.md",
+          "Order": 6
+        },
+        
+        {
+          "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/AVW-Arc-enabled-dataservices/aiw-arc/Instructions/README.md",
+          "Order": 7 
+        },
+        {
+          "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/AVW-Arc-enabled-dataservices/aiw-arc/Instructions/02.md",
+          "Order": 8
+        },
+        {
+          "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/AVW-Arc-enabled-dataservices/aiw-arc/Instructions/03.md",
+          "Order": 9
+        },
+        {
+          "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/AVW-Arc-enabled-dataservices/aiw-arc/Instructions/04.md",
+          "Order": 10
+        },
+      {
+          "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/hybridworkshop/main/steps/getting-started-with-Azure-Stack.md",
+          "Order": 11
+        },
+          {
+          "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/hybridworkshop/main/steps/3_AzSHCIIntegration.md",
+          "Order": 12
+        },
+        {
+          "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/hybridworkshop/main/steps/5_DeployAKSHCI.md",
+          "Order": 13
+        },
+        {
+          "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/hybridworkshop/main/steps/6_ExploreAKSHCI.md",
+          "Order": 14
+        },
+        {
+          "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/hybridworkshop/main/steps/4_ExploreAzSHCI.md",
+          "Order": 15
+        }
+      ]
+    }
+  ]
