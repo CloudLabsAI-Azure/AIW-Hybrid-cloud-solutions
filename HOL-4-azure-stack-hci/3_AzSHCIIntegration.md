@@ -3,7 +3,7 @@ Integrate Azure Stack HCI 20H2 with Azure
 Overview
 -----------
 
-With your Azure Stack HCI 20H2 cluster deployed successfully, you need to register this cluster to unlock full functionality.
+As part of the lab environment we have already deployed teh Azure Stack HCI 20H2 Cluster, so you don't have deploy it and continue register the already deployed cluster to unlock full functionality.
 
 Contents
 -----------
