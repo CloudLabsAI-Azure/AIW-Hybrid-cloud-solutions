@@ -223,7 +223,7 @@ With the management cluster deployed successfully, you're ready to move on to de
      *  **Kubernetes cluster name**: ```akshciclus001``` 
      *  **Kubernetes version**: ```v1.21.1```
 
-    ![AKS cluster details in Windows Admin Center](/media/aks_basics_cluster_details_single1.png "AKS cluster details in Windows Admin Center")
+    ![AKS cluster details in Windows Admin Center](../media/aks_basics_cluster_details_single1.png "AKS cluster details in Windows Admin Center")
 
 4. Under **Primary node pool**, accept the defaults, and then click **Next: Node pools**
 
