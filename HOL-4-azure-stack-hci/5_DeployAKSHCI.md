@@ -1,4 +1,4 @@
-Deploy your AKS-HCI infrastructure
+Exercise 2: Deploy your AKS-HCI infrastructure
 ==============
 Overview
 -----------
@@ -82,6 +82,8 @@ In order to successfully deploy AKS on Azure Stack HCI with Windows Admin Center
 
 3. Click on **View in Azure** to be taken to the Azure AD app portal, where you should see information about this app, including permissions required. If you're prompted to log in, provide appropriate credentials.
 4. Once logged in, under **Configured permissions**, you should see a few permissions listed with the status **Granted for...** and the name of your tenant. The **Microsoft Graph (5)** API permissions will show as **not granted** but this will be updated upon deployment
+
+5. Click on **Grant Admin Consent for Azure Stack HCI** button to give your app the permissions.
 
     ![Confirm Azure AD app permissions in Windows Admin Center](/media/wac_azuread_grant.png "Confirm Azure AD app permissions in Windows Admin Center")
 
@@ -221,7 +223,7 @@ With the management cluster deployed successfully, you're ready to move on to de
      *  **Kubernetes cluster name**: ```akshciclus001``` 
      *  **Kubernetes version**: ```v1.21.1```
 
-    ![AKS cluster details in Windows Admin Center](/media/basic2.png "AKS cluster details in Windows Admin Center")
+    ![AKS cluster details in Windows Admin Center](/media/aks_basics_cluster_details_single1.png "AKS cluster details in Windows Admin Center")
 
 4. Under **Primary node pool**, accept the defaults, and then click **Next: Node pools**
 
@@ -260,7 +262,7 @@ With the management cluster deployed successfully, you're ready to move on to de
 
 13. Once completed, you should see a message for successful creation, then click **Finish**
 
-     ![Completed deployment of AKS cluster in Windows Admin Center](/media/finish.png "Completed deployment of AKS cluster in Windows Admin Center")
+     ![Completed deployment of AKS cluster in Windows Admin Center](https://github.com/mattmcspirit/hybridworkshop/blob/main/media/aks_create_complete.png "Completed deployment of AKS cluster in Windows Admin Center")
 
 14. Back in the **Azure Kubernetes Service on Azure Stack HCI landing page**, you should now see your cluster listed.
 
