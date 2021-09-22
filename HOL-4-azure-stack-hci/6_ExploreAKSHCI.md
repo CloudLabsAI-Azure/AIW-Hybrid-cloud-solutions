@@ -1,4 +1,4 @@
-Explore the AKS on Azure Stack HCI environment
+Exercise 3: Explore the AKS on Azure Stack HCI environment
 ==============
 Overview
 -----------
@@ -42,9 +42,9 @@ As part of this brief tutorial, you'll deploy an [Azure vote application](https:
     kubectl get service azure-vote-front --watch
     ```
 
-During deployment, you may see the **External-IP** showing as *Pending* - when this changes to an IP address, you can use **CTRL + C** to stop the watch process. The stopping process can take a few seconds to stop the script from running.
+During deployment, you may see the **External-IP** showing as *Pending* - when this changes to an IP address, you can use **CTRL + C** to stop the watch process. The stopping process can take a few seconds to stop the script from running state.
 
-     ![Output of kubectl get service](/media/IP.png "Output of kubectl get service")
+   ![Output of kubectl get service](/media/IP.png "Output of kubectl get service")
 
     In our case, you can see that the service has been allocated the **192.168.0.152** IP address. Copy the IP Address to use in the next step.
 
@@ -113,7 +113,7 @@ In this example, using the [previously deployed simple Linux application](#deplo
     * Protocol: Select TCP
     * Action: Select Allow
     * Priority: ```1010```
-    * Name: ```AzureVotinApp```
+    * Name: ```AzureVotingApp```
 
     ![Add inbound security rule in Azure](/media/addinbound.png "Add inbound security rule in Azure")
 
@@ -152,9 +152,11 @@ With the network security group rule configured, there are some additional steps
    
 1. Now open Powershell to create a new Static NAT Mapping, run the following PowerShell command:
 
+   >Note: Please make sure to replace the **External IP** with the IP you got in Task 1:Step 3.
+
     ```powershell
     Add-NetNatStaticMapping -NatName "HYBRIDNAT" -Protocol TCP -ExternalIPAddress '0.0.0.0/24' -ExternalPort 80 `
-    -InternalIPAddress '192.168.0.153' -InternalPort 80
+    -InternalIPAddress 'External IP' -InternalPort 80
      ```
     ![Result of Add-NetNatStaticMapping](/media/Add-NetNatStaticMapping.png "Result of Add-NetNatStaticMapping")
 
