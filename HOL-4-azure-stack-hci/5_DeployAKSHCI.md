@@ -262,7 +262,7 @@ With the management cluster deployed successfully, you're ready to move on to de
 
 13. Once completed, you should see a message for successful creation, then click **Finish**
 
-     ![Completed deployment of AKS cluster in Windows Admin Center](https://github.com/mattmcspirit/hybridworkshop/blob/main/media/aks_create_complete.png "Completed deployment of AKS cluster in Windows Admin Center")
+     ![Completed deployment of AKS cluster in Windows Admin Center](media/ex2-task4-step14.png)
 
 14. Back in the **Azure Kubernetes Service on Azure Stack HCI landing page**, you should now see your cluster listed.
 
