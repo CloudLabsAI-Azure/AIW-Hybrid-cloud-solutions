@@ -97,7 +97,7 @@ In this example, using the [previously deployed simple Linux application](#deplo
 
     ![Virtual machine located in Azure](/media/vm.png "Virtual machine located in Azure")
 
-1. Once on the overview blade for your VM, **in the left-hand navigation**, click on **Networking**
+1. Once on the overview blade for your VM, **in the left-hand navigation**, click on **Networking** under Settings.
 
     ![Virtual machine located in Azure](/media/networking.png "Virtual machine located in Azure")
 
