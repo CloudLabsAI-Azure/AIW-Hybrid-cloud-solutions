@@ -1,4 +1,4 @@
-Exercise 2: Deploy your AKS-HCI infrastructure
+HOL-4: Exercise 2: Deploy your AKS-HCI infrastructure
 ==============
 Overview
 -----------
