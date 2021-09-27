@@ -18,6 +18,14 @@ Let’s take the journey together with Contoso and see how easy it is to accompl
 
 ## In the next pages, you will be covering each of the scenarios below with specific instructions to perform the lab:
 
-  * [Hands-on Lab 1](./HOL-1): First, let's start by learning how to onboard a virtual machine and Kubernetes cluster, both running on-premises, to Azure Arc, then apply a few Azure Policies, enable monitoring, and alerts as well as Integrate Azure Security Center and Azure Sentinel to your on-premises resources. You’ll also be able to deploy an SQL Server on the VM, connect it to Arc and explore SQL Assessments for this resource.
-  * [Hands-on Lab 2](./HOL-2): In this lab, you’ll learn to deploy GitOps configurations to the Kubernetes cluster that you onboarded to Arc earlier and enable Azure Policy add-on for Kubernetes to the same cluster.
-  * [Hands-on Lab 3](): In this lab, you will deploy the Azure Arc data controller, Azure SQL Managed Instance & Azure PostgreSQL Hyperscale to an existing Kubernetes cluster.
+  * [Hands-on Lab 1](./HOL-1-azure-arc-servers): First, let's start by learning how to onboard a virtual machine and Kubernetes cluster, both running on-premises, to Azure Arc, then apply a few Azure Policies, enable monitoring, and alerts as well as Integrate Azure Security Center and Azure Sentinel to your on-premises resources. You’ll also be able to deploy an SQL Server on the VM, connect it to Arc and explore SQL Assessments for this resource.
+  * [Hands-on Lab 2](./HOL-2-gitops-cluster): In this lab, you’ll learn to deploy GitOps configurations to the Kubernetes cluster that you onboarded to Arc earlier and enable Azure Policy add-on for Kubernetes to the same cluster.
+  * [Hands-on Lab 3](./HOL-3-azure-arc-data-services): In this lab, you will deploy the Azure Arc data controller, Azure SQL Managed Instance & Azure PostgreSQL Hyperscale to an existing Kubernetes cluster.
+  * [Hands-on Lab 4](./HOL-4-azure-stack-hci): In this workshop, we'll walk you through deploying both Azure Stack HCI, and Azure Kubernetes Service (AKS) on Azure Stack HCI in an Azure VM, and set the foundation for you to explore in your own time. You'll cover aspects such as:
+    -  Deploying and configuring a Windows Server 2019 Azure VM to host the infrastructure
+    -  Deployment and configuration of a 2-node Azure Stack HCI Cluster using Windows Admin Center
+    -  Deployment of the AKS on Azure Stack HCI management cluster with Windows Admin Center
+    -  Deployment of the AKS on Azure Stack HCI target/workload cluster with Windows Admin Center
+    -  Deployment of a simple test application
+    -  Integrating with Azure Arc
+    -  and more...!
