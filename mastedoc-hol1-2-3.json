@@ -5,7 +5,7 @@
       "BaseURL": "https://github.com/CloudLabsAI-Azure/hybridworkshop",
       "Files": [
         {
-          "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/main/README.md",
+          "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/temp/README.md",
           "Order": 1
         },
         {
@@ -27,24 +27,9 @@
         {
           "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/main/HOL-2-gitops-cluster/02-Enforce-GitOps-using-Azure-Policy-for-Azure-Arc-Enabled-Kubernetes.md",
           "Order": 6
-        },
-        
-        {
-          "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/main/HOL-3-azure-arc-data-services/readme.md",
-          "Order": 7 
-        },
-        {
-          "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/main/HOL-3-azure-arc-data-services/02.md",
-          "Order": 8
-        },
-        {
-          "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/main/HOL-3-azure-arc-data-services/03.md",
-          "Order": 9
-        },
-        {
-          "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/main/HOL-3-azure-arc-data-services/04.md",
-          "Order": 10
         }
+        
+       
      
       ]
     }
