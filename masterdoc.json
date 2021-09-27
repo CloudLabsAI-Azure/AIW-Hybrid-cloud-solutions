@@ -30,19 +30,19 @@
         },
         
         {
-          "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/main/HOL-1-azure-arc-servers/README.md",
+          "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/main/HOL-3-azure-arc-servers/README.md",
           "Order": 7 
         },
         {
-          "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/main/HOL-1-azure-arc-servers/02.md",
+          "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/main/HOL-3-azure-arc-servers/02.md",
           "Order": 8
         },
         {
-          "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/main/HOL-1-azure-arc-servers/03.md",
+          "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/main/HOL-3-azure-arc-servers/03.md",
           "Order": 9
         },
         {
-          "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/main/HOL-1-azure-arc-servers/04.md",
+          "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/main/HOL-3-azure-arc-servers/04.md",
           "Order": 10
         },
       {
