@@ -1,4 +1,4 @@
-Exercise 3: Explore the AKS on Azure Stack HCI environment
+HOL-4: Exercise 3: Explore the AKS on Azure Stack HCI environment
 ==============
 Overview
 -----------
