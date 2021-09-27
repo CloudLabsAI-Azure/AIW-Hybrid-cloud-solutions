@@ -1,4 +1,4 @@
-Getting Started With Azure Stack HCI 20H2 with Azure
+HOL-4: Getting Started With Azure Stack HCI 20H2 with Azure
 -------------------------
 
 Access the Azure Stack HCI20H2 VM
