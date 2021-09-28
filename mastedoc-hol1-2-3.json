@@ -2,7 +2,7 @@
     {
       "Name": "Azure Immersion Workshop: Hybrid Cloud Solutions",
       "Language": "English",
-      "BaseURL": "https://github.com/CloudLabsAI-Azure/hybridworkshop",
+      "BaseURL": "https://github.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions",
       "Files": [
         {
           "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/main/README.md",
