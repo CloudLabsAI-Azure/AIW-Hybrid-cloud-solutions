@@ -45,7 +45,7 @@ Your Azure VM deployment automatically installed Windows Admin Center 2103, howe
 
 **NOTE** - If there are any updates available for the Azure Kubernetes Service, select **Azure Kubernetes Service** and click on **Update** to install the latest version.
 
-    ![Installed extensions in Windows Admin Center](/media/AKS-update1.png "Installed extensions in Windows Admin Center")
+   ![Installed extensions in Windows Admin Center](/media/AKS-update1.png "Installed extensions in Windows Admin Center")
 
 *******************************************************************************************************
 
