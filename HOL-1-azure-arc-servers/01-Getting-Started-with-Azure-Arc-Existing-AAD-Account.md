@@ -288,7 +288,7 @@ Policies can be applied to Arc enabled servers the same way they are applied to 
 
     ![](.././media/select-ellipsev2.png)
     
-1. Search for ```Deploy Log Analytics``` in **Available Definitions** and then click on **Deploy Log Analytics agent for Linux VMs** and then click on **Select** button at the bottom.
+1. Search for ```Deploy Log Analytics``` in **Available Definitions** and then click on **Deploy Log Analytics extension for Linux VMs** and then click on **Select** button at the bottom.
 
     ![](.././media/deployloganalyticsv2.png)
     
