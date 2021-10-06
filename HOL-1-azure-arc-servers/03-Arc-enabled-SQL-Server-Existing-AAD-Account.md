@@ -26,7 +26,7 @@ In the last excercise, you have seen how to enable security measures and monitor
    - Region: Select same region as the Resource group.
    - Operating Systems: Select **Windows**.
 
-     Now click on the **Next:Tags** button.
+     Now, click on the **Next:Tags** button.
    
    ![](.././media/detailsql.png "sqlsearch")
    
@@ -34,9 +34,9 @@ In the last excercise, you have seen how to enable security measures and monitor
  
 1. On the **Script** blade, explore the given script. We will be using this PowerShell script to **Register Azure Arc enabled SQL Server** later.
  
-   > **Note** : You can skip the script download from here by clicking on ```X``` at the top right as we have already downloaded this script inside the Lab VM for you.
+   > **Note** : Please **skip the script download** from here by clicking on ```X``` at the top right as we have **already downloaded** this script inside the Lab VM for you.
     
-   ![](.././media/runsql.png "sqlsearch")
+   ![](.././media/runsqlv2.png "sqlsearch")
      
 ## Task 2: Register Azure Arc enabled SQL Server.
 
