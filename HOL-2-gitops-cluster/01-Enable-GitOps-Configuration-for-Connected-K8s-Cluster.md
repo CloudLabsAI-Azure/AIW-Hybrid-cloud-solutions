@@ -154,18 +154,18 @@ After config-agent has installed the flux instance, resources held in the git re
 
 2. Browse to the **forked** repo of ```https://github.com/Azure/arc-k8s-demo```, which will be in the following format: ```https://github.com/<yourGitHubaccountusername>/arc-k8s-demo```
 
-3. Navigate to **cluster-apps->azure-vote.yaml** and edit the yaml file
+3. Navigate to **cluster-apps->arc-k8s-demo.yaml** and edit the yaml file
 
    ![](.././media/pods2.png)   
 
-4. Change the cpu request from 250 to **120** in line 27 and line 72 and then scroll down to the buttom and click on **Commit changes** to confirm the changes to cpu request.
+4. Change the cpu request to **120** in line 32 and then scroll down to the buttom and click on **Commit changes** to confirm the changes to cpu request.
 
    ![](.././media/pods3.png)
    
 
 ## Task 6: Verify changes are deployed to the cluster.
 
-1.  Run the following command in the SSH Session that you have opened to ubuntu-k8s VM from Putty and copy the pod name starting with **azure-vote-front-**
+1.  Run the following command in the SSH Session that you have opened to ubuntu-k8s VM from Putty and copy the pod name starting with **arc-k8s-demo-**
 
     ```
     kubectl get pods 
