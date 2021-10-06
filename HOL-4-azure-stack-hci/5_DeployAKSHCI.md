@@ -40,6 +40,14 @@ Your Azure VM deployment automatically installed Windows Admin Center 2103, howe
 4. Click on **Installed extensions** and you will see **Azure Kubernetes Service** is installed.
 
     ![Installed extensions in Windows Admin Center](/media/installed.png "Installed extensions in Windows Admin Center")
+    
+*******************************************************************************************************
+
+**NOTE** - If there are any updates available for the Azure Kubernetes Service, select **Azure Kubernetes Service** and click on **Update** to install the latest version.
+
+   ![Installed extensions in Windows Admin Center](/media/AKS-update1.png "Installed extensions in Windows Admin Center")
+
+*******************************************************************************************************
 
 In order to deploy AKS-HCI with Windows Admin Center, you need to connect your Windows Admin Center instance to Azure.
 
@@ -83,9 +91,9 @@ In order to successfully deploy AKS on Azure Stack HCI with Windows Admin Center
 3. Click on **View in Azure** to be taken to the Azure AD app portal, where you should see information about this app, including permissions required. If you're prompted to log in, provide appropriate credentials.
 4. Once logged in, under **Configured permissions**, you should see a few permissions listed with the status **Granted for...** and the name of your tenant. The **Microsoft Graph (5)** API permissions will show as **not granted** but this will be updated upon deployment
 
-5. Click on **Grant Admin Consent for Azure Stack HCI** button to give your app the permissions.
+5. Click on **Grant Admin Consent for Azure HOL** button to give your app the permissions.
 
-    ![Confirm Azure AD app permissions in Windows Admin Center](/media/wac_azuread_grant.png "Confirm Azure AD app permissions in Windows Admin Center")
+    ![Confirm Azure AD app permissions in Windows Admin Center](/media/Ex2-task2-01.png "Confirm Azure AD app permissions in Windows Admin Center")
 
 *******************************************************************************************************
 
@@ -154,7 +162,7 @@ You'll notice that Windows Admin Center will validate memory, storage, networkin
 
 1. Under **VM Networking**, ensure that **InternalNAT** is selected for the **Internet-connected virtual switch**
 
-1. For **Enable virtual LAN identification**, leave this selected as **No**
+1. For **Use VLANs**, leave this selected as **No**
 
 1. For **IP address allocation method** choose **DHCP**
 
@@ -289,7 +297,7 @@ Next, you'll scale your Kubernetes cluster to add an additional Linux worker nod
      Get-AksHciCluster
      ```
 
-     ![Output of Get-AksHciCluster](/media/status.png "Output of Get-AksHciCluster")
+     ![Output of Get-AksHciCluster](/media/Ex2-task5-01.png "Output of Get-AksHciCluster")
 
 3. Next, you'll scale your Kubernetes cluster to have **2 Linux worker nodes** and **1 Windows worker node**:
 
@@ -313,7 +321,7 @@ Next, you'll scale your Kubernetes cluster to add an additional Linux worker nod
      Get-AksHciCluster
       ```
 
-     ![Output of Get-AksHciCluster](/media/get_akshcicluster_wac2.png "Output of Get-AksHciCluster")
+     ![Output of Get-AksHciCluster](/media/Ex2-task5-02.png "Output of Get-AksHciCluster")
 
 To access this **akshciclus001** cluster using **kubectl** (which was installed on your host as part of the overall installation process), you'll first need the **kubeconfig file**.
 
