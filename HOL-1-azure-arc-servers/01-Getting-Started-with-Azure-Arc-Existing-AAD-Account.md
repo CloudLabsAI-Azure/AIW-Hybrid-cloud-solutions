@@ -298,7 +298,7 @@ Policies can be applied to Arc enabled servers the same way they are applied to 
     
 1. Under the **Log Analytics Workspace**, select the existing workspace **LogAnalyticsWS-<inject key="DeploymentID/Suffix" />** from the available list and then click on **Next**.
 
-    ![](.././media/select-existing-wsv2.png)
+    ![](.././media/select-existing-wsv3.png)
 
 1. On the **Remediation** blade, enable the checkbox for **Create a remediation task** and then click on the **Next** button.
 
