@@ -29,11 +29,16 @@ In this task you will select an existing policy definition and create a policy a
 1. Click **Next** at the bottom of the window.
 
 1. Provide the following details under **Parameters** tab
+
+    - unselect **Only show parameters that require input**
+    
+      ![](.././media/uncheck-new.png)
+      
     - Configuration resource name: **cluster-config**
       ```bash
       cluster-config
       ```
-    - Operator resource name: **cluster-config**
+    - Operator instance name: **cluster-config**
       ```bash
       cluster-config
       ```
