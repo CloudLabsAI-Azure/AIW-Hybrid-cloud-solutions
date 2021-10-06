@@ -290,7 +290,7 @@ Policies can be applied to Arc enabled servers the same way they are applied to 
     
 1. Search for ```Deploy Log Analytics``` in **Available Definitions** and then click on **Deploy Log Analytics agent for Linux VMs** and then click on **Select** button at the bottom.
 
-    ![](.././media/deployloganalytics.png)
+    ![](.././media/deployloganalyticsv2.png)
     
 1. After selecting the policy definition, move to the **Parameters** blade by clicking on the **Next** button at the bottom.
 
