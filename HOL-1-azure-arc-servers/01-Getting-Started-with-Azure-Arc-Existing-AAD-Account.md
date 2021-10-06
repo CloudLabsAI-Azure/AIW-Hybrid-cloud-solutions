@@ -264,17 +264,17 @@ Now let us verify if the Kubernetes cluster is connected to Azure Arc and is in 
 ## Task 5: Create a policy assignment to identify compliant/non-compliant resources
 Policies can be applied to Arc enabled servers the same way they are applied to Microsoft Azure virtual machines. Policies are applied to ensure that the Azure resources are compliant with established practices such as ensuring that all resources are tagged with an owner. Initiatives can be applied to ensure the server operating systems are compliant such as ensuring the time zone is set correctly on a Microsoft Windows server or a software package is installed on a Linux server. The initiatives use a publish policy to deploy a configuration requirement and an audit policy to check if the requirement has been met. In this task, let's deploy the **Log Analytics Workspace** using policy on ubuntu-k8s machine, which was onboarded earlier to Azure Arc.
 
-1. From the Azure Portal, search for ```Azure Arc``` from the search box and then click on it. 
+1. From the Azure Portal, search for ```Arc``` from the search box and then click on it. 
 
-    ![](.././media/searchAzureArc1v2.png)
+    ![](.././media/searchAzureArc1v3.png)
     
 1. Select **Servers** from the options on the left side of the Azure Arc blade.
 
-    ![](.././media/select-servers.png)
+    ![](.././media/select-serversv2.png)
     
 1. Click on the **ubuntu-k8s** server from connected machines. 
 
-    ![](.././media/ubuntu-k8s-server1.png)
+    ![](.././media/ubuntu-k8s-server2.png)
     
 1. From **ubuntu-k8s** server blade, select **Policies** under **Operations** section on the left side.
 
