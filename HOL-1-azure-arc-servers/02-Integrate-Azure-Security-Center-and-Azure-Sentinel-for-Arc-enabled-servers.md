@@ -90,7 +90,7 @@ You can connect your non-Azure computers in any of the following ways:
     
    ![](.././media/search-security-center.png)
    
-1. From the Getting Started page, scroll down and then check on al the checkboxes and click on **Upgrade**. Please note in your lab environment you may find it already upgraded, in that case please skip this and next step.
+1. From the Getting Started page, scroll down and then check on all the checkboxes and click on **Upgrade**. Please note in your lab environment you may find it already upgraded, in that case please skip this and next step.
 
    ![](.././media/upgrade-security-centerv2.png)
    
