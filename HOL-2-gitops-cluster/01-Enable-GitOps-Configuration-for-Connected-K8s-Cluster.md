@@ -181,7 +181,7 @@ After config-agent has installed the flux instance, resources held in the git re
     ```
     kubectl get pod <podname> -o yaml
     ```
-    Example: ```kubectl get pod azure-vote-front-5779f4d696-fm22j -o yaml```
+    Example: ```kubectl get pod arc-k8s-demo-5779f4d696-fm22j -o yaml```
    
     ![](.././media/pods5.png)   
     
