@@ -154,7 +154,7 @@ After config-agent has installed the flux instance, resources held in the git re
 
 2. Browse to the **forked** repo of ```https://github.com/Azure/arc-k8s-demo```, which will be in the following format: ```https://github.com/<yourGitHubaccountusername>/arc-k8s-demo```
 
-3. Navigate to **cluster-apps->arc-k8s-demo.yaml** and edit the yaml file
+3. Navigate to **cluster-apps->arc-k8s-demo.yaml** and edit the yaml file.
 
    ![](.././media/pods2.png)   
 
