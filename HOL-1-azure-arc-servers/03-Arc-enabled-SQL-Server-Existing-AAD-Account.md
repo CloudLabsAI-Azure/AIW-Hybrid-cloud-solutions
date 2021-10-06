@@ -117,12 +117,20 @@ In the last excercise, you have seen how to enable security measures and monitor
    * **Account Type:** Select **Domain User Account** from the drop-down menu.
 
    Then click on the **Download configuration Script** button to download the PowerShell script.
-    
+     
    ![](.././media/sqlvm.png "sqlsearch")
-    
+   
+1. Please note that script dowload will be blocked by browser, so click on `...` for more actions.
+
+   ![](.././media/sqlvmd1.png) 
+   
+1. Now, click on **Keep** to download the script.
+
+   ![](.././media/sqlvmd2.png)       
+   
 1. Here you will see one PowerShell script is downloaded.
    
-   ![](.././media/download.png "download")
+   ![](.././media/downloadv2.png "download")
     
 1. Open PowerShell by clicking on the **Windows Powershell** from your LABVM Desktop and run this command to copy this script in the **sqlvm** machine.
     
