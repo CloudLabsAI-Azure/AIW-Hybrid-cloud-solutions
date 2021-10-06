@@ -145,7 +145,7 @@ After config-agent has installed the flux instance, resources held in the git re
 
 ## Task 5: Make changes to cluster declarations in the Git repo.
 
-1.  Run the following command in SSH session that is already opened to the ubuntu-k8s from putty and confirm that the Age is the same for both **azure-vote-back** and **azure-vote-front** apps. It will be same since the deployment was done through **az k8sconfiguration** command.
+1.  Run the following command in SSH session that is already opened to the ubuntu-k8s from putty and confirm that you are able to see **arc-k8s-demo-** pod.
 
     ```
     kubectl get pods 
