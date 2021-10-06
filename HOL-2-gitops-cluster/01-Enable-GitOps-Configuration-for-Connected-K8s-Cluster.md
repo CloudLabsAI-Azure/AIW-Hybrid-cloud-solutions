@@ -150,17 +150,17 @@ After config-agent has installed the flux instance, resources held in the git re
     ```
     kubectl get pods 
     ```
-    ![](.././media/pods01.png)
+    ![](.././media/pods1.png)
 
 2. Browse to the **forked** repo of ```https://github.com/Azure/arc-k8s-demo```, which will be in the following format: ```https://github.com/<yourGitHubaccountusername>/arc-k8s-demo```
 
 3. Navigate to **cluster-apps->azure-vote.yaml** and edit the yaml file
 
-   ![](.././media/pods02.png)   
+   ![](.././media/pods2.png)   
 
 4. Change the cpu request from 250 to **120** in line 27 and line 72 and then scroll down to the buttom and click on **Commit changes** to confirm the changes to cpu request.
 
-   ![](.././media/pods03.png)
+   ![](.././media/pods3.png)
    
 
 ## Task 6: Verify changes are deployed to the cluster.
@@ -170,7 +170,7 @@ After config-agent has installed the flux instance, resources held in the git re
     ```
     kubectl get pods 
     ```
-    ![](.././media/pods04.png) 
+    ![](.././media/pods4.png) 
     
     Observe in the above image that the previous pod is terminated and a new pod is created based on the updated configuration.
 
@@ -183,11 +183,11 @@ After config-agent has installed the flux instance, resources held in the git re
     ```
     Example: ```kubectl get pod azure-vote-front-5779f4d696-fm22j -o yaml```
    
-    ![](.././media/pods05.png)   
+    ![](.././media/pods5.png)   
     
     Observe the CPU request value that you updated in the previous steps in the output as shown:
     
-    ![](.././media/pods06.png)   
+    ![](.././media/pods6.png)   
 
 In this exercise, you have seen how to enable GitOps Configuration on connected K8s Cluster and how it works.
 
