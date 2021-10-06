@@ -86,7 +86,7 @@ GitOps, as it relates to Kubernetes, is the practice of declaring the desired st
 
      > *Namespaces*: cluster-config, team-a, team-b
      
-     > *Deployment*: cluster-config/azure-vote
+     > *Deployment*: cluster-config/arc-k8s
 
      > *ConfigMap*: team-a/endpoints
      
