@@ -233,12 +233,12 @@ With the management cluster deployed successfully, you're ready to move on to de
 
 5. On the **Node pools** page, click on **+Add node pool**
 6. In the **Add a node pool** blade, enter the following, then click **Add**
-   1. **Node pool name**: LinuxPool1
+   1. **Node pool name**: linuxpool1
    2. **OS type**: Linux
    3. **Node size**: Standard_K8S3_v1 (6 GB Memory, 4 CPU)
    4. **Node count**: 1
 
-   ![AKS node pools in Windows Admin Center](./media/pool.png "AKS node pools in Windows Admin Center")
+   ![AKS node pools in Windows Admin Center](./media/linuxpool.png "AKS node pools in Windows Admin Center")
 
 7. Once your **Node pools** have been defined, click **Next: Authentication**
 8. For this evaluation, for **AD Authentication** click **Disabled** and then click **Next: Networking**

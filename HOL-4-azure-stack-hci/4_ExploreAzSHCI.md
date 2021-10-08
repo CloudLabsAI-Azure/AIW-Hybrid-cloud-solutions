@@ -21,26 +21,26 @@ In this step, you'll create a volume on the Azure Stack HCI 20H2 cluster by usin
 
 1. Open **Windows Admin Center** on **HybridHost001** from the desktop is not already opened, click on your previously deployed cluster, **azshciclus.hybrid.local**
 
-    ![Create a volume on Azure Stack HCI 20H2](/media/1.png "Create a volume on Azure Stack HCI 20H2")
+    ![Create a volume on Azure Stack HCI 20H2](./media/1.png "Create a volume on Azure Stack HCI 20H2")
         
 2. On the left hand navigation, under **Storage** select **Volumes**.  The central **Volumes** page shows you should have a single volume currently
 
-    ![Create a volume on Azure Stack HCI 20H2](/media/totalvolumes.png "Create a volume on Azure Stack HCI 20H2")
+    ![Create a volume on Azure Stack HCI 20H2](./media/totalvolumes.png "Create a volume on Azure Stack HCI 20H2")
     
 4. On the Volumes page, select the **Inventory** tab, and then select **Create**
 
-    ![Create a volume on Azure Stack HCI 20H2](/media/inventory.png "Create a volume on Azure Stack HCI 20H2")
+    ![Create a volume on Azure Stack HCI 20H2](./media/inventory.png "Create a volume on Azure Stack HCI 20H2")
     
 6. In the **Create volume** pane, leave the default for for the volume name, and leave **Resiliency** as **Two-way mirror**
 8. In Size on HDD, specify **250GB** for the size of the volume
 9. Under **More options**, tick the box for **Use deduplication and compression**
 10. Under **Data type**, use the drop-down to select **Hyper-V**, then click **Create**.
 
-    ![Create a volume on Azure Stack HCI 20H2](/media/volume.png "Create a volume on Azure Stack HCI 20H2")
+    ![Create a volume on Azure Stack HCI 20H2](./media/volume.png "Create a volume on Azure Stack HCI 20H2")
 
 8. Creating the volume can take a few minutes. Notifications in the upper-right will let you know when the volume is created. The new volume appears in the Inventory list
 
-    ![Volume created on Azure Stack HCI 20H2](/media/volume1.png "Volume created on Azure Stack HCI 20H2")
+    ![Volume created on Azure Stack HCI 20H2](./media/volume1.png "Volume created on Azure Stack HCI 20H2")
 
  > **NOTE** - You'll notice there are 3 options for **Data type**; default, Hyper-V and Backup.  If you're interested in learning more about Deduplication in Azure Stack HCI 20H2, you should [refer to our documentation](https://docs.microsoft.com/en-us/windows-server/storage/data-deduplication/overview "Deduplication overview")
 
@@ -57,11 +57,11 @@ You should still be over on **HybridHost001**, but if you're not, log into Hybri
 
 3. On the left hand navigation, under **Compute** select **Virtual machines**.  The central **Virtual machines** page shows you no virtual machines deployed currently
     
-    ![Volume created on Azure Stack HCI 20H2](/media/vm1.png "Volume created on Azure Stack HCI 20H2")
+    ![Volume created on Azure Stack HCI 20H2](./media/vm1.png "Volume created on Azure Stack HCI 20H2")
 
 4. On the **Virtual machines** page, select the **Inventory** tab, and then click on **Add** and select **New**.
 
-    ![Volume created on Azure Stack HCI 20H2](/media/newvm.png "Volume created on Azure Stack HCI 20H2")
+    ![Volume created on Azure Stack HCI 20H2](./media/newvm.png "Volume created on Azure Stack HCI 20H2")
 
 6. In the **New virtual machine** pane, enter **VM001** for the name, and enter the following pieces of information, then click **Create**
 
@@ -74,33 +74,33 @@ You should still be over on **HybridHost001**, but if you're not, log into Hybri
     * Storage: **Add, then Create an empty virtual hard disk** and set size to **5GB**
     * Operating System: **Install an operating system later**
 
-      ![Volume created on Azure Stack HCI 20H2](/media/vmdetails.png "Volume created on Azure Stack HCI 20H2")
+      ![Volume created on Azure Stack HCI 20H2](./media/vmdetails.png "Volume created on Azure Stack HCI 20H2")
       
-      ![Volume created on Azure Stack HCI 20H2](/media/vmdetails2.png "Volume created on Azure Stack HCI 20H2")
+      ![Volume created on Azure Stack HCI 20H2](./media/vmdetails2.png "Volume created on Azure Stack HCI 20H2")
 
 5. The creation process will take a few moments, and once complete, **VM001** should show within the **Virtual machines view**
 
 6. Click on the checkbox before the **VM** and then click click on **Power** button and select **Start** - within moments, the VM should be running.
 
-    ![VM001 up and running](/media/vmstart.png "VM001 up and running")
+    ![VM001 up and running](./media/vmstart.png "VM001 up and running")
     
-    ![VM001 up and running](/media/vmstarted.png "VM001 up and running")
+    ![VM001 up and running](./media/vmstarted.png "VM001 up and running")
 
 7. Click on **VM001** to view the properties and status for this running VM.
 
-    ![VM001 up and running](/media/vmdash.png "VM001 up and running")
+    ![VM001 up and running](./media/vmdash.png "VM001 up and running")
 
 8. Click on **Connect** and select **connect** button from the drop down- you may get a **VM Connect** prompt:
 
-    ![Connect to VM001](/media/setting.png "Connect to VM001")
+    ![Connect to VM001](./media/setting.png "Connect to VM001")
 
 9. Click on **Go to Settings** and in the **Remote Desktop** pane, click on **Allow remote connections to this computer**, then **Save**
 
-     ![Connect to VM001](/media/rdo.png "Connect to VM001")
+     ![Connect to VM001](./media/rdo.png "Connect to VM001")
      
 10. Click the **Back** button in your browser to return to the VM001 view, then click **Connect**, and when prompted with the certificate prompt, click **Connect** and enter Password as **demo!pass123**
 
-      ![Connect to VM001](/media/rdp.png "Connect to VM001")
+      ![Connect to VM001](./media/rdp.png "Connect to VM001")
       
 12. There's no operating system installed here, so it should show a UEFI boot summary, but the VM is running successfully
 
@@ -119,13 +119,13 @@ The final step we'll cover is using Windows Admin Center to live migrate VM001 f
 
 4. Next to **VM001**, click the tick box next to VM001, then click **More**.  You'll notice you can Clone, Domain Join and also Move the VM. Click **Move**
 
-    ![Start Live Migration using Windows Admin Center](/media/move.png "Start Live Migration using Windows Admin Center")
+    ![Start Live Migration using Windows Admin Center](./media/move.png "Start Live Migration using Windows Admin Center")
 
 5. In the **Move Virtual Machine** pane, ensure **Failover Cluster** is selected, and leave the default **Best available cluster node** to allow Windows Admin Center to pick where to migrate the VM to, then click **Move**
 
 6. The live migration will then begin, and within a few seconds, the VM should be running on a different node.
 
-     ![Start Live Migration using Windows Admin Center](/media/move1.png "Start Live Migration using Windows Admin Center")
+     ![Start Live Migration using Windows Admin Center](./media/move1.png "Start Live Migration using Windows Admin Center")
   
 7. On the left hand navigation, under **Compute** select **Virtual machines** to return to the VM dashboard view, which aggregates information across your cluster, for all of your VMs.
 

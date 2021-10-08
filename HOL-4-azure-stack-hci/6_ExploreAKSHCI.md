@@ -26,7 +26,7 @@ As part of this brief tutorial, you'll deploy an [Azure vote application](https:
     kubectl get nodes
     ```
 
-   ![Output of kubectl get nodes](/media/nodes.png "Output of kubectl get nodes")
+   ![Output of kubectl get nodes](./media/Ex3-task1-01.png "Output of kubectl get nodes")
 
 2. Next, from the same **PowerShell **console**** run the following command to deploy the application directly from GitHub:
 
@@ -34,7 +34,7 @@ As part of this brief tutorial, you'll deploy an [Azure vote application](https:
     kubectl apply -f https://raw.githubusercontent.com/Azure/aks-hci/main/eval/yaml/azure-vote.yaml
     ```
 
-    ![Output of kubectl apply](/media/output1.png "Output of kubectl apply")
+    ![Output of kubectl apply](./media/output1.png "Output of kubectl apply")
 
 3. Next, run the following command to monitor the progress of the deployment (using the --watch argument):
 
@@ -43,14 +43,18 @@ As part of this brief tutorial, you'll deploy an [Azure vote application](https:
     ```
 
 During deployment, you may see the **External-IP** showing as *Pending* - when this changes to an IP address, you can use **CTRL + C** to stop the watch process. The stopping process can take a few seconds to stop the script from running state.
-
-   ![Output of kubectl get service](/media/IP.png "Output of kubectl get service")
+    
+    
+   >Note: If the watch process take too long to terminate the operation, close the PowerShell window. Click on the windows button and look for PowerShell ISE and right-click on it to Run as administrator to open new PowerShell window.
+   
+   
+   ![Output of kubectl get service](./media/IP.png "Output of kubectl get service")
 
     In our case, you can see that the service has been allocated the **192.168.0.152** IP address. Copy the IP Address to use in the next step.
 
 4. At this point, open **Microsoft Edge** and navigate to the IP address that you have copied from the previous step.
 
-    ![Azure vote app in Edge](/media/wenpage.png "Azure vote app in Edge")
+    ![Azure vote app in Edge](./media/wenpage.png "Azure vote app in Edge")
 
 6. We have created a single replica of the Azure Vote front end and Redis instance. To see the number and state of pods in your cluster, use the **kubectl get command** as follows. The output should show one front end pod and one back-end pod:
 
@@ -58,7 +62,7 @@ During deployment, you may see the **External-IP** showing as *Pending* - when t
     kubectl get pods -n default
     ```
 
-   ![Output of kubectl get pods](/media/nodes1.png "Output of kubectl get pods")
+   ![Output of kubectl get pods](./media/nodes1.png "Output of kubectl get pods")
 
 7. To change the number of pods in the azure-vote-front deployment, use the **kubectl scale command**. The following example **increases the number of front end pods to 5**
 
@@ -66,7 +70,7 @@ During deployment, you may see the **External-IP** showing as *Pending* - when t
     kubectl scale --replicas=5 deployment/azure-vote-front
     ```
 
-     ![Output of kubectl scale](/media/kubectl_scale.png "Output of kubectl scale")
+     ![Output of kubectl scale](./media/kubectl_scale.png "Output of kubectl scale")
 
 8. Run **kubectl get pods** again to verify that additional pods have been created. After a minute or so, the additional pods are available in your cluster
 
@@ -74,7 +78,7 @@ During deployment, you may see the **External-IP** showing as *Pending* - when t
     kubectl get pods -n default
     ```
 
-    ![Output of kubectl get pods](/media/kubectl_get_pods_scaled.png "Output of kubectl get pods")
+    ![Output of kubectl get pods](./media/kubectl_get_pods_scaled.png "Output of kubectl get pods")
 
 You should now have 5 pods for this application.
 
@@ -95,11 +99,11 @@ In this example, using the [previously deployed simple Linux application](#deplo
 
 1. Once logged in, using the search box on the dashboard, enter "HybridHost001" and once the results are returned, click on your AKSHCIHost virtual machine.
 
-    ![Virtual machine located in Azure](/media/vm.png "Virtual machine located in Azure")
+    ![Virtual machine located in Azure](./media/vm.png "Virtual machine located in Azure")
 
 1. Once on the overview blade for your VM, **in the left-hand navigation**, click on **Networking** under Settings.
 
-    ![Virtual machine located in Azure](/media/networking.png "Virtual machine located in Azure")
+    ![Virtual machine located in Azure](./media/networking.png "Virtual machine located in Azure")
 
 1. You'll see the existing network security group rules. On the right-hand side, click **Add inbound port rule**
 
@@ -115,13 +119,13 @@ In this example, using the [previously deployed simple Linux application](#deplo
     * Priority: ```1010```
     * Name: ```AzureVotingApp```
 
-    ![Add inbound security rule in Azure](/media/addinbound.png "Add inbound security rule in Azure")
+    ![Add inbound security rule in Azure](./media/addinbound.png "Add inbound security rule in Azure")
 
      > **NOTE** - If you wish to expose multiple ports, you can create additional rules, or specify a range of ports within the same rule. You can also be more specific about the source traffic type, source port, and destination traffic type.
 
 1. With the network security group rule created, **make a note of the NIC Public IP** on the **Networking blade**.
 
-     ![Add inbound security rule in Azure](/media/nic.png "Add inbound security rule in Azure")
+     ![Add inbound security rule in Azure](./media/nic.png "Add inbound security rule in Azure")
 
 ### Add a new NAT Static Mapping
 With the network security group rule configured, there are some additional steps required to NAT the incoming traffic through to the containerized application.
@@ -132,8 +136,7 @@ With the network security group rule configured, there are some additional steps
     kubectl get service azure-vote-front
     ```
 
-    ![Using kubectl to retrieve info about the application](/media/kubectl_service.png "Using kubectl to retrieve info about the application")
-
+    ![Using kubectl to retrieve info about the application](./media/kubectl_service.png "Using kubectl to retrieve info about the application")
 
 1. As you can see from the image, this particular app has been assigned with IP address **192.168.0.153** and is accessible on port **80**
 
@@ -158,11 +161,11 @@ With the network security group rule configured, there are some additional steps
     Add-NetNatStaticMapping -NatName "HYBRIDNAT" -Protocol TCP -ExternalIPAddress '0.0.0.0/24' -ExternalPort 80 `
     -InternalIPAddress 'External IP' -InternalPort 80
      ```
-    ![Result of Add-NetNatStaticMapping](/media/Add-NetNatStaticMapping.png "Result of Add-NetNatStaticMapping")
+    ![Result of Add-NetNatStaticMapping](./media/staticmapping.png "Result of Add-NetNatStaticMapping")
 
 4. The NAT static mapping should be successfully created, and you can now test the accessibility of your application from outside of the Azure VM. You should try to access the web application using the **Azure VM Public IP** which you [noted down earlier](#add-an-inbound-rule-to-your-nsg).
 
-    ![Access web application using Azure Public IP](/media/access_web_app.png "Access web application using Azure Public IP")
+    ![Access web application using Azure Public IP](./media/access_web_app.png "Access web application using Azure Public IP")
 
 **NOTE** - This process creates a NAT static mapping that's specific to that External IP and Port of that specific Kubernetes service you have deployed in the environment. You will need to repeat the process for additional applications. To learn more about PowerShell NetNat commands, [visit the official documentation](https://docs.microsoft.com/en-us/powershell/module/netnat "Official documentation for NetNat").
 
@@ -172,7 +175,7 @@ With the network security group rule configured, there are some additional steps
     Start-Service -Name "ServerManagementGateway"
     Get-Service -Name "ServerManagementGateway"
     ```
-   ![Result of Add-NetNatStaticMapping](/media/windows.png "Result of Add-NetNatStaticMapping")
+   ![Result of Add-NetNatStaticMapping](./media/windows.png "Result of Add-NetNatStaticMapping")
 
    >Note: Make sure that the ServerManagementGateway service is in running status before running the next step.
    
