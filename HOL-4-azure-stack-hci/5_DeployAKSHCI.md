@@ -43,7 +43,7 @@ Your Azure VM deployment automatically installed Windows Admin Center 2103, howe
     
 5. Please notes, if there are any updates available for the Azure Kubernetes Service, select **Azure Kubernetes Service** and click on **Update** to install the **latest** version.
 
-   ![](/media/extensionv.png)
+   ![](./media/extensionv.png)
 
 In order to deploy AKS-HCI with Windows Admin Center, you need to connect your Windows Admin Center instance to Azure.
 
