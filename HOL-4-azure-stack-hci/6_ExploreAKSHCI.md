@@ -45,7 +45,7 @@ As part of this brief tutorial, you'll deploy an [Azure vote application](https:
 During deployment, you may see the **External-IP** showing as *Pending* - when this changes to an IP address, you can use **CTRL + C** to stop the watch process. The stopping process can take a few seconds to stop the script from running state.
     
     
-   >Note: If the script take more time to stop, close the Powershell window. Click on the windows button and look for PowerShell ISE and right-click on it to Run as administrator to open new PowerShell window.
+   >Note: If the script takes long time to stop, close the PowerShell window. Click on the windows button and look for PowerShell ISE and right-click on it to Run as administrator to open new PowerShell window.
    
    
    ![Output of kubectl get service](./media/IP.png "Output of kubectl get service")
