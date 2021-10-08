@@ -287,37 +287,31 @@ Next, you'll scale your Kubernetes cluster to add an additional Linux worker nod
      Get-Command -Module AksHci
      ```
 
-2. Next, to check on the status of the existing clusters, run the following
+2. Next, to check on the status of the existing clusters, run the following command, you will see node count 1. 
 
      ```powershell
-     Get-AksHciCluster
+     Get-AksHciNodePool -clusterName akshciclus001
      ```
 
-     ![Output of Get-AksHciCluster](./media/Ex2-task5-01.png "Output of Get-AksHciCluster")
+     ![](./media/countpoolone.png)
 
-3. Next, you'll scale your Kubernetes cluster to have **2 Linux worker nodes** and **1 Windows worker node**:
+3. Next, you'll scale your Kubernetes cluster node pool using below command:, it will scale the node count to 2. 
 
    > **Note**: This can take upto 10 minutes to scale up the cluster
 
     ```powershell
-    Set-AksHciCluster –Name akshciclus001 -linuxNodeCount 2 -windowsNodeCount 1
+    Set-AksHciNodePool -clusterName akshciclus001 -name linuxpool1 -count 2
     ```
-
-**NOTE** - You can also scale your Control Plane nodes for this particular cluster, however it has to be **scaled independently from the worker nodes** themselves. You can scale the Control Plane nodes using the command. Before you run this command however, check that you have an extra 16GB memory left of your HybridHost001 OS - if your host has been deployed with 64GB RAM, you may not have enough capacity for an additonal 2 Control Plane VMs.
-
-    ```powershell
-    Set-AksHciCluster –Name akshciclus001 -controlPlaneNodeCount 3
-    ```
-
-  > **NOTE** - the control plane node count should be an **odd** number, such as 1, 3, 5 etc.
+    
+    ![Output of Set-AksHciNodePool](./media/scalepool.png)
 
 4. Once these steps have been completed, you can verify the details by running the following command:
 
      ```powershell
-     Get-AksHciCluster
+     Get-AksHciNodePool -clusterName akshciclus001
       ```
 
-     ![Output of Get-AksHciCluster](./media/Ex2-task5-02.png "Output of Get-AksHciCluster")
+    ![Output of Get-AksHciCluster](./media/countpoolone.png)
 
 To access this **akshciclus001** cluster using **kubectl** (which was installed on your host as part of the overall installation process), you'll first need the **kubeconfig file**.
 
