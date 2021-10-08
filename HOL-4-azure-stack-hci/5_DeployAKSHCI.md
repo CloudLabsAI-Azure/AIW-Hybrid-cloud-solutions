@@ -143,14 +143,12 @@ You'll notice that Windows Admin Center will validate memory, storage, networkin
 
 7. On the **Credential delegation** page, read the information about **CredSSP**, then click **Enable**. Once enabled, click **Next: Host configuration**
 
-    ![Enable CredSSP in Windows Admin Center](./media/enabled.png "Enable CredSSP in Windows Admin Center")
+   ![Enable CredSSP in Windows Admin Center](./media/enabled.png "Enable CredSSP in Windows Admin Center")
 
-   **NOTE** - if you receive a WinRM error, open an **Administrative PowerShell console** and run the following command and then retry the step 7:
+   > **NOTE** - if you receive a WinRM error, open an **Administrative PowerShell console** and run the following command and then retry the step 7:
 
+   > Restart-Service WinRm -Force
 
-     ```
-     Restart-Service WinRm -Force
-     ```
 
 8. On the **Host configuration** page, under **Host details**, select your **V:**, and leave the other settings as default
 
