@@ -311,7 +311,7 @@ Next, you'll scale your Kubernetes cluster to add an additional Linux worker nod
      Get-AksHciNodePool -clusterName akshciclus001
       ```
 
-    ![Output of Get-AksHciCluster](./media/countpoolone.png)
+    ![Output of Get-AksHciCluster](./media/countpooltwo.png)
 
 To access this **akshciclus001** cluster using **kubectl** (which was installed on your host as part of the overall installation process), you'll first need the **kubeconfig file**.
 
