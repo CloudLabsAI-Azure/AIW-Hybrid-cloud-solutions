@@ -47,25 +47,25 @@ Your Azure VM deployment automatically installed Windows Admin Center 2103, howe
 
 In order to deploy AKS-HCI with Windows Admin Center, you need to connect your Windows Admin Center instance to Azure.
 
-5. Now, in **Settings**, under **Gateway** click on **Azure**.
+6. Now, in **Settings**, under **Gateway** click on **Azure**.
 
    ![Installed extensions in Windows Admin Center](/media/azure.png "Installed extensions in Windows Admin Center")
     
-6. Click **Register**(1), and in the **Get started with Azure in Windows Admin Center** blade, follow the instructions to **Copy the code**(2) and then click on the link **Enter the Code**(3) to configure device login.
+7. Click **Register**(1), and in the **Get started with Azure in Windows Admin Center** blade, follow the instructions to **Copy the code**(2) and then click on the link **Enter the Code**(3) to configure device login.
 
    ![Installed extensions in Windows Admin Center](/media/login.png "Installed extensions in Windows Admin Center")
     
-7. Now, Paste the code you copied in previous step and click on **Next** button.
+8. Now, Paste the code you copied in previous step and click on **Next** button.
 
    ![Installed extensions in Windows Admin Center](/media/code.png "Installed extensions in Windows Admin Center")
      
-8. When prompted for credentials, **enter your Azure credentials** for a tenant you'd like to use to register the Windows Admin Center and click on continue button if you get any popup saying **Are you trying to sign in to Windows Admin Center?**.
+9. When prompted for credentials, **enter your Azure credentials** for a tenant you'd like to use to register the Windows Admin Center and click on continue button if you get any popup saying **Are you trying to sign in to Windows Admin Center?**.
 
-9. Now, switch Back in **Windows Admin Center** tab, you'll notice your tenant information has been added.  You can click on **Connect** to connect Windows Admin Center to Azure.
+10. Now, switch Back in **Windows Admin Center** tab, you'll notice your tenant information has been added.  You can click on **Connect** to connect Windows Admin Center to Azure.
 
    ![Connecting Windows Admin Center to Azure](/media/connect.png "Connecting Windows Admin Center to Azure")
 
-10. Click on **Sign in** and when prompted for credentials, **enter your Azure credentials** and you will see a popup **Permissions requested**. Select **Consent on behalf of your organization** then click **Accept**.
+11. Click on **Sign in** and when prompted for credentials, **enter your Azure credentials** and you will see a popup **Permissions requested**. Select **Consent on behalf of your organization** then click **Accept**.
 
     ![Permissions for Windows Admin Center](media/ex2-task1-step10.png)
 
