@@ -33,7 +33,7 @@ Azure Stack HCI 20H2 is delivered as an Azure service and needs to register with
      } 
      ```
      
-    ![Check the registration status of the Azure Stack HCI 20H2 cluster](/media/output.png "Check the registration status of the Azure Stack HCI 20H2 cluster")
+    ![Check the registration status of the Azure Stack HCI 20H2 cluster](./media/output.png "Check the registration status of the Azure Stack HCI 20H2 cluster")
 
 As you can see from the result, the cluster is yet to be registered, and the cluster status identifies as **Clustered**. Azure Stack HCI 20H2 needs to register within 30 days of installation as per the Azure Online Services Terms. If it is not clustered within 30 days, the **ClusterStatus** will show **OutOfPolicy**, and if not registered within 30 days, the **RegistrationStatus** will show as **OutOfPolicy**.
 
@@ -70,11 +70,11 @@ Of these commands, many are optional:
 
 4. Once dependencies have been installed, you'll receive a popup on **HybridHost001** to authenticate to Azure. Provide your **Azure credentials**.
 
-    ![Login to Azure](/media/azure_login_reg.png "Login to Azure")
+    ![Login to Azure](./media/azure_login_reg.png "Login to Azure")
 
 5. Once successfully authenticated, the registration process will begin and will take some time to finish. Once completed, you should see a message indicating success, as per below:
 
-    ![Register Azure Stack HCI 20H2 with PowerShell](/media/registered.png "Register Azure Stack HCI 20H2 with PowerShell")
+    ![Register Azure Stack HCI 20H2 with PowerShell](./media/registered.png "Register Azure Stack HCI 20H2 with PowerShell")
 
 6. Once the cluster is registered, run the following command on **HybridHost001** to check the updated status:
 
@@ -83,7 +83,7 @@ Of these commands, many are optional:
     Get-AzureStackHCI
     }
     ```
-    ![Check updated registration status with PowerShell](/media/connected.png "Check updated registration status with PowerShell")
+    ![Check updated registration status with PowerShell](./media/connected.png "Check updated registration status with PowerShell")
 
 You can see the **ConnectionStatus** and **LastConnected** time, which is usually within the last day unless the cluster is temporarily disconnected from the Internet. An Azure Stack HCI 20H2 cluster can operate fully offline for up to 30 consecutive days.
 
@@ -95,15 +95,15 @@ Once the registration is complete, you should take some time to explore the arti
 
 1. You should see a new **Resource group** listed, with the name you specified earlier, which in our case, is **HybridHost**
 
-    ![Registration resource group in Azure](/media/rg.png "Registration resource group in Azure")
+    ![Registration resource group in Azure](./media/rg.png "Registration resource group in Azure")
 
 1. Click on the **HybridHost** resource group, and in the central pane, you'll see that a record with the name **azshciclus** has been created inside the resource group.
 
-    ![Registration resource group in Azure](/media/stack.png "Registration resource group in Azure")
+    ![Registration resource group in Azure](./media/stack.png "Registration resource group in Azure")
 
 1. Click on the **azihciclus** record, and you'll be taken to the new Azure Stack HCI Resource Provider, which shows information about all of your clusters, including details on the currently selected cluster.
 
-    ![Overview of the recently registered cluster in the Azure portal](/media/overview.png "Overview of the recently registered cluster in the Azure portal")
+    ![Overview of the recently registered cluster in the Azure portal](./media/overview.png "Overview of the recently registered cluster in the Azure portal")
 
 
 ### Congratulations! ###
