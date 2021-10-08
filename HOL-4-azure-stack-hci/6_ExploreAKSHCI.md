@@ -138,11 +138,10 @@ With the network security group rule configured, there are some additional steps
 
     ![Using kubectl to retrieve info about the application](./media/kubectl_service.png "Using kubectl to retrieve info about the application")
 
-1. As you can see from the image, this particular app has been assigned with IP address **192.168.0.153** and is accessible on port **80**
+2. As you can see from the image, this particular app has been assigned with IP address **192.168.0.153** and is accessible on port **80**
 
 
-
-1. In this step we will restart the **http** service to add the external IP in next step, Copy the below commands and run in the powershell.
+3. In this step we will restart the **http** service to add the external IP in next step, Copy the below commands and run in the powershell.
 
     ```powershell
       Stop-Service -Name "http" -Force
@@ -153,7 +152,7 @@ With the network security group rule configured, there are some additional steps
     
    >Note: Make sure that the http service is in running status before running the next step.
    
-1. Now open Powershell to create a new Static NAT Mapping, run the following PowerShell command:
+4. Now open Powershell to create a new Static NAT Mapping, run the following PowerShell command:
 
    >Note: Please make sure to replace the **External IP** with the IP you got in Task 1:Step 3.
 
@@ -163,7 +162,7 @@ With the network security group rule configured, there are some additional steps
      ```
     ![Result of Add-NetNatStaticMapping](./media/staticmapping.png "Result of Add-NetNatStaticMapping")
 
-4. The NAT static mapping should be successfully created, and you can now test the accessibility of your application from outside of the Azure VM. You should try to access the web application using the **Azure VM Public IP** which you [noted down earlier](#add-an-inbound-rule-to-your-nsg).
+5. The NAT static mapping should be successfully created, and you can now test the accessibility of your application from outside of the Azure VM. You should try to access the web application using the **Azure VM Public IP** which you [noted down earlier](#add-an-inbound-rule-to-your-nsg).
 
     ![Access web application using Azure Public IP](./media/access_web_app.png "Access web application using Azure Public IP")
 
