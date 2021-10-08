@@ -29,17 +29,17 @@ Your Azure VM deployment automatically installed Windows Admin Center 2103, howe
 
 1. **Double-click the Windows Admin Center** shortcut on the desktop.
 
-   ![Allow popups in Edge](/media/admincenter.png "Allow popups in Edge")
+   ![Allow popups in Edge](./media/admincenter.png "Allow popups in Edge")
     
 2. Once Windows Admin Center is open, you may receive notifications in the top-right corner, indicating that some extensions are updating automatically. **Let these finish updating before proceeding**. Windows Admin Center may refresh automatically during this process. If you didn't receive any notifications you can continue with the next step.
 
 3. Once complete, click on the **Settings**(1) icon from top right corner, then select **Extensions**(2)
 
-   ![Allow popups in Edge](/media/extension.png "Allow popups in Edge")
+   ![Allow popups in Edge](./media/extension.png "Allow popups in Edge")
     
 4. Click on **Installed extensions** and you will see **Azure Kubernetes Service** is installed.
 
-   ![Installed extensions in Windows Admin Center](/media/installed.png "Installed extensions in Windows Admin Center")
+   ![Installed extensions in Windows Admin Center](./media/installed.png "Installed extensions in Windows Admin Center")
     
 5. Please notes, if there are any updates available for the Azure Kubernetes Service, select **Azure Kubernetes Service** and click on **Update** to install the **latest** version.
 
@@ -49,7 +49,7 @@ In order to deploy AKS-HCI with Windows Admin Center, you need to connect your W
 
 6. Now, in **Settings**, under **Gateway** click on **Azure**.
 
-   ![Installed extensions in Windows Admin Center](/media/azure.png "Installed extensions in Windows Admin Center")
+   ![Installed extensions in Windows Admin Center](./media/azure.png "Installed extensions in Windows Admin Center")
     
 7. Click **Register**(1), and in the **Get started with Azure in Windows Admin Center** blade, follow the instructions to **Copy the code**(2) and then click on the link **Enter the Code**(3) to configure device login.
 
