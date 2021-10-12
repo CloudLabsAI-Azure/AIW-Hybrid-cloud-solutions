@@ -72,13 +72,21 @@ You can use the Azure Policy Deploy Log Analytics agent to Linux or Windows Azur
 
    ![](.././media/as-11.png)   
     
-1. You can save the query for later use by clicking on the **Save** button and then provide any name for the query **Name** and **Category**, then click on **Save**.
+1. You can save the query for later use by clicking on the **Save** button.
 
-   ![](.././media/as-12.png) 
+   ![](.././media/as-12-v2.png) 
+   
+1. Now, provide `VMProcess` for the **Query name (1)**, then click on **Save (2)**.
 
-1. You can see and run the saved **queries** by browsing to **Query Explorer** and then **Saved Queries** as shown below.
+   ![](.././media/as-121-v2.png) 
 
-   ![](.././media/as-13.png) 
+1. You can see and run the saved **queries** by browsing to **Queries**
+   ![](.././media/as-13-v2.png) 
+   
+1. Then, you will find `VMProcess` query under **Queries**, click on **Run** to run the querie.
+   
+   ![](.././media/as-131-v2.png) 
+
     
 ## Task 2: Enable Azure Security Center
 Security Center can monitor the security posture of your non-Azure computers, but first you need to connect them to Azure.
