@@ -32,6 +32,7 @@ Azure Stack HCI 20H2 is delivered as an Azure service and needs to register with
      Get-AzureStackHCI
      } 
      ```
+     >Note: If you see the cluster registration status is showing as **Out of Policy**, you can ignore that as there will be no issue during the lab because of this. 
      
     ![Check the registration status of the Azure Stack HCI 20H2 cluster](./media/output.png "Check the registration status of the Azure Stack HCI 20H2 cluster")
 
