@@ -48,13 +48,13 @@ As you can see from the result, the cluster is yet to be registered, and the clu
      $azshciNodeCreds = New-Object System.Management.Automation.PSCredential ("hybrid\azureuser", $password)
 
      Register-AzStackHCI `
-    -SubscriptionId "ad8c83dd-1c13-4b87-9acc-a24520706f46" `
+    -SubscriptionId *your-subscription-ID-here* `
     -ResourceName "azshciclus" `
     -ResourceGroupName "HybridHost" `
     -Region "EastUS" `
     -EnvironmentName "AzureCloud" `
     -ComputerName "AZSHCINODE01.hybrid.local" `
-    –Credential $azshciNodeCreds `
+    –Credential $azshciNodeCreds 
      
      ```
 
