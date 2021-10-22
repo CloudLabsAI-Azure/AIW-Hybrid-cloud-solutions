@@ -134,7 +134,8 @@ Task 3: Deploy a virtual machine
  
       ![Create a volume on Azure Stack HCI 20H2](./media/fran14.png "Create a volume on Azure Stack HCI 20H2")
       
-7.	Click the Back button in your browser to return to the VM001 view, then click Connect, and when prompted with the certificate prompt, click Connect and enter Password as demo!pass123
+7.	Click the Back button in your browser to return to the VM001 view, then click Connect, and when prompted with the certificate prompt, click Connect and enter Password as `demo!pass123`.
+
   
       ![Create a volume on Azure Stack HCI 20H2](./media/fran15.png "Create a volume on Azure Stack HCI 20H2")
  
