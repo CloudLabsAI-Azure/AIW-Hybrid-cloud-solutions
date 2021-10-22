@@ -117,103 +117,108 @@ Task 3: Download Windows Server .Iso
  
 3.	Open Windows Admin Center on HybridHost001 from the desktop is not already opened, click on your previously deployed cluster, azshciclus.hybrid.local
  
- 
- 
+     ![Create a volume on Azure Stack HCI 20H2](./media/fran1.png "Create a volume on Azure Stack HCI 20H2")
  
 4.	On the left hand navigation, under Compute select Servers and then Inventory.
  
- 
+     ![Create a volume on Azure Stack HCI 20H2](./media/fran2.png "Create a volume on Azure Stack HCI 20H2")
 
-5. Click on node AZSHCINODE01 and then click in Manage
+5.  Click on node AZSHCINODE01 and then click in Manage
  
- 
+     ![Create a volume on Azure Stack HCI 20H2](./media/fran3.png "Create a volume on Azure Stack HCI 20H2")
  
 6.	On the left, select Files & file sharing
- 
- 
- 
+  
+     ![Create a volume on Azure Stack HCI 20H2](./media/fran4.png "Create a volume on Azure Stack HCI 20H2")
+  
 7.	Open the folder C:\ClusterStorage\Volume01
  
- 
- 
+     ![Create a volume on Azure Stack HCI 20H2](./media/fran5.png "Create a volume on Azure Stack HCI 20H2")
+  
  
 8.	Click in the "…" and then Upload
  
- 
- 
+     ![Create a volume on Azure Stack HCI 20H2](./media/fran6.png "Create a volume on Azure Stack HCI 20H2")
+  
 9.	Click in Select Files, search for the .iso file in Downloads and click in Open, and then Submit. 
  
- 
+     ![Create a volume on Azure Stack HCI 20H2](./media/fran7.png "Create a volume on Azure Stack HCI 20H2")
  
 10.	It takes around 5 minutes to get successfully uploaded. After that, please move on to the next task.
  
  
-Task 3: Deploy a virtual machine
- 
-1-3: Keep the same
+Task 4: Deploy a virtual machine
+----- 
+1.  1-3: Keep the same from the previous task.
  
 1.	In the New virtual machine pane, enter VM001 for the name, and enter the following pieces of information, then click Create
  
-Generation: Generation 2 (Recommended)
+     * Generation: Generation 2 (Recommended)
  
-Host: Leave as recommended
+     * Host: Leave as recommended
  
-Path: C:\ClusterStorage\Volume01
+     * Path: C:\ClusterStorage\Volume01
  
-Virtual processors: 2
+     * Virtual processors: 2
  
-Startup memory (GB): 4
+     * Startup memory (GB): 4
  
-Use dynamic memory: Min 2, Max 6
+     * Use dynamic memory: Min 2, Max 6
  
-Network: ComputeSwitch
+     * Network: ComputeSwitch
  
-Storage: Add, then Create an empty virtual hard disk and set size to 30GB
+     * Storage: Add, then Create an empty virtual hard disk and set size to 30GB
  
-Operating System: Install an operating system from an image file (.iso)
+     * Operating System: Install an operating system from an image file (.iso)
  
+      ![Create a volume on Azure Stack HCI 20H2](./media/fran8.png "Create a volume on Azure Stack HCI 20H2")
+      
+      ![Create a volume on Azure Stack HCI 20H2](./media/fran9.png "Create a volume on Azure Stack HCI 20H2")  
  
+2.	The creation process will take a few moments, and once complete, VM001 should show within the Virtual machines view
+
+3.	Click on the checkbox before the VM and then click click on Power button and select Start - within moments, the VM should be running.
  
+     ![Create a volume on Azure Stack HCI 20H2](./media/fran10.png "Create a volume on Azure Stack HCI 20H2")
+     
+     ![Create a volume on Azure Stack HCI 20H2](./media/fran11.png "Create a volume on Azure Stack HCI 20H2")
+  
+4.  Click on VM001 to view the properties and status for this running VM.
  
+     ![Create a volume on Azure Stack HCI 20H2](./media/fran12.png "Create a volume on Azure Stack HCI 20H2")
  
-5.	The creation process will take a few moments, and once complete, VM001 should show within the Virtual machines view
-6.	Click on the checkbox before the VM and then click click on Power button and select Start - within moments, the VM should be running.
+5.	Click on Connect and select connect button from the drop down- you may get a VM Connect prompt:
  
+     ![Create a volume on Azure Stack HCI 20H2](./media/fran13.png "Create a volume on Azure Stack HCI 20H2")
  
+6.	Click on Go to Settings and in the Remote Desktop pane, click on Allow remote connections to this computer, then Save
  
- 
-7. Click on VM001 to view the properties and status for this running VM.
- 
- 
- 
-8.	Click on Connect and select connect button from the drop down- you may get a VM Connect prompt:
- 
- 
- 
-9.	Click on Go to Settings and in the Remote Desktop pane, click on Allow remote connections to this computer, then Save
- 
- 
-10.	Click the Back button in your browser to return to the VM001 view, then click Connect, and when prompted with the certificate prompt, click Connect and enter Password as demo!pass123
- 
- 
- 
-11.	The VM will be in the UEFI boot summary as below
- 
- 
- 
-12.	Click in "Send Ctrl + Alt +Del" at the top of the page now and press any key when you see the message "Press any key at boot from CD or DVD…"
+      ![Create a volume on Azure Stack HCI 20H2](./media/fran14.png "Create a volume on Azure Stack HCI 20H2")
+      
+7.	Click the Back button in your browser to return to the VM001 view, then click Connect, and when prompted with the certificate prompt, click Connect and enter Password as demo!pass123
+  
+      ![Create a volume on Azure Stack HCI 20H2](./media/fran15.png "Create a volume on Azure Stack HCI 20H2")
  
  
+8.	The VM will be in the UEFI boot summary as below
  
-13.	Click Enter when you see the following interface
+     ![Create a volume on Azure Stack HCI 20H2](./media/fran16.png "Create a volume on Azure Stack HCI 20H2")
  
+9.	Click in "Send Ctrl + Alt +Del" at the top of the page now and press any key when you see the message "Press any key at boot from CD or DVD…"
  
-14.	From there you'll start the OOBE experience. Select the following settings according to your preferences: Language, Time currency and Keyboard
-15.	Click Install Now, and select the version Windows Server 2019 Standard Evaluation (Desktop Experience):
+     ![Create a volume on Azure Stack HCI 20H2](./media/fran17.png "Create a volume on Azure Stack HCI 20H2")
  
+9.	Click Enter when you see the following interface
  
+     ![Create a volume on Azure Stack HCI 20H2](./media/fran18.png "Create a volume on Azure Stack HCI 20H2")
  
-16.	Accept the license terms and select "Custom: Install Windows only (advanced)" and then Next. It will take around 10 minutes for the VM to boot. After that, please insert the lab credentials demo!pass123 and your VM is ready to go!
+10.	From there you'll start the OOBE experience. Select the following settings according to your preferences: Language, Time currency and Keyboard
+
+11.	Click Install Now, and select the version Windows Server 2019 Standard Evaluation (Desktop Experience):
+ 
+     ![Create a volume on Azure Stack HCI 20H2](./media/fran19.png "Create a volume on Azure Stack HCI 20H2")
+ 
+12.	Accept the license terms and select "Custom: Install Windows only (advanced)" and then Next. It will take around 10 minutes for the VM to boot. After that, please insert the lab credentials demo!pass123 and your VM is ready to go!
 
 
 
