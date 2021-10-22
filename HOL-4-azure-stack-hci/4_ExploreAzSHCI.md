@@ -117,11 +117,11 @@ Task 3: Download Windows Server .Iso
  
 3.	Open Windows Admin Center on HybridHost001 from the desktop is not already opened, click on your previously deployed cluster, azshciclus.hybrid.local
  
-     ![Create a volume on Azure Stack HCI 20H2](./media/fran1.png "Create a volume on Azure Stack HCI 20H2")
+     ![Create a volume on Azure Stack HCI 20H2](../media/fran1.png "Create a volume on Azure Stack HCI 20H2")
  
 4.	On the left hand navigation, under Compute select Servers and then Inventory.
  
-     ![Create a volume on Azure Stack HCI 20H2](./media/fran2.png "Create a volume on Azure Stack HCI 20H2")
+     ![Create a volume on Azure Stack HCI 20H2](../media/fran2.png "Create a volume on Azure Stack HCI 20H2")
 
 5.  Click on node AZSHCINODE01 and then click in Manage
  
