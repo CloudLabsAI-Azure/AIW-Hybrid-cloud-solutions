@@ -108,6 +108,115 @@ You should still be over on **HybridHost001**, but if you're not, log into Hybri
 
 You've successfully create a VM using the Windows Admin Center!
 
+Task 3: Download Windows Server .Iso
+-----------
+ 
+1.	Please download Windows Server 2019 image file from here
+ 
+2.	Select ISO and complete the form to continue with your details. Download the .iso and saved in the Downloads folder.
+ 
+3.	Open Windows Admin Center on HybridHost001 from the desktop is not already opened, click on your previously deployed cluster, azshciclus.hybrid.local
+ 
+ 
+ 
+ 
+4.	On the left hand navigation, under Compute select Servers and then Inventory.
+ 
+ 
+
+5. Click on node AZSHCINODE01 and then click in Manage
+ 
+ 
+ 
+6.	On the left, select Files & file sharing
+ 
+ 
+ 
+7.	Open the folder C:\ClusterStorage\Volume01
+ 
+ 
+ 
+ 
+8.	Click in the "…" and then Upload
+ 
+ 
+ 
+9.	Click in Select Files, search for the .iso file in Downloads and click in Open, and then Submit. 
+ 
+ 
+ 
+10.	It takes around 5 minutes to get successfully uploaded. After that, please move on to the next task.
+ 
+ 
+Task 3: Deploy a virtual machine
+ 
+1-3: Keep the same
+ 
+1.	In the New virtual machine pane, enter VM001 for the name, and enter the following pieces of information, then click Create
+ 
+Generation: Generation 2 (Recommended)
+ 
+Host: Leave as recommended
+ 
+Path: C:\ClusterStorage\Volume01
+ 
+Virtual processors: 2
+ 
+Startup memory (GB): 4
+ 
+Use dynamic memory: Min 2, Max 6
+ 
+Network: ComputeSwitch
+ 
+Storage: Add, then Create an empty virtual hard disk and set size to 30GB
+ 
+Operating System: Install an operating system from an image file (.iso)
+ 
+ 
+ 
+ 
+ 
+5.	The creation process will take a few moments, and once complete, VM001 should show within the Virtual machines view
+6.	Click on the checkbox before the VM and then click click on Power button and select Start - within moments, the VM should be running.
+ 
+ 
+ 
+ 
+7. Click on VM001 to view the properties and status for this running VM.
+ 
+ 
+ 
+8.	Click on Connect and select connect button from the drop down- you may get a VM Connect prompt:
+ 
+ 
+ 
+9.	Click on Go to Settings and in the Remote Desktop pane, click on Allow remote connections to this computer, then Save
+ 
+ 
+10.	Click the Back button in your browser to return to the VM001 view, then click Connect, and when prompted with the certificate prompt, click Connect and enter Password as demo!pass123
+ 
+ 
+ 
+11.	The VM will be in the UEFI boot summary as below
+ 
+ 
+ 
+12.	Click in "Send Ctrl + Alt +Del" at the top of the page now and press any key when you see the message "Press any key at boot from CD or DVD…"
+ 
+ 
+ 
+13.	Click Enter when you see the following interface
+ 
+ 
+14.	From there you'll start the OOBE experience. Select the following settings according to your preferences: Language, Time currency and Keyboard
+15.	Click Install Now, and select the version Windows Server 2019 Standard Evaluation (Desktop Experience):
+ 
+ 
+ 
+16.	Accept the license terms and select "Custom: Install Windows only (advanced)" and then Next. It will take around 10 minutes for the VM to boot. After that, please insert the lab credentials demo!pass123 and your VM is ready to go!
+
+
+
 ### Live migrate the virtual machine ###
 The final step we'll cover is using Windows Admin Center to live migrate VM001 from it's current node, to an alternate node in the cluster.
 
@@ -128,24 +237,3 @@ The final step we'll cover is using Windows Admin Center to live migrate VM001 f
      ![Start Live Migration using Windows Admin Center](./media/move1.png "Start Live Migration using Windows Admin Center")
   
 7. On the left hand navigation, under **Compute** select **Virtual machines** to return to the VM dashboard view, which aggregates information across your cluster, for all of your VMs.
-
-Congratulations!
------------
-You've reached the end of the evaluation guide.  In this guide you have:
-
-* Deployed/Configured a Windows Server 2019 Hyper-V host in Azure to run your nested sandbox environment
-* Deployed the AKS on Azure Stack HCI management cluster on your Windows Server 2019 Hyper-V environment
-* Deployed a target cluster to run applications and services
-* Optionally integrated with Azure Arc and deployed a sample application
-* Set the foundation for further learning!
-
-Great work!
-
-Setup the lab in your own Azure Subscription.
--------------
-
-This lab is based on the the following work by Matt McSpirit: https://github.com/mattmcspirit/hybridworkshop
-
- 
-
-If you want to setup the lab within your own Azure subscription and run through additional scenarios as well, you can go to the above GitHub repo and perform as mentioned.
