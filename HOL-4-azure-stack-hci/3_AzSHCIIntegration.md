@@ -47,13 +47,13 @@ As you can see from the result, the cluster is yet to be registered, and the clu
      $password = ConvertTo-SecureString "demo!pass123" -AsPlainText -Force
      $azshciNodeCreds = New-Object System.Management.Automation.PSCredential ("hybrid\azureuser", $password)
 
-     Register-AzStackHCI `
-    -SubscriptionId *your-subscription-ID-here* `
-    -ResourceName "azshciclus" `
-    -ResourceGroupName "HybridHost" `
-    -Region "EastUS" `
-    -EnvironmentName "AzureCloud" `
-    -ComputerName "AZSHCINODE01.hybrid.local" `
+     Register-AzStackHCI 
+    -SubscriptionId *your-subscription-ID-here* 
+    -ResourceName "azshciclus" 
+    -ResourceGroupName "HybridHost" 
+    -Region "EastUS" 
+    -EnvironmentName "AzureCloud" 
+    -ComputerName "AZSHCINODE01.hybrid.local" 
     –Credential $azshciNodeCreds 
      
      ```
@@ -67,7 +67,7 @@ Of these commands, many are optional:
 * **-ComputerName** - This is used when running the commands remotely against a cluster.  Just make sure you're using a domain account that has admin privilege on the nodes and cluster
 * **-Credential** - This is also used for running the commands remotely against a cluster.
 
-**Register-AzureStackHCI** runs synchronously, with progress reporting, and typically takes 1-2 minutes.  The first time you run it, it may take slightly longer, because it needs to install some dependencies, including additional Azure PowerShell modules.
+**Register-AzureStackHCI** runs synchronously, with progress reporting, and typically takes 5-10 minutes.  The first time you run it, it may take slightly longer, because it needs to install some dependencies, including additional Azure PowerShell modules.
 
 4. Once dependencies have been installed, you'll receive a popup on **HybridHost001** to authenticate to Azure. Provide your **Azure credentials**.
 
