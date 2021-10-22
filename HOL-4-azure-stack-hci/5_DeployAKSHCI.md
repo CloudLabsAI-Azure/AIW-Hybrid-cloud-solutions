@@ -200,11 +200,11 @@ You'll notice that Windows Admin Center will validate memory, storage, networkin
 
 19.  Upon completion you should receive a notification of success. In this case, you can see deployment of the AKS on Azure Stack HCI management cluster took just over 12 minutes. In some cases it can take upto 20 minutes to deploy the cluster.
 
-    ![AKS-HCI management cluster deployment completed in Windows Admin Center](./media/deployed.png "AKS-HCI management cluster deployment completed in Windows Admin Center")
+     ![AKS-HCI management cluster deployment completed in Windows Admin Center](./media/deployed.png "AKS-HCI management cluster deployment completed in Windows Admin Center")
 
 20. Once reviewed, click **Finish**. You will then be presented with a management dashboard where you can create and manage your Kubernetes clusters.
      
-    ![AKS on Azure Stack HCI management cluster deployment started in Windows Admin Center](./media/dashboard.png "AKS on Azure Stack HCI management cluster deployment started in Windows Admin Center")
+     ![AKS on Azure Stack HCI management cluster deployment started in Windows Admin Center](./media/dashboard.png "AKS on Azure Stack HCI management cluster deployment started in Windows Admin Center")
      
 ### Updates and Cleanup ###
 To learn more about **updating**, **redeploying** or **uninstalling** AKS on Azure Stack HCI with Windows Admin Center, you can [read the official documentation here.](https://docs.microsoft.com/en-us/azure-stack/aks-hci/setup "Official documentation on updating, redeploying and uninstalling AKS on Azure Stack HCI")
