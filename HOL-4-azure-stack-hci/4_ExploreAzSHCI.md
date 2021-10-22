@@ -117,11 +117,11 @@ Task 3: Download Windows Server .Iso
  
 3.	Open Windows Admin Center on HybridHost001 from the desktop is not already opened, click on your previously deployed cluster, azshciclus.hybrid.local
  
-     ![Create a volume on Azure Stack HCI 20H2](../media/fran1.png "Create a volume on Azure Stack HCI 20H2")
+     ![Create a volume on Azure Stack HCI 20H2](https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/event-27/HOL-4-azure-stack-hci/media/fran1.png "Create a volume on Azure Stack HCI 20H2")
  
 4.	On the left hand navigation, under Compute select Servers and then Inventory.
  
-     ![Create a volume on Azure Stack HCI 20H2](../media/fran2.png "Create a volume on Azure Stack HCI 20H2")
+     ![Create a volume on Azure Stack HCI 20H2](https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/event-27/HOL-4-azure-stack-hci/media/fran2.png "Create a volume on Azure Stack HCI 20H2")
 
 5.  Click on node AZSHCINODE01 and then click in Manage
  
@@ -129,20 +129,20 @@ Task 3: Download Windows Server .Iso
  
 6.	On the left, select Files & file sharing
   
-     ![Create a volume on Azure Stack HCI 20H2](./media/fran4.png "Create a volume on Azure Stack HCI 20H2")
+     ![Create a volume on Azure Stack HCI 20H2](https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/event-27/HOL-4-azure-stack-hci/media/fran4.png "Create a volume on Azure Stack HCI 20H2")
   
 7.	Open the folder C:\ClusterStorage\Volume01
  
-     ![Create a volume on Azure Stack HCI 20H2](./media/fran5.png "Create a volume on Azure Stack HCI 20H2")
+     ![Create a volume on Azure Stack HCI 20H2](https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/event-27/HOL-4-azure-stack-hci/media/fran5.png "Create a volume on Azure Stack HCI 20H2")
   
  
 8.	Click in the "…" and then Upload
  
-     ![Create a volume on Azure Stack HCI 20H2](./media/fran6.png "Create a volume on Azure Stack HCI 20H2")
+     ![Create a volume on Azure Stack HCI 20H2](https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/event-27/HOL-4-azure-stack-hci/media/fran6.png "Create a volume on Azure Stack HCI 20H2")
   
 9.	Click in Select Files, search for the .iso file in Downloads and click in Open, and then Submit. 
  
-     ![Create a volume on Azure Stack HCI 20H2](./media/fran7.png "Create a volume on Azure Stack HCI 20H2")
+     ![Create a volume on Azure Stack HCI 20H2](./media/https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/event-27/HOL-4-azure-stack-hci/media/fran7.png "Create a volume on Azure Stack HCI 20H2")
  
 10.	It takes around 5 minutes to get successfully uploaded. After that, please move on to the next task.
  
@@ -179,9 +179,9 @@ Task 4: Deploy a virtual machine
 
 3.	Click on the checkbox before the VM and then click click on Power button and select Start - within moments, the VM should be running.
  
-     ![Create a volume on Azure Stack HCI 20H2](./media/fran10.png "Create a volume on Azure Stack HCI 20H2")
+     ![Create a volume on Azure Stack HCI 20H2](./media/https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/event-27/HOL-4-azure-stack-hci/media/fran10.png "Create a volume on Azure Stack HCI 20H2")
      
-     ![Create a volume on Azure Stack HCI 20H2](./media/fran11.png "Create a volume on Azure Stack HCI 20H2")
+     ![Create a volume on Azure Stack HCI 20H2](./media/https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/event-27/HOL-4-azure-stack-hci/media/fran11.png "Create a volume on Azure Stack HCI 20H2")
   
 4.  Click on VM001 to view the properties and status for this running VM.
  
@@ -189,7 +189,7 @@ Task 4: Deploy a virtual machine
  
 5.	Click on Connect and select connect button from the drop down- you may get a VM Connect prompt:
  
-     ![Create a volume on Azure Stack HCI 20H2](./media/fran13.png "Create a volume on Azure Stack HCI 20H2")
+     ![Create a volume on Azure Stack HCI 20H2](https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/event-27/HOL-4-azure-stack-hci/media/fran13.png "Create a volume on Azure Stack HCI 20H2")
  
 6.	Click on Go to Settings and in the Remote Desktop pane, click on Allow remote connections to this computer, then Save
  
@@ -202,21 +202,21 @@ Task 4: Deploy a virtual machine
  
 8.	The VM will be in the UEFI boot summary as below
  
-     ![Create a volume on Azure Stack HCI 20H2](./media/fran16.png "Create a volume on Azure Stack HCI 20H2")
+     ![Create a volume on Azure Stack HCI 20H2](https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/event-27/HOL-4-azure-stack-hci/media/fran16.png "Create a volume on Azure Stack HCI 20H2")
  
 9.	Click in "Send Ctrl + Alt +Del" at the top of the page now and press any key when you see the message "Press any key at boot from CD or DVD…"
  
-     ![Create a volume on Azure Stack HCI 20H2](./media/fran17.png "Create a volume on Azure Stack HCI 20H2")
+     ![Create a volume on Azure Stack HCI 20H2](https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/event-27/HOL-4-azure-stack-hci/media/fran17.png "Create a volume on Azure Stack HCI 20H2")
  
 9.	Click Enter when you see the following interface
  
-     ![Create a volume on Azure Stack HCI 20H2](./media/fran18.png "Create a volume on Azure Stack HCI 20H2")
+     ![Create a volume on Azure Stack HCI 20H2](https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/event-27/HOL-4-azure-stack-hci/media/fran18.png "Create a volume on Azure Stack HCI 20H2")
  
 10.	From there you'll start the OOBE experience. Select the following settings according to your preferences: Language, Time currency and Keyboard
 
 11.	Click Install Now, and select the version Windows Server 2019 Standard Evaluation (Desktop Experience):
  
-     ![Create a volume on Azure Stack HCI 20H2](./media/fran19.png "Create a volume on Azure Stack HCI 20H2")
+     ![Create a volume on Azure Stack HCI 20H2](https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/event-27/HOL-4-azure-stack-hci/media/fran19.png "Create a volume on Azure Stack HCI 20H2")
  
 12.	Accept the license terms and select "Custom: Install Windows only (advanced)" and then Next. It will take around 10 minutes for the VM to boot. After that, please insert the lab credentials demo!pass123 and your VM is ready to go!
 
