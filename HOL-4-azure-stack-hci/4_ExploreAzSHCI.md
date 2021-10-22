@@ -56,7 +56,7 @@ Task 2: Download Windows Server .Iso
  
 3.	Open Windows Admin Center on HybridHost001 from the desktop is not already opened, click on your previously deployed cluster, azshciclus.hybrid.local
  
-     ![Create a volume on Azure Stack HCI 20H2](https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/event-27/HOL-4-azure-stack-hci/media/fran1.png "Create a volume on Azure Stack HCI 20H2")
+     ![Create a volume on Azure Stack HCI 20H2](https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/event-27/media/fran1.png "Create a volume on Azure Stack HCI 20H2")
  
 4.	On the left hand navigation, under Compute select Servers and then Inventory.
  
