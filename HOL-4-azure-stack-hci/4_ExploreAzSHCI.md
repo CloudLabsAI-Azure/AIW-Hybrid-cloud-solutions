@@ -142,7 +142,7 @@ Task 3: Download Windows Server .Iso
   
 9.	Click in Select Files, search for the .iso file in Downloads and click in Open, and then Submit. 
  
-     ![Create a volume on Azure Stack HCI 20H2](./media/https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/event-27/HOL-4-azure-stack-hci/media/fran7.png "Create a volume on Azure Stack HCI 20H2")
+     ![Create a volume on Azure Stack HCI 20H2](https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/event-27/HOL-4-azure-stack-hci/media/fran7.png "Create a volume on Azure Stack HCI 20H2")
  
 10.	It takes around 5 minutes to get successfully uploaded. After that, please move on to the next task.
  
