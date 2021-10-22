@@ -47,7 +47,7 @@ Your Azure VM deployment automatically installed Windows Admin Center 2103, howe
 
    ![Installed extensions in Windows Admin Center](./media/installed.png "Installed extensions in Windows Admin Center")
     
-5. Please notes, if there are any updates available for the Azure Kubernetes Service, select **Azure Kubernetes Service** and click on **Update** to install the **latest** version.
+5. Please note, if there are any updates available for the Azure Kubernetes Service, select **Azure Kubernetes Service** and click on **Update** to install the **latest** version.
 
    ![](./media/extensionv.png)
 
@@ -266,7 +266,7 @@ With the management cluster deployed successfully, you're ready to move on to de
 12. The creation process will begin and can take upto 15 minutes to deploy.
     > **Note**: Make sure to not switch to another tab otherwise the creation can be failed due to inactivity.
     
-     ![Start deployment of AKS cluster in Windows Admin Center](./media/creating.png "Start deployment of AKS cluster in Windows Admin Center")
+     ![Start deployment of AKS cluster in Windows Admin Center](./media/loadaks-cluster.png "Start deployment of AKS cluster in Windows Admin Center")
 
 13. Once completed, you should see a message for successful creation, then click **Finish**
 
