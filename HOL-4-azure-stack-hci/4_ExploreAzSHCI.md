@@ -179,9 +179,9 @@ Task 4: Deploy a virtual machine
 
 3.	Click on the checkbox before the VM and then click click on Power button and select Start - within moments, the VM should be running.
  
-     ![Create a volume on Azure Stack HCI 20H2](./media/https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/event-27/HOL-4-azure-stack-hci/media/fran10.png "Create a volume on Azure Stack HCI 20H2")
+     ![Create a volume on Azure Stack HCI 20H2](https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/event-27/HOL-4-azure-stack-hci/media/fran10.png "Create a volume on Azure Stack HCI 20H2")
      
-     ![Create a volume on Azure Stack HCI 20H2](./media/https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/event-27/HOL-4-azure-stack-hci/media/fran11.png "Create a volume on Azure Stack HCI 20H2")
+     ![Create a volume on Azure Stack HCI 20H2](https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/event-27/HOL-4-azure-stack-hci/media/fran11.png "Create a volume on Azure Stack HCI 20H2")
   
 4.  Click on VM001 to view the properties and status for this running VM.
  
