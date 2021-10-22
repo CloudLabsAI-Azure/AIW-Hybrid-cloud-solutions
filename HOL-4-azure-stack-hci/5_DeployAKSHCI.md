@@ -31,6 +31,12 @@ Your Azure VM deployment automatically installed Windows Admin Center 2103, howe
 
    ![Allow popups in Edge](./media/admincenter.png "Allow popups in Edge")
     
+  > **Note**: If you get a pop up saying your connection is not private, Click on **advanced settings** and select **Continue to hybridhost001(unsafe)** to open the Windows Admin Center.
+   
+   ![Admin center popups in Edge](./media/WAC-popup.png "Allow popups in Edge")
+   
+   > **Note**: Refresh the page few times if **Windows Admin Center** takes too long to open.
+   
 2. Once Windows Admin Center is open, you may receive notifications in the top-right corner, indicating that some extensions are updating automatically. **Let these finish updating before proceeding**. Windows Admin Center may refresh automatically during this process. If you didn't receive any notifications you can continue with the next step.
 
 3. Once complete, click on the **Settings**(1) icon from top right corner, then select **Extensions**(2)
@@ -129,7 +135,7 @@ You'll notice the terminology used refers to the **Azure Kubernetes Service Runt
 
      ![HybridHost001 under management in Windows Admin Center](./media/review.png "HybridHost001 under management in Windows Admin Center")
 
-4. On the **System checks** page, enter the password **demo!pass123** for your **azureuser** account and when successfully validated, click on the **Install** button to **install the required PowerShell modules**, this will take a few moments to install the powershell modules. 
+4. On the **System checks** page, enter the password **demo!pass123** for your **azureuser** account and when successfully validated, click on the **Install** button to **install the required PowerShell modules**, this will take 5 to 10 minutes to install the powershell modules. 
 
      ![HybridHost001 under management in Windows Admin Center](./media/install.png "HybridHost001 under management in Windows Admin Center")
      
@@ -168,7 +174,7 @@ You'll notice that Windows Admin Center will validate memory, storage, networkin
 
 14. Once you've chosen your subscription, Select your resource group **HybridHost** and **East US** in Azure Region.
 
-     ![AKS Azure Registration in Windows Admin Center](./media/azure1.png "AKS Azure Registration in Windows Admin Center")
+     ![AKS Azure Registration in Windows Admin Center](./media/Registration-aks.png "AKS Azure Registration in Windows Admin Center")
 
 15.  Click on **Next: Review**
   
@@ -268,11 +274,11 @@ With the management cluster deployed successfully, you're ready to move on to de
 
 14. Back in the **Azure Kubernetes Service on Azure Stack HCI landing page**, you should now see your cluster listed.
 
-     ![AKS cluster in Windows Admin Center](./media/akscluster.png "AKS cluster in Windows Admin Center")
+     ![AKS cluster in Windows Admin Center](./media/Aks-display1.png "AKS cluster in Windows Admin Center")
 
 16. On the dashboard, if you chose to integrate with Azure Arc, you should be able to click the **Azure instance** link to be taken to the Azure Arc view in the Azure portal.
 
-     ![AKS cluster in Azure Arc](./media/aks1.png "AKS cluster in Azure Arc")
+     ![AKS cluster in Azure Arc](./media/Aks-display2.png "AKS cluster in Azure Arc")
 
 Task 5: Scale your Kubernetes cluster (Target cluster)
 -----------
