@@ -46,69 +46,8 @@ In this step, you'll create a volume on the Azure Stack HCI 20H2 cluster by usin
 
 You now have a volume created and ready to accept workloads. Whilst we deployed the volume using the Windows Admin Center, you can also do the same through PowerShell. If you're interested in taking that approach, [check out the official docs that walk you through that process](https://docs.microsoft.com/en-us/azure-stack/hci/manage/create-volumes "Official documentation for creating volumes"). For more information on planning volumes with Azure Stack HCI 20H2, you should [refer to the official docs](https://docs.microsoft.com/en-us/azure-stack/hci/concepts/plan-volumes "Planning volumes for Azure Stack HCI 20H2").
 
-Task 2: Deploy a virtual machine
------------
-In this step, you'll deploy a VM onto your new volume, using Windows Admin Center.
 
-### Create the virtual machine ###
-You should still be over on **HybridHost001**, but if you're not, log into HybridHost001, and open the **Windows Admin Center**.
-
-1. Once logged into the **Windows Admin Center** on **HybridHost001**, click on your previously deployed cluster, **azshciclus.hybrid.local**
-
-3. On the left hand navigation, under **Compute** select **Virtual machines**.  The central **Virtual machines** page shows you no virtual machines deployed currently
-    
-    ![Volume created on Azure Stack HCI 20H2](./media/vm1.png "Volume created on Azure Stack HCI 20H2")
-
-4. On the **Virtual machines** page, select the **Inventory** tab, and then click on **Add** and select **New**.
-
-    ![Volume created on Azure Stack HCI 20H2](./media/newvm.png "Volume created on Azure Stack HCI 20H2")
-
-6. In the **New virtual machine** pane, enter **VM001** for the name, and enter the following pieces of information, then click **Create**
-
-    * Generation: **Generation 2 (Recommended)**
-    * Host: **Leave as recommended**
-    * Path: **C:\ClusterStorage\Volume01**
-    * Virtual processors: **1**
-    * Startup memory (GB): **0.5**
-    * Network: **ComputeSwitch**
-    * Storage: **Add, then Create an empty virtual hard disk** and set size to **5GB**
-    * Operating System: **Install an operating system later**
-
-      ![Volume created on Azure Stack HCI 20H2](./media/vmdetails.png "Volume created on Azure Stack HCI 20H2")
-      
-      ![Volume created on Azure Stack HCI 20H2](./media/vmdetails2.png "Volume created on Azure Stack HCI 20H2")
-
-5. The creation process will take a few moments, and once complete, **VM001** should show within the **Virtual machines view**
-
-6. Click on the checkbox before the **VM** and then click click on **Power** button and select **Start** - within moments, the VM should be running.
-
-    ![VM001 up and running](./media/vmstart.png "VM001 up and running")
-    
-    ![VM001 up and running](./media/vmstarted.png "VM001 up and running")
-
-7. Click on **VM001** to view the properties and status for this running VM.
-
-    ![VM001 up and running](./media/vmdash.png "VM001 up and running")
-
-8. Click on **Connect** and select **connect** button from the drop down- you may get a **VM Connect** prompt:
-
-    ![Connect to VM001](./media/setting.png "Connect to VM001")
-
-9. Click on **Go to Settings** and in the **Remote Desktop** pane, click on **Allow remote connections to this computer**, then **Save**
-
-     ![Connect to VM001](./media/rdo.png "Connect to VM001")
-     
-10. Click the **Back** button in your browser to return to the VM001 view, then click **Connect**, and when prompted with the certificate prompt, click **Connect** and enter Password as **demo!pass123**
-
-      ![Connect to VM001](./media/rdp.png "Connect to VM001")
-      
-12. There's no operating system installed here, so it should show a UEFI boot summary, but the VM is running successfully
-
-12. Click **Disconnect**
-
-You've successfully create a VM using the Windows Admin Center!
-
-Task 3: Download Windows Server .Iso
+Task 2: Download Windows Server .Iso
 -----------
  
 1.	Please download Windows Server 2019 image file from [here](https://nam06.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.microsoft.com%2Fen-us%2Fevalcenter%2Fevaluate-windows-server-2019%3Ffiletype%3DISO&data=04%7C01%7CFrancisco.Teles%40microsoft.com%7C3f8c97077c47407ea5e108d995653e46%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C637705084332755360%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C1000&sdata=zUzaHW7hF2BaYdzgw4wd79kNG2p201m775JKlJTveUc%3D&reserved=0)
@@ -147,7 +86,7 @@ Task 3: Download Windows Server .Iso
 10.	It takes around 5 minutes to get successfully uploaded. After that, please move on to the next task.
  
  
-Task 4: Deploy a virtual machine
+Task 3: Deploy a virtual machine
 ----- 
 1.  1-3: Keep the same from the previous task.
  
