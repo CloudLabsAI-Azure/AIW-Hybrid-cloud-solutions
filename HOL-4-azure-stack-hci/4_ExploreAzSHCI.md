@@ -32,17 +32,20 @@ In this step, you'll create a volume on the Azure Stack HCI 20H2 cluster by usin
     ![Create a volume on Azure Stack HCI 20H2](./media/inventory.png "Create a volume on Azure Stack HCI 20H2")
     
 6. In the **Create volume** pane, leave the default for for the volume name, and leave **Resiliency** as **Two-way mirror**
-8. In Size on HDD, specify **250GB** for the size of the volume
-9. Under **More options**, tick the box for **Use deduplication and compression**
-10. Under **Data type**, use the drop-down to select **Hyper-V**, then click **Create**.
+
+7. In Size on HDD, specify **250GB** for the size of the volume
+
+8. Under **More options**, tick the box for **Use deduplication and compression**
+
+9. Under **Data type**, use the drop-down to select **Hyper-V**, then click **Create**.
 
     ![Create a volume on Azure Stack HCI 20H2](./media/volume.png "Create a volume on Azure Stack HCI 20H2")
 
-8. Creating the volume can take a few minutes. Notifications in the upper-right will let you know when the volume is created. The new volume appears in the Inventory list
+10. Creating the volume can take a few minutes. Notifications in the upper-right will let you know when the volume is created. The new volume appears in the Inventory list
 
     ![Volume created on Azure Stack HCI 20H2](./media/volume1.png "Volume created on Azure Stack HCI 20H2")
 
- > **NOTE** - You'll notice there are 3 options for **Data type**; default, Hyper-V and Backup.  If you're interested in learning more about Deduplication in Azure Stack HCI 20H2, you should [refer to our documentation](https://docs.microsoft.com/en-us/windows-server/storage/data-deduplication/overview "Deduplication overview")
+     > **NOTE** - You'll notice there are 3 options for **Data type**; default, Hyper-V and Backup.  If you're interested in learning more about Deduplication in Azure Stack HCI 20H2, you should [refer to our documentation](https://docs.microsoft.com/en-us/windows-server/storage/data-deduplication/overview "Deduplication overview")
 
 You now have a volume created and ready to accept workloads. Whilst we deployed the volume using the Windows Admin Center, you can also do the same through PowerShell. If you're interested in taking that approach, [check out the official docs that walk you through that process](https://docs.microsoft.com/en-us/azure-stack/hci/manage/create-volumes "Official documentation for creating volumes"). For more information on planning volumes with Azure Stack HCI 20H2, you should [refer to the official docs](https://docs.microsoft.com/en-us/azure-stack/hci/concepts/plan-volumes "Planning volumes for Azure Stack HCI 20H2").
 
