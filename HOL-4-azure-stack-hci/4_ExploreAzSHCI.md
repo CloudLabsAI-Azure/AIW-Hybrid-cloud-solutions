@@ -50,45 +50,45 @@ You now have a volume created and ready to accept workloads. Whilst we deployed 
 Task 2: Download Windows Server .Iso
 -----------
  
-1.	Please download Windows Server 2019 image file from [here](https://nam06.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.microsoft.com%2Fen-us%2Fevalcenter%2Fevaluate-windows-server-2019%3Ffiletype%3DISO&data=04%7C01%7CFrancisco.Teles%40microsoft.com%7C3f8c97077c47407ea5e108d995653e46%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C637705084332755360%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C1000&sdata=zUzaHW7hF2BaYdzgw4wd79kNG2p201m775JKlJTveUc%3D&reserved=0)
+1. Please download Windows Server 2019 image file from [here](https://nam06.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.microsoft.com%2Fen-us%2Fevalcenter%2Fevaluate-windows-server-2019%3Ffiletype%3DISO&data=04%7C01%7CFrancisco.Teles%40microsoft.com%7C3f8c97077c47407ea5e108d995653e46%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C637705084332755360%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C1000&sdata=zUzaHW7hF2BaYdzgw4wd79kNG2p201m775JKlJTveUc%3D&reserved=0)
  
-2.	Select ISO and complete the form to continue with your details. Download the .iso and saved in the Downloads folder.
+2. Select ISO and complete the form to continue with your details. Download the .iso and saved in the Downloads folder.
  
-3.	Open Windows Admin Center on HybridHost001 from the desktop is not already opened, click on your previously deployed cluster, azshciclus.hybrid.local
+3. Open Windows Admin Center on HybridHost001 from the desktop is not already opened, click on your previously deployed cluster, azshciclus.hybrid.local
  
-     ![Create a volume on Azure Stack HCI 20H2](https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/event-27/media/fran1.png "Create a volume on Azure Stack HCI 20H2")
+    ![Create a volume on Azure Stack HCI 20H2](https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/event-27/media/fran1.png "Create a volume on Azure Stack HCI 20H2")
  
-4.	On the left hand navigation, under Compute select Servers and then Inventory.
+4. On the left hand navigation, under Compute select Servers and then Inventory.
  
-     ![Create a volume on Azure Stack HCI 20H2](https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/event-27/HOL-4-azure-stack-hci/media/fran2.png "Create a volume on Azure Stack HCI 20H2")
+    ![Create a volume on Azure Stack HCI 20H2](https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/event-27/HOL-4-azure-stack-hci/media/fran2.png "Create a volume on Azure Stack HCI 20H2")
 
-5.  Click on node AZSHCINODE01 and then click in Manage
+5. Click on node AZSHCINODE01 and then click in Manage
  
-     ![Create a volume on Azure Stack HCI 20H2](./media/fran3.png "Create a volume on Azure Stack HCI 20H2")
+    ![Create a volume on Azure Stack HCI 20H2](./media/fran3.png "Create a volume on Azure Stack HCI 20H2")
  
-6.	On the left, select Files & file sharing
+6. On the left, select Files & file sharing
   
-     ![Create a volume on Azure Stack HCI 20H2](https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/event-27/HOL-4-azure-stack-hci/media/fran4.png "Create a volume on Azure Stack HCI 20H2")
+    ![Create a volume on Azure Stack HCI 20H2](https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/event-27/HOL-4-azure-stack-hci/media/fran4.png "Create a volume on Azure Stack HCI 20H2")
   
-7.	Open the folder C:\ClusterStorage\Volume01
+7. Open the folder C:\ClusterStorage\Volume01
  
-     ![Create a volume on Azure Stack HCI 20H2](https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/event-27/HOL-4-azure-stack-hci/media/fran5.png "Create a volume on Azure Stack HCI 20H2")
+    ![Create a volume on Azure Stack HCI 20H2](https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/event-27/HOL-4-azure-stack-hci/media/fran5.png "Create a volume on Azure Stack HCI 20H2")
   
  
-8.	Click in the "…" and then Upload
+8. Click in the "…" and then Upload
  
-     ![Create a volume on Azure Stack HCI 20H2](https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/event-27/HOL-4-azure-stack-hci/media/fran6.png "Create a volume on Azure Stack HCI 20H2")
+    ![Create a volume on Azure Stack HCI 20H2](https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/event-27/HOL-4-azure-stack-hci/media/fran6.png "Create a volume on Azure Stack HCI 20H2")
   
-9.	Click in Select Files, search for the .iso file in Downloads and click in Open, and then Submit. 
+9. Click in Select Files, search for the .iso file in Downloads and click in Open, and then Submit. 
  
-     ![Create a volume on Azure Stack HCI 20H2](https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/event-27/HOL-4-azure-stack-hci/media/fran7.png "Create a volume on Azure Stack HCI 20H2")
+    ![Create a volume on Azure Stack HCI 20H2](https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/event-27/HOL-4-azure-stack-hci/media/fran7.png "Create a volume on Azure Stack HCI 20H2")
  
-10.	It takes around 5 minutes to get successfully uploaded. After that, please move on to the next task.
+10. It takes around 5 minutes to get successfully uploaded. After that, please move on to the next task.
  
  
 Task 3: Deploy a virtual machine
 ----- 
-1.  1-3: Keep the same from the previous task.
+1. 1-3: Keep the same from the previous task.
  
 1. In the New virtual machine pane, enter VM001 for the name, and enter the following pieces of information, then click Create
  
@@ -163,6 +163,7 @@ Task 3: Deploy a virtual machine
 
 
 ### Live migrate the virtual machine ###
+
 The final step we'll cover is using Windows Admin Center to live migrate VM001 from it's current node, to an alternate node in the cluster.
 
 1. Still within the **Windows Admin Center** on **HybridHost001**, under **Compute**, click on **Virtual machines**
