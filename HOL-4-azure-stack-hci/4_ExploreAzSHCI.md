@@ -91,13 +91,15 @@ Task 2: Download Windows Server .Iso
  
 Task 3: Deploy a virtual machine
 ----- 
-1. Open **Windows Admin Center** on **HybridHost001** from the desktop is not already opened, click on your previously deployed cluster, **azshciclus.hybrid.local**
+1. Once logged into the **Windows Admin Center** on **HybridHost001**, click on your previously deployed cluster, **azshciclus.hybrid.local**
 
-    ![Create a volume on Azure Stack HCI 20H2](./media/1.png "Create a volume on Azure Stack HCI 20H2")
-        
-1. On the left hand navigation, under **Storage** select **Volumes**.  The central **Volumes** page shows you should have a single volume currently
+1. On the left hand navigation, under **Compute** select **Virtual machines**.  The central **Virtual machines** page shows you no virtual machines deployed currently
+    
+    ![Volume created on Azure Stack HCI 20H2](./media/vm1.png "Volume created on Azure Stack HCI 20H2")
 
-    ![Create a volume on Azure Stack HCI 20H2](./media/totalvolumes.png "Create a volume on Azure Stack HCI 20H2")
+1. On the **Virtual machines** page, select the **Inventory** tab, and then click on **Add** and select **New**.
+
+    ![Volume created on Azure Stack HCI 20H2](./media/newvm.png "Volume created on Azure Stack HCI 20H2")
  
 1. In the New virtual machine pane, enter VM001 for the name, and enter the following pieces of information, then click Create
  
