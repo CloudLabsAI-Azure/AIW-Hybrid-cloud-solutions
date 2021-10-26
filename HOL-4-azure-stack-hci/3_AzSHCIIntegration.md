@@ -104,7 +104,7 @@ Once the registration is complete, you should take some time to explore the arti
 
 1. Click on the **azihciclus** record, and you'll be taken to the new Azure Stack HCI Resource Provider, which shows information about all of your clusters, including details on the currently selected cluster.
 
-    ![Overview of the recently registered cluster in the Azure portal](./media/overview.png "Overview of the recently registered cluster in the Azure portal")
+    ![Overview of the recently registered cluster in the Azure portal](./media/overnwstackview.png "Overview of the recently registered cluster in the Azure portal")
 
 
 ### Congratulations! ###
