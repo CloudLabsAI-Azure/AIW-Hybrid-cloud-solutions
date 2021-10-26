@@ -97,9 +97,9 @@ In a real scenario, using hardware you'd have to expose this service externally.
 
 2. Run the below command to run the powershell script that is already created and download inside the VM. 
 
-       ```cd V:\ClusterStorage
-          .\nested-application.ps1
-          ```
+      cd V:\ClusterStorage
+      .\nested-application.ps1
+          
        
 3. You will get a popup to login to your azure account, you can get your azure credentials from the environments details tab.
     
