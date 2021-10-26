@@ -89,9 +89,33 @@ Task 2: Expose a nested application to the internet
 If you've followed all the steps in this guide, you'll have a running AKS-HCI infrastructure, including a target cluster that can run your containerized workloads. Additionally, if you've deployed the simple Linux application using the [tutorial above](#deploying-a-simple-linux-application), you'll now have an Azure Voting web application running in a container on your AKS-HCI infrastructure. This application will likely have been allocated an IP address from your internal NAT network, **192.168.0.0/16**, and opening your Edge browser within the Azure VM allows you to access that web application using its 192.168.0.x IP address and optionally, its port number.
 
 However, the Azure Voting web app, and any other apps on the 192.168.0.0/16 internal network inside your Azure VM, cannot be reached from outside of the Azure VM, unless you perform some additional configuration.
+  **NOTE** - This is specific to the Azure VM nested configuration, and would not be required in a production deployment on-premises.
 
-**NOTE** - This is specific to the Azure VM nested configuration, and would not be required in a production deployment on-premises.
-1. Open powershell
+In a real scenario, using hardware you'd have to expose this service externally. Since we're using nested virtualization, please run this script that adds a NSG rule in the Host VM and applies NAT static mapping.
+
+1. Open powershell Console with pervillage from the Start Menu.
+
+
+1. Run the below command to run the powershell script that is already created and download inside the VM. 
+
+   >Note: You will get a popup to login to your azure account, you can get your azure credentials from the environments details tab.
+
+    ``` 
+    cd V:\ClusterStorage
+   .\nested-application.ps1
+    
+    ```
+ 
+     ![Output of kubectl get pods](./media/ex5.1.png "Output of kubectl get pods")
+     
+ 1. Once the script execution is completed, you will see the output same as below.
+
+     ![Output of kubectl get pods](./media/ex5.2.png "Output of kubectl get pods")
+     
+ 1. Now copy the public ip and browse it outside of the VM in any browser and see how the app is working.
+
+    ![Access web application using Azure Public IP](./media/access_web_app.png "Access web application using Azure Public IP")
+
 Congratulations!
 -----------
 You've reached the end of this exercise. You can now proceed with the next exercise.
