@@ -99,6 +99,7 @@ In a real scenario, using hardware you'd have to expose this service externally.
 
       ```cd V:\ClusterStorage
       .\nested-application.ps1
+      
       ```    
        
 3. You will get a popup to login to your azure account, you can get your azure credentials from the environments details tab.
