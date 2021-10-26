@@ -97,9 +97,9 @@ In a real scenario, using hardware you'd have to expose this service externally.
 
 2. Run the below command to run the powershell script that is already created and download inside the VM. 
 
-       ```cd V:\ClusterStorage
+       cd V:\ClusterStorage
           .\nested-application.ps1
-          ```
+       
  
      ![Output of kubectl get pods](./media/ex5.1.png "Output of kubectl get pods")
      
