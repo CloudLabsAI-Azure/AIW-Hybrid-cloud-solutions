@@ -189,9 +189,9 @@ The final step we'll cover is using Windows Admin Center to live migrate VM001 f
 
 5. Select the **Failover Cluster** from the drop down and leave the defaul on **Member server** and **Path for the VM's file**, under the **ComputeSwitch** select **Computeswitch** and then click **Move**.
 
-6. The live migration will then begin, and within a few seconds, the VM should be running on a different node.
-
     ![Start Live Migration using Windows Admin Center](./media/movee.png "Start Live Migration using Windows Admin Center")
+    
+6. The live migration will then begin, and within a few seconds, the VM should be running on a different node.
      
 7. Click on **Yes** on the popup of **Credential Security Service Provider CredSSP** and then enter you username as **Hybrid\azureuser** and password as **demo!pass123**.
 
