@@ -99,11 +99,11 @@ In a real scenario, using hardware you'd have to expose this service externally.
 
     >Note: You will get a popup to login to your azure account, you can get your azure credentials from the environments details tab.
 
-      ``` 
-      cd V:\ClusterStorage
-      .\nested-application.ps1
-    
-       ```
+
+         ``` 
+           cd V:\ClusterStorage
+           .\nested-application.ps1
+        ```
  
        ![Output of kubectl get pods](./media/ex5.1.png "Output of kubectl get pods")
      
