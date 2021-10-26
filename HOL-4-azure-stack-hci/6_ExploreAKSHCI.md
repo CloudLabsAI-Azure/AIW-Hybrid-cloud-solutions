@@ -105,7 +105,7 @@ In a real scenario, using hardware you'd have to expose this service externally.
            .\nested-application.ps1
         ```
  
-       ![Output of kubectl get pods](./media/ex5.1.png "Output of kubectl get pods")
+      ![Output of kubectl get pods](./media/ex5.1.png "Output of kubectl get pods")
      
  3. Once the script execution is completed, you will see the output same as below.
 
