@@ -18,10 +18,10 @@ Access the Azure Stack HCI21H2 VM
 Get the Azure Resources details
 -------
 
-1. Click on **Environment Details** button from the integrated lab guide.
+1. Click on **Environment Details** button from the integrated lab guide. Under **Azure Credentials**, you will see your Azure credentials.
 
     ![Volume created on Azure Stack HCI 21H2](/media/resources-upd.png "Volume created on Azure Stack HCI 21H2")
 
-1. You will see your Azure credentials and Expand the **Resource Group: HybridHost** to get the resource group details details. You will be using **HybridHost** resource group for Azure Stack HCI 21H2 lab.
+1.  In Azure Portal, expand the **Resource Group: HybridHost** to get the resource group details details. You will be using **HybridHost** resource group for Azure Stack HCI 21H2 lab.
 
-    ![Volume created on Azure Stack HCI 21H2](/media/detailss.png "Volume created on Azure Stack HCI 21H2")
+    ![Volume created on Azure Stack HCI 21H2](/media/detailss-upd.png "Volume created on Azure Stack HCI 21H2")
