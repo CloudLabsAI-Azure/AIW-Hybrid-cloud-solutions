@@ -93,7 +93,7 @@ However, the Azure Voting web app, and any other apps on the 192.168.0.0/16 inte
 
 In a real scenario, using hardware you'd have to expose this service externally. Since we're using nested virtualization, please run this script that adds a NSG rule in the Host VM and applies NAT static mapping.
 
-1. Open powershell Console with pervillage from the Start Menu.
+1. Open powershell Console from the Start Menu.
 
 2. Run the below command to run the powershell script that is already created and download inside the VM. 
 
