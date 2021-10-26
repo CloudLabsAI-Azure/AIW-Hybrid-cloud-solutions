@@ -129,7 +129,7 @@ The next section will walk through configuring the AKS on Azure Stack HCI manage
 
    ![Ready to deploy AKS-HCI with Windows Admin Center](./media/aks.png "Ready to deploy AKS-HCI with Windows Admin Center")
 
-You'll notice the terminology used refers to the **Azure Kubernetes Service Runtime on Windows Server​​** - the naming differs depending on if you're running the installation of AKS on a Windows Server 2019 Hyper-V platform, or the newer Azure Stack HCI 20H2 platform. The overall deployment experience is the same regardless of underlying platform.
+You'll notice the terminology used refers to the **Azure Kubernetes Service Runtime on Windows Server​​** - the naming differs depending on if you're running the installation of AKS on a Windows Server 2019 Hyper-V platform, or the newer Azure Stack HCI 21H2 platform. The overall deployment experience is the same regardless of underlying platform.
 
 3. Firstly, review the prerequisites - your Azure VM environment will meet all the prerequisites, so you should be fine to click **Next: System checks**
 
