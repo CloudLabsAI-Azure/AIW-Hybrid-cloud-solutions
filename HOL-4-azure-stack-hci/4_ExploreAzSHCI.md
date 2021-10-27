@@ -189,7 +189,7 @@ The final step we'll cover is using Windows Admin Center to live migrate VM001 f
 
 5. Select the **Failover Cluster** from the drop down and leave the defaul on **Member server**, for  **Path for the VM's file** select **C:\ClusterStorage\Volume1** from the drop down, under the **ComputeSwitch** select **Computeswitch** and then click **Move**.
 
-    ![Start Live Migration using Windows Admin Center](./media/Path.png "Start Live Migration using Windows Admin Center")
+    ![Start Live Migration using Windows Admin Center](https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/event-27/HOL-4-azure-stack-hci/media/path.png "Start Live Migration using Windows Admin Center")
     
 6. The live migration will then begin, and within a few seconds, the VM should be running on a different node.
      
