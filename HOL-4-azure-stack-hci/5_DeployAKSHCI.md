@@ -297,7 +297,7 @@ Next, you'll scale your Kubernetes cluster to add an additional Linux worker nod
      Get-AksHciNodePool -clusterName akshciclus001
      ```
 
-     ![](./media/countpoolone.png)
+     ![](./media/Azure-stack-PS01.png)
 
 3. Next, you'll scale your Kubernetes cluster node pool using below command:, it will scale the node count to 2. 
 
@@ -307,7 +307,7 @@ Next, you'll scale your Kubernetes cluster to add an additional Linux worker nod
     Set-AksHciNodePool -clusterName akshciclus001 -name linuxpool1 -count 2
     ```
     
-    ![Output of Set-AksHciNodePool](./media/scalepool.png)
+    ![Output of Set-AksHciNodePool](./media/Azure-stack-PS02.png)
 
 4. Once these steps have been completed, you can verify the details by running the following command:
 
@@ -315,7 +315,7 @@ Next, you'll scale your Kubernetes cluster to add an additional Linux worker nod
      Get-AksHciNodePool -clusterName akshciclus001
       ```
 
-    ![Output of Get-AksHciCluster](./media/countpooltwo.png)
+    ![Output of Get-AksHciCluster](./media/Azure-stack-PS03.png)
 
 To access this **akshciclus001** cluster using **kubectl** (which was installed on your host as part of the overall installation process), you'll first need the **kubeconfig file**.
 
