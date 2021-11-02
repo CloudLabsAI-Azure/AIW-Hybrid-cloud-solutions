@@ -26,7 +26,7 @@ As part of this brief tutorial, you'll deploy an [Azure vote application](https:
     kubectl get nodes
     ```
 
-   ![Output of kubectl get nodes](./media/getnodes.png "Output of kubectl get nodes")
+   ![Output of kubectl get nodes](./media/Azure-stack-PS04.png "Output of kubectl get nodes")
 
 2. Next, from the same **PowerShell **console**** run the following command to deploy the application directly from GitHub:
 
