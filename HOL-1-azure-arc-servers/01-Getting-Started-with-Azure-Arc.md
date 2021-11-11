@@ -222,7 +222,7 @@ We have onboarded the Linux VM to Azure Arc and verified in task 2. Now, you wil
    ```
     
    ![](.././media/connect-k8sv2.png "Connect Kubernetes")
-    
+   
 1. Once the previous command is executed successfully, the **provisioning state** in output will show as succeeded.
 
    ![](.././media/k8s-connectedv2.png "Kubernetes Cluster Connected")    
