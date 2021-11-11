@@ -95,29 +95,29 @@ You can connect your non-Azure computers in any of the following ways:
   * Using Azure Arc enabled servers **(recommended)**
   * From Security Center's pages in the Azure portal **(Getting started and Inventory)**
  
-1. Search for **Security Center** in Azure portal search bar and then click on **Security Center**.
+1. Search for **Microsoft Defender for Cloud** in Azure portal search bar and then click on **Microsoft Defender for Cloud**.
     
-   ![](.././media/search-security-center.png)
+   ![](.././media/H1-Ex2-task2-001.png)
    
 1. From the Getting Started page, scroll down and then check on all the checkboxes and click on **Upgrade**. Please note in your lab environment you may find it already upgraded, in that case please skip this and next step.
 
-   ![](.././media/upgrade-security-centerv2.png)
+   ![](.././media/H1-Ex2-task2-02.png)
    
 1. Now, select the subcription listed and click on **Install agents**.
 
-   ![](.././media/install-agentsv2.png)
+   ![](.././media/H1-Ex2-task2-03.png)
 
-1. Click on **Inventory** from the **Security Center**.
+1. Click on **Inventory** from the **Microsoft Defender for Cloud**.
 
-   ![](.././media/select-inventory.png)
+   ![](.././media/H1-Ex2-task2-04.png)
     
 1. From the **Inventory** tab, click on the **Add non-Azure servers**.
 
-   ![](.././media/add-non-azure-servers.png)
+   ![](.././media/H1-Ex2-task2-05.png)
     
-1. On **Onboard servers to Security Center** page, click on **Upgrade** next to the existing log analytics workspace named **LogAnalyticWS-<inject key="DeploymentID/Suffix" />** to upgrade. This will allow Azure Defender protection for your resources.
+1. On **Onboard servers to Defender for Cloud** page, click on **Upgrade** next to the existing log analytics workspace named **LogAnalyticWS-<inject key="DeploymentID/Suffix" />** to upgrade. This will allow Azure Defender protection for your resources.
 
-   ![](.././media/upgrade-log-analytics.png)
+   ![](.././media/H1-Ex2-task2-06.png)
     
 1. Now, close the blade and go back to **Inventory** tab and then you will see few connected resources. If you didn't see any resource, you will have to click on Refresh button at the top.
 
@@ -126,7 +126,7 @@ You can connect your non-Azure computers in any of the following ways:
   > Note: Agent monitoring will take few minutes to update and show status as **Monitored** for Arc enabled server **ubuntu-k8s** as shown in below screen. You can continue to the next exercise and come back later to check on this. 
   > Please note that due to some latest updates the status is not changing to **Monitored** for Arc enabled server **ubuntu-k8s**, this is a temporary issue and will fixed in future updates.   
 
-   ![](.././media/ss-ubuntuk8s-monitor.png)
+   ![](.././media/H1-Ex2-task2-07.png)
 
 ## In this exercise, you have covered the following:
  
