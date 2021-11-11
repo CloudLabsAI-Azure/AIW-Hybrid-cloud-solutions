@@ -223,10 +223,6 @@ We have onboarded the Linux VM to Azure Arc and verified in task 2. Now, you wil
     
    ![](.././media/connect-k8sv2.png "Connect Kubernetes")
    
-   > **Note**: While running the above command, if you face an error stating **Could not retrieve credential from local cache**, run the following command. Login to the azure portal by using the url and code after running the command.
-   ```
-   az login
-   ```
 1. Once the previous command is executed successfully, the **provisioning state** in output will show as succeeded.
 
    ![](.././media/k8s-connectedv2.png "Kubernetes Cluster Connected")    
