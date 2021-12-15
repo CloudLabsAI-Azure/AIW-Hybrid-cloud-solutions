@@ -1,9 +1,9 @@
-# HOL-1: Exercise 2: Onboard Azure Arc enabled servers to Azure Sentinel and Security Center
+# HOL-1: Exercise 2: Onboard Azure Arc enabled servers to Microsoft Sentinel and Security Center
 
-In the last excercise, we had enabled Linux Machine and Kubernetes cluster on Azure Arc and verified it. Now let's see how to onboard your Azure Arc enabled server to Azure Sentinel and start collecting security-related events. Azure Sentinel provides a single solution for alert detection, threat visibility, proactive hunting, and threat response across the enterprise.
+In the last excercise, we had enabled Linux Machine and Kubernetes cluster on Azure Arc and verified it. Now let's see how to onboard your Azure Arc enabled server to Microsoft Sentinel and start collecting security-related events. Microsoft Sentinel provides a single solution for alert detection, threat visibility, proactive hunting, and threat response across the enterprise.
 
-## Task 1: Onboard Azure Arc enabled servers to Azure Sentinel
-Azure Sentinel comes with several connectors for Microsoft solutions, available out of the box and providing real-time integration. For physical and virtual machines, you can install the Log Analytics agent that collects the logs and forwards them to Azure Sentinel. Arc enabled servers supports deploying the Log Analytics agent using the following methods:
+## Task 1: Onboard Azure Arc enabled servers to Microsoft Sentinel
+Microsoft Sentinel comes with several connectors for Microsoft solutions, available out of the box and providing real-time integration. For physical and virtual machines, you can install the Log Analytics agent that collects the logs and forwards them to Microsoft Sentinel. Arc enabled servers supports deploying the Log Analytics agent using the following methods:
 
 #### Using the VM extensions framework:
 This feature in Azure Arc enabled servers allows you to deploy the Log Analytics agent VM extension to a non-Azure Windows and/or Linux server. VM extensions can be managed using the following methods on your hybrid machines or servers managed by Arc enabled servers:
@@ -17,46 +17,44 @@ You can use the Azure Policy Deploy Log Analytics agent to Linux or Windows Azur
 
   > **Note** : You have already installed Log Analytics Agent into the Linux VM - ubuntu-k8s in the previous exercise. You can refer **Task 5** in the previous exercise to review it again. Also the screenshots of the log results can be mismatched because the result can take more time to get the same results. 
  
-1. Search for ```Azure Sentinel``` on the Azure portal and, then select the **Azure Sentinel** from the search result.
+1. Search for ```Microsoft Sentinel``` on the Azure portal and, then select the **Microsoft Sentinel** from the search result.
 
-   ![](.././media/as-01.png)
+   ![](.././media/microsoft-sentinel.png)
     
-2. On **Azure Sentinel** blade, click on **+ Create** to add Azure Sentinel to a workspace.
+2. On **Microsoft Sentinel** blade, click on **+ Create** to add Microsoft Sentinel to a workspace.
    > **Note**: You may also find **+ Add/+ New** button in place of **+ Create**. 
 
-   ![](.././media/as-02v2.png)
+   ![](.././media/microsoft-sentinel-create.png)
     
 3. Select the existing log analytics workspace shown named LogAnalyticsWS-<inject key="DeploymentID/Suffix" /> and then click on the **Add** button.
 
-   ![](.././media/as-031.png)
+   ![](.././media/microsoft-sentinel-add.png)
     
-4. You will see a notification on the upper right corner **Adding Azure Sentinel**. It will take around 1 minutes to get added.
- 
-   ![](.././media/as-041.png)
+4. You will see a notification on the upper right corner **Adding Microsoft Sentinel**. It will take around 1 minutes to get added.
     
-5. Once the Azure Sentinel is added you will see another notification which says **Successfully added Azure Sentinel** as shown below.
+5. Once the Microsoft Sentinel is added you will see another notification which says **Successfully added Azure Sentinel** as shown below.
      
    ![](.././media/as-05.png)
  
-6. Click on the **Overview** on Azure Sentinel page from where you can view the insights after few minutes. If you are not able to view the insights after a few minutes, then refresh the browser tab.
+6. Click on the **Overview** on Microsoft Sentinel page from where you can view the insights after few minutes. If you are not able to view the insights after a few minutes, then refresh the browser tab.
     
-   ![](.././media/as-07.png)
+   ![](.././media/microsoft-sentinel-overview.png)
     
 7. Now, click on the **Workbooks** from the left pane under the **Threat Management** section and search for ```Linux machines``` and select **Linux machines** from the search result.
     
-   ![](.././media/as-06.png)
+   ![](.././media/microsoft-sentinel-workbook.png)
     
 8. Then from the bottom-right corner of the Azure portal, click on **Save** and then on **OK** to save the workbook. 
  
    ![](.././media/as-08.png)
     
-9. Now, go back to **Azure Sentinel Overview** blade by clicking on Overview under General section on the left and, then click on **INSIGHTSMETER** to query the **ubuntu-k8s** VM insights. Count of **Events** could be different on your Azure Sentinel Dashboard.
+9. Now, go back to **Microsoft Sentinel Overview** blade by clicking on Overview under General section on the left and, then click on **INSIGHTSMETER** to query the **ubuntu-k8s** VM insights. Count of **Events** could be different on your Microsoft Sentinel Dashboard.
 
-   ![](.././media/as-09.png)
+   ![](.././media/ms-insightsmeter.png)
     
 10. You will see **Results** for ```union InsightsMetrics``` in query explorer. You can see operations around Network, Logical Disk, Memory, and Processor for **ubuntu-k8s** VM. If you are not able to see the results, then try to adjust the query editor size and you will be able to see the outcome.
 
-   ![](.././media/as-10.png)
+    ![](.././media/as-10.png)
     
 11. Let us check for **ubuntu-k8s** processes by running the following query, you can change the time range limit as well to see the result of a specific time interval. You can scroll right on the **Results** section and see more details and descriptions about every process. 
 
