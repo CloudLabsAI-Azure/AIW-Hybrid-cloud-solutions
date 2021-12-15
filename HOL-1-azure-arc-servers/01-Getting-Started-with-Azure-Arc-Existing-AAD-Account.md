@@ -275,7 +275,7 @@ Policies can be applied to Arc enabled servers the same way they are applied to 
     
 1. Select **Servers** from the options on the left side of the Azure Arc blade.
 
-    ![](.././media/select-serversv2.png)
+    ![](.././media/aa-hol1-servers.png)
     
 1. Click on the **ubuntu-k8s** server from connected machines. 
 
