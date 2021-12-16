@@ -10,13 +10,21 @@ In this task you will select an existing policy definition and create a policy a
 
     ![](.././media/0151.png)
 
-1. From the **Kuberenetes Azure Arc** blade, click on **Go to Policies** under Configure Azure Policy.
+1. From the **Kuberenetes Azure Arc** blade, click on **Go to Policies** under Azure Policy.
 
-    ![](.././media/15.png)
+    ![](.././media/policy-1.png)
+    
+1. On the **Policies** blade, click on **Enable extension** to onbaord to Azure Policy for Azure Arc enabled Kubernetes clusters.
 
-1. Now, Click on **Assign policy**.
+     ![](.././media/policy-2.png)
+     
+1. Now, click on **go to Azure Policy**  to navigate to **Compliance** blade.
 
-    ![](.././media/16.png)
+     ![](.././media/policy-3.png)
+
+1. On the **Compliance** blade, click on **Assign policy**.
+
+    ![](.././media/policy-4.png)
 
 1. On the Basics section, click on the ellipses (…) to the right of **Policy definition**.
 
@@ -24,7 +32,7 @@ In this task you will select an existing policy definition and create a policy a
 
 1. In the **Search** window for available definitions, type ```GitOps``` and select the one named **Configure Kubernetes clusters with specified GitOps configuration using no secrets**.  Then, click on the blue **Select** button below.
 
-    ![](.././media/gitops.png)
+    ![](.././media/gitops-1.png)
 
 1. Click **Next** at the bottom of the window.
 
@@ -70,11 +78,11 @@ In this task you will select an existing policy definition and create a policy a
 
     ![](.././media/gitops3.png)
 
-1. You will be redirected to the Policies page of microk8s-cluster. Navigate to **Azure-Arc RG** -> **microk8s-cluster** -> **Policies**, if you are not already on that page.
+1. You will be redirected to the Policies page of microk8s-cluster. Navigate to **Azure-Arc RG** -> **microk8s-cluster** -> **Policies** -> **go to Azure Policy**, if you are not already on that page.
 
 1. You can check if your cluster is **compliant** or **not** against **“Configure Kubernetes clusters with specified GitOps configuration using no secrets”** policy you assigned in previous step by looking at the Compliance State Column. It will be **Compliant** within 20 Minutes, sometimes it can take more than that as well. 
 
-     ![](.././media/gitops4.png)
+     ![](.././media/policy-5.png)
      
    > **Note**: If the compliance state shows as **Non-compliant** even after 10-15 minutes, you will need to create a remediation task in the next task and after sometime you will see the complaint state changed to **Compliant**
    
