@@ -53,9 +53,9 @@ Your Azure VM deployment automatically installed Windows Admin Center 2103, howe
 
 In order to deploy AKS-HCI with Windows Admin Center, you need to connect your Windows Admin Center instance to Azure.
 
-6. Now, in **Settings**, under **Gateway** click on **Azure**.
+6. Now, in **Settings**, under **Gateway** click on **Register**.
 
-   ![Installed extensions in Windows Admin Center](./media/azure.png "Installed extensions in Windows Admin Center")
+   ![Installed extensions in Windows Admin Center](./media/hol4-settings-register.png "Installed extensions in Windows Admin Center")
     
 7. Click **Register**(1), and in the **Get started with Azure in Windows Admin Center** blade, follow the instructions to **Copy the code**(2) and then click on the link **Enter the Code**(3) to configure device login.
 
@@ -86,9 +86,9 @@ In order to deploy AKS-HCI with Windows Admin Center, you need to connect your W
 In order to successfully deploy AKS on Azure Stack HCI with Windows Admin Center, additional permissions were applied on the Windows Admin Center Azure AD application that was created when you connected Windows Admin Center to Azure, earlier. In this step, we'll quickly validate those permissions.
 
 1. Still in Windows Admin Center, click on the **Settings** gear in the top-right corner
-2. Under **Gateway**, click **Azure**. You should see your previously registered Azure AD app:
+2. Under **Gateway**, click **Register**. You should see your previously registered Azure AD app:
 
-    ![Your Azure AD app in Windows Admin Center](./media/loggedin.png "Your Azure AD app in Windows Admin Center")
+    ![Your Azure AD app in Windows Admin Center](./media/hol4-settings-register1.png "Your Azure AD app in Windows Admin Center")
 
 3. Click on **View in Azure** to be taken to the Azure AD app portal, where you should see information about this app, including permissions required. If you're prompted to log in, provide appropriate credentials.
 4. Once logged in, under **Configured permissions**, you should see a few permissions listed with the status **Granted for...** and the name of your tenant. The **Microsoft Graph (5)** API permissions will show as **not granted** but this will be updated upon deployment
@@ -166,9 +166,11 @@ You'll notice that Windows Admin Center will validate memory, storage, networkin
 
 11. For **IP address allocation method** choose **DHCP**
 
+     ![Host configuration for VM networking in Windows Admin Center](./media/hol4-vm-networking.png "Host configuration VM networking in Windows Admin Center")
+
 12. Under **Load balancer settings**, enter the range from **192.168.0.150** to **192.168.0.250** and then click **Next:Azure registration**
 
-     ![Host configuration in Windows Admin Center](./media/integration.png "Host configuration in Windows Admin Center")
+     ![Host configuration in Windows Admin Center](./media/hol4-kub-hostconfig.png "Host configuration in Windows Admin Center")
 
 13. On the **Azure registration page**, your Azure account should be automatically populated. Use the drop-down to select your preferred subscription. If you are prompted, log into Azure with your Azure credentials. Once successfully authenticated, you should see your **Account**, then **choose your subscription**
 
