@@ -10,13 +10,21 @@ In this task you will select an existing policy definition and create a policy a
 
     ![](.././media/0151.png)
 
-1. From the **Kuberenetes Azure Arc** blade, click on **Go to Policies** under Configure Azure Policy.
+1. From the **Kuberenetes Azure Arc** blade, click on **Go to Policies** under Azure Policy.
 
-    ![](.././media/15.png)
+    ![](.././media/policy-1.png)
+    
+1. On the **Policies** blade, click on **Enable extension** to onbaord to Azure Policy for Azure Arc enabled Kubernetes clusters.
 
-1. Now, Click on **Assign policy**.
+     ![](.././media/policy-2.png)
+     
+1. Now, click on **go to Azure Policy**  to navigate to **Compliance** blade.
 
-    ![](.././media/16.png)
+     ![](.././media/policy-3.png)
+
+1. On the **Compliance** blade, click on **Assign policy**.
+
+    ![](.././media/policy-4.png)
 
 1. On the Basics section, click on the ellipses (…) to the right of **Policy definition**.
 
@@ -24,7 +32,7 @@ In this task you will select an existing policy definition and create a policy a
 
 1. In the **Search** window for available definitions, type ```GitOps``` and select the one named **Configure Kubernetes clusters with specified GitOps configuration using no secrets**.  Then, click on the blue **Select** button below.
 
-    ![](.././media/gitops.png)
+    ![](.././media/gitops-1.png)
 
 1. Click **Next** at the bottom of the window.
 
