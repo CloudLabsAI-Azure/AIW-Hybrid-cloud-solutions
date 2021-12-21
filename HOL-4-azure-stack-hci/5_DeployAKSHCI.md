@@ -77,7 +77,9 @@ In order to deploy AKS-HCI with Windows Admin Center, you need to connect your W
 
 *******************************************************************************************************
 
-**NOTE** - if you receive an error when signing in, still in **Settings**, under **User**, click on **Account** and click **Sign-in**. You should then be prompted for Azure credentials and permissions, to which you can then click **Accept**. Sometimes it just takes a few moments from Windows Admin Center creating the Azure AD application and being able to sign in. Retry the sign-in until you've successfully signed in.
+**NOTE** - If you receive an error when signing in, still in **Settings**, under **User**, click on **Account** and click **Sign-in**. You should then be prompted for Azure credentials and permissions, to which you can then click **Accept**. Sometimes it just takes a few moments from Windows Admin Center creating the Azure AD application and being able to sign in. Retry the sign-in until you've successfully signed in.
+**NOTE** - Sometime even after cluster is regitered ity may show an error with Signin with following error, you can ignore that and close the popup:
+   ```AADSTS700016: Application with identifier '74da6b92-fe78-4774-8437-48aa99cfd158' was not found in the directory 'Azure HOL 4031'. This can happen if the application has not been installed by the administrator of the tenant or consented to by any user in the tenant. You may have sent your authentication request to the wrong tenant.```
 
 *******************************************************************************************************
 
