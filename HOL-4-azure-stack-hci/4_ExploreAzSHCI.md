@@ -8,8 +8,8 @@ Contents
 -----------
 - [Overview](#overview)
 - [Contents](#contents)
-- [Create volumes for VMs](#create-volumes-for-vms)
-- [Deploy a virtual machine](#deploy-a-virtual-machine)
+- [Create volumes for VMs](#task-1-create-volumes-for-vms)
+- [Deploy a virtual machine](#task-2-deploy-a-virtual-machine)
 - [Congratulations!](#congratulations)
 
 
