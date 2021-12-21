@@ -108,31 +108,6 @@ You should still be over on **HybridHost001**, but if you're not, log into Hybri
 
 You've successfully create a VM using the Windows Admin Center!
 
-### Live migrate the virtual machine ###
-The final step we'll cover is using Windows Admin Center to live migrate VM001 from it's current node, to an alternate node in the cluster.
-
-1. Still within the **Windows Admin Center** on **HybridHost001**, under **Compute**, click on **Virtual machines**
-
-2. On the **Virtual machines** page, select the **Inventory** tab
-
-3. Under **Host server**, make a note of the node that VM001 is currently running on.  You may need to expand the column width to see the name
-
-4. Next to **VM001**, click the tick box next to VM001, then click **More**.  You'll notice you can Clone, Domain Join and also Move the VM. Click **Move**
-
-    ![Start Live Migration using Windows Admin Center](./media/move.png "Start Live Migration using Windows Admin Center")
-    
-5. Select the **Failover Cluster** from the drop down and leave the defaul on **Member server** and **Path for the VM's file**, under the **ComputeSwitch** select **Computeswitch** and then click **Move**.
-
-6. The live migration will then begin, and within a few seconds, the VM should be running on a different node.
-
-    ![Start Live Migration using Windows Admin Center](./media/movee.png "Start Live Migration using Windows Admin Center")
-     
-7. Click on **Yes** on the popup of **Credential Security Service Provider CredSSP** and then enter you username as **Hybrid\azureuser** and password as **demo!pass123**.
-
-    ![Start Live Migration using Windows Admin Center](./media/movee1.png "Start Live Migration using Windows Admin Center")
-    
-8. On the left hand navigation, under **Compute** select **Virtual machines** to return to the VM dashboard view, which aggregates information across your cluster, for all of your VMs.
-
 Congratulations!
 -----------
 You've reached the end of the evaluation guide.  In this guide you have:
