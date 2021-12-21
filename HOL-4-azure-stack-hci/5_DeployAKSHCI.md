@@ -208,6 +208,7 @@ With the management cluster deployed successfully, you're ready to move on to de
    2. **OS type**: Linux
    3. **Node size**: Standard_K8S3_v1 (6 GB Memory, 4 CPU)
    4. **Node count**: 1
+   5. **Max pods per node**: leave default
 
    ![AKS node pools in Windows Admin Center](./media/linuxpool.png "AKS node pools in Windows Admin Center")
 
