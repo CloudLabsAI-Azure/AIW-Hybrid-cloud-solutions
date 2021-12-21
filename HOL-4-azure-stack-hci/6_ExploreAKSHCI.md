@@ -20,13 +20,13 @@ During the deployment of AKS on Azure Stack HCI, **kubectl** was configured on y
 
 As part of this brief tutorial, you'll deploy an [Azure vote application](https://github.com/Azure-Samples/azure-voting-app-redis "Azure vote application on GitHub"). In order to deploy the application, you'll need a Kubernetes manifest file. A Kubernetes manifest file defines the desired state for the cluster, such as what container images to run. The manifest we'll use in this tutorial includes two Kubernetes deployments - one for the sample Azure Vote Python application, and the other for a Redis instance. Two Kubernetes services are also created - an internal service for the Redis instance, and external service to access the Azure Vote application from the internet.
 
-1. First, run the following command from an **administrative PowerShell command** to list your Kubernetes nodes
+1. First, run the following command from an **administrative PowerShell command** to list your Kubernetes nodes, please note below commands needs to executed in Windows Powershell. Commands will not work in PowerShell ISE.
 
    ```powershell
     kubectl get nodes
     ```
 
-   ![Output of kubectl get nodes](./media/Azure-stack-PS04.png "Output of kubectl get nodes")
+   ![Output of kubectl get nodes](./media/Azure-stack-PS04v2.png "Output of kubectl get nodes")
 
 2. Next, from the same **PowerShell **console**** run the following command to deploy the application directly from GitHub:
 
