@@ -95,9 +95,11 @@ In order to successfully deploy AKS on Azure Stack HCI with Windows Admin Center
 3. Click on **View in Azure** to be taken to the Azure AD app portal, where you should see information about this app, including permissions required. If you're prompted to log in, provide appropriate credentials.
 4. Once logged in, under **Configured permissions**, you should see a few permissions listed with the status **Granted for...** and the name of your tenant. The **Microsoft Graph (5)** API permissions will show as **not granted** but this will be updated upon deployment
 
-5. Click on **Grant Admin Consent for Azure HOL** button to give your app the permissions.
+5. Click on **Grant Admin Consent for Azure HOL** button and select **Yes** on the **Grant admin consent confirmation** pop-up to give your app the permissions.
 
-    ![Confirm Azure AD app permissions in Windows Admin Center](./media/Ex2-task2-01.png "Confirm Azure AD app permissions in Windows Admin Center")
+    ![Confirm Azure AD app permissions in Windows Admin Center](../media/Ex2-task2-01.1.png "Confirm Azure AD app permissions in Windows Admin Center")
+
+    ![Confirm Azure AD app permissions in Windows Admin Center](../media/Ex2-task2-01.2.png "Confirm Azure AD app permissions in Windows Admin Center")
 
 *******************************************************************************************************
 
@@ -123,92 +125,45 @@ In order to successfully deploy AKS on Azure Stack HCI with Windows Admin Center
 -----------
 The next section will walk through configuring the AKS on Azure Stack HCI management cluster, on your single node Windows Server 2019 host.
 
-1. From the Windows Admin Center homepage, click on your **HybridHost001.hybrid.local** cluster. 
- 
-    ![HybridHost001 under management in Windows Admin Center](./media/cluster.png "HybridHost001 under management in Windows Admin Center")
+1. On the **HybridHost001** VM, click on the windows button and look for PowerShell ISE and right-click on it to Run as administrator.
 
-2. You'll be presented with a rich array of information about your HybridHost001 cluster, of which you can feel free to explore the different options and metrics. When you're ready, on the left-hand side, scroll down and under **Extensions**, click **Azure Kubernetes Service** and then Click on **Set up** to start the deployment process.
+   ![](../media/powershell-1.png)
+   
+1. Now, copy the below code and paste it in your PowerShell window to install and update the PowerShellGet module.
 
-   ![Ready to deploy AKS-HCI with Windows Admin Center](./media/aks.png "Ready to deploy AKS-HCI with Windows Admin Center")
+   ```
+   Install-Module –Name PowerShellGet –Force
+   Update-Module –Name PowerShellGet –Force
+   ```
+1. Close the PowerShell session and re-open it to use the **PowerShellGet** module to configure the AKS in the next steps.
 
-You'll notice the terminology used refers to the **Azure Kubernetes Service Runtime on Windows Server​​** - the naming differs depending on if you're running the installation of AKS on a Windows Server 2019 Hyper-V platform, or the newer Azure Stack HCI 20H2 platform. The overall deployment experience is the same regardless of underlying platform.
+1. Next, copy the below code and paste it in your PowerShell window, replace **your-subscription-ID-here** with your **subscription ID**: <inject key="Subscription ID" /> . After updating the subscription ID, run the PowerShell commands to configure the AKS on Azure Stack HCI management cluster.
 
-3. Firstly, review the prerequisites - your Azure VM environment will meet all the prerequisites, so you should be fine to click **Next: System checks**
+   ```
+   Install-Module -Name AksHci -Repository PSGallery
+   Get-Command -Module AksHci
+   Initialize-AksHciNode
+   Get-VMSwitch
+   $vnet = New-AksHciNetworkSetting -name aks-default-network -vswitchName InternalNAT -vipPoolStart 192.168.0.150 -vipPoolEnd 192.168.0.250
+   Set-AksHciConfig -imageDir v:\clusterstorage\volume1\Images -workingDir v:\ClusterStorage\Volume1\ImageStore -cloudConfigLocation v:\clusterstorage\volume1\Config -vnet        $vnet -cloudservicecidr "192.168.0.150/16"
+   Set-AksHciRegistration -subscriptionId "your-subscription-ID-here" -resourceGroupName "hybridhost"
+   Install-AksHci
+   ```
 
-     ![HybridHost001 under management in Windows Admin Center](./media/review.png "HybridHost001 under management in Windows Admin Center")
+1.  Click on **Yes to all** to install the modules from PSGallery then select **Yes to all** again to accept the license terms.
 
-4. On the **System checks** page, enter the password **demo!pass123** for your **azureuser** account and when successfully validated, click on the **Install** button to **install the required PowerShell modules**, this will take 5 to 10 minutes to install the powershell modules. 
+1. Once dependencies have been installed, you'll receive a popup on **HybridHost001** to authenticate to Azure. Provide your **Azure credentials**.
 
-     ![HybridHost001 under management in Windows Admin Center](./media/install.png "HybridHost001 under management in Windows Admin Center")
-     
-5. During the system checks stage, Windows Admin Center will begin to validate it's own configuration, and the configuration of your target nodes, which in this case, is the Windows Server 2019 Hyper-V host (HybridHost001, running in your Azure VM)
+   ![](../media/azure_login_reg.png)
 
-   ![System checks performed by Windows Admin Center](./media/creds.png "System checks performed by Windows Admin Center")
+1. Once successfully authenticated, the configuration process will begin and will take around 10-15 minutes to finish.
 
-You'll notice that Windows Admin Center will validate memory, storage, networking, roles and features and more. If you've followed the guide correctly, you'll find you'll pass all the checks and can proceed.
+1. Navigate back to Windows Admin Center homepage and click on your **HybridHost001.hybrid.local** cluster.
 
-6. Once validated, click **Next: Credential delegation**
+1. You'll be presented with a rich array of information about your HybridHost001 cluster, of which you can feel free to explore the different options and metrics. When you're ready, on the left-hand side, select **Azure Kubernetes Service** and review the cluster details such as Connection status, AKS host name, total disk space and memory.
 
-7. On the **Credential delegation** page, read the information about **CredSSP**, then click **Enable**. Once enabled, click **Next: Host configuration**
-
-   ![Enable CredSSP in Windows Admin Center](./media/enabled.png "Enable CredSSP in Windows Admin Center")
-
-   > **NOTE** - if you receive a WinRM error, open an **Administrative PowerShell console** and run the following command and then retry the step 7:
-
-   > Restart-Service WinRm -Force
-
-
-8. On the **Host configuration** page, under **Host details**, select your **V:**, and leave the other settings as default
-
-     ![Host configuration in Windows Admin Center](./media/vdrive.png "Host configuration in Windows Admin Center")
-
-9. Under **VM Networking**, ensure that **InternalNAT** is selected for the **Internet-connected virtual switch**
-
-10. For **Use VLANs**, leave this selected as **No**
-
-11. For **IP address allocation method** choose **DHCP**
-
-     ![Host configuration for VM networking in Windows Admin Center](./media/hol4-vm-networking.png "Host configuration VM networking in Windows Admin Center")
-
-12. Under **Load balancer settings**, enter the range from **192.168.0.150** to **192.168.0.250** and then click **Next:Azure registration**
-
-     ![Host configuration in Windows Admin Center](./media/hol4-kub-hostconfig.png "Host configuration in Windows Admin Center")
-
-13. On the **Azure registration page**, your Azure account should be automatically populated. Use the drop-down to select your preferred subscription. If you are prompted, log into Azure with your Azure credentials. Once successfully authenticated, you should see your **Account**, then **choose your subscription**
-
-14. Once you've chosen your subscription, Select your resource group **HybridHost** and **East US** in Azure Region.
-
-     ![AKS Azure Registration in Windows Admin Center](./media/Registration-aks.png "AKS Azure Registration in Windows Admin Center")
-
-15.  Click on **Next: Review**
+   ![](../media/AksHci.png)
   
-16. Review your choices and settings, then click **Apply**.
-
-     ![AKS Azure Registration in Windows Admin Center](./media/review-apply.png "AKS Azure Registration in Windows Admin Center")
-
-17. After a few moments, you may be **prompted to grant consent** to the Windows Admin Center Azure AD application. Ensure you select **Consent on behalf of your organization** then click **Accept**. The settings will be applied, and you should receive some notifications:
-
-     ![Setting the AKS-HCI config in Windows Admin Center](./media/confirmed.png "Setting the AKS-HCI config in Windows Admin Center")
-
-18. Once confirmed, you can click **Next: New cluster** to start the deployment process of the management cluster.
-
-     ![AKS on Azure Stack HCI management cluster deployment started in Windows Admin Center](/media/deploying.png "AKS on Azure Stack HCI management cluster deployment started in Windows Admin Center")
-
-*******************************************************************************************************
-
-> **NOTE 1** - Do not close the Windows Admin Center browser at this time. Leave it open and wait for successful completion. if you see that the creation is failed, you can click on back and start the creation from step 16 again and it will deploy the cluster.
-
-> **NOTE 2** - You may receive a WinRM error message stating "Downloading virtual machine images and binaries for the AKS host failed" - this can be ignored, so **do not close/refresh the browser**.
-
-*******************************************************************************************************
-
-19.  Upon completion you should receive a notification of success. In this case, you can see deployment of the AKS on Azure Stack HCI management cluster took just over 12 minutes. In some cases it can take upto 20 minutes to deploy the cluster.
-
-     ![AKS-HCI management cluster deployment completed in Windows Admin Center](https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/main/HOL-4-azure-stack-hci/media/deployed.png "AKS-HCI management cluster deployment completed in Windows Admin Center")
-
-20. Once reviewed, click **Finish**. You will then be presented with a management dashboard where you can create and manage your Kubernetes clusters.
-     
-     ![AKS on Azure Stack HCI management cluster deployment started in Windows Admin Center](./media/dashboard.png "AKS on Azure Stack HCI management cluster deployment started in Windows Admin Center")
      
 ### Updates and Cleanup ###
 To learn more about **updating**, **redeploying** or **uninstalling** AKS on Azure Stack HCI with Windows Admin Center, you can [read the official documentation here.](https://docs.microsoft.com/en-us/azure-stack/aks-hci/setup "Official documentation on updating, redeploying and uninstalling AKS on Azure Stack HCI")
