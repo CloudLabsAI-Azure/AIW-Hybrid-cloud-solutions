@@ -36,7 +36,7 @@ In this step, you'll create a volume on the Azure Stack HCI 20H2 cluster by usin
 9. Under **More options**, tick the box for **Use deduplication and compression**
 10. Under **Data type**, use the drop-down to select **Hyper-V**, then click **Create**.
 
-    ![Create a volume on Azure Stack HCI 20H2](./media/volume.png "Create a volume on Azure Stack HCI 20H2")
+    ![Create a volume on Azure Stack HCI 20H2](./media/volumev2.png "Create a volume on Azure Stack HCI 20H2")
 
 8. Creating the volume can take a few minutes. Notifications in the upper-right will let you know when the volume is created. The new volume appears in the Inventory list
 
