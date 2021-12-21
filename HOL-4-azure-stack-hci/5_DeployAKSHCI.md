@@ -158,7 +158,11 @@ The next section will walk through configuring the AKS on Azure Stack HCI manage
 
    ![](../media/azure_login_reg.png)
 
-1. Once successfully authenticated, the configuration process will begin and will take around 10-15 minutes to finish.
+1. Once successfully authenticated, the configuration process will begin and will take around 10-15 minutes to finish. if you see below warning please ignore that and proceed with next step.
+
+      > WARNING: If you are running Windows PowerShell remotely, note that some failover clustering cmdlets do not work remotely. When possible, run the cmdlet locally and specify a remote computer a
+s the target. To run the cmdlet remotely, try using the Credential Security Service Provider (CredSSP). All additional errors or warnings from this cmdlet might be caused by running it remote
+ly.
 
 1. Navigate back to Windows Admin Center homepage and click on your **HybridHost001.hybrid.local** cluster.
 
