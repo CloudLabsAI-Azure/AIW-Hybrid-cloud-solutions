@@ -21,7 +21,7 @@ Azure Stack HCI 20H2 is delivered as an Azure service and needs to register with
 
  We're going to perform the registration from the **HybridHost001** machine, which we've been using with the Windows Admin Center.
 
-1. On **HybridHost001** VM after you have already logged in, click on the windows button and look for **PowerShell ISE** and right-click on it to **Run as administrator**.
+1. After logging in to the **HybridHost001** VM, click on the windows button and search for **PowerShell ISE** then right-click on it to select **Run as administrator**.
 
     ![Volume created on Azure Stack HCI 20H2](https://raw.githubusercontent.com/CloudLabsAI-Azure/hybridworkshop/main/media/powershell.png "Volume created on Azure Stack HCI 20H2")
     
@@ -39,7 +39,7 @@ Azure Stack HCI 20H2 is delivered as an Azure service and needs to register with
 As you can see from the result, the cluster is yet to be registered, and the cluster status identifies as **Clustered**. Azure Stack HCI 20H2 needs to register within 30 days of installation as per the Azure Online Services Terms. If it is not clustered within 30 days, the **ClusterStatus** will show **OutOfPolicy**, and if not registered within 30 days, the **RegistrationStatus** will show as **OutOfPolicy**.
 
 
-3. Now copy the below code and paste it in your PowerShell window, replace *your-subscription-ID-here* with your subscription ID <inject key="Subscription ID" />. After updating the subscription ID, run the PowerShell commands to register your Azure Stack HCI 20H2 to Azure portal. 
+3. Now copy the below code and paste it in your PowerShell window, replace ``*your-subscription-ID-here*`` with your subscription ID <inject key="Subscription ID" />. After updating the subscription ID, run the PowerShell commands to register your Azure Stack HCI 20H2 to Azure portal. 
 
    > **Note**: We have already updated the domain user name and password for the local host server. 
    
