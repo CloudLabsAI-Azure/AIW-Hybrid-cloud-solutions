@@ -12,7 +12,7 @@ Access the Azure Stack HCI20H2 VM
 
     ![Volume created on Azure Stack HCI 20H2](/media/startvm.png "Volume created on Azure Stack HCI 20H2")
     
-    ![Volume created on Azure Stack HCI 20H2](/media/mainpage.png "Volume created on Azure Stack HCI 20H2")
+    ![Volume created on Azure Stack HCI 20H2](/media/next.png "Volume created on Azure Stack HCI 20H2")
        
 
 Get the Azure Resources details
