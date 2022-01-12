@@ -65,7 +65,7 @@ In order to deploy AKS-HCI with Windows Admin Center, you need to connect your W
 
    ![Installed extensions in Windows Admin Center](./media/code.png "Installed extensions in Windows Admin Center")
      
-9. When prompted for credentials, **enter your Azure credentials** for a tenant you'd like to use to register the Windows Admin Center and click on continue button if you get any popup saying **Are you trying to sign in to Windows Admin Center?**.
+9. When prompted for credentials, **enter your Azure credentials** for a tenant you'd like to use to register the Windows Admin Center and click on **Continue** button if you get any popup saying **Are you trying to sign in to Windows Admin Center?**.
 
 10. Now, switch Back in **Windows Admin Center** tab, you'll notice your tenant information has been added.  You can click on **Connect** to connect Windows Admin Center to Azure.
 
