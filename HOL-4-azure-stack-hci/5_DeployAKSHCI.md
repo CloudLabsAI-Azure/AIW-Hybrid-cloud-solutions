@@ -27,9 +27,9 @@ As mentioned earlier, Azure Stack HCI and AKS-HCI will de deployed as 2 separate
 -----------
 Your Azure VM deployment automatically installed Windows Admin Center 2103, however there are some additional configuration steps that must be performed before you can use it to deploy AKS on Azure Stack HCI.
 
-1. **Double-click the Windows Admin Center** shortcut on the desktop.
+1. In the virtual machine (VM) on the left, double-click on the **Windows Admin Center** .
 
-   ![Allow popups in Edge](./media/admincenter.png "Allow popups in Edge")
+   ![Allow popups in Edge](./media/wac.png "Allow popups in Edge")
     
   > **Note**: If you get a pop up saying your connection is not private, Click on **advanced settings** and select **Continue to hybridhost001(unsafe)** to open the Windows Admin Center.
    
