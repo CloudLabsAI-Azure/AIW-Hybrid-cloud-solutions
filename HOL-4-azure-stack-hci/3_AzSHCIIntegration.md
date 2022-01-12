@@ -116,15 +116,15 @@ Once the registration is complete, you should take some time to explore the arti
 
 1. If a **Welcome to Microsoft Azure** popup window appears, click **Maybe Later** to skip the tour.
 
-1. You should see a new **Resource group** listed, with the name you specified earlier, which in our case, is **HybridHost**
+1. You should see a new **Resource group** listed, with the name you specified earlier, which in our case, is **HybridHost** and click on it.
 
     ![Registration resource group in Azure](./media/rg.png "Registration resource group in Azure")
 
-1. Click on the **HybridHost** resource group, and in the central pane, you'll see that a record with the name **azshciclus** has been created inside the resource group.
+1. Under **HybridHost** resource group page, you'll see a resource **Azure Stack HCI** with the name **azshciclus** has been created.
 
     ![Registration resource group in Azure](./media/stack.png "Registration resource group in Azure")
 
-1. Click on the **azihciclus** record, and you'll be taken to the new Azure Stack HCI Resource Provider, which shows information about all of your clusters, including details on the currently selected cluster.
+1. Click on the **azihciclus**, then you'll be taken to the new Azure Stack HCI Resource Provider, which shows information about all of your clusters, including details on the currently selected cluster.
 
     ![Overview of the recently registered cluster in the Azure portal](./media/overview.png "Overview of the recently registered cluster in the Azure portal")
 
