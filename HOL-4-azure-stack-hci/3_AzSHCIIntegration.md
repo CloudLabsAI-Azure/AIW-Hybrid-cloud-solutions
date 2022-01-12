@@ -58,7 +58,7 @@ As you can see from the result, the cluster is yet to be registered, and the clu
      
      ```
 
-Of these commands, many are optional:
+Many of these commands are optional:
 
 * **-ResourceName** - If not declared, the Azure Stack HCI 20H2 cluster name is used
 * **-ResourceGroupName** - If not declared, the Azure Stack HCI 20H2 cluster plus the suffix "-rg" is used
@@ -69,7 +69,7 @@ Of these commands, many are optional:
 
 **Register-AzureStackHCI** runs synchronously, with progress reporting, and typically takes 5-10 minutes.  The first time you run it, it may take slightly longer, because it needs to install some dependencies, including additional Azure PowerShell modules.
 
-4. Once dependencies have been installed, you'll receive a popup on **HybridHost001** to authenticate to Azure. Provide your **Azure credentials**.
+4. Once dependencies have been installed, you'll receive a popup on **HybridHost001** to authenticate to Azure. Provide your **Azure credentials**, which are declared in the Environment Details page.
 
     ![Login to Azure](./media/azure_login_reg.png "Login to Azure")
 
