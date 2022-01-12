@@ -132,9 +132,9 @@ Once the registration is complete, you should take some time to explore the arti
 ### Congratulations! ###
 You've now successfully registered your Azure Stack HCI 20H2 cluster!
 
-Next Steps
+Summary
 -----------
-In this step, you've successfully registered your Azure Stack HCI 20H2 cluster. With this completed, you can now move on to the next exercise.
+In this exercise, you've successfully registered your Azure Stack HCI 20H2 cluster. With this completed, you can now move on to the next exercise.
 
 Product improvements
 -----------
