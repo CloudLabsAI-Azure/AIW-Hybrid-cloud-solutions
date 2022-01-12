@@ -92,7 +92,29 @@ You can see the **ConnectionStatus** and **LastConnected** time, which is usuall
 
 Once the registration is complete, you should take some time to explore the artifacts that are created in Azure.
 
-1. On **HybridHost001**, open the Edge browser and **log into https://portal.azure.com** to check the resources created there. In the **search box** at the top of the screen, search for **Resource groups** and then click on **Resource groups**
+1. In the virtual machine (VM) on the left, click on the Azure portal desktop icon as shown below.
+
+    ![azure portal](./media/azure%20portal.png)
+    
+1. On the **Sign in to Microsoft Azure** window, you will see the login screen, enter the following username and click on **Next**.
+
+   * Email/Username: <inject key="AzureAdUserEmail"></inject>
+
+   ![](https://github.com/CloudLabsAI-Azure/AIW-SAP-on-Azure/blob/main/media/M2-Ex1-portalsignin-1.png?raw=true)
+
+1. Now enter the following password and click on **Sign in**. 
+
+   * Password: <inject key="AzureAdUserPassword"></inject>
+   
+   ![](https://github.com/CloudLabsAI-Azure/AIW-SAP-on-Azure/blob/main/media/M2-Ex1-portalsignin-2.png?raw=true)
+
+1. First time users are often prompted to **Stay Signed In**, if you see any such message, click on **No**
+
+   ![](https://github.com/CloudLabsAI-Azure/AIW-SAP-on-Azure/blob/main/media/M2-Ex1-portalsignin-3.png?raw=true)
+
+1. If you see the pop-up **You have free Azure Advisor recommendations!**, close the window to continue the lab.
+
+1. If a **Welcome to Microsoft Azure** popup window appears, click **Maybe Later** to skip the tour.
 
 1. You should see a new **Resource group** listed, with the name you specified earlier, which in our case, is **HybridHost**
 
