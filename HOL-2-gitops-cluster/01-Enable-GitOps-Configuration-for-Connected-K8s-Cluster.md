@@ -107,9 +107,9 @@ GitOps, as it relates to Kubernetes, is the practice of declaring the desired st
 
    ![](.././media/05.png) 
   
-2. In the Azure Portal which you have opened in the browser window, navigate to Resource group **azure-arc** RG-> Resource **microk8s-cluster** -> **GitOps**. Ensure that the operator state status is **Installed**.
+2. In the Azure Portal which you have opened in the browser window, navigate to Resource group **azure-arc** RG-> Resource **microk8s-cluster** -> **GitOps**. Ensure that the operator state status is **Succeeded**.
 
-   ![](.././media/06.png) 
+   ![](.././media/hol2tsk3stp2.png) 
   
 ## Task 4:  Validate the Kubernetes configuration
 
