@@ -70,9 +70,9 @@ You can use the Azure Policy Deploy Log Analytics agent to Linux or Windows Azur
 
    ![](.././media/as-11.png)   
     
-12. You can save the query for later use by clicking on the **Save** button.
+12. You can save the query for later use by clicking on the **Save** and then **Save as query** button.
 
-    ![](.././media/as-12-v2.png) 
+    ![](.././media/hol1ex2stp12.png) 
    
 13. Now, provide `VMProcess` for the **Query name (1)**, then click on **Save (2)**.
 
