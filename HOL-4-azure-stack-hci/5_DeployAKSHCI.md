@@ -27,9 +27,9 @@ As mentioned earlier, Azure Stack HCI and AKS-HCI will de deployed as 2 separate
 -----------
 Your Azure VM deployment automatically installed Windows Admin Center 2103, however there are some additional configuration steps that must be performed before you can use it to deploy AKS on Azure Stack HCI.
 
-1. **Double-click the Windows Admin Center** shortcut on the desktop.
+1. In the virtual machine (VM) on the left, double-click on the **Windows Admin Center** .
 
-   ![Allow popups in Edge](./media/admincenter.png "Allow popups in Edge")
+   ![Allow popups in Edge](./media/wac.png "Allow popups in Edge")
     
   > **Note**: If you get a pop up saying your connection is not private, Click on **advanced settings** and select **Continue to hybridhost001(unsafe)** to open the Windows Admin Center.
    
@@ -65,13 +65,13 @@ In order to deploy AKS-HCI with Windows Admin Center, you need to connect your W
 
    ![Installed extensions in Windows Admin Center](./media/code.png "Installed extensions in Windows Admin Center")
      
-9. When prompted for credentials, **enter your Azure credentials** for a tenant you'd like to use to register the Windows Admin Center and click on continue button if you get any popup saying **Are you trying to sign in to Windows Admin Center?**.
+9. When prompted for credentials, **enter your Azure credentials** for a tenant you'd like to use to register the Windows Admin Center and click on **Continue** button if you get any popup saying **Are you trying to sign in to Windows Admin Center?**.
 
-10. Now, switch Back in **Windows Admin Center** tab, you'll notice your tenant information has been added.  You can click on **Connect** to connect Windows Admin Center to Azure.
+10. Now, navigate back in **Windows Admin Center** tab, you'll notice your tenant information has been added.  You can click on **Connect** to connect Windows Admin Center to Azure.
 
     ![Connecting Windows Admin Center to Azure](./media/connect.png "Connecting Windows Admin Center to Azure")
 
-11. Click on **Sign in** and when prompted for credentials, **enter your Azure credentials** and you will see a popup **Permissions requested**. Select **Consent on behalf of your organization** then click **Accept**.
+11. Click on **Sign in** and when prompted for credentials, **enter your Azure credentials** and you will see a popup **Permissions requested**. Check the box next to the **Consent on behalf of your organization** then click **Accept**.
 
     ![Permissions for Windows Admin Center](./media/ex2-task1-step10.png)
 
@@ -95,9 +95,11 @@ In order to successfully deploy AKS on Azure Stack HCI with Windows Admin Center
 3. Click on **View in Azure** to be taken to the Azure AD app portal, where you should see information about this app, including permissions required. If you're prompted to log in, provide appropriate credentials.
 4. Once logged in, under **Configured permissions**, you should see a few permissions listed with the status **Granted for...** and the name of your tenant. The **Microsoft Graph (5)** API permissions will show as **not granted** but this will be updated upon deployment
 
-5. Click on **Grant Admin Consent for Azure HOL** button and select **Yes** on the **Grant admin consent confirmation** pop-up to give your app the permissions.
+5. Under **Configured permissions**, click on **Grant Admin Consent for Azure HOL** button. select **Yes** on the **Grant admin consent confirmation** pop-up to give your app the permissions.
 
     ![Confirm Azure AD app permissions in Windows Admin Center](../media/Ex2-task2-01.1.png "Confirm Azure AD app permissions in Windows Admin Center")
+    
+6.  Now select **Yes** on the **Grant admin consent confirmation** pop-up to give your app the permissions.
 
     ![Confirm Azure AD app permissions in Windows Admin Center](../media/Ex2-task2-01.2.png "Confirm Azure AD app permissions in Windows Admin Center")
 

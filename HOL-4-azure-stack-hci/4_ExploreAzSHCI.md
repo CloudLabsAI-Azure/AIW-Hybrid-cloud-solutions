@@ -90,11 +90,15 @@ You should still be over on **HybridHost001**, but if you're not, log into Hybri
 
     ![VM001 up and running](./media/vmdash.png "VM001 up and running")
 
-8. Click on **Connect** and select **connect** button from the drop down- you may get a **VM Connect** prompt:
+8. Click on **Connect (1)** and select **Connect (2)** button from the drop down.
+
+    ![](./media/connect1.png)
+    
+1. If you get a promt stating **VM Connect**, then click on **Go to Settings**.
 
     ![Connect to VM001](./media/setting.png "Connect to VM001")
 
-9. Click on **Go to Settings** and in the **Remote Desktop** pane, click on **Allow remote connections to this computer**, then **Save**
+9. On the **Settings** tab, Select **Remote Desktop** pane and click on **Allow remote connections to this computer**, then **Save**.
 
      ![Connect to VM001](./media/rdo.png "Connect to VM001")
      

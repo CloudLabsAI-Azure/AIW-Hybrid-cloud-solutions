@@ -21,7 +21,7 @@ Azure Stack HCI 20H2 is delivered as an Azure service and needs to register with
 
  We're going to perform the registration from the **HybridHost001** machine, which we've been using with the Windows Admin Center.
 
-1. On **HybridHost001** VM after you have already logged in, click on the windows button and look for **PowerShell ISE** and right-click on it to **Run as administrator**.
+1. After logging in to the **HybridHost001** VM, click on the windows button and search for **PowerShell ISE** then right-click on it to select **Run as administrator**.
 
     ![Volume created on Azure Stack HCI 20H2](https://raw.githubusercontent.com/CloudLabsAI-Azure/hybridworkshop/main/media/powershell.png "Volume created on Azure Stack HCI 20H2")
     
@@ -39,7 +39,7 @@ Azure Stack HCI 20H2 is delivered as an Azure service and needs to register with
 As you can see from the result, the cluster is yet to be registered, and the cluster status identifies as **Clustered**. Azure Stack HCI 20H2 needs to register within 30 days of installation as per the Azure Online Services Terms. If it is not clustered within 30 days, the **ClusterStatus** will show **OutOfPolicy**, and if not registered within 30 days, the **RegistrationStatus** will show as **OutOfPolicy**.
 
 
-3. Now copy the below code and paste it in your PowerShell window, replace *your-subscription-ID-here* with your subscription ID <inject key="Subscription ID" />. After updating the subscription ID, run the PowerShell commands to register your Azure Stack HCI 20H2 to Azure portal. 
+3. Now copy the below code and paste it in your PowerShell window, replace ``*your-subscription-ID-here*`` with your subscription ID <inject key="Subscription ID" />. After updating the subscription ID, run the PowerShell commands to register your Azure Stack HCI 20H2 to Azure portal. 
 
    > **Note**: We have already updated the domain user name and password for the local host server. 
    
@@ -58,7 +58,7 @@ As you can see from the result, the cluster is yet to be registered, and the clu
      
      ```
 
-Of these commands, many are optional:
+Many of these commands are optional:
 
 * **-ResourceName** - If not declared, the Azure Stack HCI 20H2 cluster name is used
 * **-ResourceGroupName** - If not declared, the Azure Stack HCI 20H2 cluster plus the suffix "-rg" is used
@@ -69,7 +69,7 @@ Of these commands, many are optional:
 
 **Register-AzureStackHCI** runs synchronously, with progress reporting, and typically takes 5-10 minutes.  The first time you run it, it may take slightly longer, because it needs to install some dependencies, including additional Azure PowerShell modules.
 
-4. Once dependencies have been installed, you'll receive a popup on **HybridHost001** to authenticate to Azure. Provide your **Azure credentials**.
+4. Once dependencies have been installed, you'll receive a popup on **HybridHost001** to authenticate to Azure. Provide your **Azure credentials**, which are declared in the Environment Details page.
 
     ![Login to Azure](./media/azure_login_reg.png "Login to Azure")
 
@@ -84,7 +84,7 @@ Of these commands, many are optional:
     Get-AzureStackHCI
     }
     ```
-    ![Check updated registration status with PowerShell](./media/connected.png "Check updated registration status with PowerShell")
+    ![Check updated registration status with PowerShell](./media/ps.png "Check updated registration status with PowerShell")
 
 You can see the **ConnectionStatus** and **LastConnected** time, which is usually within the last day unless the cluster is temporarily disconnected from the Internet. An Azure Stack HCI 20H2 cluster can operate fully offline for up to 30 consecutive days.
 
@@ -92,17 +92,39 @@ You can see the **ConnectionStatus** and **LastConnected** time, which is usuall
 
 Once the registration is complete, you should take some time to explore the artifacts that are created in Azure.
 
-1. On **HybridHost001**, open the Edge browser and **log into https://portal.azure.com** to check the resources created there. In the **search box** at the top of the screen, search for **Resource groups** and then click on **Resource groups**
+1. In the virtual machine (VM) on the left, click on the Azure portal desktop icon as shown below.
 
-1. You should see a new **Resource group** listed, with the name you specified earlier, which in our case, is **HybridHost**
+    ![azure portal](./media/azure%20portal.png)
+    
+1. On the **Sign in to Microsoft Azure** window, you will see the login screen, enter the following username and click on **Next**.
+
+   * Email/Username: <inject key="AzureAdUserEmail"></inject>
+
+   ![](https://github.com/CloudLabsAI-Azure/AIW-SAP-on-Azure/blob/main/media/M2-Ex1-portalsignin-1.png?raw=true)
+
+1. Now enter the following password and click on **Sign in**. 
+
+   * Password: <inject key="AzureAdUserPassword"></inject>
+   
+   ![](https://github.com/CloudLabsAI-Azure/AIW-SAP-on-Azure/blob/main/media/M2-Ex1-portalsignin-2.png?raw=true)
+
+1. First time users are often prompted to **Stay Signed In**, if you see any such message, click on **No**
+
+   ![](https://github.com/CloudLabsAI-Azure/AIW-SAP-on-Azure/blob/main/media/M2-Ex1-portalsignin-3.png?raw=true)
+
+1. If you see the pop-up **You have free Azure Advisor recommendations!**, close the window to continue the lab.
+
+1. If a **Welcome to Microsoft Azure** popup window appears, click **Maybe Later** to skip the tour.
+
+1. You should see a new **Resource group** listed, with the name you specified earlier, which in our case, is **HybridHost** and click on it.
 
     ![Registration resource group in Azure](./media/rg.png "Registration resource group in Azure")
 
-1. Click on the **HybridHost** resource group, and in the central pane, you'll see that a record with the name **azshciclus** has been created inside the resource group.
+1. Under **HybridHost** resource group page, you'll see a resource **Azure Stack HCI** with the name **azshciclus** has been created.
 
     ![Registration resource group in Azure](./media/stack.png "Registration resource group in Azure")
 
-1. Click on the **azihciclus** record, and you'll be taken to the new Azure Stack HCI Resource Provider, which shows information about all of your clusters, including details on the currently selected cluster.
+1. Click on the **azihciclus**, then you'll be taken to the new Azure Stack HCI Resource Provider, which shows information about all of your clusters, including details on the currently selected cluster.
 
     ![Overview of the recently registered cluster in the Azure portal](./media/overview.png "Overview of the recently registered cluster in the Azure portal")
 
@@ -110,9 +132,9 @@ Once the registration is complete, you should take some time to explore the arti
 ### Congratulations! ###
 You've now successfully registered your Azure Stack HCI 20H2 cluster!
 
-Next Steps
+Summary
 -----------
-In this step, you've successfully registered your Azure Stack HCI 20H2 cluster. With this completed, you can now move on to the next exercise.
+In this exercise, you've successfully registered your Azure Stack HCI 20H2 cluster. With this completed, you can now move on to the next exercise.
 
 Product improvements
 -----------
