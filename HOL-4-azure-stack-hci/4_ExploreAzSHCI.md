@@ -33,8 +33,7 @@ In this step, you'll create a volume on the Azure Stack HCI 20H2 cluster by usin
     
 6. In the **Create volume** pane, leave the default for for the volume name, and leave **Resiliency** as **Two-way mirror**
 8. In Size on HDD, specify **250GB** for the size of the volume
-9. Under **More options**, tick the box for **Use deduplication and compression**
-10. Under **Data type**, use the drop-down to select **Hyper-V**, then click **Create**.
+9. Under **More options**, leave all the values to default and click **Create**.
 
     ![Create a volume on Azure Stack HCI 20H2](./media/volumev2.png "Create a volume on Azure Stack HCI 20H2")
 
