@@ -212,7 +212,7 @@ With the management cluster deployed successfully, you're ready to move on to de
    4. **Node count**: 1
    5. **Max pods per node**: leave default
 
-   ![AKS node pools in Windows Admin Center](./media/linuxpool.png "AKS node pools in Windows Admin Center")
+   ![AKS node pools in Windows Admin Center](./media/hybridhost-add-node-pool.png "AKS node pools in Windows Admin Center")
 
 7. Once your **Node pools** have been defined, click **Next: Authentication**
 8. For this evaluation, for **AD Authentication** click **Disabled** and then click **Next: Networking**
