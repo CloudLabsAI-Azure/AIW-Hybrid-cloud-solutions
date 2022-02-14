@@ -267,7 +267,7 @@ Next, you'll scale your Kubernetes cluster to add an additional Linux worker nod
 
      ![](./media/Azure-stack-PS01.png)
 
-3. Next, you'll scale your Kubernetes cluster node pool using below command:, it will scale the node count to 2. 
+3. Next, you'll scale your Kubernetes cluster node pool using below command, it will scale the node count to 2. 
 
    > **Note**: This can take upto 10 minutes to scale up the cluster
 
