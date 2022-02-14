@@ -267,7 +267,7 @@ Next, you'll scale your Kubernetes cluster to add an additional Linux worker nod
 
      ![](./media/Azure-stack-PS01.png)
 
-3. Next, you'll scale your Kubernetes cluster node pool using below command:, it will scale the node count to 2. 
+3. Next, you'll scale your Kubernetes cluster node pool using below command, it will scale the node count to 2. 
 
    > **Note**: This can take upto 10 minutes to scale up the cluster
 
@@ -287,7 +287,7 @@ Next, you'll scale your Kubernetes cluster to add an additional Linux worker nod
 
 To access this **akshciclus001** cluster using **kubectl** (which was installed on your host as part of the overall installation process), you'll first need the **kubeconfig file**.
 
-5. To retrieve the kubeconfig file for the akshciclus001 cluster, you'll need to run the following command from your **administrative PowerShell**:
+5. To retrieve the kubeconfig file for the akshciclus001 cluster, you'll need to run the following command from your **administrative PowerShell**. select **Yes to all** to accept the terms if it popups for confirmation.
 
     ```powershell
     Get-AksHciCredential -Name akshciclus001

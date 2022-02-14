@@ -34,7 +34,7 @@ Azure Stack HCI 20H2 is delivered as an Azure service and needs to register with
      ```
      >Note: If you see the cluster registration status is showing as **Out of Policy**, you can ignore that as there will be no issue during the lab because of this. 
      
-    ![Check the registration status of the Azure Stack HCI 20H2 cluster](./media/output.png "Check the registration status of the Azure Stack HCI 20H2 cluster")
+    ![Check the registration status of the Azure Stack HCI 20H2 cluster](./media/HOL4-ex-01.png "Check the registration status of the Azure Stack HCI 20H2 cluster")
 
 As you can see from the result, the cluster is yet to be registered, and the cluster status identifies as **Clustered**. Azure Stack HCI 20H2 needs to register within 30 days of installation as per the Azure Online Services Terms. If it is not clustered within 30 days, the **ClusterStatus** will show **OutOfPolicy**, and if not registered within 30 days, the **RegistrationStatus** will show as **OutOfPolicy**.
 
