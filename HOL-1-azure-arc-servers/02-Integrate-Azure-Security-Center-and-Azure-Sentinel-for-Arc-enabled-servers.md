@@ -1,4 +1,4 @@
-# HOL-1: Exercise 2: Onboard Azure Arc enabled servers to Microsoft Sentinel and Security Center
+# Lab 1: Exercise 2: Onboard Azure Arc enabled servers to Microsoft Sentinel and Security Center
 
 In the last excercise, we had enabled Linux Machine and Kubernetes cluster on Azure Arc and verified it. Now let's see how to onboard your Azure Arc enabled server to Microsoft Sentinel and start collecting security-related events. Microsoft Sentinel provides a single solution for alert detection, threat visibility, proactive hunting, and threat response across the enterprise.
 

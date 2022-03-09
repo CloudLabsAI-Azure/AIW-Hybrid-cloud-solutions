@@ -1,4 +1,4 @@
-# HOL-1: Exercise 1: Getting started with Azure Arc
+# Lab 1: Exercise 1: Getting started with Azure Arc
 
 #### Gain central visibility, operations, and compliance. 
 

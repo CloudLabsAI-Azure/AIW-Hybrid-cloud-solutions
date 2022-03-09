@@ -20,53 +20,38 @@
           "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/uk-varient/HOL-1-azure-arc-servers/03-Arc-enabled-SQL-Server-Existing-AAD-Account.md",
           "Order": 4
         },
-       
-          {
-          "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/uk-varient/HOL-4-azure-stack-hci/getting-started-with-Azure-Stack.md",
-          "Order": 5
-        },
-        {
-          "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/uk-varient/HOL-4-azure-stack-hci/3_AzSHCIIntegration.md",
-          "Order": 6
-        },
-        {
-          "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/uk-varient/HOL-4-azure-stack-hci/5_DeployAKSHCI.md",
-          "Order": 7
-        },
-        {
-          "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/uk-varient/HOL-4-azure-stack-hci/6_ExploreAKSHCI.md",
-          "Order": 8
-        },
-          {
-          "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/uk-varient/HOL-4-azure-stack-hci/4_ExploreAzSHCI.md",
-          "Order": 9
-        },
-           {
-          "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/uk-varient/HOL-2-gitops-cluster/01-Enable-GitOps-Configuration-for-Connected-K8s-Cluster.md",
-          "Order": 10
-        },
-        {
-          "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/uk-varient/HOL-2-gitops-cluster/02-Enforce-GitOps-using-Azure-Policy-for-Azure-Arc-Enabled-Kubernetes.md",
-          "Order":11
-        },
-        
         {
           "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/uk-varient/HOL-3-azure-arc-data-services/readme.md",
-          "Order": 12 
+          "Order": 5 
         },
         {
           "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/uk-varient/HOL-3-azure-arc-data-services/02.md",
-          "Order": 13
-        },
-        {
-          "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/uk-varient/HOL-3-azure-arc-data-services/03.md",
-          "Order": 14
+          "Order": 6
         },
         {
           "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/uk-varient/HOL-3-azure-arc-data-services/04.md",
-          "Order": 15
+          "Order": 7
         },
-     
+        {
+          "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/uk-varient/HOL-4-azure-stack-hci/getting-started-with-Azure-Stack.md",
+          "Order": 8
+        },
+        {
+          "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/uk-varient/HOL-4-azure-stack-hci/3_AzSHCIIntegration.md",
+          "Order": 9
+        },
+        {
+          "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/uk-varient/HOL-4-azure-stack-hci/5_DeployAKSHCI.md",
+          "Order": 10
+        },
+        {
+          "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/uk-varient/HOL-4-azure-stack-hci/6_ExploreAKSHCI.md",
+          "Order": 11
+        },
+          {
+          "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/uk-varient/HOL-4-azure-stack-hci/4_ExploreAzSHCI.md",
+          "Order": 12
+        }
       ]
     }
   ]
