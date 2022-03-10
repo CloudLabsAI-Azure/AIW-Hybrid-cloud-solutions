@@ -1,4 +1,4 @@
-HOL-4: Exercise 1: Integrate Azure Stack HCI 20H2 with Azure
+Lab 3: Exercise 1: Integrate Azure Stack HCI 20H2 with Azure
 ==============
 Overview
 -----------

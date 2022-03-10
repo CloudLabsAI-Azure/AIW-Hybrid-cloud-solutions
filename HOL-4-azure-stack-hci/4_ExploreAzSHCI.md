@@ -1,4 +1,4 @@
-HOL-4: Exercise 4: Explore the management of your Azure Stack HCI 20H2 environment (Optional)
+Lab 3: Exercise 4: Explore the management of your Azure Stack HCI 20H2 environment (Optional)
 ==============
 Overview
 -----------

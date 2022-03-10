@@ -1,4 +1,4 @@
-# HOL-1: Exercise 3: Onboard SQL Server to Arc
+# Lab 1: Exercise 3: Onboard SQL Server to Arc
 In the last excercise we had worked around security measures andmonitoring, so now let's onboard SQL Server to Azure Arc using Azure Portal and PowerShell commands.
 
 ## Task 1: Login To Azure Portal
