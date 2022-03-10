@@ -1,5 +1,5 @@
 ![](images/Arc-logo.png) 
-# HOL-3: Azure Arc Enabled Data Services
+# Lab 2: Azure Arc Enabled Data Services
 
 ## Overview
 
