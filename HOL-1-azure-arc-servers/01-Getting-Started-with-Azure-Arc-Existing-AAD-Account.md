@@ -158,7 +158,7 @@ Now, let's onboard the Linux Machine which has the local Kubernetes cluster to A
 1. On **ubuntu-k8s** Server - Azure Arc **Overview** page, verify that the status is **Connected**. You can also check other details from this tab like Computer name, Operating system, Operating system version and Agent version of ubuntu machine. 
    > **Note**: Operating system and Agent version that you see may not match with the provided screenshot if there were any updaes to the Agent/ OS Version.
 
-   ![](.././media/ubuntu-k8s-overview-status.png "ubuntu k8s onboard status check")
+   ![](.././media/latest-ubuntu-overview.png "ubuntu k8s onboard status check")
 
 ## Task 3: Onboard Kubernetes Cluster to Azure Arc
 
