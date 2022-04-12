@@ -102,7 +102,7 @@ You can connect your non-Azure computers in any of the following ways:
    ![](.././media/H1-Ex2-task2-02.png)
    
 1. Now, select the subcription listed and click on **Install agents**.
-   -Note: If you that the Install agents button is not available, It means that the agent will get automatically installed with the help of Defender and log analytics.
+   > Note: If you that the Install agents button is not available, It means that the agent will get automatically installed with the help of Defender and log analytics.
 
    ![](.././media/H1-Ex2-task2-03.png)
 
