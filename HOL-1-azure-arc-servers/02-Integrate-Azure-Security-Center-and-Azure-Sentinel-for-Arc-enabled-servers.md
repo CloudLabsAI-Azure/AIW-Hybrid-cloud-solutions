@@ -87,11 +87,11 @@ You can use the Azure Policy Deploy Log Analytics agent to Linux or Windows Azur
     ![](.././media/as-131-v2.png) 
 
     
-## Task 2: Enable Azure Security Center
-Security Center can monitor the security posture of your non-Azure computers, but first you need to connect them to Azure.
+## Task 2: Enable Microsoft Defender for Cloud.
+Microsoft Defender for cloud can monitor the security posture of your non-Azure computers, but first you need to connect them to Azure.
 You can connect your non-Azure computers in any of the following ways:
   * Using Azure Arc enabled servers **(recommended)**
-  * From Security Center's pages in the Azure portal **(Getting started and Inventory)**
+  * From Microsoft Defender for cloud's pages in the Azure portal **(Getting started and Inventory)**
  
 1. Search for **Microsoft Defender for Cloud** in Azure portal search bar and then click on **Microsoft Defender for Cloud**.
     
