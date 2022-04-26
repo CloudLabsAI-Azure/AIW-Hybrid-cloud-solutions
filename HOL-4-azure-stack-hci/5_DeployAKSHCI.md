@@ -196,7 +196,7 @@ With the management cluster deployed successfully, you're ready to move on to de
      
      *  **Password**: ```demo!pass123```
      *  **Kubernetes cluster name**: ```akshciclus001``` 
-     *  **Kubernetes version**: ```v1.21.2```
+     *  **Kubernetes version**: ```v1.21.7```
 
     ![AKS cluster details in Windows Admin Center](https://raw.githubusercontent.com/CloudLabsAI-Azure/hybridworkshop/main/media/aks_basics_cluster_details_single1.png "AKS cluster details in Windows Admin Center")
 
