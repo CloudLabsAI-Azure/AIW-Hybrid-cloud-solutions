@@ -25,9 +25,13 @@ In the last excercise we had worked around security measures andmonitoring, so n
  
    ![](.././media/sqlserver.png "sqlsearch")
    
-1. Click on the **Create SQL Server - Azure Arc** button to create the **SQL Server- Azure Arc**. 
+1. Click on the **Add** button to create the **SQL Server- Azure Arc**. 
  
-   ![](.././media/createsql.png "sqlsearch")
+   ![](.././media/createsql1.png "sqlsearch")
+   
+1. Now click on the **Connect Server** button on Connect SQL Server to Azure Arc dialouge box.
+
+    ![](.././media/sqlserver2.png "sqlsearch")
    
 1. You will now see the prerequisite page. You can explore the page and then click on the **Next: Server details** option.
     
