@@ -31,7 +31,7 @@ In the last excercise we had worked around security measures andmonitoring, so n
    
 1. Now click on the **Connect Server** button on Connect SQL Server to Azure Arc dialouge box.
 
-    ![](.././media/sqlserver2.png "sqlsearch")
+    ![](.././media/sqlserver222222.png "sqlsearch")
    
 1. You will now see the prerequisite page. You can explore the page and then click on the **Next: Server details** option.
     
