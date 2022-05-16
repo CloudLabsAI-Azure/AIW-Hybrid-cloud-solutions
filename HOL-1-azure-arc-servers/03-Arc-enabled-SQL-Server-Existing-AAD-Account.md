@@ -100,7 +100,7 @@ In the last excercise, you have seen how to enable security measures and monitor
  
    ![](.././media/extension1.png "sqlsearch")
     
-1. Now click on the **Create** button to continue. 
+1. Now click on the **Next** button to continue. 
    
 1. At this step, you must enter Log analytics workspace ID and a key to install the MMA ( Microsoft Monitoring Agent ) in the **sqlvm**.
   
