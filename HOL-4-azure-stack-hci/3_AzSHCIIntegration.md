@@ -132,15 +132,15 @@ Once the registration is complete, you should take some time to explore the arti
     
 1. On Windows Admin Center page, Select the **azshciclus.hybrid.local** cluster to open it.
 
-    ![Allow popups in Edge](./media/hol4ss1 "Allow popups in Edge")
+    ![Allow popups in Edge](./media/hol4ss1.png "Allow popups in Edge")
     
 1. Select **Settings** from the Tools side blade.
 
-    ![Allow popups in Edge](./media/hol4ss2 "Allow popups in Edge")
+    ![Allow popups in Edge](./media/hol4ss2.png "Allow popups in Edge")
     
-1. Select **Azure Stack HCI Registration** under Azure Stack HCI and click on **View Azure resource**.
+1. Select **Azure Stack HCI registration** under Azure Stack HCI and click on **View Azure resource**.
 
-    ![Allow popups in Edge](./media/hol4ss3 "Allow popups in Edge")
+    ![Allow popups in Edge](./media/hol4ss3.png "Allow popups in Edge")
 
 1. Click on the **azihciclus**, then you'll be taken to the new Azure Stack HCI Resource Provider, which shows information about all of your clusters, including details on the currently selected cluster.
 
