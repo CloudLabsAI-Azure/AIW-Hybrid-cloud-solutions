@@ -124,7 +124,7 @@ Once the registration is complete, you should take some time to explore the arti
 
     ![Registration resource group in Azure](./media/stack.png "Registration resource group in Azure")
     
-   >**Note**: If you are not able to view the **Azure Stack HCI** resource with the name **azshciclus**. Please follow from step 9 - step 12 else skip to step 13.
+   >**Note**: If you are not able to view the **Azure Stack HCI** resource with the name **azshciclus** in the HybridHost resource group. Please follow from step 9 - step 12 else skip to step 13.
 
 1. In the virtual machine (VM) on the left, double-click on the **Windows Admin Center** .
 
