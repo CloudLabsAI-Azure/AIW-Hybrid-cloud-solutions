@@ -123,6 +123,24 @@ Once the registration is complete, you should take some time to explore the arti
 1. Under **HybridHost** resource group page, you'll see a resource **Azure Stack HCI** with the name **azshciclus** has been created.
 
     ![Registration resource group in Azure](./media/stack.png "Registration resource group in Azure")
+    
+   >**Note**: If you are not able to view the **Azure Stack HCI** resource with the name **azshciclus**. Please follow from step 9 - step 12 else skip to step
+
+1. In the virtual machine (VM) on the left, double-click on the **Windows Admin Center** .
+
+    ![Allow popups in Edge](./media/wac.png "Allow popups in Edge")
+    
+1. On Windows Admin Center page, Select the **azshciclus.hybrid.local** cluster to open it.
+
+    ![Allow popups in Edge](./media/hol4ss1 "Allow popups in Edge")
+    
+1. Select **Settings** from the Tools side blade.
+
+    ![Allow popups in Edge](./media/hol4ss2 "Allow popups in Edge")
+    
+1. Select **Azure Stack HCI Registration** under Azure Stack HCI and click on **View Azure resource**.
+
+    ![Allow popups in Edge](./media/hol4ss3 "Allow popups in Edge")
 
 1. Click on the **azihciclus**, then you'll be taken to the new Azure Stack HCI Resource Provider, which shows information about all of your clusters, including details on the currently selected cluster.
 
