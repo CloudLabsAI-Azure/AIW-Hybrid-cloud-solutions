@@ -182,6 +182,8 @@ We have onboarded the Linux VM to Azure Arc and verified in task 2. Now, you wil
     az upgrade -y
     az extension add --name customlocation
     ```
+    
+    >**Note**: If you face any exception while updating CLI version, please rerun the command again.
 
 1. Then, you will update the Arc enabled Kubernetes CLI extensions to ensure that we are always using the lastest k8s extensions for Azure CLI.
 
