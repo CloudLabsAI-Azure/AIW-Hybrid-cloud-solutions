@@ -72,7 +72,7 @@ In this task you will select an existing policy definition and create a policy a
    
 1. Select the **Create a remediation task** check box and then click **Review+create**, skip the Non-compliance messages.
 
-    ![](.././media/gitops2.png)
+    ![](.././media/hol2ss1.png)
      
 1. Click **Create** to start the creation of policy and remediation tasks.
 
