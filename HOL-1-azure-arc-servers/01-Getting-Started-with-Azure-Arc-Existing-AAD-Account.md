@@ -158,7 +158,7 @@ Now, let's onboard the Linux Machine which has the local Kubernetes cluster to A
 1. On **ubuntu-k8s** Server - Azure Arc **Overview** page, verify that the status is **Connected**. You can also check other details from this tab like Computer name, Operating system, Operating system version and Agent version of ubuntu machine. 
    > **Note**: Operating system and Agent version that you see may not match with the provided screenshot if there were any updaes to the Agent/ OS Version.
 
-   ![](.././media/ubuntu-k8s-overview-status.png "ubuntu k8s onboard status check")
+   ![](.././media/hol1ss1.png "ubuntu k8s onboard status check")
 
 ## Task 3: Onboard Kubernetes Cluster to Azure Arc
 
@@ -254,7 +254,7 @@ Now let us verify if the Kubernetes cluster is connected to Azure Arc and is in 
 
 1. Click on Refresh on the azure-arc overview page and then look for the resource named **microk8s-cluster** of resource type **Azure Arc enabled Kubernetes resource**.
 
-   ![](.././media/varify-in-azure1.png "Varify in Azure")
+   ![](.././media/hol1ss3.png "Varify in Azure")
 
 1. Azure Arc enabled Kubernetes deploys a few operators into the azure-arc namespace. You can view these deployments and pods by running the command in the terminal of the ubunte-k8s VM:
 
@@ -307,7 +307,7 @@ Policies can be applied to Arc enabled servers the same way they are applied to 
 
 1. On the **Remediation** blade, enable the checkbox for **Create a remediation task** and then click on the **Next** button.
 
-    ![](.././media/remediation-next.png)
+    ![](.././media/hol1ss2.png)
     
 1. On **Non-compliance messages** blade, enter following message ```Log Analytics agent is not installed```. This message will be displayed when linux machine will be non compliant. Now, click on the **Review + create**.
 

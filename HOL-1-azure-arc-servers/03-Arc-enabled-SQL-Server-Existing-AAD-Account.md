@@ -32,7 +32,7 @@ In the last excercise, you have seen how to enable security measures and monitor
 
      Now, click on the **Next:Tags** button.
    
-   ![](.././media/detailsql.png "sqlsearch")
+   ![](.././media/hol1ss4.png "sqlsearch")
    
 1. Leave the default for tags blade and click on **Next: Run Script** button.
  
