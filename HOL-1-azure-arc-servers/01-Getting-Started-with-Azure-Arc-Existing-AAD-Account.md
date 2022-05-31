@@ -185,17 +185,13 @@ We have onboarded the Linux VM to Azure Arc and verified in task 2. Now, you wil
     
     >**Note**: If you face any exception while updating CLI version, please rerun the command again.
 
-1. Then, you will update the Arc enabled Kubernetes CLI extensions to ensure that we are always using the lastest k8s extensions for Azure CLI.
+1. Then, you will update the Arc enabled Kubernetes CLI extension to ensure that we are always using the lastest k8s extension for Azure CLI.
 
    ```
    az extension update --name connectedk8s
    ```
-
-   ```
-   az extension update --name k8sconfiguration
-   ```
     
-   ![](.././media/update-k8s-extensions.png "Update Az k8s extensions")
+   ![](.././media/update-k8s-extensions-new.png "Update Az k8s extensions")
     
 1. Now, you can check the status of the Kubernetes cluster by running ```microk8s.status``` in **ubuntu-k8s** VM. To check the status once the command is executed, you have to scroll up to top of the output to view the status. If the status is **microk8s is running**, you can proceed to the next step. But, if it is in a stopped state, you have to run ```microk8s start``` command to restart the Kubernetes cluster.
 
