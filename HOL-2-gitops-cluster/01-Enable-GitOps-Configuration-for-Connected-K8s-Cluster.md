@@ -76,7 +76,7 @@ GitOps, as it relates to Kubernetes, is the practice of declaring the desired st
 
    - You have to replace **<githubusername>** in the previous command with your username of the GitHub account to which you had forked the repository. 
    
-   Once you execute, the output will be as shown:
+   If you get a prompt asking **Do you want to install the extension k8sconfiguration**, type **Y** and press **Enter**.
 
    ![](.././media/04.png) 
    
