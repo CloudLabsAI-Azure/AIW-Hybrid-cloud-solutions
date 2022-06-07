@@ -1,11 +1,7 @@
 ![](media/Arc-logo.png)
 # Azure Arc Hands-on Labs
 ## What is Azure Arc?
-For customers who want to simplify complex and distributed environments across on-premises, edge, and multi-cloud, [Azure Arc](https://azure.microsoft.com/services/azure-arc/) enables deployment of Azure services anywhere and extends Azure management to any infrastructure. 
-Azure Arc helps you accelerate innovation across hybrid and multi-cloud environments and provides the following benefits to your organization:
-   * **Gain central visibility, operations, and compliance** – Standardize visibility, operations, and compliance across a wide range of resources and locations by extending the Azure control plane. Right from Azure, you can easily organize, govern, and secure Windows, Linux, SQL Servers and Kubernetes clusters across datacenters, edge, and multi-cloud.
-   * **Build Cloud native apps anywhere, at scale** – Centrally code and deploy applications confidently to any Kubernetes distribution in any location. Accelerate development by using best in class applications services with standardized deployment, configuration, security, and observability.
-   * **Run Azure data services anywhere** – Flexibly use cloud innovation where you need it by deploying Azure services anywhere. Implement cloud practices and automation to deploy faster, consistently, and at scale with always-up-to-date Azure Arc enabled services.
+Azure Arc is a bridge that extends the Azure platform so you can build applications and services with the flexibility to run across datacenters, edge, and multicloud environments. Azure Arc provides a consistent development, operations, and security model for both new and existing applications. You use the same tools, the same security and governance technologies to create and manage application and infrastructure resources. Just like in Azure datacenters, a subset of Azure services for application, data, and AI are there to use on both new and existing hardware, virtualization, and Kubernetes platforms, IoT devices, and integrated systems.
    
 ![](media/Arc-Chart.png)
 
