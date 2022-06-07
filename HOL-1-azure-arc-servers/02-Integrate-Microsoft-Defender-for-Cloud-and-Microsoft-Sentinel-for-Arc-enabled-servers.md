@@ -32,9 +32,9 @@ You can use the Azure Policy Deploy Log Analytics agent to Linux or Windows Azur
     
 4. You will see a notification on the upper right corner **Adding Microsoft Sentinel**. It will take around 1 minutes to get added.
     
-5. Once the Microsoft Sentinel is added you will see another notification which says **Successfully added Azure Sentinel** as shown below.
+5. Once the Microsoft Sentinel is added you will see another notification which says **Successfully added Microsoft Sentinel** as shown below.
      
-   ![](.././media/as-05.png)
+   ![](.././media/microsen-success.png)
  
 6. Click on the **Overview** on Microsoft Sentinel page from where you can view the insights after few minutes. If you are not able to view the insights after a few minutes, then refresh the browser tab.
     
