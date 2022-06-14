@@ -250,21 +250,37 @@ Task 6: Deploy an Ubuntu Server 20.04 virtual machine
   
     ![Create a volume on Azure Stack HCI 21H2](./media/fran15.png "Create a volume on Azure Stack HCI 21H2")
 
-1. From there you'll start the OOBE experience. Once the Integraty check is done you will be able to select your language. Select English.
+1. From there you'll start the OOBE experience. Once the integrity check is done you will be able to select your language. Select English.
+
+    ![Create a volume on Azure Stack HCI 21H2](./media/ubuntu01.png "Create a volume on Azure Stack HCI 21H2")
 
 1. On the Installer update available screen, select "Continue without updating"
 
+    ![Create a volume on Azure Stack HCI 21H2](./media/ubuntu02.png "Create a volume on Azure Stack HCI 21H2")
+
 1. On the Keyboard configuration screen, select "Done"
 
-1. On the Network connections screen, remeber the assigned IP address and select "Done"
+    ![Create a volume on Azure Stack HCI 21H2](./media/ubuntu03.png "Create a volume on Azure Stack HCI 21H2")
+
+1. On the Network connections screen, remember the assigned IP address and select "Done"
+
+    ![Create a volume on Azure Stack HCI 21H2](./media/ubuntu04.png "Create a volume on Azure Stack HCI 21H2")
 
 1. On the Configure proxy screen, select "Done"
 
+    ![Create a volume on Azure Stack HCI 21H2](./media/ubuntu05.png "Create a volume on Azure Stack HCI 21H2")
+
 1. On the Configure Ubuntu archive mirror screen, select "Done"
+
+    ![Create a volume on Azure Stack HCI 21H2](./media/ubuntu06.png "Create a volume on Azure Stack HCI 21H2")
 
 1. On the Guided storage configuration screen, select "Done"
 
+    ![Create a volume on Azure Stack HCI 21H2](./media/ubuntu07png "Create a volume on Azure Stack HCI 21H2")
+
 1. On the storage configuration screen, select "Done" and then Select "Continue" to confirm the destructive action popup screen.
+
+    ![Create a volume on Azure Stack HCI 21H2](./media/ubuntu08.png "Create a volume on Azure Stack HCI 21H2")
 
 1. On the Profile setup screen complete the fields a below and then select "Done"
      * Your name: demouser
@@ -277,18 +293,31 @@ Task 6: Deploy an Ubuntu Server 20.04 virtual machine
 
      * Confirm your password: demo!pass123
 
+    ![Create a volume on Azure Stack HCI 21H2](./media/ubuntu09.png "Create a volume on Azure Stack HCI 21H2")
+
 1. On the Enable Ubunutu Advantage screen, select "Done"
+
+    ![Create a volume on Azure Stack HCI 21H2](./media/ubuntu10.png "Create a volume on Azure Stack HCI 21H2")
 
 1. On the SSH setup screen, select "Install openSSH server" and select "Done"
 
+    ![Create a volume on Azure Stack HCI 21H2](./media/ubuntu11.png "Create a volume on Azure Stack HCI 21H2")
+
 1. On the Featured Server snaps screen, select "Done"
+
+    ![Create a volume on Azure Stack HCI 21H2](./media/ubuntu12.png "Create a volume on Azure Stack HCI 21H2")
 
 1. Now wait until you get the Install complete! screen and select "Reboot Now"
 
+    ![Create a volume on Azure Stack HCI 21H2](./media/ubuntu13.png "Create a volume on Azure Stack HCI 21H2")
+
 1. On the following screen press "ENTER", now the virtual machine will reboot.
+
+    ![Create a volume on Azure Stack HCI 21H2](./media/ubuntu14.png "Create a volume on Azure Stack HCI 21H2")
 
 1. Once the virtual machine is up and running try to login!
 
+    ![Create a volume on Azure Stack HCI 21H2](./media/ubuntu15.png "Create a volume on Azure Stack HCI 21H2")
 
 Task 7: Live migrate a virtual machine to another node
 ----- 
