@@ -188,7 +188,7 @@ Task 5: Deploy a Windows Server virtual machine
 
 
 
-Task 6: Deploy a Windows Server virtual machine
+Task 6: Deploy a Ubuntu Server 20.04 virtual machine
 ----- 
 1. Once logged into the **Windows Admin Center** on **HybridHost001**, click on your previously deployed cluster, **azshciclus.hybrid.local**
 
