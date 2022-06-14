@@ -128,7 +128,7 @@ Task 5: Deploy a Windows Server virtual machine
  
      * Storage: Add, then Create an empty virtual hard disk and set size to 30GB
  
-     * Operating System: Install an operating system from an image file (.iso)
+     * Operating System: Install an operating system from an image file (.iso). Select the Windows Server 2019 Iso file!
  
       ![Create a volume on Azure Stack HCI 21H2](./media/fran8.png "Create a volume on Azure Stack HCI 21H2")
       
@@ -191,15 +191,15 @@ Task 6: Deploy an Ubuntu Server 20.04 virtual machine
 ----- 
 1. Once logged into the **Windows Admin Center** on **HybridHost001**, click on your previously deployed cluster, **azshciclus.hybrid.local**
 
-2. On the left hand navigation, under **Compute** select **Virtual machines**.  The central **Virtual machines** page shows one virtual machines deployed currently.
+1. On the left hand navigation, under **Compute** select **Virtual machines**.  The central **Virtual machines** page shows one virtual machines deployed currently.
     
     ![Volume created on Azure Stack HCI 21H2](./media/vm1.png "Volume created on Azure Stack HCI 21H2")
 
-3. On the **Virtual machines** page, select the **Inventory** tab, and then click on **Add** and select **New**.
+1. On the **Virtual machines** page, select the **Inventory** tab, and then click on **Add** and select **New**.
 
     ![Volume created on Azure Stack HCI 21H2](./media/newvm.png "Volume created on Azure Stack HCI 21H2")
  
-4. In the New virtual machine pane, enter VM002 for the name, and enter the following pieces of information, then click Create
+1. In the New virtual machine pane, enter VM002 for the name, and enter the following pieces of information, then click Create
  
      * Generation: Generation 2 (Recommended)
  
@@ -209,65 +209,67 @@ Task 6: Deploy an Ubuntu Server 20.04 virtual machine
  
      * Virtual processors: 2
  
-     * Startup memory (GB): 4
+     * Startup memory (GB): 2
  
-     * Use dynamic memory: Min 2, Max 6
+        * Use dynamic memory: -
  
      * Network: ComputeSwitch
  
      * Storage: Add, then Create an empty virtual hard disk and set size to 30GB
  
-     * Operating System: Install an operating system from an image file (.iso)
+     * Operating System: Install an operating system from an image file (.iso). Select the Ubuntu Server 20.04 Iso file!
  
       ![Create a volume on Azure Stack HCI 21H2](./media/fran8.png "Create a volume on Azure Stack HCI 21H2")
       
       ![Create a volume on Azure Stack HCI 21H2](./media/fran9.png "Create a volume on Azure Stack HCI 21H2")  
  
-5. The creation process will take a few moments, and once complete, VM001 should show within the Virtual machines view
+1. The creation process will take a few moments, and once complete, VM002 should show within the Virtual machines view
 
-6. Click on the checkbox before the VM and then click click on Power button and select Start - within moments, the VM should be running.
+1. Click on the VM name VM002 and then Click on Settings to view all VM properties. Click on Security
+ 
+    ![Create a volume on Azure Stack HCI 21H2](./media/fran12.png "Create a volume on Azure Stack HCI 21H2")
+
+1. Make sure to change the Secure Boot template to "Microsoft UEFI Certificate Authority" in the Template drop down box, and click save security settings. Click Close.
+
+1. Click on Power button and select Start - within moments, the VM should be in a running state soon.
 
     ![Create a volume on Azure Stack HCI 21H2](https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/event-27/HOL-4-azure-stack-hci/media/fran10.png "Create a volume on Azure Stack HCI 21H2")
      
     ![Create a volume on Azure Stack HCI 21H2](https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/event-27/HOL-4-azure-stack-hci/media/fran11.png "Create a volume on Azure Stack HCI 21H2")
-  
-7. Click on VM001 to view the properties and status for this running VM.
- 
-    ![Create a volume on Azure Stack HCI 21H2](./media/fran12.png "Create a volume on Azure Stack HCI 21H2")
- 
-8. Click on Connect and select connect button from the drop down- you may get a VM Connect prompt:
+
+1. Click on Connect and select connect button from the drop down- you may get a VM Connect prompt:
  
     ![Create a volume on Azure Stack HCI 21H2](https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/event-27/HOL-4-azure-stack-hci/media/fran13.png "Create a volume on Azure Stack HCI 21H2")
  
-9. Click on Go to Settings and in the Remote Desktop pane, click on Allow remote connections to this computer, then Save
+1. Click on Go to Settings and in the Remote Desktop pane, click on Allow remote connections to this computer, then Save
  
     ![Create a volume on Azure Stack HCI 21H2](./media/fran14.png "Create a volume on Azure Stack HCI 21H2")
       
-10. Click the Back button in your browser to return to the VM001 view, then click Connect, and when prompted with the certificate prompt, click Connect and enter Password as `demo!pass123`.
+1. Click the Back button in your browser to return to the VM001 view, then click Connect, and when prompted with the certificate prompt, click Connect and enter Password as `demo!pass123`.
 
   
     ![Create a volume on Azure Stack HCI 21H2](./media/fran15.png "Create a volume on Azure Stack HCI 21H2")
  
  
-11. The VM will be in the UEFI boot summary as below
+1. The VM will be in the UEFI boot summary as below
  
     ![Create a volume on Azure Stack HCI 21H2](https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/event-27/HOL-4-azure-stack-hci/media/fran16.png "Create a volume on Azure Stack HCI 21H2")
  
-12. Click in "Send Ctrl + Alt +Del" at the top of the page now and press any key when you see the message "Press any key at boot from CD or DVD…"
+1. Click in "Send Ctrl + Alt +Del" at the top of the page now and press any key when you see the message "Press any key at boot from CD or DVD…"
  
     ![Create a volume on Azure Stack HCI 21H2](https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/event-27/HOL-4-azure-stack-hci/media/fran17.png "Create a volume on Azure Stack HCI 21H2")
  
-13. Click Enter when you see the following interface
+1. Click Enter when you see the following interface
  
     ![Create a volume on Azure Stack HCI 21H2](https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/event-27/HOL-4-azure-stack-hci/media/fran18.png "Create a volume on Azure Stack HCI 21H2")
  
-14. From there you'll start the OOBE experience. Select the following settings according to your preferences: Language, Time currency and Keyboard
+1. From there you'll start the OOBE experience. Select the following settings according to your preferences: Language, Time currency and Keyboard
 
-15. Click Install Now, and select the version Windows Server 2019 Standard Evaluation (Desktop Experience):
+1. Click Install Now, and select the version Windows Server 2019 Standard Evaluation (Desktop Experience):
  
      ![Create a volume on Azure Stack HCI 21H2](https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/event-27/HOL-4-azure-stack-hci/media/fran19.png "Create a volume on Azure Stack HCI 21H2")
  
-16. Accept the license terms and select "Custom: Install Windows only (advanced)" and then Next. It will take around 10 minutes for the VM to boot. After that, please insert the lab credentials demo!pass123 and your VM is ready to go!
+1. Accept the license terms and select "Custom: Install Windows only (advanced)" and then Next. It will take around 10 minutes for the VM to boot. After that, please insert the lab credentials demo!pass123 and your VM is ready to go!
 
 Task 7: Live migrate a virtual machine to another node
 ----- 
