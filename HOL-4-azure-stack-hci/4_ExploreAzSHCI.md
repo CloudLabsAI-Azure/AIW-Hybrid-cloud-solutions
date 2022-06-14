@@ -264,9 +264,31 @@ Task 6: Deploy an Ubuntu Server 20.04 virtual machine
 
 1. On the Guided storage configuration screen, select "Done"
 
-1. On the storage configuration screen, select "Done"
+1. On the storage configuration screen, select "Done" and then Select "Continue" to confirm the destructive action popup screen.
 
-1. On the storage configuration screen, select "Done"
+1. On the Profile setup screen complete the fields a below and then select "Done"
+     * Your name: demouser
+ 
+     * Your server's name: vm002
+ 
+     * Pick a username: demouser
+ 
+     * Choose a password: demo!pass123
+
+     * Confirm your password: demo!pass123
+
+1. On the Enable Ubunutu Advantage screen, select "Done"
+
+1. On the SSH setup screen, select "Install openSSH server" and select "Done"
+
+1. On the Featured Server snaps screen, select "Done"
+
+1. Now wait until you get the Install complete! screen and select "Reboot Now"
+
+1. On the following screen press "ENTER", now the virtual machine will reboot.
+
+1. Once the virtual machine is up and running try to login!
+
 
 Task 7: Live migrate a virtual machine to another node
 ----- 
