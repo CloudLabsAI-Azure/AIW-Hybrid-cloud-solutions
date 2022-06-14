@@ -249,27 +249,24 @@ Task 6: Deploy an Ubuntu Server 20.04 virtual machine
 
   
     ![Create a volume on Azure Stack HCI 21H2](./media/fran15.png "Create a volume on Azure Stack HCI 21H2")
- 
- 
-1. The VM will be in the UEFI boot summary as below
- 
-    ![Create a volume on Azure Stack HCI 21H2](https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/event-27/HOL-4-azure-stack-hci/media/fran16.png "Create a volume on Azure Stack HCI 21H2")
- 
-1. Click in "Send Ctrl + Alt +Del" at the top of the page now and press any key when you see the message "Press any key at boot from CD or DVD…"
- 
-    ![Create a volume on Azure Stack HCI 21H2](https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/event-27/HOL-4-azure-stack-hci/media/fran17.png "Create a volume on Azure Stack HCI 21H2")
- 
-1. Click Enter when you see the following interface
- 
-    ![Create a volume on Azure Stack HCI 21H2](https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/event-27/HOL-4-azure-stack-hci/media/fran18.png "Create a volume on Azure Stack HCI 21H2")
- 
-1. From there you'll start the OOBE experience. Select the following settings according to your preferences: Language, Time currency and Keyboard
 
-1. Click Install Now, and select the version Windows Server 2019 Standard Evaluation (Desktop Experience):
- 
-     ![Create a volume on Azure Stack HCI 21H2](https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/event-27/HOL-4-azure-stack-hci/media/fran19.png "Create a volume on Azure Stack HCI 21H2")
- 
-1. Accept the license terms and select "Custom: Install Windows only (advanced)" and then Next. It will take around 10 minutes for the VM to boot. After that, please insert the lab credentials demo!pass123 and your VM is ready to go!
+1. From there you'll start the OOBE experience. Once the Integraty check is done you will be able to select your language. Select English.
+
+1. On the Installer update available screen, select "Continue without updating"
+
+1. On the Keyboard configuration screen, select "Done"
+
+1. On the Network connections screen, remeber the assigned IP address and select "Done"
+
+1. On the Configure proxy screen, select "Done"
+
+1. On the Configure Ubuntu archive mirror screen, select "Done"
+
+1. On the Guided storage configuration screen, select "Done"
+
+1. On the storage configuration screen, select "Done"
+
+1. On the storage configuration screen, select "Done"
 
 Task 7: Live migrate a virtual machine to another node
 ----- 
