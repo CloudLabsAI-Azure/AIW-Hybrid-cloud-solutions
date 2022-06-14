@@ -276,7 +276,7 @@ Task 6: Deploy an Ubuntu Server 20.04 virtual machine
 
 1. On the Guided storage configuration screen, select "Done"
 
-    ![Create a volume on Azure Stack HCI 21H2](./media/ubuntu07png "Create a volume on Azure Stack HCI 21H2")
+    ![Create a volume on Azure Stack HCI 21H2](./media/ubuntu07.png "Create a volume on Azure Stack HCI 21H2")
 
 1. On the storage configuration screen, select "Done" and then Select "Continue" to confirm the destructive action popup screen.
 
