@@ -225,30 +225,29 @@ Task 6: Deploy an Ubuntu Server 20.04 virtual machine
  
 1. The creation process will take a few moments, and once complete, VM002 should show within the Virtual machines view
 
+
+
 1. Click on the VM name VM002 and then Click on Settings to view all VM properties. Click on Security
  
       ![Create a volume on Azure Stack HCI 21H2](./media/vm002-03.png "Create a volume on Azure Stack HCI 21H2")
 
 1. Make sure to change the Secure Boot template to "Microsoft UEFI Certificate Authority" in the Template drop down box, and click save security settings. Click Close.
 
-1. Click on Power button and select Start - within moments, the VM should be in a running state soon.
-
       ![Create a volume on Azure Stack HCI 21H2](./media/vm002-06.png "Create a volume on Azure Stack HCI 21H2")
 
-1. Click on Connect and select connect button from the drop down- you may get a VM Connect prompt:
- 
-       ![Create a volume on Azure Stack HCI 21H2](./media/vm002-05.png "Create a volume on Azure Stack HCI 21H2")
- 
-1. Click on Go to Settings and in the Remote Desktop pane, click on Allow remote connections to this computer, then Save
- 
-    ![Create a volume on Azure Stack HCI 21H2](./media/fran14.png "Create a volume on Azure Stack HCI 21H2")
-      
-1. Click the Back button in your browser to return to the VM002 view, then click Connect, and when prompted with the certificate prompt, click Connect and enter Password as `demo!pass123`.
+1. Click on Power button and select Start - within moments, the VM should be in a running state soon.
 
+      ![Create a volume on Azure Stack HCI 21H2](./media/vm002-04.png "Create a volume on Azure Stack HCI 21H2")
+
+1. Click on Connect and select connect button from the drop down- you may get a VM Connect prompt.
+ 
+      ![Create a volume on Azure Stack HCI 21H2](./media/vm002-05.png "Create a volume on Azure Stack HCI 21H2")
+
+1. When prompted with the certificate prompt, click Connect and enter Password as `demo!pass123`.
   
     ![Create a volume on Azure Stack HCI 21H2](./media/fran15.png "Create a volume on Azure Stack HCI 21H2")
 
-1. From there you'll start the OOBE experience. Once the integrity check is done you will be able to select your language. Select English.
+1. Once the integrity check is done you will be able to select your language. Select English.
 
     ![Create a volume on Azure Stack HCI 21H2](./media/ubuntu01.png "Create a volume on Azure Stack HCI 21H2")
 
