@@ -219,33 +219,31 @@ Task 6: Deploy an Ubuntu Server 20.04 virtual machine
  
      * Operating System: Install an operating system from an image file (.iso). Select the Ubuntu Server 20.04 Iso file!
  
-      ![Create a volume on Azure Stack HCI 21H2](./media/fran8.png "Create a volume on Azure Stack HCI 21H2")
+      ![Create a volume on Azure Stack HCI 21H2](./media/vm002-01.png "Create a volume on Azure Stack HCI 21H2")
       
-      ![Create a volume on Azure Stack HCI 21H2](./media/fran9.png "Create a volume on Azure Stack HCI 21H2")  
+      ![Create a volume on Azure Stack HCI 21H2](./media/vm002-02.png "Create a volume on Azure Stack HCI 21H2")  
  
 1. The creation process will take a few moments, and once complete, VM002 should show within the Virtual machines view
 
 1. Click on the VM name VM002 and then Click on Settings to view all VM properties. Click on Security
  
-    ![Create a volume on Azure Stack HCI 21H2](./media/fran12.png "Create a volume on Azure Stack HCI 21H2")
+      ![Create a volume on Azure Stack HCI 21H2](./media/vm002-03.png "Create a volume on Azure Stack HCI 21H2")
 
 1. Make sure to change the Secure Boot template to "Microsoft UEFI Certificate Authority" in the Template drop down box, and click save security settings. Click Close.
 
 1. Click on Power button and select Start - within moments, the VM should be in a running state soon.
 
-    ![Create a volume on Azure Stack HCI 21H2](https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/event-27/HOL-4-azure-stack-hci/media/fran10.png "Create a volume on Azure Stack HCI 21H2")
-     
-    ![Create a volume on Azure Stack HCI 21H2](https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/event-27/HOL-4-azure-stack-hci/media/fran11.png "Create a volume on Azure Stack HCI 21H2")
+      ![Create a volume on Azure Stack HCI 21H2](./media/vm002-06.png "Create a volume on Azure Stack HCI 21H2")
 
 1. Click on Connect and select connect button from the drop down- you may get a VM Connect prompt:
  
-    ![Create a volume on Azure Stack HCI 21H2](https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/event-27/HOL-4-azure-stack-hci/media/fran13.png "Create a volume on Azure Stack HCI 21H2")
+       ![Create a volume on Azure Stack HCI 21H2](./media/vm002-05.png "Create a volume on Azure Stack HCI 21H2")
  
 1. Click on Go to Settings and in the Remote Desktop pane, click on Allow remote connections to this computer, then Save
  
     ![Create a volume on Azure Stack HCI 21H2](./media/fran14.png "Create a volume on Azure Stack HCI 21H2")
       
-1. Click the Back button in your browser to return to the VM001 view, then click Connect, and when prompted with the certificate prompt, click Connect and enter Password as `demo!pass123`.
+1. Click the Back button in your browser to return to the VM002 view, then click Connect, and when prompted with the certificate prompt, click Connect and enter Password as `demo!pass123`.
 
   
     ![Create a volume on Azure Stack HCI 21H2](./media/fran15.png "Create a volume on Azure Stack HCI 21H2")
