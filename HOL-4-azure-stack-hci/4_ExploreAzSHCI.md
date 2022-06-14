@@ -62,7 +62,7 @@ Task 3: Download a Linux Server .Iso
  
 1. Please download Ubuntu Server 20.04 image file from [here](https://releases.ubuntu.com/20.04/ubuntu-20.04.4-live-server-amd64.iso)
  
-2. The download of the ISO file should automatically starting and once complete you should find it in your Downloads folder.
+2. The download of the ISO file should automatically start. Once completed you should find it in your Downloads folder.
 
 Task 4: Upload the .Iso files to your 
 -----------
