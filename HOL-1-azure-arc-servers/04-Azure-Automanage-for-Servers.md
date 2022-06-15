@@ -1,6 +1,6 @@
 # HOL-1: Exercise 4: Enabling Azure Automanage for Server - Azure Arc
 
-In the last excercise we had worked on onboard SQL Server to Azure Arc, so now let's enable Azure Automanage for Server - Azure Arc which we have created earlier in the lab.
+In the last excercise we had worked on onboarding SQL Server to Azure Arc, so now let's enable Azure Automanage for Server - Azure Arc which we have created earlier in the lab.
 
 ## Task 1: Configuring Azure Automanage
 
@@ -8,24 +8,24 @@ In the last excercise we had worked on onboard SQL Server to Azure Arc, so now l
 
    ![](.././media/hol1-ex4-automanage-1.png "searchautoamanage")
    
-2. From the Automanage pane, select **Automanage machines** under Azure machine best practices and click on **Enable on existing machine**.
+2. From the Automanage pane, select **Automanage machines**(1) under Azure machine best practices and click on **+ Enable on existing machine**(2).
 
    ![](.././media/hol1-ex4-automanage-3.png "searchautoamanage")
 
-3. In Enable Automanage - Azure machine best practices pane, select **Azure best practices - Dev / Test** and click on **Select machines**.
+3. On Enable Automanage - Azure machine best practices page, select **Azure best practices - Dev / Test** and click on **Select machines**.
 
    ![](.././media/hol1-ex4-automanage-4.png "searchautoamanage")
 
-4. In Select machines, select the **ubuntu-k8s** Server - Azure Arc and next click on **Select**.
+4. In Select machines pane, select the **ubuntu-k8s** Server - Azure Arc and click on **Select**.
 
    ![](.././media/hol1-ex4-automanage-5.png "searchautoamanage")
 
 5. Click on **Enable**.
 
- ![](.././media/hol1-ex4-automanage-6.png "searchautoamanage")
+   ![](.././media/hol1-ex4-automanage-6.png "searchautoamanage")
 
 6. Once the Configuration profile assignment completed successfully it will take around 20-30 minutes to get the Status as Conformant.
 
- ![](.././media/hol1-ex4-automanage-7.png "searchautoamanage")
+   ![](.././media/hol1-ex4-automanage-7.png "searchautoamanage")
 
 7. You can proceed with next task and review the status later.
