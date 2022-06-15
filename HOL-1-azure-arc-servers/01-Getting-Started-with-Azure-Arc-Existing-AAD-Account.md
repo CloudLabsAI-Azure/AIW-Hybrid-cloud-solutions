@@ -277,7 +277,7 @@ Policies can be applied to Arc enabled servers the same way they are applied to 
     
 1. Click on the **ubuntu-k8s** server from connected machines. 
 
-    ![](.././media/ubuntu-k8s-server2.png)
+    ![](.././media/hol1-ex1-t5-s3.png)
     
 1. From **ubuntu-k8s** server blade, select **Policies** under **Operations** section on the left side.
 
