@@ -1,4 +1,4 @@
-# HOL-1: Exercise 2: Onboard Azure Arc enabled servers to Microsoft Sentinel and Security Center
+# HOL-1: Exercise 2: Onboard Azure Arc enabled servers to Microsoft Sentinel and Microsoft Defender for Cloud
 
 In the last excercise, we had enabled Linux Machine and Kubernetes cluster on Azure Arc and verified it. Now let's see how to onboard your Azure Arc enabled server to Microsoft Sentinel and start collecting security-related events. Microsoft Sentinel provides a single solution for alert detection, threat visibility, proactive hunting, and threat response across the enterprise.
 
@@ -32,9 +32,9 @@ You can use the Azure Policy Deploy Log Analytics agent to Linux or Windows Azur
     
 4. You will see a notification on the upper right corner **Adding Microsoft Sentinel**. It will take around 1 minutes to get added.
     
-5. Once the Microsoft Sentinel is added you will see another notification which says **Successfully added Azure Sentinel** as shown below.
+5. Once the Microsoft Sentinel is added you will see another notification which says **Successfully added Microsoft Sentinel** as shown below.
      
-   ![](.././media/as-05.png)
+   ![](.././media/microsen-success.png)
  
 6. Click on the **Overview** on Microsoft Sentinel page from where you can view the insights after few minutes. If you are not able to view the insights after a few minutes, then refresh the browser tab.
     
@@ -58,7 +58,7 @@ You can use the Azure Policy Deploy Log Analytics agent to Linux or Windows Azur
     
 11. Let us check for **ubuntu-k8s** processes by running the following query, you can change the time range limit as well to see the result of a specific time interval. You can scroll right on the **Results** section and see more details and descriptions about every process. 
 
-  > Note: The data might take around 30 mins to get populated. If you don't find the data, you can skip to Task 2: Enable Azure Security Center and come back later to this task to re-execute the query and filter the data.
+  > Note: The data might take around 30 mins to get populated. If you don't find the data, you can skip to Task 2: Enable Microsoft Defender for Cloud and come back later to this task to re-execute the query and filter the data.
 
    ```
    VMProcess 
@@ -120,7 +120,7 @@ You can connect your non-Azure computers in any of the following ways:
     
 1. Now, close the blade and go back to **Inventory** tab and then you will see few connected resources. If you didn't see any resource, you will have to click on Refresh button at the top.
 
-1. You can also find the **ubuntu-k8s** Arc enabled server  available in the resources list because **LogAnalytics** agent is already enabled for it and the same Log Analytics workspace is connected to Security Center. 
+1. You can also find the **ubuntu-k8s** Arc enabled server  available in the resources list because **LogAnalytics** agent is already enabled for it and the same Log Analytics workspace is connected to Microsoft Defender for Cloud. 
 
   > Note: Agent monitoring will take few minutes to update and show status as **Monitored** for Arc enabled server **ubuntu-k8s** as shown in below screen. You can continue to the next exercise and come back later to check on this. 
   > Please note that due to some latest updates the status is not changing to **Monitored** for Arc enabled server **ubuntu-k8s**, this is a temporary issue and will fixed in future updates.   
@@ -129,5 +129,5 @@ You can connect your non-Azure computers in any of the following ways:
 
 ## In this exercise, you have covered the following:
  
-   - Onboard Azure Arc enabled servers to Azure Sentinel.
-   - Enable Azure Security Center.
+   - Onboard Azure Arc enabled servers to Microsoft Sentinel.
+   - Enable Microsoft Defender for Cloud.
