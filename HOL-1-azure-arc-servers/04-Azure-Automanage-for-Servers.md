@@ -26,6 +26,6 @@ In the last excercise we had worked on onboarding SQL Server to Azure Arc, so no
 
 6. Once the Configuration profile assignment completed successfully it will take around 20-30 minutes to get the Status as Conformant.
 
-   ![](.././media/hol1-ex4-automanage-7.png "searchautoamanage")
+   ![](.././media/hol1-ex4-automanage-7new.png "searchautoamanage")
 
 7. You can proceed with next task and review the status later.
