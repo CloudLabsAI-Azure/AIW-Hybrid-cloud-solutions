@@ -28,8 +28,12 @@
            {
           "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/event-27/HOL-4-azure-stack-hci/05.md",
           "Order": 6
+        },
+           {
+          "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/event-27/HOL-4-azure-stack-hci/06.md",
+          "Order": 7
         }
-     
+           
       ]
     }
   ]
