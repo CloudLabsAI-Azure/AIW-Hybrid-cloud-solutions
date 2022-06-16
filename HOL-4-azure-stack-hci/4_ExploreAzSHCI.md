@@ -10,9 +10,9 @@ Contents
 - [Contents](#contents)
 - [Create volumes for VMs](#create-volumes-for-vms)
 - [Download .Iso files](#task-2-download-iso-files)
-- [Deploy a Windows Server 2019 virtual machine](#task-5-deploy-a-windows-server-2019-virtual-machine)
-- [Deploy an Ubuntu Server 20.04 virtual machine](#task-6-deploy-an-ubuntu-server-2004-virtual-machine)
-- [Live migrate a virtual machine to another node](#task-7-live-migrate-a-virtual-machine-to-another-node)
+- [Deploy a Windows Server 2019 virtual machine](#task-3-deploy-a-windows-server-2019-virtual-machine)
+- [Deploy an Ubuntu Server 20.04 virtual machine](#task-4-deploy-an-ubuntu-server-2004-virtual-machine)
+- [Live migrate a virtual machine to another node](#task-5-live-migrate-a-virtual-machine-to-another-node)
 
 
 Task 1: Create volumes for VMs
