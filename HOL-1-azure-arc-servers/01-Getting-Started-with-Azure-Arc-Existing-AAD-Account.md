@@ -179,6 +179,11 @@ We have onboarded the Linux VM to Azure Arc and verified in task 2. Now, you wil
 1. Next, you have to run the below command to ensure the Azure CLI version and customlocation extension for Az CLI are the latest.
 
     ```
+    url https://bootstrap.pypa.io/get-pip.py -o get-pip.py python3 get-pip.py
+    apt install pip
+    python3 get-pip.py
+    python3 -m pip install -U pip
+    python3 -m pip install --upgrade pip --target /opt/az/lib/python3.6/site-packages/
     az upgrade -y
     az extension add --name customlocation
     ```
