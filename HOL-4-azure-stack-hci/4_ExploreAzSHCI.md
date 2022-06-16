@@ -37,9 +37,7 @@ In this step, you'll create a volume on the Azure Stack HCI 21H2 cluster by usin
 
 1. In Size on HDD, specify **250GB** for the size of the volume
 
-1. Under **More options**, tick the box for **Use deduplication and compression**
-
-1. Under **Data type**, use the drop-down to select **Hyper-V**, then click **Create**.
+1. Under **More options**, tick the box for **Thin** provisioning, then click **Create**.
 
     ![Create volumes for VMs](./media/volume.png "Create volumes for VMs")
 
