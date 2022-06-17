@@ -229,7 +229,7 @@ With the management cluster deployed successfully, you're ready to move on to de
 
 12. On the **Review + Create** page, review your chosen settings, then click **Create**
 
-     ![Finalize creation of AKS cluster in Windows Admin Center](./media/cresate.png "Finalize creation of AKS cluster in Windows Admin Center")
+     ![Finalize creation of AKS cluster in Windows Admin Center](./media/cresate1cluster.png "Finalize creation of AKS cluster in Windows Admin Center")
 
 12. The creation process will begin and can take upto 15 minutes to deploy.
     > **Note**: Make sure to not switch to another tab otherwise the creation can be failed due to inactivity.
