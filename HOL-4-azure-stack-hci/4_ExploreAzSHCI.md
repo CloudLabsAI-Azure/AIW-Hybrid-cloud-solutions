@@ -10,9 +10,9 @@ Contents
 - [Contents](#contents)
 - [Create volumes for VMs](#create-volumes-for-vms)
 - [Download .Iso files](#task-2-download-iso-files)
-- [Deploy a Windows Server 2019 virtual machine](#task-5-deploy-a-windows-server-2019-virtual-machine)
-- [Deploy an Ubuntu Server 20.04 virtual machine](#task-6-deploy-an-ubuntu-server-2004-virtual-machine)
-- [Live migrate a virtual machine to another node](#task-7-live-migrate-a-virtual-machine-to-another-node)
+- [Deploy a Windows Server 2019 virtual machine](#task-3-deploy-a-windows-server-2019-virtual-machine)
+- [Deploy an Ubuntu Server 20.04 virtual machine](#task-4-deploy-an-ubuntu-server-2004-virtual-machine)
+- [Live migrate a virtual machine to another node](#task-5-live-migrate-a-virtual-machine-to-another-node)
 
 
 Task 1: Create volumes for VMs
@@ -37,17 +37,13 @@ In this step, you'll create a volume on the Azure Stack HCI 21H2 cluster by usin
 
 1. In Size on HDD, specify **250GB** for the size of the volume
 
-1. Under **More options**, tick the box for **Use deduplication and compression**
-
-1. Under **Data type**, use the drop-down to select **Hyper-V**, then click **Create**.
+1. Under **More options**, tick the box for **Thin** provisioning, then click **Create**.
 
     ![Create volumes for VMs](./media/volume.png "Create volumes for VMs")
 
 1. Creating the volume can take a few minutes. Notifications in the upper-right will let you know when the volume is created. The new volume appears in the Inventory list
 
     ![Create volumes for VMs](./media/volume1.png "Create volumes for VMs")
-
-     > **NOTE** - You'll notice there are 3 options for **Data type**; default, Hyper-V and Backup.  If you're interested in learning more about Deduplication in Azure Stack HCI 21H2, you should [refer to our documentation](https://docs.microsoft.com/en-us/windows-server/storage/data-deduplication/overview "Deduplication overview")
 
 You now have a volume created and ready to accept workloads. Whilst we deployed the volume using the Windows Admin Center, you can also do the same through PowerShell. If you're interested in taking that approach, [check out the official docs that walk you through that process](https://docs.microsoft.com/en-us/azure-stack/hci/manage/create-volumes "Official documentation for creating volumes"). For more information on planning volumes with Azure Stack HCI 21H2, you should [refer to the official docs](https://docs.microsoft.com/en-us/azure-stack/hci/concepts/plan-volumes "Planning volumes for Azure Stack HCI 21H2").
 
