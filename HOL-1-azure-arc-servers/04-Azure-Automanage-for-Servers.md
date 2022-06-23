@@ -1,10 +1,10 @@
 # HOL-1: Exercise 4: Enabling Azure Automanage for Server - Azure Arc
 
-In the last excercise we had worked on onboarding SQL Server to Azure Arc, so now let's enable Azure Automanage for Server - Azure Arc which we have created earlier in the lab.
+In the last exercise we had worked on onboarding SQL Server to Azure Arc, so now let's enable Azure Automanage for Server - Azure Arc which we have created earlier in the lab.
 
 ## Task 1: Configuring Azure Automanage
 
-1. Navigate to home page of the [Azure Portal](https://portal.azure.com/#home), then search for **Automanage** in the searchbox and select **Automanage - Azure machine best practices**.
+1. Navigate to home page of the [Azure Portal](https://portal.azure.com/#home), then search for **Automanage** in the search box and select **Automanage - Azure machine best practices**.
 
    ![](.././media/hol1-ex4-automanage-1.png "searchautoamanage")
    
