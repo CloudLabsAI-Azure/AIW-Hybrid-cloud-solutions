@@ -13,7 +13,7 @@
           "Order": 2
         },
         {
-          "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/FY-23/HOL-1-azure-arc-servers/02-Integrate-Azure-Security-Center-and-Azure-Sentinel-for-Arc-enabled-servers.md",
+          "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/FY-23/HOL-1-azure-arc-servers/02-Integrate-Microsoft-Defender-for-Cloud-and-Microsoft-Sentinel-for-Arc-enabled-servers.md",
           "Order": 3
         },
         {
