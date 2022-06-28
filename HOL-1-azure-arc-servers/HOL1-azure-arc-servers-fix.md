@@ -311,9 +311,9 @@ Policies can be applied to Arc enabled servers the same way they are applied to 
       * Under **Defination Location**: Select your available Azure Subscription.
       * Name: Leave default
       * Description: Leave default
-      * Category: Leave default as Monitoring.
-     
-         ![](.././media/policyfix5.png)
+      * Category: Leave default as Monitoring.     
+       
+        ![](.././media/policyfix5.png)
 
 1. Now under Policy Rule, Remove the **"Strong type":"omsworkspace"** the line and click on save button.
     
