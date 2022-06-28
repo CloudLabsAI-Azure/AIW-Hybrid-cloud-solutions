@@ -291,6 +291,29 @@ Policies can be applied to Arc enabled servers the same way they are applied to 
 1. Under the **Log Analytics Workspace**, select the existing workspace with prefix **LogAnalyticsWS-** from the available list and then click on **Next**.
 
     ![](.././media/select-existing-wsv2.png)
+    
+     >Note:-  If you are having any issue while selecting the LogAnaltics from the dropdown then please follow the below steps:-
+        i. Search for the Policy in Search box and select **Definations** under **Authoring** section in policy.
+            ![](.././media/policyfix.png)
+        i. Now search for the **Deploy Log Analytics extension for Linux VM** and select the policy from the list.
+            ![](.././media/policyfix2.png)
+        
+        i. Now click on the **dupilcate defination** button.
+            ![](.././media/policyfix3.png)
+            
+        i. Now the policy creation window will open, please enter the below details:
+           
+           * Under **Defination Location**: Select your available Azure Subscription.
+           * Name: Leave default
+           * Description: Leave default
+           * Category: Leave default as Monitoring.
+            ![](.././media/policyfix5.png)
+
+        i. Now under Policy Rule, Remove the ** "Strong type":"omsworkspace" the line and click on save button
+            ![](.././media/policyfix4.png)
+            
+            ![](.././media/policyfix6.png)
+         i. After clicking on Save buttong you will be redirected to the policy page, Now click on **Assign** button.
 
 1. On the **Remediation** blade, enable the checkbox for **Create a remediation task** and then click on the **Next** button.
 
