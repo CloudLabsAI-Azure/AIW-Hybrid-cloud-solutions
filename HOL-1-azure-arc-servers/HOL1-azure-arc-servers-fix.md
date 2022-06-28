@@ -294,16 +294,16 @@ Policies can be applied to Arc enabled servers the same way they are applied to 
     
       >Note:-  If you are having any issue while selecting the LogAnaltics from the dropdown then please follow the below steps:-
        
-       i. Search for the Policy in Search box and select **Definations** under **Authoring** section in policy.
+1. Search for the Policy in Search box and select **Definations** under **Authoring** section in policy.
      
-            ![](.././media/policyfix.png)
-       i. Now search for the **Deploy Log Analytics extension for Linux VM** and select the policy from the list.
-            ![](.././media/policyfix2.png)
+    ![](.././media/policyfix.png)
+1. Now search for the **Deploy Log Analytics extension for Linux VM** and select the policy from the list.
+    ![](.././media/policyfix2.png)
         
-       i. Now click on the **dupilcate defination** button.
-            ![](.././media/policyfix3.png)
+1. Now click on the **dupilcate defination** button.
+    ![](.././media/policyfix3.png)
             
-       i. Now the policy creation window will open, please enter the below details:
+1. Now the policy creation window will open, please enter the below details:
            
            * Under **Defination Location**: Select your available Azure Subscription.
            * Name: Leave default
@@ -311,22 +311,21 @@ Policies can be applied to Arc enabled servers the same way they are applied to 
            * Category: Leave default as Monitoring.
             ![](.././media/policyfix5.png)
 
-       i. Now under Policy Rule, Remove the ** "Strong type":"omsworkspace" the line and click on save button.
-            ![](.././media/policyfix4.png)           
+1. Now under Policy Rule, Remove the ** "Strong type":"omsworkspace" the line and click on save button.
+    ![](.././media/policyfix4.png)           
             
-       i. After clicking on Save buttong you will be redirected to the policy page, Now click on **Assign** button.
+1. After clicking on Save buttong you will be redirected to the policy page, Now click on **Assign** button.
        
-       i. Now on the **Basics** leave everything default and click on next.
+1. Now on the **Basics** leave everything default and click on next.
        
-       i. Now on the Parameters section enter you logsanaltics name and click on **Next**button
+1. Now on the Parameters section enter you logsanaltics name and click on **Next**button
             
-           ![](.././media/policyfix7.png) 
+    ![](.././media/policyfix7.png) 
            
-       i. On the **Remediation** blade, enable the checkbox for **Create a remediation task** and then click on the **Next** button.
+1. On the **Remediation** blade, enable the checkbox for **Create a remediation task** and then click on the **Next** button.
 
-           ![](.././media/remediation-next.png)
-
-       i. On **Non-compliance messages** blade, enter following message ```Log Analytics agent is not installed```. This message will be displayed when linux machine will be non compliant. Now, click on teh **Review + create**.
+    ![](.././media/remediation-next.png)       
+1. On **Non-compliance messages** blade, enter following message ```Log Analytics agent is not installed```. This message will be displayed when linux machine will be non compliant. Now, click on teh **Review + create**.
 
     ![](.././media/non-com-message.png)
     
