@@ -292,7 +292,7 @@ Policies can be applied to Arc enabled servers the same way they are applied to 
 
     ![](.././media/select-existing-wsv2.png)
     
-      >**Note:-  If you are having any issue while selecting the LogAnaltics from the dropdown then please follow the below steps or else skip to step 18.
+      >**Note:-  If you are having any issue while selecting the LogAnaltics from the dropdown then please follow the below steps or else skip to step 18.**
        
 1. Search for the Policy in Search box and select **Definations** under **Authoring** section in policy.
      
@@ -315,7 +315,7 @@ Policies can be applied to Arc enabled servers the same way they are applied to 
      
          ![](.././media/policyfix5.png)
 
-1. Now under Policy Rule, Remove the ** "Strong type":"omsworkspace" the line and click on save button.
+1. Now under Policy Rule, Remove the **"Strong type":"omsworkspace"** the line and click on save button.
     
     ![](.././media/policyfix4.png)           
             
@@ -323,7 +323,7 @@ Policies can be applied to Arc enabled servers the same way they are applied to 
        
 1. Now on the **Basics** leave everything default and click on next.
        
-1. Now on the Parameters section enter you logsanaltics name and click on **Next**button
+1. Now on the Parameters section enter you Log Analytics Workspace name and click on **Next** button.
             
     ![](.././media/policyfix7.png) 
            
