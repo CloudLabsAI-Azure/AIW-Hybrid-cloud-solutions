@@ -64,7 +64,7 @@ Hyper-V is Microsoft's hardware virtualization product. It lets you create and r
 
    ![](.././media/subscription.png "Guest VMs")
 
-1. Now scroll down from the left side menu and select ** Resource Providers** under Settings.
+1. Now scroll down from the left side menu and select **Resource Providers** under Settings.
 
    ![](.././media/rp.png "Guest VMs")
    
@@ -262,7 +262,7 @@ Policies can be applied to Arc enabled servers the same way they are applied to 
     
 1. Select **Servers** from the options on the Azure Arc blade.
 
-    ![](.././media/select-servers.png)
+    ![](.././media/azure-arc-server.png)
     
 1. Explore the **ubuntu-k8s** server from connected machines. 
 
@@ -288,7 +288,7 @@ Policies can be applied to Arc enabled servers the same way they are applied to 
 
     ![](.././media/basic-nextv2.png)
     
-1. Under the **Log Analytics Workspace**, select the existing workspace with prefix **LogAnalyticsWS-** from the available list and then click on **Next**.
+1. Under the **Log Analytics Workspace**, select the existing workspace with the name **LogAnalyticWS-<inject key="DeploymentID/Suffix" enableCopy="false" />** from the available list and then click on **Next**.
 
     ![](.././media/select-existing-wsv2.png)
     
@@ -354,7 +354,7 @@ In this task, let's configure and collect data from your Linux machine by enabli
     
 1. Select **Servers** from the options on the Azure Arc blade.
 
-    ![](.././media/select-servers.png)
+    ![](.././media/azure-arc-server.png)
     
 1. Explore the **ubuntu-k8s** server from connected machines. 
 
@@ -368,7 +368,7 @@ In this task, let's configure and collect data from your Linux machine by enabli
 
     ![](.././media/enable-insights.png)
 
-1. On the Azure Monitor **Insights Onboarding** page, choose the existing **Log Analytics Workspace** named like ```LogAnalyticsWS-{Suffix}``` and then click on **Enable**.
+1. On the Azure Monitor **Insights Onboarding** page, choose the existing **Log Analytics Workspace** named like **LogAnalyticWS-<inject key="DeploymentID/Suffix" enableCopy="false" />** and then click on **Enable**.
 
     ![](.././media/enable-insights2.png)
 
