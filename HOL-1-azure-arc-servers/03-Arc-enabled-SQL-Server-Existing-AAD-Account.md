@@ -27,7 +27,7 @@ In the last excercise, you have seen how to enable security measures and monitor
  
    - Subscription: Leave default
    - Resource group: Select **azure-arc** from dropdown list.
-   - Region: Select same region as the Resource group.
+   - Region: Select **<inject key="Resource group Region" enableCopy="false" />**
    - Operating Systems: Select **Windows**.
 
      Now, click on the **Next:Tags** button.
@@ -98,7 +98,7 @@ In the last excercise, you have seen how to enable security measures and monitor
     
 1. Click on the **Extension** button from the left side menu and click on **+ Add** button to add a new extension.
  
-   ![](.././media/mma.png "sqlsearch")
+   ![](.././media/sql-server-new.png "sqlsearch")
     
 1. Select the **Log Analytics Agent - Azure Arc** extension.
  
