@@ -168,7 +168,7 @@ We have onboarded the Linux VM to Azure Arc and verified in task 2. Now, you wil
 
 1. To install helm, you need to run the following commands within the terminal of ubuntu-k8s VM that is opened in putty:
             
-     > **Note** : Helm is a Kubernetes deployment tool for automating creation, packaging, configuration, and deployment of applications and services to Kubernetes clusters. The kubernetes app's manifests are stored in helm charts.
+     > **Info** : Helm is a Kubernetes deployment tool for automating creation, packaging, configuration, and deployment of applications and services to Kubernetes clusters. The kubernetes app's manifests are stored in helm charts.
    ```
    curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3
    chmod 700 get_helm.sh
