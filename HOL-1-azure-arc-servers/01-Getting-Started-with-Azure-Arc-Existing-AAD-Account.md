@@ -65,7 +65,7 @@ Hyper-V is Microsoft's hardware virtualization product. It lets you create and r
 
 ## Task 2: Onboard Linux Machine to Azure Arc
 
-Now, let's onboard the Linux Machine which has the local Kubernetes cluster to Azure Arc. So, here we will onboard **ubuntu-k8s** VM to Azure Arc.
+Now, let’s onboard the Linux Machine to Azure Arc as an Arc-enabled server. This VM also has the Kubernetes cluster that we will use in the subsequent labs. So, here we will onboard ubuntu-k8s VM to Azure Arc
 
 1. From the start menu of the ARCHOST VM, search for **putty** and open it.
 
@@ -167,7 +167,8 @@ We have onboarded the Linux VM to Azure Arc and verified in task 2. Now, you wil
    > **Note** : If you have closed the putty after completing **task 2**, then perform the first 8 steps of task 2 again and then return to perform this task. Make sure that you perform all steps with root user in ubuntu-k8s vm.
 
 1. To install helm, you need to run the following commands within the terminal of ubuntu-k8s VM that is opened in putty:
-
+            
+            Helm is a Kubernetes deployment tool for automating creation, packaging, configuration, and deployment of applications and services to Kubernetes clusters. The manifests are stored in helm charts.
    ```
    curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3
    chmod 700 get_helm.sh
@@ -208,6 +209,8 @@ We have onboarded the Linux VM to Azure Arc and verified in task 2. Now, you wil
    ![](.././media/k8s-status-running.png "check cluster cluster")
 
 1. Next, you will write the config file to $HOME/.kube directory by executing the below command.
+
+     > **Knowldge** : A kubeconfig file is a file used to configure access to Kubernetes when used in conjunction with the kubectl commandline tool (or other clients).
 
    ```
    cd $HOME
