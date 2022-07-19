@@ -96,9 +96,9 @@ In the last excercise, you have seen how to enable security measures and monitor
 
    ![](.././media/select-sql-vm.png "select-sql-vm")
     
-1. Click on the **Extension** button from the left side menu and click on **+ Add** button to add a new extension.
+1. Click on the **Extension(1)** button from the left side menu and click on **+ Add(2)** button to add a new extension.
  
-   ![](.././media/sql-server-new.png "sqlsearch")
+   ![](.././media/EX3-t3-p5.png "sqlsearch")
     
 1. Select the **Log Analytics Agent - Azure Arc** extension.
  
@@ -124,13 +124,9 @@ In the last excercise, you have seen how to enable security measures and monitor
      
    ![](.././media/sqlvm.png "sqlsearch")
    
-1. Please note that script dowload will be blocked by browser, so click on `...` for more actions.
+1. Please note that script download will be blocked by browser, click on **Keep** to download the script.
 
-   ![](.././media/sqlvmd1.png) 
-   
-1. Now, click on **Keep** to download the script.
-
-   ![](.././media/sqlvmd2.png)       
+   ![](.././media/EX3-t3-p11.png)       
    
 1. Here you will see one PowerShell script is downloaded.
    
