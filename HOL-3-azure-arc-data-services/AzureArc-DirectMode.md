@@ -6,7 +6,7 @@
  
 # Connect an existing Kubernetes cluster to Azure using Azure Arc-enabled Kubernetes
  
-## Task 1: Login to Azure and install Azure CLI extensions.
+## Task 1: Login to Azure and install Azure CLI extensions
  
 1. Open **Windows PowerShell** from the desktop of your ARCHOST VM and run the below command to login to Azure.
     ```
@@ -35,7 +35,7 @@
    az extension add --name customlocation   
    ```
    
-   ![](media/install-extension.png "Lab Environment")
+   ![](media/install-extensions.png "Lab Environment")
    
 1. You can validate you have all the required extensions with the latest versions by running the below command: 
    
@@ -45,7 +45,7 @@
    
    ![](media/version-check.png "Lab Environment")
    
-1. After making sure the required tools are installed, next step is to register your subscription with Arc for Kubernetes.
+1. After confirming the required tools are installed, next step is to register your subscription with Arc for Kubernetes.
 
 1. Run the below commands to register the required Resource providers if not already registered. 
 
@@ -57,7 +57,7 @@
    
    ![](media/register-provider.png "Lab Environment")
    
-## Task 2: Onboard an existing Kubernetes cluster to Azure using Azure Arc-enabled Kubernetes.
+## Task 2: Onboard an existing Kubernetes cluster to Azure using Azure Arc-enabled Kubernetes
 
 In this Task you will be connecting an existing Kubernetes cluster to Azure using Azure Arc-enabled Kubernetes and will be enabling custom features by adding an Azure Arc data services extension and a custom location on the Azure Arc-enabled Kubernetes cluster. 
 
@@ -91,7 +91,7 @@ In this Task you will be connecting an existing Kubernetes cluster to Azure usin
     
    ![](media/deploy-pods.png "Lab Environment")
 
-## Create a custom location on the Azure Arc-enabled Kubernetes cluster.
+## Create a custom location on the Azure Arc-enabled Kubernetes cluster
 
    Custom Locations provides administrators a way to deploy Azure Arc data services and other Azure Arc-enabled services to their own locations, similar to Azure locations. 
  
