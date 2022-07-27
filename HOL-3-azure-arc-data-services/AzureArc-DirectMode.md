@@ -91,6 +91,10 @@ In this Task you will be connecting an existing Kubernetes cluster to Azure usin
     
    ![](media/deploy-pods.png "Lab Environment")
 
+1. Navigate to the Resource Group from the Azure portal navigation pane and click on the Resource Group named azure-arc. Look for the resource named **Arc-Data-Demo** of resource type Azure Arc-enabled Kubernetes resource.
+
+   ![](media/azurearc-connected.png "Lab Environment")
+
 ## Create a custom location on the Azure Arc-enabled Kubernetes cluster
 
    Custom Locations provides administrators a way to deploy Azure Arc data services and other Azure Arc-enabled services to their own locations, similar to Azure locations. 
@@ -112,4 +116,66 @@ In this Task you will be connecting an existing Kubernetes cluster to Azure usin
      ```
     az k8s-extension create --name azdata --extension-type microsoft.arcdataservices --cluster-type connectedClusters -c Arc-Data-Demo-DirectMode -g azure-arc --scope cluster --release-namespace azure-arc --config Microsoft.CustomLocation.ServiceAccount=sa-bootstrapper
      ```
+
+1. After running the above command you will notice that the **ProvisioningState** is **Succeeded**. If this is pending, because the extension will take a few minutes to complete the installation.
+
+    ![](media/extension-output.png "Lab Environment")
+
+1. To verify the extension installation, switch back to Azure Portal in the browser and search for **Kubernetes - Azure Arc** and select your cluster.
+
+1. Now select **Extension** from left side menu and check if the Install status in **Installed** or not, if not please refresh after some time and then check.
+
+    ![](media/extension-installed.png "Lab Environment")
+
+1. Now run the below command to get the Azure Resource Manager identifier of the Azure Arc-enabled Kubernetes cluster, you will be using the cluster id in later steps while creating the custom location.
+
+    ```  
+    $clusterID = az connectedk8s show -n Arc-Data-Demo-DirectMode -g azure-arc  --query id -o tsv
+    $clusterID
+    ```
+     > **Note:** The clusterID is stored in $clusterID parameter and you will be using this parameter only in later steps. 
+    
+    ![](./media/13.png "Lab Environment")
+    
+1. Now run the below command to get the Azure Resource Manager identifier of the cluster extension deployed on top of Azure Arc-enabled Kubernetes cluster, referenced in later steps as extensionId:
+
+    ```
+    $extensionID = az k8s-extension show --name azdata --cluster-type connectedClusters -c Arc-Data-Demo-DirectMode -g azure-arc  --query id -o tsv
+    $extensionID
+    ```
+      > **Note:** The extension resource ID is stored in $extensionID parameter and you will be using this parameter only in later steps.
+    
+    ![](./media/14.png "Lab Environment")
+    
+1. Now run the below command to create custom location by referencing the Azure Arc-enabled Kubernetes cluster ID and the extension ID.
+
+    ```  
+    az customlocation create -n azurearc-customlocation -g azure-arc --namespace azure-arc --host-resource-id $clusterID --cluster-extension-ids $extensionID
+    ```
+    
+    The output should be similar as shown below:
+    
+     ![](./media/15.png "Lab Environment")
      
+1. To verify the custom location deployment, switch back to the browser and login to portal.azure.com if not already done.
+
+1. Search for custom location in search bar and select custom locations. 
+
+    ![](./media/16.png "Lab Environment")
+      
+1. After selecting the custom locations from search bar, Select your **azurearc-customlocation** and explore the overview section.
+
+    ![](./media/17.png "Lab Environment")
+     
+1. You can see the namespace and Kubernetes cluster details on overview page.
+
+1. Now search for the log analytics workspace in you azure portal and navigate to ```LoganalyticsWS-Direct``` workspace. 
+
+1. Select **Agent management** from the left side menu.
+
+    ![](./media/newws.png "Lab Environment")
+    
+1. Now in the Agent management window copy the value of **Workspace ID** and **Primary key** and save the values in a notepad for later use while creating the Azure arc data controller.
+     
+    ![](./media/newws2.png "Lab Environment")
+
