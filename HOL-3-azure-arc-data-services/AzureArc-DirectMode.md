@@ -90,3 +90,26 @@ In this Task you will be connecting an existing Kubernetes cluster to Azure usin
    The output should be similar as shown below:
     
    ![](media/deploy-pods.png "Lab Environment")
+
+## Create a custom location on the Azure Arc-enabled Kubernetes cluster.
+
+   Custom Locations provides administrators a way to deploy Azure Arc data services and other Azure Arc-enabled services to their own locations, similar to Azure locations. 
+ 
+1. Now run the below command to enable features to create the custom location:
+
+     ```
+     az connectedk8s enable-features -n Arc-Data-Demo-DirectMode -g azure-arc --features cluster-connect custom-locations
+    
+     ```
+    The output should be similar as shown below:
+    
+    **"Successsfully enabled features: ['cluster-connect', 'custom-locations'] for the Connected Cluster Arc-Data-Demo-DirectMode"**
+        
+      > **Note:** Custom Locations feature is dependent on the Cluster Connect feature. So both features have to be enabled for custom locations to work. Also, az connectedk8s enable-features needs to be run on a machine where the kubeconfig file is pointing to the cluster on which the features are to be enabled.
+    
+1. Now run the below command to deploy the extension of Azure Arc-enabled Data Services on Azure Arc Kubernetes cluster.
+  
+     ```
+    az k8s-extension create --name azdata --extension-type microsoft.arcdataservices --cluster-type connectedClusters -c Arc-Data-Demo-DirectMode -g azure-arc --scope cluster --release-namespace azure-arc --config Microsoft.CustomLocation.ServiceAccount=sa-bootstrapper
+     ```
+     
