@@ -185,42 +185,44 @@ In this Task you will be connecting an existing Kubernetes cluster to Azure usin
     
 ## Task 3: Deploy Azure Arc Data Controller in directly connected mode using Azure Portal
 
-1. From the Azure Portal, search for ```Azure arc data controller``` from the search box and then click on it.  
+1. From the Azure Portal, search for **Azure arc data controllers** from the search box and then click on it.  
 
-    ![](./media/18.png "Lab Environment")
+    ![](./media/dc-1.png "Lab Environment")
  
-1. After select the Azure Arc data controller click on ** + Create** button to deploy ```Azure arc data controller```.
+1. After select the Azure Arc data controller click on **+ Create** button to deploy ```Azure arc data controller```.
 
-    ![](./media/19.png "Lab Environment")
+    ![](./media/dc-2.png "Lab Environment")
      
-1. Now, on ```Create Azure Arc data controller``` blade select **Azure Arc-enabled Kubernetes (direct mode)**. and click on **Next: Data Controller details**.
+1. Now, on ```Create Azure Arc data controller``` blade select **Azure Arc-enabled Kubernetes (Direct connectivity mode)**. and click on **Next: Data Controller details**.
 
-    ![](./media/20.png "Lab Environment")
+    ![](./media/dc-3.png "Lab Environment")
    
 1. On **Data controller details** blade enter the following details:
 
    * Select the available subscription from drop down.
-   * Resource Group: Select **Azure-arc** from drop down.
-   * Data Controller Name: arcdc
-   * Custom location: Select the available custom location from drop down.
+   * Resource Group: Select **Azure-arc** **(1)** from drop down.
+   * Data Controller Name: **arcdc** **(2)**
+   * Custom location: Select the available custom location from drop down **(3)**.
 
-      ![](./media/21.png "Lab Environment")
+      ![](./media/dc-4.png "Lab Environment")
       
-   Now scroll down and enter the below details in the remaining sections.
+1. Now scroll down and enter the below details in the remaining sections.
    
-   Under Kubernetes configuration enter the details below
-   * Kubernetes configuration template: Select **azure-arc-aks-default-storage** from drop down.
+   Under Kubernetes configuration enter the details below:
+   
+   * Kubernetes configuration template: Select **azure-arc-aks-default-storage** **(1)** from drop down.
    * Data Storage class: Leave default
    * Log Storage class: Leave default 
-   * Service type: Load balancer
+   * Service type: **Load balancer** **(2)** 
    
    Under Administrator account enter the below details.
-   * Data controller login: ``` arcuser ```
-   * Password: ``` Password.1!! ```
+   * Data controller login: **arcuser** **(3)**
+   * Password: **Password.1!!** **(4)**
+   * Confirm password: **Password.1!!** **(5)**
 
-    ![](./media/22.png "Lab Environment")
-   
    After entering all the required details click on **Next: Additional settings** **(6)**
+
+    ![](./media/dc-5.png "Lab Environment")
 
 1. In Additional settings blade, select the **LoganalyticsWS-Direct** **(1)** from the dropdown for Log Analytics workspace. You see that Log Analytics workspace ID occurs by default. Enter the Log Analytics primary key which is given here: **<inject key="loganalyticsWorkspacePrimaryKey" enableCopy="true"/>** **(2)** and click on **Next: Tags** **(3)** button.
 
@@ -230,7 +232,7 @@ In this Task you will be connecting an existing Kubernetes cluster to Azure usin
 
    ![](./media/dc-7.png "Lab Environment")
 
-1. On Review + Create blade, you can check all the given details and click on **create** button to start the Azure Arc data controller deployment. 
+1. On Review + Create blade, you can check all the given details and click on **Create** button to start the Azure Arc data controller deployment. 
 
    ![](./media/dc-8.png "Lab Environment")
    
