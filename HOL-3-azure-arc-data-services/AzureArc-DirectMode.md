@@ -298,42 +298,50 @@ Also, we will be exploring the Kibana and Grafana Dashboards and upload the logs
       
 1. Now on **Compute+ Storage** blade enter the following details:
     
-     * High availability: Select ```1``` replica
-     * Memory Limit (in Gi): Enter ```4```
-     * CPU Limit: Enter ```2```
-     * Data storage class: leave default
-     * Data volume size (in Gi): ```2```
-     * Data-logs storage class: leave ```default```
-     * Data-logs volume size (in Gi): ```1```
-     * Logs storage class: Leave ```default```
-     * Logs storage class: Enter ```1```
-     * Backup Storage class: leave ```default```
-     * Backups volume size (in Gi): ```1```
-    
-      ![](./media/30.png "Lab Environment")
-      
-      ![](./media/31.png "Lab Environment")
-    
-    After adding all the above details click on **Apply** button.
-    
-     * **Under Administrator account** Enter the below details
-    
-     * **Managed Instance admin login**:  Enter ```arcsqluser```
-   
-     * **Password**: Enter ```Password.1!!```
+     - Service Tier: **General Purpose**
+     - High availability: Select **1 replica**
+     - Instance Compute
+       - Memory Limit (in Gi): Enter ```4```
+       - CPU vCores Limit: Enter ```2```
      
-     * **Confirm Password**: Enter ```Password.1!!```
-  
-1. After adding all the required details click on **Review + Create button** to review the all details.
+     ![](./media/sqlman-4.png "Lab Environment")
+     
+     - Instance Storage
+       - Data storage class: leave default
+       - Data volume size (in Gi): ```2```
+       - Data-logs storage class: leave ```default```
+       - Data-logs volume size (in Gi): ```1```
+       - Logs storage class: Leave ```default```
+       - Logs storage class: Enter ```1```
+       - Backup Storage class: leave ```default```
+       - Backups volume size (in Gi): ```1```
+      
+    After adding all the above details click on **Apply** button.  
+      
+      ![](./media/sqlman-5.png "Lab Environment")
+   
+1. Under Administrator account, enter the below details:
+
+     - **Managed Instance admin login**:  Enter **arcsqluser**
+   
+     - **Password**: Enter **Password.1!!**
+     
+     - **Confirm Password**: Enter **Password.1!!**
+
+   After adding all the required details click on **Review + Create button** to review the all details.
     
-    ![](./media/32.png "Lab Environment")
+    ![](./media/sqlman-6.png "Lab Environment")
     
 1. Now Click on **Create** button to start the deployment.  
  
-    ![](./media/33.png "Lab Environment")
+    ![](./media/sqlman-7.png "Lab Environment")
  
-1. After some time you see that the deployment of **SQL Managed Instance - Azure Arc** in completed. Now click on Go to resource button to navigate to the resource.
+1. After some time you see that the deployment of **SQL Managed Instance - Azure Arc** in completed. Now click on **Go to resource** button to navigate to the resource.
+
+   ![](./media/sqlman-8.png "Lab Environment")
 
 1. Now we have successfully deployed the Azure Arc-enabled SQLMI on top of Directly connected mode Azure Arc data controller, you can explore more on metric and logs on the same page from left side menu.
+
+   ![](./media/sqlman-9.png "Lab Environment")
 
  In this exercise we have connected our cluster to Azure Arc-enabled cluster and deployed custom location and data controller with direct connected mode with the help of Azure portal and Azure CLI and created a Azure Arc-enabled SQLMI server on directly connected mode of Azure Arc data controller.
