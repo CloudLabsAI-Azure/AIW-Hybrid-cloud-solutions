@@ -218,43 +218,45 @@ In this Task you will be connecting an existing Kubernetes cluster to Azure usin
    * Data controller login: ``` arcuser ```
    * Password: ``` Password.1!! ```
 
-   Under Upload service principal details enter the details below.
-   * Client ID: 
-   * Tenant ID: 
-   * Authority: leave default
-   * Client Secret: 
-
     ![](./media/22.png "Lab Environment")
    
-   After entering all the required details click on **Next: Additional settings**.
+   After entering all the required details click on **Next: Additional settings** **(6)**
 
-1. In Additional setting blade, Enter the **Log analytics workspace ID and key** that you copied from previous steps and click on **Next: Tags** button.
+1. In Additional settings blade, select the **LoganalyticsWS-Direct** **(1)** from the dropdown for Log Analytics workspace. You see that Log Analytics workspace ID occurs by default. Enter the Log Analytics primary key which is given here: **<inject key="loganalyticsWorkspacePrimaryKey" enableCopy="true"/>** **(2)** and click on **Next: Tags** **(3)** button.
 
-    ![](./media/23.png "Lab Environment")
+    ![](./media/dc-6.png "Lab Environment")
     
 1. Leave default on **Tags** blade and click on **Next: Review + Create** button. to start the Azure Arc data controller deployment.
 
+   ![](./media/dc-7.png "Lab Environment")
+
 1. On Review + Create blade, you can check all the given details and click on **create** button to start the Azure Arc data controller deployment. 
 
-   ![](./media/24.png "Lab Environment")
+   ![](./media/dc-8.png "Lab Environment")
    
-1. Once the deployment got completed click on **Go to resource** button.
+1. Once the deployment got completed click on **Go to resource group** button.
 
-   ![](./media/25.png "Lab Environment")
+   ![](./media/dc-9.png "Lab Environment")
    
-1. On Azure Ac data controller resource overview blade, explore the given information about the Namespace and Connection mode.
+1. From the **azure-arc** resource group, select **arcdc** Azure Arc Data Controller from the resources.
 
-   ![](./media/26.png "Lab Environment")
+   ![](./media/dc-10.png "Lab Environment")  
    
   # Monitor the creation of Azure Arc data controller on cluster.
    
 1. When the Azure portal deployment status shows the deployment was successful, you can check the status of the Arc data controller deployment on the cluster by running the below command on PowerShell window:
 
    ```
-   kubectl get datacontrollers -n arcdc
+   kubectl get datacontrollers -n azure-arc
    ```
+   
+   ![](./media/dc-12.png "Lab Environment")
+   
  1. Once the data controller state is changed to ready then proceed to next steps, please note the data controller deployment can take 5 to 10 minutes to change it to ready.
 
+1. On Azure Ac data controller resource overview blade, explore the given information about the Namespace and Connection mode.
+
+   ![](./media/dc-11.png "Lab Environment")
 
 ## Deploy Azure Arc-enabled SQL Managed Instance with Direct Connected Mode.
 
