@@ -260,47 +260,43 @@ In this Task you will be connecting an existing Kubernetes cluster to Azure usin
 
    ![](./media/dc-11.png "Lab Environment")
 
-## Deploy Azure Arc-enabled SQL Managed Instance with Direct Connected Mode.
+## Task 4: Deploy Azure Arc-enabled SQL Managed Instance with Direct Connected Mode.
 
 In this exercise, let's create an **Azure Arc-enabled SQL Managed Instance** using Azure Portal on a directly connected Azure Arc data controller in a custom location. 
 
- Also, we will be exploring the Kibana and Grafana Dashboards and upload the logs and metrics to the Azure portal and view the logs.
- 
- 
- Task 1. Deploy **Azure Arc-enabled SQL Managed Instance**.
- 
- 1. Open your browser and login to Azure portal if not already done.
+Also, we will be exploring the Kibana and Grafana Dashboards and upload the logs and metrics to the Azure portal and view the logs.
 
-1. Now Search for **SQL Managed Instance - Azure Arc** and select it.
+1. Open your browser and login to Azure portal if not already done.
 
-    ![](./media/27.png "Lab Environment")
+1. Now search for **SQL Managed Instance - Azure Arc** and select it.
+
+    ![](./media/sqlman-1.png "Lab Environment")
    
-1. Click on create ** + Create ** button to create the SQL Managed instance - Azure Arc.
+1. Click on create **+ Create** button to create the SQL Managed instance - Azure Arc.
 
-    ![](./media/28.png "Lab Environment")
+    ![](./media/sqlman-2.png "Lab Environment")
  
 1. Now on **Basics** tab enter the below details:
  
- 
-   **Under project details**
+   - **Under Project details**
     
-    **Subscription**: Leave ```default```.
+     - **Subscription**: Leave ```default```.
     
-    **Resource Group**: Select ```azure-arc``` from drop down     
+     - **Resource Group**: Select **azure-arc** **(1)** from drop down     
    
-    **Under Managed Instance details**
+   - **Under Managed Instance details**
    
-    **Instance name**: Enter ```arcsql```
+     - **Instance name**: Enter **arcsql** **(2)**
   
-    **Custom location**: Select available custom location from dropdown.
+     - **Custom location**: Select available custom location from dropdown **(3)**.
    
-    **Service type**: Select ```**Load balancer**``` from drop down
+     - **Service type**: Select **Load balancer** from drop down **(4)**
     
-    **Compute+ Storage**: Click on **Configure compute + storage**
+     - **Compute+ Storage**: Click on **Configure compute + storage** **(5)**
       
-      ![](./media/29.png "Lab Environment") 
+      ![](./media/sqlman-3.png "Lab Environment") 
       
-    Now on **Compute+ Storage** blade enter the following details:
+1. Now on **Compute+ Storage** blade enter the following details:
     
      * High availability: Select ```1``` replica
      * Memory Limit (in Gi): Enter ```4```
