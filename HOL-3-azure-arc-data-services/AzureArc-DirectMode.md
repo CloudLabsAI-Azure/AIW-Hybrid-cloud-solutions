@@ -91,7 +91,7 @@ In this Task you will be connecting an existing Kubernetes cluster to Azure usin
     
    ![](media/deploy-pods.png "Lab Environment")
 
-1. Navigate to the Resource Group from the Azure portal navigation pane and click on the Resource Group named azure-arc. Look for the resource named **Arc-Data-Demo** of resource type Azure Arc-enabled Kubernetes resource.
+1. Navigate to the Resource Group from the Azure portal navigation pane and click on the Resource Group named azure-arc. Look for the resource named **Arc-Data-Demo-DirectMode** of resource type Azure Arc-enabled Kubernetes resource.
 
    ![](media/azurearc-connected.png "Lab Environment")
 
@@ -135,7 +135,7 @@ In this Task you will be connecting an existing Kubernetes cluster to Azure usin
     ```
      > **Note:** The clusterID is stored in $clusterID parameter and you will be using this parameter only in later steps. 
     
-    ![](./media/13.png "Lab Environment")
+    ![](media/clusterid.png "Lab Environment")
     
 1. Now run the below command to get the Azure Resource Manager identifier of the cluster extension deployed on top of Azure Arc-enabled Kubernetes cluster, referenced in later steps as extensionId:
 
@@ -145,7 +145,7 @@ In this Task you will be connecting an existing Kubernetes cluster to Azure usin
     ```
       > **Note:** The extension resource ID is stored in $extensionID parameter and you will be using this parameter only in later steps.
     
-    ![](./media/14.png "Lab Environment")
+    ![](media/extensionid.png "Lab Environment")
     
 1. Now run the below command to create custom location by referencing the Azure Arc-enabled Kubernetes cluster ID and the extension ID.
 
@@ -155,27 +155,35 @@ In this Task you will be connecting an existing Kubernetes cluster to Azure usin
     
     The output should be similar as shown below:
     
-     ![](./media/15.png "Lab Environment")
+     ![](media/custom-location.png "Lab Environment")
      
-1. To verify the custom location deployment, switch back to the browser and login to portal.azure.com if not already done.
+1. To verify the custom location deployment, switch back to the browser and login to [Azure Portal](https://portal.azure.com) if not already done.
 
 1. Search for custom location in search bar and select custom locations. 
 
-    ![](./media/16.png "Lab Environment")
+    ![](./media/search-cl.png "Lab Environment")
       
-1. After selecting the custom locations from search bar, Select your **azurearc-customlocation** and explore the overview section.
+1. After selecting the custom locations from search bar, Select your **azurearc-customlocation**.
 
-    ![](./media/17.png "Lab Environment")
+    ![](./media/cl-1.png "Lab Environment")
      
-1. You can see the namespace and Kubernetes cluster details on overview page.
+1. Explore the overview section. You can see the namespace and Kubernetes cluster details on overview page.
 
-1. Now search for the log analytics workspace in you azure portal and navigate to ```LoganalyticsWS-Direct``` workspace. 
+   ![](./media/cl-2.png "Lab Environment")
 
-1. Select **Agent management** from the left side menu.
+1. Now search for the log analytics workspace in azure portal.
+   
+   ![](./media/search-law.png "Lab Environment")
 
-    ![](./media/newws.png "Lab Environment")
+1. Navigate to LoganalyticsWS-Direct workspace. 
+
+   ![](./media/select-law.png "Lab Environment")
+
+1. Select **Agent management** from the left side menu. Copy the value of **Workspace ID** and **Primary key** and save the values in a notepad for later use while creating the Azure arc data controller.
+
+    ![](./media/agents-management.png "Lab Environment")
     
-1. Now in the Agent management window copy the value of **Workspace ID** and **Primary key** and save the values in a notepad for later use while creating the Azure arc data controller.
+
      
-    ![](./media/newws2.png "Lab Environment")
+  
 
