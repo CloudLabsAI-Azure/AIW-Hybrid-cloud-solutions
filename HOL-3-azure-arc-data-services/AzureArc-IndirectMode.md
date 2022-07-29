@@ -1,4 +1,4 @@
-Exercise 1: Connect to data controller disconnected mode and deploy SQLMI business critical using Azure Data Studio 
+# Exercise 2: Connect to data controller disconnected mode and deploy SQLMI business critical using Azure Data Studio 
  
 ## Task 1: Connect to the data controller using Azure Data Studio.
 
