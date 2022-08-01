@@ -166,10 +166,10 @@ In this task, you will learn to update the configuration of Azure Arc enabled SQ
    >**Note**: The Azure SQL Managed instance name will be **arcsql** if you also provided the same for Instance name during creation of Azure SQL Managed Instance. The name is provided as value at the end of the command Also, you shouldn't select the Core and memory limit more than the given limits.
 
    ```BASH
-   az sql mi-arc edit --cores-limit 3 --cores-request 2 --memory-limit 2Gi --memory-request 2Gi -n arcsql --k8s-namespace arcdc --use-k8s
+   az sql mi-arc update --cores-limit 3 --cores-request 2 --memory-limit 2Gi --memory-request 2Gi -n arcsql --k8s-namespace arcdc --use-k8s
    ```      
 
-   ![](images/arcsqlmnw12.png "Confirm")
+   ![](media/sqlmilatest.png "Confirm")
 
 1. Now, you can run the below command to view the changes that you made to the Azure SQL Managed instance.
 
