@@ -1,5 +1,11 @@
 # Exercise 2: Connect to data controller disconnected mode and deploy SQLMI business critical using Azure Data Studio 
- 
+
+Contoso has some applications that use SQL Server as the backend database. They have installed SQL Server on their Windows servers in their manufacturing plants but these locations don’t necessarily have local IT support to update the operating system and SQL Server with the latest security updates. They have explored Azure Database for SQL Server and found that it meets their requirements and offers some unique capabilities such as easy to manage and migrate from different cloud platforms. Therefore they are excited about the opportunity of deploying SQL Server in their Azure Arc enabled environment.
+
+In this exercise, let's create an Azure SQL Managed Instance - Azure Arc in Indirect Mode and restore and migrate the database using multiple methods.
+
+Also, we will be exploring the Kibana and Grafana Dashboards and upload the logs and metrics to the Azure portal and view the logs.
+
 ## Task 1: Connect to the data controller using Azure Data Studio.
 
 Now let us connect to the data controller using Azure Data Studio.
@@ -61,63 +67,29 @@ Now that you are connected to an Azure Arc data controller, let us view the dash
    
    > **Note**: If you click on the **Open in Azure portal** button from the menu on the top, you will not be able to find the resources because we have not yet uploaded any logs to the Azure portal and without uploading any logs to azure, you will not be able to view the Azure Arc data controller resource in Azure portal.
 
-## Task 3: Deploy SQL Managed Instance business critical using Azure Data Studio
+## Task 3: Create Azure Arc enabled SQL Managed Instance
 
-In this task, you will be deploying an SQL Managed Instance using Azure Data Studio. Azure SQL Managed Instance is the intelligent, scalable cloud database service that combines the broadest SQL Server database engine compatibility with all the benefits of a fully managed and evergreen platform as a service.
+In this task, you will be creating an SQL Managed Instance using Azure Data Studio. Azure SQL Managed Instance is the intelligent, scalable cloud database service that combines the broadest SQL Server database engine compatibility with all the benefits of a fully managed and evergreen platform as a service.
 
-1. From the Azure Arc Data Controller Dashboard - arcdc, click on **+ New Instance** to deploy  Azure SQL Managed Identity.
+1. On the JumpVM provided, launch the **Command Prompt** by double-clicking on the cmd shortcut on the desktop.
+  
+    ![](./images/azuredatastudio.png "azdata")
 
-   ![](./media/disconnect-2.png "Disconnect")
+1. Now the command prompt window will open up. In the command prompt, run the following command to create SQL MI instance.
+
+   ```BASH
+   az sql mi-arc create --name arcsql --k8s-namespace arcdc --replicas 1 --cores-request "2" --cores-limit "4" --memory-request "4Gi" --memory-limit "8Gi" --storage-class-data "default" --storage-class-datalogs "default" --storage-class-logs "default" --volume-size-data 5Gi --volume-size-datalogs 5Gi --volume-size-logs 5Gi  --tier GeneralPurpose --dev --license-type BasePrice --cores-limit 4 --use-k8s
+   ```
+   ![](./images/hol3ss1.png "azdata")
    
-2. In the Select the deployment options pane, select **Azure Arc managed instance** and click on **Select**.
+   >**Note**: SQL MI instance will take 5 - 10 minutes to create. Please wait until it gets created.
 
-   ![](./media/disconnect-3.png "Disconnect")
-   
-3. Next in the Step 1: Deployment pre-requisites pane, Accept terms of use by selecting the **Checkbox** and then click on **Next**.
+1. Once the Deployment of SQLMI is complete, navigate back to Azure data studio and in **Azure Arc Data Controller dashboard** under Azure Arc Resources you can see the newly created Azure Arc enabled Azure SQL Managed instance.
 
-   ![](./media/disconnect-4.png "Disconnect")
-   
-4. In Step 2: Provide Azure SQL managed instance parameters blade enter the following details:
+   ![](images/sqlsql.png "Confirm")
 
-   - SQL Connection information:
-     - **Instance name**: Enter **arcsql<inject key="DeploymentID" enableCopy="true"/>** **(1)**
-     - **Managed Instance admin login**:  Enter **arcsqluser** **(2)**
-     - **Password**: Enter **Password.1!!** **(3)**
-     - **Confirm Password**: Enter **Password.1!!** **(4)**
+   > **Note**: You might have to right-click and refresh on Arc data controller to view the instance if you don't see one after seeing the text **arcsql is Ready** at the bottom of the notebook.
 
-   ![](./media/disconnect-5.png "Disconnect")
-   
-   - SQl instance settings:
-     - Service Tier: **Business Critical** **(1)**
-     - High availability: Select **2 replica** **(2)**
-     - Storage class (Data): leave default
-     - Volume size in Gi (Data): ```2``` **(3)**
-     - Storage class (Databaselogs): leave ```default```
-     - Volume size in Gi (Databaselogs): ```1``` **(4)**
-     - Storage class (Logs): Leave ```default```
-     - Volume size in Gi (Logs): Enter ```1``` **(5)**
-     - Storage class (Backup): leave ```default```
-     - Volume size in Gi (Backup): ```1``` **(6)**
-     - Cores Limit: Enter ```2``` **(7)**
-     - Memory Limit: Enter ```4``` **(8)**
-     
-   After entering all the above values, click on **Deploy** **(9)**.
-
-   ![](./media/disconnect-6.png "Disconnect")
-
-5. In Configure Python to run Python 3 kernal, select **New Python installation** for Installation Type and click on **Next** button.
-
-   ![](./media/disconnect-7.png "Disconnect")
-   
-6. On Install Dependencies tab, click on **Install**.
-
-   ![](./media/disconnect-8.png "Disconnect")
-   
-7. Now a deploy.sql.existing.arc Notebook will open after clicking on the deploy button and automatically execution of the cells starts to deploy the SQL managed instance.
-
-   ![](./media/disconnect-9.png "Disconnect")
-   
-8.    
 
 ## In this exercise, you have covered the following:
  
