@@ -149,7 +149,7 @@ In this task, let us learn how to connect to your newly created Azure Arc enable
 
    ![](images/sql1533.png "Confirm")
 
-## Task 3: Configure Azure Arc enabled Azure SQL Managed Instance
+## Task 5: Configure Azure Arc enabled Azure SQL Managed Instance
 
 In this task, you will learn to update the configuration of Azure Arc enabled SQL Managed instances with Azure Data CLI.
 
