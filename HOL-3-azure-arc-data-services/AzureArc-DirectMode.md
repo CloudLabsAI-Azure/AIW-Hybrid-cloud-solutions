@@ -298,13 +298,13 @@ Also, we will be exploring the Kibana and Grafana Dashboards and upload the logs
       
 1. Now on **Compute+ Storage** blade enter the following details:
     
-     - Service Tier: **General Purpose**
-     - High availability: Select **1 replica**
+     - Service Tier: **Business Critical** **(1)**
+     - High availability: Select **1 replica** **(2)**
      - Instance Compute
-       - Memory Limit (in Gi): Enter ```4```
-       - CPU vCores Limit: Enter ```2```
+       - Memory Limit (in Gi): Enter ```4``` **(3)**
+       - CPU vCores Limit: Enter ```2``` **(4)**
      
-     ![](./media/sqlman-4.png "Lab Environment")
+     ![](./media/sqlmidirect-latest.png "Lab Environment")
      
      - Instance Storage
        - Data storage class: leave default
@@ -343,5 +343,9 @@ Also, we will be exploring the Kibana and Grafana Dashboards and upload the logs
 1. Now we have successfully deployed the Azure Arc-enabled SQLMI on top of Directly connected mode Azure Arc data controller, you can explore more on metric and logs on the same page from left side menu.
 
    ![](./media/sqlman-9.png "Lab Environment")
+
+## Task 5: Connecting Azure Arc Data Controller using Azure Data Studio
+
+1.
 
  In this exercise we have connected our cluster to Azure Arc-enabled cluster and deployed custom location and data controller with direct connected mode with the help of Azure portal and Azure CLI and created a Azure Arc-enabled SQLMI server on directly connected mode of Azure Arc data controller.
