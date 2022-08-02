@@ -304,7 +304,7 @@ Also, we will be exploring the Kibana and Grafana Dashboards and upload the logs
        - Memory Limit (in Gi): Enter ```4``` **(3)**
        - CPU vCores Limit: Enter ```2``` **(4)**
      
-     ![](./media/sqlmidirect-latest.png "Lab Environment")
+     ![](./media/sqlmidirect-new.png "Lab Environment")
      
      - Instance Storage
        - Data storage class: leave default
