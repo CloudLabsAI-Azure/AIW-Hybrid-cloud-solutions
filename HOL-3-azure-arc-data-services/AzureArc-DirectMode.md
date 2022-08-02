@@ -346,6 +346,45 @@ Also, we will be exploring the Kibana and Grafana Dashboards and upload the logs
 
 ## Task 5: Connecting Azure Arc Data Controller using Azure Data Studio
 
-1.
+Now let us connect to the data controller using Azure Data Studio.
 
- In this exercise we have connected our cluster to Azure Arc-enabled cluster and deployed custom location and data controller with direct connected mode with the help of Azure portal and Azure CLI and created a Azure Arc-enabled SQLMI server on directly connected mode of Azure Arc data controller.
+1. Open **Azure Data studio** **(1)** from the desktop shortcut, select **Connections** **(2)** and click on **Connect to Existing Azure Arc Controller** **(3)**.
+
+   ![](./media/ads-1.png "Azure Data Studio")
+   
+2. In Connect to Existing Controller page, provide the following details and click on **Connect**.
+
+   - **Namespace**:
+     ```BASH
+     azure-arc
+     ```
+     
+   - **Name** : Enter arcdc
+     ```BASH
+     arcdc
+     ```
+
+   ![](./media/ads-2.png "Azure Data Studio")
+
+3. Once the connection is successful, you can see the Azure Arc data controller listed under Azure Arc Controllers on the bottom left of the Azure Data Studio.
+
+    ![](./media/ads-3.png "Azure Data Studio")
+    
+4. Right-click on the **arcdc** Azure Arc Controller and select **Manage**.
+
+   ![](./media/ads-4.png "Azure Data Studio")
+
+5. Once you are in the Azure Arc Data Controller dashboard, you can see following details about the data controller 
+   - Name of the Arc Data Controller
+   - Region where it is deployed
+   - Connection mode
+   - Resource Group
+   - Subscription ID of the Azure Subscription
+   - Controller Endpoint
+   - Namespace
+   
+   You will also see that we have deployed using the Indirect connection mode of the Azure Arc Data controller.
+
+   ![](./media/ads-5.png "")
+
+ In this exercise we have connected our cluster to Azure Arc-enabled cluster and deployed custom location and data controller with direct connected mode with the help of Azure portal and Azure CLI and created a Azure Arc-enabled SQLMI server on directly connected mode of Azure Arc data controller. Also we have connected the Azure Arc Data Controller and Azure Arc enabled SQLMI business critical using Azure Data Studio.
