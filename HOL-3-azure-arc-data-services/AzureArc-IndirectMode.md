@@ -1,4 +1,4 @@
-# Exercise 2: Deploying Azure Data Controller and Azure Arc SQLMI business critical in Indirect Mode using Azure Data Studio 
+# Exercise 2: Deploying Azure Data Controller and Azure Arc enabled SQLMI business critical in Indirect Mode using Azure Data Studio 
 
 In this exercise, let's create an Azure SQL Managed Instance - Azure Arc in Indirect Mode and restore and migrate the database using multiple methods.
 
