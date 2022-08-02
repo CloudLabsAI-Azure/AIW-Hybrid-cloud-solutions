@@ -1,8 +1,48 @@
 # HOL-1: Exercise 2: Onboard Azure Arc enabled servers to Microsoft Sentinel and Microsoft Defender for Cloud
 
 In the last excercise, we had enabled Linux Machine and Kubernetes cluster on Azure Arc and verified it. Now let's see how to onboard your Azure Arc enabled server to Microsoft Sentinel and start collecting security-related events. Microsoft Sentinel provides a single solution for alert detection, threat visibility, proactive hunting, and threat response across the enterprise.
+   
+## Task 1: Enable Microsoft Defender for Cloud.
+Microsoft Defender for cloud can monitor the security posture of your non-Azure computers, but first you need to connect them to Azure.
+You can connect your non-Azure computers in any of the following ways:
+  * Using Azure Arc enabled servers **(recommended)**
+  * From Microsoft Defender for cloud's pages in the Azure portal **(Getting started and Inventory)**
+ 
+1. Search for **Microsoft Defender for Cloud** in Azure portal search bar and then click on **Microsoft Defender for Cloud**.
+    
+   ![](.././media/H1-Ex2-task2-001.png)
+   
+1. From the Getting Started page, scroll down and then check on all the checkboxes and click on **Upgrade**. Please note in your lab environment you may find it already upgraded, in that case please skip this and next step.
 
-## Task 1: Onboard Azure Arc enabled servers to Microsoft Sentinel
+   ![](.././media/H1-Ex2-task2-02.png)
+   
+1. Now, select the subcription listed and click on **Install agents**.
+   > Note: If you see that the Install agents button is not available, It means that the agent will get automatically installed with the help of Defender and log analytics.
+
+   ![](.././media/H1-Ex2-task2-03.png)
+
+1. Click on **Inventory** from the **Microsoft Defender for Cloud**.
+
+   ![](.././media/H1-Ex2-task2-04.png)
+    
+1. From the **Inventory** tab, click on the **Add non-Azure servers**.
+
+   ![](.././media/H1-Ex2-task2-05.png)
+    
+1. On **Onboard servers to Defender for Cloud** page, click on **Upgrade** next to the existing log analytics workspace named **LogAnalyticWS-<inject key="DeploymentID/Suffix" />** to upgrade. This will allow Azure Defender protection for your resources.
+
+   ![](.././media/H1-Ex2-task2-06.png)
+    
+1. Now, close the blade and go back to **Inventory** tab and then you will see few connected resources. If you didn't see any resource, you will have to click on Refresh button at the top.
+
+1. You can also find the **ubuntu-k8s** Arc enabled server  available in the resources list because **LogAnalytics** agent is already enabled for it and the same Log Analytics workspace is connected to Microsoft Defender for Cloud. 
+
+  > Note: Agent monitoring will take few minutes to update and show status as **Monitored** for Arc enabled server **ubuntu-k8s** as shown in below screen. You can continue to the next exercise and come back later to check on this. 
+  > Please note that due to some latest updates the status is not changing to **Monitored** for Arc enabled server **ubuntu-k8s**, this is a temporary issue and will fixed in future updates.   
+
+   ![](.././media/H1-Ex2-task2-07.png)
+   
+## Task 2: Onboard Azure Arc enabled servers to Microsoft Sentinel
 Microsoft Sentinel comes with several connectors for Microsoft solutions, available out of the box and providing real-time integration. For physical and virtual machines, you can install the Log Analytics agent that collects the logs and forwards them to Microsoft Sentinel. Arc enabled servers supports deploying the Log Analytics agent using the following methods:
 
 #### Using the VM extensions framework:
@@ -86,46 +126,6 @@ You can use the Azure Policy Deploy Log Analytics agent to Linux or Windows Azur
    
     ![](.././media/as-131-v2.png) 
 
-    
-## Task 2: Enable Microsoft Defender for Cloud.
-Microsoft Defender for cloud can monitor the security posture of your non-Azure computers, but first you need to connect them to Azure.
-You can connect your non-Azure computers in any of the following ways:
-  * Using Azure Arc enabled servers **(recommended)**
-  * From Microsoft Defender for cloud's pages in the Azure portal **(Getting started and Inventory)**
- 
-1. Search for **Microsoft Defender for Cloud** in Azure portal search bar and then click on **Microsoft Defender for Cloud**.
-    
-   ![](.././media/H1-Ex2-task2-001.png)
-   
-1. From the Getting Started page, scroll down and then check on all the checkboxes and click on **Upgrade**. Please note in your lab environment you may find it already upgraded, in that case please skip this and next step.
-
-   ![](.././media/H1-Ex2-task2-02.png)
-   
-1. Now, select the subcription listed and click on **Install agents**.
-   > Note: If you see that the Install agents button is not available, It means that the agent will get automatically installed with the help of Defender and log analytics.
-
-   ![](.././media/H1-Ex2-task2-03.png)
-
-1. Click on **Inventory** from the **Microsoft Defender for Cloud**.
-
-   ![](.././media/H1-Ex2-task2-04.png)
-    
-1. From the **Inventory** tab, click on the **Add non-Azure servers**.
-
-   ![](.././media/H1-Ex2-task2-05.png)
-    
-1. On **Onboard servers to Defender for Cloud** page, click on **Upgrade** next to the existing log analytics workspace named **LogAnalyticWS-<inject key="DeploymentID/Suffix" />** to upgrade. This will allow Azure Defender protection for your resources.
-
-   ![](.././media/H1-Ex2-task2-06.png)
-    
-1. Now, close the blade and go back to **Inventory** tab and then you will see few connected resources. If you didn't see any resource, you will have to click on Refresh button at the top.
-
-1. You can also find the **ubuntu-k8s** Arc enabled server  available in the resources list because **LogAnalytics** agent is already enabled for it and the same Log Analytics workspace is connected to Microsoft Defender for Cloud. 
-
-  > Note: Agent monitoring will take few minutes to update and show status as **Monitored** for Arc enabled server **ubuntu-k8s** as shown in below screen. You can continue to the next exercise and come back later to check on this. 
-  > Please note that due to some latest updates the status is not changing to **Monitored** for Arc enabled server **ubuntu-k8s**, this is a temporary issue and will fixed in future updates.   
-
-   ![](.././media/H1-Ex2-task2-07.png)
 
 ## In this exercise, you have covered the following:
  
