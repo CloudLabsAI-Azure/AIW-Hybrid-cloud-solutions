@@ -1,4 +1,4 @@
-# Exercise 1: Deploy Azure Arc Data Controller 
+# Exercise 1: Deploying Azure Arc Data Controller and Azure Arc SQL managed instnace using Direct Mode
   Duration: 30 Minutes
   
  In this exercise you will connect an existing Kubernetes cluster to Azure using Azure Arc-enabled Kubernetes. You will also deploy an Azure data controller in direct connectivity mode to a customer location using Azure portal and Azure CLI. 
