@@ -133,9 +133,9 @@ In this task, let us learn how to connect to your newly created Azure Arc enable
    
    - **Authentication type** : Select **SQL Login** from the drop down options
    
-   - **User name** : Enter arcsqluser
+   - **User name** : Enter arcuser
      ```BASH
-     arcsqluser
+     arcuser
      ```
    
    - **Password** : Enter Password.1!!
