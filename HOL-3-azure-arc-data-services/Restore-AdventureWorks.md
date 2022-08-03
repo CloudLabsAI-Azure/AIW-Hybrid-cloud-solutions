@@ -57,3 +57,106 @@ Now let's restore the sample backup file i.e AdventureWorks backup (.bak) into y
 1. Now, expand your SQL Managed Instance server if not already by clicking on the arrow icon on the left of the IP Address, then expand Databases and verify that AdventureWorks2019 Database is listed there.
 
    ![](media/kubectl-5.png "Confirm")
+
+## Task 2: View Azure Arc enabled SQL managed instance logs in Azure Portal
+
+1. Navigate to [Azure Portal](https://portal.azure.com/#home) and then search for Log Analytics workspace in the search bar at the top and then select it.
+
+   ![](media/logaw-1.png "Confirm")
+
+1. In the **Log Analytics workspaces** page, select your workspace **logazure-arc**.
+   
+    ![](images/logarc.png "Confirm")
+
+1. Then, from the left navigation menu under **General** select **Logs**
+
+1. Now in your page that opens up, click on the ```X```  at the top right corner as shown in the below image.
+
+    ![](images/ex4-t6-closepopup-log.png "Confirm")
+   
+1. And then, click on ```>>``` icon to expand the Schema and Filter tab.
+
+    ![](images/ex4-t6-closepopup-log1.png "Confirm")
+
+1. Then, check if CustomLogs is there under Tables section. If you don't see CustomLogs there, refresh the page every 2 minutes until it is available.
+     
+    ![](images/sqlmilogs.png "Confirm")
+
+1. Once the Custom logs is available, expand Custom Logs at the bottom of the list of tables and you will see a table called **sqlManagedInstances_logs_CL**.
+   
+    ![](images/workspace3.png "Confirm")
+
+1. Hover the cursor on the table name and select the **Use in the editor** button.
+   
+    ![](images/log-analytics-useineditor.png "Confirm")
+
+1. Now, you will have a query in the query editor. Run the query that will show the logs. 
+   
+    ![](images/workspace5.1.png "Confirm")
+
+    > Note: You might have to resize the editor and output windows to view the logs.
+
+## Task 3: Monitor with Azure Data Studio
+
+Now let us Monitor the SQL MI status using Grafana and Kibana.
+  
+1. Now, go back to the **Azure Data Studio** and right-click on the ```arcsql``` resource under the Azure Arc controller and click on **manage**.
+  
+1. Now, copy the **endpoint** for **Kibana dashboard** and browser this endpoint in a browser.
+  
+1. Enter below user name and password for SQLMI.
+  
+    > **Note** You have to enter the credentials of Azure Arc data controller.
+  
+    - **User name** : arcsqluser
+      ```BASH
+      arcsqluser
+      ```
+
+    - **Password** : Password.1!!
+      ```BASH
+      Password.1!!
+      ```
+
+     ![](images/sql-mon-kibana-login.png "")
+   
+    > ***Info***: You can filter the results by searching in the top bar for  **arcsql**. That will filter this page to just the logs for the managed SQL Server instance.
+  
+     ![](images/Kibana-dashboard-endpoint.png "")
+
+1. You can explore the **kibana dashboard**. 
+  
+     > ***Info***: You can learn more about kibana here: [View logs and metrics using Kibana and Grafana](https://docs.microsoft.com/en-us/azure/azure-arc/data/monitor-grafana-kibana)
+    
+## View the Visualization and metric using grafana graph
+  
+1. Now, go back to the **Azure Data Studio** which you had opened earlier.
+  
+1. Now, copy the **endpoint** for the **Grafana dashboard** and browser this endpoint in a browser.
+  
+1. Enter below user name and password for SQLMI.
+  
+    > **Note** You have to enter the credentials of the Azure Arc data controller.
+      
+    - **User name** : arcsqluser
+      ```BASH
+      arcsqluser
+      ```
+
+    - **Password** : Password.1!!
+      ```BASH
+      Password.1!!
+      ```
+
+    ![](images/sql-mon-grafana.png "")
+   
+1. You can explore the page for Grafana. 
+  
+    > ***Info***:  You can learn more about Grafana here: [View logs and metrics using Kibana and Grafana](https://docs.microsoft.com/en-us/azure/azure-arc/data/monitor-grafana-kibana)  
+  
+
+## After this exercise, you have performed the following
+
+   - Restored the AdventureWorks sample database into Azure SQL Managed instance - Azure Arc.
+   - Viewed SQL MI resources and logs in Azure portal.
+   - Monitored with kibana and grafana.
