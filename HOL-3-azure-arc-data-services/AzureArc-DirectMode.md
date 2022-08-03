@@ -340,7 +340,7 @@ Also, we will be exploring the Kibana and Grafana Dashboards and upload the logs
 
    ![](./media/sqlman-8.png "Lab Environment")
 
-1. Now we have successfully deployed the Azure Arc-enabled SQLMI on top of Directly connected mode Azure Arc data controller, you can explore more on metric and logs on the same page from left side menu.
+1. Now we have successfully deployed the Azure Arc - enabled SQLMI on top of Directly connected mode Azure Arc data controller, you can explore more on metric and logs on the same page from left side menu. Please note that Azure Arc - enabled SQLMI deployment can take 5 to 10 minutes to change it to ready.
 
    ![](./media/sqlman-9.png "Lab Environment")
 
