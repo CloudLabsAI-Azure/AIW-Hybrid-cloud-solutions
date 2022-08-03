@@ -62,39 +62,37 @@ Now let's restore the sample backup file i.e AdventureWorks backup (.bak) into y
 
 1. Navigate to [Azure Portal](https://portal.azure.com/#home) and then search for Log Analytics workspace in the search bar at the top and then select it.
 
-   ![](media/logaw-1.png "Confirm")
+   ![](./media/search-law.png "Lab Environment")
 
-1. In the **Log Analytics workspaces** page, select your workspace **logazure-arc**.
+1. In the **Log Analytics workspaces** page, select **LoganalyticsWS-Direct** workspace.
    
-    ![](images/logarc.png "Confirm")
+    ![](media/select-law.png "Confirm")
 
-1. Then, from the left navigation menu under **General** select **Logs**
+1. Then, from the left navigation menu under **General** select **Logs** **(1)** and on the Queries tab, click on the ```X``` **(2)** at the top right corner as shown in the below image.
 
-1. Now in your page that opens up, click on the ```X```  at the top right corner as shown in the below image.
-
-    ![](images/ex4-t6-closepopup-log.png "Confirm")
+   ![](media/logaw-1.png "Confirm")
    
 1. And then, click on ```>>``` icon to expand the Schema and Filter tab.
 
-    ![](images/ex4-t6-closepopup-log1.png "Confirm")
+    ![](media/logaw-2.png "Confirm")
 
-1. Then, check if CustomLogs is there under Tables section. If you don't see CustomLogs there, refresh the page every 2 minutes until it is available.
+1. Check for CustomLogs under Tables section. If you don't see CustomLogs under Tables, refresh the page every 2 minutes until it is available.
      
-    ![](images/sqlmilogs.png "Confirm")
+    ![](media/logaw-3.png "Confirm")
 
-1. Once the Custom logs is available, expand Custom Logs at the bottom of the list of tables and you will see a table called **sqlManagedInstances_logs_CL**.
+1. Once the Custom logs is available, expand Custom Logs at the bottom of the list of tables and you will see a table called **sqlManagedInstances_agent_logs_CL**.
    
-    ![](images/workspace3.png "Confirm")
+    ![](media/logaw-4.png "Confirm")
 
-1. Hover the cursor on the table name and select the **Use in the editor** button.
+1. Hover the cursor on the table name and select the **Use in editor** button.
    
-    ![](images/log-analytics-useineditor.png "Confirm")
+    ![](media/logaw-5.png "Confirm")
 
-1. Now, you will have a query in the query editor. Run the query that will show the logs. 
+1. Now, you will have a query in the query editor. Run the query that will show the logs by clicking on **Run** **(1)** button and explore the **Results** **(2)**. 
    
-    ![](images/workspace5.1.png "Confirm")
+    ![](media/logaw-6.png "Confirm")
 
-    > Note: You might have to resize the editor and output windows to view the logs.
+    > Note: You might have to resize the editor, to view the logs from output window.
 
 ## Task 3: Monitor with Azure Data Studio
 
