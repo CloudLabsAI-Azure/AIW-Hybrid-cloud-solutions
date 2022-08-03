@@ -98,17 +98,23 @@ Now let's restore the sample backup file i.e AdventureWorks backup (.bak) into y
 
 Now let us Monitor the SQL MI status using Grafana and Kibana.
   
-1. Now, go back to the **Azure Data Studio** and right-click on the ```arcsql``` resource under the Azure Arc controller and click on **manage**.
+1. Navigate back to **Azure Data Studio** and right-click on the ```arcsql``` resource under the Azure Arc controller and click on **Manage**.
+
+   ![](media/ads-6.png "Confirm")
   
-1. Now, copy the **endpoint** for **Kibana dashboard** and browser this endpoint in a browser.
-  
+1. From SQL managed instance - Azure Arc Dashboard, copy the **Endpoint** for **Kibana dashboard** and browse this endpoint.
+
+   ![](media/arcsql-kibana-1.png "Confirm")
+
+   > **Note**: In the browser, you may face any error that your connection isn't private. Select **Advanced** and click on **Continue to [ExternalEndpoint]**.
+
 1. Enter below user name and password for SQLMI.
   
     > **Note** You have to enter the credentials of Azure Arc data controller.
   
-    - **User name** : arcsqluser
+    - **User name** : arcuser
       ```BASH
-      arcsqluser
+      arcuser
       ```
 
     - **Password** : Password.1!!
@@ -116,7 +122,7 @@ Now let us Monitor the SQL MI status using Grafana and Kibana.
       Password.1!!
       ```
 
-     ![](images/sql-mon-kibana-login.png "")
+     ![](media/arcsql-ksignin.png "")
    
     > ***Info***: You can filter the results by searching in the top bar for  **arcsql**. That will filter this page to just the logs for the managed SQL Server instance.
   
@@ -128,17 +134,21 @@ Now let us Monitor the SQL MI status using Grafana and Kibana.
     
 ## View the Visualization and metric using grafana graph
   
-1. Now, go back to the **Azure Data Studio** which you had opened earlier.
-  
-1. Now, copy the **endpoint** for the **Grafana dashboard** and browser this endpoint in a browser.
-  
+1. Navigate back to the **Azure Data Studio** which you had opened earlier.
+
+1. From SQL managed instance - Azure Arc Dashboard, copy the **Endpoint** for **Grafana dashboard** and browse this endpoint.
+
+   ![](media/arcsql-grafana-1.png "Confirm")
+
+   > **Note**: In the browser, you may face any error that your connection isn't private. Select **Advanced** and click on **Continue to [ExternalEndpoint]**.
+
 1. Enter below user name and password for SQLMI.
   
     > **Note** You have to enter the credentials of the Azure Arc data controller.
       
-    - **User name** : arcsqluser
+    - **User name** : arcuser
       ```BASH
-      arcsqluser
+      arcuser
       ```
 
     - **Password** : Password.1!!
@@ -146,9 +156,11 @@ Now let us Monitor the SQL MI status using Grafana and Kibana.
       Password.1!!
       ```
 
-    ![](images/sql-mon-grafana.png "")
+   ![](media/arcsql-gsignin.png "")
    
 1. You can explore the page for Grafana. 
+  
+   ![](images/sql-mon-grafana.png "")
   
     > ***Info***:  You can learn more about Grafana here: [View logs and metrics using Kibana and Grafana](https://docs.microsoft.com/en-us/azure/azure-arc/data/monitor-grafana-kibana)  
   
