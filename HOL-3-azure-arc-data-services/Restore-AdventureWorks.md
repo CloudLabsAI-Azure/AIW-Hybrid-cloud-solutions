@@ -124,13 +124,13 @@ Now let us Monitor the SQL MI status using Grafana and Kibana.
 
      ![](media/arcsql-ksignin.png "")
    
-    > ***Info***: You can filter the results by searching in the top bar for  **arcsql**. That will filter this page to just the logs for the managed SQL Server instance.
-  
-     ![](images/Kibana-dashboard-endpoint.png "")
+   > ***Info***: You can filter the results by searching in the top bar for  **arcsql**. That will filter this page to just the logs for the managed SQL Server instance.
 
-1. You can explore the **kibana dashboard**. 
+1. You can explore the **kibana dashboard**.
+
+   ![](images/Kibana-dashboard-endpoint.png "")
   
-     > ***Info***: You can learn more about kibana here: [View logs and metrics using Kibana and Grafana](https://docs.microsoft.com/en-us/azure/azure-arc/data/monitor-grafana-kibana)
+   > ***Info***: You can learn more about kibana here: [View logs and metrics using Kibana and Grafana](https://docs.microsoft.com/en-us/azure/azure-arc/data/monitor-grafana-kibana)
     
 ## View the Visualization and metric using grafana graph
   
