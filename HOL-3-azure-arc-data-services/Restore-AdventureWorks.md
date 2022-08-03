@@ -24,7 +24,7 @@ Now let's restore the sample backup file i.e AdventureWorks backup (.bak) into y
 
    > **Note**: Please copy the Pod Name for the next step.
 
-   ![](images/ex4t4-2.png "Confirm")
+   ![](media/kubectl-1.png "Confirm")
    
 1. In the Command Prompt, run the following command after replacing the required values. This will remotely execute a command in the Azure SQL Managed instance container to download the .bak file onto the container.
 
@@ -36,7 +36,7 @@ Now let's restore the sample backup file i.e AdventureWorks backup (.bak) into y
 
    > ```Info:``` arc-sqlmi in the above command is the name of the container within the SQL Managed Instance Pod arcsql-0   
 
-   ![](images/ex4t4-3.png "Confirm")
+   ![](media/kubectl-2.png "Confirm")
 
 1. Now, to restore the AdventureWorks database, you can run the following command.
 
@@ -46,24 +46,14 @@ Now let's restore the sample backup file i.e AdventureWorks backup (.bak) into y
    kubectl exec arcsql-0 -n azure-arc -c arc-sqlmi -- /opt/mssql-tools/bin/sqlcmd -S localhost -U arcsqluser -P Password.1!! -Q "RESTORE DATABASE AdventureWorks2019 FROM  DISK = N'/var/opt/mssql/data/AdventureWorks2019.bak' WITH MOVE 'AdventureWorks2017' TO '/var/opt/mssql/data/AdventureWorks2019.mdf', MOVE 'AdventureWorks2017_Log' TO '/var/opt/mssql/data/AdventureWorks2019_Log.ldf'"
    ```
 
-   ![](images/hol3ss6.png "Confirm")
+   ![](media/kubectl-3.png "Confirm")
 
 1. Now you can switch back to Azure Data Studio.
 
-1. Then, right-click on the SQL Managed Instance Server under CONNECTIONS tab on the top left of the Azure Data Studio
+1. Then, right-click on the SQL Managed Instance Server under CONNECTIONS tab on the top left of the Azure Data Studio and click on **Refresh**.
 
-1. And, then click on refresh.
+   ![](media/kubectl-4.png "Confirm")
 
 1. Now, expand your SQL Managed Instance server if not already by clicking on the arrow icon on the left of the IP Address, then expand Databases and verify that AdventureWorks2019 Database is listed there.
 
-   ![](images/hol3ss7.png "Confirm")
-
-   > **Note**: In case if AdventureWorks2019 Database is not reflecting here or you are not able to connect to the Azure Arc SQLMI, then follow the steps below:
-   > 
-   > 1. Copy and paste the below command in command prompt. Hit Enter to run it.
-   > 
-   >      ``` kubectl delete svc sqlconnection -n arcdc```
-   >  
-   >  2. Navigate to Task 2: Connect to Azure Arc enabled Azure SQL Managed Instance using Azure Data Studio, and perform it from end-to-end.
-   >  
-   >  3. Once done, expand the SQL Managed Instance server,  then expand Databases and verify that AdventureWorks2019 Database is listed there.
+   ![](media/kubectl-5.png "Confirm")
