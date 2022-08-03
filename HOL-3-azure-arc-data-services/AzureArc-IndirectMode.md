@@ -74,7 +74,7 @@ In this task, you will be creating an SQL Managed Instance using Azure Data Stud
 1. Now the command prompt window will open up. In the command prompt, run the following command to create SQL MI instance.
 
    ```BASH
-   az sql mi-arc create --name arcsql --k8s-namespace arcdc --replicas 1 --cores-request "2" --cores-limit "4" --memory-request "4Gi" --memory-limit "8Gi" --storage-class-data "default" --storage-class-datalogs "default" --storage-class-logs "default" --volume-size-data 5Gi --volume-size-datalogs 5Gi --volume-size-logs 5Gi  --tier GeneralPurpose --dev --license-type BasePrice --cores-limit 4 --use-k8s
+   az sql mi-arc create --name arcsql --k8s-namespace arcdc --replicas 1 --cores-request "2" --cores-limit "4" --memory-request "4Gi" --memory-limit "8Gi" --storage-class-data "default" --storage-class-datalogs "default" --storage-class-logs "default" --volume-size-data 5Gi --volume-size-datalogs 5Gi --volume-size-logs 5Gi  --tier BusinessCritical --dev --license-type BasePrice --cores-limit 4 --use-k8s
    ```
    ![](./images/hol3ss1.png "azdata")
    
