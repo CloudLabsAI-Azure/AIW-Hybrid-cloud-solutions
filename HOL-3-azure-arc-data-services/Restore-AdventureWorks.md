@@ -14,10 +14,10 @@ Now let's restore the sample backup file i.e AdventureWorks backup (.bak) into y
 
 1. In the Command Prompt, run the following command to get the list of pods that are running on your data controller. 
 
-   > **Note**: The namespace name for your data controller will be **arcdc**.
+   > **Note**: The namespace name for your data controller will be **azure-arc**.
 
    ```BASH
-   kubectl get pods -n arcdc
+   kubectl get pods -n azure-arc
    ```
    
 1. From the output of the above command, copy the pod name of the SQL MI instance from the output which will be in following format sqlinstancename-0. If you followed the same naming convention as in the instructions, the pod name will be **arcsql-0**.
@@ -31,7 +31,7 @@ Now let's restore the sample backup file i.e AdventureWorks backup (.bak) into y
    >**Note**: The value of the namespace name and pod name is already updated in the below command. Please confirm if the pod name that copied matches the one given below: arcsql-0. 
 
    ```BASH
-   kubectl exec arcsql-0 -n arcdc -c arc-sqlmi -- wget https://github.com/Microsoft/sql-server-samples/releases/download/adventureworks/AdventureWorks2019.bak -O /var/opt/mssql/data/AdventureWorks2019.bak
+   kubectl exec arcsql-0 -n azure-arc -c arc-sqlmi -- wget https://github.com/Microsoft/sql-server-samples/releases/download/adventureworks/AdventureWorks2019.bak -O /var/opt/mssql/data/AdventureWorks2019.bak
    ```
 
    > ```Info:``` arc-sqlmi in the above command is the name of the container within the SQL Managed Instance Pod arcsql-0   
@@ -43,7 +43,7 @@ Now let's restore the sample backup file i.e AdventureWorks backup (.bak) into y
    > **Note**: All values including the pod and the namespace name have already been added. You can go through the command and figure out what all are being passed as arguements.
 
    ```BASH
-   kubectl exec arcsql-0 -n arcdc -c arc-sqlmi -- /opt/mssql-tools/bin/sqlcmd -S localhost -U arcuser -P Password.1!! -Q "RESTORE DATABASE AdventureWorks2019 FROM  DISK = N'/var/opt/mssql/data/AdventureWorks2019.bak' WITH MOVE 'AdventureWorks2017' TO '/var/opt/mssql/data/AdventureWorks2019.mdf', MOVE 'AdventureWorks2017_Log' TO '/var/opt/mssql/data/AdventureWorks2019_Log.ldf'"
+   kubectl exec arcsql-0 -n azure-arc -c arc-sqlmi -- /opt/mssql-tools/bin/sqlcmd -S localhost -U arcuser -P Password.1!! -Q "RESTORE DATABASE AdventureWorks2019 FROM  DISK = N'/var/opt/mssql/data/AdventureWorks2019.bak' WITH MOVE 'AdventureWorks2017' TO '/var/opt/mssql/data/AdventureWorks2019.mdf', MOVE 'AdventureWorks2017_Log' TO '/var/opt/mssql/data/AdventureWorks2019_Log.ldf'"
    ```
 
    ![](images/hol3ss6.png "Confirm")
