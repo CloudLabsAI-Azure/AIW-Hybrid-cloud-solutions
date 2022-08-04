@@ -101,9 +101,9 @@ In this task, let us learn how to connect to your newly created Azure Arc enable
 1. If the **Command Prompt** window is already not opened, open a new one by clicking on Command Prompt icon from the desktop shortcut and run the following command to create new service for port 1533.
 
    ```BASH
-   kubectl expose pod arcsql-0 -n arcdc --port=1533 --type=LoadBalancer --name=sqlconnection
+   kubectl expose pod arcsql-indir-0 -n arcdc --port=1533 --type=LoadBalancer --name=sqlconnection
    ```
-   ![](images/hol3ss2.png "Confirm")
+   ![](./media/indirectmode-8.png "azdata")
       
    >**Note**: This command will create new service which will be used to connect to the SQL MI instance directly.
 
@@ -113,7 +113,7 @@ In this task, let us learn how to connect to your newly created Azure Arc enable
    kubectl get svc -n arcdc
    ```
    
-   ![](images/hol3ss3.png "Confirm")
+   ![](./media/indirectmode-9.png "azdata")
    
    >**Note**: Retry the running command multiple times untill the external IP is visible.
 
@@ -123,35 +123,37 @@ In this task, let us learn how to connect to your newly created Azure Arc enable
    <external IP>,1533
    ```
 
-1. In the Azure Data Studio, in connections tab, within the servers click on **Add Connection**.
+1. In the Azure Data Studio, in connections tab within the servers, click on **Add Connection**.
 
    ![](images/sql-instance4.png "Confirm")
 
-1. Enter the following in the connection details page and click on **Connect**.
+1. Enter the following in the connection details page:
 
-   - **Connection type** : Select **Microsoft SQL Server**.
+    - **Connection type** : Select **Microsoft SQL Server** **(1)**
    
-   - **Sever**: Paste the external endpoint value of SQL Managed Instance which you copied earlier
+    - **Sever**: Paste the external endpoint value of SQL Managed Instance which you copied earlier **(2)**
 
-   >**Note**: Make sure you have entered **IP Address** with **port number**.
+      >**Note**: Make sure you have entered **IP Address** with **port number**.
    
-   - **Authentication type** : Select **SQL Login** from the drop down options
+    - **Authentication type** : Select **SQL Login** from the drop down options **(3)**
    
-   - **User name** : Enter arcuser
-     ```BASH
-     arcuser
-     ```
+    - **User name** : Enter arcuser **(4)**
+      ```BASH
+      arcuser
+      ```
    
-   - **Password** : Enter Password.1!!
-     ```BASH
-     Password.1!!
-     ```
+    - **Password** : Enter Password.1!! **(5)**
+      ```BASH
+      Password.1!!
+      ```
+    
+    - Click on **Connect** **(6)**
    
-   ![](images/hol3ss4.png "Confirm")
+   ![](./media/indirectmode-10.png "azdata")
    
 1. Now you can see that you are successfully connected with your Azure Arc enabled SQL MI Server. Under servers you can see that you are successfully connected with your Azure Arc enabled SQL MI Server. You can explore the SQL Managed Instance - Azue Arc Dashboard to view the databases and run a query.
 
-   ![](images/sql1533.png "Confirm")
+   ![](./media/indirectmode-11.png "azdata")
 
 ## Task 5: Configure Azure Arc enabled Azure SQL Managed Instance
 
