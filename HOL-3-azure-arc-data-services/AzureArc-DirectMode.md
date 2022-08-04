@@ -204,7 +204,7 @@ In this Task you will be connecting an existing Kubernetes cluster to Azure usin
    * Data Controller Name: **arcdc-direct** **(2)**
    * Custom location: Select the available custom location from drop down **(3)**.
 
-      ![](./media/new-dc-direct.png "Lab Environment")
+   ![](./media/new-dc-direct.png "Lab Environment")
       
 1. Now scroll down and enter the below details in the remaining sections.
    
@@ -222,7 +222,7 @@ In this Task you will be connecting an existing Kubernetes cluster to Azure usin
 
    After entering all the required details click on **Next: Additional settings** **(6)**
 
-    ![](./media/dc-5.png "Lab Environment")
+   ![](./media/dc-5.png "Lab Environment")
 
 1. In Additional settings blade, select the **LoganalyticsWS-Direct** **(1)** from the dropdown for Log Analytics workspace. You see that Log Analytics workspace ID occurs by default. Enter the Log Analytics primary key which is given here: **<inject key="loganalyticsWorkspacePrimaryKey" enableCopy="true"/>** **(2)** and click on **Next: Tags** **(3)** button.
 
@@ -258,7 +258,7 @@ In this Task you will be connecting an existing Kubernetes cluster to Azure usin
 
 1. On Azure Ac data controller resource overview blade, explore the given information about the Namespace and Connection mode.
 
-   ![](./media/-overview-dc-direct.png "Lab Environment")
+   ![](./media/overview-dc-direct.png "Lab Environment")
 
 ## Task 4: Deploy Azure Arc-enabled SQL Managed Instance with Direct Connected Mode.
 
@@ -294,7 +294,7 @@ Also, we will be exploring the Kibana and Grafana Dashboards and upload the logs
     
      - **Compute+ Storage**: Click on **Configure compute + storage** **(5)**
       
-      ![](./media/-newsqlm-direct.png "Lab Environment") 
+      ![](./media/new-sqlmi-direct.png "Lab Environment") 
       
 1. Now on **Compute+ Storage** blade enter the following details:
     
