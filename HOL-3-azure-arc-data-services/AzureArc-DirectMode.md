@@ -359,20 +359,25 @@ Now let us connect to the data controller using Azure Data Studio.
      azure-arc
      ```
      
+   - **Cluster Context**:
+     ```BASH
+     Arc-Data-Demo-DirectMode
+     ```
+     
    - **Name** : Enter arcdc
      ```BASH
-     arcdc
+     arcdc-direct
      ```
 
-   ![](./media/ads-2.png "Azure Data Studio")
+   ![](./media/ads-direct-new.png "Azure Data Studio")
 
 3. Once the connection is successful, you can see the Azure Arc data controller listed under Azure Arc Controllers on the bottom left of the Azure Data Studio.
 
-    ![](./media/ads-3.png "Azure Data Studio")
+    ![](./media/ads-direct-list.png "Azure Data Studio")
     
-4. Right-click on the **arcdc** Azure Arc Controller and select **Manage**.
+4. Right-click on the **arcdc-direct** Azure Arc Controller and select **Manage**.
 
-   ![](./media/ads-4.png "Azure Data Studio")
+   ![](./media/ads-direct-manage.png "Azure Data Studio")
 
 5. Once you are in the Azure Arc Data Controller dashboard, you can see following details about the data controller 
    - Name of the Arc Data Controller
@@ -385,15 +390,15 @@ Now let us connect to the data controller using Azure Data Studio.
    
    You will also see that we have deployed using the Direct connection mode of the Azure Arc Data controller.
 
-   ![](./media/ads-5.png "Azure Data Studio")
+   ![](./media/ads-direct-overview.png "Azure Data Studio")
 
 ## Task 6: Connect to Azure Arc enabled SQL Managed Instance using Azure Data Studio.
 
 In this task, let us learn how to connect to Azure Arc enabled SQL Managed instance using Azure Data Studio.
 
-1. You can see the Azure Arc enabled SQL Managed Instance named **arcsql** listed under Azure Arc Data Controller named **arcdc** at the bottom left of the Azure Data Studio. Right-click on the **arcsql** and select **Manage**.
+1. You can see the Azure Arc enabled SQL Managed Instance named **arcsql-direct** listed under Azure Arc Data Controller named **arcdc-direct** at the bottom left of the Azure Data Studio. Right-click on the **arcsql-direct** and select **Manage**.
 
-   ![](./media/ads-6.png "")
+   ![](./media/ads-sqlmi-manage.png "")
 
 1. Once you are in the SQL managed instance - Azure Arc dashboard, you can see following details about the data controller:
 
@@ -407,7 +412,7 @@ In this task, let us learn how to connect to Azure Arc enabled SQL Managed insta
 
    Make sure to copy the **External Endpoint with port number** and save it in a notepad for later use in the task.
    
-   ![](./media/ads-7.png "ADS")
+   ![](./media/ads-sqlmi-overview.png "ADS")
 
 1. In the Connections tab of Azure Data Studio, within the servers click on **Add Connection**.
 
