@@ -1,4 +1,4 @@
-# Exercise 2: Deploying Azure Data Controller and Azure Arc enabled SQLMI business critical in Indirect Mode using Azure Data Studio 
+# Exercise 2: Connecting Azure Data Controller and Azure Arc enabled SQLMI business critical in Indirect Mode using Azure Data Studio 
 
 In this exercise, let's create an Azure SQL Managed Instance - Azure Arc in Indirect Mode and restore and migrate the database using multiple methods.
 
@@ -94,7 +94,7 @@ In this task, you will be creating an SQL Managed Instance using Azure Data Stud
 
    > **Note**: You might have to right-click and refresh on Arc data controller to view the instance if you don't see one after seeing the text **arcsql is Ready** at the bottom of the notebook.
 
-## Task 4: Connect to Azure Arc enabled Azure SQL Managed Instance using Azure Data Studio.
+## Task 4: Connect to Azure Arc enabled SQL Managed Instance using Azure Data Studio.
 
 In this task, let us learn how to connect to your newly created Azure Arc enabled Azure SQL Managed instance using Azure Data Studio.
 
@@ -155,42 +155,9 @@ In this task, let us learn how to connect to your newly created Azure Arc enable
 
    ![](./media/indirectmode-11.png "azdata")
 
-## Task 5: Configure Azure Arc enabled Azure SQL Managed Instance
-
-In this task, you will learn to update the configuration of Azure Arc enabled SQL Managed instances with Azure Data CLI.
-
-1. If the **Command Prompt** window is already not opened, open a new one by clicking on Command Prompt icon from the desktop shortcut and run the following command to see configuration options of Azure SQL Managed instance.
-
-   ```BASH
-   az sql mi-arc edit --help
-   ```
-
-   ![](images/miarcnw.png "Confirm")
-
-1. Now run the following command to set the custom CPU core and memory requests and limit. 
-
-   >**Note**: The Azure SQL Managed instance name will be **arcsql** if you also provided the same for Instance name during creation of Azure SQL Managed Instance. The name is provided as value at the end of the command Also, you shouldn't select the Core and memory limit more than the given limits.
-
-   ```BASH
-   az sql mi-arc update --cores-limit 3 --cores-request 2 --memory-limit 2Gi --memory-request 2Gi -n arcsql --k8s-namespace arcdc --use-k8s
-   ```      
-
-   ![](media/sqlmilatest.png "Confirm")
-
-1. Now, you can run the below command to view the changes that you made to the Azure SQL Managed instance.
-
-   >**Note**: The Azure SQL Managed instance name will be **arcsql** if you also provided the same for Instance name during creation of Azure SQL Managed Instance which is already added in the below command.
-   
-   ```BASH
-   az sql mi-arc show -n arcsql --k8s-namespace arcdc --use-k8s
-   ```
-
-   ![](images/hol3ss5.png "Confirm")
-
-
 ## In this exercise, you have covered the following:
  
-   - Getting started with the existing Kubernetes cluster.
-   - Deploying Azure Arc Data controller on to Azure Kubernetes Cluster(AKS). 
-   - Connect to the data controller using Azure Data Studio.
+   - Connecting Azure Data Controller using Azure Data Studio 
    - Monitor with Data Controller Dashboard.
+   - Creating Azure Arc enabled SQL Managed Instance
+   - Connecting to Azure Arc enabled SQL Managed Instance using Azure Data Studio.
