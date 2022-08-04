@@ -175,7 +175,7 @@ In this Task you will be connecting an existing Kubernetes cluster to Azure usin
    
    ![](./media/search-law.png "Lab Environment")
 
-1. Navigate to LoganalyticsWS-Direct workspace. 
+1. Navigate to **LoganalyticsWS-Direct** workspace. 
 
    ![](./media/select-law.png "Lab Environment")
 
@@ -200,11 +200,11 @@ In this Task you will be connecting an existing Kubernetes cluster to Azure usin
 1. On **Data controller details** blade enter the following details:
 
    * Select the available subscription from drop down.
-   * Resource Group: Select **Azure-arc** **(1)** from drop down.
-   * Data Controller Name: **arcdc** **(2)**
+   * Resource Group: Select **azure-arc** **(1)** from drop down.
+   * Data Controller Name: **arcdc-direct** **(2)**
    * Custom location: Select the available custom location from drop down **(3)**.
 
-      ![](./media/dc-4.png "Lab Environment")
+      ![](./media/new-dc-direct.png "Lab Environment")
       
 1. Now scroll down and enter the below details in the remaining sections.
    
@@ -234,15 +234,15 @@ In this Task you will be connecting an existing Kubernetes cluster to Azure usin
 
 1. On Review + Create blade, you can check all the given details and click on **Create** button to start the Azure Arc data controller deployment. 
 
-   ![](./media/dc-8.png "Lab Environment")
+   ![](./media/review-dc-direct.png "Lab Environment")
    
 1. Once the deployment got completed click on **Go to resource group** button.
 
-   ![](./media/dc-9.png "Lab Environment")
+   ![](./media/complete-dc-direct.png "Lab Environment")
    
-1. From the **azure-arc** resource group, select **arcdc** Azure Arc Data Controller from the resources.
+1. From the **azure-arc** resource group, select **arcdc-direct** Azure Arc Data Controller from the resources.
 
-   ![](./media/dc-10.png "Lab Environment")  
+   ![](./media/rg-dc-direct.png "Lab Environment")  
    
   # Monitor the creation of Azure Arc data controller on cluster.
    
@@ -252,13 +252,13 @@ In this Task you will be connecting an existing Kubernetes cluster to Azure usin
    kubectl get datacontrollers -n azure-arc
    ```
    
-   ![](./media/dc-12.png "Lab Environment")
+   ![](./media/status-dc-direct.png "Lab Environment")
    
  1. Once the data controller state is changed to ready then proceed to next steps, please note the data controller deployment can take 5 to 10 minutes to change it to ready.
 
 1. On Azure Ac data controller resource overview blade, explore the given information about the Namespace and Connection mode.
 
-   ![](./media/dc-11.png "Lab Environment")
+   ![](./media/-overview-dc-direct.png "Lab Environment")
 
 ## Task 4: Deploy Azure Arc-enabled SQL Managed Instance with Direct Connected Mode.
 
