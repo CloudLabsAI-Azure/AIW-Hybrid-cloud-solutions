@@ -12,31 +12,39 @@ In the environment provided, the Azure Arc Data controller is already deployed o
    
    If you want to know more about this, refer to the [Connectivity Modes](https://docs.microsoft.com/en-us/azure/azure-arc/data/connectivity)
 
-1. On your JumpVM, open **Azure Data studio** from the desktop shortcut and select **Connections**.
+1. Open **Windows PowerShell** from the Desktop and run the below command to switch the cluster context from **Direct to Indirect mode**.
+
+   ```BASH
+   kubectl config use-context Arc-Data-Demo
+   ```
+   ![](./media/cc-switch.png "Connection")
+
+1. Navigate back to **Azure Data studio** and in **Azure Arc Controllers** section, click on **Connect to Existing Azure Arc Controller**.
 
    ![](./media/indirect-1.png "Connection")
    
-1. In the **Connections** panel under **Azure Arc Controllers**, click on **Connect Controller**.
-
-1. In the **Connect to Controller** page, provide the following details.
+1. In the **Connect to Existing Controller** page, provide the following details and click on **Connect**.
 
    - **Namespace**:
      ```BASH
      arcdc
      ```
-     
-   - **Name** : Enter arcdc
+   
+   - **Cluster Context**:
      ```BASH
-     arcdc
+     Arc-Data-Demo
+     ```
+
+   - **Name** :
+     ```BASH
+     arcdc-indirect
      ```
    
-     ![](./images/connectnew-latest.png "")
+     ![](./media/indirectmode-2.png "Connection")
 
-1. Now, click on **Connect**.
+1. Once the connection is successful, you can see the **arcdc-indirect** Azure Arc data controller listed under Azure Arc Controllers on the bottom left of the Azure Data Studio.
 
-1. Once the connection is successful, you can see the Azure Arc data controller listed under Azure Arc Controllers on the bottom left of the Azure Data Studio.
-
-    ![](./images/new1dc.png "")
+    ![](./images/indirectmode-3.png "")
 
 ## Task 2: Monitor with Data Controller Dashboard
 
