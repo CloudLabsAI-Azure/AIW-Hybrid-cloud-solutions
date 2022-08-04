@@ -286,7 +286,7 @@ Also, we will be exploring the Kibana and Grafana Dashboards and upload the logs
    
    - **Under Managed Instance details**
    
-     - **Instance name**: Enter **arcsql** **(2)**
+     - **Instance name**: Enter **arcsql-direct** **(2)**
   
      - **Custom location**: Select available custom location from dropdown **(3)**.
    
@@ -294,7 +294,7 @@ Also, we will be exploring the Kibana and Grafana Dashboards and upload the logs
     
      - **Compute+ Storage**: Click on **Configure compute + storage** **(5)**
       
-      ![](./media/sqlman-3.png "Lab Environment") 
+      ![](./media/-newsqlm-direct.png "Lab Environment") 
       
 1. Now on **Compute+ Storage** blade enter the following details:
     
@@ -334,15 +334,15 @@ Also, we will be exploring the Kibana and Grafana Dashboards and upload the logs
     
 1. Now Click on **Create** button to start the deployment.  
  
-    ![](./media/sqlman-7.png "Lab Environment")
+    ![](./media/review-sqlmi-direct.png "Lab Environment")
  
 1. After some time you see that the deployment of **SQL Managed Instance - Azure Arc** in completed. Now click on **Go to resource** button to navigate to the resource.
 
-   ![](./media/sqlman-8.png "Lab Environment")
+   ![](./media/complete-sqlmi-direct.png "Lab Environment")
 
 1. Now we have successfully deployed the Azure Arc - enabled SQLMI on top of Directly connected mode Azure Arc data controller, you can explore more on metric and logs on the same page from left side menu. Please note that Azure Arc - enabled SQLMI deployment can take 5 to 10 minutes to change it to ready.
 
-   ![](./media/sqlman-9.png "Lab Environment")
+   ![](./media/overview-sqlmi-direct.png "Lab Environment")
 
 ## Task 5: Connecting Azure Arc Data Controller using Azure Data Studio
 
