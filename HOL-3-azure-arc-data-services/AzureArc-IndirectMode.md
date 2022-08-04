@@ -157,7 +157,7 @@ In this task, let us learn how to connect to your newly created Azure Arc enable
 
 ## In this exercise, you have covered the following:
  
-   - Connecting Azure Data Controller indiredt mode using Azure Data Studio 
+   - Connecting Azure Data Controller indirect mode using Azure Data Studio 
    - Monitor with Data Controller Dashboard.
    - Creating Azure Arc enabled SQL Managed Instance
    - Connecting to Azure Arc enabled SQL Managed Instance using Azure Data Studio.
