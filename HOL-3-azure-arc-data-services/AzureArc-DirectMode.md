@@ -107,7 +107,7 @@ In this Task you will be connecting an existing Kubernetes cluster to Azure usin
      ```
     The output should be similar as shown below:
     
-    **"Successsfully enabled features: ['cluster-connect', 'custom-locations'] for the Connected Cluster Arc-Data-Demo-DirectMode"**
+    **"Successfully enabled features: ['cluster-connect', 'custom-locations'] for the Connected Cluster Arc-Data-Demo-DirectMode"**
         
       > **Note:** Custom Locations feature is dependent on the Cluster Connect feature. So both features have to be enabled for custom locations to work. Also, az connectedk8s enable-features needs to be run on a machine where the kubeconfig file is pointing to the cluster on which the features are to be enabled.
     
@@ -117,7 +117,7 @@ In this Task you will be connecting an existing Kubernetes cluster to Azure usin
     az k8s-extension create --name azdata --extension-type microsoft.arcdataservices --cluster-type connectedClusters -c Arc-Data-Demo-DirectMode -g azure-arc --scope cluster --release-namespace azure-arc --config Microsoft.CustomLocation.ServiceAccount=sa-bootstrapper
      ```
 
-1. After running the above command you will notice that the **ProvisioningState** is **Succeeded**. If this is pending, because the extension will take a few minutes to complete the installation.
+1. After running the above command you will notice that the **Provisioning State** is **Succeeded**. If this is pending, because the extension will take a few minutes to complete the installation.
 
     ![](media/extension-output.png "Lab Environment")
 
@@ -328,7 +328,7 @@ Also, we will be exploring the Kibana and Grafana Dashboards and upload the logs
      
      - **Confirm Password**: Enter **Password.1!!**
 
-   After adding all the required details click on **Review + Create button** to review the all details.
+   After adding all the required details click on **Review + Create button** to review all details.
     
     ![](./media/sqlman-6.png "Lab Environment")
     
@@ -442,8 +442,8 @@ In this task, let us learn how to connect to Azure Arc enabled SQL Managed insta
    
    ![](./media/ads-8.png "ADS")
    
-1. Now you can see that you are successfully connected with your Azure Arc enabled SQL MI Server. Under servers you can see that you are successfully connected with your Azure Arc enabled SQL MI Server. You can explore the SQL Managed Instance - Azue Arc Dashboard to view the databases and run a query.
+1. Now you can see that you are successfully connected with your Azure Arc enabled SQL MI Server. Under servers you can see that you are successfully connected with your Azure Arc enabled SQL MI Server. You can explore the SQL Managed Instance - Azure Arc Dashboard to view the databases and run a query.
 
    ![](./media/ads-9.png "ADS")
 
- In this exercise we have connected our cluster to Azure Arc-enabled cluster and deployed custom location and data controller with direct connected mode with the help of Azure portal and Azure CLI and created a Azure Arc-enabled SQLMI server on directly connected mode of Azure Arc data controller. Also we have connected the Azure Arc Data Controller and Azure Arc enabled SQLMI business critical using Azure Data Studio.
+ In this exercise we have connected our cluster to Azure Arc-enabled cluster and deployed custom location and data controller with direct connected mode with the help of Azure portal and Azure CLI and created an Azure Arc-enabled SQLMI server on directly connected mode of Azure Arc data controller. Also, we have connected the Azure Arc Data Controller and Azure Arc enabled SQLMI business critical using Azure Data Studio.
