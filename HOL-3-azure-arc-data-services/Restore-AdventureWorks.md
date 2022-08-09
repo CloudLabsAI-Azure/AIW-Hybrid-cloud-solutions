@@ -1,6 +1,6 @@
 # Exercise 3: Restoring an AdventureWorks database backup taken from SQL Server 2012 instance
 
-Contoso has some applications that use SQL Server as the backend database. They have installed SQL Server on their Windows servers in their manufacturing plants but these locations don’t necessarily have local IT support to update the operating system and SQL Server with the latest security updates. They have explored Azure Database for SQL Server and found that it meets their requirements and offers some unique capabilities such as easy to manage and migrate from different cloud platforms. Therefore they are excited about the opportunity of deploying SQL Server in their Azure Arc enabled environment.
+Contoso has some applications that use SQL Server as the backend database. They have installed SQL Server on their Windows servers in their manufacturing plants, but these locations don’t necessarily have local IT support to update the operating system and SQL Server with the latest security updates. They have explored Azure Database for SQL Server and found that it meets their requirements and offers some unique capabilities such as easy to manage and migrate from different cloud platforms. Therefore, they are excited about the opportunity of deploying SQL Server in their Azure Arc enabled environment.
 
 Also, we will be exploring the Kibana and Grafana Dashboards and upload the logs and metrics to the Azure portal and view the logs.
 
@@ -47,7 +47,7 @@ Now let's restore the sample backup file i.e AdventureWorks backup (.bak) into y
 
 1. Now, to restore the AdventureWorks database, you can run the following command.
 
-   > **Note**: All values including the pod and the namespace name have already been added. You can go through the command and figure out what all are being passed as arguements.
+   > **Note**: All values including the pod and the namespace name have already been added. You can go through the command and figure out what all are being passed as arguments.
 
    ```BASH
    kubectl exec arcsql-direct-0 -n azure-arc -c arc-sqlmi -- /opt/mssql-tools/bin/sqlcmd -S localhost -U arcsqluser -P Password.1!! -Q "RESTORE DATABASE AdventureWorks2019 FROM  DISK = N'/var/opt/mssql/data/AdventureWorks2019.bak' WITH MOVE 'AdventureWorks2017' TO '/var/opt/mssql/data/AdventureWorks2019.mdf', MOVE 'AdventureWorks2017_Log' TO '/var/opt/mssql/data/AdventureWorks2019_Log.ldf'"
@@ -83,7 +83,7 @@ Now let's restore the sample backup file i.e AdventureWorks backup (.bak) into y
 
     ![](media/logaw-2.png "Confirm")
 
-1. Check for CustomLogs under Tables section. If you don't see CustomLogs under Tables, refresh the page every 2 minutes until it is available.
+1. Check for CustomLogs under Tables section. If you do not see CustomLogs under Tables, refresh the page every 2 minutes until it is available.
      
     ![](media/logaw-3.png "Confirm")
 
@@ -115,7 +115,7 @@ Now let us Monitor the SQL MI status using Grafana and Kibana.
 
    > **Note**: In the browser, you may face any error that your connection isn't private. Select **Advanced** and click on **Continue to [ExternalEndpoint]**.
 
-1. Enter below user name and password for SQLMI.
+1. Enter below username and password for SQLMI.
   
     > **Note** You have to enter the credentials of Azure Arc data controller.
   
@@ -147,9 +147,9 @@ Now let us Monitor the SQL MI status using Grafana and Kibana.
 
    ![](media/restore-direct-8.png "Confirm")
 
-   > **Note**: In the browser, you may face any error that your connection isn't private. Select **Advanced** and click on **Continue to [ExternalEndpoint]**.
+   > **Note**: In the browser, you may face any error that your connection is not private. Select **Advanced** and click on **Continue to [ExternalEndpoint]**.
 
-1. Enter below user name and password for SQLMI.
+1. Enter below username and password for SQLMI.
   
     > **Note** You have to enter the credentials of the Azure Arc data controller.
       
