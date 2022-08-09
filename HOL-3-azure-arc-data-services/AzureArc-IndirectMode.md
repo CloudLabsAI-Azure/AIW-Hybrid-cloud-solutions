@@ -92,7 +92,7 @@ In this task, you will be creating an SQL Managed Instance using Azure Data Stud
 
    ![](./media/indirectmode-7.png "azdata")
 
-   > **Note**: You might have to right-click and refresh on Arc data controller to view the instance if you don't see one after seeing the text **arcsql is Ready** at the bottom of the notebook.
+   > **Note**: You might have to right-click and refresh on Arc data controller to view the instance if you do not see one after seeing the text **arcsql is Ready** at the bottom of the notebook.
 
 ## Task 4: Connect to Azure Arc enabled SQL Managed Instance using Azure Data Studio.
 
@@ -115,7 +115,7 @@ In this task, let us learn how to connect to your newly created Azure Arc enable
    
    ![](./media/indirectmode-9.png "azdata")
    
-   >**Note**: Retry the running command multiple times untill the external IP is visible.
+   >**Note**: Retry the running command multiple times until the external IP is visible.
 
 1. Copy the external IP and add **,1533** to the end of the external IP.
 
@@ -151,7 +151,7 @@ In this task, let us learn how to connect to your newly created Azure Arc enable
    
    ![](./media/indirectmode-10.png "azdata")
    
-1. Now you can see that you are successfully connected with your Azure Arc enabled SQL MI Server. Under servers you can see that you are successfully connected with your Azure Arc enabled SQL MI Server. You can explore the SQL Managed Instance - Azue Arc Dashboard to view the databases and run a query.
+1. Now you can see that you are successfully connected with your Azure Arc enabled SQL MI Server. Under servers you can see that you are successfully connected with your Azure Arc enabled SQL MI Server. You can explore the SQL Managed Instance - Azure Arc Dashboard to view the databases and run a query.
 
    ![](./media/indirectmode-11.png "azdata")
 
