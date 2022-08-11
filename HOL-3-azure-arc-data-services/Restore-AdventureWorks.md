@@ -6,9 +6,9 @@ Also, we will be exploring the Kibana and Grafana Dashboards and upload the logs
 
 ## Task 1: Restore the AdventureWorks sample database into Azure SQL Managed instance - Azure Arc Using Kubectl
 
-Migrating an existing SQL database from a SQL Server to Azure Arc enabled SQL MI is very simple. All you have to do is to take a backup from your existing SQL Server, and then restore that backup to SQL MI.
+Migrating an existing SQL database from a SQL Server to Azure Arc enabled SQL MI is very simple. All you have to do is to take a backup from your existing SQL Server and then restore that backup to SQL MI.
 
-Now let's restore the sample backup file i.e AdventureWorks backup (.bak) into your Azure SQL Managed instance container using Kubectl commands.
+Now let's restore the sample backup file i.e. AdventureWorks backup (.bak) into your Azure SQL Managed instance container using Kubectl commands.
 
 1. Launch a **Command Prompt** window from the desktop of your JumpVM if you have already closed the existing one.
 
@@ -27,7 +27,7 @@ Now let's restore the sample backup file i.e AdventureWorks backup (.bak) into y
    kubectl get pods -n azure-arc
    ```
    
-1. From the output of the above command, copy the pod name of the SQL MI instance from the output which will be in following format sqlinstancename-0. If you followed the same naming convention as in the instructions, the pod name will be **arcsql-direct-0**.
+1. From the output of the above command, copy the pod name of the SQL MI instance from the output which will be in the following format sqlinstancename-0. If you followed the same naming convention as in the instructions, the pod name will be **arcsql-direct-0**.
 
    > **Note**: Please copy the Pod Name for the next step.
 
@@ -35,7 +35,7 @@ Now let's restore the sample backup file i.e AdventureWorks backup (.bak) into y
    
 1. In the Command Prompt, run the following command after replacing the required values. This will remotely execute a command in the Azure SQL Managed instance container to download the .bak file onto the container.
 
-   >**Note**: The value of the namespace name and pod name is already updated in the below command. Please confirm if the pod name that copied matches the one given below: arcsql-0. 
+   >**Note**: The value of the namespace name and pod name is already updated in the below command. Please confirm if the pod name that you had copied matches the one given below: arcsql-0. 
 
    ```BASH
    kubectl exec arcsql-direct-0 -n azure-arc -c arc-sqlmi -- wget https://github.com/Microsoft/sql-server-samples/releases/download/adventureworks/AdventureWorks2019.bak -O /var/opt/mssql/data/AdventureWorks2019.bak
@@ -55,13 +55,13 @@ Now let's restore the sample backup file i.e AdventureWorks backup (.bak) into y
 
    ![](media/restore-direct-3.png "Confirm")
 
-1. Now you can switch back to Azure Data Studio.
+1. You can now switch back to Azure Data Studio.
 
 1. Then, right-click on the **arcsql-direct** SQL Managed Instance Server under CONNECTIONS tab on the top left of the Azure Data Studio and click on **Refresh**.
 
    ![](media/restore-direct-4.png "Confirm")
 
-1. Now, expand your SQL Managed Instance server if not already by clicking on the arrow icon on the left of the IP Address, then expand Databases and verify that **AdventureWorks2019** Database is listed there.
+1. Now expand your SQL Managed Instance server if not already by clicking on the arrow icon on the left of the IP Address, then expand Databases and verify that the **AdventureWorks2019** database is listed there.
 
    ![](media/restore-direct-5.png "Confirm")
 
@@ -87,7 +87,7 @@ Now let's restore the sample backup file i.e AdventureWorks backup (.bak) into y
      
     ![](media/logaw-3.png "Confirm")
 
-1. Once the Custom logs is available, expand Custom Logs at the bottom of the list of tables and you will see a table called **sqlManagedInstances_agent_logs_CL**.
+1. Once the Custom logs are available, expand Custom Logs at the bottom of the list of tables and you will see a table called **sqlManagedInstances_agent_logs_CL**.
    
     ![](media/logaw-4.png "Confirm")
 
@@ -99,7 +99,7 @@ Now let's restore the sample backup file i.e AdventureWorks backup (.bak) into y
    
     ![](media/logaw-6.png "Confirm")
 
-    > Note: You might have to resize the editor, to view the logs from output window.
+    > Note: You might have to resize the editor, to view the logs from the output window.
 
 ## Task 3: Monitor with Azure Data Studio
 
@@ -109,13 +109,13 @@ Now let us Monitor the SQL MI status using Grafana and Kibana.
 
    ![](media/restore-direct-6.png "Confirm")
   
-1. From SQL managed instance - Azure Arc Dashboard, copy the **Endpoint** for **Kibana dashboard** and browse this endpoint.
+1. From the SQL managed instance - Azure Arc Dashboard, copy the **Endpoint** for **Kibana dashboard** and browse this endpoint.
 
    ![](media/restore-direct-7.png "Confirm")
 
-   > **Note**: In the browser, you may face any error that your connection isn't private. Select **Advanced** and click on **Continue to [ExternalEndpoint]**.
+   > **Note**: You may face any error that your connection isn't private in the browser. Select **Advanced** and click on **Continue to [ExternalEndpoint]**.
 
-1. Enter below username and password for SQLMI.
+1. Enter the below username and password for SQLMI.
   
     > **Note** You have to enter the credentials of Azure Arc data controller.
   
@@ -143,11 +143,11 @@ Now let us Monitor the SQL MI status using Grafana and Kibana.
   
 1. Navigate back to the **Azure Data Studio** which you had opened earlier.
 
-1. From SQL managed instance - Azure Arc Dashboard, copy the **Endpoint** for **Grafana dashboard** and browse this endpoint.
+1. From the SQL managed instance - Azure Arc Dashboard, copy the **Endpoint** for **Grafana dashboard** and browse this endpoint.
 
    ![](media/restore-direct-8.png "Confirm")
 
-   > **Note**: In the browser, you may face any error that your connection is not private. Select **Advanced** and click on **Continue to [ExternalEndpoint]**.
+   > **Note**: You may face any error that your connection is not private in the browser. Select **Advanced** and click on **Continue to [ExternalEndpoint]**.
 
 1. Enter below username and password for SQLMI.
   
