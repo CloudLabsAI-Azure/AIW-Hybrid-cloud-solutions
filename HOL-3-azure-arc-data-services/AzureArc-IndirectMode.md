@@ -1,14 +1,14 @@
 # Exercise 2: Connecting Azure Data Controller and Azure Arc enabled SQLMI business critical in Indirect Mode using Azure Data Studio 
 
-In this exercise, let's create an Azure SQL Managed Instance - Azure Arc in Indirect Mode and restore and migrate the database using multiple methods.
+In this exercise, we will create an Azure SQL Managed Instance - Azure Arc in Indirect Mode and restore and migrate the database using multiple methods.
 
 ## Task 1: Connect to the data controller using Azure Data Studio.
 
-Now let us connect to the data controller using Azure Data Studio.
+Let us now connect to the data controller using Azure Data Studio.
 
 In the environment provided, the Azure Arc Data controller is already deployed on to the Kubernetes Cluster. We are using **direct** connectivity mode for the Azure Arc enabled data services environment to Azure.
   
-   > ***Info***: There are multiple modes available to connect to Azure. if the Azure Arc enabled data services are directly connected to Azure, then users can use Azure Resource Manager APIs, the Azure CLI, and the Azure portal to operate the Azure Arc data services. The experience in directly connected mode is much like how you would use any other Azure service with provisioning/de-provisioning, scaling, configuring, and so on all in the Azure portal.
+   > ***Info***: There are multiple modes available to connect to Azure. if the Azure Arc enabled data services are directly connected to Azure, users can use Azure Resource Manager APIs, the Azure CLI, and the Azure portal to operate the Azure Arc data services. The experience in directly connected mode is much like how you would use any other Azure service with provisioning/de-provisioning, scaling, configuring, and so on, all in the Azure portal.
    
    If you want to know more about this, refer to the [Connectivity Modes](https://docs.microsoft.com/en-us/azure/azure-arc/data/connectivity)
 
@@ -19,7 +19,7 @@ In the environment provided, the Azure Arc Data controller is already deployed o
    ```
    ![](./media/cc-switch.png "Connection")
 
-1. Navigate back to **Azure Data studio** and in **Azure Arc Controllers** section, click on **Connect to Existing Azure Arc Controller**.
+1. Navigate back to **Azure Data studio** and in the **Azure Arc Controllers** section, click on **Connect to Existing Azure Arc Controller**.
 
    ![](./media/indirectmode-1.png "Connection")
    
@@ -52,7 +52,7 @@ Now that you are connected to an Azure Arc data controller, let us view the dash
 
 1. In the **Connections** panel, under **AZURE ARC CONTROLLERS**, right-click on the **arcdc-indirect** data controller and select **Manage**.
 
-   > **Note**: You will see that there is no Azure Arc Resources. This is because you have not deployed any resource on the Azure Arc data services environment yet. In the next exercises, you will be deploying the resources.
+   > **Note**: You will see that there is no Azure Arc Resource. This is because you have not deployed any resource on the Azure Arc data services environment yet. You will be deploying the resources in the next exercises.
 
     ![](./media/indirectmode-4.png "")
 
@@ -69,24 +69,24 @@ Now that you are connected to an Azure Arc data controller, let us view the dash
 
    ![](./media/indirectmode-5.png "")
    
-   > **Note**: If you click on the **Open in Azure portal** button from the menu on the top, you will not be able to find the resources because we have not yet uploaded any logs to the Azure portal and without uploading any logs to azure, you will not be able to view the Azure Arc data controller resource in Azure portal.
+   > **Note**: If you click on the **Open in Azure portal** button from the menu on the top, you will not be able to find the resources because we have not yet uploaded any logs to the Azure portal and without uploading any logs to Azure, you will not be able to view the Azure Arc data controller resource in the Azure portal.
 
 ## Task 3: Create Azure Arc enabled SQL Managed Instance
 
-In this task, you will be creating an SQL Managed Instance using Azure Data Studio. Azure SQL Managed Instance is the intelligent, scalable cloud database service that combines the broadest SQL Server database engine compatibility with all the benefits of a fully managed and evergreen platform as a service.
+In this task, you will be creating an SQL Managed Instance using Azure Data Studio. Azure SQL Managed Instance is the intelligent and scalable cloud database service that combines the broadest SQL Server database engine compatibility with all the benefits of a fully managed and evergreen platform as a service.
 
 1. On the JumpVM provided, launch the **Command Prompt** by double-clicking on the cmd shortcut on the desktop.
   
     ![](./images/azuredatastudio.png "azdata")
 
-1. Now the command prompt window will open up. In the command prompt, run the following command to create SQL MI instance.
+1. Once the command prompt window opens up, run the following command to create SQL MI instance.
 
    ```BASH
    az sql mi-arc create --name arcsql-indir --k8s-namespace arcdc --replicas 1 --cores-request "2" --cores-limit "4" --memory-request "4Gi" --memory-limit "8Gi" --storage-class-data "default" --storage-class-datalogs "default" --storage-class-logs "default" --volume-size-data 5Gi --volume-size-datalogs 5Gi --volume-size-logs 5Gi  --tier BusinessCritical --dev --license-type BasePrice --cores-limit 4 --use-k8s
    ```
    ![](./media/indirectmode-6.png "azdata")
    
-   >**Note**: SQL MI instance will take 5 - 10 minutes to create. Please wait until it gets created.
+   >**Note**: The SQL MI instance will take 5-10 minutes to create. Please wait until it gets created.
 
 1. Once the Deployment of SQLMI is complete, navigate back to Azure data studio and in **Azure Arc Data Controller dashboard** under Azure Arc Resources you can see the newly created Azure Arc enabled Azure SQL Managed instance.
 
@@ -96,18 +96,18 @@ In this task, you will be creating an SQL Managed Instance using Azure Data Stud
 
 ## Task 4: Connect to Azure Arc enabled SQL Managed Instance using Azure Data Studio.
 
-In this task, let us learn how to connect to your newly created Azure Arc enabled Azure SQL Managed instance using Azure Data Studio.
+In this task, you will learn how to connect to your newly created Azure Arc enabled Azure SQL Managed instance using Azure Data Studio.
 
-1. If the **Command Prompt** window is already not opened, open a new one by clicking on Command Prompt icon from the desktop shortcut and run the following command to create new service for port 1533.
+1. If the **Command Prompt** window is not already opened, open a new one by clicking on the Command Prompt icon from the desktop shortcut and run the following command to create a new service for port 1533.
 
    ```BASH
    kubectl expose pod arcsql-indir-0 -n arcdc --port=1533 --type=LoadBalancer --name=sqlconnection
    ```
    ![](./media/indirectmode-8.png "azdata")
       
-   >**Note**: This command will create new service which will be used to connect to the SQL MI instance directly.
+   >**Note**: This command will create a new service which will be used to connect to the SQL MI instance directly.
 
-1. Now, you can run the below command to check the service creation. It might take 2 - 5 minutes for external IP to appear. Copy the external IP for later use.
+1. You can now run the below command to check the service creation. It might take 2-5 minutes for the external IP to appear. Copy the external IP for later use.
 
    ```BASH
    kubectl get svc -n arcdc
@@ -123,7 +123,7 @@ In this task, let us learn how to connect to your newly created Azure Arc enable
    <external IP>,1533
    ```
 
-1. In the Azure Data Studio, in connections tab within the servers, click on **Add Connection**.
+1. In Azure Data Studio, in the connections tab within the servers, click on **Add Connection**.
 
    ![](images/sql-instance4.png "Confirm")
 
@@ -151,7 +151,7 @@ In this task, let us learn how to connect to your newly created Azure Arc enable
    
    ![](./media/indirectmode-10.png "azdata")
    
-1. Now you can see that you are successfully connected with your Azure Arc enabled SQL MI Server. Under servers you can see that you are successfully connected with your Azure Arc enabled SQL MI Server. You can explore the SQL Managed Instance - Azure Arc Dashboard to view the databases and run a query.
+1. You are now successfully connected with your Azure Arc enabled SQL MI Server. You can see it under servers. You can explore the SQL Managed Instance - Azure Arc Dashboard to view the databases and run a query.
 
    ![](./media/indirectmode-11.png "azdata")
 
