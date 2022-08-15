@@ -24,6 +24,17 @@ Moreover, by connecting to Azure you will gain unified management. Imagine being
 
 **Last** but not the least, you can get those benefits even if your environment does not have direct connection to Azure either due to network and security policies, or connection constraints, as long as you can set up a media to indirectly connect to Azure for telemetry data exchange and getting the latest container images. However, when you operate under an indirectly connected mode, you will not be able to fully leverage the unified management benefits such as using Azure Monitor, Azure Role Based Access Control(RBAC), and other value-added services from Azure.
 
+## What are Azure Arc-enabled data services?
+
+Azure Arc makes it possible to run Azure data services on-premises, at the edge, and in public clouds using Kubernetes and the infrastructure of your choice.
+
+Currently, the following Azure Arc-enabled data services are available:
+
+    * SQL Managed Instance
+    * PostgreSQL Hyperscale (preview)
+    
+In this Hands-on lab, we will be talking about only Azure Arc-enabled SQLMI
+
 ## Hands-on Labs Scenario
 
 The following labs provide you a quick and easy way to get started with Azure Arc through virtual environments that do not require any complex set-up or installations. 
@@ -35,11 +46,11 @@ Their IT systems run Windows, Linux, Kubernetes, SQL Servers, Oracle and Postgre
 
 ## Lab Context
 
-Contoso wants to migrate and modernize their databases. They have already migrated some of their Oracle databases to PostgreSQL and they have upgraded some of their SQL Servers to the latest version. Additionally, they would like to reduce the management overhead and stay always current with the evergreen versions of SQL and PostgreSQL Hyperscale. They would also like to get the benefits of the data services in Azure such as elastic scale and cloud billing without moving their databases to the cloud.
+Contoso wants to migrate and modernize their databases. They have already migrated some of their Oracle databases to PostgreSQL and they have upgraded some of their SQL Servers to the latest version. Additionally, they would like to reduce the management overhead and stay always current with the evergreen versions of SQL. They would also like to get the benefits of the data services in Azure such as elastic scale and cloud billing without moving their databases to the cloud.
 
 Let’s take the journey together with Contoso and see how easy it is accomplish all the above with Azure Arc-enabled data services. 
 
-In this lab, you will leverage the existing Kubernetes cluster to deploy the Azure Arc data controller, Azure Arc-enabled SQL Managed Instance, and Azure Arc-enabled PostgreSQL Hyperscale. 
+In this lab, you will leverage the existing Kubernetes cluster to deploy the Azure Arc data controller with two different modes(Indirectly connect and Directly connected), Azure Arc-enabled SQL Managed Instance business critical.
 
 
 
