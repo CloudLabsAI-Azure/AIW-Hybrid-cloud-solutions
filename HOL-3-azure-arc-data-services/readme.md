@@ -1,5 +1,5 @@
 ![](images/Arc-logo.png) 
-# HOL-3: Azure Arc Enabled Data Services
+# HOL-3: Azure Arc-enabled Data Services
 
 ## Overview
 
@@ -8,11 +8,11 @@ For customers who want to simplify complex and distributed environments across o
 Azure Arc helps you accelerate innovation across hybrid and multi-cloud environments and provides the following benefits to your organization:
    * **Gain central visibility, operations, and compliance** – Standardize visibility, operations, and compliance across a wide range of resources and locations by extending the Azure control plane. Right from Azure, you can easily organize, govern, and secure Windows, Linux, SQL Servers and Kubernetes clusters across datacenters, edge, and multi-cloud.
    * **Build Cloud native apps anywhere, at scale** – Centrally code and deploy applications confidently to any Kubernetes distribution in any location. Accelerate development by using best in class applications services with standardized deployment, configuration, security, and observability.
-   * **Run Azure data services anywhere** – Flexibly use cloud innovation where you need it by deploying Azure services anywhere. Implement cloud practices and automation to deploy faster, consistently, and at scale with always-up-to-date Azure Arc enabled services.
+   * **Run Azure data services anywhere** – Flexibly use cloud innovation where you need it by deploying Azure services anywhere. Implement cloud practices and automation to deploy faster, consistently, and at scale with always-up-to-date Azure Arc-enabled services.
    
 ![](images/Arc-data-arc.png)
 
-### How Azure Arc Enabled Data Services add value?
+### How Azure Arc-enabled Data Services add value?
 
 Azure Arc enables you to bring Azure data services to any infrastructure across on-premises data centers, edge and 3rd party clouds, using Kubernetes on hardware of your choice. For customers who need to maintain data estate onpremises, you will gain unique benefits for those on-premises data workloads.
 
@@ -37,9 +37,9 @@ Their IT systems run Windows, Linux, Kubernetes, SQL Servers, Oracle and Postgre
 
 Contoso wants to migrate and modernize their databases. They have already migrated some of their Oracle databases to PostgreSQL and they have upgraded some of their SQL Servers to the latest version. Additionally, they would like to reduce the management overhead and stay always current with the evergreen versions of SQL and PostgreSQL Hyperscale. They would also like to get the benefits of the data services in Azure such as elastic scale and cloud billing without moving their databases to the cloud.
 
-Let’s take the journey together with Contoso and see how easy it is accomplish all the above with Azure Arc enabled data services. 
+Let’s take the journey together with Contoso and see how easy it is accomplish all the above with Azure Arc-enabled data services. 
 
-In this lab, you will leverage the existing Kubernetes cluster to deploy the Azure Arc data controller, Azure Arc enabled SQL Managed Instance, and Azure Arc enabled PostgreSQL Hyperscale. 
+In this lab, you will leverage the existing Kubernetes cluster to deploy the Azure Arc data controller, Azure Arc-enabled SQL Managed Instance, and Azure Arc-enabled PostgreSQL Hyperscale. 
 
 
 
