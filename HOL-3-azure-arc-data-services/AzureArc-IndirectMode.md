@@ -1,12 +1,12 @@
-# Exercise 2: Connecting Azure Data Controller and Azure Arc-enabled SQLMI business critical in Indirect Mode using Azure Data Studio 
+# Exercise 2: Connecting to Azure Arc Data Controller and deploying Azure Arc-enabled SQLMI business critical in Indirect connectivity mode
 
-In this exercise, we will create an Azure SQL Managed Instance - Azure Arc in Indirect Mode and restore and migrate the database using multiple methods.
+In this exercise, You will be connecting to the already deployed Azure Arc Data Controller with indirect connectivity mode using Azure Data Studio.  we will create an Azure Arc-enabled SQL Managed Instance in Indirect Mode and restore and migrate the database from a SQL Server.
 
-## Task 1: Connect to the data controller using Azure Data Studio.
+## Task 1: Connect to the Azure Arc data controller using Azure Data Studio.
 
-Let us now connect to the data controller using Azure Data Studio.
+Let us now connect to the Azure Arc data controller using Azure Data Studio.
 
-In the environment provided, the Azure Arc Data controller is already deployed on to the Kubernetes Cluster. We are using **direct** connectivity mode for the Azure Arc-enabled data services environment to Azure.
+In the environment provided, the Azure Arc Data controller is already deployed on to the Kubernetes Cluster. We are using **Indirect** connectivity mode for the Azure Arc-enabled data services environment to Azure.
   
    > ***Info***: There are multiple modes available to connect to Azure. if the Azure Arc-enabled data services are directly connected to Azure, users can use Azure Resource Manager APIs, the Azure CLI, and the Azure portal to operate the Azure Arc data services. The experience in directly connected mode is much like how you would use any other Azure service with provisioning/de-provisioning, scaling, configuring, and so on, all in the Azure portal.
    
