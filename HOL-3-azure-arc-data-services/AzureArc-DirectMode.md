@@ -297,12 +297,13 @@ In this exercise, let's create an **Azure Arc-enabled SQL Managed Instance** usi
 1. Now on **Compute+ Storage** blade enter the following details:
     
      - Service Tier: **Business Critical** **(1)**
-     - High availability: Select **1 replica** **(2)**
+     - For Development use only: **Check the box** **(2)**
+     - High availability: Select **1 replica** **(3)**
      - Instance Compute
        - Memory Limit (in Gi): Enter ```4``` **(3)**
        - CPU vCores Limit: Enter ```2``` **(4)**
      
-     ![](./media/sqlmidirect-new.png "Lab Environment")
+     ![](./media/checkboxnew.png "Lab Environment")
      
      - Instance Storage
        - Data storage class: leave default
@@ -367,7 +368,7 @@ Now let us connect to the data controller using Azure Data Studio.
      arcdc-direct
      ```
 
-   ![](./media/ads-direct-new.png "Azure Data Studio")
+   ![](./media/cncttonewdc.png "Azure Data Studio")
 
 3. Once the connection is successful, you can see the Azure Arc data controller listed under Azure Arc Controllers on the bottom left of the Azure Data Studio.
 
