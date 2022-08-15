@@ -260,11 +260,9 @@ In this task you will be connecting an existing Kubernetes cluster to Azure usin
 
    ![](./media/overview-dc-direct.png "Lab Environment")
 
-## Task 4: Deploy Azure Arc-enabled SQL Managed Instance with Direct Connected Mode.
+## Task 4: Deploy Azure Arc-enabled SQL Managed Instance using Azure Portal.
 
 In this exercise, let's create an **Azure Arc-enabled SQL Managed Instance** using Azure Portal on a directly connected Azure Arc data controller in a custom location. 
-
-Also, we will be exploring the Kibana and Grafana Dashboards and upload the logs and metrics to the Azure portal and view the logs.
 
 1. Open your browser and login to the Azure portal if not already logged in.
 
