@@ -1,4 +1,4 @@
-# Exercise 1: Deploying Azure Arc Data Controller and Azure Arc enabled SQLMI business critical in Direct Mode
+# Exercise 1: Deploying Azure Arc Data Controller and Azure Arc-enabled SQLMI business critical in Direct Mode
   Duration: 45 Minutes
   
 In this exercise you will connect an existing Kubernetes cluster to Azure using Azure Arc-enabled Kubernetes. You will also deploy an Azure data controller in direct connectivity mode to a customer location using Azure portal and Azure CLI. 
@@ -340,7 +340,7 @@ Also, we will be exploring the Kibana and Grafana Dashboards and upload the logs
 
    ![](./media/complete-sqlmi-direct.png "Lab Environment")
 
-1. Now we have successfully deployed the Azure Arc - enabled SQLMI on top of the Directly connected mode Azure Arc data controller, you can explore more on metric and logs on the same page from the left side menu. Please note that Azure Arc - enabled SQLMI deployment can take 5-to-10 minutes to change it to ready.
+1. Now we have successfully deployed the Azure Arc-enabled SQLMI on top of the Directly connected mode Azure Arc data controller, you can explore more on metric and logs on the same page from the left side menu. Please note that Azure Arc-enabled SQLMI deployment can take 5-to-10 minutes to change it to ready.
 
    ![](./media/overview-sqlmi-direct.png "Lab Environment")
 
@@ -392,11 +392,11 @@ Now let us connect to the data controller using Azure Data Studio.
 
    ![](./media/ads-direct-overview.png "Azure Data Studio")
 
-## Task 6: Connect to Azure Arc enabled SQL Managed Instance using Azure Data Studio.
+## Task 6: Connect to Azure Arc-enabled SQL Managed Instance using Azure Data Studio.
 
-In this task, let us learn how to connect to Azure Arc enabled SQL Managed instance using Azure Data Studio.
+In this task, let us learn how to connect to Azure Arc-enabled SQL Managed instance using Azure Data Studio.
 
-1. You can see the Azure Arc enabled SQL Managed Instance named **arcsql-direct** listed under Azure Arc Data Controller named **arcdc-direct** at the bottom left of the Azure Data Studio. Right-click on the **arcsql-direct** and select **Manage**.
+1. You can see the Azure Arc-enabled SQL Managed Instance named **arcsql-direct** listed under Azure Arc Data Controller named **arcdc-direct** at the bottom left of the Azure Data Studio. Right-click on the **arcsql-direct** and select **Manage**.
 
    ![](./media/ads-sqlmi-manage.png "")
 
@@ -442,8 +442,8 @@ In this task, let us learn how to connect to Azure Arc enabled SQL Managed insta
    
    ![](./media/ads-8.png "ADS")
    
-1. Now you can see that you are successfully connected with your Azure Arc enabled SQL MI Server. You can see that under Servers. You can explore the SQL Managed Instance - Azure Arc Dashboard to view the databases and run a query.
+1. Now you can see that you are successfully connected with your Azure Arc-enabled SQL MI Server. You can see that under Servers. You can explore the SQL Managed Instance - Azure Arc Dashboard to view the databases and run a query.
 
    ![](./media/ads-9.png "ADS")
 
-In this exercise, we connected our cluster to Azure Arc-enabled cluster and deployed custom location and data controller with direct connected mode with the help of Azure portal and Azure CLI and created an Azure Arc-enabled SQLMI server on directly connected mode of Azure Arc data controller. Also, we have connected the Azure Arc Data Controller and Azure Arc enabled SQLMI business critical using Azure Data Studio.
+In this exercise, we connected our cluster to Azure Arc-enabled cluster and deployed custom location and data controller with direct connected mode with the help of Azure portal and Azure CLI and created an Azure Arc-enabled SQLMI server on directly connected mode of Azure Arc data controller. Also, we have connected the Azure Arc Data Controller and Azure Arc-enabled SQLMI business critical using Azure Data Studio.
