@@ -1,6 +1,6 @@
 # Exercise 2: Connecting to Azure Arc Data Controller and deploying Azure Arc-enabled SQLMI business critical in Indirect connectivity mode
 
-In this exercise, You will be connecting to the already deployed Azure Arc Data Controller with indirect connectivity mode using Azure Data Studio.  we will create an Azure Arc-enabled SQL Managed Instance in Indirect Mode and restore and migrate the database from a SQL Server.
+In this exercise, You will be connecting to the already deployed Azure Arc Data Controller with indirect connectivity mode using Azure Data Studio.  we will create an Azure Arc-enabled SQL Managed Instance.
 
 ## Task 1: Connect to the Azure Arc data controller using Azure Data Studio.
 
