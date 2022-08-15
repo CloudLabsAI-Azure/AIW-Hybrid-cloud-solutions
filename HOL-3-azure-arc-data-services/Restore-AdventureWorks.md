@@ -6,7 +6,7 @@ Also, we will be exploring the Kibana and Grafana Dashboards and upload the logs
 
 ## Task 1: Restore the AdventureWorks sample database into Azure SQL Managed instance - Azure Arc Using Kubectl
 
-Migrating an existing SQL database from a SQL Server to Azure Arc Arc-enabled SQL MI is very simple. All you have to do is to take a backup from your existing SQL Server and then restore that backup to SQL MI.
+Restoring an existing SQL database from a SQL Server to Azure Arc Arc-enabled SQL MI is very simple. All you have to do is to take a backup from your existing SQL Server and then restore that backup to SQL MI. In this lab, we have already taken the backup and downloaded it in the local drive. 
 
 Now let's restore the sample backup file i.e. AdventureWorks backup (.bak) into your Azure SQL Managed instance container using Kubectl commands.
 
