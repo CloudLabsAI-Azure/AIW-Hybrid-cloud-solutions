@@ -21,32 +21,100 @@ In the environment provided, the Azure Arc Data controller is already deployed o
    ```
    ![](./media/cc-switch.png "Connection")
 
-1. Navigate back to **Azure Data studio** and in the **Azure Arc Controllers** section, click on **Connect to Existing Azure Arc Controller**.
+1. Open **Azure Data Studio** from the desktop if not already opened. 
+   > **Note**: Azure Data Studio is a free cross-platform database tool for data professionals using on-premises and cloud data platforms on Windows, macOS, and Linux
 
-   ![](./media/indirectmode-1.png "Connection")
+1. Now, right click on the Azure Arc data controller connection, click on Manage, and then click on the **+ New Instance** button within the Azure Arc Data controller dashboard. 
+
+   ![](images/sqlmi-v2.png "Confirm")
+  
+1. Now, select the **Azure SQL Managed Instance** and click on **Select** at the bottom of the page.
+
+   ![](images/sqlmii1.png "Confirm")
    
-1. In the **Connect to Existing Controller** page, provide the following details and click on **Connect**.
+1. In the next page that opens up, select the **Checkbox** to accept the Microsoft Privacy statement and then click on **Next button** to proceed with the deployment. You can click on the privacy statement link to view the terms and conditions if you want to read through it.
 
-   - **Namespace**:
+   > **Note**: You will also see a **Required tools** table under the terms and conditions line. These tools are required to deploy the Azure Arc enabled Azure SQL Managed Instance. You don't have to worry about installation of any of those tools because we have already installed these required tools for you.
+
+   ![](images/sqlmi3.png "Confirm")
+
+1. In the deploy **Azure SQL Managed Instance - Azure Arc blade**, enter the following information:
+
+   **Under SQL Connection information**
+   
+   - **Instance name**: Enter arcsql
      ```BASH
-     arcdc
+     arcsql
      ```
    
-   - **Cluster Context**:
+   - **Username**:  Enter arcsqluser
      ```BASH
-     Arc-Data-Demo
-     ```
-
-   - **Name** :
-     ```BASH
-     arcdc-indirect
+     arcsqluser
      ```
    
-     ![](./media/newindccnct.png "Connection")
+   - **Password**: Enter Password.1!!
+     ```BASH
+     Password.1!!
+     ```
+     
+   ![](images/hol3ex3stp61.png "Confirm")
+   
+   **SQL Instance settings**
+   
+   
+    - **Replicas**: Select 2
+     ```BASH
+     2
+     ```
+  
+   - **Core Request**: Enter 1
+     ```BASH
+     1
+     ```
+   
+   - **Core Limit**: Enter 2
+     ```BASH
+     2
+     ```
+   
+   - **Memory Request**: Enter 2
+     ```BASH
+     2
+     ```
+   
+   - **Memory Limit**: Enter 2
+     ```BASH
+     2
+     ```
+     ![](images/hol3ex3stp6.png "Confirm")
+   
+   - **Service Tier**: Select **General purpose**
+   - **For development use only**: Select check box
+   - **I already have a SQL Server License**: Select check box
 
-1. Once the connection is successful, you can see the **arcdc-indirect** Azure Arc data controller listed under Azure Arc Controllers on the bottom left of the Azure Data Studio.
+     ![](images/gentier.png "Confirm") 
 
-    ![](./media/indirectmode-3.png "")
+1. Click on the **Deploy** button to start the deployment of the  **Azure SQL Managed instance - Azure Arc** on the data controller.
+   
+1. If prompted, select **New Python installation** and click on **Next** button.
+
+   > **Note:** If you are not prompted with the below screen you can skip to step 9.
+
+   ![](images/configure-python-runtime.png)
+  
+1. On Install Dependencies tab, click on **Install**.
+
+   ![](images/install-dependencies.png)
+     
+1. After clicking on Install, a Notebook will open up and the cell execution will start automatically to deploy the **SQL Managed Instance**. Once the deployment is complete, you will see the text **arcsql is Ready** at the bottom of the notebook as shown in the screenshot. The deployment of **Azure SQL Managed instance - Azure Arc** will take around 5-10 minutes to complete, in this time you can explore through the commands in the notebook
+
+   ![](images/abckhgy.png)
+
+1. Once the installation is complete, in **Azure Arc Data Controller dashboard** under Azure Arc Resources you can see the newly created Azure Arc-enabled Azure SQL Managed instance.
+
+   ![](images/sqlsql.png "Confirm")
+
+   > **Note**: You might have to right-click and refresh on Arc data controller to view the instance if you don't see one after seeing the text **arcsql is Ready** at the bottom of the notebook.
 
 ## Task 2: Monitor with Data Controller Dashboard
 
