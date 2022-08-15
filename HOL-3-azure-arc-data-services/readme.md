@@ -48,9 +48,9 @@ In this Hands-on lab, we will be talking about only Azure Arc-enabled SQLMI and 
       * From an existing database
       * To a new database on the same Azure Arc-enabled SQL managed instance
       
-   [Read More about the Azure Arc-enabled SQL MI - Point in time restore here](https://docs.microsoft.com/en-us/azure/azure-arc/data/configure-transparent-data-encryption-manually?tabs=windows](https://docs.microsoft.com/en-us/azure/azure-arc/data/point-in-time-restore)
+     [Read More about the Azure Arc-enabled SQL MI - Point in time restore here](https://docs.microsoft.com/en-us/azure/azure-arc/data/configure-transparent-data-encryption-manually?tabs=windows](https://docs.microsoft.com/en-us/azure/azure-arc/data/point-in-time-restore)
       
-   * **Disaster recovery**:- Configure disaster recovery by setting up another Azure Arc-enabled SQL Managed Instance in a geographically separate data center to synchronize data from the primary data center. This scenario is useful for recovering from events when an entire data center is down due to disruptions such as power outages or other events. [Read More about the Azure Arc-enabled SQL MI - Disaster recovery](https://docs.microsoft.com/en-us/azure/azure-arc/data/configure-transparent-data-encryption-manually?tabs=windows](https://docs.microsoft.com/en-us/azure/azure-arc/data/point-in-time-restore)
+ * **Disaster recovery**:- Configure disaster recovery by setting up another Azure Arc-enabled SQL Managed Instance in a geographically separate data center to synchronize data from the primary data center. This scenario is useful for recovering from events when an entire data center is down due to disruptions such as power outages or other events. [Read More about the Azure Arc-enabled SQL MI - Disaster recovery](https://docs.microsoft.com/en-us/azure/azure-arc/data/configure-transparent-data-encryption-manually?tabs=windows](https://docs.microsoft.com/en-us/azure/azure-arc/data/point-in-time-restore)
         
 
 ## Hands-on Labs Scenario
