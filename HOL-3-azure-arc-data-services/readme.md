@@ -30,8 +30,8 @@ Azure Arc makes it possible to run Azure data services on-premises, at the edge,
 
   Currently, the following Azure Arc-enabled data services are available:
 
-    * SQL Managed Instance
-    * PostgreSQL Hyperscale (preview)
+   * SQL Managed Instance
+   * PostgreSQL Hyperscale (preview)
     
 ### In this Hands-on lab, we will be talking about only **Azure Arc-enabled SQLMI** and below are the few services and features of Azure Arc-enabled SQLMI.
 
