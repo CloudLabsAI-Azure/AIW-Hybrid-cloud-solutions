@@ -4,20 +4,13 @@ Contoso has some applications that use SQL Server as the backend database. They 
 
 Also, we will be exploring the Kibana and Grafana Dashboards and upload the logs and metrics to the Azure portal and view the logs.
 
-## Task 1: Restore the AdventureWorks sample database into Azure SQL Managed instance - Azure Arc Using Kubectl
+## Task 1: Restore the AdventureWorks2012 database into Azure SQL Managed instance - Azure Arc Using Kubectl
 
-Restoring an existing SQL database from a SQL Server to Azure Arc Arc-enabled SQL MI is very simple. All you have to do is to take a backup from your existing SQL Server and then restore that backup to SQL MI. In this lab, we have already taken the backup and downloaded it in the local drive. 
+Restoring an existing SQL database from a SQL Server to Azure Arc Arc-enabled SQL MI is very simple. All you have to do is to take a backup from your existing SQL Server and then restore that backup to SQL MI. In this lab, we have already taken the backup and downloaded it in the local drive folder. 
 
-Now let's restore the sample backup file i.e. AdventureWorks backup (.bak) into your Azure SQL Managed instance container using Kubectl commands.
+Now let's copy and restore the already taken backup file into your Azure SQL Managed instance container using Kubectl commands.
 
 1. Launch a **Command Prompt** window from the desktop of your JumpVM if you have already closed the existing one.
-
-1. In the Command Prompt, run the below command to switch the cluster context from **Indirect to Direct mode**.
-
-   ```BASH
-   kubectl config use-context Arc-Data-Demo-DirectMode
-   ```
-   ![](./media/cc-switch2.png "Connection")
 
 1. Run the following command to get the list of pods that are running on your data controller. 
 
@@ -33,37 +26,40 @@ Now let's restore the sample backup file i.e. AdventureWorks backup (.bak) into 
 
    ![](media/restore-direct-1.png "Confirm")
    
-1. In the Command Prompt, run the following command after replacing the required values. This will remotely execute a command in the Azure SQL Managed instance container to download the .bak file onto the container.
+1. In the Command Prompt, run the following command after replacing the required values. This will remotely execute a command in the Azure SQL Managed instance container to copy the .bak file onto the container from the local directory.
 
-   >**Note**: The value of the namespace name and pod name is already updated in the below command. Please confirm if the pod name that you had copied matches the one given below: arcsql-0. 
-
-   ```BASH
-   kubectl exec arcsql-direct-0 -n azure-arc -c arc-sqlmi -- wget https://github.com/Microsoft/sql-server-samples/releases/download/adventureworks/AdventureWorks2019.bak -O /var/opt/mssql/data/AdventureWorks2019.bak
-   ```
-
-   > ```Info:``` arc-sqlmi in the above command is the name of the container within the SQL Managed Instance Pod arcsql-direct-0   
-
-   ![](media/restore-direct-2.png "Confirm")
-
-1. Now, to restore the AdventureWorks database, you can run the following command.
-
-   > **Note**: All values including the pod and the namespace name have already been added. You can go through the command and figure out what all are being passed as arguments.
+   >**Note**: The value of the namespace name and pod name is already updated in the below command. Please confirm if the pod name that you had copied matches the one given below: arcsql-direct-0. 
 
    ```BASH
-   kubectl exec arcsql-direct-0 -n azure-arc -c arc-sqlmi -- /opt/mssql-tools/bin/sqlcmd -S localhost -U arcsqluser -P Password.1!! -Q "RESTORE DATABASE AdventureWorks2019 FROM  DISK = N'/var/opt/mssql/data/AdventureWorks2019.bak' WITH MOVE 'AdventureWorks2017' TO '/var/opt/mssql/data/AdventureWorks2019.mdf', MOVE 'AdventureWorks2017_Log' TO '/var/opt/mssql/data/AdventureWorks2019_Log.ldf'"
+   cd C:\
+   kubectl cp \AdventureWorks2012.bak arcsql-direct-0:var/opt/mssql/data/AdventureWorks2012.bak -n azure-arc
+   ```
+   ![](media/newcp.png "Confirm")
+
+1. Now, to restore the AdventureWorks database, Switch back to the Azure Data Studio and right click on the Connection of your connected SQL Managed Instance Server and click on **New query**.
+
+   ![](media/newq.png "Confirm")
+
+1. Once the query window is open, paste the below query and execure it to resotore the copied database to Azure Arc-enable SQL Managed instance 
+
+   ```BASH
+   RESTORE DATABASE AdventureWorks2012 FROM DISK = '/var/opt/mssql/data/AdventureWorks2012.bak'
+   WITH MOVE 'AdventureWorks2012' to '/var/opt/mssql/data/AdventureWorks2012.mdf'  
+   ,MOVE 'AdventureWorks2012_log' to '/var/opt/mssql/data/AdventureWorks2012_log.ldf'  
+   ,RECOVERY;  
+   GO
+  
    ```
 
-   ![](media/restore-direct-3.png "Confirm")
-
-1. You can now switch back to Azure Data Studio.
+   ![](media/restoreddd.png "Confirm")
 
 1. Then, right-click on the **arcsql-direct** SQL Managed Instance Server under CONNECTIONS tab on the top left of the Azure Data Studio and click on **Refresh**.
 
    ![](media/restore-direct-4.png "Confirm")
 
-1. Now expand your SQL Managed Instance server if not already by clicking on the arrow icon on the left of the IP Address, then expand Databases and verify that the **AdventureWorks2019** database is listed there.
+1. Now expand your SQL Managed Instance server if not already by clicking on the arrow icon on the left of the IP Address, then expand Databases and verify that the **AdventureWorks2012** database is listed there.
 
-   ![](media/restore-direct-5.png "Confirm")
+   ![](media/2012.png "Confirm")
 
 ## Task 2: View Azure Arc Arc-enabled SQL managed instance logs in Azure Portal
 
@@ -174,6 +170,6 @@ Now let us Monitor the SQL MI status using Grafana and Kibana.
 
 ## After this exercise, you have performed the following
 
-   - Restored the AdventureWorks sample database into Azure SQL Managed instance - Azure Arc.
+   - Restored the AdventureWorks database into Azure SQL Managed instance - Azure Arc.
    - View Azure Arc Arc-enabled SQL managed instance logs in Azure portal.
    - Monitored with kibana and grafana.
