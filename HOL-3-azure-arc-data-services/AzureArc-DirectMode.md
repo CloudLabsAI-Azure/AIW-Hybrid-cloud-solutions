@@ -1,7 +1,7 @@
-# Exercise 1: Deploying Azure Arc Data Controller and Azure Arc-enabled SQLMI business critical in direct connectivity mode
+# Exercise 1: Deploying Azure Arc Data Controller with direct connectivity mode and Azure Arc-enabled SQLMI business critical 
   Duration: 45 Minutes
   
-In this exercise you will be connecting to an existing Kubernetes cluster to Azure using Azure Arc-enabled Kubernetes. You will also deploy an Azure data controller in direct connectivity mode to a customer location using Azure portal and Azure CLI. 
+In this exercise you will be connecting to an existing Kubernetes cluster to Azure using Azure Arc-enabled Kubernetes. You will also deploy an Azure data controller in direct connectivity mode to a custom location using Azure portal and Azure CLI, and later you will be creating the Azure Arc-enabled SQLMI business critical
  
  
 # Connect an existing Kubernetes cluster to Azure using Azure Arc-enabled Kubernetes
