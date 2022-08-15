@@ -14,13 +14,13 @@ Azure Arc helps you accelerate innovation across hybrid and multi-cloud environm
 
 ### How Azure Arc-enabled Data Services add value?
 
-Azure Arc enables you to bring Azure data services to any infrastructure across on-premises data centers, edge and 3rd party clouds, using Kubernetes on hardware of your choice. For customers who need to maintain data estate onpremises, you will gain unique benefits for those on-premises data workloads.
+Azure Arc enables you to bring Azure data services to any infrastructure across on-premises data centers, edge, and 3rd party clouds, using Kubernetes on hardware of your choice. For customers who need to maintain data estate on-premises, you will gain unique benefits for those on-premises data workloads.
 
 **First**, you will always be current, meaning updates and upgrades are fully automated, and the deployment is controlled by your policy. You will gain unique and cloud proven innovation ahead of any other hybrid cloud offering like the evergreen SQL with no end-of-support through Azure SQL Database, and the hyperscale deployment option of Azure Database for PostgreSQL.
 
 **Second**, we will bring cloud elasticity on-premises so you can optimize performance of data workloads with the ability to dynamically scale up/down and scale out, without application downtime.
 
-Moreover, by connecting to Azure you will gain unified management. Imagine being able to see your data services running on-premises along side those running in Azure through a single pane of glass, using familiar tools like Azure Portal, Azure Data Studio and Azure CLI.
+Moreover, by connecting to Azure you will gain unified management. Imagine being able to see your data services running on-premises alongside those running in Azure through a single pane of glass, using familiar tools like Azure Portal, Azure Data Studio and Azure CLI.
 
 **Last** but not the least, you can get those benefits even if your environment does not have direct connection to Azure either due to network and security policies, or connection constraints, as long as you can set up a media to indirectly connect to Azure for telemetry data exchange and getting the latest container images. However, when you operate under an indirectly connected mode, you will not be able to fully leverage the unified management benefits such as using Azure Monitor, Azure Role Based Access Control(RBAC), and other value-added services from Azure.
 
@@ -39,7 +39,7 @@ In this Hands-on lab, we will be talking about only Azure Arc-enabled SQLMI and 
     
     * **Transparent data encryption**:- TDE does real-time I/O encryption and decryption of data and log files. The encryption uses a database encryption key (DEK). The database boot record stores the key for availability during recovery. The DEK is a symmetric key. It's secured by a certificate that the server's master database stores or by an asymmetric key that an EKM module protects.
     
-TDE protects data at rest, which is the data and log files. It lets you follow many laws, regulations, and guidelines established in various industries. This ability lets software developers encrypt data by using AES and 3DES encryption algorithms without changing existing applications.[Read More about the Azure Arc-enabled SQL MI Transparent data encryption](https://docs.microsoft.com/en-us/azure/azure-arc/data/configure-transparent-data-encryption-manually?tabs=windows)
+TDE protects data at rest, which is the data and log files. It lets you follow many laws, regulations, and guidelines established in various industries. This ability lets software developers encrypt data by using AES and 3DES encryption algorithms without changing existing applications. [Read More about the Azure Arc-enabled SQL MI Transparent data encryption](https://docs.microsoft.com/en-us/azure/azure-arc/data/configure-transparent-data-encryption-manually?tabs=windows)
 
     * **Point in time restore **:- Use the point-in-time restore (PITR) to create a database as a copy of another database from some time in the past that is within the retention period. This article describes how to do a point-in-time restore of a database in Azure Arc-enabled SQL managed instance.
 
@@ -47,7 +47,7 @@ TDE protects data at rest, which is the data and log files. It lets you follow m
 
       * From an existing database
       * To a new database on the same Azure Arc-enabled SQL managed instance
-      [Read More about the Azure Arc-enabled SQL MI - Point in time resotre here](https://docs.microsoft.com/en-us/azure/azure-arc/data/configure-transparent-data-encryption-manually?tabs=windows](https://docs.microsoft.com/en-us/azure/azure-arc/data/point-in-time-restore)
+      [Read More about the Azure Arc-enabled SQL MI - Point in time restore here](https://docs.microsoft.com/en-us/azure/azure-arc/data/configure-transparent-data-encryption-manually?tabs=windows](https://docs.microsoft.com/en-us/azure/azure-arc/data/point-in-time-restore)
       
     * **Disaster recovery**:- Configure disaster recovery by setting up another Azure Arc-enabled SQL Managed Instance in a geographically separate data center to synchronize data from the primary data center. This scenario is useful for recovering from events when an entire data center is down due to disruptions such as power outages or other events. [Read More about the Azure Arc-enabled SQL MI - Disaster recovery](https://docs.microsoft.com/en-us/azure/azure-arc/data/configure-transparent-data-encryption-manually?tabs=windows](https://docs.microsoft.com/en-us/azure/azure-arc/data/point-in-time-restore)
         
@@ -56,18 +56,18 @@ TDE protects data at rest, which is the data and log files. It lets you follow m
 
 The following labs provide you a quick and easy way to get started with Azure Arc through virtual environments that do not require any complex set-up or installations. 
 
-For the purposes of these exercises, let’s consider Contoso is a large manufacturing company. 
+For the purposes of these exercises, let us consider Contoso is a large manufacturing company. 
 
-Their IT systems run Windows, Linux, Kubernetes, SQL Servers, Oracle and PostgreSQL across multiple locations, including on-premises data centers, manufacturing plans, distribution centers, and multiple public clouds. This poses operational challenges for Contoso. They’d like a consistent way to govern and operate across these disparate environments, ensure security across the entire organization, and enable innovation and developer agility (especially with their investments in cloud-native practices), all while meeting regulatory and compliance requirements and being able to leverage the latest innovations of database technologies.
+Their IT systems run Windows, Linux, Kubernetes, SQL Servers, Oracle and PostgreSQL across multiple locations, including on-premises data centers, manufacturing plans, distribution centers, and multiple public clouds. This poses operational challenges for Contoso. They would like a consistent way to govern and operate across these disparate environments, ensure security across the entire organization, and enable innovation and developer agility (especially with their investments in cloud-native practices), all while meeting regulatory and compliance requirements and being able to leverage the latest innovations of database technologies.
 
 
 ## Lab Context
 
 Contoso wants to migrate and modernize their databases. They have already migrated some of their Oracle databases to PostgreSQL and they have upgraded some of their SQL Servers to the latest version. Additionally, they would like to reduce the management overhead and stay always current with the evergreen versions of SQL. They would also like to get the benefits of the data services in Azure such as elastic scale and cloud billing without moving their databases to the cloud.
 
-Let’s take the journey together with Contoso and see how easy it is accomplish all the above with Azure Arc-enabled data services. 
+Let’s take the journey together with Contoso and see how easy it is accomplishing all the above with Azure Arc-enabled data services. 
 
-In this lab, you will leverage the existing Kubernetes cluster to deploy the Azure Arc data controller with two different modes(Indirectly connect and Directly connected), Azure Arc-enabled SQL Managed Instance business critical.
+In this lab, you will leverage the existing Kubernetes cluster to deploy the Azure Arc data controller with two different modes (Indirectly connect and Directly connected), Azure Arc-enabled SQL Managed Instance business critical.
 
 
 
