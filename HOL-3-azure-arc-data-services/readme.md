@@ -43,12 +43,12 @@ Azure Arc makes it possible to run Azure data services on-premises, at the edge,
 
    * **Point in time restore**:- Use the point-in-time restore (PITR) to create a database as a copy of another database from some time in the past that is within the retention period. This article describes how to do a point-in-time restore of a database in Azure Arc-enabled SQL managed instance.
 
-   - Point-in-time restore can restore a database:
+      - Point-in-time restore can restore a database:
 
-      * From an existing database
-      * To a new database on the same Azure Arc-enabled SQL managed instance
+        * From an existing database
+        * To a new database on the same Azure Arc-enabled SQL managed instance
       
-     [Read More about the Azure Arc-enabled SQL MI - Point in time restore here](https://docs.microsoft.com/en-us/azure/azure-arc/data/configure-transparent-data-encryption-manually?tabs=windows](https://docs.microsoft.com/en-us/azure/azure-arc/data/point-in-time-restore)
+      [Read More about the Azure Arc-enabled SQL MI - Point in time restore here](https://docs.microsoft.com/en-us/azure/azure-arc/data/configure-transparent-data-encryption-manually?tabs=windows](https://docs.microsoft.com/en-us/azure/azure-arc/data/point-in-time-restore)
       
  * **Disaster recovery**:- Configure disaster recovery by setting up another Azure Arc-enabled SQL Managed Instance in a geographically separate data center to synchronize data from the primary data center. This scenario is useful for recovering from events when an entire data center is down due to disruptions such as power outages or other events. [Read More about the Azure Arc-enabled SQL MI - Disaster recovery](https://docs.microsoft.com/en-us/azure/azure-arc/data/configure-transparent-data-encryption-manually?tabs=windows](https://docs.microsoft.com/en-us/azure/azure-arc/data/point-in-time-restore)
         
