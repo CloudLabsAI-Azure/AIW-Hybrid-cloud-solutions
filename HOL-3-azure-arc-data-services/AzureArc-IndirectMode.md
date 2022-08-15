@@ -1,6 +1,6 @@
 # Exercise 3: Connecting to Azure Arc Data Controller and deploying Azure Arc-enabled SQLMI business critical in Indirect connectivity mode
 
-In this exercise, You will be connecting to the pre-deployed Azure Arc Data Controller with indirect connectivity mode using Azure Data Studio.  we will also create an Azure Arc-enabled SQL Managed Instance.
+In this exercise, You will be connecting to the pre-deployed Azure Arc Data Controller with indirect connectivity mode using Azure Data Studio.  we will also create an Azure Arc-enabled SQL Managed Instance business critical on top of a Azure Arc Data Controller with indirect connectivity mode .
 
 ## Task 1: Connect to the Azure Arc data controller using Azure Data Studio.
 
@@ -15,7 +15,9 @@ In the environment provided, the Azure Arc Data controller is already deployed o
 1. Open **Windows PowerShell** from the Desktop and run the below command to switch the cluster context from **Direct to Indirect mode**.
 
    ```BASH
-   kubectl config use-context Arc-Data-Demo
+   Remove-Item C:\Users\arcadmin\.kube\config
+   Import-AzAksCredential -ResourceGroupName $env:resourceGroup -Name $env:clusterName -Force
+
    ```
    ![](./media/cc-switch.png "Connection")
 
@@ -40,7 +42,7 @@ In the environment provided, the Azure Arc Data controller is already deployed o
      arcdc-indirect
      ```
    
-     ![](./media/indirectmode-2.png "Connection")
+     ![](./media/newindccnct.png "Connection")
 
 1. Once the connection is successful, you can see the **arcdc-indirect** Azure Arc data controller listed under Azure Arc Controllers on the bottom left of the Azure Data Studio.
 
