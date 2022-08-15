@@ -1,12 +1,12 @@
 # Exercise 3: Restoring an AdventureWorks database backup taken from SQL Server 2012 instance
 
-Contoso has some applications that use SQL Server as the backend database. They have installed SQL Server on their Windows servers in their manufacturing plants, but these locations don’t necessarily have local IT support to update the operating system and SQL Server with the latest security updates. They have explored Azure Database for SQL Server and found that it meets their requirements and offers some unique capabilities such as easy to manage and migrate from different cloud platforms. Therefore, they are excited about the opportunity of deploying SQL Server in their Azure Arc enabled environment.
+Contoso has some applications that use SQL Server as the backend database. They have installed SQL Server on their Windows servers in their manufacturing plants, but these locations don’t necessarily have local IT support to update the operating system and SQL Server with the latest security updates. They have explored Azure Database for SQL Server and found that it meets their requirements and offers some unique capabilities such as easy to manage and migrate from different cloud platforms. Therefore, they are excited about the opportunity of deploying SQL Server in their Azure Arc Arc-enabled environment.
 
 Also, we will be exploring the Kibana and Grafana Dashboards and upload the logs and metrics to the Azure portal and view the logs.
 
 ## Task 1: Restore the AdventureWorks sample database into Azure SQL Managed instance - Azure Arc Using Kubectl
 
-Migrating an existing SQL database from a SQL Server to Azure Arc enabled SQL MI is very simple. All you have to do is to take a backup from your existing SQL Server and then restore that backup to SQL MI.
+Migrating an existing SQL database from a SQL Server to Azure Arc Arc-enabled SQL MI is very simple. All you have to do is to take a backup from your existing SQL Server and then restore that backup to SQL MI.
 
 Now let's restore the sample backup file i.e. AdventureWorks backup (.bak) into your Azure SQL Managed instance container using Kubectl commands.
 
@@ -65,7 +65,7 @@ Now let's restore the sample backup file i.e. AdventureWorks backup (.bak) into 
 
    ![](media/restore-direct-5.png "Confirm")
 
-## Task 2: View Azure Arc enabled SQL managed instance logs in Azure Portal
+## Task 2: View Azure Arc Arc-enabled SQL managed instance logs in Azure Portal
 
 1. Navigate to [Azure Portal](https://portal.azure.com/#home) and then search for Log Analytics workspace in the search bar at the top and then select it.
 
@@ -175,5 +175,5 @@ Now let us Monitor the SQL MI status using Grafana and Kibana.
 ## After this exercise, you have performed the following
 
    - Restored the AdventureWorks sample database into Azure SQL Managed instance - Azure Arc.
-   - View Azure Arc enabled SQL managed instance logs in Azure portal.
+   - View Azure Arc Arc-enabled SQL managed instance logs in Azure portal.
    - Monitored with kibana and grafana.
