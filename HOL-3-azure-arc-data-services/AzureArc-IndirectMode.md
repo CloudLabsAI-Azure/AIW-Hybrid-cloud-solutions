@@ -151,30 +151,9 @@ In this task, you will be creating an SQL Managed Instance using Azure Data Stud
 
 In this task, you will learn how to connect to your newly created Azure Arc-enabled Azure SQL Managed instance using Azure Data Studio.
 
-1. If the **Command Prompt** window is not already opened, open a new one by clicking on the Command Prompt icon from the desktop shortcut and run the following command to create a new service for port 1533.
+1. Now, Right click on the newly created Azure Arc-enable SQLMI and click on **Manage**, A new window should open and you should be able to see the overview of SQLMI, Copy the **External Endpoint** from the dashboard. We will use the endpoints in next steps to connect to the SQLMI. 
 
-   ```BASH
-   kubectl expose pod arcsql-indir-0 -n arcdc --port=1533 --type=LoadBalancer --name=sqlconnection
-   ```
-   ![](./media/indirectmode-8.png "azdata")
-      
-   >**Note**: This command will create a new service which will be used to connect to the SQL MI instance directly.
-
-1. You can now run the below command to check the service creation. It might take 2-5 minutes for the external IP to appear. Copy the external IP for later use.
-
-   ```BASH
-   kubectl get svc -n arcdc
-   ```
-   
-   ![](./media/indirectmode-9.png "azdata")
-   
-   >**Note**: Retry the running command multiple times until the external IP is visible.
-
-1. Copy the external IP and add **,1533** to the end of the external IP.
-
-   ```BASH
-   <external IP>,1533
-   ```
+     ![](images/sqlmniindcnct.png "Confirm")
 
 1. In Azure Data Studio, in the connections tab within the servers, click on **Add Connection**.
 
@@ -190,9 +169,9 @@ In this task, you will learn how to connect to your newly created Azure Arc-enab
    
     - **Authentication type** : Select **SQL Login** from the drop down options **(3)**
    
-    - **User name** : Enter arcuser **(4)**
+    - **User name** : Enter arcsqluser **(4)**
       ```BASH
-      arcuser
+      arcsqluser
       ```
    
     - **Password** : Enter Password.1!! **(5)**
@@ -202,7 +181,7 @@ In this task, you will learn how to connect to your newly created Azure Arc-enab
     
     - Click on **Connect** **(6)**
    
-   ![](./media/indirectmode-10.png "azdata")
+   ![](./media/cntctosdf.png "azdata")
    
 1. You are now successfully connected with your Azure Arc-enabled SQL MI Server. You can see it under servers. You can explore the SQL Managed Instance - Azure Arc Dashboard to view the databases and run a query.
 
