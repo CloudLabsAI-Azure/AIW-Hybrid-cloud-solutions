@@ -155,13 +155,13 @@ In this task, you will be connecting an existing Kubernetes cluster to Azure usi
 1. Now run the below command to create a custom location by referencing the Azure Arc-enabled Kubernetes cluster ID and the extension ID.
 
     ```  
-    az customlocation create -n azurearc-customlocation -g azure-arc --namespace azure-arc --host-resource-id $clusterID --cluster-extension-ids $extensionID
+    az customlocation create -n azurearc-nyc-location -g azure-arc --namespace azure-arc --host-resource-id $clusterID --cluster-extension-ids $extensionID
     ```
     
    > **Note:** This can take upto 2 mintues to complete the creation of custom location
     The output should be as shown below:    
     
-    ![dfs](media/custom-location.png "Lab Environment")
+    ![dfs](media/nyloc.png "Lab Environment")
      
 1. To verify the custom location deployment, switch back to the browser and log in to [Azure Portal](https://portal.azure.com) if not already done.
 
@@ -171,10 +171,9 @@ In this task, you will be connecting an existing Kubernetes cluster to Azure usi
       
 1. After selecting the custom locations from the search bar, select your **azurearc-customlocation**.
 
-    ![](./media/cl-1.png "Lab Environment")
+    ![](./media/nyloc2.png "Lab Environment")
      
 1. Explore the overview section. You can see the namespace and Kubernetes cluster details on the overview page.
-
   
     ![](./media/cl-2.png "Lab Environment")
 
@@ -211,7 +210,7 @@ In this task, you will be connecting an existing Kubernetes cluster to Azure usi
    * Data Controller Name: **arcdc-direct** (2)
    * Custom location: Select the available custom location from dropdown (3).
 
-    ![](./media/new-dc-direct.png "Lab Environment")
+    ![](./media/dcnycloc.png "Lab Environment")
       
 1. Now scroll down and enter the below details in the remaining sections.
    
@@ -307,7 +306,7 @@ In this exercise, let's create an **Azure Arc-enabled SQL Managed Instance** usi
     
      - **Compute+ Storage**: Click on **Configure compute + storage** (5)
       
-      ![](./media/new-sqlmi-direct.png "Lab Environment")
+      ![](./media/newmiloc.png "Lab Environment")
       
 1. Now on **Compute+ Storage** blade enter the following details:
     
