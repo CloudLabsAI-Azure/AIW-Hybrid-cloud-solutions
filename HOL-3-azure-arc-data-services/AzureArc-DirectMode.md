@@ -69,8 +69,9 @@ In this task, you will be connecting an existing Kubernetes cluster to Azure usi
    ```
    az connectedk8s connect --name Arc-Data-Demo-DirectMode --resource-group azure-arc
    ```
+   > **Info:** In the above step, you have connected your existing Azure kubernetes cluster to Azure Arc, to get the available AKS cluster deployed on azure, you can use the command ```az aks list```.
   
-   > **Note:** We have already defined your Cluster name and Azure resource group name in the above commands. If you are trying this in your subscription, please make sure that you have entered the correct details.This can take upto 2 mintues toc complete. 
+   > **Note:** We have already defined your Cluster name and Azure resource group name in the above commands. If you are trying this in your subscription, please make sure that you have entered the correct details.This can take upto 5 mintues to complete. 
 
 1. Once the previous command is executed successfully, the provisioning state in output will show as succeeded.
    
