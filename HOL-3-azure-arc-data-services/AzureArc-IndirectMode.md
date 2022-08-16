@@ -190,7 +190,7 @@ In this task, you will learn how to connect to your newly created Azure Arc-enab
    
 ## Task 5: View SQL MI resource and SQL MI logs in Azure portal.
    
-Now that we have the database created, let us upload some metrics, usages, and logs to the Azure Portal and view SQLMI Resource in the Azure portal.
+Now that we have the SQLMI created, let us upload some metrics, usages, and logs to the Azure Portal and view SQLMI Resource in the Azure portal.
    
 1. Navigate back to the **command prompt** window. 
 
@@ -263,15 +263,15 @@ Now that we have the database created, let us upload some metrics, usages, and l
       
 1. After some time, you will see some outputs uploaded to Azure.
 
-    ![](images/newlogsupdate.png "Confirm")
+    ![](media/newlogsupdate.png "Confirm")
     
 1. Now open the Azure portal and search for **Azure SQL Managed instances - azure arc**  and select the resource.
 
-    ![](images/arcsqlindirportl.png "Confirm")
+    ![](media/arcsqlindirportl.png "Confirm")
       
 1. Now you will see some basic information about the Azure Arc enabled SQL Managed Instance.
       
-    ![](images/arcindirsdjsd.png "Confirm")
+    ![](media/arcindirsdjsd.png "Confirm")
    
 1. Now to view your logs in the Azure portal, open the Azure portal and then search for your log analytics workspace by name in the search bar at the top and then select it.
 
