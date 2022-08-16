@@ -1,12 +1,12 @@
-# Exercise 1: Deploying Azure Arc Data Controller with direct connectivity mode and Azure Arc-enabled SQLMI business critical
+## Exercise 1: Deploying Azure Arc Data Controller with direct connectivity mode and Azure Arc-enabled SQLMI business critical
   Duration: 45 Minutes
   
 In this exercise, you will be connecting an existing Kubernetes cluster to Azure using Azure Arc-enabled Kubernetes. You will be deploying an Azure data controller in direct connectivity mode to a custom location using Azure portal and Azure CLI, and later you will be creating the Azure Arc-enabled SQLMI business critical on top of the Azure Arc Data Controller.
 
 
-# Connect an existing Kubernetes cluster to Azure using Azure Arc-enabled Kubernetes
+## Connect an existing Kubernetes cluster to Azure using Azure Arc-enabled Kubernetes
 
-## Task 1: Log in to Azure and install Azure CLI extensions
+### Task 1: Log in to Azure and install Azure CLI extensions
 
 1. Open **Windows PowerShell** from the desktop of your ARCHOST VM and run the below command to login to Azure.
     ```
@@ -56,7 +56,7 @@ In this exercise, you will be connecting an existing Kubernetes cluster to Azure
    
     ![](media/register-provider.png "Lab Environment")
    
-## Task 2: Onboard an existing Kubernetes cluster to Azure using Azure Arc-enabled Kubernetes
+### Task 2: Onboard an existing Kubernetes cluster to Azure using Azure Arc-enabled Kubernetes
 
 In this task, you will be connecting an existing Kubernetes cluster to Azure using Azure Arc-enabled Kubernetes and will be enabling custom features by adding an Azure Arc data services extension and a custom location on the Azure Arc-enabled Kubernetes cluster.
 
@@ -94,7 +94,7 @@ In this task, you will be connecting an existing Kubernetes cluster to Azure usi
   
     ![](media/azurearc-connected.png "Lab Environment")
 
-## Create a custom location on the Azure Arc-enabled Kubernetes cluster
+### Create a custom location on the Azure Arc-enabled Kubernetes cluster
 
    Custom Locations provides administrators a way to deploy Azure Arc data services and other Azure Arc-enabled services to their locations, similar to Azure locations.
 
@@ -181,7 +181,7 @@ In this task, you will be connecting an existing Kubernetes cluster to Azure usi
 
     ![](./media/agents-management.png "Lab Environment")
     
-## Task 3: Deploy Azure Arc Data Controller in directly connected mode using Azure Portal
+### Task 3: Deploy Azure Arc Data Controller in directly connected mode using Azure Portal
 
 1. From the Azure Portal, search for **Azure arc data controllers** from the search box and then click on it.  
 
@@ -265,7 +265,7 @@ In this task, you will be connecting an existing Kubernetes cluster to Azure usi
   
     ![](./media/overview-dc-direct.png "Lab Environment")
 
-## Task 4: Deploy Azure Arc-enabled SQL Managed Instance using Azure Portal.
+### Task 4: Deploy Azure Arc-enabled SQL Managed Instance using Azure Portal.
 
 In this exercise, let's create an **Azure Arc-enabled SQL Managed Instance** using Azure Portal on a directly connected Azure Arc data controller in a custom location.
 
@@ -352,7 +352,7 @@ In this exercise, let's create an **Azure Arc-enabled SQL Managed Instance** usi
   
     ![](./media/overview-sqlmi-direct.png "Lab Environment")
 
-## Task 5: Connecting Azure Arc Data Controller using Azure Data Studio
+### Task 5: Connecting Azure Arc Data Controller using Azure Data Studio
 
 Now let us connect to the data controller using Azure Data Studio.
 
@@ -401,7 +401,7 @@ Now let us connect to the data controller using Azure Data Studio.
   
     ![](./media/ads-direct-overview.png "Azure Data Studio")
 
-## Task 6: Connect to Azure Arc-enabled SQL Managed Instance using Azure Data Studio.
+### Task 6: Connect to Azure Arc-enabled SQL Managed Instance using Azure Data Studio.
 
 In this task, let us learn how to connect to Azure Arc-enabled SQL Managed instance using Azure Data Studio.
 
