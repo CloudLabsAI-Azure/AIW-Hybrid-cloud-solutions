@@ -53,14 +53,14 @@ Azure Arc makes it possible to run Azure data services on-premises, at the edge,
 
 ## Hands-on Labs Scenario
 
-The following labs provide you a quick and easy way to get started with Azure Arc through virtual environments that do not require any complex set-up or installations. 
+The following labs provide you a quick and easy way to get started with Azure Arc through virtual environments. 
 
 For the purposes of these exercises, let us consider Contoso is a large manufacturing company. 
 
 Their IT systems run Windows, Linux, Kubernetes, SQL Servers, Oracle and PostgreSQL across multiple locations, including on-premises data centers, manufacturing plans, distribution centers, and multiple public clouds. This poses operational challenges for Contoso. They would like a consistent way to govern and operate across these disparate environments, ensure security across the entire organization, and enable innovation and developer agility (especially with their investments in cloud-native practices), all while meeting regulatory and compliance requirements and being able to leverage the latest innovations of database technologies.
 
 
-## Lab Context
+## Lab Objective
 
 Contoso wants to migrate and modernize their databases. They have already migrated some of their Oracle databases to PostgreSQL and they have upgraded some of their SQL Servers to the latest version. Additionally, they would like to reduce the management overhead and stay always current with the evergreen versions of SQL. They would also like to get the benefits of the data services in Azure such as elastic scale and cloud billing without moving their databases to the cloud.
 
