@@ -88,7 +88,7 @@ In the environment provided, the Azure Arc Data controller is already deployed o
 
    ![](images/deployed.png "Confirm")
 
-   > **Note**: You might have to right-click and refresh on Arc data controller to view the instance if you don't see one after seeing the text **arcsql is Ready** at the bottom of the notebook.
+   > **Note**: You might have to right-click and refresh on Arc data controller to view the instance if you don't see one after seeing the text **arcsql-Indir is Ready** at the bottom of the notebook.
 
 ## Task 2: Monitor with Data Controller Dashboard
 
