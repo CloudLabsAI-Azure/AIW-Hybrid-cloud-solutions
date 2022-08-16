@@ -1,8 +1,8 @@
-# Exercise 3: Connecting to Azure Arc Data Controller and deploying Azure Arc-enabled SQLMI business critical in Indirect connectivity mode
+## Exercise 3: Connecting to Azure Arc Data Controller and deploying Azure Arc-enabled SQLMI business critical in Indirect connectivity mode
 
 In this exercise, You will be connecting to the pre-deployed Azure Arc Data Controller with indirect connectivity mode using Azure Data Studio.  we will also create an Azure Arc-enabled SQL Managed Instance business critical on top of a Azure Arc Data Controller with indirect connectivity mode.
 
-## Task 1: Connect to the Azure Arc data controller using Azure Data Studio.
+### Task 1: Connect to the Azure Arc data controller using Azure Data Studio.
 
 Let us now connect to the Azure Arc data controller using Azure Data Studio.
 
@@ -48,7 +48,7 @@ In the environment provided, the Azure Arc Data controller is already deployed o
 
  
 
-## Task 2: Monitor with Data Controller Dashboard
+### Task 2: Monitor with Data Controller Dashboard
 
 Now that you are connected to an Azure Arc data controller, let us view the dashboards for the data controller and any SQL managed instances or PostgreSQL Hyperscale server group resources that you have.
 
@@ -73,7 +73,7 @@ Now that you are connected to an Azure Arc data controller, let us view the dash
    
    > **Note**: If you click on the **Open in Azure portal** button from the menu on the top, you will not be able to find the resources because we have not yet uploaded any logs to the Azure portal and without uploading any logs to Azure, you will not be able to view the Azure Arc data controller resource in the Azure portal.
 
-## Task 3: Create Azure Arc-enabled SQL Managed Instance
+### Task 3: Create Azure Arc-enabled SQL Managed Instance
 
 In this task, you will be creating an SQL Managed Instance using Azure Data Studio. Azure SQL Managed Instance is the intelligent and scalable cloud database service that combines the broadest SQL Server database engine compatibility with all the benefits of a fully managed and evergreen platform as a service.
 
@@ -147,7 +147,7 @@ In this task, you will be creating an SQL Managed Instance using Azure Data Stud
 
    > **Note**: You might have to right-click and refresh on Arc data controller to view the instance if you don't see one after seeing the text **arcsql-Indir is Ready** at the bottom of the notebook.
 
-## Task 4: Connect to Azure Arc-enabled SQL Managed Instance using Azure Data Studio.
+### Task 4: Connect to Azure Arc-enabled SQL Managed Instance using Azure Data Studio.
 
 In this task, you will learn how to connect to your newly created Azure Arc-enabled Azure SQL Managed instance using Azure Data Studio.
 
@@ -187,7 +187,7 @@ In this task, you will learn how to connect to your newly created Azure Arc-enab
 
    ![](./media/indirectmode-11.png "azdata")
 
-## In this exercise, you have covered the following:
+### In this exercise, you have covered the following:
  
    - Connecting Azure Data Controller indirect mode using Azure Data Studio 
    - Monitor with Data Controller Dashboard.
