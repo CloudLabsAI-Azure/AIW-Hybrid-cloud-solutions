@@ -112,12 +112,9 @@ In this task, you will be connecting an existing Kubernetes cluster to Azure usi
      az connectedk8s enable-features -n Arc-Data-Demo-DirectMode -g azure-arc --features cluster-connect custom-locations
     
      ```
-    The output should be similar to as shown below:
-    
-   
-**"Successfully enabled features: ['cluster-connect', 'custom-locations'] for the Connected Cluster Arc-Data-Demo-DirectMode"**
+    The output should be similar to as shown below:**"Successfully enabled features: ['cluster-connect', 'custom-locations'] for the Connected Cluster Arc-Data-Demo-DirectMode"**
         
-      > **Note:** The Custom Locations feature is dependent on the Cluster Connect feature. So, both the features have to be enabled for custom locations to work. Also, az connectedk8s enable-features need to be run on a machine where the kubeconfig file is pointing to the cluster on which the features are to be enabled.
+   > **Note:** The Custom Locations feature is dependent on the Cluster Connect feature. So, both the features have to be enabled for custom locations to work. Also, az connectedk8s enable-features need to be run on a machine where the kubeconfig file is pointing to the cluster on which the features are to be enabled.
     
 1. Run the below command to deploy the extension of Azure Arc-enabled Data Services on the Azure Arc Kubernetes cluster.
   
@@ -143,10 +140,9 @@ In this task, you will be connecting an existing Kubernetes cluster to Azure usi
     $clusterID = az connectedk8s show -n Arc-Data-Demo-DirectMode -g azure-arc  --query id -o tsv
     $clusterID
     ```
-     > **Note:** The clusterID is stored in $clusterID parameter and you will be using this parameter only in the later steps.
-    
-   
-    ![](media/clusterid.png "Lab Environment")
+  > **Note:** The clusterID is stored in $clusterID parameter and you will be using this parameter only in the later steps.
+       
+   ![zx](media/clusterid.png "Lab Environment")
     
 1. Now run the below command to get the Azure Resource Manager identifier of the cluster extension deployed on top of the Azure Arc-enabled Kubernetes cluster, referenced in the later steps as extensionId:
 
@@ -386,21 +382,17 @@ Now let us connect to the data controller using Azure Data Studio.
      ```
      
    - **Cluster Context**:
-     ```BASH
-    
-Arc-Data-Demo-DirectMode
+     ```BASH    
+     Arc-Data-Demo-DirectMode
      ```
      
    - **Name** : Enter arcdc
      ```BASH
      arcdc-direct
-     ```
-
-  
-    ![](./media/cncttonewdc.png "Azure Data Studio")
+     ```  
+    ![asdasd](./media/cncttonewdc.png "Azure Data Studio")
 
 3. Once the connection is successful, you can see the Azure Arc data controller listed under Azure Arc Controllers on the bottom left of the Azure Data Studio.
-
    
     ![](./media/ads-direct-list.png "Azure Data Studio")
     
