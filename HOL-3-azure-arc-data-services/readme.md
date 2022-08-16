@@ -33,7 +33,7 @@ Azure Arc makes it possible to run Azure data services on-premises, at the edge,
    * SQL Managed Instance
    * PostgreSQL Hyperscale (preview)
     
- **In this Hands-on lab, we will be talking about only **Azure Arc-enabled SQLMI** and below are the few services and features of Azure Arc-enabled SQLMI.**
+In this Hands-on lab, we will be talking about only **Azure Arc-enabled SQLMI** and below are the few services and features of Azure Arc-enabled SQLMI.
 
    * **High Availability with Azure Arc-enabled SQL Managed Instance**:- In the Business Critical service tier, in addition to what is natively provided by Kubernetes orchestration, Azure SQL Managed Instance for Azure Arc provides a contained availability group. The contained availability group is built on SQL Server Always On technology. It provides higher levels of availability. Azure Arc-enabled SQL managed instance deployed with Business Critical service tier can be deployed with either 2 or 3 replicas. These replicas are always kept in sync with each other. With contained availability groups, any pod crashes or node failures are transparent to the application as there is at least one other pod that has the instance that has all the data from the primary and is ready to take on connections. [Read More about high Availability with Azure Arc-enabled SQL Managed Instance](https://docs.microsoft.com/en-us/azure/azure-arc/data/managed-instance-high-availability)
     
