@@ -19,7 +19,64 @@ In the environment provided, the Azure Arc Data controller is already deployed o
    Import-AzAksCredential -ResourceGroupName $env:resourceGroup -Name $env:clusterName -Force
 
    ```
+1. Navigate back to **Azure Data studio** and in **Azure Arc Controllers** section, click on **Connect to Existing Azure Arc Controller**.
+
+   ![](./media/indirectmode-1.png "Connection")
+   
+1. In the **Connect to Existing Controller** page, provide the following details and click on **Connect**.
+
+   - **Namespace**:
+     ```BASH
+     arcdc
+     ```
+   
+   - **Cluster Context**:
+     ```BASH
+     Arc-Data-Demo
+     ```
+
+   - **Name** :
+     ```BASH
+     arcdc-indirect
+     ```
+   
+     ![](./media/newindccnct.png "Connection")
+
+1. Once the connection is successful, you can see the **arcdc-indirect** Azure Arc data controller listed under Azure Arc Controllers on the bottom left of the Azure Data Studio.
+
+    ![](./media/indirectmode-3.png "")
+
  
+
+## Task 2: Monitor with Data Controller Dashboard
+
+Now that you are connected to an Azure Arc data controller, let us view the dashboards for the data controller and any SQL managed instances or PostgreSQL Hyperscale server group resources that you have.
+
+1. In the **Connections** panel, under **AZURE ARC CONTROLLERS**, right-click on the **arcdc-indirect** data controller and select **Manage**.
+
+   > **Note**: You will see that there is no Azure Arc Resource. This is because you have not deployed any resources on the Azure Arc data services environment yet. You will be deploying the resources in the next exercises.
+
+    ![](./media/indirectmode-4.png "")
+
+1. Once you are in the Azure Arc Data Controller dashboard, you can see the following details about the data controller 
+   - Name of the Arc Data Controller
+   - Region where it is deployed
+   - Connection mode
+   - Resource Group
+   - Subscription ID of the Azure Subscription
+   - Controller Endpoint
+   - Namespace
+   
+   You will also see that we have deployed using the Indirect connection mode of the Azure Arc Data controller.
+
+   ![](./media/indirectmode-5.png "")
+   
+   > **Note**: If you click on the **Open in Azure portal** button from the menu on the top, you will not be able to find the resources because we have not yet uploaded any logs to the Azure portal and without uploading any logs to Azure, you will not be able to view the Azure Arc data controller resource in the Azure portal.
+
+## Task 3: Create Azure Arc-enabled SQL Managed Instance
+
+In this task, you will be creating an SQL Managed Instance using Azure Data Studio. Azure SQL Managed Instance is the intelligent and scalable cloud database service that combines the broadest SQL Server database engine compatibility with all the benefits of a fully managed and evergreen platform as a service.
+
 1. Open **Azure Data Studio** from the desktop if not already opened. 
    > **Note**: Azure Data Studio is a free cross-platform database tool for data professionals using on-premises and cloud data platforms on Windows, macOS, and Linux
 
@@ -89,54 +146,6 @@ In the environment provided, the Azure Arc Data controller is already deployed o
    ![](images/deployed.png "Confirm")
 
    > **Note**: You might have to right-click and refresh on Arc data controller to view the instance if you don't see one after seeing the text **arcsql-Indir is Ready** at the bottom of the notebook.
-
-## Task 2: Monitor with Data Controller Dashboard
-
-Now that you are connected to an Azure Arc data controller, let us view the dashboards for the data controller and any SQL managed instances or PostgreSQL Hyperscale server group resources that you have.
-
-1. In the **Connections** panel, under **AZURE ARC CONTROLLERS**, right-click on the **arcdc-indirect** data controller and select **Manage**.
-
-   > **Note**: You will see that there is no Azure Arc Resource. This is because you have not deployed any resources on the Azure Arc data services environment yet. You will be deploying the resources in the next exercises.
-
-    ![](./media/indirectmode-4.png "")
-
-1. Once you are in the Azure Arc Data Controller dashboard, you can see the following details about the data controller 
-   - Name of the Arc Data Controller
-   - Region where it is deployed
-   - Connection mode
-   - Resource Group
-   - Subscription ID of the Azure Subscription
-   - Controller Endpoint
-   - Namespace
-   
-   You will also see that we have deployed using the Indirect connection mode of the Azure Arc Data controller.
-
-   ![](./media/indirectmode-5.png "")
-   
-   > **Note**: If you click on the **Open in Azure portal** button from the menu on the top, you will not be able to find the resources because we have not yet uploaded any logs to the Azure portal and without uploading any logs to Azure, you will not be able to view the Azure Arc data controller resource in the Azure portal.
-
-## Task 3: Create Azure Arc-enabled SQL Managed Instance
-
-In this task, you will be creating an SQL Managed Instance using Azure Data Studio. Azure SQL Managed Instance is the intelligent and scalable cloud database service that combines the broadest SQL Server database engine compatibility with all the benefits of a fully managed and evergreen platform as a service.
-
-1. On the JumpVM provided, launch the **Command Prompt** by double-clicking on the cmd shortcut on the desktop.
-  
-    ![](./images/azuredatastudio.png "azdata")
-
-1. Once the command prompt window opens up, run the following command to create SQL MI instance.
-
-   ```BASH
-   az sql mi-arc create --name arcsql-indir --k8s-namespace arcdc --replicas 1 --cores-request "2" --cores-limit "4" --memory-request "4Gi" --memory-limit "8Gi" --storage-class-data "default" --storage-class-datalogs "default" --storage-class-logs "default" --volume-size-data 5Gi --volume-size-datalogs 5Gi --volume-size-logs 5Gi  --tier BusinessCritical --dev --license-type BasePrice --cores-limit 4 --use-k8s
-   ```
-   ![](./media/indirectmode-6.png "azdata")
-   
-   >**Note**: The SQL MI instance will take 5-10 minutes to create. Please wait until it gets created.
-
-1. Once the Deployment of SQLMI is complete, navigate back to Azure data studio and in **Azure Arc Data Controller dashboard** under Azure Arc Resources you can see the newly created Azure Arc-enabled Azure SQL Managed instance.
-
-   ![](./media/indirectmode-7.png "azdata")
-
-   > **Note**: You might have to right-click and refresh on Arc data controller to view the instance if you do not see one after seeing the text **arcsql is Ready** at the bottom of the notebook.
 
 ## Task 4: Connect to Azure Arc-enabled SQL Managed Instance using Azure Data Studio.
 
