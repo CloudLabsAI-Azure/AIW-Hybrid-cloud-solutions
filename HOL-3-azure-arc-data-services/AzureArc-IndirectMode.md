@@ -151,9 +151,9 @@ In this task, you will be creating an SQL Managed Instance using Azure Data Stud
 
 In this task, you will learn how to connect to your newly created Azure Arc-enabled Azure SQL Managed instance using Azure Data Studio.
 
-1. Now, Right click on the newly created Azure Arc-enable SQLMI and click on **Manage**, A new window should open and you should be able to see the overview of SQLMI, Copy the **External Endpoint** from the dashboard. We will use the endpoints in next steps to connect to the SQLMI. 
+1. Now, Right click on the newly created Azure Arc-enable SQLMI and click on **Manage**. A new window should open and you should be able to see the overview of SQLMI, Copy the **External Endpoint** from the dashboard. We will use the endpoints in next steps to connect to the SQLMI. 
 
-     ![](images/sqlmniindcnct.png "Confirm")
+     ![](./media/ads-sqlmi-overview.png "azdata")
 
 1. In Azure Data Studio, in the connections tab within the servers, click on **Add Connection**.
 
