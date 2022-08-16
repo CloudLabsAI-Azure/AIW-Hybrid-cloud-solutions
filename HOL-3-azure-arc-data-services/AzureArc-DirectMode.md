@@ -126,21 +126,20 @@ In this task, you will be connecting an existing Kubernetes cluster to Azure usi
 
 1. Now run the below command to get the Azure Resource Manager identifier of the Azure Arc-enabled Kubernetes cluster, you will be using the cluster ID in the later steps while creating the custom location.
 
-    ```  
-    $clusterID = az connectedk8s show -n Arc-Data-Demo-DirectMode -g azure-arc  --query id -o tsv
-    $clusterID
-    ```
+     ```  
+     $clusterID = az connectedk8s show -n Arc-Data-Demo-DirectMode -g azure-arc  --query id -o tsv
+     $clusterID
+     ```
    > **Note:** The clusterID is stored in $clusterID parameter and you will be using this parameter only in the later steps.
        
     ![zx](media/clusterid.png "Lab Environment")
     
 1. Now run the below command to get the Azure Resource Manager identifier of the cluster extension deployed on top of the Azure Arc-enabled Kubernetes cluster, referenced in the later steps as extensionId:
 
-      ```
-      $extensionID = az k8s-extension show --name azdata --cluster-type connectedClusters -c Arc-Data-Demo-DirectMode -g azure-arc 
---query id -o tsv
-      $extensionID
-      ``` 
+     ```
+     $extensionID = az k8s-extension show --name azdata --cluster-type connectedClusters -c Arc-Data-Demo-DirectMode -g azure-arc --query id -o tsv
+     $extensionID
+     ``` 
    > **Note:** The extension resource ID is stored in $extensionID parameter and you will be using this parameter only in the later steps.  
    
    ![sad](media/extensionid.png "Lab Environment")
