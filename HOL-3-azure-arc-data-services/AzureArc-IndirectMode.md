@@ -26,75 +26,50 @@ In the environment provided, the Azure Arc Data controller is already deployed o
 
 1. Now, right click on the Azure Arc data controller connection, click on Manage, and then click on the **+ New Instance** button within the Azure Arc Data controller dashboard. 
 
-   ![](images/sqlmi-v2.png "Confirm")
+   ![](images/nwinstnce.png "Confirm")
   
 1. Now, select the **Azure SQL Managed Instance** and click on **Select** at the bottom of the page.
 
    ![](images/sqlmii1.png "Confirm")
    
-1. In the next page that opens up, select the **Checkbox** to accept the Microsoft Privacy statement and then click on **Next button** to proceed with the deployment. You can click on the privacy statement link to view the terms and conditions if you want to read through it.
+1. In the next page that opens up, read the Microsoft Privacy statement and then click on **Next button** to proceed with the deployment. You can click on the privacy statement link to view the terms and conditions if you want to read through it.
 
    > **Note**: You will also see a **Required tools** table under the terms and conditions line. These tools are required to deploy the Azure Arc enabled Azure SQL Managed Instance. You don't have to worry about installation of any of those tools because we have already installed these required tools for you.
 
-   ![](images/sqlmi3.png "Confirm")
+   ![](images/deploybsnnext.png "Confirm")
 
 1. In the deploy **Azure SQL Managed Instance - Azure Arc blade**, enter the following information:
 
    **Under SQL Connection information**
    
-   - **Instance name**: Enter arcsql
-     ```BASH
-     arcsql
-     ```
+    - **Target Azure Arc Controller**: Select **arc-indirect**  
+    - **Instance name**: Enter **arcsql-indir**       
+    - **Username**:  Enter **arcsqluser** 
+    - **Password**: Enter **Password.1!!**   
+
+      ![](images/sqlcnctsetting.png "Confirm")
+      
+   **Under SQL Instance Settings**
    
-   - **Username**:  Enter arcsqluser
-     ```BASH
-     arcsqluser
-     ```
-   
-   - **Password**: Enter Password.1!!
-     ```BASH
-     Password.1!!
-     ```
+    - **Service Tier**: **Business Critical** 
+    - **For Development use only**: **Check the box** 
+    - **storage class(Data)**: leave default
+    - **volume size in Gi(Data)**: ```2```
+    - **storage class(Database logs )**: leave ```default```
+    - **volume size (Database logs)**: ```1```
+    - **storage class(Logs)**: Leave ```default```
+    - **volume size in Gi(Logs )**: Enter ```1```
+    - **Storage class(Backup)**: leave ```default```
+    - **volume size in Gi(Backups)**: ```1```
+    - **Cores Rquest**: ```2```
+    - **Cores Limit**: ```4```
+    - **Memory Request**: Enter ```2``` 
+    - **CPU vCores Limit**: Enter ```4``` 
      
-   ![](images/hol3ex3stp61.png "Confirm")
-   
-   **SQL Instance settings**
-   
-   
-    - **Replicas**: Select 2
-     ```BASH
-     2
-     ```
-  
-   - **Core Request**: Enter 1
-     ```BASH
-     1
-     ```
-   
-   - **Core Limit**: Enter 2
-     ```BASH
-     2
-     ```
-   
-   - **Memory Request**: Enter 2
-     ```BASH
-     2
-     ```
-   
-   - **Memory Limit**: Enter 2
-     ```BASH
-     2
-     ```
-     ![](images/hol3ex3stp6.png "Confirm")
-   
-   - **Service Tier**: Select **General purpose**
-   - **For development use only**: Select check box
-   - **I already have a SQL Server License**: Select check box
+     ![](images/devbus.png "Confirm")
+     ![](images/deploysqlm.png "Confirm") 
 
-     ![](images/gentier.png "Confirm") 
-
-1. Click on the **Deploy** button to start the deployment of the  **Azure SQL Managed instance - Azure Arc** on the data controller.
+1. Leave the other things default and click on the **Deploy** button to start the deployment of the  **Azure SQL Managed instance - Azure Arc** on the data controller.
    
 1. If prompted, select **New Python installation** and click on **Next** button.
 
