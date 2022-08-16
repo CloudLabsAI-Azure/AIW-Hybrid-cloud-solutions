@@ -263,15 +263,15 @@ Now that we have the database created, let us upload some metrics, usages, and l
       
 1. After some time, you will see some outputs uploaded to Azure.
 
-    ![](images/logs.png "Confirm")
+    ![](images/newlogsupdate.png "Confirm")
     
 1. Now open the Azure portal and search for **Azure SQL Managed instances - azure arc**  and select the resource.
 
-    ![](images/sqlportal1.png "Confirm")
+    ![](images/arcsqlindirportl.png "Confirm")
       
 1. Now you will see some basic information about the Azure Arc enabled SQL Managed Instance.
       
-    ![](images/sqlportal2.png "Confirm")
+    ![](images/arcindirsdjsd.png "Confirm")
    
 1. Now to view your logs in the Azure portal, open the Azure portal and then search for your log analytics workspace by name in the search bar at the top and then select it.
 
@@ -313,3 +313,5 @@ Now that we have the database created, let us upload some metrics, usages, and l
    - Monitor with Data Controller Dashboard.
    - Creating Azure Arc-enabled SQL Managed Instance
    - Connecting to Azure Arc-enabled SQL Managed Instance using Azure Data Studio.
+   - Exporting and uploading logs to Azure Portal.
+   - Browsing the resources in Azure Portal
