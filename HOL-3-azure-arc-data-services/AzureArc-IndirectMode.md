@@ -98,7 +98,7 @@ In this task, you will be creating an SQL Managed Instance using Azure Data Stud
 
    **Under SQL Connection information**
    
-    - **Target Azure Arc Controller**: Select **arc-indirect**  
+    - **Target Azure Arc Controller**: Select **arcdc-indirect**  
     - **Instance name**: Enter **arcsql-indir**       
     - **Username**:  Enter **arcsqluser** 
     - **Password**: Enter **Password.1!!**   
