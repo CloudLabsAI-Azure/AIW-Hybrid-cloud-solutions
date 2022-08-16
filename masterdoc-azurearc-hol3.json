@@ -3,19 +3,24 @@
       "Name": "Azure Immersion Workshop: Hybrid Cloud Solutions - Azure Arc",
       "Language": "English",
       "BaseURL": "https://github.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions",
-      "Files": [   
+         "Files": [   
+            {
+          "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/FY-23/HOL-3-azure-arc-data-services/readme.md",
+          "Order": 1
+        },
+       
           {
           "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/FY-23/HOL-3-azure-arc-data-services/AzureArc-DirectMode.md",
-          "Order": 1
+          "Order": 2
         },
        
         {
           "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/FY-23/HOL-3-azure-arc-data-services/Restore-AdventureWorks.md",
-          "Order": 2
+          "Order": 3
         } ,  
           {
           "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/FY-23/HOL-3-azure-arc-data-services/AzureArc-IndirectMode.md",
-          "Order": 3
+          "Order": 4
         }
       ]
     }
