@@ -12,15 +12,14 @@ In the environment provided, the Azure Arc Data controller is already deployed o
    
    If you want to know more about this, refer to the [Connectivity Modes](https://docs.microsoft.com/en-us/azure/azure-arc/data/connectivity)
 
-1. Open **Windows PowerShell** from the Desktop and run the below command to switch the cluster context from **Direct to Indirect mode**.
+1. Open **Windows PowerShell** from the Desktop and run the below command to delete the existing cluster context and create a new to connect with the Azure Arc Data controller Indirect connectivity mode.
 
    ```BASH
    Remove-Item C:\Users\arcadmin\.kube\config
    Import-AzAksCredential -ResourceGroupName $env:resourceGroup -Name $env:clusterName -Force
 
    ```
-   ![](./media/cc-switch.png "Connection")
-
+ 
 1. Open **Azure Data Studio** from the desktop if not already opened. 
    > **Note**: Azure Data Studio is a free cross-platform database tool for data professionals using on-premises and cloud data platforms on Windows, macOS, and Linux
 
