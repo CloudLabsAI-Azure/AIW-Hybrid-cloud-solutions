@@ -1,18 +1,18 @@
 # Exercise 3: Connecting to Azure Arc Data Controller and deploying Azure Arc-enabled SQLMI business critical in Indirect connectivity mode
 
-In this exercise, You will be connecting to the pre-deployed Azure Arc Data Controller with indirect connectivity mode using Azure Data Studio.  we will also create an Azure Arc-enabled SQL Managed Instance business critical on top of a Azure Arc Data Controller with indirect connectivity mode .
+In this exercise, You will be connecting to the pre-deployed Azure Arc Data Controller with indirect connectivity mode using Azure Data Studio.  we will also create an Azure Arc-enabled SQL Managed Instance business critical on top of a Azure Arc Data Controller with indirect connectivity mode.
 
 ## Task 1: Connect to the Azure Arc data controller using Azure Data Studio.
 
 Let us now connect to the Azure Arc data controller using Azure Data Studio.
 
-In the environment provided, the Azure Arc Data controller is already deployed on to the Kubernetes Cluster. We are using **Indirect** connectivity mode for the Azure Arc-enabled data services environment to Azure.
+In the environment provided, the Azure Arc Data controller is already deployed on top of the Kubernetes Cluster. We are using **Indirect** connectivity mode for the Azure Arc-enabled data services environment to Azure.
   
    > ***Info***: There are multiple modes available to connect to Azure. if the Azure Arc-enabled data services are directly connected to Azure, users can use Azure Resource Manager APIs, the Azure CLI, and the Azure portal to operate the Azure Arc data services. The experience in directly connected mode is much like how you would use any other Azure service with provisioning/de-provisioning, scaling, configuring, and so on, all in the Azure portal.
    
    If you want to know more about this, refer to the [Connectivity Modes](https://docs.microsoft.com/en-us/azure/azure-arc/data/connectivity)
 
-1. Open **Windows PowerShell** from the Desktop and run the below command to delete the existing cluster context and create a new to connect with the Azure Arc Data controller Indirect connectivity mode.
+1. Open **Windows PowerShell** from the Desktop and run the below command to delete the existing cluster context and create a new one to connect with the Azure Arc Data controller Indirect connectivity mode.
 
    ```BASH
    Remove-Item C:\Users\arcadmin\.kube\config
@@ -23,7 +23,7 @@ In the environment provided, the Azure Arc Data controller is already deployed o
 1. Open **Azure Data Studio** from the desktop if not already opened. 
    > **Note**: Azure Data Studio is a free cross-platform database tool for data professionals using on-premises and cloud data platforms on Windows, macOS, and Linux
 
-1. Now, right click on the Azure Arc data controller connection, click on Manage, and then click on the **+ New Instance** button within the Azure Arc Data controller dashboard. 
+1. Now, right-click on the Azure Arc data controller connection, click on Manage, and then click on the **+ New Instance** button within the Azure Arc Data controller dashboard. 
 
    ![](images/nwinstnce.png "Confirm")
   
@@ -31,9 +31,9 @@ In the environment provided, the Azure Arc Data controller is already deployed o
 
    ![](images/sqlmii1.png "Confirm")
    
-1. In the next page that opens up, read the Microsoft Privacy statement and then click on **Next button** to proceed with the deployment. You can click on the privacy statement link to view the terms and conditions if you want to read through it.
+1. On the next page that opens up, read the Microsoft Privacy statement and then click on **Next button** to proceed with the deployment. You can click on the privacy statement link to view the terms and conditions if you want to read through it.
 
-   > **Note**: You will also see a **Required tools** table under the terms and conditions line. These tools are required to deploy the Azure Arc enabled Azure SQL Managed Instance. You don't have to worry about installation of any of those tools because we have already installed these required tools for you.
+   > **Note**: You will also see a **Required tools** table under the terms and conditions line. These tools are required to deploy the Azure Arc enabled Azure SQL Managed Instance. You don't have to worry about the installation of any of those tools because we have already installed these required tools for you.
 
    ![](images/deploybsnnext.png "Confirm")
 
@@ -76,7 +76,7 @@ In the environment provided, the Azure Arc Data controller is already deployed o
 
    ![](images/configure-python-runtime.png)
   
-1. On Install Dependencies tab, click on **Install**.
+1. On the Install Dependencies tab, click on **Install**.
 
    ![](images/install-dependencies.png)
      
@@ -96,11 +96,11 @@ Now that you are connected to an Azure Arc data controller, let us view the dash
 
 1. In the **Connections** panel, under **AZURE ARC CONTROLLERS**, right-click on the **arcdc-indirect** data controller and select **Manage**.
 
-   > **Note**: You will see that there is no Azure Arc Resource. This is because you have not deployed any resource on the Azure Arc data services environment yet. You will be deploying the resources in the next exercises.
+   > **Note**: You will see that there is no Azure Arc Resource. This is because you have not deployed any resources on the Azure Arc data services environment yet. You will be deploying the resources in the next exercises.
 
     ![](./media/indirectmode-4.png "")
 
-1. Once you are in the Azure Arc Data Controller dashboard, you can see following details about the data controller 
+1. Once you are in the Azure Arc Data Controller dashboard, you can see the following details about the data controller 
    - Name of the Arc Data Controller
    - Region where it is deployed
    - Connection mode
