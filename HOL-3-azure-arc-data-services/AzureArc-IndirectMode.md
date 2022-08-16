@@ -186,6 +186,126 @@ In this task, you will learn how to connect to your newly created Azure Arc-enab
 1. You are now successfully connected with your Azure Arc-enabled SQL MI Server. You can see it under servers. You can explore the SQL Managed Instance - Azure Arc Dashboard to view the databases and run a query.
 
    ![](./media/indirectmode-11.png "azdata")
+   
+   
+## Task 5: View SQL MI resource and SQL MI logs in Azure portal.
+   
+Now that we have the database created, let us upload some metrics, usages, and logs to the Azure Portal and view SQLMI Resource in the Azure portal.
+   
+1. Navigate back to the **command prompt** window. 
+
+1. Run these below commands to check if the variables are set or not.
+   
+   ```BASH
+   echo %WORKSPACE_ID%
+   ```
+
+   ```BASH
+   echo %WORKSPACE_SHARED_KEY%
+   ```
+
+   ```BASH
+   echo %SPN_TENANT_ID%
+   ```
+
+   ```BASH
+   echo %SPN_CLIENT_ID%
+   ```
+
+   ```BASH
+   echo %SPN_CLIENT_SECRET%
+   ```
+
+   ```BASH
+   echo %SPN_AUTHORITY%
+   ```
+       
+1. If the variables are not defined, set it now using the below commands.
+   
+   ```
+   SET WORKSPACE_ID=<workspaceId>
+   ```
+
+   ```
+   SET WORKSPACE_SHARED_KEY=<primarySharedKey>
+   ```
+
+   ```
+   SET SPN_CLIENT_ID=<appId>
+   ```
+
+   ```   
+   SET SPN_CLIENT_SECRET=<password>
+   ```
+
+   ```
+   SET SPN_TENANT_ID=<tenant>
+   ```
+
+   ```
+   SET SPN_AUTHORITY=https://login.microsoftonline.com
+   ```
+
+   > **Note**: You can get the workspace ID and key from the Azure portal and service principal details from the Environment Details tab at the top and then navigating to Service Principal details.
+
+1. Export all logs to the specified file:
+   
+   ```
+   az arcdata dc export --type logs --path logs.json --k8s-namespace arcdc --use-k8s
+   ```
+    > **Note**: You may see a message "logs.json already exists already, do you want to overwrite it? (Y/N):", then enter `Y` to overwrite. Also if you see any bypass server certificate check, then please enter 'y' to continue. The data will be exported to this location: 'C:\Users\arcadmin\logs.json'
+
+1. Upload logs to an existing Azure monitor log analytics workspace:
+   
+    ```
+    az arcdata dc upload  --path logs.json
+    ```
+      
+1. After some time, you will see some outputs uploaded to Azure.
+
+    ![](images/logs.png "Confirm")
+    
+1. Now open the Azure portal and search for **Azure SQL Managed instances - azure arc**  and select the resource.
+
+    ![](images/sqlportal1.png "Confirm")
+      
+1. Now you will see some basic information about the Azure Arc enabled SQL Managed Instance.
+      
+    ![](images/sqlportal2.png "Confirm")
+   
+1. Now to view your logs in the Azure portal, open the Azure portal and then search for your log analytics workspace by name in the search bar at the top and then select it.
+
+1. In the **Log Analytics workspaces** page, select your workspace **logazure-arc**.
+   
+    ![](images/logarc.png "Confirm")
+
+1. Then, from the left navigation menu under **General** select **Logs**
+
+1. Now in your page that opens up, click on the ```X```  at the top right corner as shown in the below image.
+
+    ![](images/ex4-t6-closepopup-log.png "Confirm")
+   
+1. And then, click on ```>>``` icon to expand the Schema and Filter tab.
+
+    ![](images/ex4-t6-closepopup-log1.png "Confirm")
+
+1. Then, check if CustomLogs is there under Tables section. If you don't see CustomLogs there, refresh the page every 2 minutes until it is available.
+     
+    ![](images/sqlmilogs.png "Confirm")
+
+1. Once the Custom logs is available, expand Custom Logs at the bottom of the list of tables and you will see a table called **sqlManagedInstances_logs_CL**.
+   
+    ![](images/workspace3.png "Confirm")
+
+1. Hover the cursor on the table name and select the **Use in the editor** button.
+   
+    ![](images/log-analytics-useineditor.png "Confirm")
+
+1. Now, you will have a query in the query editor. Run the query that will show the logs. 
+   
+    ![](images/workspace5.1.png "Confirm")
+
+    > Note: You might have to resize the editor and output windows to view the logs.
 
 ### In this exercise, you have covered the following:
  
