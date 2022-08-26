@@ -117,6 +117,20 @@ Now, let's onboard the Linux VMs and local Kubernetes cluster to Azure Arc. So, 
     
     ![](.././media/root-login.png "Root Login")
     
+ 1. Run the below commands to upgrade the az packages and az module. 
+   
+     ```
+      curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py python3 get-pip.py
+      apt install pip
+      python3 get-pip.py
+      python3 -m pip install -U pip
+      python3 -m pip install --upgrade pip --target /opt/az/lib/python3.6/site-packages/
+      az upgrade -y
+      init 6
+    ```
+
+1. Open a new Putty session, re-perform the steps from step-2 to step-4 of the same task to get the upgraded packages and then continue from  step-7.
+
 1. There is file `installArcAgentLinux.txt` on ARCHOST VM desktop 💻. Open the file and copy the first 7 lines and paste in putty to declare the values of AppID, AppSecret, TenantID, SubscriptionID, ResourceGroup, and location, and then log into azure using the 7th line. You can also find the values of these variables in the **Environment Details** tab and then use them in the next steps.
 
     ![](.././media/variableazlogin.png "azlogin")
@@ -213,8 +227,8 @@ We have onboarded the Linux VM to Azure Arc and verified in task 2. Now, you wil
    cd ..
    ```
 
-   ![](.././media/kube.png "kube") 
-
+   ![](.././media/kube.png "kube")
+    
 1. Connect the Kubernetes cluster to Azure Arc by executing the following command. This command will take few minutes to onboard Kubernetes cluster to Azure Arc.
 
    ```
