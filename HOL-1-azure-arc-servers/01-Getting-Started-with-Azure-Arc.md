@@ -213,7 +213,23 @@ We have onboarded the Linux VM to Azure Arc and verified in task 2. Now, you wil
    cd ..
    ```
 
-   ![](.././media/kube.png "kube") 
+   ![](.././media/kube.png "kube")
+   
+ 1. You have to run the below command to ensure the Azure CLI version and customlocation extension for Az CLI are the latest.
+   
+     ```
+     curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py python3 get-pip.py
+
+      apt install pip
+      python3 get-pip.py
+      python3 -m pip install -U pip
+      python3 -m pip install --upgrade pip --target /opt/az/lib/python3.6/site-packages/
+      az upgrade -y
+      init 6
+    ```
+
+
+  
 
 1. Connect the Kubernetes cluster to Azure Arc by executing the following command. This command will take few minutes to onboard Kubernetes cluster to Azure Arc.
 
