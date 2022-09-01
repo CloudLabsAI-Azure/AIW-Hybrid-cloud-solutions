@@ -1,6 +1,6 @@
-## Exercise 3: Connecting to Azure Arc Data Controller and deploying Azure Arc-enabled SQLMI business critical in Indirect connectivity mode
+## Exercise 3: Connecting to Azure Arc Data Controller and deploying Azure Arc-enabled SQL Managed Instance Business Critical in Indirect connectivity mode
 
-In this exercise, You will be connecting to the pre-deployed Azure Arc Data Controller with indirect connectivity mode using Azure Data Studio.  we will also create an Azure Arc-enabled SQL Managed Instance business critical on top of a Azure Arc Data Controller with indirect connectivity mode.
+In this exercise, you will be connecting to the pre-deployed Azure Arc Data Controller with indirect connectivity mode using Azure Data Studio.  we will also create an Azure Arc-enabled SQL Managed Instance Business Critical on top of a Azure Arc Data Controller with indirect connectivity mode.
 
 ### Task 1: Connect to the Azure Arc data controller using Azure Data Studio.
 
@@ -88,7 +88,7 @@ In this task, you will be creating an SQL Managed Instance using Azure Data Stud
 
    ![](images/sqlmii1.png "Confirm")
    
-1. On the next page that opens up, read the Microsoft Privacy statement and then click on **Next button** to proceed with the deployment. You can click on the privacy statement link to view the terms and conditions if you want to read through it.
+1. On the next page that opens, read the Microsoft Privacy statement, and then click on **Next button** to proceed with the deployment. You can click on the privacy statement link to view the terms and conditions if you want to read through it.
 
    > **Note**: You will also see a **Required tools** table under the terms and conditions line. These tools are required to deploy the Azure Arc enabled Azure SQL Managed Instance. You don't have to worry about the installation of any of those tools because we have already installed these required tools for you.
 
@@ -151,7 +151,7 @@ In this task, you will be creating an SQL Managed Instance using Azure Data Stud
 
 In this task, you will learn how to connect to your newly created Azure Arc-enabled Azure SQL Managed instance using Azure Data Studio.
 
-1. Now, Right click on the newly created Azure Arc-enable SQLMI and click on **Manage**. A new window should open and you should be able to see the overview of SQLMI, Copy the **External Endpoint** from the dashboard. We will use the endpoints in next steps to connect to the SQLMI. 
+1. Now, Right click on the newly created Azure Arc-enable SQL Managed Instance and click on **Manage**. A new window should open, and you should be able to see the overview of SQL Managed Instance, Copy the **External Endpoint** from the dashboard. We will use the endpoints in next steps to connect to the Azure Arc-enabled SQL Managed Instance. 
 
      ![](./media/ads-sqlmi-overview.png "azdata")
 
@@ -190,7 +190,7 @@ In this task, you will learn how to connect to your newly created Azure Arc-enab
    
 ## Task 5: View SQL MI resource and SQL MI logs in Azure portal.
    
-Now that we have the SQLMI created, let us upload some metrics, usages, and logs to the Azure Portal and view SQLMI Resource in the Azure portal.
+Now that we have the SQL Managed Instance created, let us upload some metrics, usages, and logs to the Azure Portal and view SQL Managed Instance Resource in the Azure portal.
    
 1. Navigate back to the **command prompt** window. 
 
