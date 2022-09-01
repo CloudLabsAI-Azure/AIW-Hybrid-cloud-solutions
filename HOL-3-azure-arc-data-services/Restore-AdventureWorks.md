@@ -36,11 +36,11 @@ Now let's copy and restore the already taken backup file into your Azure SQL Man
    ```
    ![](media/newcp.png "Confirm")
 
-1. Now, to restore the AdventureWorks database, Switch back to the Azure Data Studio and right click on the Connection of your connected SQL Managed Instance Server and click on **New query**.
+1. Now, to restore the AdventureWorks database, switch back to the Azure Data Studio and right click on the Connection of your connected SQL Managed Instance Server and click on **New query**.
 
    ![](media/newq.png "Confirm")
 
-1. Once the query window is open, paste the below query and execure it to resotore the copied database to Azure Arc-enable SQL Managed instance 
+1. Once the query window is open, paste the below query and execute it to restore the copied database to Azure Arc-enable SQL Managed instance 
 
    ```BASH
    RESTORE DATABASE AdventureWorks2012 FROM DISK = '/var/opt/mssql/data/AdventureWorks2012.bak'
@@ -109,7 +109,7 @@ Now let us Monitor the SQL MI status using Grafana and Kibana.
 
    ![](media/restore-direct-7.png "Confirm")
 
-   > **Note**: You may face any error that your connection isn't private in the browser. Select **Advanced** and click on **Continue to [ExternalEndpoint]**.
+   > **Note**: You may face any error that your connection is not private in the browser. Select **Advanced** and click on **Continue to [ExternalEndpoint]**.
 
 1. Enter the below username and password for SQLMI.
   
@@ -127,15 +127,15 @@ Now let us Monitor the SQL MI status using Grafana and Kibana.
 
      ![](media/arcsql-ksignin.png "")
    
-   > ***Info***: You can filter the results by searching in the top bar for  **arcsql**. That will filter this page to just the logs for the managed SQL Server instance.
+   > ***Info***: You can filter the results by searching in the top bar for **arcsql**. That will filter this page to just the logs for the managed SQL Server instance.
 
 1. You can explore the **kibana dashboard**.
 
    ![](images/Kibana-dashboard-endpoint.png "")
   
-   > ***Info***: You can learn more about kibana here: [View logs and metrics using Kibana and Grafana](https://docs.microsoft.com/en-us/azure/azure-arc/data/monitor-grafana-kibana)
+   > ***Info***: You can learn more about Kibana here: [View logs and metrics using Kibana and Grafana](https://docs.microsoft.com/en-us/azure/azure-arc/data/monitor-grafana-kibana)
     
-### View the Visualization and metric using grafana graph
+### View the Visualization and metric using Grafana graph
   
 1. Navigate back to the **Azure Data Studio** which you had opened earlier.
 
@@ -172,4 +172,4 @@ Now let us Monitor the SQL MI status using Grafana and Kibana.
 
    - Restored the AdventureWorks database into Azure SQL Managed instance - Azure Arc.
    - View Azure Arc Arc-enabled SQL managed instance logs in Azure portal.
-   - Monitored with kibana and grafana.
+   - Monitored with Kibana and Grafana.
