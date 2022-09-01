@@ -6,9 +6,22 @@
 ## What is Azure Arc?
 For customers who want to simplify complex and distributed environments across on-premises, edge, and multi-cloud, [Azure Arc](https://azure.microsoft.com/services/azure-arc/) enables the deployment of Azure services anywhere and extends Azure management to any infrastructure. 
 Azure Arc helps you accelerate innovation across hybrid and multi-cloud environments and provides the following benefits to your organization:
-   * **Gain central visibility, operations, and compliance** – Standardize visibility, operations, and compliance across a wide range of resources and locations by extending the Azure control plane. Right from Azure, you can easily organize, govern, and secure Windows, Linux, SQL Servers, and Kubernetes clusters across datacenters, edge, and multi-cloud.
-   * **Build Cloud native apps anywhere, at scale** – Centrally code and deploy applications confidently to any Kubernetes distribution in any location. Accelerate development by using best in class application services with standardized deployment, configuration, security, and observability.
-   * **Run Azure data services anywhere** – Flexibly use cloud innovation where you need it by deploying Azure services anywhere. Implement cloud practices and automation to deploy faster, consistently, and at scale with always-up-to-date Azure Arc-enabled services.
+   * **Secure and govern your infrastructure and apps anywhere** – Standardize visibility, operations, compliance and manage across a wide range of resources including Windows and Linux, SQL Server, Kubernetes cluster, Azure services. 
+      * Perform virtual machine (VM) lifecycle management for your Azure Stack HCI , VMware, and System Center VMM environments from a centralized location. 
+      * Meet governance and compliance standards for apps, infrastructure, and data with Azure Policy.
+      * Easily enroll in additional Azure services such as Azure Monitor, Microsoft Defender for Cloud, and updates.
+      * Learn more about hybrid and multicloud management in the [Microsoft Cloud Adoption Framework for Azure](https://aka.ms/adopt/hybrid).
+   * **Build cloud-native apps anywhere, at scale** – Centrally code and deploy applications confidently to any Kubernetes distribution in any location. 
+      * Bring DevOps practices anywhere and build iteratively.
+      * Get up and running immediately with your existing tools and practices including GitHub, Terraform, and Visual Studio.
+      * Reduce errors with consistent policy-driven app deployment and cluster operations at scale from source control and templates.
+      * Write to the same application service APIs that can run consistently on premises, across multiple clouds, and in edge environments using Kubernetes.
+      * Save time and reduce admin tasks by using purpose-built Azure application and data services in your architecture.
+   * **Run Azure data and machine learning services anywhere** – Flexibly use cloud innovation where you need it by deploying Azure services anywhere. Implement cloud practices and automation to deploy faster, consistently, and at scale with always-up-to-date Azure Arc-enabled services.
+      * Deploy Azure Arc–enabled Azure SQL and PostgreSQL (in preview) on any Kubernetes distribution and on any cloud. 
+      * Work faster with Azure turnkey application services such as Web Apps, Functions, and Logic Apps across clouds, datacenters, and at the edge.
+      * Get started in minutes with one-click deployment of the managed machine learning add-on, and train models on any Kubernetes cluster with Azure Machine Learning.
+      * Take advantage of elastic scale, consistent on-premises and multicloud management, and cloud-style billing models.
    
 ![](images/arcdiagramm.png)
 
