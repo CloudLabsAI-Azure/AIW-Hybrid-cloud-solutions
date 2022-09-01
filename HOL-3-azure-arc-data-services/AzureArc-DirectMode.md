@@ -1,7 +1,7 @@
-## Exercise 1: Deploying Azure Arc Data Controller with direct connectivity mode and Azure Arc-enabled SQLMI business critical
+## Exercise 1: Deploying Azure Arc Data Controller with direct connectivity mode and Azure Arc-enabled SQL Managed Instance Business Critical
   Duration: 45 Minutes
   
-In this exercise, you will be connecting an existing Kubernetes cluster to Azure using Azure Arc-enabled Kubernetes. You will be deploying an Azure data controller in direct connectivity mode to a custom location using Azure portal and Azure CLI, and later you will be creating the Azure Arc-enabled SQLMI business critical on top of the Azure Arc Data Controller. In short terms, you will be preparing a infrastructure for the next exercise to restore the Databases into the SQLMI. 
+In this exercise, you will be connecting an existing Kubernetes cluster to Azure using Azure Arc-enabled Kubernetes. You will be deploying an Azure data controller in direct connectivity mode to a custom location using Azure portal and Azure CLI, and later you will be creating the Azure Arc-enabled SQL Managed Instance Business Critical on top of the Azure Arc Data Controller. In short terms, you will be preparing an infrastructure for the next exercise to restore the Databases into the Azure SQL Managed Instance. 
 
 
 ## Connect an existing Kubernetes cluster to Azure using Azure Arc-enabled Kubernetes
@@ -357,7 +357,7 @@ In this exercise, let's create an **Azure Arc-enabled SQL Managed Instance** usi
   
     ![](./media/complete-sqlmi-direct.png "Lab Environment")
 
-1. Now we have successfully deployed the Azure Arc-enabled SQLMI on top of the Directly connected mode Azure Arc data controller, you can explore more on metrics and logs on the same page from the left side menu. Please note that Azure Arc-enabled SQLMI deployment can take 5-to-10 minutes to change it to ready.
+1. Now we have successfully deployed the Azure Arc-enabled SQL Managed Instance on top of the Directly connected mode Azure Arc data controller, you can explore more on metrics and logs on the same page from the left side menu. Please note that Azure Arc-enabled SQL Managed Instance deployment can take 5-to-10 minutes to change it to ready.
   
     ![](./media/overview-sqlmi-direct.png "Lab Environment")
 
@@ -422,7 +422,7 @@ In this task, let us learn how to connect to Azure Arc-enabled SQL Managed insta
    - Name of the Arc Data Controller
    - Subscription ID of the Azure Subscription
    - External Endpoint
-   - Status of SQLMI
+   - Status of SQL Managed Instance
    - Region where it is deployed
    - Compute: Number of vCores
 
@@ -462,4 +462,4 @@ In this task, let us learn how to connect to Azure Arc-enabled SQL Managed insta
   
     ![](./media/ads-9.png "ADS")
 
-In this exercise, we connected our cluster to the Azure Arc-enabled cluster and deployed custom location and data controller with directly connected mode with the help of Azure portal and Azure CLI, and created an Azure Arc-enabled SQLMI server on the directly connected mode of Azure Arc data controller. Also, we have connected the Azure Arc Data Controller and Azure Arc-enabled SQLMI business critical using Azure Data Studio.
+In this exercise, we connected our cluster to the Azure Arc-enabled cluster and deployed custom location and data controller with directly connected mode with the help of Azure portal and Azure CLI, and created an Azure Arc-enabled SQL Managed Instance server on the directly connected mode of Azure Arc data controller. Also, we have connected the Azure Arc Data Controller and Azure Arc-enabled SQL Managed Instance Business Critical using Azure Data Studio.
