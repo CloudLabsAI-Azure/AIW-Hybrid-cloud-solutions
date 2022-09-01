@@ -10,7 +10,7 @@ Azure Arc helps you accelerate innovation across hybrid and multi-cloud environm
    * **Build Cloud native apps anywhere, at scale** – Centrally code and deploy applications confidently to any Kubernetes distribution in any location. Accelerate development by using best in class application services with standardized deployment, configuration, security, and observability.
    * **Run Azure data services anywhere** – Flexibly use cloud innovation where you need it by deploying Azure services anywhere. Implement cloud practices and automation to deploy faster, consistently, and at scale with always-up-to-date Azure Arc-enabled services.
    
-![](images/Arc-data-arc.png)
+![](images/arcdiagramm.png)
 
 ### How Azure Arc-enabled Data Services add value?
 
