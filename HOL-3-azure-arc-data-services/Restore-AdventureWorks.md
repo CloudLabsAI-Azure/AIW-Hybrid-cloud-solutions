@@ -111,7 +111,7 @@ Now let us Monitor the SQL MI status using Grafana and Kibana.
 
    > **Note**: You may face any error that your connection is not private in the browser. Select **Advanced** and click on **Continue to [ExternalEndpoint]**.
 
-1. Enter the below username and password for SQLMI.
+1. Enter the below username and password for SQL Managed Instance.
   
     > **Note** You have to enter the credentials of Azure Arc data controller.
   
@@ -145,7 +145,7 @@ Now let us Monitor the SQL MI status using Grafana and Kibana.
 
    > **Note**: You may face any error that your connection is not private in the browser. Select **Advanced** and click on **Continue to [ExternalEndpoint]**.
 
-1. Enter below username and password for SQLMI.
+1. Enter below username and password for SQL Managed Instance.
   
     > **Note** You have to enter the credentials of the Azure Arc data controller.
       
