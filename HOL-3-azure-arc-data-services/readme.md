@@ -16,7 +16,7 @@ Azure Arc helps you accelerate innovation across hybrid and multi-cloud environm
 
 Azure Arc enables you to bring Azure data services to any infrastructure across on-premises data centers, edge, and 3rd party clouds, using Kubernetes on hardware of your choice. For customers who need to maintain data estate on-premises, you will gain unique benefits for those on-premises data workloads.
 
-**First**, you will always be current, meaning updates and upgrades are fully automated, and the deployment is controlled by your policy. You will gain unique and cloud proven innovation ahead of any other hybrid cloud offering like the evergreen SQL with no end-of-support through Azure SQL Database, and the hyperscale deployment option of Azure Database for PostgreSQL.
+**First**, you will always be current, meaning updates and upgrades are fully automated, and the deployment is controlled by your policy. You will gain unique and cloud proven innovation ahead of any other hybrid cloud offering like the evergreen SQL with no end-of-support through Azure SQL Database, and the deployment option of Azure Database for PostgreSQL.
 
 **Second**, we will bring cloud elasticity on-premises so you can optimize the performance of data workloads with the ability to dynamically scale up/down and scale out, without application downtime.
 
@@ -31,7 +31,7 @@ Azure Arc makes it possible to run Azure data services on-premises, at the edge,
   Currently, the following Azure Arc-enabled data services are available:
 
    * SQL Managed Instance
-   * PostgreSQL Hyperscale (preview)
+   * PostgreSQL (preview)
     
 In this Hands-on lab, we will be talking about only **Azure Arc-enabled SQLMI** and below are the few services and features of Azure Arc-enabled SQLMI.
 
