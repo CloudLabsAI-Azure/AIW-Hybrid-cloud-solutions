@@ -124,13 +124,9 @@ In the last excercise, you have seen how to enable security measures and monitor
      
    ![](.././media/sqlvm.png "sqlsearch")
    
-1. Please note that script dowload will be blocked by browser, so click on `...` for more actions.
+1. Please note that script dowload will be blocked by browser, so click on **Keep** to download the script.
 
-   ![](.././media/sqlvmd1.png) 
-   
-1. Now, click on **Keep** to download the script.
-
-   ![](.././media/sqlvmd2.png)       
+   ![](.././media/HOL1-EX3-T3-P11.png)      
    
 1. Here you will see one PowerShell script is downloaded.
    
