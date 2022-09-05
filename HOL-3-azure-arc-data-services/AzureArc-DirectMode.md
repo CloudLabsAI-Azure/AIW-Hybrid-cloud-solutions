@@ -165,11 +165,11 @@ In this task, you will be connecting an existing Kubernetes cluster to Azure usi
      
 1. To verify the custom location deployment, switch back to the browser and log in to [Azure Portal](https://portal.azure.com) if not already done.
 
-1. Search for custom location in the search bar and select custom locations.
+1. Search for **custom location** in the search bar and select custom locations.
    
     ![sdf](./media/search-cl.png "Lab Environment")
       
-1. After selecting the custom locations from the search bar, select your **azurearc-customlocation**.
+1. After selecting the custom locations from the search bar, select your **azurearc-nyc-location**.
 
     ![](./media/nyloc2.png "Lab Environment")
      
@@ -177,7 +177,7 @@ In this task, you will be connecting an existing Kubernetes cluster to Azure usi
   
     ![](./media/cl-2.png "Lab Environment")
 
-1. Now search for the log analytics workspace in the azure portal.
+1. Now search for the **log analytics workspace** in the azure portal.
      
     ![](./media/search-law.png "Lab Environment")
 
