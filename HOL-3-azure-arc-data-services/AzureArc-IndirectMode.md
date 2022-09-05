@@ -101,7 +101,8 @@ In this task, you will be creating an SQL Managed Instance using Azure Data Stud
     - **Target Azure Arc Controller**: Select **arcdc-indirect**  
     - **Instance name**: Enter **arcsql-indir**       
     - **Username**:  Enter **arcsqluser** 
-    - **Password**: Enter **Password.1!!**   
+    - **Password**: Enter **Password.1!!**
+    - **Confirm Password**: Enter **Password.1!!**    
 
       ![](images/sqlcnctsetting.png "Confirm")
       
@@ -120,7 +121,7 @@ In this task, you will be creating an SQL Managed Instance using Azure Data Stud
     - **Cores Rquest**: ```2```
     - **Cores Limit**: ```4```
     - **Memory Request**: Enter ```2``` 
-    - **CPU vCores Limit**: Enter ```4``` 
+    - **Memory Limit**: Enter ```4``` 
      
      ![](images/devbus.png "Confirm")
      ![](images/deploysqlm.png "Confirm") 
@@ -129,7 +130,7 @@ In this task, you will be creating an SQL Managed Instance using Azure Data Stud
    
 1. If prompted, select **New Python installation** and click on **Next** button.
 
-   > **Note:** If you are not prompted with the below screen you can skip to step 9.
+   > **Note:** If you are not prompted with the below screen you can skip to step 10.
 
    ![](images/configure-python-runtime.png)
   
