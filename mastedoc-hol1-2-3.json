@@ -47,7 +47,7 @@
         {
           "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/FY-23/HOL-3-azure-arc-data-services/Restore-AdventureWorks.md",
           "Order": 11
-        } ,  
+        },  
         {
           "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/FY-23/HOL-3-azure-arc-data-services/AzureArc-IndirectMode.md",
           "Order": 12
