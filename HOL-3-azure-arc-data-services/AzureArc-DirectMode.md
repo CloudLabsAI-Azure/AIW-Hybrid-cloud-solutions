@@ -231,13 +231,11 @@ In this task, you will be connecting an existing Kubernetes cluster to Azure usi
   
     ![](./media/dc-5.png "Lab Environment")
 
-1. In the Additional settings blade, select the **LoganalyticsWS-Direct** (1) from the dropdown for the Log Analytics workspace. You will see that the Log Analytics workspace ID occurs by default. Enter the Log Analytics primary key which is given here: **<inject key="loganalyticsWorkspacePrimaryKey" enableCopy="true"/>** (2) and click on **Next: Tags** (3) button.
-
+1. In the Additional settings blade, select the **LoganalyticsWS-Direct** **(1)** from the dropdown for the Log Analytics workspace. You will see that the Log Analytics workspace ID occurs by default. Enter the **Log Analytics primary key** **(2)** which you have copied to notepad earlier in the task-2 and click on **Next: Tags** (3) button.
    
     ![](./media/dc-6.png "Lab Environment")
     
 1. Leave default on **Tags** blade and click on **Next: Review + Create** button. to start the Azure Arc data controller deployment.
-
   
     ![](./media/dc-7.png "Lab Environment")
 
@@ -248,13 +246,11 @@ In this task, you will be connecting an existing Kubernetes cluster to Azure usi
     ![](./media/review-dc-direct.png "Lab Environment")
    
 1. Once the deployment is completed, click on **Go to resource group** button.
-
-  
+ 
     ![](./media/complete-dc-direct.png "Lab Environment")
    
 1. From the **azure-arc** resource group, select **arcdc-direct** Azure Arc Data Controller from the resources.
-
-  
+ 
     ![](./media/rg-dc-direct.png "Lab Environment")  
    
   # Monitor the creation of Azure Arc data controller on cluster.
@@ -316,8 +312,7 @@ In this exercise, let's create an **Azure Arc-enabled SQL Managed Instance** usi
      - Instance Compute
        - Memory Limit (in Gi): Enter ```4``` **(3)**
        - CPU vCores Limit: Enter ```2``` **(4)**
-     
-    
+        
       ![](./media/checkboxnew.png "Lab Environment")
      
      - Instance Storage
