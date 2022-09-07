@@ -22,6 +22,7 @@ Hyper-V is Microsoft's hardware virtualization product. It lets you create and r
    * Email/Username: <inject key="AzureAdUserEmail"></inject>
    
 1. Now, enter the **Password** which you have already received for the above account.
+      * Password: <inject key="AzureAdUserPassword"></inject>
       
 1. If you see the pop-up **Stay Signed in?**, click No
 
@@ -296,7 +297,9 @@ Policies can be applied to Arc enabled servers the same way they are applied to 
     
 1. Search for ```Deploy Log Analytics``` in **Available Definitions** and then click on **Deploy Log Analytics extension for Linux VMs** and then click on **Select** button at the bottom.
 
-    ![](.././media/deployloganalyticsv2.png)
+    ![](.././media/HOL1-Ex1-T5-P7.png)
+    
+    >**Note**: If you see multiple policies with the same name, select the Build-in policy when choosing Deploy Log Analytics extension for Linux VMs.
     
 1. After selecting the policy definition, move to the **Parameters** blade by clicking on the **Next** button at the bottom.
 
@@ -336,9 +339,9 @@ In this task, let's configure and collect data from your Linux machine by enabli
 
     ![](.././media/enable-insights.png)
 
-1. On the Azure Monitor **Insights Onboarding** page, choose the existing **Log Analytics Workspace**  LogAnalyticsWS-<inject key="DeploymentID/Suffix" /> and then click on **Enable** button.
+1. On the Azure Monitor **Insights Onboarding** page, choose the existing **Log Analytics Workspace**  LogAnalyticsWS-<inject key="DeploymentID/Suffix" /> and then click on **configure** button.
 
-    ![](.././media/enable-insights2.png)
+    ![](.././media/HOL1-EX1-T6-P3.png)
 
 1. Once you click on the **Enable** button, you can see a notification on the bell icon(🔔) in the top right corner: which says **validating deployment** and then changes to **Submitting deployment** and finally **Deployment in progress**. Deployment will take approx 15-20 minutes to deploy the insights for Ubuntu-k8s VM as extensions are being installed on your connected machine (ubuntu-k8s).
 
@@ -360,11 +363,11 @@ In this task, let's configure and collect data from your Linux machine by enabli
 
 1. Once the Insights are ready, click on the **Performance** blade to review Logical Disk Operations, CPU Utilization, Available Memory, Logical Disk IOPS, Logical Disk MB/s, and much more. It is exciting to see the **graphical representation** on VM performance, whether the VM is deployed on-prem, on other cloud provider platforms, or any edge technologies.
 
-    ![](.././media/performance-matrix.png)
+    ![](.././media/HOL1-EX1-T6-P7.png)
     
 1. Click on **Map** and review the **ubuntu-k8s** with few running **Processes**. Also, you can explore machine properties from the right. If there will be any **Alerts** you can check it by clicking on **Alerts** on the right side 👉.
 
-    ![](.././media/map.png)
+    ![](.././media/HOL1-EX1-T6-P8.png)
 
 
 ## In this exercise, you have covered the following:

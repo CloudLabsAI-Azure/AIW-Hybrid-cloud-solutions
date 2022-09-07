@@ -63,7 +63,7 @@ Now let's copy and restore the already taken backup file into your Azure SQL Man
 
 ### Task 2: View Azure Arc Arc-enabled SQL managed instance logs in Azure Portal
 
-1. Navigate to [Azure Portal](https://portal.azure.com/#home) and then search for Log Analytics workspace in the search bar at the top and then select it.
+1. Navigate to [Azure Portal](https://portal.azure.com/#home) and then search for **Log Analytics workspace** in the search bar at the top and then select it.
 
    ![](./media/search-law.png "Lab Environment")
 

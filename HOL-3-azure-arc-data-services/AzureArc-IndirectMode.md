@@ -101,7 +101,8 @@ In this task, you will be creating an SQL Managed Instance using Azure Data Stud
     - **Target Azure Arc Controller**: Select **arcdc-indirect**  
     - **Instance name**: Enter **arcsql-indir**       
     - **Username**:  Enter **arcsqluser** 
-    - **Password**: Enter **Password.1!!**   
+    - **Password**: Enter **Password.1!!**
+    - **Confirm Password**: Enter **Password.1!!**    
 
       ![](images/sqlcnctsetting.png "Confirm")
       
@@ -120,7 +121,7 @@ In this task, you will be creating an SQL Managed Instance using Azure Data Stud
     - **Cores Rquest**: ```2```
     - **Cores Limit**: ```4```
     - **Memory Request**: Enter ```2``` 
-    - **CPU vCores Limit**: Enter ```4``` 
+    - **Memory Limit**: Enter ```4``` 
      
      ![](images/devbus.png "Confirm")
      ![](images/deploysqlm.png "Confirm") 
@@ -129,7 +130,7 @@ In this task, you will be creating an SQL Managed Instance using Azure Data Stud
    
 1. If prompted, select **New Python installation** and click on **Next** button.
 
-   > **Note:** If you are not prompted with the below screen you can skip to step 9.
+   > **Note:** If you are not prompted with the below screen you can skip to step 10.
 
    ![](images/configure-python-runtime.png)
   
@@ -291,21 +292,19 @@ Now that we have the SQL Managed Instance created, let us upload some metrics, u
 
 1. Then, check if CustomLogs is there under Tables section. If you don't see CustomLogs there, refresh the page every 2 minutes until it is available.
      
-    ![](images/sqlmilogs.png "Confirm")
-
-1. Once the Custom logs is available, expand Custom Logs at the bottom of the list of tables and you will see a table called **sqlManagedInstances_logs_CL**.
+1. Once the Custom logs are available, expand Custom Logs at the bottom of the list of tables and you will see a table called **sqlManagedInstances_agent_logs_CL**.
    
-    ![](images/workspace3.png "Confirm")
+    ![](media/HOL3-EX3-T5-P15.png "Confirm")
 
-1. Hover the cursor on the table name and select the **Use in the editor** button.
+1. Hover the cursor on the table name and select the **Use in editor** button.
    
-    ![](images/log-analytics-useineditor.png "Confirm")
+    ![](media/HOL3-EX3-T5-P16.png "Confirm")
 
-1. Now, you will have a query in the query editor. Run the query that will show the logs. 
+1. Now, you will have a query in the query editor. Run the query that will show the logs by clicking on **Run** **(1)** button and explore the **Results** **(2)**. 
    
-    ![](images/workspace5.1.png "Confirm")
+    ![](media/HOL3-EX3-T5-P17.png "Confirm")
 
-    > Note: You might have to resize the editor and output windows to view the logs.
+    > Note: You might have to resize the editor, to view the logs from the output window.
 
 ### In this exercise, you have covered the following:
  
