@@ -106,6 +106,21 @@ Now, let’s onboard the Linux Machine to Azure Arc as an Arc-enabled server. Th
     
     ![](.././media/root-login.png "Root Login")
     
+ 1. Run the below commands to upgrade the az packages and az module. 
+   
+     ```
+      curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py 
+      python3 get-pip.py
+      apt install pip
+      python3 get-pip.py
+      python3 -m pip install -U pip
+      python3 -m pip install --upgrade pip --target /opt/az/lib/python3.6/site-packages/
+      az upgrade -y
+      init 6
+    ```
+
+1. Open a new Putty session, re-perform the steps from step-2 to step-4 of the same task to get the upgraded packages and then continue from  step-7.
+    
 1. Next, you have to navigate back to the Desktop of the provided virtual Machine ARCHOST VM 💻, and then click on `installArcAgentLinux.txt` file to open it.
 
    ![](.././media/variableazlogin.gif "Install Arc Agent")
