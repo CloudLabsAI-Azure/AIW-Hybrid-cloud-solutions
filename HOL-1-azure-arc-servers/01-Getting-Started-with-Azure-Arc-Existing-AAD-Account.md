@@ -109,7 +109,7 @@ Now, let’s onboard the Linux Machine to Azure Arc as an Arc-enabled server. Th
  1. Run the below commands to upgrade the az packages and az module. 
    
      ```
-      curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py 
+      curl https://bootstrap.pypa.io/get-pip.py > get-pip.py
       python3 get-pip.py
       apt install pip
       python3 get-pip.py
