@@ -57,13 +57,13 @@ GitOps, as it relates to Kubernetes, is the practice of declaring the desired st
  1. Run the below commands to upgrade the az packages and az module. 
    
      ```
-      curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py python3 get-pip.py
+      curl https://bootstrap.pypa.io/get-pip.py > get-pip.py
       apt install pip
       python3 get-pip.py
       python3 -m pip install -U pip
       python3 -m pip install --upgrade pip --target /opt/az/lib/python3.6/site-packages/
       az upgrade -y
-      init 6
+      init 6 #TO restart
     ```
 
 1. Open a new Putty session, re-perform the steps from step-2 to step-6 of the same task to get the upgraded packages and then continue from  step-9.
