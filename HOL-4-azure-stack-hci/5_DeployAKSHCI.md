@@ -51,7 +51,7 @@ Your Azure VM deployment automatically installed Windows Admin Center 2103, howe
 
    ![](./media/extensionv.png)
 
-In order to deploy AKS-HCI with Windows Admin Center, you need to connect your Windows Admin Center instance to Azure.
+   In order to deploy AKS-HCI with Windows Admin Center, you need to connect your Windows Admin Center instance to Azure.
 
 6. Now, in **Settings**, under **Gateway** click on **Register**.
 
@@ -114,7 +114,7 @@ In order to successfully deploy AKS on Azure Stack HCI with Windows Admin Center
 
 *******************************************************************************************************
 
-6. Switch back to the **Windows Admin Center tab** and click on **Windows Admin Center** in the top-left corner to return to the home page. 
+7. Switch back to the **Windows Admin Center tab** and click on **Windows Admin Center** in the top-left corner to return to the home page. 
 
     ![Confirm Azure AD app permissions in Windows Admin Center](./media/admin.png "Confirm Azure AD app permissions in Windows Admin Center")
     
@@ -163,8 +163,7 @@ The next section will walk through configuring the AKS on Azure Stack HCI manage
 1. Once successfully authenticated, the configuration process will begin and will take around 10-15 minutes to finish. if you see below warning please ignore that and proceed with next step.
 
       > WARNING: If you are running Windows PowerShell remotely, note that some failover clustering cmdlets do not work remotely. When possible, run the cmdlet locally and specify a remote computer a
-s the target. To run the cmdlet remotely, try using the Credential Security Service Provider (CredSSP). All additional errors or warnings from this cmdlet might be caused by running it remote
-ly.
+s the target. To run the cmdlet remotely, try using the Credential Security Service Provider (CredSSP). All additional errors or warnings from this cmdlet might be caused by running it remotely.
 
 1. Navigate back to Windows Admin Center homepage and click on your **HybridHost001.hybrid.local** cluster.
 
