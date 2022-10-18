@@ -321,7 +321,7 @@ In this exercise, let's create an **Azure Arc-enabled SQL Managed Instance** usi
        - Data-logs storage class: leave ```default```
        - Data-logs volume size (in Gi): ```1```
        - Logs storage class: Leave ```default```
-       - Logs storage class: Enter ```1```
+       - Logs volume size (in Gi): Enter ```1```
        - Backup Storage class: leave ```default```
        - Backups volume size (in Gi): ```1```
 
