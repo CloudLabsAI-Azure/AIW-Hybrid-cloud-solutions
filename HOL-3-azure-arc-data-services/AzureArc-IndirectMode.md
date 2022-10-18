@@ -16,6 +16,10 @@ In the environment provided, the Azure Arc Data controller is already deployed o
 
    ```BASH
    Remove-Item C:\Users\arcadmin\.kube\config
+   
+   ```
+   
+   ```BASH
    Import-AzAksCredential -ResourceGroupName $env:resourceGroup -Name $env:clusterName -Force
 
    ```
@@ -110,7 +114,7 @@ In this task, you will be creating an SQL Managed Instance using Azure Data Stud
    
     - **Service Tier**: **Business Critical** 
     - **For Development use only**: **Check the box** 
-    - **storage class(Data)**: leave default
+    - **storage class(Data)**: leave ```default```
     - **volume size in Gi(Data)**: ```2```
     - **storage class(Database logs )**: leave ```default```
     - **volume size (Database logs)**: ```1```
