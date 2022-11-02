@@ -34,7 +34,7 @@ Hyper-V is Microsoft's hardware virtualization product. It lets you create and r
 
     ![](.././media/navigate-resource-group.png "Select Resource Group from Navigate Option")    
   
-1. Click on the azure-arc Resource group and confirm whether you have total 11 records to confirm all the below resources are deployed successfully.
+1. Click on the azure-arc Resource group and confirm whether you have total 12 records to confirm all the below resources are deployed successfully.
 
    ![](https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/main/media/resources-azure-arc-rg.png)
 
@@ -118,7 +118,12 @@ Now, let’s onboard the Linux Machine to Azure Arc as an Arc-enabled server. Th
       az upgrade -y
       init 6
     ```
-
+    > **Note** : If in case, the above commands fail then please run the below mentioned command:
+    
+    ```
+     sudo apt-get install python3-pip
+    ```
+ 
 1. Open a new Putty session, re-perform the steps from step-2 to step-4 of the same task to get the upgraded packages and then continue from  step-7.
     
 1. Next, you have to navigate back to the Desktop of the provided virtual Machine ARCHOST VM 💻, and then click on `installArcAgentLinux.txt` file to open it.
