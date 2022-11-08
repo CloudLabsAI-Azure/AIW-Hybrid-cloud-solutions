@@ -221,11 +221,17 @@ We have onboarded the Linux VM to Azure Arc and verified in task 2. Now, you wil
      ```
      microk8s.status
      ```
-
+     
    - Command to start the Kubernetes cluster
      ```
      microk8s start
      ```
+     
+   >**Note**: In case if you see any error,  Open a new Putty session, re-perform the steps from step-2 to step-4 of the same task 2, run the below command to refresh the certificates and retry the step.
+
+   ```
+   microk8s refresh-certs
+   ```
 
    ![](.././media/k8s-status-running.png "check cluster cluster")
 
