@@ -330,7 +330,10 @@ Policies can be applied to Arc enabled servers the same way they are applied to 
 1. After selecting the policy definition, update the Assignment name to **Deploy Log Analytics extension for Linux VMs (1)**. Then move to the **Parameters** blade by clicking on the **Next (2)** button at the bottom.
 
     ![](.././media/basic-nextv2-updated.png)
-    
+
+> **Note:** Make sure to update the Assignment name same as mentioned above in step 8. Different name will result in failure in validation of this task.
+
+
 1. Under the **Log Analytics Workspace**, select the existing workspace **LogAnalyticsWS-<inject key="DeploymentID/Suffix" />** from the available list and then click on **Next**.
 
     ![](.././media/select-existing-wsv3.png)
