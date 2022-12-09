@@ -1,5 +1,5 @@
 # HOL-1: Exercise 3: Onboard SQL Server to Arc
-In the last excercise, you have seen how to enable security measures and monitoring for Arc enabled servers. In this exercise, you will onboard SQL Server to Azure Arc using Azure Portal and PowerShell commands.
+In the last exercise, you have seen how to enable security measures and monitoring for Arc enabled servers. In this exercise, you will onboard SQL Server to Azure Arc using Azure Portal and PowerShell commands.
 
 ## Task 1: Login To Azure Portal
 
@@ -72,7 +72,7 @@ In the last excercise, you have seen how to enable security measures and monitor
 
    ![](.././media/completed.png "sqlsearch")
   
-1. Bring back the browser window where you had opened Azure Potal and search for **SQL Server -Azure Arc**. If you are already in that page, you will need to click on Refresh button. In that page, you will see one resource **SQLVM** that we just created using the PowerShell script in the previous step.
+1. Bring back the browser window where you had opened Azure Portal and search for **SQL Server -Azure Arc**. If you are already in that page, you will need to click on Refresh button. In that page, you will see one resource **SQLVM** that we just created using the PowerShell script in the previous step.
 
    ![](.././media/sqlvm11new.png "sqlsearch")
   
@@ -106,7 +106,7 @@ In the last excercise, you have seen how to enable security measures and monitor
     
 1. Now click on the **Next** button to continue. 
    
-1. At this step, you must enter Log analytics workspace ID and a key to install the MMA ( Microsoft Monitoring Agent ) in the **sqlvm**.
+1. At this step, you must enter Log analytics workspace ID and a key to install the MMA (Microsoft Monitoring Agent) in the **sqlvm**.
   
 1. Now, enter the Workspace ID and Key that you copied from the previous step, and click on **Review + Create** button and then click on **Create** on next window.
  
@@ -116,7 +116,7 @@ In the last excercise, you have seen how to enable security measures and monitor
  
 1. Then, Go to **SQLVM** Azure Arc - SQL Server resource and select the **Environment Health** under settings from the left side menu.
     
-   Now select the below details ( scroll down if you don't see the options ):
+   Now select the below details (scroll down if you don't see the options):
 
    * **Account Type:** Select **Domain User Account** from the drop-down menu.
 
@@ -150,7 +150,7 @@ In the last excercise, you have seen how to enable security measures and monitor
    
    ![](.././media/entervmpassword.png "entervmpassword")
  
-1. Click on Start Menu and search for **SQL Server 2019 Configuration Manger** and open SQL Server 2019 Configuration Manger.
+1. Click on Start Menu and search for **SQL Server 2019 Configuration Manager** and open SQL Server 2019 Configuration Manager.
 
    ![](.././media/sql1.png "run")
 
@@ -191,7 +191,7 @@ In the last excercise, you have seen how to enable security measures and monitor
 
     ![](.././media/file12.png "run")
     
-1. To view the SQL Assessment in Azure Portal, Navigate back to Azure Portal .
+1. To view the SQL Assessment in Azure Portal, Navigate back to Azure Portal.
 
 1. Now navigate to **azure-arc** Resource group and then select resource **SQLVM** with type  **SQL Server- Azure Arc**. 
 
