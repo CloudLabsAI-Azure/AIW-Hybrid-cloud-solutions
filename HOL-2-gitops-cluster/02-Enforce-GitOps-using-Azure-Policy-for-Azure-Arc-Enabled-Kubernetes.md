@@ -11,13 +11,13 @@ In this task you will select an existing policy definition and create a policy a
 
     ![](.././media/0151.png)
 
-1. From the **Kuberenetes Azure Arc** blade, click on **capabilities**, click on **Go to Policies** under Azure Policy.
+1. From the **Kuberenetes Azure Arc** overview blade, click on **Capabilities**, click on **Azure Policy**.
 
-    ![](.././media/policy-1.png)
+    ![](.././media/newlatest12.png)
     
 1. On the **Policies** blade, click on **Enable extension** to onbaord to Azure Policy for Azure Arc enabled Kubernetes clusters.
 
-     ![](.././media/HOL2-EX2-T1-P2.png)
+     ![](.././media/newlatest13.png)
      
 1. Now, click on **go to Azure Policy**  to navigate to **Compliance** blade.
 
