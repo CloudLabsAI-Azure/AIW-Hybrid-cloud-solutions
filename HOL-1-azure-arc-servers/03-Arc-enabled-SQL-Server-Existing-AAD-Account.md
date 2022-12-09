@@ -98,7 +98,7 @@ In the last exercise, you have seen how to enable security measures and monitori
     
 1. Click on the **Extension** button from the left side menu and click on **+ Add** button to add a new extension.
  
-   ![](.././media/mma.png "sqlsearch")
+   ![](.././media/newlatest11.png "sqlsearch")
     
 1. Select the **Log Analytics Agent - Azure Arc** extension.
  
@@ -126,11 +126,11 @@ In the last exercise, you have seen how to enable security measures and monitori
    
 1. Please note that script dowload will be blocked by browser, so click on **Keep** to download the script.
 
-   ![](.././media/HOL1-EX3-T3-P11.png)      
+   ![](.././media/newlatest7.png)      
    
 1. Here you will see one PowerShell script is downloaded.
    
-   ![](.././media/downloadv2.png "download")
+   ![](.././media/newlatest8.png "download")
     
 1. Open PowerShell by clicking on the **Windows Powershell** from your LABVM Desktop and run this command to copy this script in the **sqlvm** machine.
     
@@ -140,7 +140,7 @@ In the last exercise, you have seen how to enable security measures and monitori
 
 1. After the command is successfully completed, open **sqlvm** from the Hyper-V Manager by double clicking on **sqlvm**.
 
-   ![](.././media/opensqlvm.png "opensqlvm")
+   ![](.././media/newlatest9.png "opensqlvm")
    
 1. On Connect to sqlvm box, scroll the bar towards Small to open the vm in smallest window and then click on **Connect** button.
 
@@ -185,7 +185,7 @@ In the last exercise, you have seen how to enable security measures and monitori
 
 1. Now go to the directory **C:\sql_assessment\work_dir\SQLAssessment\SQLAssessment_0414202110171817_Targets_1\041420210317** and run the **run.cmd** file to trigger the assessment task.
 
-    ![](.././media/runcmd.png "run")
+    ![](.././media/newlatest10.png "run")
     
 1. Now go to the directory **C:\sql_assessment\work_dir\SQLAssessment\SQLAssessment_0414202110171817_Targets_1** and you will be able to see some files and folders created. These are the assessments and logs that are generated using the PowerShell script.    
 
