@@ -195,6 +195,7 @@ We have onboarded the Linux VM to Azure Arc and verified in task 2. Now, you wil
    chmod 700 get_helm.sh
    ./get_helm.sh
    ```
+   **Note**: Incase if you see `Could not find git. It is required  for plugin installation.` warning, please ignore it and continue with the lab.
     
    ![](.././media/installhelm.png "installhelm")
 
