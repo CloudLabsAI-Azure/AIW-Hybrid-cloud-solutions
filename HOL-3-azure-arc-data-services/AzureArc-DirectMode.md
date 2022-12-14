@@ -71,7 +71,7 @@ In this task, you will be connecting an existing Kubernetes cluster to Azure usi
    ```
    > **Info:** In the above step, you have connected your existing Azure kubernetes cluster to Azure Arc, to get the available AKS cluster deployed on azure, you can use the command ```az aks list```.
   
-   > **Note:** We have already defined your Cluster name and Azure resource group name in the above commands. If you are trying this in your subscription, please make sure that you have entered the correct details.This can take upto 5 mintues to complete. 
+   > **Note:** We have already defined your Cluster name and Azure resource group name in the above commands. If you are trying this in your subscription, please make sure that you have entered the correct details. This can take upto 5 minutes to complete. 
 
 1. Once the previous command is executed successfully, the provisioning state in output will show as succeeded.
    
@@ -325,7 +325,7 @@ In this exercise, let's create an **Azure Arc-enabled SQL Managed Instance** usi
        - Backup Storage class: leave ```default```
        - Backups volume size (in Gi): ```1```
 
-      >**Note:** In the above section the (Gi) is refering to the storage in Gigabytes.  
+      >**Note:** In the above section the (Gi) is referring to the storage in Gigabytes.  
       
     After adding all the above details click on the **Apply** button.  
       
@@ -431,20 +431,20 @@ In this task, let us learn how to connect to Azure Arc-enabled SQL Managed insta
 
 1. Enter the following in the connection details page:
 
-   - **Connection type** : Select **Microsoft SQL Server** (1)
+   - **Connection type**: Select **Microsoft SQL Server** (1)
    
    - **Sever**: Paste the External Endpoint value of SQL Managed Instance which you copied earlier (2)
 
      >**Note**: Make sure you have entered **IP Address** with **port number**.
    
-   - **Authentication type** : Select **SQL Login** from the drop down options (3)
+   - **Authentication type**: Select **SQL Login** from the drop down options (3)
    
-   - **User name** : Enter arcsqluser (4)
+   - **User name**: Enter arcsqluser (4)
      ```BASH
      arcsqluser
      ```
    
-   - **Password** : Enter Password.1!! (5)
+   - **Password**: Enter Password.1!! (5)
      ```BASH
      Password.1!!
      ```

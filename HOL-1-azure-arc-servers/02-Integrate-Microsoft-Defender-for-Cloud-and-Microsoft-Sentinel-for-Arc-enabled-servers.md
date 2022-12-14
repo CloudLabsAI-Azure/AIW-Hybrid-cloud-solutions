@@ -1,6 +1,6 @@
 # HOL-1: Exercise 2: Onboard Azure Arc enabled servers to Microsoft Sentinel and Microsoft Defender for Cloud
 
-In the last excercise, we had enabled Linux Machine and Kubernetes cluster on Azure Arc and verified it. Now let's see how to onboard your Azure Arc enabled server to Microsoft Sentinel and start collecting security-related events. Microsoft Sentinel provides a single solution for alert detection, threat visibility, proactive hunting, and threat response across the enterprise.
+In the last exercise, we had enabled Linux Machine and Kubernetes cluster on Azure Arc and verified it. Now let's see how to onboard your Azure Arc enabled server to Microsoft Sentinel and start collecting security-related events. Microsoft Sentinel provides a single solution for alert detection, threat visibility, proactive hunting, and threat response across the enterprise.
    
 ## Task 1: Enable Microsoft Defender for Cloud.
 Microsoft Defender for cloud can monitor the security posture of your non-Azure computers, but first you need to connect them to Azure.
@@ -16,7 +16,7 @@ You can connect your non-Azure computers in any of the following ways:
 
    ![](.././media/H1-Ex2-task2-02.png)
    
-1. Now, select the subcription listed and click on **Install agents**.
+1. Now, select the subscription listed and click on **Install agents**.
    > Note: If you see that the Install agents button is not available, It means that the agent will get automatically installed with the help of Defender and log analytics.
 
    ![](.././media/H1-Ex2-task2-03.png)

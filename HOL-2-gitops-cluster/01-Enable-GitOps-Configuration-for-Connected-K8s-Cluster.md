@@ -137,7 +137,7 @@ After config-agent has installed the flux instance, resources held in the git re
    kubectl get ns --show-labels
    ```
  
-   The output shows that team-a, team-b, itops, and cluster-config namespaces have been created as shown:
+   The output shows that team-a, team-b, Gitops, and cluster-config namespaces have been created as shown:
   
    ![](.././media/07.png) 
    

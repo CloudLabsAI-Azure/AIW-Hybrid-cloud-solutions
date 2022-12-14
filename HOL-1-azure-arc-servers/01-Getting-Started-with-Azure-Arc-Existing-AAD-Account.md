@@ -12,7 +12,7 @@ Hyper-V is Microsoft's hardware virtualization product. It lets you create and r
 
 1. You can see a virtual machine desktop 💻 (LabVM/ARCHOST) is loaded on the left side in your browser. Use this virtual machine throughout the workshop to perform the lab. You can also connect to the virtual machine using any RDP client using the ARCHOST VM credentials provided in the **Environment Details** tab.
 
-    ![](.././media/cloudlab-vm-guidev1.png "Lab Environment")
+    ![](.././media/newlatest1.png "Lab Environment")
 
 1. In the **LabVM/ARCHost VM**, double click on the Azure portal shortcut of Microsoft Edge browser which is provided on the desktop.
   
@@ -78,19 +78,19 @@ Now, let’s onboard the Linux Machine to Azure Arc as an Arc-enabled server. Th
     
 1. Enter the **ubuntu-k8s** VM username - ```demouser``` in **login as** and then hit **Enter**. Now, enter the password - ```demo@pass123``` and press **Enter**. Remember the password will be hidden and not be visible in the terminal.
 
-    - **Username** : Enter demouser
+    - **Username**: Enter demouser
       ```BASH
       demouser
       ```
    
-    - **Password** : Enter demo@pass123
+    - **Password**: Enter demo@pass123
       ```BASH
       demo@pass123
       ```
 
     ![](.././media/enter-ubuntu-k8s-credentials.png "Enter ubuntu-k8s credentials")
     
-    > **Note** : To paste any value in the Putty terminal, just copy the values from anywhere and then right-click on the terminal to paste the copied value.
+    > **Note**: To paste any value in the Putty terminal, just copy the values from anywhere and then right-click on the terminal to paste the copied value.
     
 1. Login to the **Root user account** using sudo command; enter the following command and then provide **password** - ```demo@pass123``` when prompted for the password.
 
@@ -118,7 +118,7 @@ Now, let’s onboard the Linux Machine to Azure Arc as an Arc-enabled server. Th
       az upgrade -y
       init 6
     ```
-    > **Note** : If in case, the above commands fail then please run the below mentioned command:
+    > **Note**: If in case, the above commands fail then please run the below mentioned command:
     
     ```
      sudo apt-get install python3-pip
@@ -177,7 +177,7 @@ Now, let’s onboard the Linux Machine to Azure Arc as an Arc-enabled server. Th
    ![](.././media/varify-onboard-arc-ubuntuk8s.png "ubuntu k8s onboarded")
 
 1. On **ubuntu-k8s** Server - Azure Arc **Overview** page, verify that the status is **Connected**. You can also check other details from this tab like Computer name, Operating system, Operating system version and Agent version of ubuntu machine. 
-   > **Note**: Operating system and Agent version that you see may not match with the provided screenshot if there were any updaes to the Agent/ OS Version.
+   > **Note**: Operating system and Agent version that you see may not match with the provided screenshot if there were any updates to the Agent/ OS Version.
 
    ![](.././media/hol1ss1.png "ubuntu k8s onboard status check")
 
@@ -185,11 +185,11 @@ Now, let’s onboard the Linux Machine to Azure Arc as an Arc-enabled server. Th
 
 We have onboarded the Linux VM to Azure Arc and verified in task 2. Now, you will onboard the local Kubernetes cluster to Azure Arc. So, here we onboard **MicroK8s** Kubernetes cluster to Azure Arc which is hosted on **ubuntu-k8s** VM. We already have the Microk8s Kubernetes cluster ready and configured with the Arc enabled CLI extensions.
 
-   > **Note** : If you have closed the putty after completing **task 2**, then perform the first 8 steps of task 2 again and then return to perform this task. Make sure that you perform all steps with root user in ubuntu-k8s vm.
+   > **Note**: If you have closed the putty after completing **task 2**, then perform the first 8 steps of task 2 again and then return to perform this task. Make sure that you perform all steps with root user in ubuntu-k8s vm.
 
 1. To install helm, you need to run the following commands within the terminal of ubuntu-k8s VM that is opened in putty:
             
-     > **Info** : Helm is a Kubernetes deployment tool for automating creation, packaging, configuration, and deployment of applications and services to Kubernetes clusters. The kubernetes app's manifests are stored in helm charts.
+     > **Info**: Helm is a Kubernetes deployment tool for automating creation, packaging, configuration, and deployment of applications and services to Kubernetes clusters. The kubernetes app's manifests are stored in helm charts.
    ```
    curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3
    chmod 700 get_helm.sh
@@ -214,7 +214,7 @@ We have onboarded the Linux VM to Azure Arc and verified in task 2. Now, you wil
    az extension update --name connectedk8s
    ```
     
-   ![](.././media/update-k8s-extensions-new.png "Update Az k8s extensions")
+   ![](.././media/newlatest2.png "Update Az k8s extensions")
     
 1. Now, you can check the status of the Kubernetes cluster by running ```microk8s.status``` in **ubuntu-k8s** VM. To check the status once the command is executed, you have to scroll up to top of the output to view the status. If the status is **microk8s is running**, you can proceed to the next step. But, if it is in a stopped state, you have to run ```microk8s start``` command to restart the Kubernetes cluster.
 
@@ -341,7 +341,7 @@ Policies can be applied to Arc enabled servers the same way they are applied to 
 
 1. On the **Remediation** blade, enable the checkbox for **Create a remediation task** and then click on the **Next** button.
 
-    ![](.././media/hol1ss2.png)
+    ![](.././media/newlatest3.png)
     
 1. On **Non-compliance messages** blade, enter following message ```Log Analytics agent is not installed```. This message will be displayed when linux machine will be non compliant. Now, click on the **Review + create**.
 
@@ -371,19 +371,19 @@ In this task, let's configure and collect data from your Linux machine by enabli
 
 1. On the Azure Monitor **Insights Onboarding** page, choose the existing **Log Analytics Workspace**  LogAnalyticsWS-<inject key="DeploymentID/Suffix" /> and then click on **configure** button.
 
-    ![](.././media/HOL1-EX1-T6-P3.png)
+    ![](.././media/newlatest4.png)
 
 1. Once you click on the **Enable** button, you can see a notification on the bell icon(🔔) in the top right corner: which says **validating deployment** and then changes to **Submitting deployment** and finally **Deployment in progress**. Deployment will take approx 15-20 minutes to deploy the insights for Ubuntu-k8s VM as extensions are being installed on your connected machine (ubuntu-k8s).
 
     > Note: If you are still seeing Enable button even after clicking on Enable. Once the extensions are installed, it will automatically change. You can move on to the next task.
 
-    ![](.././media/submitting-deployment.png)
+    ![](.././media/newlatest5.png)
     
 1. On Azure Arc ubuntu-k8s Insights blade, you will see **Insights deployment is in progress... Please wait.** notification. Once the deployment is completed, you will see a notification on the upper right corner that says **Deployment succeeded**.
 
     ![](.././media/insights-dep-in-prog.png)
 
-    ![](.././media/deployment-succeeded.png)
+    ![](.././media/newlatest6.png)
 
 1. Once the deployment is succeeded, go back to the **Insights** blade for ubuntu-k8s VM and then refresh the page once, you may have to re-click on the **Enable** button and refresh the page again to see the Insights. Data will take around 10 minutes to be routed to the Insights from your Linux machine: ubuntu-k8s.
 

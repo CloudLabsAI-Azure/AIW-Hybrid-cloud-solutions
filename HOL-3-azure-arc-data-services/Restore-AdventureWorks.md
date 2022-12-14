@@ -115,12 +115,12 @@ Now let us Monitor the SQL MI status using Grafana and Kibana.
   
     > **Note** You have to enter the credentials of Azure Arc data controller.
   
-    - **User name** : arcuser
+    - **User name**: arcuser
       ```BASH
       arcuser
       ```
 
-    - **Password** : Password.1!!
+    - **Password**: Password.1!!
       ```BASH
       Password.1!!
       ```
@@ -149,12 +149,12 @@ Now let us Monitor the SQL MI status using Grafana and Kibana.
   
     > **Note** You have to enter the credentials of the Azure Arc data controller.
       
-    - **User name** : arcuser
+    - **User name**: arcuser
       ```BASH
       arcuser
       ```
 
-    - **Password** : Password.1!!
+    - **Password**: Password.1!!
       ```BASH
       Password.1!!
       ```
