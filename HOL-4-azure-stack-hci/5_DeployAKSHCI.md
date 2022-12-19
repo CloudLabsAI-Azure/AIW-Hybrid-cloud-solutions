@@ -95,7 +95,7 @@ In order to successfully deploy AKS on Azure Stack HCI with Windows Admin Center
 3. Click on **View in Azure** to be taken to the Azure AD app portal, where you should see information about this app, including permissions required. If you're prompted to log in, provide appropriate credentials.
 4. Once logged in, under **Configured permissions**, you should see a few permissions listed with the status **Granted for...** and the name of your tenant. The **Microsoft Graph (5)** API permissions will show as **not granted** but this will be updated upon deployment
 
-5. Under **Configured permissions**, click on **Grant Admin Consent for Azure HOL** button. select **Yes** on the **Grant admin consent confirmation** pop-up to give your app the permissions.
+5. Under **Configured permissions**, click on **Grant Admin Consent for Azure HOL** button.
 
     ![Confirm Azure AD app permissions in Windows Admin Center](../media/Ex2-task2-01.1.png "Confirm Azure AD app permissions in Windows Admin Center")
     
