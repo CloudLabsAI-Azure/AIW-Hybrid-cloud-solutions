@@ -12,9 +12,9 @@ In this exercise, you will see how to configure azure monitor for containers and
 
    ![](.././media/hol2-ex3-2.png "azuremonitor")
 
-3. In Configure Azure Monitor for Kubernetes, for Log Analytics Workspace select the **loganalyticsws- <inject key="DeploymentID/Suffix" />** from the dropdown.
+3. In Configure Azure Monitor for Kubernetes, for Log Analytics Workspace select the **loganalyticsws- <inject key="DeploymentID/Suffix" />** from the dropdown and click on **Configure**.
 
-   ![](.././media/hol2-ex3-3.png "azuremonitor")
+   ![](.././media/HOL2-Ex3-T1-S3.png "azuremonitor")
 
 4. You will be able to see the insights data after 30-60 minutes. For now, you can continue with the next HOL and comeback later to review the insights.
 
