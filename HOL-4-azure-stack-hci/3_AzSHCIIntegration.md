@@ -142,7 +142,7 @@ Once the registration is complete, you should take some time to explore the arti
 
     ![Allow popups in Edge](./media/hol4ss3.png "Allow popups in Edge")
 
-1. Click on the **azihciclus**, then you'll be taken to the new Azure Stack HCI Resource Provider, which shows information about all of your clusters, including details on the currently selected cluster.
+1. Click on the **azshciclus**, then you'll be taken to the new Azure Stack HCI Resource Provider, which shows information about all of your clusters, including details on the currently selected cluster.
 
     ![Overview of the recently registered cluster in the Azure portal](./media/overview.png "Overview of the recently registered cluster in the Azure portal")
 
