@@ -226,7 +226,7 @@ In this task, you will be connecting an existing Kubernetes cluster to Azure usi
    * Log Storage class: Leave default
    * Service type: **Load balancer** (2)
    
-   Under the Administrator account enter the below details.
+   Under the Metrics and Logs Dashboard Credentials enter the below details.
    * Data controller login: **arcuser** (3)
    * Password: **Password.1!!** (4)
    * Confirm password: **Password.1!!** (5)
