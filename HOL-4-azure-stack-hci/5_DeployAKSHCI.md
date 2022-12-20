@@ -78,7 +78,7 @@ In order to deploy AKS-HCI with Windows Admin Center, you need to connect your W
 *******************************************************************************************************
 
 **NOTE** - If you receive an error when signing in, still in **Settings**, under **User**, click on **Account** and click **Sign-in**. You should then be prompted for Azure credentials and permissions, to which you can then click **Accept**. Sometimes it just takes a few moments from Windows Admin Center creating the Azure AD application and being able to sign in. Retry the sign-in until you've successfully signed in.
-**NOTE** - Sometime even after cluster is regitered ity may show an error with Signin with following error, you can ignore that and close the popup:
+**NOTE** - Sometime even after cluster is regitered it may show an error with Signin with following error, you can ignore that and close the popup:
    ```AADSTS700016: Application with identifier '******************' was not found in the directory 'Azure HOL ****'. This can happen if the application has not been installed by the administrator of the tenant or consented to by any user in the tenant. You may have sent your authentication request to the wrong tenant.```
 
 *******************************************************************************************************
@@ -95,7 +95,7 @@ In order to successfully deploy AKS on Azure Stack HCI with Windows Admin Center
 3. Click on **View in Azure** to be taken to the Azure AD app portal, where you should see information about this app, including permissions required. If you're prompted to log in, provide appropriate credentials.
 4. Once logged in, under **Configured permissions**, you should see a few permissions listed with the status **Granted for...** and the name of your tenant. The **Microsoft Graph (5)** API permissions will show as **not granted** but this will be updated upon deployment
 
-5. Under **Configured permissions**, click on **Grant Admin Consent for Azure HOL** button. select **Yes** on the **Grant admin consent confirmation** pop-up to give your app the permissions.
+5. Under **Configured permissions**, click on **Grant Admin Consent for Azure HOL** button.
 
     ![Confirm Azure AD app permissions in Windows Admin Center](../media/Ex2-task2-01.1.png "Confirm Azure AD app permissions in Windows Admin Center")
     

@@ -11,13 +11,13 @@ In this task you will select an existing policy definition and create a policy a
 
     ![](.././media/0151.png)
 
-1. From the **Kuberenetes Azure Arc** blade, click on **capabilities**, click on **Go to Policies** under Azure Policy.
+1. From the **Kuberenetes Azure Arc** blade, click on **capabilities**, click on **Azure Policy**.
 
-    ![](.././media/policy-1.png)
+    ![](.././media/HOL2-EX2-T1-P2.png)
     
 1. On the **Policies** blade, click on **Enable extension** to onbaord to Azure Policy for Azure Arc enabled Kubernetes clusters.
 
-     ![](.././media/HOL2-EX2-T1-P2.png)
+     ![](.././media/HOL2-Ex2-T1-S3.png)
      
 1. Now, click on **go to Azure Policy**  to navigate to **Compliance** blade.
 
@@ -29,19 +29,19 @@ In this task you will select an existing policy definition and create a policy a
 
 1. On the Basics section, click on the ellipses (…) to the right of **Policy definition**.
 
-    ![](.././media/17v2.png)
+    ![](.././media/HOL2-Ex2-T1-S6.png)
 
 1. In the **Search** window for available definitions, type ```GitOps``` and select the one named **Configure Kubernetes clusters with specified GitOps configuration using no secrets**.  Then, click on the blue **Select** button below.
 
     ![](.././media/gitops-1.png)
 
-1. Click **Next** at the bottom of the window.
+1. Click on **Parameters** blade.
 
 1. Provide the following details under **Parameters** tab
 
     - uncheck the **Only show parameters that require input** box to see all the parameters
     
-      ![](.././media/uncheck-new.png)
+      ![](.././media/HOL2-Ex2-T1-S9.1.png)
       
     - Configuration resource name: **cluster-config**
       ```bash
@@ -67,7 +67,7 @@ In this task you will select an existing policy definition and create a policy a
     - Set the **Enable helm** option to **false**
     - **Leave the other options set to default**
      
-    ![](.././media/19v2.png)
+    ![](.././media/HOL2-Ex2-T1-S9.2.png)
 
 1. Then, Click on **Next** from the bottom of the page.
    
@@ -77,7 +77,7 @@ In this task you will select an existing policy definition and create a policy a
      
 1. Click **Create** to start the creation of policy and remediation tasks.
 
-    ![](.././media/gitops3.png)
+    ![](.././media/HOL2-Ex2-T1-S12.png)
 
 1. You will be redirected to the Policies page of microk8s-cluster. Navigate to **Azure-Arc RG** -> **microk8s-cluster** -> **Policies** -> **go to Azure Policy**, if you are not already on that page.
 

@@ -320,7 +320,7 @@ Policies can be applied to Arc enabled servers the same way they are applied to 
     
 1. In **Assign policy** window, under **Basics** section, select **ellipse(...)**  from **Policy Definitions**.
 
-    ![](.././media/select-ellipsev2.png)
+    ![](.././media/HOL1-Ex1-T5-S6.png)
     
 1. Search for ```Deploy Log Analytics``` in **Available Definitions** and then click on **Deploy Log Analytics extension for Linux VMs** and then click on **Select** button at the bottom.
 
@@ -328,28 +328,28 @@ Policies can be applied to Arc enabled servers the same way they are applied to 
     
     >**Note**: If you see multiple policies with the same name, select the Build-in policy when choosing Deploy Log Analytics extension for Linux VMs.
     
-1. After selecting the policy definition, update the Assignment name to **Deploy Log Analytics extension for Linux VMs (1)**. Then move to the **Parameters** blade by clicking on the **Next (2)** button at the bottom.
+1. After selecting the policy definition, update the Assignment name to **Deploy Log Analytics extension for Linux VMs (1)**. Then move to the **Parameters (2)** blade.
 
-    ![](.././media/basic-nextv2-updated.png)
+    ![](.././media/HOL1-Ex1-T5-S8.png)
 
-> **Note:** Make sure to update the Assignment name same as mentioned above in step 8. Different name will result in failure in validation of this task.
+   > **Note:** Make sure to update the Assignment name same as mentioned above in step 8. Different name will result in failure in validation of this task.
 
 
 1. Under the **Log Analytics Workspace**, select the existing workspace **LogAnalyticsWS-<inject key="DeploymentID/Suffix" />** from the available list and then click on **Next**.
 
-    ![](.././media/select-existing-wsv3.png)
+    ![](.././media/HOL1-Ex1-T5-S9.png)
 
 1. On the **Remediation** blade, enable the checkbox for **Create a remediation task** and then click on the **Next** button.
 
-    ![](.././media/hol1ss2.png)
+    ![](.././media/HOL1-Ex1-T5-S10.png)
     
 1. On **Non-compliance messages** blade, enter following message ```Log Analytics agent is not installed```. This message will be displayed when linux machine will be non compliant. Now, click on the **Review + create**.
 
-    ![](.././media/non-com-message.png)
+    ![](.././media/HOL1-Ex1-T5-S11.png)
     
 1. On **Review + create** blade, select **Create** to confirm.
 
-    ![](.././media/createv2.png)
+    ![](.././media/HOL1-Ex1-T5-S12.png)
     
 1. Now, once the policy assignment is created, you will see Deploy Log Analytics Workspace for Linux on the assigned policies list in **Not started** state. It will start to deploy the Log Analytics Agent in **ubuntu-k8s** Hyper-V guest VM. Once Log Analytics Agent is deployed in the ubuntu-k8s VM, compliance state will be updated to **Compliant**. It will take around 20-30 minutes for the process. You can move ahead to the next task and come back later to check the compliance state.
 
