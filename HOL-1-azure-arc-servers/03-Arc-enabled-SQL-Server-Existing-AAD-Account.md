@@ -65,6 +65,7 @@ In the last excercise, you have seen how to enable security measures and monitor
    > **Note** : This will initiate the execution of **RegisterSqlServerArc.ps1** script inside **sqlvm** that is deployed on Hyper-V.
 
 1. After running the command, you will see some outputs which shows that the script started running.
+   > **Note** : If script fails to execute. Please run it again. 
 
    ![](.././media/run.png "sqlsearch")
   
