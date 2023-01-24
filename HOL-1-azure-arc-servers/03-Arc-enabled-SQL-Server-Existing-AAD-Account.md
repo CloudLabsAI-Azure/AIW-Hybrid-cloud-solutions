@@ -96,7 +96,7 @@ In the last exercise, you have seen how to enable security measures and monitori
 
    ![](.././media/select-sql-vm.png "select-sql-vm")
     
-1. Click on the **Extension** button from the left side menu and click on **+ Add** button to add a new extension.
+1. Click on the **Extensions** button from the left side menu and click on **+ Add** button to add a new extension.
  
    ![](.././media/newlatest11.png "sqlsearch")
     
