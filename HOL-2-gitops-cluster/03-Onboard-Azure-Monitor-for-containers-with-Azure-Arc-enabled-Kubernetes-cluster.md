@@ -8,7 +8,7 @@ In this exercise, you will see how to configure azure monitor for containers and
 
    ![](.././media/hol2-ex3-1.png "azuremonitor")
 
-2. On the **microk8s-cluster** Kubernetes - Azure Arc pane, select **Insights (1)** under Monitoring from left-hand side menu and click on **Configure azure monitor (2)**.
+2. On the **microk8s-cluster** Kubernetes - Azure Arc pane, select **Insights** **(1)** under Monitoring from left-hand side menu and click on **Configure azure monitor** **(2)**.
 
    ![](.././media/hol2-ex3-2.png "azuremonitor")
 
