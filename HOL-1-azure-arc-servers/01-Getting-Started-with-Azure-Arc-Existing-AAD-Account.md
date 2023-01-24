@@ -213,7 +213,7 @@ We have onboarded the Linux VM to Azure Arc and verified in task 2. Now, you wil
    az extension update --name connectedk8s
    ```
     
-   ![](.././media/newlatest2.png "Update Az k8s extensions")
+   ![](.././media/new18.png "Update Az k8s extensions")
     
 1. Now, you can check the status of the Kubernetes cluster by running ```microk8s.status``` in **ubuntu-k8s** VM. To check the status once the command is executed, you have to scroll up to top of the output to view the status. If the status is **microk8s is running**, you can proceed to the next step. But, if it is in a stopped state, you have to run ```microk8s start``` command to restart the Kubernetes cluster.
 
@@ -321,9 +321,9 @@ Policies can be applied to Arc enabled servers the same way they are applied to 
 
     ![](.././media/select-ellipsev2.png)
     
-1. Search for ```Deploy Log Analytics``` in **Available Definitions** and then click on **Deploy Log Analytics extension for Linux VMs** and then click on **Select** button at the bottom.
+1. Search for ```Deploy Log Analytics``` in **Available Definitions** and then click on **Deploy Log Analytics extension for Linux VMs** and then click on **Add** button at the bottom.
 
-    ![](.././media/HOL1-Ex1-T5-P7.png)
+    ![](.././media/new19.png)
     
     >**Note**: If you see multiple policies with the same name, select the Build-in policy when choosing Deploy Log Analytics extension for Linux VMs.
     
@@ -331,7 +331,7 @@ Policies can be applied to Arc enabled servers the same way they are applied to 
 
     ![](.././media/basic-nextv2-updated.png)
 
-> **Note:** Make sure to update the Assignment name same as mentioned above in step 8. Different name will result in failure in validation of this task.
+    > **Note:** Make sure to update the Assignment name same as mentioned above in step 8. Different name will result in failure in validation of this task.
 
 
 1. Under the **Log Analytics Workspace**, select the existing workspace **LogAnalyticsWS-<inject key="DeploymentID/Suffix" />** from the available list and then click on **Next**.
