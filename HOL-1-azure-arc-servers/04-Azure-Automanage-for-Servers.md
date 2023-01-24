@@ -12,7 +12,7 @@ Azure Automanage enrols, configures, and monitors the entire lifecycle of dev/te
 
    ![](.././media/hol1-ex4-automanage-1.png "searchautoamanage")
    
-2. From the Automanage pane, select **Automanage machines (1)** under Azure machine best practices and click on **+ Enable on existing machine (2)**.
+2. From the Automanage pane, select **Automanage machines** **(1)** under Azure machine best practices and click on **+ Enable on existing machine** **(2)**.
 
    ![](.././media/hol1-ex4-automanage-3.png "searchautoamanage")
 
