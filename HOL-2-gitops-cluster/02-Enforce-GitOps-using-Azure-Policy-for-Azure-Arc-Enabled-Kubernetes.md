@@ -31,9 +31,9 @@ In this task you will select an existing policy definition and create a policy a
 
     ![](.././media/17v2.png)
 
-1. In the **Search** window for available definitions, type ```GitOps``` and select the one named **Configure Kubernetes clusters with specified GitOps configuration using no secrets**.  Then, click on the blue **Select** button below.
+1. In the **Search** window for available definitions, type ```GitOps``` and select the one named **Configure Kubernetes clusters with specified GitOps configuration using no secrets**.  Then, click on the blue **Add** button below.
 
-    ![](.././media/gitops-1.png)
+    ![](.././media/new21.png)
 
 1. Click **Next** at the bottom of the window.
 
