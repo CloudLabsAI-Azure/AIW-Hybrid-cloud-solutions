@@ -9,7 +9,31 @@ HOL-4: Getting Started With Azure Stack HCI with Azure
 
    ![](media/env-page.png "Lab Environment")
  
-    > You will see the SUFFIX value on the **Environment Details** tab, use it wherever you see SUFFIX or DeploymentID in lab steps.
+
+## Login to Azure Portal
+
+1. In the **JumpVM**, double click on the Azure portal shortcut of Microsoft Edge browser which is provided on the desktop.
+  
+    ![](.././media/select-azureportal.png "Select Azure Portal")
+    
+1. On the **Sign into Microsoft Azure** tab, you will see the login prompt. Enter the following **Email/Username** and then click on **Next**. 
+      
+      * Email/Username: <inject key="AzureAdUserEmail"></inject>
+   
+1. Now, enter the **Password** which you have already received for the above account.
+      
+      * Password: <inject key="AzureAdUserPassword"></inject>
+      
+1. If you see the pop-up **Stay Signed in?**, click No
+
+1. If you see the pop-up **You have free Azure Advisor recommendations!**, close the window to continue the lab.
+
+1. If **Welcome to Microsoft Azure** popup window appears, click **Maybe Later** to skip the tour.
+
+1. Navigate to the Resource Group in the Azure portal navigate section.
+
+    ![](.././media/navigate-resource-group.png "Select Resource Group from Navigate Option")
+
 
 ## Connect to Admin Center
 
