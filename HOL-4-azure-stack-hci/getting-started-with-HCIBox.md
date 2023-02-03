@@ -14,7 +14,7 @@ HOL-4: Getting Started With Azure Stack HCI with Azure
 
 1. In the **JumpVM**, double click on the Azure portal shortcut of Microsoft Edge browser which is provided on the desktop.
   
-    ![](.././media/select-azureportal.png "Select Azure Portal")
+    ![](media/open-az-portal.png "Select Azure Portal")
     
 1. On the **Sign into Microsoft Azure** tab, you will see the login prompt. Enter the following **Email/Username** and then click on **Next**. 
       
@@ -32,12 +32,19 @@ HOL-4: Getting Started With Azure Stack HCI with Azure
 
 1. Navigate to the Resource Group in the Azure portal navigate section.
 
-    ![](.././media/navigate-resource-group.png "Select Resource Group from Navigate Option")
+   ![](.././media/navigate-resource-group.png "Select Resource Group from Navigate Option")
 
+1. From the Resource groups pane, click on **AzureStakHCI** resource group and verify the resources present in it.
+
+   ![](media/azurestackhci-rg.png "Select Azure Stack HCI Resource Group")
+
+1. You can see the onboarded cluster in the **AzureStackHCI** resource group, select the **HCIBox-Cluster** Azure Stack HCI resource and verify the connected nodes to it.
+
+   ![](media/open-hcibox-cluster.png "Select HCI BOX cluster")   
 
 ## Connect to Admin Center
 
-1. In the JumpVM, double-click on the **Admin Center** shortcut which is created on the desktop.
+1. Navigate to JumpVM, double-click on the **Admin Center** shortcut which is created on the desktop.
 
    ![](media/open-admin-center.png "Open AC")
    
