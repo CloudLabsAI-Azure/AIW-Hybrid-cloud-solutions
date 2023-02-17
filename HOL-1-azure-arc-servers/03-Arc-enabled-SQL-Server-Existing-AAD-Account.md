@@ -29,10 +29,11 @@ In the last excercise, you have seen how to enable security measures and monitor
    - Resource group: Select **azure-arc** from dropdown list.
    - Region: Select same region as the Resource group.
    - Operating Systems: Select **Windows**.
+   - License Type: Select **Paid - Standard or Enterprise edition license with Software Assurance or SQL Subscription**.
 
      Now, click on the **Next:Tags** button.
    
-   ![](.././media/hol1ss4.png "sqlsearch")
+   ![](.././media/H1E3T1S6.png "sqlsearch")
    
 1. Leave the default for tags blade and click on **Next: Run Script** button.
  
@@ -68,9 +69,9 @@ In the last excercise, you have seen how to enable security measures and monitor
 
    ![](.././media/run.png "sqlsearch")
   
-1. After 1-2 minutes, you will see that the script execution is completed. Make sure that you see the following output: ```SQL Server - Azure Arc resource: SQLVM created```
+1. In 5-10 minutes, you will see that the script execution is completed. Make sure that you see the following output: ```SQL Server - Azure Arc extension is successfully installed```
 
-   ![](.././media/completed.png "sqlsearch")
+   ![](.././media/H1E3T2S6.png "sqlsearch")
   
 1. Bring back the browser window where you had opened Azure Potal and search for **SQL Server -Azure Arc**. If you are already in that page, you will need to click on Refresh button. In that page, you will see one resource **SQLVM** that we just created using the PowerShell script in the previous step.
 
@@ -78,15 +79,15 @@ In the last excercise, you have seen how to enable security measures and monitor
   
 1. Select the **SQLVM** resource and now you can see the dashboard of **SQLVM** SQL Server -Azure Arc from Azure Portal.
 
-   ![](.././media/dashsql1.png "sqlsearch")
+   ![](.././media/H1E3T2S8.png "H1E3T2S8")
 
 ## Task 3: Run on-demand SQL Assessment.
 
 1. Click on the search blade at the top and search for ```Log Analytics workspace```, then select **LogAnalyticsWS-<inject key="DeploymentID/Suffix" />**.
 
-1. Then select **Agents management** from the left side menu and copy the value of **Workspace ID** and **Primary Key** and save it into a notepad or Notepad++ for later use.
+1. Then select **Agents management** from the left side menu. Click on **Log Analytics agent instructions** and copy the value of **Workspace ID** and **Primary Key** and save it into a notepad or Notepad++ for later use.
  
-   ![](.././media/log.png "sqlsearch")
+   ![](.././media/H1E3T3S2.png "sqlsearch")
 
 1. Now, search for **Servers - Azure Arc** from search box and click on **Servers - Azure Arc**.
  
@@ -113,103 +114,60 @@ In the last excercise, you have seen how to enable security measures and monitor
    ![](.././media/create1.png "sqlsearch")
   
    The deployment will take around 5 to 10 minutes to complete. You have to wait for this deployment to get successful to proceed to the next step.
- 
-1. Then, Go to **SQLVM** Azure Arc - SQL Server resource and select the **Environment Health** under settings from the left side menu.
-    
-   Now select the below details ( scroll down if you don't see the options ):
-
-   * **Account Type:** Select **Domain User Account** from the drop-down menu.
-
-   Then click on the **Download configuration Script** button to download the PowerShell script.
-     
-   ![](.././media/sqlvm.png "sqlsearch")
    
-1. Please note that script dowload will be blocked by browser, so click on **Keep** to download the script.
-
-   ![](.././media/HOL1-EX3-T3-P11.png)      
-   
-1. Here you will see one PowerShell script is downloaded.
-   
-   ![](.././media/downloadv2.png "download")
-    
-1. Open PowerShell by clicking on the **Windows Powershell** from your LABVM Desktop and run this command to copy this script in the **sqlvm** machine.
-    
-   ```
-   Copy-VMFile "sqlvm" -SourcePath "C:\Users\arcadmin\Downloads\AddSqlAssessment.ps1" -DestinationPath "C:\LabFiles\AddSqlAssessment.ps1" -CreateFullPath -FileSource Host
-   ```
-
-1. After the command is successfully completed, open **sqlvm** from the Hyper-V Manager by double clicking on **sqlvm**.
+1. Open **sqlvm** from the Hyper-V Manager by double clicking on **sqlvm**.
 
    ![](.././media/opensqlvm.png "opensqlvm")
-   
+
 1. On Connect to sqlvm box, scroll the bar towards Small to open the vm in smallest window and then click on **Connect** button.
 
-    ![](.././media/scalsqlvm.png "scalsqlvm")
+   ![](.././media/scalsqlvm.png "scalsqlvm")
 
 1. Type password **demo@pass123** and press **Enter** button to login. Then, you can resize the sqlvm window size as per your convenience.
    
    ![](.././media/entervmpassword.png "entervmpassword")
- 
-1. Click on Start Menu and search for **SQL Server 2019 Configuration Manger** and open SQL Server 2019 Configuration Manger.
 
-   ![](.././media/sql1.png "run")
-
-1. Now Select **SQL Server Network configuration** and Double click on **Protocol for MSSQLSERVER**.
-
-   ![](.././media/sql2.png "run")
- 
-1. Now Right click on the **TCP/IP** and select **Enable**. You will get one Warning Pop-up select okay on the pop-up.
- 
-   ![](.././media/sql3.png "run")
- 
-1. After enabling the TCP/iP port select **SQL Server Services** from left side menu and right click on **SQL Server** and select Restart. This will restart the SQL Service and apply the TCP/IP port.
-
-   ![](.././media/sql4.png "run")
- 
-1. Open File explorer in the **sqlvm** and navigate to **C:\LabFiles\** this directory and right-click on **AddSqlAssessment.ps1** PowerShell script and select **Run with PowerShell** to run the PowerShell script to schedule the task which will generate the assessment and logs.
-    > Note: If the script execution doesn't start, re-run the powershell script again.
- 
-   ![](.././media/sql5.png "run")
+1. Click on Start Menu and search for **Microsoft SQL Server Management Studio 18** and open it.
    
-1. Type the below Schduled Task username and Password on powershell window and press enter to run the scipt.
+   ![](.././media/H1E3T3S13.png "H1E3T3S13")
+  
+1. On **Connect to server** pop-up select SQLVM.
 
-   * SchduledTaskUserName: Administrator
-   * SchduledTaskPassword: demo@pass123 
+   ![](.././media/H1E3T3S14.png "H1E3T3S14")
    
-   ![](.././media/file1.png "run")
-    
-1. After running the PowerShell script, navigate to **C:\sql_assessment** directory in File Explorer.
-   > Note: If you are not able to find the directory then wait for 1 or 2 minutes.
+1. In the left pane, expand **Security** then **Logins**. In Logins, right click on **NT AUTHORITY\SYSTEM** and click on **Properties**.
 
-   ![](.././media/ment0.png "run")
+   ![](.././media/H1E3T3S15.png "H1E3T3S15")
+  
+1. In Login Properties pane, click on **Server Roles** then enable the **sysadmin** role and click on **Ok**.
 
-1. Now go to the directory **C:\sql_assessment\work_dir\SQLAssessment\SQLAssessment_0414202110171817_Targets_1\041420210317** and run the **run.cmd** file to trigger the assessment task.
+   ![](.././media/H1E3T3S16.png "H1E3T3S16")
+ 
+1. Then, Go to **SQLVM** Azure Arc - SQL Server resource and select the **Best practices assessment** under settings from the left pane and click on **Change license type**.
+      
+   ![](.././media/H1E3T3S17.png "H1E3T3S17")
 
-    ![](.././media/runcmd.png "run")
-    
-1. Now go to the directory **C:\sql_assessment\work_dir\SQLAssessment\SQLAssessment_0414202110171817_Targets_1** and you will be able to see some files and folders created. These are the assessments and logs that are generated using the PowerShell script.    
+1. Under **SQL Server management details**, select license type as **Paid** and click on **Save**.
 
-    ![](.././media/file12.png "run")
-    
-1. To view the SQL Assessment in Azure Portal, Navigate back to Azure Portal .
+   ![](.././media/H1E3T3S18.png "H1E3T3S18")
 
-1. Now navigate to **azure-arc** Resource group and then select resource **SQLVM** with type  **SQL Server- Azure Arc**. 
+1. Select the log Analytics Workspace as **LogAnalyticsWS-<inject key="DeploymentID/Suffix" />** from the drop-down and click on **Enable assessment**.
 
-    ![](.././media/ment1.png "run")
-
-1. Now open Environment Health option from left side under Settings section and Click on **View SQL Assessment results**.
-    > Note: The View SQL Assessment results button remains disabled until the results are ready in Log Analytics. This process might take up to two hours after the data files are processed on the target machine.
+   ![](.././media/H1E3T3S19.png "H1E3T3S19")
    
-   ![](.././media/ment3.png "run")
-   
-1. Once the Assessment results are available it will look like below.
-    > Note: Now you can move to the next Exercise, you don't have to wait here to the Result appear.
+   > Note: After enabling the assessment, wait for few minutes to get it complete. 
+ 
+1. Once the assessment is **completed**, click on it to see the results. 
 
-   ![](.././media/ment4.png "run")
+   ![](.././media/H1E3T3S20.png "H1E3T3S20")
    
+1. The **Assessment results** will look like below:
+
+    ![](.././media/H1E3T3S21.png "H1E3T3S21")
+      
+   > Note: Now you can move to the next Exercise, you don't have to wait here to the Result appear.   
 
 ## In this exercise, you have covered the following:
  
    - Register Azure Arc enabled SQL Server.
    - Run on-demand SQL Assessment.
-
