@@ -20,7 +20,15 @@ This Lab also includes a dedicated Windows Admin Center (WAC) gateway server. Th
 
 1. Open this shortcut and use the domain credential (arcedemo@jumpstart.local) to start an RDP session to the Windows Admin Center VM.
 
-![-](https://raw.githubusercontent.com/CloudLabsAI-Azure/hybridworkshop/main/media/2023-03-01_17h07_52.png "Open PowerShell ISe as an Administrator")
+![-](https://raw.githubusercontent.com/CloudLabsAI-Azure/hybridworkshop/main/media/wac_gateway_shortcut.png "Screenshot showing WAC desktop shortcut")
+
+2. Log in to the WAC gateway server using the domain credential.
+3. Now you can open the Windows Admin Center shortcut on the WAC server desktop. Once again you will use your domain account to access WAC.
+4. Now that we are logged in, our first step is to add a connection to our HCI cluster. Click on the “Add” button, and then click on “Add” under “Server clusters”.
+5. Enter “hciboxcluster” for the cluster name, and use the domain account credential to connect to the cluster.
+6. Now that the cluster is added, we can explore management capabilities for the cluster inside of WAC. Click on the cluster to drill into its details.
+
+
 
 ## Task 1: Verify your Azure Stack HCI 22H2 Cluster is registered with Azure
 
@@ -34,68 +42,17 @@ We're going to perform the registration verification from the **AdminCenter** ma
 
 ![-](https://raw.githubusercontent.com/CloudLabsAI-Azure/hybridworkshop/main/media/2023-03-01_17h07_52.png "Open PowerShell ISE as an Administrator")
     
-2. With the Az.StackHCI modules installed, it's now time to register your Azure Stack HCI 20H2 cluster to Azure. However, first it's worth exploring how to check the existing registration status. The following code assumes you are still in the remote PowerShell session open from the previous commands.
+2. Copy and paste the below PowerShell commands and execute them, you will now see 
 
      ```powershell
      Invoke-Command -ComputerName AzSHOST1 -ScriptBlock {
      Get-AzureStackHCI
      } 
      ```
-     >Note: If you see the cluster registration status is showing as **Out of Policy**, you can ignore that as there will be no issue during the lab because of this. 
-     
-    ![Check the registration status of the Azure Stack HCI 20H2 cluster](./media/HOL4-ex-01.png "Check the registration status of the Azure Stack HCI 20H2 cluster")
-
-As you can see from the result, the cluster is yet to be registered, and the cluster status identifies as **Clustered**. Azure Stack HCI 20H2 needs to register within 30 days of installation as per the Azure Online Services Terms. If it is not clustered within 30 days, the **ClusterStatus** will show **OutOfPolicy**, and if not registered within 30 days, the **RegistrationStatus** will show as **OutOfPolicy**.
-
-
-3. Now copy the below code and paste it in your PowerShell window, replace ``*your-subscription-ID-here*`` with your subscription ID <inject key="Subscription ID" />. After updating the subscription ID, run the PowerShell commands to register your Azure Stack HCI 20H2 to Azure portal. 
-
-   > **Note**: We have already updated the domain user name and password for the local host server. 
-   
-    ```powershell
-     $password = ConvertTo-SecureString "demo!pass123" -AsPlainText -Force
-     $azshciNodeCreds = New-Object System.Management.Automation.PSCredential ("hybrid\azureuser", $password)
-
-     Register-AzStackHCI `
-    -SubscriptionId *your-subscription-ID-here* `
-    -ResourceName "azshciclus" `
-    -ResourceGroupName "HybridHost" `
-    -Region "EastUS" `
-    -EnvironmentName "AzureCloud" `
-    -ComputerName "AZSHCINODE01.hybrid.local" `
-    –Credential $azshciNodeCreds 
-     
-     ```
-
-Many of these commands are optional:
-
-* **-ResourceName** - If not declared, the Azure Stack HCI 20H2 cluster name is used
-* **-ResourceGroupName** - If not declared, the Azure Stack HCI 20H2 cluster plus the suffix "-rg" is used
-* **-Region** - If not declared, "EastUS" will be used.  Additional regions are supported, with the longer term goal to integrate with Azure Arc in all Azure regions.
-* **-EnvironmentName** - If not declared, "AzureCloud" will be used, but allowed values will include additional environments in the future
-* **-ComputerName** - This is used when running the commands remotely against a cluster.  Just make sure you're using a domain account that has admin privilege on the nodes and cluster
-* **-Credential** - This is also used for running the commands remotely against a cluster.
-
-**Register-AzureStackHCI** runs synchronously, with progress reporting, and typically takes 5-10 minutes.  The first time you run it, it may take slightly longer, because it needs to install some dependencies, including additional Azure PowerShell modules.
-
-4. Once dependencies have been installed, you'll receive a popup on **HybridHost001** to authenticate to Azure. Provide your **Azure credentials**, which are declared in the Environment Details page.
-
-    ![Login to Azure](./media/azure_login_reg.png "Login to Azure")
-
-5. Once successfully authenticated, the registration process will begin and will take some time to finish. Once completed, you should see a message indicating success, as per below:
-
-    ![Register Azure Stack HCI 20H2 with PowerShell](./media/registered.png "Register Azure Stack HCI 20H2 with PowerShell")
-
-6. Once the cluster is registered, run the following command on **HybridHost001** to check the updated status:
-
-    ```powershell
-    Invoke-Command -ComputerName AZSHCINODE01 -ScriptBlock {
-    Get-AzureStackHCI
-    }
-    ```
+    
     ![Check updated registration status with PowerShell](./media/ps.png "Check updated registration status with PowerShell")
 
-You can see the **ConnectionStatus** and **LastConnected** time, which is usually within the last day unless the cluster is temporarily disconnected from the Internet. An Azure Stack HCI 20H2 cluster can operate fully offline for up to 30 consecutive days.
+You can see the **ConnectionStatus** and **LastConnected** time, which is usually within the last day unless the cluster is temporarily disconnected from the Internet. An Azure Stack HCI 22H2 cluster can operate fully offline for up to 30 consecutive days.
 
 ## Task 2: View registration details in the Azure portal ###
 
