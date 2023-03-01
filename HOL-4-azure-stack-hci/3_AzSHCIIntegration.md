@@ -67,7 +67,7 @@ We're going to perform the registration verification from the **AdminCenter** ma
      } 
      ```
     
-    ![Check updated registration status with PowerShell](./media/ps.png "Check updated registration status with PowerShell")
+    ![Check updated registration status with PowerShell](./media/Verify-registered-cluster.png "Check updated registration status with PowerShell")
 
 You can see the **ConnectionStatus** and **LastConnected** time, which is usually within the last day unless the cluster is temporarily disconnected from the Internet. An Azure Stack HCI 22H2 cluster can operate fully offline for up to 30 consecutive days.
 
