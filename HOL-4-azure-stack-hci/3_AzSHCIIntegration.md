@@ -20,14 +20,31 @@ This Lab also includes a dedicated Windows Admin Center (WAC) gateway server. Th
 
 1. Open this shortcut and use the domain credential (arcedemo@jumpstart.local) to start an RDP session to the Windows Admin Center VM.
 
-![-](https://raw.githubusercontent.com/CloudLabsAI-Azure/hybridworkshop/main/media/wac_gateway_shortcut.png "Screenshot showing WAC desktop shortcut")
+![-](https://raw.githubusercontent.com/CloudLabsAI-Azure/hybridworkshop/main/media/wac_gateway_shortcut.png "")
 
 2. Log in to the WAC gateway server using the domain credential.
+
+![-](https://raw.githubusercontent.com/CloudLabsAI-Azure/hybridworkshop/main/media/wac_gateway_login.png "")
+
 3. Now you can open the Windows Admin Center shortcut on the WAC server desktop. Once again you will use your domain account to access WAC.
+
+![-](https://raw.githubusercontent.com/CloudLabsAI-Azure/hybridworkshop/main/media/wac_gateway_desktop.png "")
+![-](https://raw.githubusercontent.com/CloudLabsAI-Azure/hybridworkshop/main/media/wac_login.png "")
+
 4. Now that we are logged in, our first step is to add a connection to our HCI cluster. Click on the “Add” button, and then click on “Add” under “Server clusters”.
+
+![-](https://raw.githubusercontent.com/CloudLabsAI-Azure/hybridworkshop/main/media/wac_empty.png "")
+![-](https://raw.githubusercontent.com/CloudLabsAI-Azure/hybridworkshop/main/media/wac_add_cluster.png "")
+
 5. Enter “hciboxcluster” for the cluster name, and use the domain account credential to connect to the cluster.
+
+![-](https://raw.githubusercontent.com/CloudLabsAI-Azure/hybridworkshop/main/media/wac_add_cluster_detail.png "")
+![-](https://raw.githubusercontent.com/CloudLabsAI-Azure/hybridworkshop/main/media/wac_add_cluster_detail_2.png "")
+
 6. Now that the cluster is added, we can explore management capabilities for the cluster inside of WAC. Click on the cluster to drill into its details.
 
+![-](https://raw.githubusercontent.com/CloudLabsAI-Azure/hybridworkshop/main/media/wac_cluster_added.png "")
+![-](https://raw.githubusercontent.com/CloudLabsAI-Azure/hybridworkshop/main/media/wac_cluster_added_detail "")
 
 
 ## Task 1: Verify your Azure Stack HCI 22H2 Cluster is registered with Azure
