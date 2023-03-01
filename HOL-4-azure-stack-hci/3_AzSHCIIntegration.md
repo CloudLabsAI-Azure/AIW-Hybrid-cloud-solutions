@@ -1,34 +1,43 @@
-HOL-4: Exercise 1: Integrate Azure Stack HCI 20H2 with Azure
+HOL-4: Exercise 1: Integrate Azure Stack HCI 22H2 with Azure
 ==============
 Overview
 -----------
 
-As part of the lab environment, we have already deployed the Azure Stack HCI 20H2 Cluster, so you don't have to deploy it and you can continue registering the already deployed cluster to unlock full functionality.
+   As part of the lab environment, we have already deployed the Azure Stack HCI 22H2 Cluster, so you don't have to deploy it and you can continue adding it to Windows Admin Center and verify the registration of the cluster within Azure to unlock the full functionality.
+
+   Azure Stack HCI 22H2 is delivered as an Azure service and needs to register within 30 days of installation per the Azure Online Services Terms.  With our cluster configured, we'll now register your Azure Stack HCI 22H2 cluster with **Azure Arc** for monitoring, support, billing, and hybrid services. Upon registration, an Azure Resource Manager resource is created to represent each on-premises Azure Stack HCI 22H2 cluster, effectively extending the Azure management plane to Azure Stack HCI 22H2. Information is periodically synced between the Azure resource and the on-premises cluster.  One great aspect of Azure Stack HCI 22H2, is that the Azure Arc registration is a native capability of Azure Stack HCI 22H2, so there is no agent required.
 
 Contents
 -----------
 - [Overview](#overview)
 - [Contents](#contents)
-- [Complete Registration](#complete-registration)
+- [Add the existing Cluster to Windows Admin Center](#task-0-add-the-existing-cluster-to-windows-admin-center)
+- [Verify Cluster Registration](#task-1-verify-your-azure-stack-hci-22h2-cluster-is-registered-with-azure)
 
+## Task 0: Add the existing Cluster to Windows Admin Center
 
-Azure Stack HCI 20H2 is delivered as an Azure service and needs to register within 30 days of installation per the Azure Online Services Terms.  With our cluster configured, we'll now register your Azure Stack HCI 20H2 cluster with **Azure Arc** for monitoring, support, billing, and hybrid services. Upon registration, an Azure Resource Manager resource is created to represent each on-premises Azure Stack HCI 20H2 cluster, effectively extending the Azure management plane to Azure Stack HCI 20H2. Information is periodically synced between the Azure resource and the on-premises cluster.  One great aspect of Azure Stack HCI 20H2, is that the Azure Arc registration is a native capability of Azure Stack HCI 20H2, so there is no agent required.
+This Lab also includes a dedicated Windows Admin Center (WAC) gateway server. The WAC gateway server can be accessed by connecting to it from RDP. A shortcut is available on the HCIBox-Client desktop.
 
+1. Open this shortcut and use the domain credential (username_supplied_at_deployment@jumpstart.local) to start an RDP session to the Windows Admin Center VM.
 
-## Task 1: Register Azure Stack HCI 20H2 Cluster on Azure portal.
+![-](https://raw.githubusercontent.com/CloudLabsAI-Azure/hybridworkshop/main/media/powershell.png "Volume created on Azure Stack HCI 20H2")
 
-   To complete registration, you have 2 options - you can use **Windows Admin Center**, or you can use **PowerShell**. For this lab, it's recommended to use the PowerShell as it is less likely that you will encounter unpredictible erros in the lab environment, due to WAC installed on the domain controller. In this environment, we will be using PowerShell to register to the Azure Stack HCI cluster.
+## Task 1: Verify your Azure Stack HCI 22H2 Cluster is registered with Azure
 
- We're going to perform the registration from the **HybridHost001** machine, which we've been using with the Windows Admin Center.
+Normally registering your cluster can be done in 2 ways. You can use **Windows Admin Center**, or you can use **PowerShell**. **Within this lab the Azure Stack HCI 22H2 cluster is already registered.**
 
-1. After logging in to the **HybridHost001** VM, click on the windows button and search for **PowerShell ISE** then right-click on it to select **Run as administrator**.
+To verify the registration let's now use PoweShell.
+
+We're going to perform the registration verification from the **AdminCenter** machine, which we've been using to access Windows Admin Center.
+
+1. After logging in to the **AdminCenter** VM, click on the windows button and search for **PowerShell ISE** then right-click on it to select **Run as administrator**.
 
     ![Volume created on Azure Stack HCI 20H2](https://raw.githubusercontent.com/CloudLabsAI-Azure/hybridworkshop/main/media/powershell.png "Volume created on Azure Stack HCI 20H2")
     
 2. With the Az.StackHCI modules installed, it's now time to register your Azure Stack HCI 20H2 cluster to Azure. However, first it's worth exploring how to check the existing registration status. The following code assumes you are still in the remote PowerShell session open from the previous commands.
 
      ```powershell
-     Invoke-Command -ComputerName AZSHCINODE01 -ScriptBlock {
+     Invoke-Command -ComputerName AzSHOST1 -ScriptBlock {
      Get-AzureStackHCI
      } 
      ```
