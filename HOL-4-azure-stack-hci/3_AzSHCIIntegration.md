@@ -18,9 +18,9 @@ Contents
 
 This Lab also includes a dedicated Windows Admin Center (WAC) gateway server. The WAC gateway server can be accessed by connecting to it from RDP. A shortcut is available on the HCIBox-Client desktop.
 
-1. Open this shortcut and use the domain credential (username_supplied_at_deployment@jumpstart.local) to start an RDP session to the Windows Admin Center VM.
+1. Open this shortcut and use the domain credential (arcedemo@jumpstart.local) to start an RDP session to the Windows Admin Center VM.
 
-![-](https://raw.githubusercontent.com/CloudLabsAI-Azure/hybridworkshop/main/media/powershell.png "Volume created on Azure Stack HCI 20H2")
+![-](https://raw.githubusercontent.com/CloudLabsAI-Azure/hybridworkshop/main/media/2023-03-01_17h07_52.png "Open PowerShell ISe as an Administrator")
 
 ## Task 1: Verify your Azure Stack HCI 22H2 Cluster is registered with Azure
 
@@ -32,7 +32,7 @@ We're going to perform the registration verification from the **AdminCenter** ma
 
 1. After logging in to the **AdminCenter** VM, click on the windows button and search for **PowerShell ISE** then right-click on it to select **Run as administrator**.
 
-    ![Volume created on Azure Stack HCI 20H2](https://raw.githubusercontent.com/CloudLabsAI-Azure/hybridworkshop/main/media/powershell.png "Volume created on Azure Stack HCI 20H2")
+![-](https://raw.githubusercontent.com/CloudLabsAI-Azure/hybridworkshop/main/media/2023-03-01_17h07_52.png "Open PowerShell ISE as an Administrator")
     
 2. With the Az.StackHCI modules installed, it's now time to register your Azure Stack HCI 20H2 cluster to Azure. However, first it's worth exploring how to check the existing registration status. The following code assumes you are still in the remote PowerShell session open from the previous commands.
 
