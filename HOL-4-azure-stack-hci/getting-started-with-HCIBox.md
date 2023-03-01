@@ -3,7 +3,7 @@ HOL-4: Getting Started With Azure Stack HCI with Azure
        
 # Getting Started with Lab
 
-1. Once the environment is provisioned, a virtual machine (JumpVM) and lab guide will get loaded in your browser. Use this virtual machine throughout the workshop to perform the lab.
+1. Once the environment is provisioned, a virtual machine i.e, **HCIBox-Client** and lab guide will get loaded in your browser. Use this virtual machine throughout the workshop to perform the lab.
 
 1. To get the lab environment details, select the **Environment Details** tab. The credentials will also be emailed to your registered email address. You can open the Lab Guide on a separate and full window by selecting the **Split Window** from the lower right corner. Also, you can start, stop and restart virtual machines from the **Virtual Machines** tab.
 
@@ -12,7 +12,7 @@ HOL-4: Getting Started With Azure Stack HCI with Azure
 
 ## Login to Azure Portal
 
-1. In the **JumpVM**, double click on the Azure portal shortcut of Microsoft Edge browser which is provided on the desktop.
+1. In the **HCIBox-Client** virtual machine, double click on the Azure portal shortcut of Microsoft Edge browser which is provided on the desktop.
   
     ![](media/open-az-portal.png "Select Azure Portal")
     
@@ -44,7 +44,7 @@ HOL-4: Getting Started With Azure Stack HCI with Azure
 
 ## Connect to Admin Center
 
-1. Navigate to JumpVM, double-click on the **Admin Center** shortcut which is created on the desktop.
+1. Navigate to **HCIBox-Client** virtual machince desktop and double-click on the **Admin Center** shortcut which is created on the desktop.
 
    ![](media/open-admin-center.png "Open AC")
    
