@@ -1,5 +1,18 @@
 HOL-4: Exercise 1: Integrate Azure Stack HCI 22H2 with Azure
 ==============
+
+
+Contents
+-----------
+- [HOL-4: Exercise 1: Integrate Azure Stack HCI 22H2 with Azure](#hol-4-exercise-1-integrate-azure-stack-hci-22h2-with-azure)
+  - [Contents](#contents)
+  - [Overview](#overview)
+  - [Task 1: Add the existing Cluster to Windows Admin Center](#task-1-add-the-existing-cluster-to-windows-admin-center)
+  - [Task 2: Verify your Azure Stack HCI 22H2 Cluster is registered with Azure](#task-2-verify-your-azure-stack-hci-22h2-cluster-is-registered-with-azure)
+  - [Task 3: Register Windows Admin Center in Azure](#task-3-register-windows-admin-center-in-azure)
+  - [Summary](#summary)
+  - [Product improvements](#product-improvements)
+
 Overview
 -----------
 
@@ -7,12 +20,6 @@ Overview
 
    Azure Stack HCI 22H2 is delivered as an Azure service and needs to register within 30 days of installation per the Azure Online Services Terms.  With our cluster configured, we'll now register your Azure Stack HCI 22H2 cluster with **Azure Arc** for monitoring, support, billing, and hybrid services. Upon registration, an Azure Resource Manager resource is created to represent each on-premises Azure Stack HCI 22H2 cluster, effectively extending the Azure management plane to Azure Stack HCI 22H2. Information is periodically synced between the Azure resource and the on-premises cluster.  One great aspect of Azure Stack HCI 22H2, is that the Azure Arc registration is a native capability of Azure Stack HCI 22H2, so there is no agent required.
 
-Contents
------------
-- [Overview](#overview)
-- [Contents](#contents)
-- [Add the existing Cluster to Windows Admin Center](#task-1-add-the-existing-cluster-to-windows-admin-center)
-- [Verify Cluster Registration](#task-2-verify-your-azure-stack-hci-22h2-cluster-is-registered-with-azure)
 
 ## Task 1: Add the existing Cluster to Windows Admin Center
 
@@ -71,6 +78,19 @@ We're going to perform the registration verification from the **AdminCenter** ma
     ![Check updated registration status with PowerShell](./media/Verify-registered-cluster.png "Check updated registration status with PowerShell")
 
 You can see the **RegistrationStatus**, the **ConnectionStatus** and **LastConnected** time, which is usually within the last day unless the cluster is temporarily disconnected from the Internet. An Azure Stack HCI 22H2 cluster can operate fully offline for up to 30 consecutive days.
+
+## Task 3: Register Windows Admin Center in Azure
+
+To use Azure services with Windows Admin Center, you must register your Windows Admin Center instance with Azure. This is a prerequisite if you use Windows Admin Center to [register Azure Stack HCI with Azure](https://learn.microsoft.com/en-us/azure-stack/hci/deploy/register-with-azure).
+
+1. In Windows Admin Center, select the Settings gear icon from the top right corner of the page.
+
+2. From the Settings menu in the left pane, go to Gateway > Register.
+
+3. Select the Register button on the center of the page. The registration pane appears on the right of the page.
+   
+![Register Windows Admin Center](./media/register-wac.png "Register Windows Admin Center in Azure")
+
 
 Summary
 -----------
