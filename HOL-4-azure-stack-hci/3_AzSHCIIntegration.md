@@ -11,10 +11,10 @@ Contents
 -----------
 - [Overview](#overview)
 - [Contents](#contents)
-- [Add the existing Cluster to Windows Admin Center](#task-0-add-the-existing-cluster-to-windows-admin-center)
-- [Verify Cluster Registration](#task-1-verify-your-azure-stack-hci-22h2-cluster-is-registered-with-azure)
+- [Add the existing Cluster to Windows Admin Center](#task-1-add-the-existing-cluster-to-windows-admin-center)
+- [Verify Cluster Registration](#task-2-verify-your-azure-stack-hci-22h2-cluster-is-registered-with-azure)
 
-## Task 0: Add the existing Cluster to Windows Admin Center
+## Task 1: Add the existing Cluster to Windows Admin Center
 
 This Lab also includes a dedicated Windows Admin Center (WAC) gateway server. The WAC gateway server can be accessed by connecting to it from RDP. A shortcut is available on the HCIBox-Client desktop.
 
@@ -46,9 +46,9 @@ This Lab also includes a dedicated Windows Admin Center (WAC) gateway server. Th
 ![-](./media/wac_cluster_added.png "Screenshot showing cluster list")
 ![-](./media/wac_cluster_added_detail.png "Screenshot showing cluster detail")
 
-You just succesfully added the existing Azure Stack HCI 22H2 Cluster "hciboxcluster" to you Windows Admin Center. We will explore the Cluster capabilities leveraging WAC in upcoming tasks.
+You just successfully added the existing Azure Stack HCI 22H2 Cluster "hciboxcluster" to you Windows Admin Center. We will explore the Cluster capabilities leveraging WAC in upcoming tasks.
 
-## Task 1: Verify your Azure Stack HCI 22H2 Cluster is registered with Azure
+## Task 2: Verify your Azure Stack HCI 22H2 Cluster is registered with Azure
 
 **Within this lab the Azure Stack HCI 22H2 cluster is already registered within Azure.**
 
@@ -72,76 +72,14 @@ We're going to perform the registration verification from the **AdminCenter** ma
 
 You can see the **RegistrationStatus**, the **ConnectionStatus** and **LastConnected** time, which is usually within the last day unless the cluster is temporarily disconnected from the Internet. An Azure Stack HCI 22H2 cluster can operate fully offline for up to 30 consecutive days.
 
-## Task 2: View registration details in the Azure portal ###
-
-Explore the artifacts that are created in Azure.
-
-1. In the virtual machine (VM) on the left, click on the Azure portal desktop icon as shown below.
-
-    ![azure portal](./media/azure%20portal.png)
-    
-1. On the **Sign in to Microsoft Azure** window, you will see the login screen, enter the following username and click on **Next**.
-
-   * Email/Username: <inject key="AzureAdUserEmail"></inject>
-
-   ![](https://github.com/CloudLabsAI-Azure/AIW-SAP-on-Azure/blob/main/media/M2-Ex1-portalsignin-1.png?raw=true)
-
-1. Now enter the following password and click on **Sign in**. 
-
-   * Password: <inject key="AzureAdUserPassword"></inject>
-   
-   ![](./media/M2-Ex1-portalsignin-2.png?raw=true)
-
-1. First time users are often prompted to **Stay Signed In**, if you see any such message, click on **No**
-
-   ![](./media/M2-Ex1-portalsignin-3.png?raw=true)
-
-1. If you see the pop-up **You have free Azure Advisor recommendations!**, close the window to continue the lab.
-
-1. If a **Welcome to Microsoft Azure** popup window appears, click **Maybe Later** to skip the tour.
-
-1. You should see a new **Resource group** listed, with the name you specified earlier, which in our case, is **HybridHost** and click on it.
-
-    ![Registration resource group in Azure](./media/rg.png "Registration resource group in Azure")
-
-1. Under **HybridHost** resource group page, you'll see a resource **Azure Stack HCI** with the name **azshciclus** has been created.
-
-    ![Registration resource group in Azure](./media/stack.png "Registration resource group in Azure")
-    
-   >**Note**: If you are not able to view the **Azure Stack HCI** resource with the name **azshciclus** in the HybridHost resource group. Please follow from step 9 - step 12 else skip to step 13.
-
-1. In the virtual machine (VM) on the left, double-click on the **Windows Admin Center** .
-
-    ![Allow popups in Edge](./media/wac.png "Allow popups in Edge")
-    
-1. On Windows Admin Center page, Select the **azshciclus.hybrid.local** cluster to open it.
-
-    ![Allow popups in Edge](./media/hol4ss1.png "Allow popups in Edge")
-    
-1. Select **Settings** from the Tools side blade.
-
-    ![Allow popups in Edge](./media/hol4ss2.png "Allow popups in Edge")
-    
-1. Select **Azure Stack HCI registration** under Azure Stack HCI and click on **View Azure resource**.
-
-    ![Allow popups in Edge](./media/hol4ss3.png "Allow popups in Edge")
-
-1. Click on the **azshciclus**, then you'll be taken to the new Azure Stack HCI Resource Provider, which shows information about all of your clusters, including details on the currently selected cluster.
-
-    ![Overview of the recently registered cluster in the Azure portal](./media/overview.png "Overview of the recently registered cluster in the Azure portal")
-
-
-### Congratulations! ###
-You've now successfully registered your Azure Stack HCI 20H2 cluster!
-
 Summary
 -----------
-In this exercise, you've successfully registered your Azure Stack HCI 20H2 cluster. With this completed, you can now move on to the next exercise.
+In this exercise, you've successfully added the existing Azure Stack HCI cluster to your Windows Admin Center and checked the registerion status of the Cluster via PowerShell.. With this completed, you can now move on to the next exercise.
 
 Product improvements
 -----------
 If, while you work through this guide, you have an idea to make the product better, whether it's something in Azure Stack HCI, AKS on Azure Stack HCI, Windows Admin Center, or the Azure Arc integration and experience, let us know! We want to hear from you!
 
-For **Azure Stack HCI**, [Head on over to the Azure Stack HCI 20H2 Q&A forum](https://docs.microsoft.com/en-us/answers/topics/azure-stack-hci.html "Azure Stack HCI 20H2 Q&A"), where you can share your thoughts and ideas about making the technologies better and raise an issue if you're having trouble with the technology.
+For **Azure Stack HCI**, [Head on over to the Azure Stack HCI Q&A forum](https://learn.microsoft.com/en-us/answers/tags/6/azure-stack-hci "Azure Stack HCI Q&A"), where you can share your thoughts and ideas about making the technologies better and raise an issue if you're having trouble with the technology.
 
-For **AKS on Azure Stack HCI**, [Head on over to our AKS on Azure Stack HCI 20H2 GitHub page](https://github.com/Azure/aks-hci/issues "AKS on Azure Stack HCI GitHub"), where you can share your thoughts and ideas about making the technologies better. If however, you have an issue that you'd like some help with, read on... 
+For **AKS on Azure Stack HCI**, [Head on over to our AKS on Azure Stack HCI GitHub page](https://github.com/Azure/aks-hci/issues "AKS on Azure Stack HCI GitHub"), where you can share your thoughts and ideas about making the technologies better. If however, you have an issue that you'd like some help with, read on... 
