@@ -44,7 +44,7 @@ This Lab also includes a dedicated Windows Admin Center (WAC) gateway server. Th
 6. Now that the cluster is added, we can explore management capabilities for the cluster inside of WAC. Click on the cluster to drill into its details.
 
 ![-](./media/wac_cluster_added.png "Screenshot showing cluster list")
-![-](./media/wac_cluster_added_detail "Screenshot showing cluster detail")
+![-](./media/wac_cluster_added_detail.png "Screenshot showing cluster detail")
 
 
 ## Task 1: Verify your Azure Stack HCI 22H2 Cluster is registered with Azure
@@ -69,7 +69,7 @@ We're going to perform the registration verification from the **AdminCenter** ma
     
     ![Check updated registration status with PowerShell](./media/Verify-registered-cluster.png "Check updated registration status with PowerShell")
 
-You can see the **ConnectionStatus** and **LastConnected** time, which is usually within the last day unless the cluster is temporarily disconnected from the Internet. An Azure Stack HCI 22H2 cluster can operate fully offline for up to 30 consecutive days.
+You can see the **RegistrationStatus**, the **ConnectionStatus** and **LastConnected** time, which is usually within the last day unless the cluster is temporarily disconnected from the Internet. An Azure Stack HCI 22H2 cluster can operate fully offline for up to 30 consecutive days.
 
 ## Task 2: View registration details in the Azure portal ###
 
@@ -89,11 +89,11 @@ Once the registration is complete, you should take some time to explore the arti
 
    * Password: <inject key="AzureAdUserPassword"></inject>
    
-   ![](https://github.com/CloudLabsAI-Azure/AIW-SAP-on-Azure/blob/main/media/M2-Ex1-portalsignin-2.png?raw=true)
+   ![](./media/M2-Ex1-portalsignin-2.png?raw=true)
 
 1. First time users are often prompted to **Stay Signed In**, if you see any such message, click on **No**
 
-   ![](https://github.com/CloudLabsAI-Azure/AIW-SAP-on-Azure/blob/main/media/M2-Ex1-portalsignin-3.png?raw=true)
+   ![](./media/M2-Ex1-portalsignin-3.png?raw=true)
 
 1. If you see the pop-up **You have free Azure Advisor recommendations!**, close the window to continue the lab.
 
