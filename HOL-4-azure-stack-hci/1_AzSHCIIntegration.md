@@ -1,7 +1,6 @@
 HOL-4: Exercise 1: Integrate Azure Stack HCI 22H2 with Azure
 ==============
 
-
 Contents
 -----------
 - [HOL-4: Exercise 1: Integrate Azure Stack HCI 22H2 with Azure](#hol-4-exercise-1-integrate-azure-stack-hci-22h2-with-azure)
