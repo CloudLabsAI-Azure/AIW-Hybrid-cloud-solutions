@@ -50,7 +50,7 @@ You just succesfully added the existing Azure Stack HCI 22H2 Cluster "hciboxclus
 
 ## Task 1: Verify your Azure Stack HCI 22H2 Cluster is registered with Azure
 
-Normally registering your cluster can be done in 2 ways. You can use **Windows Admin Center**, or you can use **PowerShell**. **Within this lab the Azure Stack HCI 22H2 cluster is already registered.**
+**Within this lab the Azure Stack HCI 22H2 cluster is already registered.**
 
 To verify the registration let's now use PoweShell.
 
