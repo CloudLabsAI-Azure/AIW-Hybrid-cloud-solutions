@@ -50,9 +50,9 @@ You just succesfully added the existing Azure Stack HCI 22H2 Cluster "hciboxclus
 
 ## Task 1: Verify your Azure Stack HCI 22H2 Cluster is registered with Azure
 
-**Within this lab the Azure Stack HCI 22H2 cluster is already registered.**
+**Within this lab the Azure Stack HCI 22H2 cluster is already registered within Azure.**
 
-To verify the registration let's now use PoweShell.
+To verify the registration let's now use **PowerShell**.
 
 We're going to perform the registration verification from the **AdminCenter** machine, which we've been using to access Windows Admin Center.
 
@@ -74,7 +74,7 @@ You can see the **RegistrationStatus**, the **ConnectionStatus** and **LastConne
 
 ## Task 2: View registration details in the Azure portal ###
 
-Once the registration is complete, you should take some time to explore the artifacts that are created in Azure.
+Explore the artifacts that are created in Azure.
 
 1. In the virtual machine (VM) on the left, click on the Azure portal desktop icon as shown below.
 
