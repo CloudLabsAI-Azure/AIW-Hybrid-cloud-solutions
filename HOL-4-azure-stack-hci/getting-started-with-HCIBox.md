@@ -38,15 +38,22 @@ HOL-4: Getting Started With Azure Stack HCI with Azure
 
    ![](media/azurestackhci-rg.png "Select Azure Stack HCI Resource Group")
 
-1. You can see the onboarded cluster in the **AzureStackHCI** resource group, select the **HCIBox-Cluster** Azure Stack HCI resource and verify the connected nodes to it.
+1. You can see the onboarded cluster in the **AzureStackHCI** resource group, select the **HCIBox-Cluster** Azure Stack HCI resource.
 
-   ![](media/open-hcibox-cluster.png "Select HCI BOX cluster")   
+   ![](media/open-hcibox-cluster.png "Select HCI BOX cluster")
+   
+1. Once you are in **Overview** page of Azure Stack HCI resource named **HCIBox-Cluster** **(1)**. verify the connected nodes to it.
 
 ## Connect to Admin Center
 
 1. Navigate to **HCIBox-Client** virtual machince desktop and double-click on the **Admin Center** shortcut which is created on the desktop.
 
    ![](media/open-admin-center.png "Open AC")
+   
+1. Enter the below credentials to login to **Admin Center**:
+
+   * Username: **arcdemo@jumpstart.local**
+   * Password: **ArcPassword123!!**  
    
 1. Once you are connected to Admin Center, you can see the screen as shown below in the screenshot:
 
