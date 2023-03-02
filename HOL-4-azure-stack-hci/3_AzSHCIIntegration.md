@@ -46,6 +46,7 @@ This Lab also includes a dedicated Windows Admin Center (WAC) gateway server. Th
 ![-](./media/wac_cluster_added.png "Screenshot showing cluster list")
 ![-](./media/wac_cluster_added_detail.png "Screenshot showing cluster detail")
 
+You just succesfully added the existing Azure Stack HCI 22H2 Cluster "hciboxcluster" to you Windows Admin Center. We will explore the Cluster capabilities leveraging WAC in upcoming tasks.
 
 ## Task 1: Verify your Azure Stack HCI 22H2 Cluster is registered with Azure
 
