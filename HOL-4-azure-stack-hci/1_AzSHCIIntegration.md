@@ -112,7 +112,7 @@ To use Azure services with Windows Admin Center, you must register your Windows 
 *******************************************************************************************************
 
 **NOTE** - If you receive an error when signing in, still in **Settings**, under **User**, click on **Account** and click **Sign-in**. You should then be prompted for Azure credentials and permissions, to which you can then click **Accept**. Sometimes it just takes a few moments from Windows Admin Center creating the Azure AD application and being able to sign in. Retry the sign-in until you've successfully signed in.
-**NOTE** - Sometime even after cluster is regitered it may show an error with Signin with following error, you can ignore that and close the popup:
+**NOTE** - Sometime even after cluster is registered it may show an error with SignIn with following error, you can ignore that and close the popup:
    ```AADSTS700016: Application with identifier '******************' was not found in the directory 'Azure HOL ****'. This can happen if the application has not been installed by the administrator of the tenant or consented to by any user in the tenant. You may have sent your authentication request to the wrong tenant.```
 
 *******************************************************************************************************
@@ -155,7 +155,7 @@ Additional permissions were applied on the Windows Admin Center Azure AD applica
 
 Summary
 -----------
-In this exercise, you've successfully added the existing Azure Stack HCI cluster to your Windows Admin Center, checked the registration status of the Cluster via PowerShell and registered the Windows Admin Center in Azure. 
+In this exercise, you've successfully added the existing Azure Stack HCI cluster to your Windows Admin Center, checked the registration status of the Cluster via PowerShell, registered the Windows Admin Center in Azure and Verified this integration. 
 
 With this completed, you can now move on to the next exercise.
 
