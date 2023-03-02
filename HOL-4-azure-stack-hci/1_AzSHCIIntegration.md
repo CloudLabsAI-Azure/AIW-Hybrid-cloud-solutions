@@ -10,6 +10,8 @@ Contents
   - [Task 1: Add the existing Cluster to Windows Admin Center](#task-1-add-the-existing-cluster-to-windows-admin-center)
   - [Task 2: Verify your Azure Stack HCI 22H2 Cluster is registered with Azure](#task-2-verify-your-azure-stack-hci-22h2-cluster-is-registered-with-azure)
   - [Task 3: Register Windows Admin Center in Azure](#task-3-register-windows-admin-center-in-azure)
+  - [Task 4\[Error Happened\](http://In order to deploy AKS-HCI with Windows Admin Center, you need to connect your Windows Admin Center instance to Azure.](#task-4error-happenedhttpin-order-to-deploy-aks-hci-with-windows-admin-center-you-need-to-connect-your-windows-admin-center-instance-to-azure)
+  - [\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*): Validate Azure integration](#-validate-azure-integration)
   - [Summary](#summary)
   - [Product improvements](#product-improvements)
 
@@ -91,10 +93,140 @@ To use Azure services with Windows Admin Center, you must register your Windows 
    
 ![Register Windows Admin Center](./media/register-wac.png "Register Windows Admin Center in Azure")
 
+4. Iin the **Get started with Azure in Windows Admin Center** blade, follow the instructions to **Copy the code**(2) and then click on the link **Enter the Code**(3) to configure device login.
+
+   ![Installed extensions in Windows Admin Center](./media/login.png "Installed extensions in Windows Admin Center")
+    
+5. Now, Paste the code you copied in previous step and click on **Next** button.
+
+   ![Installed extensions in Windows Admin Center](./media/code.png "Installed extensions in Windows Admin Center")
+     
+6. When prompted for credentials, **enter your Azure credentials** for a tenant you'd like to use to register the Windows Admin Center and click on **Continue** button if you get any popup saying **Are you trying to sign in to Windows Admin Center?**.
+
+7. Now, navigate back in **Windows Admin Center** tab, you'll notice your tenant information has been added.  You can click on **Connect** to connect Windows Admin Center to Azure.
+
+    ![Connecting Windows Admin Center to Azure](./media/connect.png "Connecting Windows Admin Center to Azure")
+
+8. Click on **Sign in** and when prompted for credentials, **enter your Azure credentials** and you will see a popup **Permissions requested**. Check the box next to the **Consent on behalf of your organization** then click **Accept**. *Ignore the Hybridhost001 referral in the screenshot*
+
+    ![Permissions for Windows Admin Center](./media/ex2-task1-step10.png)
+
+*******************************************************************************************************
+
+**NOTE** - If you receive an error when signing in, still in **Settings**, under **User**, click on **Account** and click **Sign-in**. You should then be prompted for Azure credentials and permissions, to which you can then click **Accept**. Sometimes it just takes a few moments from Windows Admin Center creating the Azure AD application and being able to sign in. Retry the sign-in until you've successfully signed in.
+**NOTE** - Sometime even after cluster is regitered it may show an error with Signin with following error, you can ignore that and close the popup:
+   ```AADSTS700016: Application with identifier '******************' was not found in the directory 'Azure HOL ****'. This can happen if the application has not been installed by the administrator of the tenant or consented to by any user in the tenant. You may have sent your authentication request to the wrong tenant.```
+
+*******************************************************************************************************
+
+## Task 4[Error Happened](http://In order to deploy AKS-HCI with Windows Admin Center, you need to connect your Windows Admin Center instance to Azure.
+
+6. Now, in **Settings**, under **Gateway** click on **Register**.
+
+   ![Installed extensions in Windows Admin Center](./media/hol4-settings-register.png "Installed extensions in Windows Admin Center")
+    
+7. Click **Register**(1), and in the **Get started with Azure in Windows Admin Center** blade, follow the instructions to **Copy the code**(2) and then click on the link **Enter the Code**(3) to configure device login.
+
+   ![Installed extensions in Windows Admin Center](./media/login.png "Installed extensions in Windows Admin Center")
+    
+8. Now, Paste the code you copied in previous step and click on **Next** button.
+
+   ![Installed extensions in Windows Admin Center](./media/code.png "Installed extensions in Windows Admin Center")
+     
+9. When prompted for credentials, **enter your Azure credentials** for a tenant you'd like to use to register the Windows Admin Center and click on **Continue** button if you get any popup saying **Are you trying to sign in to Windows Admin Center?**.
+
+10. Now, navigate back in **Windows Admin Center** tab, you'll notice your tenant information has been added.  You can click on **Connect** to connect Windows Admin Center to Azure.
+
+    ![Connecting Windows Admin Center to Azure](./media/connect.png "Connecting Windows Admin Center to Azure")
+
+11. Click on **Sign in** and when prompted for credentials, **enter your Azure credentials** and you will see a popup **Permissions requested**. Check the box next to the **Consent on behalf of your organization** then click **Accept**.
+
+    ![Permissions for Windows Admin Center](./media/ex2-task1-step10.png)
+
+*******************************************************************************************************
+
+**NOTE** - If you receive an error when signing in, still in **Settings**, under **User**, click on **Account** and click **Sign-in**. You should then be prompted for Azure credentials and permissions, to which you can then click **Accept**. Sometimes it just takes a few moments from Windows Admin Center creating the Azure AD application and being able to sign in. Retry the sign-in until you've successfully signed in.
+**NOTE** - Sometime even after cluster is regitered it may show an error with Signin with following error, you can ignore that and close the popup:
+   ```AADSTS700016: Application with identifier '******************' was not found in the directory 'Azure HOL ****'. This can happen if the application has not been installed by the administrator of the tenant or consented to by any user in the tenant. You may have sent your authentication request to the wrong tenant.```
+
+*******************************************************************************************************)[Error Happened](http://In order to deploy AKS-HCI with Windows Admin Center, you need to connect your Windows Admin Center instance to Azure.
+
+6. Now, in **Settings**, under **Gateway** click on **Register**.
+
+   ![Installed extensions in Windows Admin Center](./media/hol4-settings-register.png "Installed extensions in Windows Admin Center")
+    
+7. Click **Register**(1), and in the **Get started with Azure in Windows Admin Center** blade, follow the instructions to **Copy the code**(2) and then click on the link **Enter the Code**(3) to configure device login.
+
+   ![Installed extensions in Windows Admin Center](./media/login.png "Installed extensions in Windows Admin Center")
+    
+8. Now, Paste the code you copied in previous step and click on **Next** button.
+
+   ![Installed extensions in Windows Admin Center](./media/code.png "Installed extensions in Windows Admin Center")
+     
+9. When prompted for credentials, **enter your Azure credentials** for a tenant you'd like to use to register the Windows Admin Center and click on **Continue** button if you get any popup saying **Are you trying to sign in to Windows Admin Center?**.
+
+10. Now, navigate back in **Windows Admin Center** tab, you'll notice your tenant information has been added.  You can click on **Connect** to connect Windows Admin Center to Azure.
+
+    ![Connecting Windows Admin Center to Azure](./media/connect.png "Connecting Windows Admin Center to Azure")
+
+11. Click on **Sign in** and when prompted for credentials, **enter your Azure credentials** and you will see a popup **Permissions requested**. Check the box next to the **Consent on behalf of your organization** then click **Accept**.
+
+    ![Permissions for Windows Admin Center](./media/ex2-task1-step10.png)
+
+*******************************************************************************************************
+
+**NOTE** - If you receive an error when signing in, still in **Settings**, under **User**, click on **Account** and click **Sign-in**. You should then be prompted for Azure credentials and permissions, to which you can then click **Accept**. Sometimes it just takes a few moments from Windows Admin Center creating the Azure AD application and being able to sign in. Retry the sign-in until you've successfully signed in.
+**NOTE** - Sometime even after cluster is regitered it may show an error with Signin with following error, you can ignore that and close the popup:
+   ```AADSTS700016: Application with identifier '******************' was not found in the directory 'Azure HOL ****'. This can happen if the application has not been installed by the administrator of the tenant or consented to by any user in the tenant. You may have sent your authentication request to the wrong tenant.```
+
+*******************************************************************************************************): Validate Azure integration
+-----------
+In order to successfully deploy AKS on Azure Stack HCI with Windows Admin Center, additional permissions were applied on the Windows Admin Center Azure AD application that was created when you connected Windows Admin Center to Azure, earlier. In this step, we'll quickly validate those permissions.
+
+1. Still in Windows Admin Center, click on the **Settings** gear in the top-right corner
+2. Under **Gateway**, click **Register**. You should see your previously registered Azure AD app:
+
+    ![Your Azure AD app in Windows Admin Center](./media/hol4-settings-register1.png "Your Azure AD app in Windows Admin Center")
+
+3. Click on **View in Azure** to be taken to the Azure AD app portal, where you should see information about this app, including permissions required. If you're prompted to log in, provide appropriate credentials.
+4. Once logged in, under **Configured permissions**, you should see a few permissions listed with the status **Granted for...** and the name of your tenant. The **Microsoft Graph (5)** API permissions will show as **not granted** but this will be updated upon deployment
+
+5. Under **Configured permissions**, click on **Grant Admin Consent for Azure HOL** button.
+
+    ![Confirm Azure AD app permissions in Windows Admin Center](../media/Ex2-task2-01.1.png "Confirm Azure AD app permissions in Windows Admin Center")
+    
+6.  Now select **Yes** on the **Grant admin consent confirmation** pop-up to give your app the permissions.
+
+    ![Confirm Azure AD app permissions in Windows Admin Center](../media/Ex2-task2-01.2.png "Confirm Azure AD app permissions in Windows Admin Center")
+
+*******************************************************************************************************
+
+**NOTE** - If you don't see Microsoft Graph listed in the API permissions, you can either [re-register Windows Admin Center using steps here](#configure-windows-admin-center "re-register Windows Admin Center using steps here") for the permissions to appear correctly, or manually add the **Microsoft Graph Appliation.ReadWrite.All** permission. To manually add the permission:
+
+- Click **+ Add a permission**
+- Select **Microsoft Graph**, then **Delegated permissions**
+- Search for **Application.ReadWrite.All**, then if required, expand the **Application** dropdown
+- Select the **checkbox** and click **Add permissions**
+
+*******************************************************************************************************
+
+6. Switch back to the **Windows Admin Center tab** and click on **Windows Admin Center** in the top-left corner to return to the home page. 
+
+    ![Confirm Azure AD app permissions in Windows Admin Center](./media/admin.png "Confirm Azure AD app permissions in Windows Admin Center")
+    
+    
+   You'll notice that your HybridHost001 is already under management, so at this stage, you're ready to proceed to deploy the AKS on Azure Stack HCI management cluster onto your Windows Server 2019 Hyper-V host.
+
+    ![HybridHost001 under management in Windows Admin Center](./media/akshcihost_in_wac.png "HybridHost001 under management in Windows Admin Center")
+
+
+
 
 Summary
 -----------
-In this exercise, you've successfully added the existing Azure Stack HCI cluster to your Windows Admin Center and checked the registerion status of the Cluster via PowerShell.. With this completed, you can now move on to the next exercise.
+In this exercise, you've successfully added the existing Azure Stack HCI cluster to your Windows Admin Center, checked the registerion status of the Cluster via PowerShell and registered the Windows Admin Center in Azure. 
+
+With this completed, you can now move on to the next exercise.
 
 Product improvements
 -----------
