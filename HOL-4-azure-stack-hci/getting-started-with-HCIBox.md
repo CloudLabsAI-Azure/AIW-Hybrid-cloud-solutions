@@ -42,7 +42,9 @@ HOL-4: Getting Started With Azure Stack HCI with Azure
 
    ![](media/open-hcibox-cluster.png "Select HCI BOX cluster")
    
-1. Once you are in **Overview** page of Azure Stack HCI resource named **HCIBox-Cluster** **(1)**. verify the connected nodes to it.
+1. Once you are in **Overview** page of Azure Stack HCI resource named **HCIBox-Cluster** **(1)**. Click on **Nodes** **(2)** and verify the **AzSHOST1** and **AzSHOST2** servers are connected to Azure Arc **(3)** as shown in the below screenshot.
+
+   ![](media/hci-cluster-nodes.png "HCI BOX cluster nodes")
 
 ## Connect to Admin Center
 
