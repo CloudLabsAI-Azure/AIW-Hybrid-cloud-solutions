@@ -20,31 +20,31 @@ This Lab also includes a dedicated Windows Admin Center (WAC) gateway server. Th
 
 1. Open this shortcut and use the domain credential (arcedemo@jumpstart.local) to start an RDP session to the Windows Admin Center VM.
 
-![-](https://raw.githubusercontent.com/CloudLabsAI-Azure/hybridworkshop/main/media/wac_gateway_shortcut.png "Screenshot showing WAC desktop shortcut")
+![-](./media/wac_gateway_shortcut.png "Screenshot showing WAC desktop shortcut")
 
 2. Log in to the WAC gateway server using the domain credential.
 
-![-](https://raw.githubusercontent.com/CloudLabsAI-Azure/hybridworkshop/main/media/wac_gateway_login.png "Screenshot showing logging into the WAC server")
+![-](./media/wac_gateway_login.png "Screenshot showing logging into the WAC server")
 
 3. Now you can open the Windows Admin Center shortcut on the WAC server desktop. Once again you will use your domain account to access WAC.
 
-![-](https://raw.githubusercontent.com/CloudLabsAI-Azure/hybridworkshop/main/media/wac_gateway_desktop.png "Screenshot showing logging into WAC")
-![-](https://raw.githubusercontent.com/CloudLabsAI-Azure/hybridworkshop/main/media/wac_login.png "Screenshot showing WAC login prompt")
+![-](./media/wac_gateway_desktop.png "Screenshot showing logging into WAC")
+![-](./media/wac_login.png "Screenshot showing WAC login prompt")
 
 4. Now that we are logged in, our first step is to add a connection to our HCI cluster. Click on the “Add” button, and then click on “Add” under “Server clusters”.
 
-![-](https://raw.githubusercontent.com/CloudLabsAI-Azure/hybridworkshop/main/media/wac_empty.png "Screenshot showing WAC first login")
-![-](https://raw.githubusercontent.com/CloudLabsAI-Azure/hybridworkshop/main/media/wac_add_cluster.png "Screenshot showing WAC adding cluster")
+![-](./media/wac_empty.png "Screenshot showing WAC first login")
+![-](./media/wac_add_cluster.png "Screenshot showing WAC adding cluster")
 
 5. Enter “hciboxcluster” for the cluster name, and use the domain account credential to connect to the cluster.
 
-![-](https://raw.githubusercontent.com/CloudLabsAI-Azure/hybridworkshop/main/media/wac_add_cluster_detail.png "Screenshot showing WAC connection details")
-![-](https://raw.githubusercontent.com/CloudLabsAI-Azure/hybridworkshop/main/media/wac_add_cluster_detail_2.png "Screenshot showing WAC connection details")
+![-](./media/wac_add_cluster_detail.png "Screenshot showing WAC connection details")
+![-](./media/wac_add_cluster_detail_2.png "Screenshot showing WAC connection details")
 
 6. Now that the cluster is added, we can explore management capabilities for the cluster inside of WAC. Click on the cluster to drill into its details.
 
-![-](https://raw.githubusercontent.com/CloudLabsAI-Azure/hybridworkshop/main/media/wac_cluster_added.png "Screenshot showing cluster list")
-![-](https://raw.githubusercontent.com/CloudLabsAI-Azure/hybridworkshop/main/media/wac_cluster_added_detail "Screenshot showing cluster detail")
+![-](./media/wac_cluster_added.png "Screenshot showing cluster list")
+![-](./media/wac_cluster_added_detail "Screenshot showing cluster detail")
 
 
 ## Task 1: Verify your Azure Stack HCI 22H2 Cluster is registered with Azure
@@ -57,7 +57,7 @@ We're going to perform the registration verification from the **AdminCenter** ma
 
 1. After logging in to the **AdminCenter** VM, click on the windows button and search for **PowerShell ISE** then right-click on it to select **Run as administrator**.
 
-![-](https://raw.githubusercontent.com/CloudLabsAI-Azure/hybridworkshop/main/media/2023-03-01_17h07_52.png "Open PowerShell ISE as an Administrator")
+![-](./media/2023-03-01_17h07_52.png "Open PowerShell ISE as an Administrator")
     
 2. Copy and paste the below PowerShell commands and execute them, you will now see 
 
