@@ -1,0 +1,31 @@
+[
+    {
+      "Name": "Azure Immersion Workshop: Hybrid Cloud Solutions",
+      "Language": "English",
+      "BaseURL": "https://github.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions",
+      "Files": [
+        
+          {
+          "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/bart-stack-updates/HOL-4-azure-stack-hci/getting-started-with-HCIBox.md",
+          "Order": 1
+        },
+        {
+          "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/bart-stack-updates/HOL-4-azure-stack-hci/3_AzSHCIIntegration.md",
+          "Order": 2
+        },
+        {
+          "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/bart-stack-updates/HOL-4-azure-stack-hci/5_DeployAKSHCI.md",
+          "Order": 3
+        },
+        {
+          "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/bart-stack-updates/HOL-4-azure-stack-hci/6_ExploreAKSHCI.md",
+          "Order": 4
+        },
+          {
+          "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/bart-stack-updates/HOL-4-azure-stack-hci/4_ExploreAzSHCI.md",
+          "Order": 5
+        }
+     
+      ]
+    }
+  ]
