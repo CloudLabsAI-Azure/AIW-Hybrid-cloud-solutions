@@ -151,7 +151,7 @@ Additional permissions were applied on the Windows Admin Center Azure AD applica
 
 6. Switch back to the **Windows Admin Center tab** and click on **Windows Admin Center** in the top-left corner to return to the home page. 
 
-    ![Confirm Azure AD app permissions in Windows Admin Center](./media/admin.png "Confirm Azure AD app permissions in Windows Admin Center")
+    ![Confirm Azure AD app permissions in Windows Admin Center](./media/wac_admin.png "Confirm Azure AD app permissions in Windows Admin Center")
     You'll notice that multiple servers are already under management of Windows Admin Center.
 
 Summary
