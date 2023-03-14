@@ -9,7 +9,7 @@ Contents
   - [Task 1: Add the existing Cluster to Windows Admin Center](#task-1-add-the-existing-cluster-to-windows-admin-center)
   - [Task 2: Verify your Azure Stack HCI 22H2 Cluster is registered with Azure](#task-2-verify-your-azure-stack-hci-22h2-cluster-is-registered-with-azure)
   - [Task 3: Register Windows Admin Center in Azure](#task-3-register-windows-admin-center-in-azure)
-  - [Task 4 Validate Azure integration](#task-4-validate-azure-integration)
+  - [Task 4: Validate Azure integration](#task-4-validate-azure-integration)
   - [Summary](#summary)
   - [Product improvements](#product-improvements)
 
@@ -121,7 +121,7 @@ To use Azure services with Windows Admin Center, you must register your Windows 
 
 *******************************************************************************************************
 
-## Task 4 Validate Azure integration
+## Task 4: Validate Azure integration
 
 Additional permissions were applied on the Windows Admin Center Azure AD application that was created when you connected Windows Admin Center to Azure, earlier. In this step, we'll quickly validate those permissions.
 
