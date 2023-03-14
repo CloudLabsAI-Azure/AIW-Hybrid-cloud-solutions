@@ -38,7 +38,9 @@ This Lab also includes a dedicated Windows Admin Center (WAC) gateway server. Th
 ![-](./media/wac_gateway_desktop.png "Screenshot showing logging into WAC")
 ![-](./media/wac_login.png "Screenshot showing WAC login prompt")
 
-4. Now that we are logged in, our first step is to add a connection to our HCI cluster. Click on the “Add” button, and then click on “Add” under “Server clusters”.
+The first time you access the Windows Admin Center you will get a Welcome screen. Just close it and now wait until all WAC extensions are installed and you get a popup window telling you "Successfully updated your extensions". Just click [OK]. Windows Admin Center will automatically refresh.
+
+1. Now that we are logged in, our first step is to add a connection to our HCI cluster. Click on the “Add” button, and then click on “Add” under “Server clusters”.
 
 ![-](./media/wac_empty.png "Screenshot showing WAC first login")
 ![-](./media/wac_add_cluster.png "Screenshot showing WAC adding cluster")
@@ -78,6 +80,8 @@ We're going to perform the registration verification from the **AdminCenter** ma
     ![Check updated registration status with PowerShell](./media/Verify-registered-cluster.png "Check updated registration status with PowerShell")
 
 You can see the **RegistrationStatus**, the **ConnectionStatus** and **LastConnected** time, which is usually within the last day unless the cluster is temporarily disconnected from the Internet. An Azure Stack HCI 22H2 cluster can operate fully offline for up to 30 consecutive days.
+
+You can close the Windows PowerShell ISE. No need to save the PowerShell script.
 
 ## Task 3: Register Windows Admin Center in Azure
 
