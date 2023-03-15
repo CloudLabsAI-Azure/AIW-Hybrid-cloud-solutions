@@ -143,18 +143,18 @@ In this step, you will deploy a Windows Server 2022 virtual machine via Windows 
  
 5. The creation process will take a few moments, and once complete, VM001 should show within the Virtual machines view
 
-6. Click on the checkbox before the VM and then click click on Power button and select Start - within moments, the VM should be running.
+6. Click on the checkbox before VM001 and then click on **Power** and select **Start** - within moments, the VM should be running.
 
     ![Create VM](./media/vm-5.png "Create VM on Azure Stack HCI 22H2")
     ![Create VM](./media/vm-6.png "Create VM on Azure Stack HCI 22H2")
   
 7. Click on VM001 to view the properties and status for this running VM.
  
-    ![Deploy a Windows Server 2019 virtual machine](./media/fran12.png "Deploy a Windows Server 2019 virtual machine")
+    ![Create VM](./media/vm-7.png "Create VM on Azure Stack HCI 22H2")
 
-8. Click on Connect and select connect button from the drop down- you may get a VM Connect prompt:
- 
-    ![Deploy a Windows Server 2019 virtual machine](https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/event-27/HOL-4-azure-stack-hci/media/fran13.png "Deploy a Windows Server 2019 virtual machine")
+8. Click on Connect and select connect button from the drop down.
+
+    ![Create VM](./media/vm-8.png "Create VM on Azure Stack HCI 22H2")
  
 9.  Click on Go to Settings and in the Remote Desktop pane, click on Allow remote connections to this computer, then Save
  
