@@ -52,10 +52,12 @@ HOL-4: Getting Started With Azure Stack HCI with Azure
 
    ![](media/open-admin-center.png "Open AC")
    
-1. Enter the below credentials to login to **Admin Center**:
+1. Enter the below credentials to login to **Admin Center** and click on **OK**.
 
    * Username: **arcdemo@jumpstart.local**
    * Password: **ArcPassword123!!**  
+
+   ![](media/admin-center-login.png "login to AC")
    
 1. Once you are connected to Admin Center, you can see the screen as shown below in the screenshot:
 
