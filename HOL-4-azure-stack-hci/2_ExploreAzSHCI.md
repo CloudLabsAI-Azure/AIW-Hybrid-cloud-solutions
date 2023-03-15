@@ -427,5 +427,4 @@ Setup the lab in your own Azure Subscription.
 
 This lab is based on the the following work by Matt McSpirit: https://github.com/mattmcspirit/hybridworkshop
 
- 
 If you want to setup the lab within your own Azure subscription and run through additional scenarios as well, you can go to the above GitHub repo and perform as mentioned.
