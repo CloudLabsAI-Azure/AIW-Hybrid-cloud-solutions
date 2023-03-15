@@ -16,7 +16,7 @@ Contents
     - [Download an Ubuntu Server 22.04 .Iso](#download-an-ubuntu-server-2204-iso)
     - [Upload the .Iso files to your CSV](#upload-the-iso-files-to-your-csv)
   - [Task 3: Deploy a Windows Server 2022 virtual machine](#task-3-deploy-a-windows-server-2022-virtual-machine)
-  - [Task 4: Deploy an Ubuntu Server 22.04 virtual machine (OPTIONAL)](#task-4-deploy-an-ubuntu-server-2204-virtual-machine-optional)
+  - [Task 4: Deploy an Ubuntu Server 22.04 virtual machine](#task-4-deploy-an-ubuntu-server-2204-virtual-machine)
   - [Task 5: Live migrate a virtual machine to another node](#task-5-live-migrate-a-virtual-machine-to-another-node)
   - [Congratulations!](#congratulations)
   - [Setup the lab in your own Azure Subscription.](#setup-the-lab-in-your-own-azure-subscription)
@@ -150,6 +150,10 @@ In this step, you will deploy a Windows Server 2022 virtual machine via Windows 
  
     ![Create VM](./media/vm001-7.png "Create VM on Azure Stack HCI 22H2")
 
+7. Click on **Settings**, then click **Networks** and change the VLAN ID value to **200**. Click **Save network settings and click **Close**.
+ 
+    ![Create VM](./media/vm001-vlan200.png "Create VM on Azure Stack HCI 22H2")
+
 8. Click on Connect and select connect button from the drop down.
 
     ![Create VM](./media/vm001-8.png "Create VM on Azure Stack HCI 22H2")
@@ -174,21 +178,21 @@ In this step, you will deploy a Windows Server 2022 virtual machine via Windows 
  
 15. Accept the license terms. Click **Next**. Select "Custom: Install Windows only (advanced)" and then Next. It will take around 10 minutes for the VM to boot. After that, please insert the lab credentials **ArcPassword123!!** and your VM is ready to go!
 
-Task 4: Deploy an Ubuntu Server 22.04 virtual machine (OPTIONAL)
+Task 4: Deploy an Ubuntu Server 22.04 virtual machine
 ----- 
 In this step, you will deploy an Ubuntu Server 22.04 virtual machine via Windows Admin Center.
 
 1. Once logged into the **Windows Admin Center** on the **AdminCenter** VM, click on cluster, **hciboxcluster.jumpstart.local**
 
-3. On the left hand navigation, under **Cluster Resources** select **Virtual machines**.  The central **Virtual machines** page shows that there are some virtual machines already running.
+2. On the left hand navigation, under **Cluster Resources** select **Virtual machines**.  The central **Virtual machines** page shows that there are some virtual machines already running.
     
     ![Create VM](./media/vm002-1.png "Create VM on Azure Stack HCI 22H2")
 
-4. On the **Virtual machines** page, select the **Inventory** tab, and then click on **Add** and select **New**.
+3. On the **Virtual machines** page, select the **Inventory** tab, and then click on **Add** and select **New**.
 
     ![Create VM](./media/vm002-2.png "Create VM on Azure Stack HCI 22H2")
 
-6. In the **New virtual machine** pane, enter **VM002** for the name, and enter the following pieces of information, then click **Create**
+4. In the **New virtual machine** pane, enter **VM002** for the name, and enter the following pieces of information, then click **Create**
 
  
      * Generation: **Generation 2 (Recommended)**
@@ -293,35 +297,40 @@ In this step, you will deploy an Ubuntu Server 22.04 virtual machine via Windows
 
     ![Create VM](./media/vm002-21.png "Create VM on Azure Stack HCI 22H2")
 
-13. Now wait until you get the Install complete! screen and select "Reboot Now"
+13. Now wait until you get the "Install complete!" screen and select **Reboot Now** and ENTER
 
-**BART ROELS**
 
-    ![Create VM](./media/vm002-22.png "Create VM on Azure Stack HCI 22H2")
-
-14. On the following screen press "ENTER", now the virtual machine will reboot.
-
-    ![Deploy an Ubuntu Server 20.04 virtual machine](./media/ubuntu15.png "Deploy an Ubuntu Server 20.04 virtual machine2")
 
 15. Once the virtual machine is up and running try to login!
 
-    ![Deploy an Ubuntu Server 20.04 virtual machine](./media/ubuntu16.png "Deploy an Ubuntu Server 20.04 virtual machine")
+
 
 Task 5: Live migrate a virtual machine to another node
 ----- 
 
-The final step we'll cover is using Windows Admin Center to live migrate VM001 from it's current node, to an alternate node in the cluster.
+The final step we'll cover is using Windows Admin Center to live migrate VM002 from it's current node, to an alternate node in the cluster.
 
-1. Still within the **Windows Admin Center** on **HybridHost001**, under **Compute**, click on **Virtual machines**
+1. Still within the **Windows Admin Center** on **AdminCenter** VM, under **Cluster Resources**, click on **Virtual machines**
 
 2. On the **Virtual machines** page, select the **Inventory** tab
 
-3. Under **Host server**, make a note of the node that VM001 is currently running on.  You may need to expand the column width to see the name
+3. Under **Host server**, make a note of the node that VM002 is currently running on.  You may need to expand the column width to see the name
 
-4. Next to **VM001**, click the tick box next to VM001, then click **More**.  You'll notice you can Clone, Domain Join and also Move the VM. Click **Move**
+    ![Create VM](./media/LiveMigrate-1.png "Create VM on Azure Stack HCI 22H2")
 
+4. Next to **VM002**, click the tick box next to VM002, then click **More**.  You'll notice you can Clone, Domain Join and also Move the VM. Click **Move**
 
-You've successfully create a VM using the Windows Admin Center!
+    ![Create VM](./media/LiveMigrate-2.png "Create VM on Azure Stack HCI 22H2")
+
+4. Next to **VM002**, click the tick box next to VM002, then click **More**.  You'll notice you can Clone, Domain Join and also Move the VM. Click **Move**    
+
+    ![Create VM](./media/LiveMigrate-3.png "Create VM on Azure Stack HCI 22H2")
+
+    ![Create VM](./media/LiveMigrate-4.png "Create VM on Azure Stack HCI 22H2")
+
+You've successfully moved a running VM without downtime using the Windows Admin Center to another Host in the cluster!
+
+ **BART ROELS**
 
 Congratulations!
 -----------
