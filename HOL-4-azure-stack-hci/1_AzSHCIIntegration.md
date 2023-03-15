@@ -45,7 +45,7 @@ This Lab also includes a dedicated Windows Admin Center (WAC) gateway server. Th
    * Username: **jumpstart\arcdemo**
    * Password: **ArcPassword123!!**
    
-   ![](media/signin-to-wac.png "Screenshot showing WAC login prompt")
+   ![](media/sigin-to-wac.png "Screenshot showing WAC login prompt")
 
    >**Note**: The first time you access the Windows Admin Center you will get a Welcome screen. Just close it and now wait until all WAC extensions are installed and you get a popup window telling you "Successfully updated your extensions". Just click [OK]. Windows Admin Center will automatically refresh.
 
@@ -64,7 +64,7 @@ This Lab also includes a dedicated Windows Admin Center (WAC) gateway server. Th
    
    ![](media/final-add-hci.png "Screenshot showing WAC connection details")
 
-1. Now the cluster is added, we can explore management capabilities for the cluster inside of Windows Admin Center. Click on the **hciboxcluster.jumpstart.local** cluster to drill into its details.
+1. Now the cluster is added, you can explore management capabilities for the cluster inside of Windows Admin Center. Click on the **hciboxcluster.jumpstart.local** cluster to drill into its details.
 
    ![](media/open-hciboxcluster.png "Screenshot showing cluster list")
    
