@@ -74,25 +74,23 @@ You just successfully added the existing Azure Stack HCI 22H2 Cluster **"hciboxc
 
 ## Task 2: Verify your Azure Stack HCI 22H2 Cluster is registered with Azure
 
-**Within this lab the Azure Stack HCI 22H2 cluster is already registered within Azure.**
+In this lab the Azure Stack HCI 22H2 cluster is already registered within Azure. To verify the registration let's now use **PowerShell**.
 
-To verify the registration let's now use **PowerShell**.
+You're going to perform the registration verification from the **Admin Center** machine, which you have been using to access Windows Admin Center
 
-We're going to perform the registration verification from the **AdminCenter** machine, which we've been using to access Windows Admin Center.
+1. In the **Admin Center** machine, select **PowerShell ISE** **(1)** shortcut from the desktop and then right-click on it to select **Run as administrator** **(2)**.
 
-1. After logging in to the **AdminCenter** VM, click on the windows button and search for **PowerShell ISE** then right-click on it to select **Run as administrator**.
-
-![-](./media/2023-03-01_17h07_52.png "Open PowerShell ISE as an Administrator")
+   ![](media/ex1-task2-step1.png "Open PowerShell ISE as an Administrator")
     
-2. Copy and paste the below PowerShell commands and execute them, you will now see 
+1. Copy and paste the below PowerShell commands **(1)** and to execute them click on **Run script** **(2)**. 
 
-     ```powershell
-     Invoke-Command -ComputerName AzSHOST1 -ScriptBlock {
-     Get-AzureStackHCI
-     } 
-     ```
+   ```powershell
+   Invoke-Command -ComputerName AzSHOST1 -ScriptBlock {
+   Get-AzureStackHCI
+   } 
+   ```
     
-    ![Check updated registration status with PowerShell](./media/Verify-registered-cluster.png "Check updated registration status with PowerShell")
+   ![Check updated registration status with PowerShell](media/ex1-task2-step2.png "Check updated registration status with PowerShell")
 
 You can see the **RegistrationStatus**, the **ConnectionStatus** and **LastConnected** time, which is usually within the last day unless the cluster is temporarily disconnected from the Internet. An Azure Stack HCI 22H2 cluster can operate fully offline for up to 30 consecutive days.
 
