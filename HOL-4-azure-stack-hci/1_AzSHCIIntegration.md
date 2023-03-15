@@ -25,27 +25,35 @@ Overview
 
 This Lab also includes a dedicated Windows Admin Center (WAC) gateway server. The WAC gateway server can be accessed by connecting to it from RDP. A shortcut is available on the HCIBox-Client desktop.
 
-1. Open this shortcut and use the domain credential (arcedemo@jumpstart.local) to start an RDP session to the Windows Admin Center VM.
+1. If you are not into Windows Admin Center yet, open the Windows Admin Center shortcut present in the desktop as shown in the below screenshot.
 
-![-](./media/wac_gateway_shortcut.png "Screenshot showing WAC desktop shortcut")
+   ![](media/open-admin-center.png "Open AC")
+   
+1. Use the domain credential (arcedemo@jumpstart.local) to start an RDP session to the Windows Admin Center VM. Enter the below credentials to login to **Admin Center** and click on **OK**.
 
-2. Log in to the WAC gateway server using the domain credential.
+   * Username: **arcdemo@jumpstart.local**
+   * Password: **ArcPassword123!!**  
 
-![-](./media/wac_gateway_login.png "Screenshot showing logging into the WAC server")
+   ![](media/admin-center-login.png "login to AC")
+   
+1. Open the Windows Admin Center shortcut on the WAC server desktop. Once again you will use your domain account to access WAC. 
 
-3. Now you can open the Windows Admin Center shortcut on the WAC server desktop. Once again you will use your domain account to access WAC.
+   ![](media/open-wac.png "WAC login")
 
-![-](./media/wac_gateway_desktop.png "Screenshot showing logging into WAC")
-![-](./media/wac_login.png "Screenshot showing WAC login prompt")
+1. Enter the below credentials to login to **Windows Admin Center** and click on **OK**.
 
-The first time you access the Windows Admin Center you will get a Welcome screen. Just close it and now wait until all WAC extensions are installed and you get a popup window telling you "Successfully updated your extensions". Just click [OK]. Windows Admin Center will automatically refresh.
+   * Username: **jumpstart\arcdemo**
+   * Password: **ArcPassword123!!**
+   
+   ![](./media/signin-to-wac.png "Screenshot showing WAC login prompt")
 
-1. Now that we are logged in, our first step is to add a connection to our HCI cluster. Click on the “Add” button, and then click on “Add” under “Server clusters”.
+   >**Note**: The first time you access the Windows Admin Center you will get a Welcome screen. Just close it and now wait until all WAC extensions are installed and you get a popup window telling you "Successfully updated your extensions". Just click [OK]. Windows Admin Center will automatically refresh.
 
-![-](./media/wac_empty.png "Screenshot showing WAC first login")
-![-](./media/wac_add_cluster.png "Screenshot showing WAC adding cluster")
+1. Once you are logged into Windows Admin Center, click on **Add** **(1)** button to add a connection to HCI cluster and then click on **Add** **(2)** under **Server clusters**. 
 
-5. Enter “hciboxcluster” for the cluster name, and use the domain account credential to connect to the cluster.
+   ![](./media/add-hci-cluster.png "Add HCI Cluster")
+
+1. Enter “hciboxcluster” for the cluster name, and use the domain account credential to connect to the cluster.
 
 ![-](./media/wac_add_cluster_detail.png "Screenshot showing WAC connection details")
 ![-](./media/wac_add_cluster_detail_2.png "Screenshot showing WAC connection details")
