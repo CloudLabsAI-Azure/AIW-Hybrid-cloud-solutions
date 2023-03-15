@@ -10,11 +10,11 @@
           "Order": 1
         },
         {
-          "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/FY-23/HOL-4-azure-stack-hci/3_AzSHCIIntegration.md",
+          "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/FY-23/HOL-4-azure-stack-hci/1_AzSHCIIntegration.md",
           "Order": 2
         },
         {
-          "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/FY-23/HOL-4-azure-stack-hci/5_DeployAKSHCI.md",
+          "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/FY-23/HOL-4-azure-stack-hci/2_ExploreAzSHCI.md",
           "Order": 3
         },
         {
