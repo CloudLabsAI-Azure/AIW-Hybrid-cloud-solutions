@@ -15,7 +15,7 @@ Contents
     - [Download a Windows Server 2022 .Iso](#download-a-windows-server-2022-iso)
     - [Download an Ubuntu Server 22.04 .Iso](#download-an-ubuntu-server-2204-iso)
     - [Upload the .Iso files to your CSV](#upload-the-iso-files-to-your-csv)
-  - [Task 3: Deploy a Windows Server 2019 virtual machine](#task-3-deploy-a-windows-server-2019-virtual-machine)
+  - [Task 3: Deploy a Windows Server 2022 virtual machine](#task-3-deploy-a-windows-server-2022-virtual-machine)
   - [Task 4: Deploy an Ubuntu Server 20.04 virtual machine](#task-4-deploy-an-ubuntu-server-2004-virtual-machine)
   - [Task 5: Live migrate a virtual machine to another node](#task-5-live-migrate-a-virtual-machine-to-another-node)
   - [Task 2: Deploy a virtual machine](#task-2-deploy-a-virtual-machine)
@@ -91,92 +91,76 @@ In this step, you will download a Windows Server 2022 and Ubuntu Server 22.04 .I
  
     ![Review the existing volumes for VMs](./media/ReviewVolumes-1.png "WAC Review HCI cluster Volumes")
  
-1. On the left hand navigation, under **Cluster Resources** select Servers and then Inventory.
+1. On the left hand navigation, under **Cluster Resources** select **Servers** and then **Inventory**.
  
-    ![Download .Iso files](https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/event-27/HOL-4-azure-stack-hci/media/fran2.png "Download .Iso files")
+    ![Upload .Iso files](./media/Upload-1.png "Upload .Iso files")
 
-1. Click on node AzSHOST1 and then click in Manage
+1. Select node AzSHOST1 and then click **Manage**
  
-    ![Download .Iso files](./media/fran3.png "Download .Iso files")
+    ![Upload .Iso files](./media/Upload-2.png "Upload .Iso files")
  
-1. On the left, select Files & file sharing
+1. On the left, select **Files & file sharing**. Open the folder **C:\ClusterStorage\S2D_vDISK1**
   
-    ![Download .Iso files](https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/event-27/HOL-4-azure-stack-hci/media/fran4.png "Download .Iso files")
+    ![Upload .Iso files](./media/Upload-3.png "Upload .Iso files")
+ 
+1. Click **Upload**. Click **Select Files**, search and select both (Windows Server 2022 and Ubuntu Server 22.04) .iso files in the Downloads directory and click **Open**, and then **Submit**. 
+ 
+    ![Upload .Iso files](./media/Upload-4.png "Upload .Iso files")
   
-1. Open the folder C:\ClusterStorage\Volume01
- 
-    ![Download .Iso files](https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/event-27/HOL-4-azure-stack-hci/media/fran5.png "Download .Iso files")
-  
- 
-1. Click in the "…" and then Upload
- 
-    ![Download .Iso files](https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/event-27/HOL-4-azure-stack-hci/media/fran6.png "Download .Iso files")
-  
-1. Click in Select Files, search for both (Windows Server 2019 and Ubuntu Server 20.04) .iso files in Downloads and click in Open, and then Submit. 
- 
-    ![Download .Iso files](https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/event-27/HOL-4-azure-stack-hci/media/fran7.png "Download .Iso files")
- 
-1. It takes around 5-10 minutes to get successfully uploaded. After that, please move on to the next task.
+**NOTE:** It can take up to around 5-10 minutes to get both .ISO files successfully uploaded. After that, please move on to the next task.
 
-Task 3: Deploy a Windows Server 2019 virtual machine
+Task 3: Deploy a Windows Server 2022 virtual machine
 ----- 
-In this step, you will deploy a Windows Server 2019 virtual machine via Windows Admin Center.
+In this step, you will deploy a Windows Server 2022 virtual machine via Windows Admin Center.
 
-1. Once logged into the **Windows Admin Center** on **HybridHost001**, click on your previously deployed cluster, **azshciclus.hybrid.local**
+1. Once logged into the **Windows Admin Center** on the **AdminCenter** VM, click on your previously deployed cluster, **hciboxcluster.jumpstart.local**
 
-1. On the left hand navigation, under **Compute** select **Virtual machines**.  The central **Virtual machines** page shows you no virtual machines deployed currently
+3. On the left hand navigation, under **Cluster Resources** select **Virtual machines**.  The central **Virtual machines** page shows that there are some virtual machines already running.
     
-    ![Deploy a Windows Server 2019 virtual machine](./media/vm1.png "Deploy a Windows Server 2019 virtual machine")
+    ![Create VM](./media/vm-1.png "Create VM on Azure Stack HCI 22H2")
 
-1. On the **Virtual machines** page, select the **Inventory** tab, and then click on **Add** and select **New**.
+4. On the **Virtual machines** page, select the **Inventory** tab, and then click on **Add** and select **New**.
 
-    ![Deploy a Windows Server 2019 virtual machine](./media/newvm.png "Deploy a Windows Server 2019 virtual machine")
+    ![Create VM](./media/vm-2.png "Create VM on Azure Stack HCI 22H2")
+
+6. In the **New virtual machine** pane, enter **VM001** for the name, and enter the following pieces of information, then click **Create**
+
  
-1. In the New virtual machine pane, enter VM001 for the name, and enter the following pieces of information, then click Create
- 
-     * Generation: Generation 2 (Recommended)
- 
-     * Host: Leave as recommended
- 
-     * Path: C:\ClusterStorage\Volume01
- 
-     * Virtual processors: 2
- 
-     * Startup memory (GB): 4
- 
-     * Use dynamic memory: Min 2, Max 6
- 
-     * Network: ComputeSwitch
- 
-     * Storage: Add, then Create an empty virtual hard disk and set size to 30GB
- 
-     * Operating System: Install an operating system from an image file (.iso). Select the Windows Server 2019 Iso file!
- 
-      ![Deploy a Windows Server 2019 virtual machine](./media/fran8.png "Deploy a Windows Server 2019 virtual machine")
+     * Generation: **Generation 2 (Recommended)**
+     * Host: **Leave as recommended**
+     * Path: **C:\ClusterStorage\S2D_vDISK1**
+     * Virtual processors: **2**
+     * Startup memory (GB): **4**
+     * Use dynamic memory: **Min 2, Max 6**
+     * Network: **sdnSwitch**
+     * Storage: **Add, then Create an empty virtual hard disk** and set size to **30GB**
+     * Operating System: Install an operating system from an image file (.iso). Select the Windows Server 2022 Iso file!
+
+    ![Create VM](./media/vm-3.png "Create VM on Azure Stack HCI 22H2")
       
-      ![Deploy a Windows Server 2019 virtual machine](./media/fran9.png "Deploy a Windows Server 2019 virtual machine")  
+    ![Create VM](./media/vm-4.png "Create VM on Azure Stack HCI 22H2")
  
-1. The creation process will take a few moments, and once complete, VM001 should show within the Virtual machines view
+ 
+5. The creation process will take a few moments, and once complete, VM001 should show within the Virtual machines view
 
-1. Click on the checkbox before the VM and then click click on Power button and select Start - within moments, the VM should be running.
+6. Click on the checkbox before the VM and then click click on Power button and select Start - within moments, the VM should be running.
 
-    ![Deploy a Windows Server 2019 virtual machine](https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/event-27/HOL-4-azure-stack-hci/media/fran10.png "Deploy a Windows Server 2019 virtual machine")
-     
-    ![Deploy a Windows Server 2019 virtual machine](https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/event-27/HOL-4-azure-stack-hci/media/fran11.png "Deploy a Windows Server 2019 virtual machine")
+    ![Create VM](./media/vm-5.png "Create VM on Azure Stack HCI 22H2")
+    ![Create VM](./media/vm-6.png "Create VM on Azure Stack HCI 22H2")
   
-1. Click on VM001 to view the properties and status for this running VM.
+7. Click on VM001 to view the properties and status for this running VM.
  
     ![Deploy a Windows Server 2019 virtual machine](./media/fran12.png "Deploy a Windows Server 2019 virtual machine")
 
-1. Click on Connect and select connect button from the drop down- you may get a VM Connect prompt:
+8. Click on Connect and select connect button from the drop down- you may get a VM Connect prompt:
  
     ![Deploy a Windows Server 2019 virtual machine](https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/event-27/HOL-4-azure-stack-hci/media/fran13.png "Deploy a Windows Server 2019 virtual machine")
  
-1. Click on Go to Settings and in the Remote Desktop pane, click on Allow remote connections to this computer, then Save
+9.  Click on Go to Settings and in the Remote Desktop pane, click on Allow remote connections to this computer, then Save
  
     ![Deploy a Windows Server 2019 virtual machine](./media/fran14.png "Deploy a Windows Server 2019 virtual machine")
               
-1. Click the Back button in your browser to return to the VM001 view, then click Connect, and when prompted with the certificate prompt, click Connect and enter Password as `demo!pass123`.
+10. Click the Back button in your browser to return to the VM001 view, then click Connect, and when prompted with the certificate prompt, click Connect and enter Password as `demo!pass123`.
   
     ![Deploy a Windows Server 2019 virtual machine](./media/fran15.png "Deploy a Windows Server 2019 virtual machine")
  
@@ -351,30 +335,7 @@ In this step, you'll deploy a VM onto your Azure Stack HCI, using Windows Admin 
 ### Create the virtual machine ###
 You should still be over on the **AdminCenter** VM, but if you're not, log into AdminCenter VM, and open the **Windows Admin Center**.
 
-1. Once logged into the **Windows Admin Center** on the **AdminCenter** VM, click on your previously deployed cluster, **hciboxcluster.jumpstart.local**
 
-3. On the left hand navigation, under **Cluster Resources** select **Virtual machines**.  The central **Virtual machines** page shows that there are some virtual machines deployed currently
-    
-    ![Create VM](./media/vm-1.png "Create VM on Azure Stack HCI 22H2")
-
-4. On the **Virtual machines** page, select the **Inventory** tab, and then click on **Add** and select **New**.
-
-    ![Create VM](./media/vm-2.png "Create VM on Azure Stack HCI 22H2")
-
-6. In the **New virtual machine** pane, enter **VM001** for the name, and enter the following pieces of information, then click **Create**
-
-    * Generation: **Generation 2 (Recommended)**
-    * Host: **Leave as recommended**
-    * Path: **C:\ClusterStorage\S2D_vDISK1**
-    * Virtual processors: **1**
-    * Startup memory (GB): **0.5**
-    * Network: **sdnSwitch**
-    * Storage: **Add, then Create an empty virtual hard disk** and set size to **5GB**
-    * Operating System: **Install an operating system later**
-
-    ![Create VM](./media/vm-3.png "Create VM on Azure Stack HCI 22H2")
-      
-    ![Create VM](./media/vm-4.png "Create VM on Azure Stack HCI 22H2")
 
 5. The creation process will take a few moments, and once complete, **VM001** should show within the **Virtual machines view**
 
