@@ -16,10 +16,8 @@ Contents
     - [Download an Ubuntu Server 22.04 .Iso](#download-an-ubuntu-server-2204-iso)
     - [Upload the .Iso files to your CSV](#upload-the-iso-files-to-your-csv)
   - [Task 3: Deploy a Windows Server 2022 virtual machine](#task-3-deploy-a-windows-server-2022-virtual-machine)
-  - [Task 4: Deploy an Ubuntu Server 20.04 virtual machine](#task-4-deploy-an-ubuntu-server-2004-virtual-machine)
+  - [Task 4: Deploy an Ubuntu Server 22.04 virtual machine (OPTIONAL)](#task-4-deploy-an-ubuntu-server-2204-virtual-machine-optional)
   - [Task 5: Live migrate a virtual machine to another node](#task-5-live-migrate-a-virtual-machine-to-another-node)
-  - [Task 2: Deploy a virtual machine](#task-2-deploy-a-virtual-machine)
-    - [Create the virtual machine](#create-the-virtual-machine)
   - [Congratulations!](#congratulations)
   - [Setup the lab in your own Azure Subscription.](#setup-the-lab-in-your-own-azure-subscription)
 
@@ -117,11 +115,11 @@ In this step, you will deploy a Windows Server 2022 virtual machine via Windows 
 
 3. On the left hand navigation, under **Cluster Resources** select **Virtual machines**.  The central **Virtual machines** page shows that there are some virtual machines already running.
     
-    ![Create VM](./media/vm-1.png "Create VM on Azure Stack HCI 22H2")
+    ![Create VM](./media/vm001-1.png "Create VM on Azure Stack HCI 22H2")
 
 4. On the **Virtual machines** page, select the **Inventory** tab, and then click on **Add** and select **New**.
 
-    ![Create VM](./media/vm-2.png "Create VM on Azure Stack HCI 22H2")
+    ![Create VM](./media/vm001-2.png "Create VM on Azure Stack HCI 22H2")
 
 6. In the **New virtual machine** pane, enter **VM001** for the name, and enter the following pieces of information, then click **Create**
 
@@ -136,182 +134,176 @@ In this step, you will deploy a Windows Server 2022 virtual machine via Windows 
      * Storage: **Add, then Create an empty virtual hard disk** and set size to **30GB**
      * Operating System: Install an operating system from an image file (.iso). Select the Windows Server 2022 Iso file!
 
-    ![Create VM](./media/vm-3.png "Create VM on Azure Stack HCI 22H2")
+    ![Create VM](./media/vm001-3.png "Create VM on Azure Stack HCI 22H2")
       
-    ![Create VM](./media/vm-4.png "Create VM on Azure Stack HCI 22H2")
+    ![Create VM](./media/vm001-4.png "Create VM on Azure Stack HCI 22H2")
  
  
 5. The creation process will take a few moments, and once complete, VM001 should show within the Virtual machines view
 
 6. Click on the checkbox before VM001 and then click on **Power** and select **Start** - within moments, the VM should be running.
 
-    ![Create VM](./media/vm-5.png "Create VM on Azure Stack HCI 22H2")
-    ![Create VM](./media/vm-6.png "Create VM on Azure Stack HCI 22H2")
+    ![Create VM](./media/vm001-5.png "Create VM on Azure Stack HCI 22H2")
+    ![Create VM](./media/vm001-6.png "Create VM on Azure Stack HCI 22H2")
   
 7. Click on VM001 to view the properties and status for this running VM.
  
-    ![Create VM](./media/vm-7.png "Create VM on Azure Stack HCI 22H2")
+    ![Create VM](./media/vm001-7.png "Create VM on Azure Stack HCI 22H2")
 
 8. Click on Connect and select connect button from the drop down.
 
-    ![Create VM](./media/vm-8.png "Create VM on Azure Stack HCI 22H2")
+    ![Create VM](./media/vm001-8.png "Create VM on Azure Stack HCI 22H2")
  
-9.  Click on Go to Settings and in the Remote Desktop pane, click on Allow remote connections to this computer, then Save
- 
-    ![Deploy a Windows Server 2019 virtual machine](./media/fran14.png "Deploy a Windows Server 2019 virtual machine")
-              
-10. Click the Back button in your browser to return to the VM001 view, then click Connect, and when prompted with the certificate prompt, click Connect and enter Password as `demo!pass123`.
+9. Fill in the Username **arcdemo@jumpstart.local** and password **ArcPassword123!!**. Before clicking on **Connect** first make sure to click the checkbox before "Automatically connect with the certificate presented by this machine", when you receive the certificate prompt, click **Confirm**. Now click **Connect**.
   
-    ![Deploy a Windows Server 2019 virtual machine](./media/fran15.png "Deploy a Windows Server 2019 virtual machine")
+    ![Create VM](./media/vm001-9.png "Create VM on Azure Stack HCI 22H2") 
  
+10. The VM will be in the UEFI boot summary as below
  
-1. The VM will be in the UEFI boot summary as below
+    ![Create VM](./media/vm001-10.png "Create VM on Azure Stack HCI 22H2") 
  
-    ![Deploy a Windows Server 2019 virtual machine](https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/event-27/HOL-4-azure-stack-hci/media/fran16.png "Deploy a Windows Server 2019 virtual machine")
+11. Click in "Send Ctrl + Alt + Del" at the top of the page now and press any key when you see the message "Press any key at boot from CD or DVD…"
  
-1. Click in "Send Ctrl + Alt + Del" at the top of the page now and press any key when you see the message "Press any key at boot from CD or DVD…"
+    ![Create VM](./media/vm001-11.png "Create VM on Azure Stack HCI 22H2") 
  
-    ![Deploy a Windows Server 2019 virtual machine](https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/event-27/HOL-4-azure-stack-hci/media/fran17.png "Deploy a Windows Server 2019 virtual machine")
- 
-1. Click Enter when you see the following interface
- 
-    ![Deploy a Windows Server 2019 virtual machine](https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/event-27/HOL-4-azure-stack-hci/media/fran18.png "Deploy a Windows Server 2019 virtual machine")
- 
-1. From there you'll start the OOBE experience. Select the following settings according to your preferences: Language, Time currency and Keyboard
+13. From there you'll start the OOBE experience. Select the following settings according to your preferences: Language, Time currency and Keyboard. Click **Next**
 
-1. Click Install Now, and select the version Windows Server 2019 Standard Evaluation (Desktop Experience):
+14. Click Install Now, and select the version Windows Server 2022 Standard Evaluation (Desktop Experience). Click **Next**
  
-     ![Deploy a Windows Server 2019 virtual machine](https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/event-27/HOL-4-azure-stack-hci/media/fran19.png "Deploy a Windows Server 2019 virtual machine")
+    ![Create VM](./media/vm001-12.png "Create VM on Azure Stack HCI 22H2") 
  
-1. Accept the license terms and select "Custom: Install Windows only (advanced)" and then Next. It will take around 10 minutes for the VM to boot. After that, please insert the lab credentials demo!pass123 and your VM is ready to go!
+15. Accept the license terms. Click **Next**. Select "Custom: Install Windows only (advanced)" and then Next. It will take around 10 minutes for the VM to boot. After that, please insert the lab credentials **ArcPassword123!!** and your VM is ready to go!
 
-Task 4: Deploy an Ubuntu Server 20.04 virtual machine
+Task 4: Deploy an Ubuntu Server 22.04 virtual machine (OPTIONAL)
 ----- 
-In this step, you will deploy an Ubuntu Server 20.04 virtual machine via Windows Admin Center.
+In this step, you will deploy an Ubuntu Server 22.04 virtual machine via Windows Admin Center.
 
-1. Once logged into the **Windows Admin Center** on **HybridHost001**, click on your previously deployed cluster, **azshciclus.hybrid.local**
+1. Once logged into the **Windows Admin Center** on the **AdminCenter** VM, click on cluster, **hciboxcluster.jumpstart.local**
 
-1. On the left hand navigation, under **Compute** select **Virtual machines**.  The central **Virtual machines** page shows one virtual machines deployed currently.
+3. On the left hand navigation, under **Cluster Resources** select **Virtual machines**.  The central **Virtual machines** page shows that there are some virtual machines already running.
     
-    ![Deploy an Ubuntu Server 20.04 virtual machine](./media/vm1.png "Deploy an Ubuntu Server 20.04 virtual machine")
+    ![Create VM](./media/vm002-1.png "Create VM on Azure Stack HCI 22H2")
 
-1. On the **Virtual machines** page, select the **Inventory** tab, and then click on **Add** and select **New**.
+4. On the **Virtual machines** page, select the **Inventory** tab, and then click on **Add** and select **New**.
 
-    ![Deploy an Ubuntu Server 20.04 virtual machine](./media/newvm.png "Deploy an Ubuntu Server 20.04 virtual machine")
+    ![Create VM](./media/vm002-2.png "Create VM on Azure Stack HCI 22H2")
+
+6. In the **New virtual machine** pane, enter **VM002** for the name, and enter the following pieces of information, then click **Create**
+
  
-1. In the New virtual machine pane, enter VM002 for the name, and enter the following pieces of information, then click Create
- 
-     * Generation: Generation 2 (Recommended)
- 
-     * Host: Leave as recommended
- 
-     * Path: C:\ClusterStorage\Volume01
- 
-     * Virtual processors: 2
- 
-     * Startup memory (GB): 2
- 
-        * Use dynamic memory: -
- 
-     * Network: ComputeSwitch
- 
-     * Storage: Add, then Create an empty virtual hard disk and set size to 30GB
- 
-     * Operating System: Install an operating system from an image file (.iso). Select the Ubuntu Server 20.04 Iso file!
- 
-      ![Deploy an Ubuntu Server 20.04 virtual machine](./media/vm002-01.png "Deploy an Ubuntu Server 20.04 virtual machine")
+     * Generation: **Generation 2 (Recommended)**
+     * Host: **Leave as recommended**
+     * Path: **C:\ClusterStorage\S2D_vDISK1**
+     * Virtual processors: **1**
+     * Startup memory (GB): **2**     
+     * Network: **sdnSwitch**
+     * Storage: **Add, then Create an empty virtual hard disk** and set size to **20GB**
+     * Operating System: Install an operating system from an image file (.iso). Select the Ubuntu Server 22.04 Iso file!
+
+    ![Create VM](./media/vm002-3.png "Create VM on Azure Stack HCI 22H2")
       
-      ![Deploy an Ubuntu Server 20.04 virtual machine](./media/vm002-02.png "Deploy an Ubuntu Server 20.04 virtual machine")  
+    ![Create VM](./media/vm002-4.png "Create VM on Azure Stack HCI 22H2")
  
-1. The creation process will take a few moments, and once complete, VM002 should show within the Virtual machines view
-
-1. Click on the VM name VM002 and then Click on Settings to view all VM properties. Click on Security
  
-      ![Deploy an Ubuntu Server 20.04 virtual machine](./media/vm002-03.png "Deploy an Ubuntu Server 20.04 virtual machine")
+5. The creation process will take a few moments, and once complete, VM002 should show within the Virtual machines view
 
-1. Make sure to change the Secure Boot template to "Microsoft UEFI Certificate Authority" in the Template drop down box, and click save security settings. Click Close.
-
-      ![Deploy an Ubuntu Server 20.04 virtual machine](./media/vm002-06.png "Deploy an Ubuntu Server 20.04 virtual machine")
-
-1. Click on Power button and select Start - within moments, the VM should be in a running state soon.
-
-      ![Deploy an Ubuntu Server 20.04 virtual machine](./media/vm002-04.png "Deploy an Ubuntu Server 20.04 virtual machine")
-
-1. Click on Connect and select connect button from the drop down- you may get a VM Connect prompt.
+1. Click on the VM name **VM002** and then Click on **Settings** to view all VM properties. Click on **Security**
  
-      ![Deploy an Ubuntu Server 20.04 virtual machine](./media/vm002-05.png "Deploy an Ubuntu Server 20.04 virtual machine")
+    ![Create VM](./media/vm002-4a.png "Create VM on Azure Stack HCI 22H2")
 
-1. When prompted with the certificate prompt, click Connect and enter Password as `demo!pass123`.
+1. Make sure to change the Secure Boot template to "Microsoft UEFI Certificate Authority" in the Template drop down box, and click **save security settings**. DO NOT CLICK **Close**.
+
+    ![Create VM](./media/vm002-4b.png "Create VM on Azure Stack HCI 22H2")
+
+1. Click **Networks** in the left menu under "Settings for VM002" and make sure to change the VLAN identifier to **200** and click **save Networks settings**. Click Close.
+
+    ![Create VM](./media/vm002-4c.png "Create VM on Azure Stack HCI 22H2")
+
+6. Click on **Power** and select **Start** - within moments, the VM should be running.
+
+    ![Create VM](./media/vm002-5.png "Create VM on Azure Stack HCI 22H2")
+    
   
-    ![Deploy an Ubuntu Server 20.04 virtual machine](./media/fran15.png "Deploy an Ubuntu Server 20.04 virtual machine")
-
-1. Once the integrity check is done you will be able to select your language. Select English.
-
-    ![Deploy an Ubuntu Server 20.04 virtual machine](./media/ubuntu01.png "Deploy an Ubuntu Server 20.04 virtual machine")
-
-1. On the Installer update available screen, select "Continue without updating"
-
-    ![Deploy an Ubuntu Server 20.04 virtual machine](./media/ubuntu02.png "Deploy an Ubuntu Server 20.04 virtual machine")
-
-1. On the Keyboard configuration screen, select "Done"
-
-    ![Deploy an Ubuntu Server 20.04 virtual machine](./media/ubuntu03.png "Deploy an Ubuntu Server 20.04 virtual machine")
-
-1. On the Network connections screen, remember the assigned IP address and select "Done"
-
-    ![Deploy an Ubuntu Server 20.04 virtual machine](./media/ubuntu04.png "Deploy an Ubuntu Server 20.04 virtual machine")
-
-1. On the Configure proxy screen, select "Done"
-
-    ![Deploy an Ubuntu Server 20.04 virtual machine](./media/ubuntu05.png "Deploy an Ubuntu Server 20.04 virtual machine")
-
-1. On the Configure Ubuntu archive mirror screen, select "Done"
-
-    ![Deploy an Ubuntu Server 20.04 virtual machine](./media/ubuntu06.png "Deploy an Ubuntu Server 20.04 virtual machine")
-
-1. On the Guided storage configuration screen, select "Done"
-
-    ![Deploy an Ubuntu Server 20.04 virtual machine](./media/ubuntu07.png "Deploy an Ubuntu Server 20.04 virtual machine")
-
-1. On the storage configuration screen, select "Done" and then Select "Continue" to confirm the destructive action popup screen.
-
-    ![Deploy an Ubuntu Server 20.04 virtual machine](./media/ubuntu08.png "Deploy an Ubuntu Server 20.04 virtual machine")
-    ![Deploy an Ubuntu Server 20.04 virtual machine](./media/ubuntu09.png "Deploy an Ubuntu Server 20.04 virtual machine")
-
-1. On the Profile setup screen complete the fields a below and then select "Done"
-     * Your name: demouser
+7. View the properties and status for this running VM.
  
+    ![Create VM](./media/vm002-7.png "Create VM on Azure Stack HCI 22H2")
+    
+
+8. Click on Connect and select connect button from the drop down.
+
+    ![Create VM](./media/vm002-8.png "Create VM on Azure Stack HCI 22H2")
+ 
+9.  Fill in the Username **arcdemo@jumpstart.local** and password **ArcPassword123!!**. Before clicking on **Connect** first make sure to click the checkbox before "Automatically connect with the certificate presented by this machine", when you receive the certificate prompt, click **Confirm**. Now click **Connect**.
+  
+    ![Create VM](./media/vm002-9.png "Create VM on Azure Stack HCI 22H2") 
+ 
+
+1. Once the integrity check is done you will be able to select your language. Select **English**.
+
+    ![Create VM](./media/vm002-10.png "Create VM on Azure Stack HCI 22H2") 
+
+1. On the "Keyboard configuration" page, select **Done** and ENTER
+
+    ![Create VM](./media/vm002-11.png "Create VM on Azure Stack HCI 22H2")
+
+1. On the "Choose type of install" page, select **Done** and ENTER
+
+    ![Create VM](./media/vm002-12.png "Create VM on Azure Stack HCI 22H2") 
+
+2. On the "Network connections" page, select **Done** and ENTER
+   
+   **NOTE:** Make sure you see an IP on the DHCPv4 line!
+
+    ![Create VM](./media/vm002-13.png "Create VM on Azure Stack HCI 22H2") 
+
+3. On the "Configure Proxy" page, select **Done** and ENTER
+
+    ![Create VM](./media/vm002-14.png "Create VM on Azure Stack HCI 22H2")
+
+3. On the "Configure Ubuntu archive mirror" page, select **Done** and ENTER
+
+    ![Create VM](./media/vm002-15.png "Create VM on Azure Stack HCI 22H2") 
+
+7. On the "Guided storage configuration" page, select **Done** and ENTER
+
+    ![Create VM](./media/vm002-16.png "Create VM on Azure Stack HCI 22H2")
+
+8.  On the storage configuration screen, select **Done** and then Select **Continue** to confirm the destructive action popup screen.
+
+    ![Create VM](./media/vm002-17.png "Create VM on Azure Stack HCI 22H2")
+
+9.  On the Profile setup screen complete the fields a below and then select **Done** and ENTER
+     * Your name: arcdemo
      * Your server's name: vm002
- 
-     * Pick a username: demouser
- 
-     * Choose a password: demo!pass123
+     * Pick a username: arcdemo
+     * Choose a password: ArcPassword123!!
+     * Confirm your password: ArcPassword123!!
 
-     * Confirm your password: demo!pass123
+    ![Create VM](./media/vm002-18.png "Create VM on Azure Stack HCI 22H2")
 
-    ![Deploy an Ubuntu Server 20.04 virtual machine](./media/ubuntu10.png "Deploy an Ubuntu Server 20.04 virtual machine")
+10. On the "Upgrade to Ubuntu Pro" screen, select **Continue** and ENTER
 
-1. On the Enable Ubunutu Advantage screen, select "Done"
+    ![Create VM](./media/vm002-19.png "Create VM on Azure Stack HCI 22H2")
 
-    ![Deploy an Ubuntu Server 20.04 virtual machine](./media/ubuntu11.png "Deploy an Ubuntu Server 20.04 virtual machine")
+11. On the "SSH setup" screen, select "Install openSSH server" and select **Done**
 
-1. On the SSH setup screen, select "Install openSSH server" and select "Done"
+    ![Create VM](./media/vm002-20.png "Create VM on Azure Stack HCI 22H2")
 
-    ![Deploy an Ubuntu Server 20.04 virtual machine](./media/ubuntu12.png "Deploy an Ubuntu Server 20.04 virtual machine")
+12. On the "Featured Server snaps" screen, select **Done**
 
-1. On the Featured Server snaps screen, select "Done"
+    ![Create VM](./media/vm002-21.png "Create VM on Azure Stack HCI 22H2")
 
-    ![Deploy an Ubuntu Server 20.04 virtual machine](./media/ubuntu13.png "Deploy an Ubuntu Server 20.04 virtual machine")
+13. Now wait until you get the Install complete! screen and select "Reboot Now"
 
-1. Now wait until you get the Install complete! screen and select "Reboot Now"
+**BART ROELS**
 
-    ![Deploy an Ubuntu Server 20.04 virtual machine](./media/ubuntu14.png "Deploy an Ubuntu Server 20.04 virtual machine")
+    ![Create VM](./media/vm002-22.png "Create VM on Azure Stack HCI 22H2")
 
-1. On the following screen press "ENTER", now the virtual machine will reboot.
+14. On the following screen press "ENTER", now the virtual machine will reboot.
 
     ![Deploy an Ubuntu Server 20.04 virtual machine](./media/ubuntu15.png "Deploy an Ubuntu Server 20.04 virtual machine2")
 
-1. Once the virtual machine is up and running try to login!
+15. Once the virtual machine is up and running try to login!
 
     ![Deploy an Ubuntu Server 20.04 virtual machine](./media/ubuntu16.png "Deploy an Ubuntu Server 20.04 virtual machine")
 
@@ -328,46 +320,6 @@ The final step we'll cover is using Windows Admin Center to live migrate VM001 f
 
 4. Next to **VM001**, click the tick box next to VM001, then click **More**.  You'll notice you can Clone, Domain Join and also Move the VM. Click **Move**
 
-Task 2: Deploy a virtual machine
------------
-In this step, you'll deploy a VM onto your Azure Stack HCI, using Windows Admin Center.
-
-### Create the virtual machine ###
-You should still be over on the **AdminCenter** VM, but if you're not, log into AdminCenter VM, and open the **Windows Admin Center**.
-
-
-
-5. The creation process will take a few moments, and once complete, **VM001** should show within the **Virtual machines view**
-
-6. Click on the checkbox before the **VM** and then click click on **Power** button and select **Start** - within moments, the VM should be running.
-
-    ![Create VM](./media/vm-5.png "Create VM on Azure Stack HCI 22H2")
-    
-    ![Create VM](./media/vm-6.png "Create VM on Azure Stack HCI 22H2")
-
-7. Click on **VM001** to view the properties and status for this running VM.
-
-    ![VM001 up and running](./media/vmdash.png "VM001 up and running")
-
-8. Click on **Connect (1)** and select **Connect (2)** button from the drop down.
-
-    ![](./media/connect1.png)
-    
-1. If you get a prompt stating **VM Connect**, then click on **Go to Settings**.
-
-    ![Connect to VM001](./media/setting.png "Connect to VM001")
-
-9. On the **Settings** tab, Select **Remote Desktop** pane and click on **Allow remote connections to this computer**, then **Save**.
-
-     ![Connect to VM001](./media/rdo.png "Connect to VM001")
-     
-10. Click the **Back** button in your browser to return to the VM001 view, then click **Connect**, and when prompted with the certificate prompt, click **Connect** and enter Password as **demo!pass123**
-
-      ![Connect to VM001](./media/rdp.png "Connect to VM001")
-      
-12. There's no operating system installed here, so it should show a UEFI boot summary, but the VM is running successfully
-
-12. Click **Disconnect**
 
 You've successfully create a VM using the Windows Admin Center!
 
