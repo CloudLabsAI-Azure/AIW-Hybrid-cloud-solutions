@@ -45,25 +45,32 @@ This Lab also includes a dedicated Windows Admin Center (WAC) gateway server. Th
    * Username: **jumpstart\arcdemo**
    * Password: **ArcPassword123!!**
    
-   ![](./media/signin-to-wac.png "Screenshot showing WAC login prompt")
+   ![](media/signin-to-wac.png "Screenshot showing WAC login prompt")
 
    >**Note**: The first time you access the Windows Admin Center you will get a Welcome screen. Just close it and now wait until all WAC extensions are installed and you get a popup window telling you "Successfully updated your extensions". Just click [OK]. Windows Admin Center will automatically refresh.
 
 1. Once you are logged into Windows Admin Center, click on **Add** **(1)** button to add a connection to HCI cluster and then click on **Add** **(2)** under **Server clusters**. 
 
-   ![](./media/add-hci-cluster.png "Add HCI Cluster")
+   ![](media/add-hci-cluster.png "Add HCI Cluster")
 
-1. Enter “hciboxcluster” for the cluster name, and use the domain account credential to connect to the cluster.
+1. Enter the cluster name as **hciboxcluster** **(1)**, choose the **Use another account for this connection** **(2)** option. You can use the below domain account credentials to connect to the cluster and click on **Connect with account** **(5)**.
 
-![-](./media/wac_add_cluster_detail.png "Screenshot showing WAC connection details")
-![-](./media/wac_add_cluster_detail_2.png "Screenshot showing WAC connection details")
+   * Username **(3)**: **jumpstart\arcdemo**
+   * Password **(4)**: **ArcPassword123!!**
 
-6. Now that the cluster is added, we can explore management capabilities for the cluster inside of WAC. Click on the cluster to drill into its details.
+   ![](media/hcicluster-connection.png "Adding hcicluster connection")
+   
+1. In the **Add cluster** tab, click on **Add**.
+   
+   ![](media/final-add-hci.png "Screenshot showing WAC connection details")
 
-![-](./media/wac_cluster_added.png "Screenshot showing cluster list")
-![-](./media/wac_cluster_added_detail.png "Screenshot showing cluster detail")
+1. Now the cluster is added, we can explore management capabilities for the cluster inside of Windows Admin Center. Click on the **hciboxcluster.jumpstart.local** cluster to drill into its details.
 
-You just successfully added the existing Azure Stack HCI 22H2 Cluster "hciboxcluster" to you Windows Admin Center. We will explore the Cluster capabilities leveraging WAC in upcoming tasks.
+   ![](media/open-hciboxcluster.png "Screenshot showing cluster list")
+   
+   ![](media/hci_cluster_details.png "Screenshot showing cluster detail")
+
+You just successfully added the existing Azure Stack HCI 22H2 Cluster **"hciboxcluster"** to Windows Admin Center. You will explore the Cluster capabilities leveraging Windows Admin Center in upcoming tasks.
 
 ## Task 2: Verify your Azure Stack HCI 22H2 Cluster is registered with Azure
 
