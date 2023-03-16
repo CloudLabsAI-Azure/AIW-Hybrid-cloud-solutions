@@ -12,19 +12,24 @@ In this guide, you'll walk through the steps to stand up an Azure Stack HCI 20H2
 
 Contents
 -----------
-- [Overview](#overview)
-- [Contents](#contents)
-- [Architecture](#architecture)
-- [Important Note](#important-note)
-- [Get an Azure subscription](#get-an-azure-subscription)
-- [Azure VM Size Considerations](#azure-vm-size-considerations)
-- [Deploying the Azure VM](#deploying-the-azure-vm)
-- [Access your Azure VM](#access-your-azure-vm)
-- [Please Read - Finish Setup](#please-read---finish-setup)
-- [Next Steps](#next-steps)
-- [Troubleshooting](#troubleshooting)
-- [Product improvements](#product-improvements)
-- [Raising issues](#raising-issues)
+- [Deploy your Azure VM (Prerequisites)](#deploy-your-azure-vm-prerequisites)
+  - [Overview](#overview)
+  - [Contents](#contents)
+  - [Architecture](#architecture)
+  - [Important Note](#important-note)
+  - [Get an Azure subscription](#get-an-azure-subscription)
+  - [Azure VM Size Considerations](#azure-vm-size-considerations)
+  - [Deploying the Azure VM](#deploying-the-azure-vm)
+    - [Deployment detail](#deployment-detail)
+    - [Creating the VM with an Azure Resource Manager JSON Template](#creating-the-vm-with-an-azure-resource-manager-json-template)
+      - [Deployment errors](#deployment-errors)
+  - [Access your Azure VM](#access-your-azure-vm)
+    - [Connect to your Azure VM](#connect-to-your-azure-vm)
+  - [Please Read - Finish Setup](#please-read---finish-setup)
+  - [Next Steps](#next-steps)
+  - [Troubleshooting](#troubleshooting)
+  - [Product improvements](#product-improvements)
+  - [Raising issues](#raising-issues)
 
 Architecture
 -----------
