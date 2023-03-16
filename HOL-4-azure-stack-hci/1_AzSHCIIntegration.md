@@ -100,45 +100,57 @@ You can close the Windows PowerShell ISE. No need to save the PowerShell script.
 
 To use Azure services with Windows Admin Center, you must register your Windows Admin Center instance with Azure. This is a prerequisite if you use Windows Admin Center to [register Azure Stack HCI with Azure](https://learn.microsoft.com/en-us/azure-stack/hci/deploy/register-with-azure).
 
-1. In Windows Admin Center, select the Settings gear icon from the top right corner of the page.
+1. In Windows Admin Center, select the **Settings** gear icon from the top right corner of the page.
 
-2. From the Settings menu in the left pane, go to Gateway > Register.
+   ![](media/ex1-task3-step1.png "Open settings in WAC")
 
-3. Select the Register button on the center of the page. The registration pane appears on the right of the page.
+1. From the Settings menu in the left pane, select **Register** **(1)** under Gateway and click on **Register** **(2)** to Register with Azure. The registration pane appears on the right side of the page.
+
+   ![](media/ex1-task3-step2.png "Click on Register")
+
+1. In the **Get started with Azure in Windows Admin Center** blade, follow the instructions to **Copy the code** by click on **Copy** **(1)** and then click on the **Enter the Code** **(2)** hyperlink to configure device login.
    
-![Register Windows Admin Center](./media/register-wac.png "Register Windows Admin Center in Azure")
+   ![](media/ex1-task3-step3.png "Copy the code for Device Login")
 
-4. Iin the **Get started with Azure in Windows Admin Center** blade, follow the instructions to **Copy the code**(2) and then click on the link **Enter the Code**(3) to configure device login.
+1. You will see the new tab opened in the browser for device login. Now, Paste the code **(1)** that you have copied in previous step and click on **Next** **(2)** button.
 
-   ![Installed extensions in Windows Admin Center](./media/login.png "Installed extensions in Windows Admin Center")
-    
-5. Now, Paste the code you copied in previous step and click on **Next** button.
-
-   ![Installed extensions in Windows Admin Center](./media/code.png "Installed extensions in Windows Admin Center")
+   ![](media/ex1-task3-step4.png "Enter the code for Device Login")
      
-6. When prompted for credentials, **enter your Azure credentials** for a tenant you'd like to use to register the Windows Admin Center and click on **Continue** button if you get any popup saying **Are you trying to sign in to Windows Admin Center?**.
+1. When prompted for credentials, **enter the below Azure credentials** for a tenant that you will use to register the Windows Admin Center and click on **Continue** button if you get any popup saying **Are you trying to sign in to Windows Admin Center?**.
 
-7. Now, navigate back in **Windows Admin Center** tab, you'll notice your tenant information has been added.  You can click on **Connect** to connect Windows Admin Center to Azure.
+   * Email/Username: **<inject key="AzureAdUserEmail"></inject>**
+   * Password: **<inject key="AzureAdUserPassword"></inject>**
 
-    ![Connecting Windows Admin Center to Azure](./media/connect.png "Connecting Windows Admin Center to Azure")
+1. Now, navigate back in **Windows Admin Center** tab, you'll notice your tenant information **(1)** has been added. You can click on **Connect** **(2)** to connect Windows Admin Center to Azure.
 
-8. Click on **Sign in** and when prompted for credentials, **enter your Azure credentials** and you will see a popup **Permissions requested**. Check the box next to the **Consent on behalf of your organization** then click **Accept**. *Ignore the Hybridhost001 referral in the screenshot*
+   ![](media/ex1-task3-step5.png "Connect Windows Admin Center to Azure")
 
-    ![Permissions for Windows Admin Center](./media/ex2-task1-step10.png)
+1. Click on **Sign in** and you may get prompt to enter credentials, **enter your Azure credentials** given below.
 
-*******************************************************************************************************
+   * Email/Username: **<inject key="AzureAdUserEmail"></inject>**
+   * Password: **<inject key="AzureAdUserPassword"></inject>**
+ 
+   ![](media/ex1-task3-step6.png "Sign into Azure")
+ 
+1. You will see a pop-up **Permissions requested**. Check the box next to the **Consent on behalf of your organization** and then click on **Accept**.
 
-**NOTE** - If you receive an error when signing in, still in **Settings**, under **User**, click on **Account** and click **Sign-in**. You should then be prompted for Azure credentials and permissions, to which you can then click **Accept**. Sometimes it just takes a few moments from Windows Admin Center creating the Azure AD application and being able to sign in. Retry the sign-in until you've successfully signed in.
-**NOTE** - Sometime even after cluster is registered it may show an error with SignIn with following error, you can ignore that and close the popup:
+   ![](media/ex1-task3-step7.1.png "Permissions requested")
+   
+1. Once you are connected Windows Admin Center to Azure, you will see the details as shown in the below screenshot in Register under Gateway.
+
+   ![](media/ex1-task3-step8.1.png "Permissions requested")
+
+>**Note**: If you receive an error when signing in, still in **Settings**, under **User**, click on **Account** and click **Sign-in**. You should then be prompted for Azure credentials and permissions, to which you can then click **Accept**. Sometimes it just takes a few moments from Windows Admin Center creating the Azure AD application and being able to sign in. Retry the sign-in until you've successfully signed in.
+
+>**Note**: Sometime even after cluster is registered it may show an error with SignIn with following error, you can ignore that and close the popup:
    ```AADSTS700016: Application with identifier '******************' was not found in the directory 'Azure HOL ****'. This can happen if the application has not been installed by the administrator of the tenant or consented to by any user in the tenant. You may have sent your authentication request to the wrong tenant.```
-
-*******************************************************************************************************
 
 ## Task 4: Validate Azure integration
 
-Additional permissions were applied on the Windows Admin Center Azure AD application that was created when you connected Windows Admin Center to Azure, earlier. In this step, we'll quickly validate those permissions.
+Additional permissions were applied on the Windows Admin Center Azure AD application that was created when you connected Windows Admin Center to Azure, earlier. In this step, you will quickly validate those permissions.
 
 1. Still in Windows Admin Center, click on the **Settings** gear in the top-right corner
+
 2. Under **Gateway**, click **Register**. You should see your previously registered Azure AD app:
 
     ![Your Azure AD app in Windows Admin Center](./media/WAC-Registered.png "Your Azure AD app in Windows Admin Center")
