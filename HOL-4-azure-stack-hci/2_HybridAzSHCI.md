@@ -11,9 +11,10 @@ Contents
   - [Contents](#contents)
   - [Task 1: Enable some Hybrid capabilities in Azure of your Azure Stack HCI cluster](#task-1-enable-some-hybrid-capabilities-in-azure-of-your-azure-stack-hci-cluster)
     - [Review the status of the Azure Arc required services in Windows Admin Center](#review-the-status-of-the-azure-arc-required-services-in-windows-admin-center)
-  - [Task 2: Explore Azure Stack HCI Hybrid features in the Azure Portal](#task-2-explore-azure-stack-hci-hybrid-features-in-the-azure-portal)
+  - [Task 2: Manage Azure Stack HCI clusters using Windows Admin Center in Azure](#task-2-manage-azure-stack-hci-clusters-using-windows-admin-center-in-azure)
+    - [Enable all requirements so you can use Windows Admin Center in the Azure portal to manage a hybrid machine](#enable-all-requirements-so-you-can-use-windows-admin-center-in-the-azure-portal-to-manage-a-hybrid-machine)
+  - [Task 3: Explore Azure Stack HCI Hybrid features in the Azure Portal](#task-3-explore-azure-stack-hci-hybrid-features-in-the-azure-portal)
     - [Explore Extensions](#explore-extensions)
-    - [Manage Azure Stack HCI clusters using Windows Admin Center in Azure](#manage-azure-stack-hci-clusters-using-windows-admin-center-in-azure)
     - [Configuration of The Azure Stack HCI 22H2 cluster in the Azure Portal](#configuration-of-the-azure-stack-hci-22h2-cluster-in-the-azure-portal)
     - [Monitor Insights on your Azure Stack HCI clusters using in Azure](#monitor-insights-on-your-azure-stack-hci-clusters-using-in-azure)
   - [Summary](#summary)
@@ -101,26 +102,14 @@ In this step, you will review the status of the Azure Arc services on the Azure 
   
       ![Azure Arc WAC](./media/Arc-14.png "Azure Arc WAC")    
 
-You just finalized the Activation of a couple of Hybrid features of Azure Stack HCI. Please proceed to the next Task.
+You just finalized the Activation of a couple of Hybrid features of Azure Stack HCI.
+Once all 3 boxes show **Configured** proceed to the next Task.
 
-Task 2: Explore Azure Stack HCI Hybrid features in the Azure Portal
+Task 2: Manage Azure Stack HCI clusters using Windows Admin Center in Azure
 -----------
-In this step, you will further explore extra Azure Stack HCI Hybrid features and capabilities.
+In this step, you will prepare your Azure Stack HCI Cluster resource in Azure to be connect to it using Windows Admin Center from the Azure Portal.
 
-At this time you should still be having the following page active in the Azure Portal. If so Click **Extensions**.
-
-   ![Azure Arc WAC](./media/Arc-15.png "Azure Arc WAC")  
-
-### Explore Extensions ###
-
-1. On the **Extension** page, you see that both Azure Stack HCI Cluster nodes have the **Microsoft Monitoring Agent** and the **(Windows) Admin Center agent** installed. This was enabled by the steps we took in Task 1.
-
-    ![Azure Arc WAC](./media/Arc-16.png "Azure Arc WAC")
-
-
-### Manage Azure Stack HCI clusters using Windows Admin Center in Azure  ### 
-
-First we need to make sure that all requirements are met for using Windows Admin Center in the Azure portal to manage a hybrid machine
+### Enable all requirements so you can use Windows Admin Center in the Azure portal to manage a hybrid machine ###
 
 1.  On the **hciboxcluster** page, under Settings, click **Windows Admin Center**.
    
@@ -184,6 +173,19 @@ If all how well you should now have a Windows Admin Center view on your Azure St
 
    ![Azure Arc WAC](./media/Arc-30.png "Azure Arc WAC")
 
+Task 3: Explore Azure Stack HCI Hybrid features in the Azure Portal
+-----------
+In this step, you will further explore extra Azure Stack HCI Hybrid features and capabilities.
+
+At this time you should still be having the following page active in the Azure Portal. If so Click **Extensions**.
+
+   ![Azure Arc WAC](./media/Arc-15.png "Azure Arc WAC")  
+
+### Explore Extensions ###
+
+1. On the **Extension** page, you see that both Azure Stack HCI Cluster nodes have the **Microsoft Monitoring Agent** and the **(Windows) Admin Center agent** installed. This was enabled by the steps we took in Task 1.
+
+    ![Azure Arc WAC](./media/Arc-16.png "Azure Arc WAC")
 
 ### Configuration of The Azure Stack HCI 22H2 cluster in the Azure Portal ###
 
@@ -288,7 +290,7 @@ In Task 1 of Exercise 2 you enabled the Monitoring Insights capabilities on the 
 
 Summary
 -----------
-In this exercise, you have enabled some Hybrid Azure Stack HCI Cluster features in the Azure Portal, reviewed the status of the Azure Arc services in the Windows Admin Center web portal, looked at the Azure Extensions on the Azure Stack HCI cluster in the Azure Portal, completed the pre-requirements to be able to connect and use the Windows Admin Center from the Azure Portal on the Azure Stack HCI Cluster and finally looked at the data captured by the Monitoring Insights service on the Azure Stack HCI cluster in the Azure Portal.
+In this exercise, you have enabled the Hybrid Azure Stack HCI Cluster features in the Azure Portal, reviewed the status of the Azure Arc services in the Windows Admin Center web portal, completed the pre-requirements to be able to connect and use the Windows Admin Center from the Azure Portal on the Azure Stack HCI Cluster, looked at the Azure Extensions on the Azure Stack HCI cluster in the Azure Portal, looked at all configuration capabilities on an Azure Stack HCI Cluster resource in the Azure Portal and finally looked at the data captured by the Monitoring Insights service on the Azure Stack HCI cluster in the Azure Portal.
 
 With this completed, you can now move on to the next exercise.
 

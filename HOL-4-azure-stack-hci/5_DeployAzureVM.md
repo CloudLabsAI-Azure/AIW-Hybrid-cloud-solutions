@@ -1,18 +1,15 @@
-﻿HOL-4: Exercise 4: Deploying Virtual Machines on your Azure Stack HCI 22H2 via Azure Portal
+﻿HOL-4: Exercise 5: Deploying Virtual Machines on your Azure Stack HCI 22H2 via Azure Portal
 ==============
 Overview
 -----------
-Text here
-
-***Below need to be updates!!***
-
+On of the recent added features in Azure Stack HCI is the implementation of the Azure Resource Bridge capabilities. You will now use the pre-installed Resource Bridge capabilities to add more resource onto the Azure Stack HCI cluster, but using the Azure Portal instead of Windows Admin Center. Remember that we now use the Azure Portal, but you also can leverage Bicep or ARM templates, or everything which can talk to the APIs.
 
 Contents
 -----------
-- [HOL-4: Exercise 4: Deploying Virtual Machines on your Azure Stack HCI 22H2 via Azure Portal](#hol-4-exercise-4-deploying-virtual-machines-on-your-azure-stack-hci-22h2-via-azure-portal)
+- [HOL-4: Exercise 5: Deploying Virtual Machines on your Azure Stack HCI 22H2 via Azure Portal](#hol-4-exercise-5-deploying-virtual-machines-on-your-azure-stack-hci-22h2-via-azure-portal)
   - [Overview](#overview)
   - [Contents](#contents)
-  - [Task 1: Explore the existing volumes created on the **hciboxcluster**](#task-1-explore-the-existing-volumes-created-on-the-hciboxcluster)
+  - [Task 1: Add an Azure Marketplace image to your Azure Stack HCI](#task-1-add-an-azure-marketplace-image-to-your-azure-stack-hci)
     - [Review a two-way mirror volume created to run VMs](#review-a-two-way-mirror-volume-created-to-run-vms)
   - [Task 2: Download .Iso files](#task-2-download-iso-files)
   - [Download the .ISO files](#download-the-iso-files)
@@ -28,7 +25,7 @@ Contents
   - [Raising issues](#raising-issues)
 
 
-Task 1: Explore the existing volumes created on the **hciboxcluster**
+Task 1: Add an Azure Marketplace image to your Azure Stack HCI
 -----------
 In this step, you'll review a volume on the Azure Stack HCI 22H2 cluster by using Windows Admin Center, and enable data deduplication and compression.
 

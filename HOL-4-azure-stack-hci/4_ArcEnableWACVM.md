@@ -1,15 +1,15 @@
-HOL-4: Exercise 3: Deploying Virtual Machines on your Azure Stack HCI 22H2 via the Windows Admin Portal
+﻿HOL-4: Exercise 4: Arc-enable existing Azure Stack HCI Virtual Machines
 ==============
 Overview
 -----------
-Now you have looked a both the Integration and Hybrid capabilities of Azure Stack HCI and Azure, you can now start looking at deploying some workloads on the Azure Stack HCI Cluster leveraging the Windows Admin Center.
+You used have deployed some virtual machines on the Azure Stack HCI Cluster leveraging the Windows Admin Center, it is now time to Arc-enable those assets and look at the Azure Arc-enabled Server capabilities.
 
 Contents
 -----------
-- [HOL-4: Exercise 3: Deploying Virtual Machines on your Azure Stack HCI 22H2 via the Windows Admin Portal](#hol-4-exercise-3-deploying-virtual-machines-on-your-azure-stack-hci-22h2-via-the-windows-admin-portal)
+- [HOL-4: Exercise 4: Arc-enable existing Azure Stack HCI Virtual Machines](#hol-4-exercise-4-arc-enable-existing-azure-stack-hci-virtual-machines)
   - [Overview](#overview)
   - [Contents](#contents)
-  - [Task 1: Explore the existing volumes created on the **hciboxcluster**](#task-1-explore-the-existing-volumes-created-on-the-hciboxcluster)
+  - [Task 1: Arc-enable](#task-1-arc-enable)
     - [Review a two-way mirror volume created to run VMs](#review-a-two-way-mirror-volume-created-to-run-vms)
   - [Task 2: Download .Iso files](#task-2-download-iso-files)
   - [Download the .ISO files](#download-the-iso-files)
@@ -25,7 +25,7 @@ Contents
   - [Raising issues](#raising-issues)
 
 
-Task 1: Explore the existing volumes created on the **hciboxcluster**
+Task 1: Arc-enable 
 -----------
 In this step, you'll review a volume on the Azure Stack HCI 22H2 cluster by using Windows Admin Center, and enable data deduplication and compression.
 
