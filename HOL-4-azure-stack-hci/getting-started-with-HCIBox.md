@@ -18,11 +18,11 @@ HOL-4: Getting Started With Azure Stack HCI with Azure
     
 1. On the **Sign into Microsoft Azure** tab, you will see the login prompt. Enter the following **Email/Username** and then click on **Next**. 
       
-      * Email/Username: <inject key="AzureAdUserEmail"></inject>
+      * Email/Username: **<inject key="AzureAdUserEmail"></inject>**
    
 1. Now, enter the **Password** which you have already received for the above account.
       
-      * Password: <inject key="AzureAdUserPassword"></inject>
+      * Password: **<inject key="AzureAdUserPassword"></inject>**
       
 1. If you see the pop-up **Stay Signed in?**, click No
 
