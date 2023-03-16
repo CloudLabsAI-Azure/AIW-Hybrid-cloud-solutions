@@ -9,15 +9,12 @@ Contents
 - [HOL-4: Exercise 4: Arc-enable existing Azure Stack HCI Virtual Machines](#hol-4-exercise-4-arc-enable-existing-azure-stack-hci-virtual-machines)
   - [Overview](#overview)
   - [Contents](#contents)
-  - [Task 1: Arc-enable](#task-1-arc-enable)
-    - [Review a two-way mirror volume created to run VMs](#review-a-two-way-mirror-volume-created-to-run-vms)
-  - [Task 2: Download .Iso files](#task-2-download-iso-files)
-  - [Download the .ISO files](#download-the-iso-files)
-    - [Download a Windows Server 2022 .Iso](#download-a-windows-server-2022-iso)
-    - [Download an Ubuntu Server 22.04 .Iso](#download-an-ubuntu-server-2204-iso)
-  - [Upload the .ISO files](#upload-the-iso-files)
-    - [Upload the .Iso files to your CSV](#upload-the-iso-files-to-your-csv)
-  - [Task 3: Deploy a Windows Server 2022 virtual machine](#task-3-deploy-a-windows-server-2022-virtual-machine)
+  - [Task 1: Prepare your Azure environment before onboarding your Azure Arc-enabled Virtual Machine.](#task-1-prepare-your-azure-environment-before-onboarding-your-azure-arc-enabled-virtual-machine)
+    - [Create a Resource Group](#create-a-resource-group)
+    - [Add a Policy to the newly created Resource Group](#add-a-policy-to-the-newly-created-resource-group)
+  - [Task 2: Azure Arc-enable VM002 - Ubuntu Linux 22.04](#task-2-azure-arc-enable-vm002---ubuntu-linux-2204)
+    - [Prepare the step in Azure to onboard VM002 as an Azure Arc-enabled Virtual Machine](#prepare-the-step-in-azure-to-onboard-vm002-as-an-azure-arc-enabled-virtual-machine)
+    - [Azure Arc-enable VM002](#azure-arc-enable-vm002)
   - [Task 4: Deploy an Ubuntu Server 22.04 virtual machine](#task-4-deploy-an-ubuntu-server-2204-virtual-machine)
   - [Task 5: Live migrate a virtual machine to another node](#task-5-live-migrate-a-virtual-machine-to-another-node)
   - [Summary](#summary)
@@ -25,175 +22,100 @@ Contents
   - [Raising issues](#raising-issues)
 
 
-Task 1: Arc-enable 
+Task 1: Prepare your Azure environment before onboarding your Azure Arc-enabled Virtual Machine.
 -----------
-In this step, you'll review a volume on the Azure Stack HCI 22H2 cluster by using Windows Admin Center, and enable data deduplication and compression.
+In this step, you will create a new Azure Resource Group and assign an extra Azure Policy to this Resource Group
 
-### Review a two-way mirror volume created to run VMs ###
+### Create a Resource Group ###
 
-1. Open **Windows Admin Center** on the **AdminCenter** VM. On the top left click on **All connections** and click on your previously deployed cluster, **hciboxcluster.jumpstart.local**
+1. In the "Search resources, services, and docs" search box at the top of the Azure Portal page, type **Resource Group** and click **Resource Group** under Services.
 
-    ![Review the existing volumes for VMs](./media/ReviewVolumes-1.png "WAC Review HCI cluster Volumes")
+    ![Create Azure Resource Group](./media/azrg-1.png "Create Azure Resource Group")
     
-        
-2. On the left hand navigation, under **Cluster resources** select **Volumes**.  The central **Volumes** page shows you a total of two volumes
+2. On the **Resource Group** page, click **+ Create**.
 
-    ![Review the existing volumes for VMs](./media/ReviewVolumes-2.png "WAC Review HCI cluster Volumes")
+    ![Create Azure Resource Group](./media/azrg-2.png "Create Azure Resource Group")
+
+3. On the **Create a resource group** page, type **ArcServers-rg** in the **Resource Group** field. Click **Review + create**. On the next screen click **Create**, to create the new Resource Group.
+
+    ![Create Azure Resource Group](./media/azrg-3.png "Create Azure Resource Group")
+
+### Add a Policy to the newly created Resource Group ###
+
+1. On the **Resource Group** page, click on the resource group **ArcServers-rg**.
+
+    ![Create Azure Resource Group](./media/policy-1.png "Create Azure Resource Group")
     
-3. On the **Volumes** page, select the **Inventory** tab
+2. On the **ArcServers-rg** page, under **Settings**, click **Policies**.
 
-    ![Review the existing volumes for VMs](./media/ReviewVolumes-3.png "WAC Review HCI cluster Volumes")
-    
-4. Open the volume **S2D_vDISK1**, by clicking on the name of the volume. We see a couple of things now:
-   
-   **NOTE:** Invest enough time to read through the provided documentation as it covers some important information
+    ![Create Azure Resource Group](./media/policy-2.png "Create Azure Resource Group")
 
-   - The Volume File system is a **Cluster Shared Volume** of type **ReFS**
-     - *Please read more:* 
-       - https://learn.microsoft.com/en-us/azure-stack/hci/concepts/plan-volume
-       - https://learn.microsoft.com/en-us/azure-stack/hci/concepts/storage-spaces-direct-overview)
-   - The **Resiliency** was set to **Two-way mirror**
-     - *Please read more:*
-       - https://learn.microsoft.com/en-us/azure-stack/hci/concepts/fault-tolerance)
-   - **Deduplication** and **Encryption** is **Off**
-     - *Please read more:*
-       - https://learn.microsoft.com/en-us/azure-stack/hci/manage/volume-encryption-deduplication
-   - Also have a look at the Capacity and Performance indicators
-  
-      ![Review the existing volumes for VMs](./media/ReviewVolumes-4.png "WAC Review HCI cluster Volumes")
-  
-5. On the volume **S2D_vDISK1** page click on **Settings**. You will notice that the volume **S2D_vDISK1** has been provisioned as a type **Fixed**, but **Thin** provisioning of volumes is also available.
-   - *Please read more:*
-     - https://learn.microsoft.com/en-us/azure-stack/hci/manage/thin-provisioning
+3. On the **Policy | Compliance** page, click **Assign Policy**.
 
-        ![Review the existing volumes for VMs](./media/ReviewVolumes-5.png "WAC Review HCI cluster Volumes")
+    ![Create Azure Resource Group](./media/policy-3.png "Create Azure Resource Group")
 
-You now have reviewed and learned more about Azure Stack HCI volumes. This **S2D_vDISK1** volume is ready to accept workloads. 
+4. On the **Assign policy** page, click on the 3 dots on right of the **Policy definition** field. On the **Available Definitions** page, type in search field **Configure periodic checking for missing system updates on azure Arc-enabled servers**. select the policy found below under the Policy Name, **[Preview]: Configure periodic checking for missing system updates on azure Arc-enabled servers**. Click **Add**.
 
-Please also review the official documentation on how to create volumes on Azure Stack HCI, leveraging Windows Admin Center or PowerShell: https://learn.microsoft.com/en-us/azure-stack/hci/manage/create-volumes
+    ![Create Azure Resource Group](./media/policy-4.png "Create Azure Resource Group")
 
-Task 2: Download .Iso files
+5. On the **Assign policy** page, click **Remediation**. Mark the checkbox before **Create a remediation task**.
+
+    ![Create Azure Resource Group](./media/policy-5.png "Create Azure Resource Group")
+
+6. On the **Assign policy** page, click **Review + create**. Click **Create**.
+
+    ![Create Azure Resource Group](./media/policy-6.png "Create Azure Resource Group")
+
+7. After a couple of minutes you should see an extra Policy assigment popping up in the list of Assigned Policies.
+
+    ![Create Azure Resource Group](./media/policy-7.png "Create Azure Resource Group")
+
+
+Task 2: Azure Arc-enable VM002 - Ubuntu Linux 22.04
 -----------
 In this step, you will download a Windows Server 2022 and Ubuntu Server 22.04 .Iso file and upload the .Iso to your Clustered Shared Volume you explored in Task 1. 
 
-**_NOTE:_**  Make sure to use the Edge browser on the **AdminCenter** VM to execute the following steps.
+### Prepare the step in Azure to onboard VM002 as an Azure Arc-enabled Virtual Machine ###
 
-## Download the .ISO files ##
-### Download a Windows Server 2022 .Iso ###
+1. In the "Search resources, services, and docs" search box at the top of the Azure Portal page, type **Servers** and click **Servers - Azure Arc** under Services.
 
-1. Please download Windows Server 2022 image file from [here](https://www.microsoft.com/en-us/evalcenter/download-windows-server-2022)
- 
-2. In the English (United States) row select the Click **64-bit edition** in the ISO downloads row. Download the .iso which will be by saved in the Downloads folder.
+    ![Create Azure Resource Group](./media/vm002arc-1.png "Create Azure Resource Group")
+    
+2. On the **Azure Arc | Servers** page, Click **+ Add**
 
-### Download an Ubuntu Server 22.04 .Iso ### 
- 
-1. Please download Ubuntu Server 22.04 image file from [here](https://releases.ubuntu.com/jammy/ubuntu-22.04.2-live-server-amd64.iso)
- 
-2. The download of the ISO file should automatically start. Once completed you should find it in your Downloads folder.
+    ![Create Azure Resource Group](./media/vm002arc-2.png "Create Azure Resource Group")
 
-## Upload the .ISO files ##
-### Upload the .Iso files to your CSV ###
+3. On the **Add servers with Azure Arc** page, in the **Add a single server** box, Click **Generate script**
+
+    ![Create Azure Resource Group](./media/vm002arc-3.png "Create Azure Resource Group")
+
+4. On the **Add servers with Azure Arc** page, on the *Prerequisites* tab., Click **NEXT**.
+
+    ![Create Azure Resource Group](./media/vm002arc-4.png "Create Azure Resource Group")
+
+5. On the **Add servers with Azure Arc** page, on the *Resource details* tab, select the Resource Group **ArcServers-rg**, select **Linux** as Operating System and then Click **NEXT**
+
+    ![Create Azure Resource Group](./media/vm002arc-5.png "Create Azure Resource Group")
+
+6. On the **Add servers with Azure Arc** page, on the *Tags* tab, Click **NEXT**
+   **NOTE** If you want you can of course add an Cutsom tag, but best practice is that you do this via Azure Policies.
+
+    ![Create Azure Resource Group](./media/vm002arc-6.png "Create Azure Resource Group")
+
+7. On the **Add servers with Azure Arc** page, on the *Download and run script* tab, Click **Download** (You later can find it your Downloads folder). Click **Close**.
+   
+    ![Create Azure Resource Group](./media/vm002arc-7.png "Create Azure Resource Group")
+
+### Azure Arc-enable VM002 ###
  
 1. Open **Windows Admin Center** on **AdminCenter** VM from the desktop if it is not already opened, click on your previously deployed cluster, **hciboxcluster.jumpstart.local**
  
     ![Review the existing volumes for VMs](./media/ReviewVolumes-1.png "WAC Review HCI cluster Volumes")
- 
-2. On the left hand navigation, under **Cluster Resources** select **Servers** and then **Inventory**.
- 
-    ![Upload .Iso files](./media/Upload-1.png "Upload .Iso files")
 
-3. Select node AzSHOST1 and then click **Manage**
- 
-    ![Upload .Iso files](./media/Upload-2.png "Upload .Iso files")
- 
-4. On the left, select **Files & file sharing**. Open the folder **C:\ClusterStorage\S2D_vDISK1**
-  
-    ![Upload .Iso files](./media/Upload-3.png "Upload .Iso files")
- 
-5. Click **Upload**. Click **Select Files**, search and select both (Windows Server 2022 and Ubuntu Server 22.04) .iso files in the Downloads directory and click **Open**, and then click **Submit**. 
- 
-    ![Upload .Iso files](./media/Upload-4.png "Upload .Iso files")
-  
-**NOTE:** It can take up to around 5-10 minutes to get both .ISO files successfully uploaded. Maybe a good time to grab a coffee ;-). Once both .ISO files are successfully uploaded you can move on to the next Task.
 
-Task 3: Deploy a Windows Server 2022 virtual machine
------ 
-In this step, you will deploy a Windows Server 2022 virtual machine via Windows Admin Center.
+**UPDATE FROM HERE**
 
-1. Once logged into the **Windows Admin Center** on the **AdminCenter** VM, click on your previously deployed cluster, **hciboxcluster.jumpstart.local**
 
-2. On the left hand navigation, under **Cluster Resources** select **Virtual machines**.  The central **Virtual machines** page shows that there are some virtual machines already running.
-    
-    ![Create VM](./media/vm001-1.png "Create VM on Azure Stack HCI 22H2")
-
-3. On the **Virtual machines** page, select the **Inventory** tab, and then click on **Add** and select **New**.
-
-    ![Create VM](./media/vm001-2.png "Create VM on Azure Stack HCI 22H2")
-
-4. In the **New virtual machine** pane, enter **VM001** for the name, and enter the following pieces of information, then click **Create**
- 
-     * Generation: **Generation 2 (Recommended)**
-     * Host: **Leave as recommended**
-     * Path: **C:\ClusterStorage\S2D_vDISK1**
-     * Virtual processors: **2**
-     * Startup memory (GB): **4**
-     * Use dynamic memory: **Min 2, Max 6**
-     * Network: **sdnSwitch**
-     * Storage: **Add, then Create an empty virtual hard disk** and set size to **30GB**
-     * Operating System: Install an operating system from an image file (.iso). Select the Windows Server 2022 Iso file!
-
-    ![Create VM](./media/vm001-3.png "Create VM on Azure Stack HCI 22H2")
-      
-    ![Create VM](./media/vm001-4.png "Create VM on Azure Stack HCI 22H2")
- 
-5. The creation process will take a few moments, and once complete, VM001 should show within the Virtual machines view
-
-6. Click on the checkbox before VM001 and then click on **Power** and select **Start** - within moments, the VM should be running.
-
-    ![Create VM](./media/vm001-5.png "Create VM on Azure Stack HCI 22H2")
-    ![Create VM](./media/vm001-6.png "Create VM on Azure Stack HCI 22H2")
-  
-7. Click on VM001 to view the properties and status for this running VM.
- 
-    ![Create VM](./media/vm001-7.png "Create VM on Azure Stack HCI 22H2")
-
-8. Click on **Settings**, then click **Networks** and change the VLAN ID value to **200**. Click **Save network settings and click **Close**.
- 
-    ![Create VM](./media/vm001-vlan200.png "Create VM on Azure Stack HCI 22H2")
-
-9. Click on Connect and select connect button from the drop down.
-
-    ![Create VM](./media/vm001-8.png "Create VM on Azure Stack HCI 22H2")
- 
-10. Fill in the Username **arcdemo@jumpstart.local** and password **ArcPassword123!!**. Before clicking on **Connect** first make sure to click the checkbox before "Automatically connect with the certificate presented by this machine", when you receive the certificate prompt, click **Confirm**. Now click **Connect**.
-  
-    ![Create VM](./media/vm001-9.png "Create VM on Azure Stack HCI 22H2") 
- 
-11. The VM will be in the UEFI boot summary as below
- 
-    ![Create VM](./media/vm001-10.png "Create VM on Azure Stack HCI 22H2") 
- 
-12. Click in "Send Ctrl + Alt + Del" at the top of the page now and press any key when you see the message "Press any key at boot from CD or DVD…"
- 
-    ![Create VM](./media/vm001-11.png "Create VM on Azure Stack HCI 22H2") 
- 
-13. From there you'll start the OOBE experience. Select the following settings according to your preferences: Language, Time currency and Keyboard. Click **Next**
-
-14. Click Install Now, and select the version Windows Server 2022 Standard Evaluation (Desktop Experience). Click **Next**
- 
-    ![Create VM](./media/vm001-12.png "Create VM on Azure Stack HCI 22H2") 
- 
-15. Accept the license terms. Click **Next**. Select "Custom: Install Windows only (advanced)" and then Next. It will take around 10 minutes for the VM to boot. After that, please insert the lab credentials **ArcPassword123!!** and your VM is ready to go!
-
-16. Once the virtual machine is up and running try to login!
-
-**NOTE:** You will notice that the VM did not received a proper IPv4 address from the DHCP server. If you want to fix this you can open the VM001 settings page and under Networking you can change the VLAN ID from 2 to 200. 
-
-![Create VM](./media/vm001-vlan200.png "Create VM on Azure Stack HCI 22H2") 
-
-If everything went well your Windows Server should now receive a proper IPv4 Address.
-
-You just finalized the installation of a new Window Server 2022 VM on your Azure Stack HCI Cluster. Please proceed to the next Task.
 
 Task 4: Deploy an Ubuntu Server 22.04 virtual machine
 ----- 
