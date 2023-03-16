@@ -1,4 +1,4 @@
-﻿HOL-4: Exercise 3: Azure Stack HCI 22H2 Hybrid by design
+﻿HOL-4: Exercise 2: Azure Stack HCI 22H2 Hybrid by design
 ==============
 Overview
 -----------
@@ -6,15 +6,14 @@ Discover, monitor, and manage the Azure Stack HCI hosts as well as the virtual m
 
 Contents
 -----------
-- [HOL-4: Exercise 3: Azure Stack HCI 22H2 Hybrid by design](#hol-4-exercise-3-azure-stack-hci-22h2-hybrid-by-design)
+- [HOL-4: Exercise 2: Azure Stack HCI 22H2 Hybrid by design](#hol-4-exercise-2-azure-stack-hci-22h2-hybrid-by-design)
   - [Overview](#overview)
   - [Contents](#contents)
-  - [Task 1: Enable  the existing volumes created on the **hciboxcluster**](#task-1-enable--the-existing-volumes-created-on-the-hciboxcluster)
-    - [Review a two-way mirror volume created to run VMs](#review-a-two-way-mirror-volume-created-to-run-vms)
-  - [Task 2: Download .Iso files](#task-2-download-iso-files)
-  - [Download the .ISO files](#download-the-iso-files)
-    - [Download a Windows Server 2022 .Iso](#download-a-windows-server-2022-iso)
-    - [Download an Ubuntu Server 22.04 .Iso](#download-an-ubuntu-server-2204-iso)
+  - [Task 1: Enable some Hybrid capabilities in Azure of your Azure Stack HCI cluster](#task-1-enable-some-hybrid-capabilities-in-azure-of-your-azure-stack-hci-cluster)
+    - [Review the status of the Azure Arc required services in Windows Admin Center](#review-the-status-of-the-azure-arc-required-services-in-windows-admin-center)
+  - [Task 2: Explore Azure Stack HCI Hybrid features in the Azure Portal](#task-2-explore-azure-stack-hci-hybrid-features-in-the-azure-portal)
+    - [Explore Extensions](#explore-extensions)
+    - [Manage Azure Stack HCI clusters using Windows Admin Center in Azure](#manage-azure-stack-hci-clusters-using-windows-admin-center-in-azure)
   - [Upload the .ISO files](#upload-the-iso-files)
     - [Upload the .Iso files to your CSV](#upload-the-iso-files-to-your-csv)
   - [Task 3: Deploy a Windows Server 2022 virtual machine](#task-3-deploy-a-windows-server-2022-virtual-machine)
@@ -25,71 +24,170 @@ Contents
   - [Raising issues](#raising-issues)
 
 
-Task 1: Enable  the existing volumes created on the **hciboxcluster**
+Task 1: Enable some Hybrid capabilities in Azure of your Azure Stack HCI cluster
 -----------
-In this step, you'll review a volume on the Azure Stack HCI 22H2 cluster by using Windows Admin Center, and enable data deduplication and compression.
+In this step, you will review the status of the Azure Arc services on the Azure Stack HCI 22H2 cluster by using Windows Admin Center, enable Hybrid Azure Stack HCI Cluster features in the Azure Portal.
 
-### Review a two-way mirror volume created to run VMs ###
+### Review the status of the Azure Arc required services in Windows Admin Center ###
 
 1. Open **Windows Admin Center** on the **AdminCenter** VM. On the top left click on **All connections** and click on your previously deployed cluster, **hciboxcluster.jumpstart.local**
 
-    ![Review the existing volumes for VMs](./media/ReviewVolumes-1.png "WAC Review HCI cluster Volumes")
+    ![Azure Arc WAC](./media/ReviewVolumes-1.png "Azure Arc WAC")
     
         
-2. On the left hand navigation, under **Cluster resources** select **Volumes**.  The central **Volumes** page shows you a total of two volumes
+2. On the left hand navigation, under **Configuration** select **Azure Arc**.  The central **Azure Arc** page, click **1. Azure Stack HCI registration**.
 
-    ![Review the existing volumes for VMs](./media/ReviewVolumes-2.png "WAC Review HCI cluster Volumes")
+    ![Azure Arc WAC](./media/Arc-1.png "Azure Arc WAC")
     
-3. On the **Volumes** page, select the **Inventory** tab
-
-    ![Review the existing volumes for VMs](./media/ReviewVolumes-3.png "WAC Review HCI cluster Volumes")
-    
-4. Open the volume **S2D_vDISK1**, by clicking on the name of the volume. We see a couple of things now:
+3. On the **Azure Stack HCI registration** page, you should see ...
    
-   **NOTE:** Invest enough time to read through the provided documentation as it covers some important information
+    #### Azure Stack HCI system status: ####
+   - **Connected** under the Azure connection status
+   - **Registered** under the Azure Registration
+    
+    #### Server status: ####
+   - **Connected** under the Azure connection status for every Server.       
 
-   - The Volume File system is a **Cluster Shared Volume** of type **ReFS**
-     - *Please read more:* 
-       - https://learn.microsoft.com/en-us/azure-stack/hci/concepts/plan-volume
-       - https://learn.microsoft.com/en-us/azure-stack/hci/concepts/storage-spaces-direct-overview)
-   - The **Resiliency** was set to **Two-way mirror**
-     - *Please read more:*
-       - https://learn.microsoft.com/en-us/azure-stack/hci/concepts/fault-tolerance)
-   - **Deduplication** and **Encryption** is **Off**
-     - *Please read more:*
-       - https://learn.microsoft.com/en-us/azure-stack/hci/manage/volume-encryption-deduplication
-   - Also have a look at the Capacity and Performance indicators
+    ![Azure Arc WAC](./media/Arc-2.png "Azure Arc WAC")
+    
+4. Now click **Arc-enabled servers** on the current **Azure Arc | Azure Stack HCI registration** page
   
-      ![Review the existing volumes for VMs](./media/ReviewVolumes-4.png "WAC Review HCI cluster Volumes")
+    ![Azure Arc WAC](./media/Arc-3.png "Azure Arc WAC")
   
-5. On the volume **S2D_vDISK1** page click on **Settings**. You will notice that the volume **S2D_vDISK1** has been provisioned as a type **Fixed**, but **Thin** provisioning of volumes is also available.
-   - *Please read more:*
-     - https://learn.microsoft.com/en-us/azure-stack/hci/manage/thin-provisioning
+5. On the **Azure Arc | Arc-enabled servers** page, click on **hciboxcluster-rg**. 
+    
+    ![Azure Arc WAC](./media/Arc-4.png "Azure Arc WAC")
 
-        ![Review the existing volumes for VMs](./media/ReviewVolumes-5.png "WAC Review HCI cluster Volumes")
+6. The Azure Portal will open in an extra browser Tab, showing you the **hciboxcluster-rg** resource group content. On the **Resources** page in the Azure Portal, click on the **hciboxcluster**.
 
-You now have reviewed and learned more about Azure Stack HCI volumes. This **S2D_vDISK1** volume is ready to accept workloads. 
+    *You potentially will be asked to provide the Azure credentials. You can find them in the Environment Details of this Lab.*
 
-Please also review the official documentation on how to create volumes on Azure Stack HCI, leveraging Windows Admin Center or PowerShell: https://learn.microsoft.com/en-us/azure-stack/hci/manage/create-volumes
+    ![Azure Arc WAC](./media/Arc-5.png "Azure Arc WAC")
 
-Task 2: Download .Iso files
+7. The Azure Portal will open the hciboxcluster - Azure Stack HCI blade. Click **Capabilities** and
+
+    ![Azure Arc WAC](./media/Arc-6.png "Azure Arc WAC")
+
+8. On the **Capabilities** tab, click **Logs**
+
+    ![Azure Arc WAC](./media/Arc-7.png "Azure Arc WAC")    
+
+9. On the **Configure extension: MicrosoftMonitoringAgent** page, click **Add**.
+
+    **NOTE** *All existing Log Analytics Workplace fields should be pre-filled automatically*.
+    
+    ![Azure Arc WAC](./media/Arc-8.png "Azure Arc WAC")
+
+10. On the **Capabilities** tab, click **Insights**
+
+    ![Azure Arc WAC](./media/Arc-9.png "Azure Arc WAC")    
+
+11. On the **Azure Insights** page, click **Turn On**.
+    
+    ![Azure Arc WAC](./media/Arc-10.png "Azure Arc WAC")
+
+12. On the **Capabilities** tab, click **Windows Admin Center**
+
+    ![Azure Arc WAC](./media/Arc-11.png "Azure Arc WAC")    
+
+13. On the **Windows Admin Center (preview)** page, click **Set up**.
+  
+    ![Azure Arc WAC](./media/Arc-12.png "Azure Arc WAC")
+
+14. On the **Windows Admin Center** page, click **Set up**.
+  
+    ![Azure Arc WAC](./media/Arc-13.png "Azure Arc WAC")
+
+15. On the **Capabilities** tab, all 3 boxes should indicate **Configured**.
+
+    **NOTE** This can take a couple of minutes, please be patient.
+  
+      ![Azure Arc WAC](./media/Arc-14.png "Azure Arc WAC")    
+
+You just finalized the Activation of a couple of Hybrid features of Azure Stack HCI. Please proceed to the next Task.
+
+Task 2: Explore Azure Stack HCI Hybrid features in the Azure Portal
 -----------
-In this step, you will download a Windows Server 2022 and Ubuntu Server 22.04 .Iso file and upload the .Iso to your Clustered Shared Volume you explored in Task 1. 
+In this step, you will further explore extra Azure Stack HCI Hybrid features and capabilities.
 
-**_NOTE:_**  Make sure to use the Edge browser on the **AdminCenter** VM to execute the following steps.
+At this time you should still be having the following page active in the Azure Portal. If so Click **Extensions**.
 
-## Download the .ISO files ##
-### Download a Windows Server 2022 .Iso ###
+   ![Azure Arc WAC](./media/Arc-15.png "Azure Arc WAC")  
 
-1. Please download Windows Server 2022 image file from [here](https://www.microsoft.com/en-us/evalcenter/download-windows-server-2022)
+### Explore Extensions ###
+
+1. On the **Extension** page, you see that both Azure Stack HCI Cluster nodes have the **Microsoft Monitoring Agent** and the **(Windows) Admin Center agent** installed. This was enabled by the steps we took in Task 1.
+
+    ![Azure Arc WAC](./media/Arc-16.png "Azure Arc WAC")
+
+2. Let us now first look at the Windows Admin Center Azure Portal Integration for Azure Stack HCI. Under Settings, Click Windows Admin Center.
+   
+   On the Windows Admin Center page, you will see a message, that you must be part of the Windows Admin Center Administrator Login group to be able to connect.
+
+    ![Azure Arc WAC](./media/Arc-17.png "Azure Arc WAC")
+
+
+### Manage Azure Stack HCI clusters using Windows Admin Center in Azure  ### 
+
+First we need to make sure that all requirements are met for using Windows Admin Center in the Azure portal to manage a hybrid machine
+
+1. In the **"Search resources, services, and docs"** search box at the top of the Azure Portal page, type **subscription** and under **Services**, click **Subscriptions**.
+
+    ![Azure Arc WAC](./media/Arc-18.png "Azure Arc WAC")
  
-2. In the English (United States) row select the Click **64-bit edition** in the ISO downloads row. Download the .iso which will be by saved in the Downloads folder.
+2. On the **Subscriptions** page, click on the Subscription name.
 
-### Download an Ubuntu Server 22.04 .Iso ### 
- 
-1. Please download Ubuntu Server 22.04 image file from [here](https://releases.ubuntu.com/jammy/ubuntu-22.04.2-live-server-amd64.iso)
- 
-2. The download of the ISO file should automatically start. Once completed you should find it in your Downloads folder.
+    ![Azure Arc WAC](./media/Arc-19.png "Azure Arc WAC")
+
+3. On the selected **Subscription** page, click **Resource providers**
+
+    ![Azure Arc WAC](./media/Arc-20.png "Azure Arc WAC")    
+
+4. On the **Resource providers** page, type **hybrid** in the filter by name box. Make sure the status of the Provider **Microsoft.HybridConnectivity** is **Registered**. If not Register if now.
+
+    ![Azure Arc WAC](./media/Arc-21.png "Azure Arc WAC")
+
+5. On the current page, Click **Access Control (IAM)**. 
+
+    ![Azure Arc WAC](./media/Arc-22.png "Azure Arc WAC")
+
+6. On the **Access controle (IAM)** page, Click **+ Add** and **Add role assignment**.
+
+    ![Azure Arc WAC](./media/Arc-23.png "Azure Arc WAC")
+
+7. On the **Add role assignment** page, under the **Role** tab, search for **Windows Admin Center Administrator Login**. Click on the role name **Windows Admin Center Administrator Login**. Click **Members**.
+
+    ![Azure Arc WAC](./media/Arc-24.png "Azure Arc WAC")
+
+8. On the **Add role assignment** page, under the **Members** tab, Click **"+Select members**. Click on your Azure User. Click **Select** and then Click **Next**.
+
+    ![Azure Arc WAC](./media/Arc-25.png "Azure Arc WAC")    
+
+9. On the **Add role assignment** page, under the **Review + assign** tab, Click **Review + assign** at the bottom of the page.
+
+    **NOTE** We have just the **Windows Admin Center Administrator Login** Role to an AAD User on the Subscription scope. Learn more : https://learn.microsoft.com/en-us/windows-server/manage/windows-admin-center/azure/manage-hci-clusters
+
+   ![Azure Arc WAC](./media/Arc-26.png "Azure Arc WAC")
+
+10. In the **"Search resources, services, and docs"** search box at the top of the Azure Portal page, type **hciboxcluster** and under **Resources**, click **hciboxcluster**.
+
+   ![Azure Arc WAC](./media/Arc-27.png "Azure Arc WAC")
+
+11. On the **hciboxcluster** page, under Settings, click **Windows Admin Center** and then Click **Connect**.
+
+   ![Azure Arc WAC](./media/Arc-28.png "Azure Arc WAC")
+
+12. On the **Windows Admin Center** page, complete the Username and Password field and Click Sign In.
+
+**Note** Make sure the use the fully-qualified-DNS-domain\username format, and not the user principal name (UPN) format (user@fully_qualified_DNS_domain_name).
+
+   ![Azure Arc WAC](./media/Arc-29.png "Azure Arc WAC")
+
+If all how well you should now have a Windows Admin Center view on your Azure Stack HCI cluster, without needing a VPN or other direct connections. Feel free to look around.
+
+   ![Azure Arc WAC](./media/Arc-30.png "Azure Arc WAC")
+
+
 
 ## Upload the .ISO files ##
 ### Upload the .Iso files to your CSV ###

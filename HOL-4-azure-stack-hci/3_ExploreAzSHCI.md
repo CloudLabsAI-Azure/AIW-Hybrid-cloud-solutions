@@ -1,4 +1,4 @@
-HOL-4: Exercise 2: Explore the management of your Azure Stack HCI 22H2 environment
+HOL-4: Exercise 3: Explore the management of your Azure Stack HCI 22H2 environment
 ==============
 Overview
 -----------
@@ -6,7 +6,7 @@ With the Azure Stack HCI cluster deployed, you can now begin to explore some of 
 
 Contents
 -----------
-- [HOL-4: Exercise 2: Explore the management of your Azure Stack HCI 22H2 environment](#hol-4-exercise-2-explore-the-management-of-your-azure-stack-hci-22h2-environment)
+- [HOL-4: Exercise 3: Explore the management of your Azure Stack HCI 22H2 environment](#hol-4-exercise-3-explore-the-management-of-your-azure-stack-hci-22h2-environment)
   - [Overview](#overview)
   - [Contents](#contents)
   - [Task 1: Explore the existing volumes created on the **hciboxcluster**](#task-1-explore-the-existing-volumes-created-on-the-hciboxcluster)
