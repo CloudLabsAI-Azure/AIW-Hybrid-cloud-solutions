@@ -15,7 +15,7 @@ Contents
     - [Explore Extensions](#explore-extensions)
     - [Manage Azure Stack HCI clusters using Windows Admin Center in Azure](#manage-azure-stack-hci-clusters-using-windows-admin-center-in-azure)
     - [Configuration of The Azure Stack HCI 22H2 cluster in the Azure Portal](#configuration-of-the-azure-stack-hci-22h2-cluster-in-the-azure-portal)
-    - [Monitor your Azure Stack HCI clusters using in Azure](#monitor-your-azure-stack-hci-clusters-using-in-azure)
+    - [Monitor Insights on your Azure Stack HCI clusters using in Azure](#monitor-insights-on-your-azure-stack-hci-clusters-using-in-azure)
   - [Summary](#summary)
   - [Product improvements](#product-improvements)
   - [Raising issues](#raising-issues)
@@ -248,7 +248,7 @@ If all how well you should now have a Windows Admin Center view on your Azure St
    
         ![HCI Configuration](./media/Configuration-6.png "HCI Configuration") 
 
-### Monitor your Azure Stack HCI clusters using in Azure  ### 
+### Monitor Insights on your Azure Stack HCI clusters using in Azure  ### 
 
 In Task 1 of Exercise 2 you enabled the Monitoring Insights capabilities on the Azure Stack HCI cluster resource via the Azure Portal. Normally it takes around 15minutes to see the first data showing up i
 
@@ -288,7 +288,7 @@ In Task 1 of Exercise 2 you enabled the Monitoring Insights capabilities on the 
 
 Summary
 -----------
-In this exercise, you have been exploring 
+In this exercise, you have enabled some Hybrid Azure Stack HCI Cluster features in the Azure Portal, reviewed the status of the Azure Arc services in the Windows Admin Center web portal, looked at the Azure Extensions on the Azure Stack HCI cluster in the Azure Portal, completed the pre-requirements to be able to connect and use the Windows Admin Center from the Azure Portal on the Azure Stack HCI Cluster and finally looked at the data captured by the Monitoring Insights service on the Azure Stack HCI cluster in the Azure Portal.
 
 With this completed, you can now move on to the next exercise.
 
