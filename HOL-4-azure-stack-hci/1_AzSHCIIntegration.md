@@ -149,38 +149,37 @@ To use Azure services with Windows Admin Center, you must register your Windows 
 
 Additional permissions were applied on the Windows Admin Center Azure AD application that was created when you connected Windows Admin Center to Azure, earlier. In this step, you will quickly validate those permissions.
 
-1. Still in Windows Admin Center, click on the **Settings** gear in the top-right corner
+1. You should see your previously registered Azure AD application in Register under Gateway of WAC settings. Click on **View in Azure** to be taken to the Azure AD app portal, where you can see the information about created app including permissions required. If you're prompted to log in, provide azure credentials.
 
-2. Under **Gateway**, click **Register**. You should see your previously registered Azure AD app:
+   ![](media/ex1-task4-step1.png "Azure Portal")
 
-    ![Your Azure AD app in Windows Admin Center](./media/WAC-Registered.png "Your Azure AD app in Windows Admin Center")
+1. Once you are logged in, under **Configured permissions**, you should see a few permissions listed with the status **Granted for...** and the name of your tenant. The **Microsoft Graph (5)** API permissions will show as **not granted** but this will be updated upon deployment.
 
-3. Click on **View in Azure** to be taken to the Azure AD app portal, where you should see information about this app, including permissions required. If you're prompted to log in, provide appropriate credentials.
-4. Once logged in, under **Configured permissions**, you should see a few permissions listed with the status **Granted for...** and the name of your tenant. The **Microsoft Graph (5)** API permissions will show as **not granted** but this will be updated upon deployment
+   ![](media/ex1-task4-step2.png "Configured permissions pane")
 
-5. Under **Configured permissions**, click on **Grant Admin Consent for Azure HOL** button.
+1. Under **Configured permissions**, click on **Grant Admin Consent for Azure HOL** button.
 
-    ![Confirm Azure AD app permissions in Windows Admin Center](../media/Ex2-task2-01.1.png "Confirm Azure AD app permissions in Windows Admin Center")
+    ![](media/ex1-task4-step3.png "Grant Admin Consent")
     
-6.  Now select **Yes** on the **Grant admin consent confirmation** pop-up to give your app the permissions.
+1. Now select **Yes** on the **Grant admin consent confirmation** pop-up to give your app the permissions.
 
-    ![Confirm Azure AD app permissions in Windows Admin Center](../media/Ex2-task2-01.2.png "Confirm Azure AD app permissions in Windows Admin Center")
+    ![](media/ex1-task4-step5.png "Confirm Azure AD app permissions in Windows Admin Center")
 
-*******************************************************************************************************
+   *******************************************************************************************************
 
-**NOTE** - If you don't see Microsoft Graph listed in the API permissions, you can either [re-register Windows Admin Center using steps here](#configure-windows-admin-center "re-register Windows Admin Center using steps here") for the permissions to appear correctly, or manually add the **Microsoft Graph Appliation.ReadWrite.All** permission. To manually add the permission:
+   >**Note** - If you don't see Microsoft Graph listed in the API permissions, you can either [re-register Windows Admin Center using steps here](#configure-windows-admin-center "re-register Windows Admin Center using steps here") for the permissions to appear correctly, or manually add the **Microsoft Graph Appliation.ReadWrite.All** permission. To manually add the permission:
+     - Click **+ Add a permission**
+     - Select **Microsoft Graph**, then **Delegated permissions**
+     - Search for **Application.ReadWrite.All**, then if required, expand the **Application** dropdown
+     - Select the **checkbox** and click **Add permissions**   
+  
+    *******************************************************************************************************
 
-- Click **+ Add a permission**
-- Select **Microsoft Graph**, then **Delegated permissions**
-- Search for **Application.ReadWrite.All**, then if required, expand the **Application** dropdown
-- Select the **checkbox** and click **Add permissions**
+1. Switch back to the **Windows Admin Center** tab and click on **Windows Admin Center** in the top-left corner to return to the home page. 
 
-*******************************************************************************************************
-
-6. Switch back to the **Windows Admin Center tab** and click on **Windows Admin Center** in the top-left corner to return to the home page. 
-
-    ![Confirm Azure AD app permissions in Windows Admin Center](./media/wac_admin.png "Confirm Azure AD app permissions in Windows Admin Center")
-    You'll notice that multiple servers are already under management of Windows Admin Center.
+    ![](media/ex1-task4-step6.png "Confirm Azure AD app permissions in Windows Admin Center")
+    
+   You'll notice that multiple servers are already under management of Windows Admin Center.
 
 Summary
 -----------
