@@ -25,59 +25,72 @@ Overview
 
 This Lab also includes a dedicated Windows Admin Center (WAC) gateway server. The WAC gateway server can be accessed by connecting to it from RDP. A shortcut is available on the HCIBox-Client desktop.
 
-1. Open this shortcut and use the domain credential (arcedemo@jumpstart.local) to start an RDP session to the Windows Admin Center VM.
+1. If you are not into Windows Admin Center yet, open the Windows Admin Center shortcut present in the desktop as shown in the below screenshot.
 
-![-](./media/wac_gateway_shortcut.png "Screenshot showing WAC desktop shortcut")
+   ![](media/open-admin-center.png "Open AC")
+   
+1. Use the domain credential (arcedemo@jumpstart.local) to start an RDP session to the Windows Admin Center VM. Enter the below credentials to login to **Admin Center** and click on **OK**.
 
-2. Log in to the WAC gateway server using the domain credential.
+   * Username: **arcdemo@jumpstart.local**
+   * Password: **ArcPassword123!!**  
 
-![-](./media/wac_gateway_login.png "Screenshot showing logging into the WAC server")
+   ![](media/admin-center-login.png "login to AC")
+   
+1. Open the Windows Admin Center shortcut on the WAC server desktop. Once again you will use your domain account to access WAC. 
 
-3. Now you can open the Windows Admin Center shortcut on the WAC server desktop. Once again you will use your domain account to access WAC.
+   ![](media/open-wac.png "WAC login")
 
-![-](./media/wac_gateway_desktop.png "Screenshot showing logging into WAC")
-![-](./media/wac_login.png "Screenshot showing WAC login prompt")
+1. Enter the below credentials to login to **Windows Admin Center** and click on **OK**.
 
-The first time you access the Windows Admin Center you will get a Welcome screen. Just close it and now wait until all WAC extensions are installed and you get a popup window telling you "Successfully updated your extensions". Just click [OK]. Windows Admin Center will automatically refresh.
+   * Username: **jumpstart\arcdemo**
+   * Password: **ArcPassword123!!**
+   
+   ![](media/sigin-to-wac.png "Screenshot showing WAC login prompt")
 
-1. Now that we are logged in, our first step is to add a connection to our HCI cluster. Click on the “Add” button, and then click on “Add” under “Server clusters”.
+   >**Note**: The first time you access the Windows Admin Center you will get a Welcome screen. Just close it and now wait until all WAC extensions are installed and you get a popup window telling you "Successfully updated your extensions". Just click [OK]. Windows Admin Center will automatically refresh.
 
-![-](./media/wac_empty.png "Screenshot showing WAC first login")
-![-](./media/wac_add_cluster.png "Screenshot showing WAC adding cluster")
+1. Once you are logged into Windows Admin Center, click on **Add** **(1)** button to add a connection to HCI cluster and then click on **Add** **(2)** under **Server clusters**. 
 
-5. Enter “hciboxcluster” for the cluster name, and use the domain account credential to connect to the cluster.
+   ![](media/add-hci-cluster.png "Add HCI Cluster")
 
-![-](./media/wac_add_cluster_detail.png "Screenshot showing WAC connection details")
-![-](./media/wac_add_cluster_detail_2.png "Screenshot showing WAC connection details")
+1. Enter the cluster name as **hciboxcluster** **(1)**, choose the **Use another account for this connection** **(2)** option. You can use the below domain account credentials to connect to the cluster and click on **Connect with account** **(5)**.
 
-6. Now that the cluster is added, we can explore management capabilities for the cluster inside of WAC. Click on the cluster to drill into its details.
+   * Username **(3)**: **jumpstart\arcdemo**
+   * Password **(4)**: **ArcPassword123!!**
 
-![-](./media/wac_cluster_added.png "Screenshot showing cluster list")
-![-](./media/wac_cluster_added_detail.png "Screenshot showing cluster detail")
+   ![](media/hcicluster-connection.png "Adding hcicluster connection")
+   
+1. In the **Add cluster** tab, click on **Add**.
+   
+   ![](media/final-add-hci.png "Screenshot showing WAC connection details")
 
-You just successfully added the existing Azure Stack HCI 22H2 Cluster "hciboxcluster" to you Windows Admin Center. We will explore the Cluster capabilities leveraging WAC in upcoming tasks.
+1. Now the cluster is added, you can explore management capabilities for the cluster inside of Windows Admin Center. Click on the **hciboxcluster.jumpstart.local** cluster to drill into its details.
+
+   ![](media/open-hciboxcluster.png "Screenshot showing cluster list")
+   
+   ![](media/hci_cluster_details.png "Screenshot showing cluster detail")
+
+You just successfully added the existing Azure Stack HCI 22H2 Cluster **"hciboxcluster"** to Windows Admin Center. You will explore the Cluster capabilities leveraging Windows Admin Center in upcoming tasks.
 
 ## Task 2: Verify your Azure Stack HCI 22H2 Cluster is registered with Azure
 
-**Within this lab the Azure Stack HCI 22H2 cluster is already registered within Azure.**
+In this lab the Azure Stack HCI 22H2 cluster is already registered within Azure. To verify the registration let's now use **PowerShell**.
 
-To verify the registration let's now use **PowerShell**.
+You're going to perform the registration verification from the **Admin Center** machine, which you have been using to access Windows Admin Center
 
-We're going to perform the registration verification from the **AdminCenter** machine, which we've been using to access Windows Admin Center.
+1. In the **Admin Center** machine, select **PowerShell ISE** **(1)** shortcut from the desktop and then right-click on it to select **Run as administrator** **(2)**.
 
-1. After logging in to the **AdminCenter** VM, click on the windows button and search for **PowerShell ISE** then right-click on it to select **Run as administrator**.
-
-![-](./media/2023-03-01_17h07_52.png "Open PowerShell ISE as an Administrator")
+   ![](media/ex1-task2-step1.png "Open PowerShell ISE as an Administrator")
     
-2. Copy and paste the below PowerShell commands and execute them, you will now see 
+1. Copy and paste the below PowerShell commands **(1)** and to execute them click on **Run script** **(2)**. 
 
-     ```powershell
-     Invoke-Command -ComputerName AzSHOST1 -ScriptBlock {
-     Get-AzureStackHCI
-     } 
-     ```
+   ```powershell
+   Invoke-Command -ComputerName AzSHOST1 -ScriptBlock {
+   Get-AzureStackHCI
+   } 
+   ```
     
-    ![Check updated registration status with PowerShell](./media/Verify-registered-cluster.png "Check updated registration status with PowerShell")
+   ![Check updated registration status with PowerShell](media/ex1-task2-step2.png "Check updated registration status with PowerShell")
 
 You can see the **RegistrationStatus**, the **ConnectionStatus** and **LastConnected** time, which is usually within the last day unless the cluster is temporarily disconnected from the Internet. An Azure Stack HCI 22H2 cluster can operate fully offline for up to 30 consecutive days.
 
@@ -87,75 +100,86 @@ You can close the Windows PowerShell ISE. No need to save the PowerShell script.
 
 To use Azure services with Windows Admin Center, you must register your Windows Admin Center instance with Azure. This is a prerequisite if you use Windows Admin Center to [register Azure Stack HCI with Azure](https://learn.microsoft.com/en-us/azure-stack/hci/deploy/register-with-azure).
 
-1. In Windows Admin Center, select the Settings gear icon from the top right corner of the page.
+1. In Windows Admin Center, select the **Settings** gear icon from the top right corner of the page.
 
-2. From the Settings menu in the left pane, go to Gateway > Register.
+   ![](media/ex1-task3-step1.png "Open settings in WAC")
 
-3. Select the Register button on the center of the page. The registration pane appears on the right of the page.
+1. From the Settings menu in the left pane, select **Register** **(1)** under Gateway and click on **Register** **(2)** to Register with Azure. The registration pane appears on the right side of the page.
+
+   ![](media/ex1-task3-step2.png "Click on Register")
+
+1. In the **Get started with Azure in Windows Admin Center** blade, follow the instructions to **Copy the code** by click on **Copy** **(1)** and then click on the **Enter the Code** **(2)** hyperlink to configure device login.
    
-![Register Windows Admin Center](./media/register-wac.png "Register Windows Admin Center in Azure")
+   ![](media/ex1-task3-step3.png "Copy the code for Device Login")
 
-4. Iin the **Get started with Azure in Windows Admin Center** blade, follow the instructions to **Copy the code**(2) and then click on the link **Enter the Code**(3) to configure device login.
+1. You will see the new tab opened in the browser for device login. Now, Paste the code **(1)** that you have copied in previous step and click on **Next** **(2)** button.
 
-   ![Installed extensions in Windows Admin Center](./media/login.png "Installed extensions in Windows Admin Center")
-    
-5. Now, Paste the code you copied in previous step and click on **Next** button.
-
-   ![Installed extensions in Windows Admin Center](./media/code.png "Installed extensions in Windows Admin Center")
+   ![](media/ex1-task3-step4.png "Enter the code for Device Login")
      
-6. When prompted for credentials, **enter your Azure credentials** for a tenant you'd like to use to register the Windows Admin Center and click on **Continue** button if you get any popup saying **Are you trying to sign in to Windows Admin Center?**.
+1. When prompted for credentials, **enter the below Azure credentials** for a tenant that you will use to register the Windows Admin Center and click on **Continue** button if you get any popup saying **Are you trying to sign in to Windows Admin Center?**.
 
-7. Now, navigate back in **Windows Admin Center** tab, you'll notice your tenant information has been added.  You can click on **Connect** to connect Windows Admin Center to Azure.
+   * Email/Username: **<inject key="AzureAdUserEmail"></inject>**
+   * Password: **<inject key="AzureAdUserPassword"></inject>**
 
-    ![Connecting Windows Admin Center to Azure](./media/connect.png "Connecting Windows Admin Center to Azure")
+1. Now, navigate back in **Windows Admin Center** tab, you'll notice your tenant information **(1)** has been added. You can click on **Connect** **(2)** to connect Windows Admin Center to Azure.
 
-8. Click on **Sign in** and when prompted for credentials, **enter your Azure credentials** and you will see a popup **Permissions requested**. Check the box next to the **Consent on behalf of your organization** then click **Accept**. *Ignore the Hybridhost001 referral in the screenshot*
+   ![](media/ex1-task3-step5.png "Connect Windows Admin Center to Azure")
 
-    ![Permissions for Windows Admin Center](./media/ex2-task1-step10.png)
+1. Click on **Sign in** and you may get prompt to enter credentials, **enter your Azure credentials** given below.
 
-*******************************************************************************************************
+   * Email/Username: **<inject key="AzureAdUserEmail"></inject>**
+   * Password: **<inject key="AzureAdUserPassword"></inject>**
+ 
+   ![](media/ex1-task3-step6.png "Sign into Azure")
+ 
+1. You will see a pop-up **Permissions requested**. Check the box next to the **Consent on behalf of your organization** and then click on **Accept**.
 
-**NOTE** - If you receive an error when signing in, still in **Settings**, under **User**, click on **Account** and click **Sign-in**. You should then be prompted for Azure credentials and permissions, to which you can then click **Accept**. Sometimes it just takes a few moments from Windows Admin Center creating the Azure AD application and being able to sign in. Retry the sign-in until you've successfully signed in.
-**NOTE** - Sometime even after cluster is registered it may show an error with SignIn with following error, you can ignore that and close the popup:
+   ![](media/ex1-task3-step7.1.png "Permissions requested")
+   
+1. Once you are connected Windows Admin Center to Azure, you will see the details as shown in the below screenshot in Register under Gateway.
+
+   ![](media/ex1-task3-step8.1.png "Permissions requested")
+
+>**Note**: If you receive an error when signing in, still in **Settings**, under **User**, click on **Account** and click **Sign-in**. You should then be prompted for Azure credentials and permissions, to which you can then click **Accept**. Sometimes it just takes a few moments from Windows Admin Center creating the Azure AD application and being able to sign in. Retry the sign-in until you've successfully signed in.
+
+>**Note**: Sometime even after cluster is registered it may show an error with SignIn with following error, you can ignore that and close the popup:
    ```AADSTS700016: Application with identifier '******************' was not found in the directory 'Azure HOL ****'. This can happen if the application has not been installed by the administrator of the tenant or consented to by any user in the tenant. You may have sent your authentication request to the wrong tenant.```
-
-*******************************************************************************************************
 
 ## Task 4: Validate Azure integration
 
-Additional permissions were applied on the Windows Admin Center Azure AD application that was created when you connected Windows Admin Center to Azure, earlier. In this step, we'll quickly validate those permissions.
+Additional permissions were applied on the Windows Admin Center Azure AD application that was created when you connected Windows Admin Center to Azure, earlier. In this step, you will quickly validate those permissions.
 
-1. Still in Windows Admin Center, click on the **Settings** gear in the top-right corner
-2. Under **Gateway**, click **Register**. You should see your previously registered Azure AD app:
+1. You should see your previously registered Azure AD application in Register under Gateway of WAC settings. Click on **View in Azure** to be taken to the Azure AD app portal, where you can see the information about created app including permissions required. If you're prompted to log in, provide azure credentials.
 
-    ![Your Azure AD app in Windows Admin Center](./media/WAC-Registered.png "Your Azure AD app in Windows Admin Center")
+   ![](media/ex1-task4-step1.png "Azure Portal")
 
-3. Click on **View in Azure** to be taken to the Azure AD app portal, where you should see information about this app, including permissions required. If you're prompted to log in, provide appropriate credentials.
-4. Once logged in, under **Configured permissions**, you should see a few permissions listed with the status **Granted for...** and the name of your tenant. The **Microsoft Graph (5)** API permissions will show as **not granted** but this will be updated upon deployment
+1. Once you are logged in, under **Configured permissions**, you should see a few permissions listed with the status **Granted for...** and the name of your tenant. The **Microsoft Graph (5)** API permissions will show as **not granted** but this will be updated upon deployment.
 
-5. Under **Configured permissions**, click on **Grant Admin Consent for Azure HOL** button.
+   ![](media/ex1-task4-step2.png "Configured permissions pane")
 
-    ![Confirm Azure AD app permissions in Windows Admin Center](../media/Ex2-task2-01.1.png "Confirm Azure AD app permissions in Windows Admin Center")
+1. Under **Configured permissions**, click on **Grant Admin Consent for Azure HOL** button.
+
+    ![](media/ex1-task4-step3.png "Grant Admin Consent")
     
-6.  Now select **Yes** on the **Grant admin consent confirmation** pop-up to give your app the permissions.
+1. Now select **Yes** on the **Grant admin consent confirmation** pop-up to give your app the permissions.
 
-    ![Confirm Azure AD app permissions in Windows Admin Center](../media/Ex2-task2-01.2.png "Confirm Azure AD app permissions in Windows Admin Center")
+    ![](media/ex1-task4-step5.png "Confirm Azure AD app permissions in Windows Admin Center")
 
-*******************************************************************************************************
+   *******************************************************************************************************
 
-**NOTE** - If you don't see Microsoft Graph listed in the API permissions, you can either [re-register Windows Admin Center using steps here](#configure-windows-admin-center "re-register Windows Admin Center using steps here") for the permissions to appear correctly, or manually add the **Microsoft Graph Appliation.ReadWrite.All** permission. To manually add the permission:
+   >**Note** - If you don't see Microsoft Graph listed in the API permissions, you can either [re-register Windows Admin Center using steps here](#configure-windows-admin-center "re-register Windows Admin Center using steps here") for the permissions to appear correctly, or manually add the **Microsoft Graph Appliation.ReadWrite.All** permission. To manually add the permission:
+     - Click **+ Add a permission**
+     - Select **Microsoft Graph**, then **Delegated permissions**
+     - Search for **Application.ReadWrite.All**, then if required, expand the **Application** dropdown
+     - Select the **checkbox** and click **Add permissions**   
+  
+    *******************************************************************************************************
 
-- Click **+ Add a permission**
-- Select **Microsoft Graph**, then **Delegated permissions**
-- Search for **Application.ReadWrite.All**, then if required, expand the **Application** dropdown
-- Select the **checkbox** and click **Add permissions**
+1. Switch back to the **Windows Admin Center** tab and click on **Windows Admin Center** in the top-left corner to return to the home page. 
 
-*******************************************************************************************************
-
-6. Switch back to the **Windows Admin Center tab** and click on **Windows Admin Center** in the top-left corner to return to the home page. 
-
-    ![Confirm Azure AD app permissions in Windows Admin Center](./media/wac_admin.png "Confirm Azure AD app permissions in Windows Admin Center")
-    You'll notice that multiple servers are already under management of Windows Admin Center.
+    ![](media/ex1-task4-step6.png "Confirm Azure AD app permissions in Windows Admin Center")
+    
+   You'll notice that multiple servers are already under management of Windows Admin Center.
 
 Summary
 -----------
