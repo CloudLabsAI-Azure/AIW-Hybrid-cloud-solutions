@@ -1,430 +1,313 @@
-HOL-4: Exercise 2: Explore the management of your Azure Stack HCI 22H2 environment
+HOL-4: Exercise 2: Azure Stack HCI 22H2 Hybrid by design
 ==============
 Overview
 -----------
-With the Azure Stack HCI cluster deployed, you can now begin to explore some of the additional capabilities within Azure Stack HCI 22H2 and Windows Admin Center. We'll cover a few recommended activities below, to expose you to some of the key elements of the Windows Admin Center, but for the rest, we'll [direct you over to the official documentation](https://learn.microsoft.com/en-us/azure-stack/hci/ "Azure Stack HCI 22H2 documentation").
+Discover, monitor, and manage the Azure Stack HCI hosts as well as the virtual machines. Extend your business to the cloud with an Azure hybrid solution. In this exercise you can now begin to explore the Hybrid by design capabilities of Azure Stack HCI 22H2 and Azure. We'll cover a few recommended activities below, to expose you to some of the key elements of Azure Stack HCI Hybrid by design capabilities.
 
 Contents
 -----------
-- [HOL-4: Exercise 2: Explore the management of your Azure Stack HCI 22H2 environment](#hol-4-exercise-2-explore-the-management-of-your-azure-stack-hci-22h2-environment)
+- [HOL-4: Exercise 2: Azure Stack HCI 22H2 Hybrid by design](#hol-4-exercise-2-azure-stack-hci-22h2-hybrid-by-design)
   - [Overview](#overview)
   - [Contents](#contents)
-  - [Task 1: Explore the existing volumes created on the **hciboxcluster**](#task-1-explore-the-existing-volumes-created-on-the-hciboxcluster)
-    - [Review a two-way mirror volume created to run VMs](#review-a-two-way-mirror-volume-created-to-run-vms)
-  - [Task 2: Download .Iso files](#task-2-download-iso-files)
-    - [Download a Windows Server 2022 .Iso](#download-a-windows-server-2022-iso)
-    - [Download an Ubuntu Server 22.04 .Iso](#download-an-ubuntu-server-2204-iso)
-    - [Upload the .Iso files to your CSV](#upload-the-iso-files-to-your-csv)
-  - [Task 3: Deploy a Windows Server 2019 virtual machine](#task-3-deploy-a-windows-server-2019-virtual-machine)
-  - [Task 4: Deploy an Ubuntu Server 20.04 virtual machine](#task-4-deploy-an-ubuntu-server-2004-virtual-machine)
-  - [Task 5: Live migrate a virtual machine to another node](#task-5-live-migrate-a-virtual-machine-to-another-node)
-  - [Task 2: Deploy a virtual machine](#task-2-deploy-a-virtual-machine)
-    - [Create the virtual machine](#create-the-virtual-machine)
-  - [Congratulations!](#congratulations)
-  - [Setup the lab in your own Azure Subscription.](#setup-the-lab-in-your-own-azure-subscription)
+  - [Task 1: Enable some Hybrid capabilities in Azure of your Azure Stack HCI cluster](#task-1-enable-some-hybrid-capabilities-in-azure-of-your-azure-stack-hci-cluster)
+    - [Review the status of the Azure Arc required services in Windows Admin Center](#review-the-status-of-the-azure-arc-required-services-in-windows-admin-center)
+  - [Task 2: Manage Azure Stack HCI clusters using Windows Admin Center in Azure](#task-2-manage-azure-stack-hci-clusters-using-windows-admin-center-in-azure)
+    - [Enable all requirements so you can use Windows Admin Center in the Azure portal to manage a hybrid machine](#enable-all-requirements-so-you-can-use-windows-admin-center-in-the-azure-portal-to-manage-a-hybrid-machine)
+  - [Task 3: Explore Azure Stack HCI Hybrid features in the Azure Portal](#task-3-explore-azure-stack-hci-hybrid-features-in-the-azure-portal)
+    - [Explore Extensions](#explore-extensions)
+    - [Configuration of The Azure Stack HCI 22H2 cluster in the Azure Portal](#configuration-of-the-azure-stack-hci-22h2-cluster-in-the-azure-portal)
+    - [Monitor Insights on your Azure Stack HCI clusters using in Azure](#monitor-insights-on-your-azure-stack-hci-clusters-using-in-azure)
+  - [Summary](#summary)
+  - [Product improvements](#product-improvements)
+  - [Raising issues](#raising-issues)
 
 
-Task 1: Explore the existing volumes created on the **hciboxcluster**
+Task 1: Enable some Hybrid capabilities in Azure of your Azure Stack HCI cluster
 -----------
-In this step, you'll review a volume on the Azure Stack HCI 22H2 cluster by using Windows Admin Center, and enable data deduplication and compression.
+In this step, you will review the status of the Azure Arc services on the Azure Stack HCI 22H2 cluster by using Windows Admin Center, enable Hybrid Azure Stack HCI Cluster features in the Azure Portal.
 
-### Review a two-way mirror volume created to run VMs ###
+### Review the status of the Azure Arc required services in Windows Admin Center ###
 
 1. Open **Windows Admin Center** on the **AdminCenter** VM. On the top left click on **All connections** and click on your previously deployed cluster, **hciboxcluster.jumpstart.local**
 
-    ![Review the existing volumes for VMs](./media/ReviewVolumes-1.png "WAC Review HCI cluster Volumes")
+    ![Azure Arc WAC](./media/ReviewVolumes-1.png "Azure Arc WAC")
     
         
-2. On the left hand navigation, under **Cluster resources** select **Volumes**.  The central **Volumes** page shows you should have two volume currently
+2. On the left hand navigation, under **Configuration** select **Azure Arc**.  The central **Azure Arc** page, click **1. Azure Stack HCI registration**.
 
-    ![Review the existing volumes for VMs](./media/ReviewVolumes-2.png "WAC Review HCI cluster Volumes")
+    ![Azure Arc WAC](./media/Arc-1.png "Azure Arc WAC")
     
-4. On the Volumes page, select the **Inventory** tab, and then select **Create**
-
-    ![Review the existing volumes for VMs](./media/ReviewVolumes-3.png "WAC Review HCI cluster Volumes")
+3. On the **Azure Stack HCI registration** page, you should see ...
+   
+    #### Azure Stack HCI system status: ####
+   - **Connected** under the Azure connection status
+   - **Registered** under the Azure Registration
     
-6. Open the volume **S2D_vDISK1**, by clicking on the name of the volume. We see a couple of things now:
-   - The Volume File system is a **Cluster Shared Volume** of type **ReFS**
-     - *Please read more:* 
-       - https://learn.microsoft.com/en-us/azure-stack/hci/concepts/plan-volume
-       - https://learn.microsoft.com/en-us/azure-stack/hci/concepts/storage-spaces-direct-overview)
-   - The Resiliency was set to **Two-way mirror**
-     - *Please read more:*
-       - https://learn.microsoft.com/en-us/azure-stack/hci/concepts/fault-tolerance)
-   - Deduplication and Encryption is **Off**
-     - *Please read more:*
-       - https://learn.microsoft.com/en-us/azure-stack/hci/manage/volume-encryption-deduplication
-   - Also have a look at the Capacity and Performance indicators
+    #### Server status: ####
+   - **Connected** under the Azure connection status for every Server.       
 
-    ![Review the existing volumes for VMs](./media/ReviewVolumes-4.png "WAC Review HCI cluster Volumes")
+    ![Azure Arc WAC](./media/Arc-2.png "Azure Arc WAC")
+    
+4. Now click **Arc-enabled servers** on the current **Azure Arc | Azure Stack HCI registration** page
   
-7. On the volume S2D_vDISK1 page click on **Settings**. You will notice that the volume S2D_vDISK1 has been provisioned as a type Fixed, but Thin provisioning of volumes is also available.
-   - *Please read more:*
-     - https://learn.microsoft.com/en-us/azure-stack/hci/manage/thin-provisioning
+    ![Azure Arc WAC](./media/Arc-3.png "Azure Arc WAC")
+  
+5. On the **Azure Arc | Arc-enabled servers** page, click on **hciboxcluster-rg**. 
+    
+    ![Azure Arc WAC](./media/Arc-4.png "Azure Arc WAC")
 
-    ![Review the existing volumes for VMs](./media/ReviewVolumes-5.png "WAC Review HCI cluster Volumes")
+6. The Azure Portal will open in an extra browser Tab, showing you the **hciboxcluster-rg** resource group content. On the **Resources** page in the Azure Portal, click on the **hciboxcluster**.
 
-You now have reviewed and learned more about Azure Stack HCI volumes which are ready to accept workloads. 
-Here is the official documentation on how to create volumes on Azure Stack HCI, leveraging Windows Admin Center or PowerShell: https://learn.microsoft.com/en-us/azure-stack/hci/manage/create-volumes
+    *You potentially will be asked to provide the Azure credentials. You can find them in the Environment Details of this Lab.*
 
-Task 2: Download .Iso files
+    ![Azure Arc WAC](./media/Arc-5.png "Azure Arc WAC")
+
+7. The Azure Portal will open the hciboxcluster - Azure Stack HCI blade. Click **Capabilities** and
+
+    ![Azure Arc WAC](./media/Arc-6.png "Azure Arc WAC")
+
+8. On the **Capabilities** tab, click **Logs**
+
+    ![Azure Arc WAC](./media/Arc-7.png "Azure Arc WAC")    
+
+9. On the **Configure extension: MicrosoftMonitoringAgent** page, click **Add**.
+
+    **NOTE** *All existing Log Analytics Workplace fields should be pre-filled automatically*.
+    
+    ![Azure Arc WAC](./media/Arc-8.png "Azure Arc WAC")
+
+10. On the **Capabilities** tab, click **Insights**
+
+    ![Azure Arc WAC](./media/Arc-9.png "Azure Arc WAC")    
+
+11. On the **Azure Insights** page, click **Turn On**.
+    
+    ![Azure Arc WAC](./media/Arc-10.png "Azure Arc WAC")
+
+12. On the **Capabilities** tab, click **Windows Admin Center**
+
+    ![Azure Arc WAC](./media/Arc-11.png "Azure Arc WAC")    
+
+13. On the **Windows Admin Center (preview)** page, click **Set up**.
+  
+    ![Azure Arc WAC](./media/Arc-12.png "Azure Arc WAC")
+
+14. On the **Windows Admin Center** page, click **Set up**.
+  
+    ![Azure Arc WAC](./media/Arc-13.png "Azure Arc WAC")
+
+15. On the **Capabilities** tab, all 3 boxes should indicate **Configured**.
+
+    **NOTE** This can take a couple of minutes, please be patient.
+  
+      ![Azure Arc WAC](./media/Arc-14.png "Azure Arc WAC")    
+
+You just finalized the Activation of a couple of Hybrid features of Azure Stack HCI.
+Once all 3 boxes show **Configured** proceed to the next Task.
+
+Task 2: Manage Azure Stack HCI clusters using Windows Admin Center in Azure
 -----------
-In this step, you will download a Windows Server 2022 and Ubuntu Server 22.04 .Iso file and upload the .Iso to your Clustered Shared Volume you explored in Task 1. 
+In this step, you will prepare your Azure Stack HCI Cluster resource in Azure to be connect to it using Windows Admin Center from the Azure Portal.
 
-**_NOTE:_**  Make sure to use the Edge browser on the **AdminCenter** VM to execute the following steps.
+### Enable all requirements so you can use Windows Admin Center in the Azure portal to manage a hybrid machine ###
 
-### Download a Windows Server 2022 .Iso ###
+1.  On the **hciboxcluster** page, under Settings, click **Windows Admin Center**.
+   
+    On the **Windows Admin Center** page, you will see a message, that you must be part of the Windows Admin Center Administrator Login group to be able to connect.
 
-1. Please download Windows Server 2022 image file from [here](https://www.microsoft.com/en-us/evalcenter/download-windows-server-2022)
+    ![Azure Arc WAC](./media/Arc-17.png "Azure Arc WAC")
+
+2. In the **"Search resources, services, and docs"** search box at the top of the Azure Portal page, type **subscription** and under **Services**, click **Subscriptions**.
+
+    ![Azure Arc WAC](./media/Arc-18.png "Azure Arc WAC")
  
-1. In the English (United States) row select the Click **64-bit edition** in the ISO downloads row. Download the .iso which will be by saved in the Downloads folder.
+3. On the **Subscriptions** page, click on the Subscription name.
 
-### Download an Ubuntu Server 22.04 .Iso ### 
- 
-1. Please download Ubuntu Server 22.04 image file from [here](https://releases.ubuntu.com/jammy/ubuntu-22.04.2-live-server-amd64.iso)
- 
-1. The download of the ISO file should automatically start. Once completed you should find it in your Downloads folder.
+    ![Azure Arc WAC](./media/Arc-19.png "Azure Arc WAC")
 
-### Upload the .Iso files to your CSV ###
- 
-1. Open **Windows Admin Center** on **AdminCenter** VM from the desktop if it is not already opened, click on your previously deployed cluster, **hciboxcluster.jumpstart.local**
- 
-    ![Review the existing volumes for VMs](./media/ReviewVolumes-1.png "WAC Review HCI cluster Volumes")
- 
-1. On the left hand navigation, under **Cluster Resources** select Servers and then Inventory.
- 
-    ![Download .Iso files](https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/event-27/HOL-4-azure-stack-hci/media/fran2.png "Download .Iso files")
+4. On the selected **Subscription** page, click **Resource providers**
 
-1. Click on node AzSHOST1 and then click in Manage
- 
-    ![Download .Iso files](./media/fran3.png "Download .Iso files")
- 
-1. On the left, select Files & file sharing
-  
-    ![Download .Iso files](https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/event-27/HOL-4-azure-stack-hci/media/fran4.png "Download .Iso files")
-  
-1. Open the folder C:\ClusterStorage\Volume01
- 
-    ![Download .Iso files](https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/event-27/HOL-4-azure-stack-hci/media/fran5.png "Download .Iso files")
-  
- 
-1. Click in the "…" and then Upload
- 
-    ![Download .Iso files](https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/event-27/HOL-4-azure-stack-hci/media/fran6.png "Download .Iso files")
-  
-1. Click in Select Files, search for both (Windows Server 2019 and Ubuntu Server 20.04) .iso files in Downloads and click in Open, and then Submit. 
- 
-    ![Download .Iso files](https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/event-27/HOL-4-azure-stack-hci/media/fran7.png "Download .Iso files")
- 
-1. It takes around 5-10 minutes to get successfully uploaded. After that, please move on to the next task.
+    ![Azure Arc WAC](./media/Arc-20.png "Azure Arc WAC")    
 
-Task 3: Deploy a Windows Server 2019 virtual machine
------ 
-In this step, you will deploy a Windows Server 2019 virtual machine via Windows Admin Center.
+5. On the **Resource providers** page, type **hybrid** in the filter by name box. Make sure the status of the Provider **Microsoft.HybridConnectivity** is **Registered**. If not Register if now.
 
-1. Once logged into the **Windows Admin Center** on **HybridHost001**, click on your previously deployed cluster, **azshciclus.hybrid.local**
+    ![Azure Arc WAC](./media/Arc-21.png "Azure Arc WAC")
 
-1. On the left hand navigation, under **Compute** select **Virtual machines**.  The central **Virtual machines** page shows you no virtual machines deployed currently
-    
-    ![Deploy a Windows Server 2019 virtual machine](./media/vm1.png "Deploy a Windows Server 2019 virtual machine")
+6. On the current page, Click **Access Control (IAM)**. 
 
-1. On the **Virtual machines** page, select the **Inventory** tab, and then click on **Add** and select **New**.
+    ![Azure Arc WAC](./media/Arc-22.png "Azure Arc WAC")
 
-    ![Deploy a Windows Server 2019 virtual machine](./media/newvm.png "Deploy a Windows Server 2019 virtual machine")
- 
-1. In the New virtual machine pane, enter VM001 for the name, and enter the following pieces of information, then click Create
- 
-     * Generation: Generation 2 (Recommended)
- 
-     * Host: Leave as recommended
- 
-     * Path: C:\ClusterStorage\Volume01
- 
-     * Virtual processors: 2
- 
-     * Startup memory (GB): 4
- 
-     * Use dynamic memory: Min 2, Max 6
- 
-     * Network: ComputeSwitch
- 
-     * Storage: Add, then Create an empty virtual hard disk and set size to 30GB
- 
-     * Operating System: Install an operating system from an image file (.iso). Select the Windows Server 2019 Iso file!
- 
-      ![Deploy a Windows Server 2019 virtual machine](./media/fran8.png "Deploy a Windows Server 2019 virtual machine")
-      
-      ![Deploy a Windows Server 2019 virtual machine](./media/fran9.png "Deploy a Windows Server 2019 virtual machine")  
- 
-1. The creation process will take a few moments, and once complete, VM001 should show within the Virtual machines view
+7. On the **Access controle (IAM)** page, Click **+ Add** and **Add role assignment**.
 
-1. Click on the checkbox before the VM and then click click on Power button and select Start - within moments, the VM should be running.
+    ![Azure Arc WAC](./media/Arc-23.png "Azure Arc WAC")
 
-    ![Deploy a Windows Server 2019 virtual machine](https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/event-27/HOL-4-azure-stack-hci/media/fran10.png "Deploy a Windows Server 2019 virtual machine")
-     
-    ![Deploy a Windows Server 2019 virtual machine](https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/event-27/HOL-4-azure-stack-hci/media/fran11.png "Deploy a Windows Server 2019 virtual machine")
-  
-1. Click on VM001 to view the properties and status for this running VM.
- 
-    ![Deploy a Windows Server 2019 virtual machine](./media/fran12.png "Deploy a Windows Server 2019 virtual machine")
+8. On the **Add role assignment** page, under the **Role** tab, search for **Windows Admin Center Administrator Login**. Click on the role name **Windows Admin Center Administrator Login**. Click **Members**.
 
-1. Click on Connect and select connect button from the drop down- you may get a VM Connect prompt:
- 
-    ![Deploy a Windows Server 2019 virtual machine](https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/event-27/HOL-4-azure-stack-hci/media/fran13.png "Deploy a Windows Server 2019 virtual machine")
- 
-1. Click on Go to Settings and in the Remote Desktop pane, click on Allow remote connections to this computer, then Save
- 
-    ![Deploy a Windows Server 2019 virtual machine](./media/fran14.png "Deploy a Windows Server 2019 virtual machine")
-              
-1. Click the Back button in your browser to return to the VM001 view, then click Connect, and when prompted with the certificate prompt, click Connect and enter Password as `demo!pass123`.
-  
-    ![Deploy a Windows Server 2019 virtual machine](./media/fran15.png "Deploy a Windows Server 2019 virtual machine")
- 
- 
-1. The VM will be in the UEFI boot summary as below
- 
-    ![Deploy a Windows Server 2019 virtual machine](https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/event-27/HOL-4-azure-stack-hci/media/fran16.png "Deploy a Windows Server 2019 virtual machine")
- 
-1. Click in "Send Ctrl + Alt + Del" at the top of the page now and press any key when you see the message "Press any key at boot from CD or DVD…"
- 
-    ![Deploy a Windows Server 2019 virtual machine](https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/event-27/HOL-4-azure-stack-hci/media/fran17.png "Deploy a Windows Server 2019 virtual machine")
- 
-1. Click Enter when you see the following interface
- 
-    ![Deploy a Windows Server 2019 virtual machine](https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/event-27/HOL-4-azure-stack-hci/media/fran18.png "Deploy a Windows Server 2019 virtual machine")
- 
-1. From there you'll start the OOBE experience. Select the following settings according to your preferences: Language, Time currency and Keyboard
+    ![Azure Arc WAC](./media/Arc-24.png "Azure Arc WAC")
 
-1. Click Install Now, and select the version Windows Server 2019 Standard Evaluation (Desktop Experience):
- 
-     ![Deploy a Windows Server 2019 virtual machine](https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/event-27/HOL-4-azure-stack-hci/media/fran19.png "Deploy a Windows Server 2019 virtual machine")
- 
-1. Accept the license terms and select "Custom: Install Windows only (advanced)" and then Next. It will take around 10 minutes for the VM to boot. After that, please insert the lab credentials demo!pass123 and your VM is ready to go!
+9. On the **Add role assignment** page, under the **Members** tab, Click **"+Select members**. Click on your Azure User. Click **Select** and then Click **Next**.
 
-Task 4: Deploy an Ubuntu Server 20.04 virtual machine
------ 
-In this step, you will deploy an Ubuntu Server 20.04 virtual machine via Windows Admin Center.
+    ![Azure Arc WAC](./media/Arc-25.png "Azure Arc WAC")    
 
-1. Once logged into the **Windows Admin Center** on **HybridHost001**, click on your previously deployed cluster, **azshciclus.hybrid.local**
+10. On the **Add role assignment** page, under the **Review + assign** tab, Click **Review + assign** at the bottom of the page.
 
-1. On the left hand navigation, under **Compute** select **Virtual machines**.  The central **Virtual machines** page shows one virtual machines deployed currently.
-    
-    ![Deploy an Ubuntu Server 20.04 virtual machine](./media/vm1.png "Deploy an Ubuntu Server 20.04 virtual machine")
+    **NOTE** We have just the **Windows Admin Center Administrator Login** Role to an AAD User on the Subscription scope. Learn more : https://learn.microsoft.com/en-us/windows-server/manage/windows-admin-center/azure/manage-hci-clusters
 
-1. On the **Virtual machines** page, select the **Inventory** tab, and then click on **Add** and select **New**.
+   ![Azure Arc WAC](./media/Arc-26.png "Azure Arc WAC")
 
-    ![Deploy an Ubuntu Server 20.04 virtual machine](./media/newvm.png "Deploy an Ubuntu Server 20.04 virtual machine")
- 
-1. In the New virtual machine pane, enter VM002 for the name, and enter the following pieces of information, then click Create
- 
-     * Generation: Generation 2 (Recommended)
- 
-     * Host: Leave as recommended
- 
-     * Path: C:\ClusterStorage\Volume01
- 
-     * Virtual processors: 2
- 
-     * Startup memory (GB): 2
- 
-        * Use dynamic memory: -
- 
-     * Network: ComputeSwitch
- 
-     * Storage: Add, then Create an empty virtual hard disk and set size to 30GB
- 
-     * Operating System: Install an operating system from an image file (.iso). Select the Ubuntu Server 20.04 Iso file!
- 
-      ![Deploy an Ubuntu Server 20.04 virtual machine](./media/vm002-01.png "Deploy an Ubuntu Server 20.04 virtual machine")
-      
-      ![Deploy an Ubuntu Server 20.04 virtual machine](./media/vm002-02.png "Deploy an Ubuntu Server 20.04 virtual machine")  
- 
-1. The creation process will take a few moments, and once complete, VM002 should show within the Virtual machines view
+11. In the **"Search resources, services, and docs"** search box at the top of the Azure Portal page, type **hciboxcluster** and under **Resources**, click **hciboxcluster**.
 
-1. Click on the VM name VM002 and then Click on Settings to view all VM properties. Click on Security
- 
-      ![Deploy an Ubuntu Server 20.04 virtual machine](./media/vm002-03.png "Deploy an Ubuntu Server 20.04 virtual machine")
+   ![Azure Arc WAC](./media/Arc-27.png "Azure Arc WAC")
 
-1. Make sure to change the Secure Boot template to "Microsoft UEFI Certificate Authority" in the Template drop down box, and click save security settings. Click Close.
+12. On the **hciboxcluster** page, under Settings, click **Windows Admin Center** and then Click **Connect**.
 
-      ![Deploy an Ubuntu Server 20.04 virtual machine](./media/vm002-06.png "Deploy an Ubuntu Server 20.04 virtual machine")
+   ![Azure Arc WAC](./media/Arc-28.png "Azure Arc WAC")
 
-1. Click on Power button and select Start - within moments, the VM should be in a running state soon.
+13. On the **Windows Admin Center** page, complete the Username and Password field and Click Sign In.
 
-      ![Deploy an Ubuntu Server 20.04 virtual machine](./media/vm002-04.png "Deploy an Ubuntu Server 20.04 virtual machine")
+**Note** Make sure the use the fully-qualified-DNS-domain\username format, and not the user principal name (UPN) format (user@fully_qualified_DNS_domain_name).
 
-1. Click on Connect and select connect button from the drop down- you may get a VM Connect prompt.
- 
-      ![Deploy an Ubuntu Server 20.04 virtual machine](./media/vm002-05.png "Deploy an Ubuntu Server 20.04 virtual machine")
+   ![Azure Arc WAC](./media/Arc-29.png "Azure Arc WAC")
 
-1. When prompted with the certificate prompt, click Connect and enter Password as `demo!pass123`.
-  
-    ![Deploy an Ubuntu Server 20.04 virtual machine](./media/fran15.png "Deploy an Ubuntu Server 20.04 virtual machine")
+If all how well you should now have a Windows Admin Center view on your Azure Stack HCI cluster, without needing a VPN or other direct connections. Feel free to look around.
 
-1. Once the integrity check is done you will be able to select your language. Select English.
+   ![Azure Arc WAC](./media/Arc-30.png "Azure Arc WAC")
 
-    ![Deploy an Ubuntu Server 20.04 virtual machine](./media/ubuntu01.png "Deploy an Ubuntu Server 20.04 virtual machine")
-
-1. On the Installer update available screen, select "Continue without updating"
-
-    ![Deploy an Ubuntu Server 20.04 virtual machine](./media/ubuntu02.png "Deploy an Ubuntu Server 20.04 virtual machine")
-
-1. On the Keyboard configuration screen, select "Done"
-
-    ![Deploy an Ubuntu Server 20.04 virtual machine](./media/ubuntu03.png "Deploy an Ubuntu Server 20.04 virtual machine")
-
-1. On the Network connections screen, remember the assigned IP address and select "Done"
-
-    ![Deploy an Ubuntu Server 20.04 virtual machine](./media/ubuntu04.png "Deploy an Ubuntu Server 20.04 virtual machine")
-
-1. On the Configure proxy screen, select "Done"
-
-    ![Deploy an Ubuntu Server 20.04 virtual machine](./media/ubuntu05.png "Deploy an Ubuntu Server 20.04 virtual machine")
-
-1. On the Configure Ubuntu archive mirror screen, select "Done"
-
-    ![Deploy an Ubuntu Server 20.04 virtual machine](./media/ubuntu06.png "Deploy an Ubuntu Server 20.04 virtual machine")
-
-1. On the Guided storage configuration screen, select "Done"
-
-    ![Deploy an Ubuntu Server 20.04 virtual machine](./media/ubuntu07.png "Deploy an Ubuntu Server 20.04 virtual machine")
-
-1. On the storage configuration screen, select "Done" and then Select "Continue" to confirm the destructive action popup screen.
-
-    ![Deploy an Ubuntu Server 20.04 virtual machine](./media/ubuntu08.png "Deploy an Ubuntu Server 20.04 virtual machine")
-    ![Deploy an Ubuntu Server 20.04 virtual machine](./media/ubuntu09.png "Deploy an Ubuntu Server 20.04 virtual machine")
-
-1. On the Profile setup screen complete the fields a below and then select "Done"
-     * Your name: demouser
- 
-     * Your server's name: vm002
- 
-     * Pick a username: demouser
- 
-     * Choose a password: demo!pass123
-
-     * Confirm your password: demo!pass123
-
-    ![Deploy an Ubuntu Server 20.04 virtual machine](./media/ubuntu10.png "Deploy an Ubuntu Server 20.04 virtual machine")
-
-1. On the Enable Ubunutu Advantage screen, select "Done"
-
-    ![Deploy an Ubuntu Server 20.04 virtual machine](./media/ubuntu11.png "Deploy an Ubuntu Server 20.04 virtual machine")
-
-1. On the SSH setup screen, select "Install openSSH server" and select "Done"
-
-    ![Deploy an Ubuntu Server 20.04 virtual machine](./media/ubuntu12.png "Deploy an Ubuntu Server 20.04 virtual machine")
-
-1. On the Featured Server snaps screen, select "Done"
-
-    ![Deploy an Ubuntu Server 20.04 virtual machine](./media/ubuntu13.png "Deploy an Ubuntu Server 20.04 virtual machine")
-
-1. Now wait until you get the Install complete! screen and select "Reboot Now"
-
-    ![Deploy an Ubuntu Server 20.04 virtual machine](./media/ubuntu14.png "Deploy an Ubuntu Server 20.04 virtual machine")
-
-1. On the following screen press "ENTER", now the virtual machine will reboot.
-
-    ![Deploy an Ubuntu Server 20.04 virtual machine](./media/ubuntu15.png "Deploy an Ubuntu Server 20.04 virtual machine2")
-
-1. Once the virtual machine is up and running try to login!
-
-    ![Deploy an Ubuntu Server 20.04 virtual machine](./media/ubuntu16.png "Deploy an Ubuntu Server 20.04 virtual machine")
-
-Task 5: Live migrate a virtual machine to another node
------ 
-
-The final step we'll cover is using Windows Admin Center to live migrate VM001 from it's current node, to an alternate node in the cluster.
-
-1. Still within the **Windows Admin Center** on **HybridHost001**, under **Compute**, click on **Virtual machines**
-
-2. On the **Virtual machines** page, select the **Inventory** tab
-
-3. Under **Host server**, make a note of the node that VM001 is currently running on.  You may need to expand the column width to see the name
-
-4. Next to **VM001**, click the tick box next to VM001, then click **More**.  You'll notice you can Clone, Domain Join and also Move the VM. Click **Move**
-
-Task 2: Deploy a virtual machine
+Task 3: Explore Azure Stack HCI Hybrid features in the Azure Portal
 -----------
-In this step, you'll deploy a VM onto your Azure Stack HCI, using Windows Admin Center.
+In this step, you will further explore extra Azure Stack HCI Hybrid features and capabilities.
 
-### Create the virtual machine ###
-You should still be over on the **AdminCenter** VM, but if you're not, log into AdminCenter VM, and open the **Windows Admin Center**.
+At this time you should still be having the following page active in the Azure Portal. If so Click **Extensions**.
 
-1. Once logged into the **Windows Admin Center** on the **AdminCenter** VM, click on your previously deployed cluster, **hciboxcluster.jumpstart.local**
+   ![Azure Arc WAC](./media/Arc-15.png "Azure Arc WAC")  
 
-3. On the left hand navigation, under **Cluster Resources** select **Virtual machines**.  The central **Virtual machines** page shows that there are some virtual machines deployed currently
-    
-    ![Create VM](./media/vm-1.png "Create VM on Azure Stack HCI 22H2")
+### Explore Extensions ###
 
-4. On the **Virtual machines** page, select the **Inventory** tab, and then click on **Add** and select **New**.
+1. On the **Extension** page, you see that both Azure Stack HCI Cluster nodes have the **Microsoft Monitoring Agent** and the **(Windows) Admin Center agent** installed. This was enabled by the steps we took in Task 1.
 
-    ![Create VM](./media/vm-2.png "Create VM on Azure Stack HCI 22H2")
+    ![Azure Arc WAC](./media/Arc-16.png "Azure Arc WAC")
 
-6. In the **New virtual machine** pane, enter **VM001** for the name, and enter the following pieces of information, then click **Create**
+### Configuration of The Azure Stack HCI 22H2 cluster in the Azure Portal ###
 
-    * Generation: **Generation 2 (Recommended)**
-    * Host: **Leave as recommended**
-    * Path: **C:\ClusterStorage\S2D_vDISK1**
-    * Virtual processors: **1**
-    * Startup memory (GB): **0.5**
-    * Network: **sdnSwitch**
-    * Storage: **Add, then Create an empty virtual hard disk** and set size to **5GB**
-    * Operating System: **Install an operating system later**
+1. In the **"Search resources, services, and docs"** search box at the top of the Azure Portal page, type **hciboxcluster** and under **Resources**, click **hciboxcluster**.
 
-    ![Create VM](./media/vm-3.png "Create VM on Azure Stack HCI 22H2")
+   ![Azure Arc WAC](./media/Arc-27.png "Azure Arc WAC")
       
-    ![Create VM](./media/vm-4.png "Create VM on Azure Stack HCI 22H2")
+2. On the **hciboxcluster** page, under Settings, click **Configuration**.
 
-5. The creation process will take a few moments, and once complete, **VM001** should show within the **Virtual machines view**
+   ![HCI Configuration](./media/Configuration-1.png "HCI Configuration")
 
-6. Click on the checkbox before the **VM** and then click click on **Power** button and select **Start** - within moments, the VM should be running.
+3. On the **Configuration** page, click **Configuration**. Here you find 5 different Configuration topics. The first part you find is the Summary of your **Billing** for your Azure Stack HCI System.
 
-    ![Create VM](./media/vm-5.png "Create VM on Azure Stack HCI 22H2")
-    
-    ![Create VM](./media/vm-6.png "Create VM on Azure Stack HCI 22H2")
+   - Notice that every Azure Stack HCI environment starts with a 60day Free Trial.
+   - Here you also find the number of Physical Cores. Remember that you will only see the in the HW BIOS enabled Physical cores here. So you can optimize your cost by disabling unused physical core in your hardware BIOS.
+  
+     **Learn more on:** https://learn.microsoft.com/en-us/azure-stack/hci/concepts/billing
 
-7. Click on **VM001** to view the properties and status for this running VM.
+        ![HCI Configuration](./media/Configuration-2.png "HCI Configuration")
 
-    ![VM001 up and running](./media/vmdash.png "VM001 up and running")
+4. The 2nd part on the same **configuration** page is where you can activate your **Azure Hybrid Benefits**.
+   
+   To be eligible for the **Azure Hybrid Benefits** you need to have enough Windows Server Data Center licenses with Active Software Assurance. Those licenses can be exchanged to get Azure Stack HCI and Windows Server subscriptions at no additional cost.
+ 
+     **Learn more on:** https://learn.microsoft.com/en-us/windows-server/get-started/azure-hybrid-benefit#getting-azure-hybrid-benefit-for-azure-stack-hci
 
-8. Click on **Connect (1)** and select **Connect (2)** button from the drop down.
+     ![HCI Configuration](./media/Configuration-3.png "HCI Configuration")        
 
-    ![](./media/connect1.png)
-    
-1. If you get a prompt stating **VM Connect**, then click on **Go to Settings**.
+5. The 3rd part on the **configuration** page is where you are able to purchase a **Windows Server subscription add-on**.
+   
+   Here you can buy subscription based Windows Server licenses to cover your guest Virtual machines running Windows Server. You will be charged for the total number of physical cores in your cluster
+ 
+     **Learn more on:** https://learn.microsoft.com/en-us/azure-stack/hci/manage/vm-activate#windows-server-subscription
 
-    ![Connect to VM001](./media/setting.png "Connect to VM001")
+     ![HCI Configuration](./media/Configuration-4.png "HCI Configuration")
 
-9. On the **Settings** tab, Select **Remote Desktop** pane and click on **Allow remote connections to this computer**, then **Save**.
+6. The 4th part on the  **configuration** page is where you can change the **Service Health Data** level which is send to, and collected by Microsoft. 
+ 
+    Microsoft by default collects a basic set of system metadata necessary to keep the Azure Stack HCI service current, secure, and operating properly.
+   
+    **Learn more on:** https://learn.microsoft.com/en-us/azure-stack/hci/concepts/data-collection
 
-     ![Connect to VM001](./media/rdo.png "Connect to VM001")
-     
-10. Click the **Back** button in your browser to return to the VM001 view, then click **Connect**, and when prompted with the certificate prompt, click **Connect** and enter Password as **demo!pass123**
+    ![HCI Configuration](./media/Configuration-5.png "HCI Configuration")
 
-      ![Connect to VM001](./media/rdp.png "Connect to VM001")
-      
-12. There's no operating system installed here, so it should show a UEFI boot summary, but the VM is running successfully
+7. The final part on the **configuration** page is where you can see if you have enabled the **Azure benefits** on your Azure Stack HCI 22H2 Cluster. Turning on Azure Benefits enables you to use these Azure-exclusive workloads on Azure Stack HCI:
 
-12. Click **Disconnect**
+    - **Windows Server Datacenter: Azure edition**
+      - Version supported? 2022 edition or later
+      - What it is? An Azure-only guest operating system that includes all the latest Windows Server innovations and other exclusive features.
+    - **Extended Security Updates (ESUs)**
+      - Version supported? October 12th, 2021 security updates or later
+      - What it is? A program that allows customers to continue to get security updates for End-of-Support SQL Server and Windows Server VMs, now free when running on Azure Stack HCI.
+    - **Azure Policy guest Configuration**
+      - Version supported? Arc agent version 1.13 or later
+      - What it is? A feature that can audit or configure OS settings as code, for both host and guest machines.
+    - **Azure Virtual Desktop**
+      - Version supported? For multi-session editions only. Windows 10 Enterprise multi-session or later.
+      - What it is? A service that enables you to deploy Azure Virtual Desktop session hosts on your Azure Stack HCI infrastructure.
+   
+       **Learn more on:** https://learn.microsoft.com/en-us/azure-stack/hci/manage/azure-benefits
 
-You've successfully create a VM using the Windows Admin Center!
+   
+        ![HCI Configuration](./media/Configuration-6.png "HCI Configuration") 
 
-Congratulations!
+### Monitor Insights on your Azure Stack HCI clusters using in Azure  ### 
+
+In Task 1 of Exercise 2 you enabled the Monitoring Insights capabilities on the Azure Stack HCI cluster resource via the Azure Portal. Normally it takes around 15minutes to see the first data showing up i
+
+1. In the "Search resources, services, and docs" search box at the top of the Azure Portal page, type **hciboxcluster** and under Resources, click **hciboxcluster**.
+
+   ![Insights Monitoring](./media/Arc-27.png "Insights Monitoring")
+
+2. On the **hciboxcluster** page, under Monitoring, click **Insights**.
+
+   ![Insights Monitoring](./media/Insights-1.png "Insights Monitoring")
+
+3. On the **Insights** page, Click **Auto refresh**, which is currently **Off**. Click **5 minutes**, and Click **Apply**
+
+   ![Insights Monitoring](./media/Insights-2.png "Insights Monitoring")
+
+4. On the **Insights** page, Click **Health**. Notice that you see the same info you see on the Windows Admin Center Azure Stack HCI Cluster Dashboard.
+
+    ![Insights Monitoring](./media/Insights-3.png "Insights Monitoring")
+    ![Insights Monitoring](./media/Insights-4.png "Insights Monitoring")
+
+5. Click on **PoolCapacityThresholdExceeded** to see the details about the Fault.
+
+    ![Insights Monitoring](./media/Insights-5.png "Insights Monitoring")
+
+6. On the **Insights** page, Click **Server**. Here you will view health and usage info for the servers in the cluster.
+
+    ![Insights Monitoring](./media/Insights-6.png "Insights Monitoring")
+
+7. On the **Insights** page, Click **Virtual machines**. Here you will view the state of virtual machines on each server in the cluster.
+   
+    ![Insights Monitoring](./media/Insights-7.png "Insights Monitoring")
+
+8. On the **Insights** page, Click **Storage**. Here you will view the health of volumes and drives in the cluster. Drive health is at the bottom of the page
+   
+    ![Insights Monitoring](./media/Insights-8.png "Insights Monitoring")   
+    ![Insights Monitoring](./media/Insights-9.png "Insights Monitoring") 
+
+Summary
 -----------
-You've reached the end of the evaluation guide.  In this guide you have:
+In this exercise, you have enabled the Hybrid Azure Stack HCI Cluster features in the Azure Portal, reviewed the status of the Azure Arc services in the Windows Admin Center web portal, completed the pre-requirements to be able to connect and use the Windows Admin Center from the Azure Portal on the Azure Stack HCI Cluster, looked at the Azure Extensions on the Azure Stack HCI cluster in the Azure Portal, looked at all configuration capabilities on an Azure Stack HCI Cluster resource in the Azure Portal and finally looked at the data captured by the Monitoring Insights service on the Azure Stack HCI cluster in the Azure Portal.
 
-* Deployed/Configured a Windows Server 2019 Hyper-V host in Azure to run your nested sandbox environment
-* Deployed the AKS on Azure Stack HCI management cluster on your Windows Server 2019 Hyper-V environment
-* Deployed a target cluster to run applications and services
-* Optionally integrated with Azure Arc and deployed a sample application
-* Set the foundation for further learning!
+With this completed, you can now move on to the next exercise.
 
-Great work!
+Product improvements
+-----------
+If, while you work through this guide, you have an idea to make the product better, whether it's something in Azure Stack HCI, AKS on Azure Stack HCI, Windows Admin Center, or the Azure Arc integration and experience, let us know! We want to hear from you!
 
-Setup the lab in your own Azure Subscription.
--------------
+For **Azure Stack HCI**, [Head on over to the Azure Stack HCI Q&A forum](https://learn.microsoft.com/en-us/answers/tags/6/azure-stack-hci "Azure Stack HCI Q&A"), where you can share your thoughts and ideas about making the technologies better and raise an issue if you're having trouble with the technology.
 
-This lab is based on the the following work by Matt McSpirit: https://github.com/mattmcspirit/hybridworkshop
+For **AKS on Azure Stack HCI**, [Head on over to our AKS on Azure Stack HCI GitHub page](https://github.com/Azure/aks-hci/issues "AKS on Azure Stack HCI GitHub"), where you can share your thoughts and ideas about making the technologies better. If however, you have an issue that you'd like some help with, read on... 
 
-If you want to setup the lab within your own Azure subscription and run through additional scenarios as well, you can go to the above GitHub repo and perform as mentioned.
+Raising issues
+-----------
+This lab is based on the Azure Arc Jumpstart HCIBox: https://azurearcjumpstart.io/azure_jumpstart_hcibox/
+
+<img src="https://azurearcjumpstart.io/img/hcibox_logo.png" width="20%" height="20%">
+
+If you want to setup the lab within your own Azure subscription please follow this link : https://azurearcjumpstart.io/azure_jumpstart_hcibox/#deployment-options-and-automation-flow
+
+If you notice something is wrong with this guide, such as a step isn't working, or something just doesn't make sense - help us to make this guide better!
