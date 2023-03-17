@@ -1,242 +1,369 @@
-Deploy your Azure VM (Prerequisites)
+HOL-4: Exercise 3: Deploying Virtual Machines on your Azure Stack HCI 22H2 via the Windows Admin Portal
 ==============
 Overview
 -----------
-With the introduction of [nested virtualization support in Azure](https://azure.microsoft.com/en-us/blog/nested-virtualization-in-azure/ "Nested virtualization announcement blog post") back in 2017, Microsoft opened the door to a number of new and interesting scenarios.  Nested virtualization in Azure is particularly useful for validating configurations that would require additional hardware in your environment, such as running Hyper-V hosts and clusters.
-
-In this guide, you'll walk through the steps to stand up an Azure Stack HCI 20H2 and AKS on Azure Stack HCI infrastructure. At a high level, this will consist of the following:
-
-* Deploy an Azure VM, running Windows Server 2019, to act as your main Hyper-V host - this will be automatically configured with the relevant roles and features needed for your workshop. It will also download all required binaries, and deploy 2 Azure Stack HCI 20H2 nodes, ready for clustering.
-* Deploy the AKS on Azure Stack HCI management cluster
-* Deploy the AKS on Azure Stack HCI target clusters, for running workloads
+Now you have looked a both the Integration and Hybrid capabilities of Azure Stack HCI and Azure, you can now start looking at deploying some workloads on the Azure Stack HCI Cluster leveraging the Windows Admin Center.
 
 Contents
 -----------
-- [Overview](#overview)
-- [Contents](#contents)
-- [Architecture](#architecture)
-- [Important Note](#important-note)
-- [Get an Azure subscription](#get-an-azure-subscription)
-- [Azure VM Size Considerations](#azure-vm-size-considerations)
-- [Deploying the Azure VM](#deploying-the-azure-vm)
-- [Access your Azure VM](#access-your-azure-vm)
-- [Please Read - Finish Setup](#please-read---finish-setup)
-- [Next Steps](#next-steps)
-- [Troubleshooting](#troubleshooting)
-- [Product improvements](#product-improvements)
-- [Raising issues](#raising-issues)
+- [HOL-4: Exercise 3: Deploying Virtual Machines on your Azure Stack HCI 22H2 via the Windows Admin Portal](#hol-4-exercise-3-deploying-virtual-machines-on-your-azure-stack-hci-22h2-via-the-windows-admin-portal)
+  - [Overview](#overview)
+  - [Contents](#contents)
+  - [Task 1: Explore the existing volumes created on the **hciboxcluster**](#task-1-explore-the-existing-volumes-created-on-the-hciboxcluster)
+    - [Review a two-way mirror volume created to run VMs](#review-a-two-way-mirror-volume-created-to-run-vms)
+  - [Task 2: Download .Iso files](#task-2-download-iso-files)
+  - [Download the .ISO files](#download-the-iso-files)
+    - [Download a Windows Server 2022 .Iso](#download-a-windows-server-2022-iso)
+    - [Download an Ubuntu Server 22.04 .Iso](#download-an-ubuntu-server-2204-iso)
+  - [Upload the .ISO files](#upload-the-iso-files)
+    - [Upload the .Iso files to your CSV](#upload-the-iso-files-to-your-csv)
+  - [Task 3: Deploy a Windows Server 2022 virtual machine](#task-3-deploy-a-windows-server-2022-virtual-machine)
+  - [Task 4: Deploy an Ubuntu Server 22.04 virtual machine](#task-4-deploy-an-ubuntu-server-2204-virtual-machine)
+  - [Task 5: Live migrate a virtual machine to another node](#task-5-live-migrate-a-virtual-machine-to-another-node)
+  - [Summary](#summary)
+  - [Product improvements](#product-improvements)
+  - [Raising issues](#raising-issues)
 
-Architecture
+
+Task 1: Explore the existing volumes created on the **hciboxcluster**
 -----------
+In this step, you'll review a volume on the Azure Stack HCI 22H2 cluster by using Windows Admin Center, and enable data deduplication and compression.
 
-From an architecture perspective, the following graphic showcases the different layers and interconnections between the different components:
+### Review a two-way mirror volume created to run VMs ###
 
-![Architecture diagram for AKS on Azure Stack HCI in Azure](/media/nested_virt_arch_ga.png "Architecture diagram for AKS on Azure Stack HCI in Azure")
+1. Open **Windows Admin Center** on the **AdminCenter** VM. On the top left click on **All connections** and click on your previously deployed cluster, **hciboxcluster.jumpstart.local**
 
-The outer box represents the Azure Resource Group, which will contain all of the artifacts deployed in Azure, including the virtual machine itself, and accompaying network adapter, storage and so on. You'll deploy an Azure VM running Windows Server 2019 Datacenter. On top of this, you'll run the following:
+    ![Review the existing volumes for VMs](./media/ReviewVolumes-1.png "WAC Review HCI cluster Volumes")
+    
+        
+2. On the left hand navigation, under **Cluster resources** select **Volumes**.  The central **Volumes** page shows you a total of two volumes
 
-* A **2-node Azure Stack HCI 20H2 cluster**.
-* An **AKS-HCI infrastructure**, which includes a management cluster (kubernetes virtual appliance) and a target cluster, which is where you ultimately run your applications.
+    ![Review the existing volumes for VMs](./media/ReviewVolumes-2.png "WAC Review HCI cluster Volumes")
+    
+3. On the **Volumes** page, select the **Inventory** tab
 
-These will de deployed as 2 separate environments within the same Azure VM. In a production environment, you would run AKS-HCI **on top of** Azure Stack HCI, but in this nested environment, the performance of the multiple levels of nesting can have a negative impact, so in this case, they will be deployed side by side for evaluation.
+    ![Review the existing volumes for VMs](./media/ReviewVolumes-3.png "WAC Review HCI cluster Volumes")
+    
+4. Open the volume **S2D_vDISK1**, by clicking on the name of the volume. We see a couple of things now:
+   
+   **NOTE:** Invest enough time to read through the provided documentation as it covers some important information
 
-If you're interested in learning more about the building blocks of the Kubernetes infrastructure, you can [read more here](https://docs.microsoft.com/en-us/azure-stack/aks-hci/kubernetes-concepts "Kubernetes core concepts for Azure Kubernetes Service on Azure Stack HCI").
+   - The Volume File system is a **Cluster Shared Volume** of type **ReFS**
+     - *Please read more:* 
+       - https://learn.microsoft.com/en-us/azure-stack/hci/concepts/plan-volume
+       - https://learn.microsoft.com/en-us/azure-stack/hci/concepts/storage-spaces-direct-overview)
+   - The **Resiliency** was set to **Two-way mirror**
+     - *Please read more:*
+       - https://learn.microsoft.com/en-us/azure-stack/hci/concepts/fault-tolerance)
+   - **Deduplication** and **Encryption** is **Off**
+     - *Please read more:*
+       - https://learn.microsoft.com/en-us/azure-stack/hci/manage/volume-encryption-deduplication
+   - Also have a look at the Capacity and Performance indicators
+  
+      ![Review the existing volumes for VMs](./media/ReviewVolumes-4.png "WAC Review HCI cluster Volumes")
+  
+5. On the volume **S2D_vDISK1** page click on **Settings**. You will notice that the volume **S2D_vDISK1** has been provisioned as a type **Fixed**, but **Thin** provisioning of volumes is also available.
+   - *Please read more:*
+     - https://learn.microsoft.com/en-us/azure-stack/hci/manage/thin-provisioning
 
-Important Note
+        ![Review the existing volumes for VMs](./media/ReviewVolumes-5.png "WAC Review HCI cluster Volumes")
+
+You now have reviewed and learned more about Azure Stack HCI volumes. This **S2D_vDISK1** volume is ready to accept workloads. 
+
+Please also review the official documentation on how to create volumes on Azure Stack HCI, leveraging Windows Admin Center or PowerShell: https://learn.microsoft.com/en-us/azure-stack/hci/manage/create-volumes
+
+Task 2: Download .Iso files
 -----------
-The steps outlined in this guide are **specific to running inside an Azure VM**, running on a single Windows Server 2019 OS. If you plan to use these steps in an alternative environment, such as one nested/physical on-premises, the steps may differ and certain procedures may not work. If that is the case, please refer to the official documentation.
+In this step, you will download a Windows Server 2022 and Ubuntu Server 22.04 .Iso file and upload the .Iso to your Clustered Shared Volume you explored in Task 1. 
 
-Get an Azure subscription
+**_NOTE:_**  Make sure to use the Edge browser on the **AdminCenter** VM to execute the following steps.
+
+## Download the .ISO files ##
+### Download a Windows Server 2022 .Iso ###
+
+1. Please download Windows Server 2022 image file from [here](https://www.microsoft.com/en-us/evalcenter/download-windows-server-2022)
+ 
+2. In the English (United States) row select the Click **64-bit edition** in the ISO downloads row. Download the .iso which will be by saved in the Downloads folder.
+
+### Download an Ubuntu Server 22.04 .Iso ### 
+ 
+1. Please download Ubuntu Server 22.04 image file from [here](https://releases.ubuntu.com/jammy/ubuntu-22.04.2-live-server-amd64.iso)
+ 
+2. The download of the ISO file should automatically start. Once completed you should find it in your Downloads folder.
+
+## Upload the .ISO files ##
+### Upload the .Iso files to your CSV ###
+ 
+1. Open **Windows Admin Center** on **AdminCenter** VM from the desktop if it is not already opened, click on your previously deployed cluster, **hciboxcluster.jumpstart.local**
+ 
+    ![Review the existing volumes for VMs](./media/ReviewVolumes-1.png "WAC Review HCI cluster Volumes")
+ 
+2. On the left hand navigation, under **Cluster Resources** select **Servers** and then **Inventory**.
+ 
+    ![Upload .Iso files](./media/Upload-1.png "Upload .Iso files")
+
+3. Select node AzSHOST1 and then click **Manage**
+ 
+    ![Upload .Iso files](./media/Upload-2.png "Upload .Iso files")
+ 
+4. On the left, select **Files & file sharing**. Open the folder **C:\ClusterStorage\S2D_vDISK1**
+  
+    ![Upload .Iso files](./media/Upload-3.png "Upload .Iso files")
+ 
+5. Click **Upload**. Click **Select Files**, search and select both (Windows Server 2022 and Ubuntu Server 22.04) .iso files in the Downloads directory and click **Open**, and then click **Submit**. 
+ 
+    ![Upload .Iso files](./media/Upload-4.png "Upload .Iso files")
+  
+**NOTE:** It can take up to around 5-10 minutes to get both .ISO files successfully uploaded. Maybe a good time to grab a coffee ;-). Once both .ISO files are successfully uploaded you can move on to the next Task.
+
+Task 3: Deploy a Windows Server 2022 virtual machine
+----- 
+In this step, you will deploy a Windows Server 2022 virtual machine via Windows Admin Center.
+
+1. Once logged into the **Windows Admin Center** on the **AdminCenter** VM, click on your previously deployed cluster, **hciboxcluster.jumpstart.local**
+
+2. On the left hand navigation, under **Cluster Resources** select **Virtual machines**.  The central **Virtual machines** page shows that there are some virtual machines already running.
+    
+    ![Create VM](./media/vm001-1.png "Create VM on Azure Stack HCI 22H2")
+
+3. On the **Virtual machines** page, select the **Inventory** tab, and then click on **Add** and select **New**.
+
+    ![Create VM](./media/vm001-2.png "Create VM on Azure Stack HCI 22H2")
+
+4. In the **New virtual machine** pane, enter **VM001** for the name, and enter the following pieces of information, then click **Create**
+ 
+     * Generation: **Generation 2 (Recommended)**
+     * Host: **Leave as recommended**
+     * Path: **C:\ClusterStorage\S2D_vDISK1**
+     * Virtual processors: **2**
+     * Startup memory (GB): **4**
+     * Use dynamic memory: **Min 2, Max 6**
+     * Network: **sdnSwitch**
+     * Storage: **Add, then Create an empty virtual hard disk** and set size to **30GB**
+     * Operating System: Install an operating system from an image file (.iso). Select the Windows Server 2022 Iso file!
+
+    ![Create VM](./media/vm001-3.png "Create VM on Azure Stack HCI 22H2")
+      
+    ![Create VM](./media/vm001-4.png "Create VM on Azure Stack HCI 22H2")
+ 
+5. The creation process will take a few moments, and once complete, VM001 should show within the Virtual machines view
+
+6. Click on the checkbox before VM001 and then click on **Power** and select **Start** - within moments, the VM should be running.
+
+    ![Create VM](./media/vm001-5.png "Create VM on Azure Stack HCI 22H2")
+    ![Create VM](./media/vm001-6.png "Create VM on Azure Stack HCI 22H2")
+  
+7. Click on VM001 to view the properties and status for this running VM.
+ 
+    ![Create VM](./media/vm001-7.png "Create VM on Azure Stack HCI 22H2")
+
+8. Click on **Settings**, then click **Networks** and change the VLAN ID value to **200**. Click **Save network settings and click **Close**.
+ 
+    ![Create VM](./media/vm001-vlan200.png "Create VM on Azure Stack HCI 22H2")
+
+9. Click on Connect and select connect button from the drop down.
+
+    ![Create VM](./media/vm001-8.png "Create VM on Azure Stack HCI 22H2")
+ 
+10. Fill in the Username **arcdemo@jumpstart.local** and password **ArcPassword123!!**. Before clicking on **Connect** first make sure to click the checkbox before "Automatically connect with the certificate presented by this machine", when you receive the certificate prompt, click **Confirm**. Now click **Connect**.
+  
+    ![Create VM](./media/vm001-9.png "Create VM on Azure Stack HCI 22H2") 
+ 
+11. The VM will be in the UEFI boot summary as below
+ 
+    ![Create VM](./media/vm001-10.png "Create VM on Azure Stack HCI 22H2") 
+ 
+12. Click in "Send Ctrl + Alt + Del" at the top of the page now and press any key when you see the message "Press any key at boot from CD or DVD…"
+ 
+    ![Create VM](./media/vm001-11.png "Create VM on Azure Stack HCI 22H2") 
+ 
+13. From there you'll start the OOBE experience. Select the following settings according to your preferences: Language, Time currency and Keyboard. Click **Next**
+
+14. Click Install Now, and select the version Windows Server 2022 Standard Evaluation (Desktop Experience). Click **Next**
+ 
+    ![Create VM](./media/vm001-12.png "Create VM on Azure Stack HCI 22H2") 
+ 
+15. Accept the license terms. Click **Next**. Select "Custom: Install Windows only (advanced)" and then Next. It will take around 10 minutes for the VM to boot. After that, please insert the lab credentials **ArcPassword123!!** and your VM is ready to go!
+
+16. Once the virtual machine is up and running try to login!
+
+**NOTE:** You will notice that the VM did not received a proper IPv4 address from the DHCP server. If you want to fix this you can open the VM001 settings page and under Networking you can change the VLAN ID from 2 to 200. 
+
+![Create VM](./media/vm001-vlan200.png "Create VM on Azure Stack HCI 22H2") 
+
+If everything went well your Windows Server should now receive a proper IPv4 Address.
+
+You just finalized the installation of a new Window Server 2022 VM on your Azure Stack HCI Cluster. Please proceed to the next Task.
+
+Task 4: Deploy an Ubuntu Server 22.04 virtual machine
+----- 
+In this step, you will deploy an Ubuntu Server 22.04 virtual machine via Windows Admin Center.
+
+1. Once logged into the **Windows Admin Center** on the **AdminCenter** VM, click on cluster, **hciboxcluster.jumpstart.local**
+
+2. On the left hand navigation, under **Cluster Resources** select **Virtual machines**.  The central **Virtual machines** page shows that there are some virtual machines already running.
+    
+    ![Create VM](./media/vm002-1.png "Create VM on Azure Stack HCI 22H2")
+
+3. On the **Virtual machines** page, select the **Inventory** tab, and then click on **Add** and select **New**.
+
+    ![Create VM](./media/vm002-2.png "Create VM on Azure Stack HCI 22H2")
+
+4. In the **New virtual machine** pane, enter **VM002** for the name, and enter the following pieces of information, then click **Create**
+
+ 
+     * Generation: **Generation 2 (Recommended)**
+     * Host: **Leave as recommended**
+     * Path: **C:\ClusterStorage\S2D_vDISK1**
+     * Virtual processors: **1**
+     * Startup memory (GB): **2**     
+     * Network: **sdnSwitch**
+     * Storage: **Add, then Create an empty virtual hard disk** and set size to **20GB**
+     * Operating System: Install an operating system from an image file (.iso). Select the Ubuntu Server 22.04 Iso file!
+
+    ![Create VM](./media/vm002-3.png "Create VM on Azure Stack HCI 22H2")
+      
+    ![Create VM](./media/vm002-4.png "Create VM on Azure Stack HCI 22H2")
+ 
+ 
+5. The creation process will take a few moments, and once complete, VM002 should show within the Virtual machines view
+
+1. Click on the VM name **VM002** and then Click on **Settings** to view all VM properties. Click on **Security**
+ 
+    ![Create VM](./media/vm002-4a.png "Create VM on Azure Stack HCI 22H2")
+
+1. Make sure to change the Secure Boot template to "Microsoft UEFI Certificate Authority" in the Template drop down box, and click **save security settings**. DO NOT CLICK **Close**.
+
+    ![Create VM](./media/vm002-4b.png "Create VM on Azure Stack HCI 22H2")
+
+1. Click **Networks** in the left menu under "Settings for VM002" and make sure to change the VLAN identifier to **200** and click **save Networks settings**. Click Close.
+
+    ![Create VM](./media/vm002-4c.png "Create VM on Azure Stack HCI 22H2")
+
+6. Click on **Power** and select **Start** - within moments, the VM should be running.
+
+    ![Create VM](./media/vm002-5.png "Create VM on Azure Stack HCI 22H2")
+    
+  
+7. View the properties and status for this running VM.
+ 
+    ![Create VM](./media/vm002-7.png "Create VM on Azure Stack HCI 22H2")
+    
+
+8. Click on Connect and select connect button from the drop down.
+
+    ![Create VM](./media/vm002-8.png "Create VM on Azure Stack HCI 22H2")
+ 
+9.  Fill in the Username **arcdemo@jumpstart.local** and password **ArcPassword123!!**. Before clicking on **Connect** first make sure to click the checkbox before "Automatically connect with the certificate presented by this machine", when you receive the certificate prompt, click **Confirm**. Now click **Connect**.
+  
+    ![Create VM](./media/vm002-9.png "Create VM on Azure Stack HCI 22H2") 
+ 
+
+1. Once the integrity check is done you will be able to select your language. Select **English**.
+
+    ![Create VM](./media/vm002-10.png "Create VM on Azure Stack HCI 22H2") 
+
+1. On the "Keyboard configuration" page, select **Done** and ENTER
+
+    ![Create VM](./media/vm002-11.png "Create VM on Azure Stack HCI 22H2")
+
+1. On the "Choose type of install" page, select **Done** and ENTER
+
+    ![Create VM](./media/vm002-12.png "Create VM on Azure Stack HCI 22H2") 
+
+2. On the "Network connections" page, select **Done** and ENTER
+   
+   **NOTE:** Make sure you see an IP on the DHCPv4 line!
+
+    ![Create VM](./media/vm002-13.png "Create VM on Azure Stack HCI 22H2") 
+
+3. On the "Configure Proxy" page, select **Done** and ENTER
+
+    ![Create VM](./media/vm002-14.png "Create VM on Azure Stack HCI 22H2")
+
+3. On the "Configure Ubuntu archive mirror" page, select **Done** and ENTER
+
+    ![Create VM](./media/vm002-15.png "Create VM on Azure Stack HCI 22H2") 
+
+7. On the "Guided storage configuration" page, select **Done** and ENTER
+
+    ![Create VM](./media/vm002-16.png "Create VM on Azure Stack HCI 22H2")
+
+8.  On the storage configuration screen, select **Done** and then Select **Continue** to confirm the destructive action popup screen.
+
+    ![Create VM](./media/vm002-17.png "Create VM on Azure Stack HCI 22H2")
+
+9.  On the Profile setup screen complete the fields a below and then select **Done** and ENTER
+     * Your name: arcdemo
+     * Your server's name: vm002
+     * Pick a username: arcdemo
+     * Choose a password: ArcPassword123!!
+     * Confirm your password: ArcPassword123!!
+
+    ![Create VM](./media/vm002-18.png "Create VM on Azure Stack HCI 22H2")
+
+10. On the "Upgrade to Ubuntu Pro" screen, select **Continue** and ENTER
+
+    ![Create VM](./media/vm002-19.png "Create VM on Azure Stack HCI 22H2")
+
+11. On the "SSH setup" screen, select "Install openSSH server" and select **Done**
+
+    ![Create VM](./media/vm002-20.png "Create VM on Azure Stack HCI 22H2")
+
+12. On the "Featured Server snaps" screen, select **Done**
+
+    ![Create VM](./media/vm002-21.png "Create VM on Azure Stack HCI 22H2")
+
+13. Now wait until you get the "Install complete!" screen and select **Reboot Now** and ENTER
+
+15. Once the virtual machine is up and running try to login!
+
+
+Task 5: Live migrate a virtual machine to another node
+----- 
+
+The final step we'll cover is using Windows Admin Center to live migrate VM002 from it's current node, to an alternate node in the cluster.
+
+1. Still within the **Windows Admin Center** on **AdminCenter** VM, under **Cluster Resources**, click on **Virtual machines**
+
+2. On the **Virtual machines** page, select the **Inventory** tab
+
+3. Under **Host server**, make a note of the node that VM002 is currently running on.  You may need to expand the column width to see the name
+
+    ![Create VM](./media/LiveMigrate-1.png "Create VM on Azure Stack HCI 22H2")
+
+4. Next to **VM002**, click the tick box next to VM002, then click **More**.  You'll notice you can Clone, Domain Join and also Move the VM. Click **Move**
+
+    ![Create VM](./media/LiveMigrate-2.png "Create VM on Azure Stack HCI 22H2")
+
+5. Next to **VM002**, click the tick box next to VM002, then click **More**.  You'll notice you can Clone, Domain Join and also Move the VM. Click **Move**    
+
+    ![Create VM](./media/LiveMigrate-3.png "Create VM on Azure Stack HCI 22H2")
+
+    ![Create VM](./media/LiveMigrate-4.png "Create VM on Azure Stack HCI 22H2")
+
+You've successfully moved a running VM without downtime using the Windows Admin Center to another Host in the Azure Stack HCI cluster!
+
+Summary
 -----------
-To evaluate Azure Stack HCI 20H2 and AKS on Azure Stack HCI in Azure, you'll need an Azure subscription.  If you already have one provided by your company, you can skip this step, but if not, you have a couple of options.
+In this exercise, you have been exploring the existing Cluster Shared Volume which was created for you on Azure Stack HCI cluster. You also looked at more details and options related to the Volumes you can create in Azure Stack HCI. In Task 2 you downloaded some ISO files which you have used in Task 3 and Task 4 to respectively deployed a Windows Server 2022 VM and an Ubuntu 22.04 VM on the Azure Stack HCI Cluster. You finished this exercise by testing a Live migration of the Linux based VM to another available Azure Stack HCI Cluster node.
 
-The first option would apply to Visual Studio subscribers, where you can use Azure at no extra charge. With your monthly Azure DevTest individual credit, Azure is your personal sandbox for dev/test. You can provision virtual machines, cloud services, and other Azure resources. Credit amounts vary by subscription level, but if you manage your Hybrid Host VM run-time efficiently, you can test the scenario well within your subscription limits.
-
-The second option would be to sign up for a [free trial](https://azure.microsoft.com/en-us/free/ "Azure free trial link"), which gives you $200 credit for the first 30 days, and 12 months of popular services for free. The credit for the first 30 days will give you plenty of headroom to validate AKS on Azure Stack HCI.
-
-You can also use this same Azure subscription to integrate with Azure Arc, once the deployment is completed.
-
-Azure VM Size Considerations
------------
-
-Now, before you deploy the VM in Azure, it's important to choose a **size** that's appropriate for your needs for this workshop, along with a preferred region. It's highly recommended to choose a VM size that has **at least 64GB memory**. This deployment, by default, recommends using a **Standard_E16s_v4**, which is a memory-optimized VM size, with 16 vCPUs, 128 GiB memory, and no temporary SSD storage. The OS drive will be the default 127 GiB in size and the Azure VM deployment will add an additional 8 data disks (32 GiB each by default), so you'll have around 256GiB to deploy Azure Stack HCI 20H2 and AKS on Azure Stack HCI. You can also make this larger after deployment, if you wish.
-
-This is just one VM size that we recommend - you can adjust accordingly to suit your needs, even after deployment. The point here is, think about how large an Azure Stack HCI 20H2 and AKS on Azure Stack HCI infrastructure you'd like to deploy inside this Azure VM, and select an Azure VM size from there. Some potential examples would be:
-
-**D-series VMs (General purpose) with at least 64GB memory**
-
-| Size | vCPU | Memory: GiB | Temp storage (SSD): GiB | Premium Storage |
-|:--|---|---|---|---|
-| Standard_D16s_v3  | 16  | 64 | 128 | Yes |
-| Standard_D16_v4  | 16  | 64 | 0 | No |
-| **Standard_D16s_v4**  | **16**  | **64**  | **0**  | **Yes** |
-| Standard_D16d_v4 | 16 | 64  | 600 | No |
-| Standard_D16ds_v4 | 16 | 64 | 600 | Yes |
-
-For reference, the Standard_D16s_v4 VM size costs approximately US $0.77 per hour based on East US region, under a Visual Studio subscription.
-
-**E-series VMs (Memory optimized - Recommended for this Hybrid Workshop) with at least 64GB memory**
-
-| Size | vCPU | Memory: GiB | Temp storage (SSD): GiB | Premium Storage |
-|:--|---|---|---|---|
-| Standard_E8s_v3  | 8  | 64  | 128  | Yes  |
-| Standard_E8_v4  | 8  | 64  | 0  | No |
-| **Standard_E8s_v4**  | **8**  | **64**  | **0**  | **Yes** |
-| Standard_E8d_v4 | 8 | 64  | 300  | No |
-| Standard_E8ds_v4 | 8 | 64 | 300  | Yes |
-| Standard_E16s_v3  | 16  | 128 | 256 | Yes |
-| **Standard_E16s_v4**  | **16**  | **128**  | **0**  | **Yes** |
-| Standard_E16d_v4 | 16 | 128  | 600 | No |
-| Standard_E16ds_v4 | 16 | 128 | 600 | Yes |
-
-For reference, the Standard_E8s_v4 VM size costs approximately US $0.50 per hour based on East US region, under a Visual Studio subscription.
-
-**NOTE 1** - A number of these VM sizes include temp storage, which offers high performance, but is not persistent through reboots, Azure host migrations and more. It's therefore advisable, that if you are going to be running the Azure VM for a period of time, but shutting down frequently, that you choose a VM size with no temp storage, and ensure your nested VMs are placed on the persistent data drive within the OS.
-
-**NOTE 2** - It's strongly recommended that you choose a VM size that supports **premium storage** - when running nested virtual machines, increasing the number of available IOPS can have a significant impact on performance, hence choosing **premium storage** over Standard HDD or Standard SSD, is strongly advised. Refer to the table above to make the most appropriate selection.
-
-**NOTE 3** - Please ensure that whichever VM size you choose, it [supports nested virtualization](https://docs.microsoft.com/en-us/azure/virtual-machines/acu "Nested virtualization support") and is [available in your chosen region](https://azure.microsoft.com/en-us/global-infrastructure/services/?products=virtual-machines "Virtual machines available by region").
-
-Deploying the Azure VM
------------
-The guidance below provides a simple template-based option for deploying the Azure VM. The template deployment will be automated to the point of which you can proceed immediately to start creating your Azure Stack HCI 20H2 cluster, and progress through your workshop.
-
-### Deployment detail ###
-As part of the deployment, the following steps will be **automated for you**:
-
-1. A Windows Server 2019 Datacenter VM will be deployed in Azure
-2. 8 x 32GiB (by default) Azure Managed Disks will be attached and provisioned with a Simple Storage Space for optimal nested VM performance
-3. The Hyper-V role and management tools will be installed and configured
-4. An Internal vSwitch will be created and NAT configured to enable outbound networking
-5. The DNS role and accompanying management tools will be installed and DNS fully configured
-6. The DHCP role and accompanying management tools will be installed and DHCP fully configured. DHCP Scope will be **enabled**
-7. Windows Admin Center will be installed and pre-installed extensions updated
-8. The Microsoft Edge browser will be installed
-9. The Azure Stack HCI 20H2 binaries will be downloaded
-10. 2 x Azure Stack HCI 20H2 nodes will be created and deployed, ready to start cluster creation
-
-This automated deployment **should take around 50 minutes**, due to the image creation of the Azure Stack HCI 20H2 nodes - these are created, **offline patched** and deployed, which takes time.
-
-### Creating the VM with an Azure Resource Manager JSON Template ###
-To keep things simple, and graphical, we'll show you how to deploy your VM via an Azure Resource Manager template.  To simplify things further, we'll use the following buttons.
-
-Firstly, the **Visualize** button will launch the ARMVIZ designer view, where you will see a graphic representing the core components of the deployment, including the VM, NIC, disk and more. If you want to open this in a new tab, **hold CTRL** when you click the button.
-
-[![Visualize your template deployment](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/visualizebutton.png)](http://armviz.io/#/?load=https%3A%2F%2Fraw.githubusercontent.com%2Fmattmcspirit%2Fhybridworkshop%2Fmain%2Fjson%2Fhybridhost.json "Visualize your template deployment")
-
-Secondly, the **Deploy to Azure** button, when clicked, will take you directly to the Azure portal, and upon login, provide you with a form to complete. If you want to open this in a new tab, **hold CTRL** when you click the button.
-
-[![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fmattmcspirit%2Fhybridworkshop%2Fmain%2Fjson%2Fhybridhost.json "Deploy to Azure")
-
-Upon clicking the **Deploy to Azure** button, enter the details, which should look something similar to those shown below, and click **Purchase**.
-
-![Custom template deployment in Azure](/media/azure_vm_custom_template_new.png "Custom template deployment in Azure")
-
-**NOTE** - For customers with Software Assurance, Azure Hybrid Benefit for Windows Server allows you to use your on-premises Windows Server licenses and run Windows virtual machines on Azure at a reduced cost. By selecting **Yes** for the "Already have a Windows Server License", **you confirm I have an eligible Windows Server license with Software Assurance or Windows Server subscription to apply this Azure Hybrid Benefit** and have reviewed the [Azure hybrid benefit compliance](http://go.microsoft.com/fwlink/?LinkId=859786 "Azure hybrid benefit compliance document")
-
-The custom template will be validated, and if all of your entries are correct, you can click **Create**. Within a few minutes, your VM will be created.
-
-![Custom template deployment in Azure completed](/media/azure_vm_custom_template_completed.png "Custom template deployment in Azure completed")
-
-If you chose to **enable** the auto-shutdown for the VM, and supplied a time, and time zone, but want to also add a notification alert, simply click on the **Go to resource group** button and then perform the following steps:
-
-1. In the **Resource group** overview blade, click the **HybridHost001** virtual machine
-2. Once on the overview blade for your VM, **scroll down on the left-hand navigation**, and click on **Auto-shutdown**
-3. Ensure the Enabled slider is still set to **On** and that your **time** and **time zone** information is correct
-4. Click **Yes** to enable notifications, and enter a Webhook URL, or Email address
-5. Click **Save**
-
-You'll now be notified when the VM has been successfully shut down as the requested time.
-
-With that completed, skip on to [connecting to your Azure VM](#connect-to-your-azure-vm)
-
-#### Deployment errors ####
-If your Azure VM fails to deploy successfully, and the error relates to the **HybridHost001/ConfigureHybridHost** PowerShell DSC extension, please refer to the [troubleshooting steps below](#troubleshooting).
-
-Access your Azure VM
------------
-
-With your Azure VM (HybridHost001) successfully deployed and configured, you're ready to connect to the VM to start the deployment of the Azure Stack HCI 20H2 and AKS on Azure Stack HCI infrastructure.
-
-### Connect to your Azure VM ###
-Firstly, you'll need to connect into the VM, with the easiest approach being via Remote Desktop.  If you're not already logged into the Azure portal, visit https://portal.azure.com/, and login with the same credentials used earlier.  Once logged in, using the search box on the dashboard, enter "**hybridhost**" and once the results are returned, **click on your HybridHost001 virtual machine**.
-
-![Virtual machine located in Azure](/media/azure_vm_search.png "Virtual machine located in Azure")
-
-Once you're on the Overview blade for your VM, along the top of the blade, click on **Connect** and from the drop-down options.
-
-![Connect to a virtual machine in Azure](/media/connect_to_vm.png "Connect to a virtual machine in Azure")
-
-Select **RDP**. On the newly opened Connect blade, ensure the **Public IP** is selected. Ensure the RDP port matches what you provided at deployment time. By default, this should be **3389**. Then click **Download RDP File** and select a suitable folder to store the .rdp file.
-
-![Configure RDP settings for Azure VM](/media/connect_to_vm_properties.png "Configure RDP settings for Azure VM")
-
-Once downloaded, locate the .rdp file on your local machine, and double-click to open it. Click **connect** and when prompted, enter the credentials you supplied when creating the VM earlier.  **NOTE**, this should be a **domain account**, which by default, is **hybrid\azureuser**.
-
-**Username:** hybrid\azureuser
-**Password:** password-you-used-at-VM-deployment-time
-
-Accept any certificate prompts, and within a few moments, you should be successfully logged into the Windows Server 2019 VM.
-
-Please Read - Finish Setup
------------
-Once the Azure VM deployment process has completed, your Azure Stack HCI 20H2 nodes are still processing changes, including adding roles and features inside the nested hosts. Please allow ~5 minutes for this process to complete and stabilize.
-
-You can then optionally shut down your Azure VM, should you wish to continue your evaluation on another day.
-
-Next Steps
------------
-In this step, you've successfully created and automatically configured your Azure VM, which will serve as the host for your Azure Stack HCI 20H2 and AKS on Azure Stack HCI infrastructure. You're now ready to move on to the next step.
-
-* [**Part 2** - Configure your Azure Stack HCI 20H2 Cluster](/steps/2_DeployAzSHCI.md "Configure your Azure Stack HCI 20H2 Cluster")
-
-Troubleshooting
------------
-From time to time, a transient, random deployment error may cause the Azure VM to show a failed deployment. This is typically caused by reboots and timeouts within the VM as part of the PowerShell DSC configuration process, in particular, when the Hyper-V role is enabled and the system reboots multiple times in quick succession. We've also seen instances where changes with Chocolatey Package Manager cause deployment issues.
-
-![Azure VM deployment error](/media/vm_deployment_error.png "Azure VM deployment error")
-
-If the error is related to the **HybridHost001/ConfigureHybridHost**, most likely the installation did complete successfully in the end, but to double-check, you can perform these steps:
-
-1. Follow the steps above to [connect to your Azure VM](#connect-to-your-azure-vm)
-2. Once successfully connected, open a **PowerShell console as administrator** and run the following command to confirm the status of the last run:
-
-```powershell
-# Check for last run
-Get-DscConfigurationStatus
-```
-![Result of Get-DscConfigurationStatus](/media/get-dscconfigurationstatus.png "Result of Get-DscConfigurationStatus")
-
-3. As you can see, in this particular case, the PowerShell DSC configuration **status appears to have been successful**, however your results may show a different result. Just for good measure, you can re-apply the configuration by **running the following commands**:
-
-```powershell
-cd "C:\Packages\Plugins\Microsoft.Powershell.DSC\*\DSCWork\hybridhost.0\HybridHost"
-Start-DscConfiguration -Path . -Wait -Force -Verbose
-```
-
-4. If all goes well, you should see the DSC configuration reapplied without issues. If you then re-run the following PowerShell command, you should see success:
-
-```powershell
-# Check for last run
-Get-DscConfigurationStatus
-```
-
-![Result of Get-DscConfigurationStatus](/media/get-dscconfigurationstatus2.png "Result of Get-DscConfigurationStatus")
-
-**NOTE** - If this doesn't fix your issue, consider redeploying your Azure VM. If the issue persists, please **raise an issue!**
+With this completed, you can now move on to the next exercise.
 
 Product improvements
 -----------
 If, while you work through this guide, you have an idea to make the product better, whether it's something in Azure Stack HCI, AKS on Azure Stack HCI, Windows Admin Center, or the Azure Arc integration and experience, let us know! We want to hear from you!
 
-For **Azure Stack HCI**, [Head on over to the Azure Stack HCI 20H2 Q&A forum](https://docs.microsoft.com/en-us/answers/topics/azure-stack-hci.html "Azure Stack HCI 20H2 Q&A"), where you can share your thoughts and ideas about making the technologies better and raise an issue if you're having trouble with the technology.
+For **Azure Stack HCI**, [Head on over to the Azure Stack HCI Q&A forum](https://learn.microsoft.com/en-us/answers/tags/6/azure-stack-hci "Azure Stack HCI Q&A"), where you can share your thoughts and ideas about making the technologies better and raise an issue if you're having trouble with the technology.
 
-For **AKS on Azure Stack HCI**, [Head on over to our AKS on Azure Stack HCI 20H2 GitHub page](https://github.com/Azure/aks-hci/issues "AKS on Azure Stack HCI GitHub"), where you can share your thoughts and ideas about making the technologies better. If however, you have an issue that you'd like some help with, read on... 
+For **AKS on Azure Stack HCI**, [Head on over to our AKS on Azure Stack HCI GitHub page](https://github.com/Azure/aks-hci/issues "AKS on Azure Stack HCI GitHub"), where you can share your thoughts and ideas about making the technologies better. If however, you have an issue that you'd like some help with, read on... 
 
 Raising issues
 -----------
-If you notice something is wrong with this guide, such as a step isn't working, or something just doesn't make sense - help us to make this guide better!  Raise an issue in GitHub, and we'll be sure to fix this as quickly as possible!
+This lab is based on the Azure Arc Jumpstart HCIBox: https://azurearcjumpstart.io/azure_jumpstart_hcibox/
 
-If you're having an issue with Azure Stack HCI 20H2 **outside** of this guide, [head on over to the Azure Stack HCI 20H2 Q&A forum](https://docs.microsoft.com/en-us/answers/topics/azure-stack-hci.html "Azure Stack HCI 20H2 Q&A"), where Microsoft experts and valuable members of the community will do their best to help you.
+<img src="https://azurearcjumpstart.io/img/hcibox_logo.png" width="20%" height="20%">
 
-If you're having a problem with AKS on Azure Stack HCI **outside** of this guide, make sure you post to [our GitHub Issues page](https://github.com/Azure/aks-hci/issues "GitHub Issues"), where Microsoft experts and valuable members of the community will do their best to help you.
+If you want to setup the lab within your own Azure subscription please follow this link : https://azurearcjumpstart.io/azure_jumpstart_hcibox/#deployment-options-and-automation-flow
+
+If you notice something is wrong with this guide, such as a step isn't working, or something just doesn't make sense - help us to make this guide better!
