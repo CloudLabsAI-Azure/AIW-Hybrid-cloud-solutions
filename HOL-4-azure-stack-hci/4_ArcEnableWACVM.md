@@ -14,9 +14,9 @@ Contents
     - [Add a Policy to the newly created Resource Group](#add-a-policy-to-the-newly-created-resource-group)
   - [Task 2: Azure Arc-enable VM002 - Ubuntu Linux 22.04](#task-2-azure-arc-enable-vm002---ubuntu-linux-2204)
     - [Prepare the step in Azure to onboard VM002 as an Azure Arc-enabled Virtual Machine](#prepare-the-step-in-azure-to-onboard-vm002-as-an-azure-arc-enabled-virtual-machine)
-    - [Azure Arc-enable VM002](#azure-arc-enable-vm002)
-  - [Task 4: Deploy an Ubuntu Server 22.04 virtual machine](#task-4-deploy-an-ubuntu-server-2204-virtual-machine)
-  - [Task 5: Live migrate a virtual machine to another node](#task-5-live-migrate-a-virtual-machine-to-another-node)
+    - [Azure Arc-enable virtual machine VM002](#azure-arc-enable-virtual-machine-vm002)
+  - [Task 3: Leverage the Azure AD RBAC controls to securely connect to VM002 via the Azure Arc-enabled Server capabilities](#task-3-leverage-the-azure-ad-rbac-controls-to-securely-connect-to-vm002-via-the-azure-arc-enabled-server-capabilities)
+  - [Prepare  the Azure Connected Machine agent confiruration on the VM002](#prepare--the-azure-connected-machine-agent-confiruration-on-the-vm002)
   - [Summary](#summary)
   - [Product improvements](#product-improvements)
   - [Raising issues](#raising-issues)
@@ -106,169 +106,116 @@ In this step, you will download a Windows Server 2022 and Ubuntu Server 22.04 .I
    
     ![Create Azure Resource Group](./media/vm002arc-7.png "Create Azure Resource Group")
 
-### Azure Arc-enable VM002 ###
+### Azure Arc-enable virtual machine VM002 ###
  
-1. Open **Windows Admin Center** on **AdminCenter** VM from the desktop if it is not already opened, click on your previously deployed cluster, **hciboxcluster.jumpstart.local**
+1. On **AdminCenter** VM,  type **CMD** in the searchbox (right from Start) and then **ENTER**. Right-click the Command Prompt, and click **Run as Administrator**.
  
-    ![Review the existing volumes for VMs](./media/ReviewVolumes-1.png "WAC Review HCI cluster Volumes")
+    ![](./media/vm002arc-8.png "")
+
+2. When receiving a **User Account Control** popup screen Click **Yes**
+ 
+    ![](./media/vm002arc-9.png "")
+
+3. In the **Command Prompt** window, type **"scp C:\Users\arcdemo\Downloads\OnboardingScript.sh"** arcdemo@192.168.200.210:OnboardingScript.sh** and **ENTER**. Type the Password ***ArcPassword123!!*** and **ENTER**. By doing this we will copy the Azure Arc-enabled Server Onboarding Script **OnboardingScript.sh** to VM002.
+ 
+    ![](./media/vm002arc-10.png "")
+
+4. In the **Command Prompt** window, type **ssh arcdemo@192.168.200.210** and **ENTER**. Type the Password ***ArcPassword123!!*** and **ENTER**. You now SSHed into the VM002 Virtual Machine.
+ 
+    ![](./media/vm002arc-11.png "")
+
+5. In the **Command Prompt** window, type **ls** and **ENTER**. You now should see the uploaded Azure Arc-enabled Server Onboarding script **OnboardingScript.sh**. Next start the Onboarding Script by typing **bash ~/OnboardingScript.sh** and **ENTER**. If asked provide the Password **ArcPassword123!!** adn **ENTER**
+ 
+    ![](./media/vm002arc-12.png "")
+
+6. When you receive the below screen, double click on the code and then click on your right mouse button to put the code on your Clipboard.
+ 
+    ![](./media/vm002arc-13.png "")
+
+7. Open a new browser tab and go to **https://aka.ms/devicelogin**, paste the Code from your Clipboard (check if there is no extra space behind the code!). Click **NEXT**
+ 
+    ![](./media/vm002arc-14.png "")
+
+8. Click on the Username. Click **Ask later**. Click **Continue**. Close the Browser tab.
+ 
+    ![](./media/vm002arc-15.png "")
+    ![](./media/vm002arc-16.png "")
+    ![](./media/vm002arc-17.png "")
+
+9. Go back to the **Command Prompt** window, where you should see something similar to the below screenshot. Type **exit** and ENTER to disconnect the SSH connection. Type **Exit** again to close the Command Prompt.
+ 
+    ![](./media/vm002arc-18.png "")
+
+10. In the "Search resources, services, and docs" search box at the top of the Azure Portal page, type **Servers** and click **Servers - Azure Arc** under Services.
+
+    ![](./media/vm002arc-1.png "")
+
+11. On the **Azure Arc | Servers** page, Click on **vm002**, which you just added as an Azure Arc-enabled virtual machine to Azure.
+
+    ![](./media/vm002arc-19.png "")
+
+12. On the **vm002** page, click **Policies**.
+    
+    Do you remember that you assigned an Azure Policy to the Resource Group **ArcServers-rg** in the beginning of this exercise? 
+    Now you can check if this Azure policy was successfully assigned to VM002 we added to that ReSource Group.
+
+    ![](./media/vm002arc-20.png "")
+
+13. Like you will notice the policy was successfully assigned. This is just an example of the power of using Azure Policies. Imagine what you all can automate just by leveraging Azure Policies, not only for Compliance, regulations, Privacy, ... checks
+        
+    ![](./media/vm002arc-21.png "")
 
 
-**UPDATE FROM HERE**
-
-
-
-Task 4: Deploy an Ubuntu Server 22.04 virtual machine
+Task 3: Leverage the Azure AD RBAC controls to securely connect to VM002 via the Azure Arc-enabled Server capabilities
 ----- 
-In this step, you will deploy an Ubuntu Server 22.04 virtual machine via Windows Admin Center.
+In this step, you will prepare the Azure Connected Machine agent on the VM002 to securely connect to VM002
 
-1. Once logged into the **Windows Admin Center** on the **AdminCenter** VM, click on cluster, **hciboxcluster.jumpstart.local**
+## Prepare  the Azure Connected Machine agent confiruration on the VM002 ##
 
-2. On the left hand navigation, under **Cluster Resources** select **Virtual machines**.  The central **Virtual machines** page shows that there are some virtual machines already running.
+1. On **AdminCenter** VM,  type **CMD** in the searchbox (right from Start) and then **ENTER**. Right-click the Command Prompt, and click **Run as Administrator**.
+ 
+    ![](./media/vm002arc-8.png "")
+
+2. When receiving a **User Account Control** popup screen Click **Yes**
+ 
+    ![](./media/vm002arc-9.png "")
+
+3. In the **Command Prompt** window, type **ssh arcdemo@192.168.200.210** and **ENTER**. Type the Password ***ArcPassword123!!*** and **ENTER**. You now SSHed into the VM002 Virtual Machine.
+ 
+    ![](./media/vm002arc-11.png "")
+
+4. In the **Command Prompt** window, type **sudo -i** and **ENTER**. Type the Password ***ArcPassword123!!*** and **ENTER**.
+ 
+    ![](./media/ssh-1.png "")
+
+5. In the **Command Prompt** window, type **azcmagent config list** and **ENTER**. You will notice that the configuration of the incomfingconnections.ports value is empty
+
+    ![](./media/ssh-2.png "")
+
+6. In the **Command Prompt** window, type **azcmagent config set incomingconnections.ports 22** and **ENTER**. Now type **azcmagent config list** and **ENTER**. You will notice that the configuration of the incomingconnections.ports value is now set to **22**. Type **Exit** + **Enter** 3 times to close the Command Prompt.
+
+    ![](./media/ssh-3.png "")
+
+7. Go back to the Azure Portal and in the **"Search resources, services, and docs"** search box at the top of the Azure Portal page, type **vm002** and click **vm002** under **Resources**.
+
+    ![](./media/ssh-4.png "")
+
+8. On the **vm002** pagem click **Connect** under **settings**. On the **vm002 | Connect** page, click Password. Add **arcdemo** in the Username field. Click **Connect in browser**. If this is the first time you opened an Azure Shell, you will be asked to create a storage account. Click on **Create storage**.
+
+    ![](./media/ssh-5.png "")
+
+9. If all went well you should have established a SSH connection from within the Azure Portal to your on-premises Azure Arc-enabled Virtual Machine, for example on an Azure Stack HCI.
+
+    **NOTE** Learn more : https://learn.microsoft.com/en-us/azure/azure-arc/servers/ssh-arc-overview    
+
+    ![](./media/ssh-6.png "")
+
     
-    ![Create VM](./media/vm002-1.png "Create VM on Azure Stack HCI 22H2")
-
-3. On the **Virtual machines** page, select the **Inventory** tab, and then click on **Add** and select **New**.
-
-    ![Create VM](./media/vm002-2.png "Create VM on Azure Stack HCI 22H2")
-
-4. In the **New virtual machine** pane, enter **VM002** for the name, and enter the following pieces of information, then click **Create**
-
- 
-     * Generation: **Generation 2 (Recommended)**
-     * Host: **Leave as recommended**
-     * Path: **C:\ClusterStorage\S2D_vDISK1**
-     * Virtual processors: **1**
-     * Startup memory (GB): **2**     
-     * Network: **sdnSwitch**
-     * Storage: **Add, then Create an empty virtual hard disk** and set size to **20GB**
-     * Operating System: Install an operating system from an image file (.iso). Select the Ubuntu Server 22.04 Iso file!
-
-    ![Create VM](./media/vm002-3.png "Create VM on Azure Stack HCI 22H2")
-      
-    ![Create VM](./media/vm002-4.png "Create VM on Azure Stack HCI 22H2")
- 
- 
-5. The creation process will take a few moments, and once complete, VM002 should show within the Virtual machines view
-
-1. Click on the VM name **VM002** and then Click on **Settings** to view all VM properties. Click on **Security**
- 
-    ![Create VM](./media/vm002-4a.png "Create VM on Azure Stack HCI 22H2")
-
-1. Make sure to change the Secure Boot template to "Microsoft UEFI Certificate Authority" in the Template drop down box, and click **save security settings**. DO NOT CLICK **Close**.
-
-    ![Create VM](./media/vm002-4b.png "Create VM on Azure Stack HCI 22H2")
-
-1. Click **Networks** in the left menu under "Settings for VM002" and make sure to change the VLAN identifier to **200** and click **save Networks settings**. Click Close.
-
-    ![Create VM](./media/vm002-4c.png "Create VM on Azure Stack HCI 22H2")
-
-6. Click on **Power** and select **Start** - within moments, the VM should be running.
-
-    ![Create VM](./media/vm002-5.png "Create VM on Azure Stack HCI 22H2")
-    
-  
-7. View the properties and status for this running VM.
- 
-    ![Create VM](./media/vm002-7.png "Create VM on Azure Stack HCI 22H2")
-    
-
-8. Click on Connect and select connect button from the drop down.
-
-    ![Create VM](./media/vm002-8.png "Create VM on Azure Stack HCI 22H2")
- 
-9.  Fill in the Username **arcdemo@jumpstart.local** and password **ArcPassword123!!**. Before clicking on **Connect** first make sure to click the checkbox before "Automatically connect with the certificate presented by this machine", when you receive the certificate prompt, click **Confirm**. Now click **Connect**.
-  
-    ![Create VM](./media/vm002-9.png "Create VM on Azure Stack HCI 22H2") 
- 
-
-1. Once the integrity check is done you will be able to select your language. Select **English**.
-
-    ![Create VM](./media/vm002-10.png "Create VM on Azure Stack HCI 22H2") 
-
-1. On the "Keyboard configuration" page, select **Done** and ENTER
-
-    ![Create VM](./media/vm002-11.png "Create VM on Azure Stack HCI 22H2")
-
-1. On the "Choose type of install" page, select **Done** and ENTER
-
-    ![Create VM](./media/vm002-12.png "Create VM on Azure Stack HCI 22H2") 
-
-2. On the "Network connections" page, select **Done** and ENTER
-   
-   **NOTE:** Make sure you see an IP on the DHCPv4 line!
-
-    ![Create VM](./media/vm002-13.png "Create VM on Azure Stack HCI 22H2") 
-
-3. On the "Configure Proxy" page, select **Done** and ENTER
-
-    ![Create VM](./media/vm002-14.png "Create VM on Azure Stack HCI 22H2")
-
-3. On the "Configure Ubuntu archive mirror" page, select **Done** and ENTER
-
-    ![Create VM](./media/vm002-15.png "Create VM on Azure Stack HCI 22H2") 
-
-7. On the "Guided storage configuration" page, select **Done** and ENTER
-
-    ![Create VM](./media/vm002-16.png "Create VM on Azure Stack HCI 22H2")
-
-8.  On the storage configuration screen, select **Done** and then Select **Continue** to confirm the destructive action popup screen.
-
-    ![Create VM](./media/vm002-17.png "Create VM on Azure Stack HCI 22H2")
-
-9.  On the Profile setup screen complete the fields a below and then select **Done** and ENTER
-     * Your name: arcdemo
-     * Your server's name: vm002
-     * Pick a username: arcdemo
-     * Choose a password: ArcPassword123!!
-     * Confirm your password: ArcPassword123!!
-
-    ![Create VM](./media/vm002-18.png "Create VM on Azure Stack HCI 22H2")
-
-10. On the "Upgrade to Ubuntu Pro" screen, select **Continue** and ENTER
-
-    ![Create VM](./media/vm002-19.png "Create VM on Azure Stack HCI 22H2")
-
-11. On the "SSH setup" screen, select "Install openSSH server" and select **Done**
-
-    ![Create VM](./media/vm002-20.png "Create VM on Azure Stack HCI 22H2")
-
-12. On the "Featured Server snaps" screen, select **Done**
-
-    ![Create VM](./media/vm002-21.png "Create VM on Azure Stack HCI 22H2")
-
-13. Now wait until you get the "Install complete!" screen and select **Reboot Now** and ENTER
-
-15. Once the virtual machine is up and running try to login!
-
-
-Task 5: Live migrate a virtual machine to another node
------ 
-
-The final step we'll cover is using Windows Admin Center to live migrate VM002 from it's current node, to an alternate node in the cluster.
-
-1. Still within the **Windows Admin Center** on **AdminCenter** VM, under **Cluster Resources**, click on **Virtual machines**
-
-2. On the **Virtual machines** page, select the **Inventory** tab
-
-3. Under **Host server**, make a note of the node that VM002 is currently running on.  You may need to expand the column width to see the name
-
-    ![Create VM](./media/LiveMigrate-1.png "Create VM on Azure Stack HCI 22H2")
-
-4. Next to **VM002**, click the tick box next to VM002, then click **More**.  You'll notice you can Clone, Domain Join and also Move the VM. Click **Move**
-
-    ![Create VM](./media/LiveMigrate-2.png "Create VM on Azure Stack HCI 22H2")
-
-5. Next to **VM002**, click the tick box next to VM002, then click **More**.  You'll notice you can Clone, Domain Join and also Move the VM. Click **Move**    
-
-    ![Create VM](./media/LiveMigrate-3.png "Create VM on Azure Stack HCI 22H2")
-
-    ![Create VM](./media/LiveMigrate-4.png "Create VM on Azure Stack HCI 22H2")
-
-You've successfully moved a running VM without downtime using the Windows Admin Center to another Host in the Azure Stack HCI cluster!
-
 Summary
 -----------
-In this exercise, you have been exploring the existing Cluster Shared Volume which was created for you on Azure Stack HCI cluster. You also looked at more details and options related to the Volumes you can create in Azure Stack HCI. In Task 2 you downloaded some ISO files which you have used in Task 3 and Task 4 to respectively deployed a Windows Server 2022 VM and an Ubuntu 22.04 VM on the Azure Stack HCI Cluster. You finished this exercise by testing a Live migration of the Linux based VM to another available Azure Stack HCI Cluster node.
+In this exercise, you have been preparing and onboarding an on-premises Virtual Machine into the Azure control plane, leveraging the Azure Arc-enabled Server solution. We combined this onboarding with a quick look what the power of Azure Policies can bring to you.
+You finished this exercise by setting up and testing the new SSH access to Azure Arc-enabled servers.
+
 
 With this completed, you can now move on to the next exercise.
 
