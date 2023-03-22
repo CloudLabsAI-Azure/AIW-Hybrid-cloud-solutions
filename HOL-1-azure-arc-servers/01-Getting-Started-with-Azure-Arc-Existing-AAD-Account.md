@@ -322,9 +322,9 @@ Policies can be applied to Arc enabled servers the same way they are applied to 
 
     ![](.././media/HOL1-Ex1-T5-S6.png)
     
-1. Search for ```Deploy Log Analytics``` in **Available Definitions** and then click on **Deploy Log Analytics extension for Linux VMs** and then click on **Select** button at the bottom.
+1. Search for ```Deploy Log Analytics``` in **Available Definitions** and then click on **Deploy Log Analytics extension for Linux VMs** and then click on **Add** button at the bottom.
 
-    ![](.././media/HOL1-Ex1-T5-P7.png)
+    ![](.././media/H1E1T5S7.png)
     
     >**Note**: If you see multiple policies with the same name, select the Build-in policy when choosing Deploy Log Analytics extension for Linux VMs.
     
