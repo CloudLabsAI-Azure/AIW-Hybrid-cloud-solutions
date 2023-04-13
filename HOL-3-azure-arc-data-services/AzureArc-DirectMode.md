@@ -190,9 +190,9 @@ In this task, you will be connecting an existing Kubernetes cluster to Azure usi
   
     ![](./media/select-law.png "Lab Environment")
 
-1. Select **Agent management** from the left side menu. Copy the value of **Workspace ID** and **Primary key** and save the values in a notepad for use later while creating the Azure arc data controller.
+1. Select **Agents** **(1)** under Settings from the left side menu. In Windows servers **(2)** tab, under Log Analytics agent instructions copy the values of **Workspace ID** **(3)** and **Primary key** **(4)**. Save the values in a notepad for later use while creating the Azure arc data controller.
 
-    ![](./media/agents-management.png "Lab Environment")
+    ![](./images/law-latest-ui.png "Lab Environment")
     
 ### Task 3: Deploy Azure Arc Data Controller in directly connected mode using Azure Portal
 
