@@ -83,7 +83,7 @@ GitOps, as it relates to Kubernetes, is the practice of declaring the desired st
 1. Copy the below command to any text editor
 
    ```
-   az k8sconfiguration create --name cluster-config --cluster-name microk8s-cluster --resource-group $ResourceGroup --operator-instance-name cluster-config --operator-namespace cluster-config --repository-url https://github.com/<githubusername>/arc-k8s-demo --scope cluster --cluster-type connectedClusters
+   az k8s-configuration create --name cluster-config --cluster-name microk8s-cluster --resource-group $ResourceGroup --operator-instance-name cluster-config --operator-namespace cluster-config --repository-url https://github.com/<githubusername>/arc-k8s-demo --scope cluster --cluster-type connectedClusters
    ```
 
 1. Then, replace as mentioned below and run the command in ubuntu-k8s VM SSH session that is opened in putty:
