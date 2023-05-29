@@ -29,7 +29,8 @@ In the last excercise, you have seen how to enable security measures and monitor
    - Resource group: Select **azure-arc** from dropdown list.
    - Region: Select same region as the Resource group.
    - Operating Systems: Select **Windows**.
-   - License Type: Select **Paid - Standard or Enterprise edition license with Software Assurance or SQL Subscription**.
+   - Server Name: Type **sqlvm**
+   - License Type: Select **I have a production environment on this server with Enterprise or Standard edition covered by Software Assurance or SQL subscription ("Paid")**.
 
      Now, click on the **Next:Tags** button.
    
@@ -65,14 +66,21 @@ In the last excercise, you have seen how to enable security measures and monitor
      
    > **Note** : This will initiate the execution of **RegisterSqlServerArc.ps1** script inside **sqlvm** that is deployed on Hyper-V.
 
-1. After running the command, you will see some outputs which shows that the script started running.
-   > **Note** : If script fails to execute. Please run it again. 
+1. You will be asked to authenticate the PowerShell. Open browser and paste the URL **`https://microsoft.com/devicelogin`(1)**, paste the **code(2)** and then provide credentials as below.
 
-   ![](.././media/run.png "sqlsearch")
+      * Email/Username: <inject key="AzureAdUserEmail"></inject>
+      * Password: <inject key="AzureAdUserPassword"></inject>
+
+   ![](.././media/H1E3T2S5.png "sqlsearch")
+
+1. After authentication, you will see some outputs which shows that the script resume.
+   > **Note** : If script fails to execute. Please execute/run the script again. 
+
+   ![](.././media/H1E3T2S6.png "sqlsearch")
   
 1. In 5-10 minutes, you will see that the script execution is completed. Make sure that you see the following output: ```SQL Server - Azure Arc extension is successfully installed```
 
-   ![](.././media/H1E3T2S6.png "sqlsearch")
+   ![](.././media/H1E3T2S7.png "sqlsearch")
   
 1. Bring back the browser window where you had opened Azure Potal and search for **SQL Server -Azure Arc**. If you are already in that page, you will need to click on Refresh button. In that page, you will see one resource **SQLVM** that we just created using the PowerShell script in the previous step.
 
@@ -145,7 +153,9 @@ In the last excercise, you have seen how to enable security measures and monitor
    ![](.././media/H1E3T3S16.png "H1E3T3S16")
  
 1. Then, Go to **SQLVM** Azure Arc - SQL Server resource and select the **Best practices assessment** under settings from the left pane and click on **Change license type**.
-      
+   
+   > **Note**: Skip and continue from **Step 19** if **change license type** is not available 
+   
    ![](.././media/H1E3T3S17.png "H1E3T3S17")
 
 1. Under **SQL Server management details**, select license type as **Paid** and click on **Save**.
@@ -156,7 +166,7 @@ In the last excercise, you have seen how to enable security measures and monitor
 
    ![](.././media/H1E3T3S19.png "H1E3T3S19")
    
-   > Note: After enabling the assessment, wait for few minutes to get it complete. 
+   > **Note**: After enabling the assessment, wait for few minutes to get it complete. 
  
 1. Once the assessment is **completed**, click on it to see the results. 
 
@@ -166,7 +176,7 @@ In the last excercise, you have seen how to enable security measures and monitor
 
     ![](.././media/H1E3T3S21.png "H1E3T3S21")
       
-   > Note: Now you can move to the next Exercise, you don't have to wait here to the Result appear.   
+   > **Note**: Now you can move to the next Exercise, you don't have to wait here to the Result appear.   
 
 ## In this exercise, you have covered the following:
  
