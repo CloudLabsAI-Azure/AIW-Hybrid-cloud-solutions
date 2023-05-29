@@ -88,9 +88,9 @@ You can use the Azure Policy Deploy Log Analytics agent to Linux or Windows Azur
  
    ![](.././media/as-08.png)
     
-9. Now, go back to **Microsoft Sentinel Overview** blade by clicking on Overview under General section on the left and, then click on **INSIGHTSMETER** to query the **ubuntu-k8s** VM insights. Count of **Events** could be different on your Microsoft Sentinel Dashboard.
+9. Now, go back to **Microsoft Sentinel Overview** blade by clicking on **Overview(1)** under General section on the left. Disable the **New Overview(2)** toggle and then click on **INSIGHTSMETER(3)** to query the **ubuntu-k8s** VM insights. Count of **Events** could be different on your Microsoft Sentinel Dashboard.
 
-   ![](.././media/ms-insightsmeter.png)
+   ![](.././media/H1E2T2S9.png)
     
 10. You will see **Results** for ```union InsightsMetrics``` in query explorer. You can see operations around Network, Logical Disk, Memory, and Processor for **ubuntu-k8s** VM. If you are not able to see the results, then try to adjust the query editor size and you will be able to see the outcome.
 
