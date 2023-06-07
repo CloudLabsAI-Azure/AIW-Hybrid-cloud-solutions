@@ -52,25 +52,37 @@ In this step, you will review the status of the Azure Arc services on the Azure 
   
     ![Azure Arc WAC](./media/Arc-3.png "Azure Arc WAC")
   
-5. On the **Azure Arc | Arc-enabled servers** page, click on **hciboxcluster-rg**. 
+5. On the **Azure Arc | Arc-enabled servers** page, click on **AzurestackHCI-ArcServers**. 
     
-    ![Azure Arc WAC](./media/Arc-4.png "Azure Arc WAC")
+    ![Azure Arc WAC](./media/Arc-4a.png "Azure Arc WAC")
 
-6. The Azure Portal will open in an extra browser Tab, showing you the **hciboxcluster-rg** resource group content. On the **Resources** page in the Azure Portal, click on the **hciboxcluster**.
+6. The Azure Portal will open in an extra browser Tab, showing you the **AzurestackHCI-ArcServers** resource group content. On the **Resources** page in the Azure Portal, you see the two Azure Arc enabled Server representations of the Azure Stack HCI cluster nodes.
+    
+    ![Azure Arc WAC](./media/Arc-4b.png "Azure Arc WAC")
+
+6. Move back to the Windows Admin Center browser Tab and click on **Azure Stack HCI registration**
+    
+    ![Azure Arc WAC](./media/Arc-4c.png "Azure Arc WAC") 
+
+5. On the **Azure Arc | Azure Stack HCI registration** page, click on **AzurestackHCI**.
+
+    ![Azure Arc WAC](./media/Arc-4d.png "Azure Arc WAC") 
+
+6. The Azure Portal will open in an extra browser Tab, showing you the **AzurestackHCI** resource group content. On the **Resources** page in the Azure Portal, click on the **HCIBox-Cluster**.
 
     *You potentially will be asked to provide the Azure credentials. You can find them in the Environment Details of this Lab.*
 
     ![Azure Arc WAC](./media/Arc-5.png "Azure Arc WAC")
 
-7. The Azure Portal will open the hciboxcluster - Azure Stack HCI blade. Click **Capabilities** and
+7. The Azure Portal will open the HCIBox-Cluster - Azure Stack HCI blade. Click **Capabilities** and
 
     ![Azure Arc WAC](./media/Arc-6.png "Azure Arc WAC")
 
-8. On the **Capabilities** tab, click **Logs**
+8. On the **Capabilities** tab, click **Insights**
 
     ![Azure Arc WAC](./media/Arc-7.png "Azure Arc WAC")    
 
-9. On the **Configure extension: MicrosoftMonitoringAgent** page, click **Add**.
+9.  On the **Configure extension: MicrosoftMonitoringAgent** page, click **Add**.
 
     **NOTE** *All existing Log Analytics Workplace fields should be pre-filled automatically*.
     

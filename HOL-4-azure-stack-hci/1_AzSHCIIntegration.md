@@ -10,6 +10,7 @@ Contents
   - [Task 2: Verify your Azure Stack HCI 22H2 Cluster is registered with Azure](#task-2-verify-your-azure-stack-hci-22h2-cluster-is-registered-with-azure)
   - [Task 3: Register Windows Admin Center in Azure](#task-3-register-windows-admin-center-in-azure)
   - [Task 4: Validate Azure integration](#task-4-validate-azure-integration)
+  - [Task 5: Apply the latest updates to the Azure Stack HCI Cluster](#task-5-apply-the-latest-updates-to-the-azure-stack-hci-cluster)
   - [Summary](#summary)
   - [Product improvements](#product-improvements)
   - [Raising issues](#raising-issues)
@@ -158,9 +159,26 @@ Additional permissions were applied on the Windows Admin Center Azure AD applica
     ![Confirm Azure AD app permissions in Windows Admin Center](./media/wac_admin.png "Confirm Azure AD app permissions in Windows Admin Center")
     You'll notice that multiple servers are already under management of Windows Admin Center.
 
+## Task 5: Apply the latest updates to the Azure Stack HCI Cluster
+
+1. Open **Windows Admin Center** on the **AdminCenter** VM. On the top left click on **All connections** and click on your previously deployed cluster, **hciboxcluster.jumpstart.local**
+
+    ![Azure Arc WAC](./media/ReviewVolumes-1.png "Azure Arc WAC")
+
+2. In the Lest pane under Operations, click **Updates**
+
+    ![HCI Updates](./media/Updates-1.png "HCI Updates")
+
+3. Install all the available updates on both Cluster nodes. You will be asked to also enable the Cluster Aware update before you can really install the updates.
+
+
+**NOTE** This process will take a while, do not close Windows Admin Center.
+
+
+
 Summary
 -----------
-In this exercise, you've successfully added the existing Azure Stack HCI cluster to your Windows Admin Center, checked the registration status of the Cluster via PowerShell, registered the Windows Admin Center in Azure and Verified this integration. 
+In this exercise, you've successfully added the existing Azure Stack HCI cluster to your Windows Admin Center, checked the registration status of the Cluster via PowerShell, registered the Windows Admin Center in Azure and Verified this integration. We also Updated the Cluster with the latest updates, leveraging the Cluster Aware Updates feature.
 
 With this completed, you can now move on to the next exercise.
 
