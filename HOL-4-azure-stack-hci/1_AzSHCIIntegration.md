@@ -26,7 +26,7 @@ Overview
 
 This Lab also includes a dedicated Windows Admin Center (WAC) gateway server. The WAC gateway server can be accessed by connecting to it from RDP. A shortcut is available on the HCIBox-Client desktop.
 
-1. Open this shortcut and use the domain credential (arcedemo@jumpstart.local) to start an RDP session to the Windows Admin Center VM.
+1. Open this shortcut and use the domain credential (arcdemo@jumpstart.local) to start an RDP session to the Windows Admin Center VM.
 
 ![-](./media/wac_gateway_shortcut.png "Screenshot showing WAC desktop shortcut")
 
