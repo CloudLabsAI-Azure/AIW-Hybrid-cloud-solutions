@@ -41,7 +41,9 @@ In this step, you will add an extra virtual machine image to the Azure Stack HCI
 
     ![](./media/img-5.png "")
 
-6. You will now be redirected to the **Deployment is in progress** page. This step will take around 60+ minutes. 
+6. You will now be redirected to the **Deployment is in progress** page.
+
+    > **``NOTE``** This step will take 60+ minutes. 
 
     ![](./media/img-6.png "")
 
@@ -112,7 +114,7 @@ After some time the Deployment will be finished and you will be able to Go to te
 
 You've successfully deployed an extra Virtual Machine on the Azure Stack HCI cluster from the Azure Portal.
 
-**NOTE** Currently there is an known issue in the Jumpstart HCIBox (Public Preview) solution which impacts the enablement of the guest management.
+> **``NOTE``** Currently there is an known issue in the Jumpstart HCIBox (Public Preview) solution which impacts the enablement of the guest management.
 
 Summary
 -----------

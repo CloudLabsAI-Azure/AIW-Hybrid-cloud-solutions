@@ -98,7 +98,7 @@ In this step, you will download a Windows Server 2022 and Ubuntu Server 22.04 .I
     ![Create Azure Resource Group](./media/vm002arc-5.png "Create Azure Resource Group")
 
 6. On the **Add servers with Azure Arc** page, on the *Tags* tab, Click **NEXT**
-   **NOTE** If you want you can of course add an Cutsom tag, but best practice is that you do this via Azure Policies.
+   > **``NOTE``** If you want you can of course add an Cutsom tag, but best practice is that you do this via Azure Policies.
 
     ![Create Azure Resource Group](./media/vm002arc-6.png "Create Azure Resource Group")
 
@@ -116,11 +116,15 @@ In this step, you will download a Windows Server 2022 and Ubuntu Server 22.04 .I
  
     ![](./media/vm002arc-9.png "")
 
-3. In the **Command Prompt** window, type **"scp C:\Users\arcdemo\Downloads\OnboardingScript.sh"** arcdemo@192.168.200.210:OnboardingScript.sh** and **ENTER**. Type the Password ***ArcPassword123!!*** and **ENTER**. By doing this we will copy the Azure Arc-enabled Server Onboarding Script **OnboardingScript.sh** to VM002.
+3. In the **Command Prompt** window, type **scp "C:\Users\arcdemo\Downloads\OnboardingScript.sh" arcdemo@192.168.200.211:OnboardingScript.sh** and **ENTER**. Type the Password ***ArcPassword123!!*** and **ENTER**. By doing this we will copy the Azure Arc-enabled Server Onboarding Script **OnboardingScript.sh** to VM002.
+
+    > **``NOTE``** Make sure to change the ip address accordingly to your environment!
  
     ![](./media/vm002arc-10.png "")
 
-4. In the **Command Prompt** window, type **ssh arcdemo@192.168.200.210** and **ENTER**. Type the Password ***ArcPassword123!!*** and **ENTER**. You now SSHed into the VM002 Virtual Machine.
+4. In the **Command Prompt** window, type **ssh arcdemo@192.168.200.211** and **ENTER**. Type the Password ***ArcPassword123!!*** and **ENTER**. You now SSHed into the VM002 Virtual Machine.
+
+    > **``NOTE``** Make sure to change the ip address accordingly to your environment!
  
     ![](./media/vm002arc-11.png "")
 
@@ -142,7 +146,7 @@ In this step, you will download a Windows Server 2022 and Ubuntu Server 22.04 .I
     ![](./media/vm002arc-16.png "")
     ![](./media/vm002arc-17.png "")
 
-9. Go back to the **Command Prompt** window, where you should see something similar to the below screenshot. Type **exit** and ENTER to disconnect the SSH connection. Type **Exit** again to close the Command Prompt.
+9.  Go back to the **Command Prompt** window, where you should see something similar to the below screenshot. Type **exit** and ENTER to disconnect the SSH connection. Type **Exit** again to close the Command Prompt.
  
     ![](./media/vm002arc-18.png "")
 
@@ -162,6 +166,8 @@ In this step, you will download a Windows Server 2022 and Ubuntu Server 22.04 .I
     ![](./media/vm002arc-20.png "")
 
 13. Like you will notice the policy was successfully assigned. This is just an example of the power of using Azure Policies. Imagine what you all can automate just by leveraging Azure Policies, not only for Compliance, regulations, Privacy, ... checks
+
+    > **``NOTE``** This can take a while, so if the "Compliance state" column is stating "Not Started", grab a coffee and check again later (+- 5 minutes).
         
     ![](./media/vm002arc-21.png "")
 
@@ -180,7 +186,7 @@ In this step, you will prepare the Azure Connected Machine agent on the VM002 to
  
     ![](./media/vm002arc-9.png "")
 
-3. In the **Command Prompt** window, type **ssh arcdemo@192.168.200.210** and **ENTER**. Type the Password ***ArcPassword123!!*** and **ENTER**. You now SSHed into the VM002 Virtual Machine.
+3. In the **Command Prompt** window, type **ssh arcdemo@192.168.200.211** and **ENTER**. Type the Password ***ArcPassword123!!*** and **ENTER**. You now SSHed into the VM002 Virtual Machine.
  
     ![](./media/vm002arc-11.png "")
 
@@ -206,7 +212,7 @@ In this step, you will prepare the Azure Connected Machine agent on the VM002 to
 
 9. If all went well you should have established a SSH connection from within the Azure Portal to your on-premises Azure Arc-enabled Virtual Machine, for example on an Azure Stack HCI.
 
-    **NOTE** Learn more : https://learn.microsoft.com/en-us/azure/azure-arc/servers/ssh-arc-overview    
+    > **``NOTE``** Learn more : https://learn.microsoft.com/en-us/azure/azure-arc/servers/ssh-arc-overview    
 
     ![](./media/ssh-6.png "")
 
