@@ -10,7 +10,7 @@ Contents
   - [Task 2: Verify your Azure Stack HCI 22H2 Cluster is registered with Azure](#task-2-verify-your-azure-stack-hci-22h2-cluster-is-registered-with-azure)
   - [Task 3: Register Windows Admin Center in Azure](#task-3-register-windows-admin-center-in-azure)
   - [Task 4: Validate Azure integration](#task-4-validate-azure-integration)
-  - [Task 5: Apply the latest updates to the Azure Stack HCI Cluster](#task-5-apply-the-latest-updates-to-the-azure-stack-hci-cluster)
+  - [\[OPTIONAL\] Task 5: Apply the latest updates to the Azure Stack HCI Cluster](#optional-task-5-apply-the-latest-updates-to-the-azure-stack-hci-cluster)
   - [Summary](#summary)
   - [Product improvements](#product-improvements)
   - [Raising issues](#raising-issues)
@@ -53,9 +53,13 @@ The first time you access the Windows Admin Center you will get a Welcome screen
 ![-](./media/wac_add_cluster_detail_2.png "Screenshot showing WAC connection details")
 
 6. Now that the cluster is added, we can explore management capabilities for the cluster inside of WAC. Click on the cluster to drill into its details.
+   
 
-![-](./media/wac_cluster_added.png "Screenshot showing cluster list")
-![-](./media/wac_cluster_added_detail.png "Screenshot showing cluster detail")
+    ![-](./media/wac_cluster_added.png "Screenshot showing cluster list")
+
+    > **``NOTE``** For now you can ignore the red bar: "Windows Admin Center must be registered and signed in to Azure." We will register WAC in to Azure in one of the upcoming tasks.
+
+    ![-](./media/wac_cluster_added_detail.png "Screenshot showing cluster detail")
 
 You just successfully added the existing Azure Stack HCI 22H2 Cluster "hciboxcluster" to you Windows Admin Center. We will explore the Cluster capabilities leveraging WAC in upcoming tasks.
 
@@ -117,8 +121,9 @@ To use Azure services with Windows Admin Center, you must register your Windows 
 
 *******************************************************************************************************
 
-**NOTE** - If you receive an error when signing in, still in **Settings**, under **User**, click on **Account** and click **Sign-in**. You should then be prompted for Azure credentials and permissions, to which you can then click **Accept**. Sometimes it just takes a few moments from Windows Admin Center creating the Azure AD application and being able to sign in. Retry the sign-in until you've successfully signed in.
-**NOTE** - Sometime even after cluster is registered it may show an error with SignIn with following error, you can ignore that and close the popup:
+> **``NOTE``** - If you receive an error when signing in, still in **Settings**, under **User**, click on **Account** and click **Sign-in**. You should then be prompted for Azure credentials and permissions, to which you can then click **Accept**. Sometimes it just takes a few moments from Windows Admin Center creating the Azure AD application and being able to sign in. Retry the sign-in until you've successfully signed in.
+> 
+> **``NOTE``** - Sometime even after cluster is registered it may show an error with SignIn with following error, you can ignore that and close the popup:
    ```AADSTS700016: Application with identifier '******************' was not found in the directory 'Azure HOL ****'. This can happen if the application has not been installed by the administrator of the tenant or consented to by any user in the tenant. You may have sent your authentication request to the wrong tenant.```
 
 *******************************************************************************************************
@@ -145,7 +150,7 @@ Additional permissions were applied on the Windows Admin Center Azure AD applica
 
 *******************************************************************************************************
 
-**NOTE** - If you don't see Microsoft Graph listed in the API permissions, you can either [re-register Windows Admin Center using steps here](#configure-windows-admin-center "re-register Windows Admin Center using steps here") for the permissions to appear correctly, or manually add the **Microsoft Graph Appliation.ReadWrite.All** permission. To manually add the permission:
+> **``NOTE``** - If you don't see Microsoft Graph listed in the API permissions, you can either [re-register Windows Admin Center using steps here](#configure-windows-admin-center "re-register Windows Admin Center using steps here") for the permissions to appear correctly, or manually add the **Microsoft Graph Appliation.ReadWrite.All** permission. To manually add the permission:
 
 - Click **+ Add a permission**
 - Select **Microsoft Graph**, then **Delegated permissions**
@@ -154,12 +159,14 @@ Additional permissions were applied on the Windows Admin Center Azure AD applica
 
 *******************************************************************************************************
 
-6. Switch back to the **Windows Admin Center tab** and click on **Windows Admin Center** in the top-left corner to return to the home page. 
+6. Switch back to the **Windows Admin Center tab** and click on **Windows Admin Center** in the top-left corner to return to the home page.
 
     ![Confirm Azure AD app permissions in Windows Admin Center](./media/wac_admin.png "Confirm Azure AD app permissions in Windows Admin Center")
     You'll notice that multiple servers are already under management of Windows Admin Center.
 
-## Task 5: Apply the latest updates to the Azure Stack HCI Cluster
+## [OPTIONAL] Task 5: Apply the latest updates to the Azure Stack HCI Cluster
+
+> **``NOTE``** Before proceeding, take into account this step takes more then 1 hour. It may also fail if the Hands-on environment is configured to small.
 
 1. Open **Windows Admin Center** on the **AdminCenter** VM. On the top left click on **All connections** and click on your previously deployed cluster, **hciboxcluster.jumpstart.local**
 
@@ -172,13 +179,13 @@ Additional permissions were applied on the Windows Admin Center Azure AD applica
 3. Install all the available updates on both Cluster nodes. You will be asked to also enable the Cluster Aware update before you can really install the updates.
 
 
-**NOTE** This process will take a while, do not close Windows Admin Center.
+> **``NOTE``** This process will take a while, do not close Windows Admin Center.
 
 
 
 Summary
 -----------
-In this exercise, you've successfully added the existing Azure Stack HCI cluster to your Windows Admin Center, checked the registration status of the Cluster via PowerShell, registered the Windows Admin Center in Azure and Verified this integration. We also Updated the Cluster with the latest updates, leveraging the Cluster Aware Updates feature.
+In this exercise, you've successfully added the existing Azure Stack HCI cluster to your Windows Admin Center, checked the registration status of the Cluster via PowerShell, registered the Windows Admin Center in Azure and Verified this integration. Optionally we also updated the Azure Stack HCI Cluster nodes with the latest updates, leveraging the Cluster Aware Updates feature.
 
 With this completed, you can now move on to the next exercise.
 

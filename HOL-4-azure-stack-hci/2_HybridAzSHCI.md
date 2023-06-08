@@ -16,7 +16,6 @@ Contents
   - [Task 3: Explore Azure Stack HCI Hybrid features in the Azure Portal](#task-3-explore-azure-stack-hci-hybrid-features-in-the-azure-portal)
     - [Explore Extensions](#explore-extensions)
     - [Configuration of The Azure Stack HCI 22H2 cluster in the Azure Portal](#configuration-of-the-azure-stack-hci-22h2-cluster-in-the-azure-portal)
-    - [Monitor Insights on your Azure Stack HCI clusters using in Azure](#monitor-insights-on-your-azure-stack-hci-clusters-using-in-azure)
   - [Summary](#summary)
   - [Product improvements](#product-improvements)
   - [Raising issues](#raising-issues)
@@ -39,12 +38,13 @@ In this step, you will review the status of the Azure Arc services on the Azure 
     
 3. On the **Azure Stack HCI registration** page, you should see ...
    
-    #### Azure Stack HCI system status: ####
+    ##### Azure Stack HCI system status: #####
    - **Connected** under the Azure connection status
    - **Registered** under the Azure Registration
     
-    #### Server status: ####
-   - **Connected** under the Azure connection status for every Server.       
+    ##### Server status: #####
+   - **Connected** under the Azure connection status for every Server.
+       
 
     ![Azure Arc WAC](./media/Arc-2.png "Azure Arc WAC")
     
@@ -60,62 +60,66 @@ In this step, you will review the status of the Azure Arc services on the Azure 
     
     ![Azure Arc WAC](./media/Arc-4b.png "Azure Arc WAC")
 
-6. Move back to the Windows Admin Center browser Tab and click on **Azure Stack HCI registration**
+7. Move back to the Windows Admin Center browser Tab and click on **Azure Stack HCI registration**
     
     ![Azure Arc WAC](./media/Arc-4c.png "Azure Arc WAC") 
 
-5. On the **Azure Arc | Azure Stack HCI registration** page, click on **AzurestackHCI**.
+8. On the **Azure Arc | Azure Stack HCI registration** page, click on **AzurestackHCI**.
 
     ![Azure Arc WAC](./media/Arc-4d.png "Azure Arc WAC") 
 
-6. The Azure Portal will open in an extra browser Tab, showing you the **AzurestackHCI** resource group content. On the **Resources** page in the Azure Portal, click on the **HCIBox-Cluster**.
+9. The Azure Portal will open in an extra browser Tab, showing you the **AzurestackHCI** resource group content. On the **Resources** page in the Azure Portal, click on the **HCIBox-Cluster**.
 
-    *You potentially will be asked to provide the Azure credentials. You can find them in the Environment Details of this Lab.*
+    > **``NOTE``** You potentially will be asked to provide the Azure credentials. You can find them in the Environment Details of this Lab. If you get an "Action Required" screen, click "Ask later".
 
     ![Azure Arc WAC](./media/Arc-5.png "Azure Arc WAC")
 
-7. The Azure Portal will open the HCIBox-Cluster - Azure Stack HCI blade. Click **Capabilities** and
+1.  The Azure Portal will open the HCIBox-Cluster - Azure Stack HCI blade. Click **Capabilities** and
 
     ![Azure Arc WAC](./media/Arc-6.png "Azure Arc WAC")
 
-8. On the **Capabilities** tab, click **Insights**
+<!--
+11. On the **Capabilities** tab, click **Insights**
 
     ![Azure Arc WAC](./media/Arc-7.png "Azure Arc WAC")    
 
-9.  On the **Configure extension: MicrosoftMonitoringAgent** page, click **Add**.
+12. On the **Configure extension: MicrosoftMonitoringAgent** page, click **Add**.
 
-    **NOTE** *All existing Log Analytics Workplace fields should be pre-filled automatically*.
+    > **``NOTE``** All existing Log Analytics Workplace fields should be pre-filled automatically.
     
     ![Azure Arc WAC](./media/Arc-8.png "Azure Arc WAC")
 
-10. On the **Capabilities** tab, click **Insights**
+13. On the **Capabilities** tab, click **Insights**
 
     ![Azure Arc WAC](./media/Arc-9.png "Azure Arc WAC")    
 
-11. On the **Azure Insights** page, click **Turn On**.
+14. On the **Azure Insights** page, click **Turn On**.
     
     ![Azure Arc WAC](./media/Arc-10.png "Azure Arc WAC")
-
-12. On the **Capabilities** tab, click **Windows Admin Center**
+-->
+15. On the **Capabilities** tab, click **Windows Admin Center**
 
     ![Azure Arc WAC](./media/Arc-11.png "Azure Arc WAC")    
 
-13. On the **Windows Admin Center (preview)** page, click **Set up**.
+16. On the **Windows Admin Center (preview)** page, click **Set up**.
   
     ![Azure Arc WAC](./media/Arc-12.png "Azure Arc WAC")
 
-14. On the **Windows Admin Center** page, click **Set up**.
+17. On the **Windows Admin Center** page, click **Set up**.
   
     ![Azure Arc WAC](./media/Arc-13.png "Azure Arc WAC")
 
-15. On the **Capabilities** tab, all 3 boxes should indicate **Configured**.
+18. On the **Capabilities** tab, the Windows Admin Center box should indicate **Configured**.
 
-    **NOTE** This can take a couple of minutes, please be patient.
+    > **``NOTE``** This can take a couple of minutes, please be patient.
   
       ![Azure Arc WAC](./media/Arc-14.png "Azure Arc WAC")    
 
 You just finalized the Activation of a couple of Hybrid features of Azure Stack HCI.
-Once all 3 boxes show **Configured** proceed to the next Task.
+
+> **``NOTE``** We skipped configuring Insights as the Cluster nodes need to be updated to the May 2023 updates.
+
+Once the Windows Admin Center box shows **Configured** proceed to the next Task.
 
 Task 2: Manage Azure Stack HCI clusters using Windows Admin Center in Azure
 -----------
@@ -123,7 +127,7 @@ In this step, you will prepare your Azure Stack HCI Cluster resource in Azure to
 
 ### Enable all requirements so you can use Windows Admin Center in the Azure portal to manage a hybrid machine ###
 
-1.  On the **hciboxcluster** page, under Settings, click **Windows Admin Center**.
+1.  On the **HCIBox-cluster** page, under Settings, click **Windows Admin Center**.
    
     On the **Windows Admin Center** page, you will see a message, that you must be part of the Windows Admin Center Administrator Login group to be able to connect.
 
@@ -134,6 +138,8 @@ In this step, you will prepare your Azure Stack HCI Cluster resource in Azure to
     ![Azure Arc WAC](./media/Arc-18.png "Azure Arc WAC")
  
 3. On the **Subscriptions** page, click on the Subscription name.
+
+    > **``NOTE``** It could be that your subscription name is different then the one in the screenshot!
 
     ![Azure Arc WAC](./media/Arc-19.png "Azure Arc WAC")
 
@@ -157,29 +163,30 @@ In this step, you will prepare your Azure Stack HCI Cluster resource in Azure to
 
     ![Azure Arc WAC](./media/Arc-24.png "Azure Arc WAC")
 
-9. On the **Add role assignment** page, under the **Members** tab, Click **"+Select members**. Click on your Azure User. Click **Select** and then Click **Next**.
+9.  On the **Add role assignment** page, under the **Members** tab, Click **"+Select members**. Click on your Azure User. Click **Select** and then Click **Next**.
 
     ![Azure Arc WAC](./media/Arc-25.png "Azure Arc WAC")    
 
 10. On the **Add role assignment** page, under the **Review + assign** tab, Click **Review + assign** at the bottom of the page.
 
-    **NOTE** We have just the **Windows Admin Center Administrator Login** Role to an AAD User on the Subscription scope. Learn more : https://learn.microsoft.com/en-us/windows-server/manage/windows-admin-center/azure/manage-hci-clusters
+    > **``NOTE``** We have just the **Windows Admin Center Administrator Login** Role to an AAD User on the Subscription scope.
 
-   ![Azure Arc WAC](./media/Arc-26.png "Azure Arc WAC")
+    >Learn more: https://learn.microsoft.com/en-us/windows-server/manage/windows-admin-center/azure/manage-hci-clusters
 
-11. In the **"Search resources, services, and docs"** search box at the top of the Azure Portal page, type **hciboxcluster** and under **Resources**, click **hciboxcluster**.
+    ![Azure Arc WAC](./media/Arc-26.png "Azure Arc WAC")
 
-   ![Azure Arc WAC](./media/Arc-27.png "Azure Arc WAC")
+11. In the **"Search resources, services, and docs"** search box at the top of the Azure Portal page, type **hcibox-cluster** and under **Resources**, click **HCIBox-Cluster**.
 
-12. On the **hciboxcluster** page, under Settings, click **Windows Admin Center** and then Click **Connect**.
+    ![Azure Arc WAC](./media/Arc-27.png "Azure Arc WAC")
 
-   ![Azure Arc WAC](./media/Arc-28.png "Azure Arc WAC")
+12. On the **HCIBox-Cluster** page, under Settings, click **Windows Admin Center** and then Click **Connect**.
+
+    ![Azure Arc WAC](./media/Arc-28.png "Azure Arc WAC")
 
 13. On the **Windows Admin Center** page, complete the Username and Password field and Click Sign In.
+    > **``NOTE``** In case you need to provide login credentials, make sure the use the fully-qualified-DNS-domain\username format, and not the user principal name (UPN) format, like (user@fully_qualified_DNS_domain_name).
 
-**Note** Make sure the use the fully-qualified-DNS-domain\username format, and not the user principal name (UPN) format (user@fully_qualified_DNS_domain_name).
-
-   ![Azure Arc WAC](./media/Arc-29.png "Azure Arc WAC")
+    ![Azure Arc WAC](./media/Arc-29.png "Azure Arc WAC")
 
 If all how well you should now have a Windows Admin Center view on your Azure Stack HCI cluster, without needing a VPN or other direct connections. Feel free to look around.
 
@@ -195,30 +202,29 @@ At this time you should still be having the following page active in the Azure P
 
 ### Explore Extensions ###
 
-1. On the **Extension** page, you see that both Azure Stack HCI Cluster nodes have the **Microsoft Monitoring Agent** and the **(Windows) Admin Center agent** installed. This was enabled by the steps we took in Task 1.
+1. On the **Extension** page, you see that both Azure Stack HCI Cluster nodes have the **(Windows) Admin Center agent** installed. This was enabled by the steps we took in Task 1.
 
     ![Azure Arc WAC](./media/Arc-16.png "Azure Arc WAC")
 
 ### Configuration of The Azure Stack HCI 22H2 cluster in the Azure Portal ###
 
-1. In the **"Search resources, services, and docs"** search box at the top of the Azure Portal page, type **hciboxcluster** and under **Resources**, click **hciboxcluster**.
+1. In the **"Search resources, services, and docs"** search box at the top of the Azure Portal page, type **hcibox-cluster** and under **Resources**, click **HCIBox-Cluster**.
 
    ![Azure Arc WAC](./media/Arc-27.png "Azure Arc WAC")
       
-2. On the **hciboxcluster** page, under Settings, click **Configuration**.
+2. On the **HCIBox-Cluster** page, under Settings, click **Configuration**.
 
    ![HCI Configuration](./media/Configuration-1.png "HCI Configuration")
 
 3. On the **Configuration** page, click **Configuration**. Here you find 5 different Configuration topics. The first part you find is the Summary of your **Billing** for your Azure Stack HCI System.
-
-   - Notice that every Azure Stack HCI environment starts with a 60day Free Trial.
-   - Here you also find the number of Physical Cores. Remember that you will only see the in the HW BIOS enabled Physical cores here. So you can optimize your cost by disabling unused physical core in your hardware BIOS.
+  
+    Here you also find the number of Physical Cores. Remember that you will only see the in the HW BIOS enabled Physical cores here. So you can optimize your cost by disabling unused physical core in your hardware BIOS.
   
      **Learn more on:** https://learn.microsoft.com/en-us/azure-stack/hci/concepts/billing
 
-        ![HCI Configuration](./media/Configuration-2.png "HCI Configuration")
+    ![HCI Configuration](./media/Configuration-2.png "HCI Configuration")
 
-4. The 2nd part on the same **configuration** page is where you can activate your **Azure Hybrid Benefits**.
+1. The 2nd part on the same **configuration** page is where you can activate your **Azure Hybrid Benefits**.
    
    To be eligible for the **Azure Hybrid Benefits** you need to have enough Windows Server Data Center licenses with Active Software Assurance. Those licenses can be exchanged to get Azure Stack HCI and Windows Server subscriptions at no additional cost.
  
@@ -226,7 +232,7 @@ At this time you should still be having the following page active in the Azure P
 
      ![HCI Configuration](./media/Configuration-3.png "HCI Configuration")        
 
-5. The 3rd part on the **configuration** page is where you are able to purchase a **Windows Server subscription add-on**.
+2. The 3rd part on the **configuration** page is where you are able to purchase a **Windows Server subscription add-on**.
    
    Here you can buy subscription based Windows Server licenses to cover your guest Virtual machines running Windows Server. You will be charged for the total number of physical cores in your cluster
  
@@ -234,7 +240,7 @@ At this time you should still be having the following page active in the Azure P
 
      ![HCI Configuration](./media/Configuration-4.png "HCI Configuration")
 
-6. The 4th part on the  **configuration** page is where you can change the **Service Health Data** level which is send to, and collected by Microsoft. 
+3. The 4th part on the  **configuration** page is where you can change the **Service Health Data** level which is send to, and collected by Microsoft. 
  
     Microsoft by default collects a basic set of system metadata necessary to keep the Azure Stack HCI service current, secure, and operating properly.
    
@@ -242,7 +248,11 @@ At this time you should still be having the following page active in the Azure P
 
     ![HCI Configuration](./media/Configuration-5.png "HCI Configuration")
 
-7. The final part on the **configuration** page is where you can see if you have enabled the **Azure benefits** on your Azure Stack HCI 22H2 Cluster. Turning on Azure Benefits enables you to use these Azure-exclusive workloads on Azure Stack HCI:
+4. The final part on the **configuration** page is where you can see if you have enabled the **Azure benefits** on your Azure Stack HCI 22H2 Cluster. 
+
+    ![HCI Configuration](./media/Configuration-6.png "HCI Configuration") 
+
+    Turning on Azure Benefits enables you to use these Azure-exclusive workloads on Azure Stack HCI:
 
     - **Windows Server Datacenter: Azure edition**
       - Version supported? 2022 edition or later
@@ -256,12 +266,10 @@ At this time you should still be having the following page active in the Azure P
     - **Azure Virtual Desktop**
       - Version supported? For multi-session editions only. Windows 10 Enterprise multi-session or later.
       - What it is? A service that enables you to deploy Azure Virtual Desktop session hosts on your Azure Stack HCI infrastructure.
-   
-       **Learn more on:** https://learn.microsoft.com/en-us/azure-stack/hci/manage/azure-benefits
 
-   
-        ![HCI Configuration](./media/Configuration-6.png "HCI Configuration") 
+    > **Learn More on** https://learn.microsoft.com/en-us/azure-stack/hci/manage/azure-benefits
 
+<!--
 ### Monitor Insights on your Azure Stack HCI clusters using in Azure  ### 
 
 In Task 1 of Exercise 2 you enabled the Monitoring Insights capabilities on the Azure Stack HCI cluster resource via the Azure Portal. Normally it takes around 15minutes to see the first data showing up i
@@ -299,10 +307,13 @@ In Task 1 of Exercise 2 you enabled the Monitoring Insights capabilities on the 
    
     ![Insights Monitoring](./media/Insights-8.png "Insights Monitoring")   
     ![Insights Monitoring](./media/Insights-9.png "Insights Monitoring") 
-
+-->
 Summary
 -----------
-In this exercise, you have enabled the Hybrid Azure Stack HCI Cluster features in the Azure Portal, reviewed the status of the Azure Arc services in the Windows Admin Center web portal, completed the pre-requirements to be able to connect and use the Windows Admin Center from the Azure Portal on the Azure Stack HCI Cluster, looked at the Azure Extensions on the Azure Stack HCI cluster in the Azure Portal, looked at all configuration capabilities on an Azure Stack HCI Cluster resource in the Azure Portal and finally looked at the data captured by the Monitoring Insights service on the Azure Stack HCI cluster in the Azure Portal.
+In this exercise, you have enabled the Hybrid Azure Stack HCI Cluster features in the Azure Portal, reviewed the status of the Azure Arc services in the Windows Admin Center web portal, completed the pre-requirements to be able to connect and use the Windows Admin Center from the Azure Portal on the Azure Stack HCI Cluster, looked at the Azure Extensions on the Azure Stack HCI cluster in the Azure Portal, looked at all configuration capabilities on an Azure Stack HCI Cluster resource in the Azure Portal.
+<!--
+ and finally looked at the data captured by the Monitoring Insights service on the Azure Stack HCI cluster in the Azure Portal.
+-->
 
 With this completed, you can now move on to the next exercise.
 

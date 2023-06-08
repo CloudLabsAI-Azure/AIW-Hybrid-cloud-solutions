@@ -9,7 +9,7 @@ Contents
 - [HOL-4: Exercise 3: Deploying Virtual Machines on your Azure Stack HCI 22H2 via the Windows Admin Portal](#hol-4-exercise-3-deploying-virtual-machines-on-your-azure-stack-hci-22h2-via-the-windows-admin-portal)
   - [Overview](#overview)
   - [Contents](#contents)
-  - [Task 1: Explore the existing volumes created on the **hciboxcluster**](#task-1-explore-the-existing-volumes-created-on-the-hciboxcluster)
+  - [Task 1: Explore the existing volumes created on the HCIBox-Cluster](#task-1-explore-the-existing-volumes-created-on-the-hcibox-cluster)
     - [Review a two-way mirror volume created to run VMs](#review-a-two-way-mirror-volume-created-to-run-vms)
   - [Task 2: Download .Iso files](#task-2-download-iso-files)
   - [Download the .ISO files](#download-the-iso-files)
@@ -25,7 +25,7 @@ Contents
   - [Raising issues](#raising-issues)
 
 
-Task 1: Explore the existing volumes created on the **hciboxcluster**
+Task 1: Explore the existing volumes created on the HCIBox-Cluster
 -----------
 In this step, you'll review a volume on the Azure Stack HCI 22H2 cluster by using Windows Admin Center, and enable data deduplication and compression.
 
@@ -46,7 +46,7 @@ In this step, you'll review a volume on the Azure Stack HCI 22H2 cluster by usin
     
 4. Open the volume **S2D_vDISK1**, by clicking on the name of the volume. We see a couple of things now:
    
-   **NOTE:** Invest enough time to read through the provided documentation as it covers some important information
+   > **``NOTE``** Invest enough time to read through the provided documentation as it covers some important information
 
    - The Volume File system is a **Cluster Shared Volume** of type **ReFS**
      - *Please read more:* 
@@ -55,9 +55,10 @@ In this step, you'll review a volume on the Azure Stack HCI 22H2 cluster by usin
    - The **Resiliency** was set to **Two-way mirror**
      - *Please read more:*
        - https://learn.microsoft.com/en-us/azure-stack/hci/concepts/fault-tolerance)
-   - **Deduplication** and **Encryption** is **Off**
+   - **Encryption** is **Off**
      - *Please read more:*
        - https://learn.microsoft.com/en-us/azure-stack/hci/manage/volume-encryption-deduplication
+       - 
    - Also have a look at the Capacity and Performance indicators
   
       ![Review the existing volumes for VMs](./media/ReviewVolumes-4.png "WAC Review HCI cluster Volumes")
@@ -76,7 +77,7 @@ Task 2: Download .Iso files
 -----------
 In this step, you will download a Windows Server 2022 and Ubuntu Server 22.04 .Iso file and upload the .Iso to your Clustered Shared Volume you explored in Task 1. 
 
-**_NOTE:_**  Make sure to use the Edge browser on the **AdminCenter** VM to execute the following steps.
+> **``TIP:``**  Make sure to use the Edge browser on the **AdminCenter** VM to execute the following steps. Right click on the **here**, click **copy link**, and paste in the Edge browser on **AdminCenter** VM.
 
 ## Download the .ISO files ##
 ### Download a Windows Server 2022 .Iso ###
@@ -114,7 +115,7 @@ In this step, you will download a Windows Server 2022 and Ubuntu Server 22.04 .I
  
     ![Upload .Iso files](./media/Upload-4.png "Upload .Iso files")
   
-**NOTE:** It can take up to around 5-10 minutes to get both .ISO files successfully uploaded. Maybe a good time to grab a coffee ;-). Once both .ISO files are successfully uploaded you can move on to the next Task.
+> **``NOTE``** It can take up to around 5-10 minutes to get both .ISO files successfully uploaded. Maybe a good time to grab a coffee ;-). Once both .ISO files are successfully uploaded you can move on to the next Task.
 
 Task 3: Deploy a Windows Server 2022 virtual machine
 ----- 
@@ -186,12 +187,15 @@ In this step, you will deploy a Windows Server 2022 virtual machine via Windows 
 15. Accept the license terms. Click **Next**. Select "Custom: Install Windows only (advanced)" and then Next. It will take around 10 minutes for the VM to boot. After that, please insert the lab credentials **ArcPassword123!!** and your VM is ready to go!
 
 16. Once the virtual machine is up and running try to login!
+    
+    If everything went well your Windows Server should now receive a proper IPv4 Address.
 
-**NOTE:** You will notice that the VM did not received a proper IPv4 address from the DHCP server. If you want to fix this you can open the VM001 settings page and under Networking you can change the VLAN ID from 2 to 200. 
+<!--
+> **``NOTE``** You will notice that the VM did not received a proper IPv4 address from the DHCP server. If you want to fix this you can open the VM001 settings page and under Networking you can change the VLAN ID from 2 to 200. 
 
 ![Create VM](./media/vm001-vlan200.png "Create VM on Azure Stack HCI 22H2") 
 
-If everything went well your Windows Server should now receive a proper IPv4 Address.
+-->
 
 You just finalized the installation of a new Window Server 2022 VM on your Azure Stack HCI Cluster. Please proceed to the next Task.
 
@@ -218,7 +222,9 @@ In this step, you will deploy an Ubuntu Server 22.04 virtual machine via Windows
      * Virtual processors: **1**
      * Startup memory (GB): **2**     
      * Network: **sdnSwitch**
-     * Storage: **Add, then Create an empty virtual hard disk** and set size to **20GB**
+       * Isolation mode: **VLAN**
+       * VLAN Identifier: **200**
+     * Storage: **Add, then Create an empty virtual hard disk** and set size to **30GB**
      * Operating System: Install an operating system from an image file (.iso). Select the Ubuntu Server 22.04 Iso file!
 
     ![Create VM](./media/vm002-3.png "Create VM on Azure Stack HCI 22H2")
@@ -228,19 +234,21 @@ In this step, you will deploy an Ubuntu Server 22.04 virtual machine via Windows
  
 5. The creation process will take a few moments, and once complete, VM002 should show within the Virtual machines view
 
-1. Click on the VM name **VM002** and then Click on **Settings** to view all VM properties. Click on **Security**
+6. Click on the VM name **VM002** and then Click on **Settings** to view all VM properties. Click on **Security**
  
     ![Create VM](./media/vm002-4a.png "Create VM on Azure Stack HCI 22H2")
 
-1. Make sure to change the Secure Boot template to "Microsoft UEFI Certificate Authority" in the Template drop down box, and click **save security settings**. DO NOT CLICK **Close**.
+7. Make sure to change the Secure Boot template to "Microsoft UEFI Certificate Authority" in the Template drop down box, and click **save security settings**. DO NOT CLICK **Close**.
 
     ![Create VM](./media/vm002-4b.png "Create VM on Azure Stack HCI 22H2")
 
-1. Click **Networks** in the left menu under "Settings for VM002" and make sure to change the VLAN identifier to **200** and click **save Networks settings**. Click Close.
+<!--
+8. Click **Networks** in the left menu under "Settings for VM002" and make sure to change the VLAN identifier to **200** and click **save Networks settings**. Click Close.
 
     ![Create VM](./media/vm002-4c.png "Create VM on Azure Stack HCI 22H2")
+-->
 
-6. Click on **Power** and select **Start** - within moments, the VM should be running.
+9.  Click on **Power** and select **Start** - within moments, the VM should be running.
 
     ![Create VM](./media/vm002-5.png "Create VM on Azure Stack HCI 22H2")
     
@@ -262,6 +270,10 @@ In this step, you will deploy an Ubuntu Server 22.04 virtual machine via Windows
 1. Once the integrity check is done you will be able to select your language. Select **English**.
 
     ![Create VM](./media/vm002-10.png "Create VM on Azure Stack HCI 22H2") 
+
+1. On the "Installer update available" page, select **Update to the new installer** and ENTER
+
+    ![Create VM](./media/vm002-9a.png "Create VM on Azure Stack HCI 22H2")
 
 1. On the "Keyboard configuration" page, select **Done** and ENTER
 
