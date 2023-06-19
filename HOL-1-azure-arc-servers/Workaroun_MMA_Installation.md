@@ -19,3 +19,5 @@
    ![](.././media/wa4.png)
 
 5. Click **Save** and **Review + create**.
+
+6. Once the deployment is completed please navigate back to the lab and continue from the next step.
