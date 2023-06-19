@@ -1,4 +1,4 @@
-# Work around for MMA installation failure:
+# Workaround for MMA installation failure:
 
 ## Follow the below instructions to fix the MMA installation failure by updating the handler version:
 
