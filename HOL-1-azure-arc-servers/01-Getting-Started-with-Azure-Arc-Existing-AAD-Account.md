@@ -385,6 +385,8 @@ In this task, let's configure and collect data from your Linux machine by enabli
 
     ![](.././media/deployment-succeeded.png)
 
+  >**Note**: If the MMA instllation deployment fails, follow the given workaround here: [Enabling insights workaround](https://github.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/blob/FY-23/HOL-1-azure-arc-servers/Workaroun_MMA_Installation.md)
+
 1. Once the deployment is succeeded, go back to the **Insights** blade for ubuntu-k8s VM and then refresh the page once, you may have to re-click on the **Enable** button and refresh the page again to see the Insights. Data will take around 10 minutes to be routed to the Insights from your Linux machine: ubuntu-k8s.
 
     ![](.././media/insight11.png)
