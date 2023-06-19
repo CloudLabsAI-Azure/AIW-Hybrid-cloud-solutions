@@ -2,7 +2,7 @@
 
 ## Follow the below instructions to fix the MMA installation failure by updating the handler version:
 
-1. Go to azure-arc resource group in Azure Portal and navigate to Deployments on left pane of Settings section.
+1. Navigate to **azure-arc** resource group in Azure Portal and navigate to Deployments on left pane of Settings section.
 
    ![](.././media/wa1.png)
    
