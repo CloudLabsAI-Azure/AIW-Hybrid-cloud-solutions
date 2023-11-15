@@ -216,7 +216,7 @@ Now, let’s onboard the Linux Machine to Azure Arc as an Arc-enabled server. Th
 
 1. Now click on Refresh from the azure-arc overview page.
 
-1. Then search and verify if **ubuntu-k8s** resource of resource type: **Server - Azure Arc** got created. Click on the resource to get more information.
+1. Then search and verify if **ubuntu-k8s** resource of resource type: **Machine - Azure Arc** got created. Click on the resource to get more information.
 
    ![](.././media/varify-onboard-arc-ubuntuk8s.png "ubuntu k8s onboarded")
 
