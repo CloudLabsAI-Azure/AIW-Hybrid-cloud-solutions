@@ -150,7 +150,7 @@ Now, let’s onboard the Linux Machine to Azure Arc as an Arc-enabled server. Th
     
     ![](.././media/root-login.png "Root Login")
     
- 1. Run the below commands to upgrade the az packages and az module. 
+ 1. Run the below commands to install Python and upgrade the python and az packages and az module. 
    
      ```
       curl https://bootstrap.pypa.io/get-pip.py > get-pip.py
