@@ -78,7 +78,7 @@ Hyper-V is Microsoft's hardware virtualization product. It lets you create and r
 
     ![](.././media/navigate-resource-group.png "Select Resource Group from Navigate Option")    
   
-1. Click on the azure-arc Resource group and confirm whether you have total 12 records to confirm all the below resources are deployed successfully.
+1. Click on the **azure-arc** Resource group and check if the resources below are deployed successfully.
 
    ![](https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/main/media/resources-azure-arc-rg.png)
 
