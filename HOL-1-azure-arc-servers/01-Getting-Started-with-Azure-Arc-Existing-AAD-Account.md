@@ -82,7 +82,7 @@ Hyper-V is Microsoft's hardware virtualization product. It lets you create and r
 
    ![](https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/main/media/resources-azure-arc-rg.png)
 
-   * In the Resource group we have one **Virtual Machine**, **Kubernetes Service**, **Storage account** and **Log Analytics workspace** deployed.
+   * In the Resource group we have the resources: **Virtual Machine**, **Kubernetes Service**, **Storage account** and **Log Analytics workspace** deployed.
 
    * **Virtual Machine**: You will be using the Virtual Machine which is already open on the left side of the page to perform all the Lab exercises.
 
