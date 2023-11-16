@@ -12,7 +12,7 @@ In this exercise, you will see how to configure Azure Monitor for containers and
 
    ![](.././media/hyd30.png "azuremonitor")
 
-3. On the Configure Container insights, for Log Analytics Workspace select the **loganalyticsws- <inject key="DeploymentID/Suffix" />** from the dropdown and click on **Configure**.
+3. On the Configure Container insights, for Log Analytics workspace select the **loganalyticsws- <inject key="DeploymentID/Suffix" />** from the dropdown and click on **Configure**.
 
    ![](.././media/hyd31.png "azuremonitor")
 
