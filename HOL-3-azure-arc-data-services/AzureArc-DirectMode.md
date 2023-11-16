@@ -215,7 +215,7 @@ In this task, you will be connecting an existing Kubernetes cluster to Azure usi
    * Data Controller Name: **arcdc-direct (2)**
    * Custom location: Select the available custom location from dropdown **(3)**.
 
-    ![](./media/dcnycloc.png "Lab Environment")
+        ![](./media/dcnycloc.png "Lab Environment")
       
 1. Now scroll down and enter the below details in the remaining sections.
    
@@ -264,7 +264,7 @@ In this task, you will be connecting an existing Kubernetes cluster to Azure usi
    ```
    kubectl get datacontrollers -n azure-arc
    ```  
-  > **Note**: The deployment of the Azure Arc data controller can take up to 10 minutes to complete.
+    > **Note**: The deployment of the Azure Arc data controller can take up to 10 minutes to complete.
   
     ![](./media/status-dc-direct.png "Lab Environment")
    
@@ -306,7 +306,7 @@ In this exercise, let's create an **Azure Arc-enabled SQL Managed Instance** usi
     
      - **Compute + Storage**: Click on **Configure compute + storage (5)**
       
-      ![](./media/newmiloc.png "Lab Environment")
+        ![](./media/newmiloc.png "Lab Environment")
       
 1. Now on **Compute + Storage** blade enter the following details:
     
@@ -322,7 +322,7 @@ In this exercise, let's create an **Azure Arc-enabled SQL Managed Instance** usi
    
        - CPU vCores Limit: Enter ```2``` **(4)**
         
-      ![](./media/checkboxnew.png "Lab Environment")
+            ![](./media/checkboxnew.png "Lab Environment")
      
      - Instance Storage
        - Data storage class: leave default
@@ -348,7 +348,7 @@ In this exercise, let's create an **Azure Arc-enabled SQL Managed Instance** usi
      
      - **Confirm Password**: Enter **Password.1!!**
 
-   After adding all the required details, click on the **Review + Create** button to review all details.    
+   After adding all the required details, click on the **Review + create** button to review all details.    
    
       ![sds](./media/sqlman-6.png "Lab Environment")
     
@@ -388,7 +388,7 @@ Now let us connect to the data controller using Azure Data Studio.
      ```BASH
      arcdc-direct
      ```  
-    ![asdasd](./media/cncttonewdc.png "Azure Data Studio")
+        ![asdasd](./media/cncttonewdc.png "Azure Data Studio")
 
 3. Once the connection is successful, you can see the Azure Arc data controller listed under Azure Arc Controllers on the bottom left of the Azure Data Studio.
    
@@ -439,25 +439,25 @@ In this task, let us learn how to connect to Azure Arc-enabled SQL Managed insta
 
 1. Enter the following on the connection details page:
 
-   - **Connection type** : Select **Microsoft SQL Server** (1)
+   - **Connection type** : Select **Microsoft SQL Server (1)**
    
-   - **Sever**: Paste the External Endpoint value of SQL Managed Instance which you copied earlier (2)
+   - **Sever**: Paste the External Endpoint value of SQL Managed Instance which you copied earlier **(2)**
 
      >**Note**: Make sure you have entered **IP Address** with **port number**.
    
-   - **Authentication type** : Select **SQL Login** from the drop-down options (3)
+   - **Authentication type** : Select **SQL Login** from the drop-down options **(3)**
    
-   - **User name** : Enter arcsqluser (4)
+   - **User name** : Enter arcsqluser **(4)**
      ```BASH
      arcsqluser
      ```
    
-   - **Password** : Enter Password.1!! (5)
+   - **Password** : Enter Password.1!! **(5)**
      ```BASH
      Password.1!!
      ```
    
-   Then click on **Connect** (6)
+   Then click on **Connect (6)**
   
     ![](./media/ads-8.png "ADS")
    

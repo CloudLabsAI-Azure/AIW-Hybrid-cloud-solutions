@@ -115,7 +115,7 @@ Now let us Monitor the SQL MI status using Grafana and Kibana.
   
     > **Note** You have to enter the credentials of the Azure Arc data controller.
   
-    - **User name** : arcuser
+    - **Username** : arcuser
       ```BASH
       arcuser
       ```
@@ -125,15 +125,15 @@ Now let us Monitor the SQL MI status using Grafana and Kibana.
       Password.1!!
       ```
 
-     ![](media/arcsql-ksignin.png "")
+      ![](media/arcsql-ksignin.png "")
    
-   > ***Info***: You can filter the results by searching in the top bar for **arcsql**. That will filter this page to just the logs for the managed SQL Server instance.
+      > **Info**: You can filter the results by searching in the top bar for **arcsql**. That will filter this page to just the logs for the managed SQL Server instance.
 
 1. You can explore the **kibana dashboard**.
 
    ![](images/Kibana-dashboard-endpoint.png "")
   
-   > ***Info***: You can learn more about Kibana here: [View logs and metrics using Kibana and Grafana](https://docs.microsoft.com/en-us/azure/azure-arc/data/monitor-grafana-kibana)
+   > **Info**: You can learn more about Kibana here: [View logs and metrics using Kibana and Grafana](https://docs.microsoft.com/en-us/azure/azure-arc/data/monitor-grafana-kibana)
     
 ### View the Visualization and metric using the Grafana graph
   
@@ -149,23 +149,23 @@ Now let us Monitor the SQL MI status using Grafana and Kibana.
   
     > **Note** You have to enter the credentials of the Azure Arc data controller.
       
-    - **User name** : arcuser
+    - **Username**: arcuser
       ```BASH
       arcuser
       ```
 
-    - **Password** : Password.1!!
+    - **Password**: Password.1!!
       ```BASH
       Password.1!!
       ```
 
-   ![](media/arcsql-gsignin.png "")
+      ![](media/arcsql-gsignin.png "")
    
 1. You can explore the page for Grafana. 
   
    ![](images/sql-mon-grafana.png "")
   
-    > ***Info***:  You can learn more about Grafana here: [View logs and metrics using Kibana and Grafana](https://docs.microsoft.com/en-us/azure/azure-arc/data/monitor-grafana-kibana)  
+    > **Info**:  You can learn more about Grafana here: [View logs and metrics using Kibana and Grafana](https://docs.microsoft.com/en-us/azure/azure-arc/data/monitor-grafana-kibana)  
   
 
 ### After this exercise, you have performed the following

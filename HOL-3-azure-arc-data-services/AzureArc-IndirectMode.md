@@ -124,8 +124,8 @@ In this task, you will be creating an SQL Managed Instance using Azure Data Stud
     - **Memory Request**: Enter ```2``` 
     - **Memory Limit**: Enter ```4``` 
      
-     ![](images/devbus.png "Confirm")
-     ![](images/deploysqlm.png "Confirm") 
+      ![](images/devbus.png "Confirm")
+      ![](images/deploysqlm.png "Confirm") 
 
 1. Leave the other things to default and click on the **Deploy** button to start the deployment of the  **Azure SQL Managed instance - Azure Arc** on the data controller.
    
@@ -183,7 +183,7 @@ In this task, you will learn how to connect to your newly created Azure Arc-enab
     
     - Click on **Connect** **(6)**
    
-   ![](./media/cntctosdf.png "azdata")
+      ![](./media/cntctosdf.png "azdata")
    
 1. You are now successfully connected with your Azure Arc-enabled SQL MI Server. You can see it under servers. You can explore the SQL Managed Instance - Azure Arc Dashboard to view the databases and run a query.
 
