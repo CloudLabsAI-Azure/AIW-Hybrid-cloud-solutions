@@ -1,12 +1,12 @@
 ## Exercise 2: Restoring an AdventureWorks database backup taken from SQL Server 2012 instance
 
-Contoso has some applications that use SQL Server as the backend database. They have installed SQL Server on their Windows servers in their manufacturing plants, but these locations don’t necessarily have local IT support to update the operating system and SQL Server with the latest security updates. They have explored Azure Database for SQL Server and found that it meets their requirements and offers some unique capabilities such as easy to manage and migrate from different cloud platforms. Therefore, they are excited about the opportunity of deploying SQL Server in their Azure Arc Arc-enabled environment.
+Contoso has some applications that use SQL Server as the backend database. They have installed SQL Server on their Windows servers in their manufacturing plants, but these locations don’t necessarily have local IT support to update the operating system and SQL Server with the latest security updates. They have explored Azure Database for SQL Server and found that it meets their requirements and offers some unique capabilities such as easy to manage and migration from different cloud platforms. Therefore, they are excited about the opportunity of deploying SQL Server in their Azure Arc Arc-enabled environment.
 
-Also, we will be exploring the Kibana and Grafana Dashboards and upload the logs and metrics to the Azure portal and view the logs.
+Also, we will be exploring the Kibana and Grafana Dashboards upload the logs and metrics to the Azure portal and view the logs.
 
 ### Task 1: Restore the AdventureWorks2012 database into Azure SQL Managed instance - Azure Arc Using Kubectl
 
-Restoring an existing SQL database from a SQL Server to Azure Arc Arc-enabled SQL MI is very simple. All you have to do is to take a backup from your existing SQL Server and then restore that backup to SQL MI. In this lab, we have already taken the backup and downloaded it in the local drive folder. 
+Restoring an existing SQL database from a SQL Server to Azure Arc Arc-enabled SQL MI is very simple. All you have to do is take a backup from your existing SQL Server and then restore that backup to SQL MI. In this lab, we have already taken the backup and downloaded it to the local drive folder. 
 
 Now let's copy and restore the already taken backup file into your Azure SQL Managed instance container using Kubectl commands.
 
@@ -53,7 +53,7 @@ Now let's copy and restore the already taken backup file into your Azure SQL Man
 
    ![](media/restoreddd.png "Confirm")
 
-1. Then, right-click on the **arcsql-direct** SQL Managed Instance Server under CONNECTIONS tab on the top left of the Azure Data Studio and click on **Refresh**.
+1. Then, right-click on the **arcsql-direct** SQL Managed Instance Server under the CONNECTIONS tab on the top left of the Azure Data Studio and click on **Refresh**.
 
    ![](media/restore-direct-4.png "Confirm")
 
@@ -61,7 +61,7 @@ Now let's copy and restore the already taken backup file into your Azure SQL Man
 
    ![](media/2012.png "Confirm")
 
-### Task 2: View Azure Arc Arc-enabled SQL managed instance logs in Azure Portal
+### Task 2: View Azure Arc Arc-enabled SQL-managed instance logs in Azure Portal
 
 1. Navigate to [Azure Portal](https://portal.azure.com/#home) and then search for **Log Analytics workspace** in the search bar at the top and then select it.
 
@@ -79,7 +79,7 @@ Now let's copy and restore the already taken backup file into your Azure SQL Man
 
     ![](media/logaw-2.png "Confirm")
 
-1. Check for CustomLogs under Tables section. If you do not see CustomLogs under Tables, refresh the page every 2 minutes until it is available.
+1. Check for CustomLogs under the Tables section. If you do not see CustomLogs under Tables, refresh the page every 2 minutes until it is available.
      
     ![](media/logaw-3.png "Confirm")
 
@@ -105,7 +105,7 @@ Now let us Monitor the SQL MI status using Grafana and Kibana.
 
    ![](media/restore-direct-6.png "Confirm")
   
-1. From the SQL managed instance - Azure Arc Dashboard, copy the **Endpoint** for **Kibana dashboard** and browse this endpoint.
+1. From the SQL-managed instance - Azure Arc Dashboard, copy the **Endpoint** for **Kibana dashboard** and browse this endpoint.
 
    ![](media/restore-direct-7.png "Confirm")
 
@@ -113,9 +113,9 @@ Now let us Monitor the SQL MI status using Grafana and Kibana.
 
 1. Enter the below username and password for SQL Managed Instance.
   
-    > **Note** You have to enter the credentials of Azure Arc data controller.
+    > **Note** You have to enter the credentials of the Azure Arc data controller.
   
-    - **User name** : arcuser
+    - **Username** : arcuser
       ```BASH
       arcuser
       ```
@@ -125,47 +125,47 @@ Now let us Monitor the SQL MI status using Grafana and Kibana.
       Password.1!!
       ```
 
-     ![](media/arcsql-ksignin.png "")
+      ![](media/arcsql-ksignin.png "")
    
-   > ***Info***: You can filter the results by searching in the top bar for **arcsql**. That will filter this page to just the logs for the managed SQL Server instance.
+      > **Info**: You can filter the results by searching in the top bar for **arcsql**. That will filter this page to just the logs for the managed SQL Server instance.
 
 1. You can explore the **kibana dashboard**.
 
    ![](images/Kibana-dashboard-endpoint.png "")
   
-   > ***Info***: You can learn more about Kibana here: [View logs and metrics using Kibana and Grafana](https://docs.microsoft.com/en-us/azure/azure-arc/data/monitor-grafana-kibana)
+   > **Info**: You can learn more about Kibana here: [View logs and metrics using Kibana and Grafana](https://docs.microsoft.com/en-us/azure/azure-arc/data/monitor-grafana-kibana)
     
-### View the Visualization and metric using Grafana graph
+### View the Visualization and metric using the Grafana graph
   
 1. Navigate back to the **Azure Data Studio** which you had opened earlier.
 
-1. From the SQL managed instance - Azure Arc Dashboard, copy the **Endpoint** for **Grafana dashboard** and browse this endpoint.
+1. From the SQL-managed instance - Azure Arc Dashboard, copy the **Endpoint** for **Grafana dashboard** and browse this endpoint.
 
    ![](media/restore-direct-8.png "Confirm")
 
    > **Note**: You may face any error that your connection is not private in the browser. Select **Advanced** and click on **Continue to [ExternalEndpoint]**.
 
-1. Enter below username and password for SQL Managed Instance.
+1. Enter below username and password below for SQL Managed Instance.
   
     > **Note** You have to enter the credentials of the Azure Arc data controller.
       
-    - **User name** : arcuser
+    - **Username**: arcuser
       ```BASH
       arcuser
       ```
 
-    - **Password** : Password.1!!
+    - **Password**: Password.1!!
       ```BASH
       Password.1!!
       ```
 
-   ![](media/arcsql-gsignin.png "")
+      ![](media/arcsql-gsignin.png "")
    
 1. You can explore the page for Grafana. 
   
    ![](images/sql-mon-grafana.png "")
   
-    > ***Info***:  You can learn more about Grafana here: [View logs and metrics using Kibana and Grafana](https://docs.microsoft.com/en-us/azure/azure-arc/data/monitor-grafana-kibana)  
+    > **Info**:  You can learn more about Grafana here: [View logs and metrics using Kibana and Grafana](https://docs.microsoft.com/en-us/azure/azure-arc/data/monitor-grafana-kibana)  
   
 
 ### After this exercise, you have performed the following

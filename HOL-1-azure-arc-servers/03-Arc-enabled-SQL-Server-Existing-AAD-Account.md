@@ -1,19 +1,20 @@
 # HOL-1: Exercise 3: Onboard SQL Server to Arc
-In the last excercise, you have seen how to enable security measures and monitoring for Arc enabled servers. In this exercise, you will onboard SQL Server to Azure Arc using Azure Portal and PowerShell commands.
+
+In the last exercise, you have seen how to enable security measures and monitoring for Arc-enabled servers. In this exercise, you will onboard SQL Server to Azure Arc using Azure Portal and PowerShell commands.
 
 ## Task 1: Login To Azure Portal
 
 1. Navigate back to Azure Portal which you have already opened in the previous exercises.
       
-1. Click on the search blade at the top and search for ```SQL Server```, select **SQL Server - Azure Arc**.
+1. Click on the search blade at the top and search for ``SQL Server``, select **SQL Server - Azure Arc**.
  
-   ![](.././media/sqlserver.png "sqlsearch")
+   ![](.././media/hyd19.png "sqlsearch")
    
 1. Click on the **Add** button to create the **SQL Server- Azure Arc**. 
  
    ![](.././media/ss2.png "sqlsearch")
    
-1. In Adding existing SQL Servers instances page, Click on **Connect Servers**.
+1. In the Adding existing SQL Servers instances page, Click on **Connect Servers**.
 
    ![](.././media/ss3.png "sqlsearch")
    
@@ -27,24 +28,24 @@ In the last excercise, you have seen how to enable security measures and monitor
  
    - Subscription: Leave default
    - Resource group: Select **azure-arc** from dropdown list.
-   - Region: Select same region as the Resource group.
+   - Region: Select the same region as the Resource group.
    - Operating Systems: Select **Windows**.
    - Server Name: Type **sqlvm**
    - License Type: Select **I have a production environment on this server with Enterprise or Standard edition covered by Software Assurance or SQL subscription ("Paid")**.
 
-     Now, click on the **Next:Tags** button.
+     Now, click on the **Next: Tags** button.
    
-   ![](.././media/H1E3T1S6.png "sqlsearch")
+      ![](.././media/H1E3T1S6.png "sqlsearch")
    
 1. Leave the default for tags blade and click on **Next: Run Script** button.
  
 1. On the **Script** blade, explore the given script. We will be using this PowerShell script to **Register Azure Arc enabled SQL Server** later.
  
-   > **Note** : Please **skip the script download** from here by clicking on ```X``` at the top right as we have **already downloaded** this script inside the Lab VM for you.
+   > **Note**: Please **skip the script download** from here by clicking on ``X`` at the top right as we have **already downloaded** this script inside the Lab VM for you.
     
    ![](.././media/runsqlv2.png "sqlsearch")
      
-## Task 2: Register Azure Arc enabled SQL Server.
+## Task 2: Register Azure Arc-enabled SQL Server.
 
 1. Minimize the Azure Portal Browser window. 
 
@@ -66,73 +67,80 @@ In the last excercise, you have seen how to enable security measures and monitor
      
    > **Note** : This will initiate the execution of **RegisterSqlServerArc.ps1** script inside **sqlvm** that is deployed on Hyper-V.
 
-1. You will be asked to authenticate the PowerShell. Open browser and paste the URL **`https://microsoft.com/devicelogin`(1)**, paste the **code(2)** and then provide credentials as below.
+1. You will be asked to authenticate the PowerShell. Open the browser and paste the URL **`https://microsoft.com/devicelogin`(1)**, paste the **code(2)** and then provide credentials as below.
 
       * Email/Username: <inject key="AzureAdUserEmail"></inject>
       * Password: <inject key="AzureAdUserPassword"></inject>
 
-   ![](.././media/H1E3T2S5.png "sqlsearch")
+         ![](.././media/H1E3T2S5.png "sqlsearch")
 
-1. After authentication, you will see some outputs which shows that the script resume.
-   > **Note** : If script fails to execute. Please execute/run the script again. 
+1. After authentication, you will see some outputs which show that the script resumes.
+   
+   > **Note**: If the script fails to execute. Please execute/run the script again. 
 
    ![](.././media/H1E3T2S6.png "sqlsearch")
   
-1. In 5-10 minutes, you will see that the script execution is completed. Make sure that you see the following output: ```SQL Server - Azure Arc extension is successfully installed```
+1. In 5-10 minutes, you will see that the script execution is completed. Make sure that you see the following output: ``SQL Server - Azure Arc extension is successfully installed``
 
    ![](.././media/H1E3T2S7.png "sqlsearch")
   
-1. Bring back the browser window where you had opened Azure Potal and search for **SQL Server -Azure Arc**. If you are already in that page, you will need to click on Refresh button. In that page, you will see one resource **SQLVM** that we just created using the PowerShell script in the previous step.
+1. Bring back the browser window where you had opened Azure Portal and search for **SQL Server -Azure Arc**. If you are already on that page, you will need to click on the Refresh button. On that page, you will see one resource **Sqlvm** that we just created using the PowerShell script in the previous step.
 
-   ![](.././media/sqlvm11new.png "sqlsearch")
+   ![](.././media/hyd17.png "sqlsearch")
   
-1. Select the **SQLVM** resource and now you can see the dashboard of **SQLVM** SQL Server -Azure Arc from Azure Portal.
+1. Select the **Sqlvm** resource and now you can see the dashboard of **sqlvm** SQL Server -Azure Arc from Azure Portal.
 
-   ![](.././media/H1E3T2S8.png "H1E3T2S8")
+   ![](.././media/hyd18.png "H1E3T2S8")
 
 ## Task 3: Run on-demand SQL Assessment.
 
 1. Click on the search blade at the top and search for ```Log Analytics workspace```, then select **LogAnalyticsWS-<inject key="DeploymentID/Suffix" />**.
 
-1. Then select **Agents management** from the left side menu. Click on **Log Analytics agent instructions** and copy the value of **Workspace ID** and **Primary Key** and save it into a notepad or Notepad++ for later use.
+1. Then select **Agents** from the left side menu. Click on **Log Analytics agent instructions** and copy the value of **Workspace ID** and **Primary Key** and save it into a Notepad or Notepad++ for later use.
  
    ![](.././media/H1E3T3S2.png "sqlsearch")
 
-1. Now, search for **Servers - Azure Arc** from search box and click on **Servers - Azure Arc**.
+1. Now, search for **Machines - Azure Arc** from search box and click on **Machines - Azure Arc**.
  
-   ![](.././media/server-azure-arc-search.png "server-azure-arc-search") 
+   ![](.././media/hyd20.png "server-azure-arc-search") 
    
 1. Select **sqlvm** from the list of Azure Arc servers.
 
-   ![](.././media/select-sql-vm.png "select-sql-vm")
+   ![](.././media/hyd21.png "select-sql-vm")
     
-1. Click on the **Extension** button from the left side menu and click on **+ Add** button to add a new extension.
+1. Click on the **Extension** button from the left side menu and click on the **+ Add** button to add a new extension.
  
-   ![](.././media/mma.png "sqlsearch")
+   ![](.././media/hyd22.png "sqlsearch")
     
-1. Select the **Log Analytics Agent - Azure Arc** extension.
+1. Click on the **+ Add** button to add a new extension.
+
+   ![](.././media/hyd23.png "sqlsearch")
+
+1. Search and select the **Log Analytics Agent - Azure Arc** extension and click on the **Next** button to continue.
  
-   ![](.././media/extension1.png "sqlsearch")
-    
-1. Now click on the **Next** button to continue. 
+   ![](.././media/hyd24.png "sqlsearch")    
    
-1. At this step, you must enter Log analytics workspace ID and a key to install the MMA ( Microsoft Monitoring Agent ) in the **sqlvm**.
+1. At this step, you must enter the Log Analytics workspace ID and a key to install the MMA ( Microsoft Monitoring Agent ) in the **sqlvm**.
   
-1. Now, enter the Workspace ID and Key that you copied from the previous step, and click on **Review + Create** button and then click on **Create** on next window.
+1. Now, enter the Workspace ID and Key that you copied from the previous step, click on **Review + Create** button.
  
-   ![](.././media/create1.png "sqlsearch")
-  
-   The deployment will take around 5 to 10 minutes to complete. You have to wait for this deployment to get successful to proceed to the next step.
+   ![](.././media/hyd25.png "sqlsearch")
+
+1. Review the configuration, and click on **Create**.
+
+   ![](.././media/hyd26.png "sqlsearch")
+
+   > **Note**: The deployment will take around 5 to 10 minutes to complete. You have to wait for this deployment to be successful to proceed to the next step.
    
 1. Open **sqlvm** from the Hyper-V Manager by double clicking on **sqlvm**.
 
    ![](.././media/opensqlvm.png "opensqlvm")
 
-1. On Connect to sqlvm box, scroll the bar towards Small to open the vm in smallest window and then click on **Connect** button.
+1. On Connect to sqlvm box, scroll the bar towards Small to open the VM in the smallest window and then click on the **Connect** button.
 
    ![](.././media/scalsqlvm.png "scalsqlvm")
 
-1. Type password **demo@pass123** and press **Enter** button to login. Then, you can resize the sqlvm window size as per your convenience.
+1. Type password **demo@pass123** and press **Enter** button to login. Then, you can resize the sqlvm window size at your convenience.
    
    ![](.././media/entervmpassword.png "entervmpassword")
 
@@ -140,11 +148,11 @@ In the last excercise, you have seen how to enable security measures and monitor
    
    ![](.././media/H1E3T3S13.png "H1E3T3S13")
   
-1. On **Connect to server** pop-up select SQLVM.
+1. On **Connect to server** pop-up, select **SQLVM** as Server name from drop-down and click on **Connect**.
 
    ![](.././media/H1E3T3S14.png "H1E3T3S14")
    
-1. In the left pane, expand **Security** then **Logins**. In Logins, right click on **NT AUTHORITY\SYSTEM** and click on **Properties**.
+1. In the left pane, expand **Security** then **Logins**. In Logins, right-click on **NT AUTHORITY\SYSTEM** and click on **Properties**.
 
    ![](.././media/H1E3T3S15.png "H1E3T3S15")
   
@@ -152,9 +160,9 @@ In the last excercise, you have seen how to enable security measures and monitor
 
    ![](.././media/H1E3T3S16.png "H1E3T3S16")
  
-1. Then, Go to **SQLVM** Azure Arc - SQL Server resource and select the **Best practices assessment** under settings from the left pane and click on **Change license type**.
+1. Then, Go to **sqlvm** SQL Server - Azure Arc resource select the **Best practices assessment** under settings from the left pane and click on **Change license type**.
    
-   > **Note**: Skip and continue from **Step 19** if **change license type** is not available 
+   > **Note**: Skip and continue from **Step 20** if **change license type** option is not available.
    
    ![](.././media/H1E3T3S17.png "H1E3T3S17")
 
@@ -162,23 +170,20 @@ In the last excercise, you have seen how to enable security measures and monitor
 
    ![](.././media/H1E3T3S18.png "H1E3T3S18")
 
-1. Select the log Analytics Workspace as **LogAnalyticsWS-<inject key="DeploymentID/Suffix" />** from the drop-down and click on **Enable assessment**.
+1. Select the log Analytics Workspace as **LogAnalyticsWS-<inject key="DeploymentID/Suffix" /> (1)** from the drop-down and click on **Enable assessment (2)**.
 
-   ![](.././media/H1E3T3S19.png "H1E3T3S19")
+   ![](.././media/hyd28.png "H1E3T3S19")
    
-   > **Note**: After enabling the assessment, wait for few minutes to get it complete. 
+   > **Note**: After enabling the assessment, wait for a few minutes to get it complete. 
  
-1. Once the assessment is **completed**, click on it to see the results. 
-
-   ![](.././media/H1E3T3S20.png "H1E3T3S20")
    
-1. The **Assessment results** will look like below:
+1. Once the assessment is **completed**, click on it to see the results. The **Assessment results** will look like below:
 
     ![](.././media/H1E3T3S21.png "H1E3T3S21")
       
-   > **Note**: Now you can move to the next Exercise, you don't have to wait here to the Result appear.   
+   > **Note**: Now you can move to the next Exercise, you don't have to wait here for the Result to appear.   
 
 ## In this exercise, you have covered the following:
  
-   - Register Azure Arc enabled SQL Server.
+   - Register Azure Arc-enabled SQL Server.
    - Run on-demand SQL Assessment.
