@@ -218,7 +218,7 @@ Now, let’s onboard the Linux Machine to Azure Arc as an Arc-enabled server. Th
 
    ![](.././media/hybd5.png "ubuntu k8s onboarded")
 
-1. On **ubuntu-k8s** Machine - Azure Arc **Overview** page, verify that the status is **Connected**. You can also check other details from this tab like Computer name, Operating system, Operating system version and Agent version of the Ubuntu machine.
+1. On **ubuntu-k8s** Machine - Azure Arc **Overview** page, verify that the Status is **Connected**. You can also check other details from this tab like Computer name, Operating system, Operating system version and Agent version of the Ubuntu machine.
    
    > **Note**: The operating system and Agent version that you see may not match with the provided screenshot if there were any updates to the Agent/ OS Version.
 
