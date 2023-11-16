@@ -72,7 +72,7 @@ Now you're all set to explore the powerful world of technology. Feel free to rea
 
 Hyper-V is Microsoft's hardware virtualization product. It lets you create and run a software version of a computer, called a virtual machine. Each virtual machine acts like a complete computer, running an operating system and programs. When you need computing resources, virtual machines give you more flexibility, help save time and money, and are a more efficient way to use hardware than just running one operating system on physical hardware. In this task, you will walk through an on-prem environment that is hosted on Hyper-V. You will find three virtual machines hosted on the Hyper-V server, which you will onboard to Azure Arc and play around with.
 
-1. Navigate to the Resource Group in the Azure portal navigation section.
+1. Navigate to the **Resource Groups** in the Azure portal navigation section.
 
     ![](.././media/navigate-resource-group.png "Select Resource Group from Navigate Option")    
   
@@ -96,15 +96,15 @@ Hyper-V is Microsoft's hardware virtualization product. It lets you create and r
 
 1. Then, you need to Select **ARCHOST- <inject key="DeploymentID/Suffix" />** to connect with the Local Hyper-V server.
 
-    ![](.././media/archost-localserver.png "ARCHOST Server")
+    ![](.././media/hybd4.png "ARCHOST Server")
 
 1. You will find two guest virtual machines running on the Hyper-V manager. Find a list of guest virtual machines with private IP addresses.
      * **ubuntu-k8s** - ```192.168.0.8```
      * **sqlvm** - ```192.168.0.4```
      
-    ![](.././media/guestvms1.png "Guest VMs")
+        ![](.././media/guestvms1.png "Guest VMs")
     
-    > **Note**: If you see VMs are in the stopped state, and when you click on the Start button, if VMs are not getting started or if it is throwing any error. Then, right-click on Virtual Machine in stopped state and then click on **Delete saved state..**. After that, you can start the VMs and proceed to the next task.
+        > **Note**: If you see VMs are in the stopped state, and when you click on the Start button, if VMs are not getting started or if it is throwing any error. Then, right-click on Virtual Machine in stopped state and then click on **Delete saved state..**. After that, you can start the VMs and proceed to the next task.
 
 ## Task 2: Onboard Linux Machine to Azure Arc
 
@@ -130,9 +130,9 @@ Now, let’s onboard the Linux Machine to Azure Arc as an Arc-enabled server. Th
       demo@pass123
       ```
 
-    ![](.././media/enter-ubuntu-k8s-credentials.png "Enter ubuntu-k8s credentials")
+        ![](.././media/enter-ubuntu-k8s-credentials.png "Enter ubuntu-k8s credentials")
     
-    > **Note**: To paste any value in the Putty terminal, just copy the values from anywhere and then right-click on the terminal to paste the copied value.
+        > **Note**: To paste any value in the Putty terminal, just copy the values from anywhere and then right-click on the terminal to paste the copied value.
     
 1. Login to the **Root user account** using sudo command; enter the following command and then provide **password** - ```demo@pass123``` when prompted for the password.
 
@@ -146,7 +146,7 @@ Now, let’s onboard the Linux Machine to Azure Arc as an Arc-enabled server. Th
       demo@pass123
       ```
     
-    ![](.././media/root-login.png "Root Login")
+        ![](.././media/root-login.png "Root Login")
     
  1. Run the below commands to upgrade the az packages and az module. 
    
