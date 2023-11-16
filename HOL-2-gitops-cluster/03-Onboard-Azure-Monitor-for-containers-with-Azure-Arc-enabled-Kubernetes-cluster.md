@@ -28,6 +28,6 @@ In this exercise, you will see how to configure Azure Monitor for containers and
 
    ![](.././media/hol2-ex3-6.png "azuremonitor")
 
-7. In the same pane, filter the **Time range = Last 6 Hours**(1) and click on **Containers**(2). You will be able to see the list of Containers that linked to pod and node which you have monitored in the previous steps.
+7. In the same pane, filter the **Time range = Last 6 Hours**(1) and click on **Containers**(2). You will be able to see the list of Containers that are linked to the pod and node which you have monitored in the previous steps.
 
    ![](.././media/hol2-ex3-7.png "azuremonitor")
