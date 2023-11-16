@@ -1,6 +1,6 @@
 ## Exercise 3: Connecting to Azure Arc Data Controller and deploying Azure Arc-enabled SQL Managed Instance Business Critical in Indirect connectivity mode
 
-In this exercise, you will be connecting to the pre-deployed Azure Arc Data Controller with indirect connectivity mode using Azure Data Studio.  we will also create an Azure Arc-enabled SQL Managed Instance Business Critical on top of a Azure Arc Data Controller with indirect connectivity mode.
+In this exercise, you will be connecting to the pre-deployed Azure Arc Data Controller with indirect connectivity mode using Azure Data Studio.  we will also create an Azure Arc-enabled SQL Managed Instance Business Critical on top of an Azure Arc Data Controller with indirect connectivity mode.
 
 ### Task 1: Connect to the Azure Arc data controller using Azure Data Studio.
 
@@ -8,7 +8,7 @@ Let us now connect to the Azure Arc data controller using Azure Data Studio.
 
 In the environment provided, the Azure Arc Data controller is already deployed on top of the Kubernetes Cluster. We are using **Indirect** connectivity mode for the Azure Arc-enabled data services environment to Azure.
   
-   > ***Info***: There are multiple modes available to connect to Azure. if the Azure Arc-enabled data services are directly connected to Azure, users can use Azure Resource Manager APIs, the Azure CLI, and the Azure portal to operate the Azure Arc data services. The experience in directly connected mode is much like how you would use any other Azure service with provisioning/de-provisioning, scaling, configuring, and so on, all in the Azure portal.
+   > **Info**: There are multiple modes available to connect to Azure. if the Azure Arc-enabled data services are directly connected to Azure, users can use Azure Resource Manager APIs, the Azure CLI, and the Azure portal to operate the Azure Arc data services. The experience in directly connected mode is much like how you would use any other Azure service with provisioning/de-provisioning, scaling, configuring, and so on, all in the Azure portal.
    
    If you want to know more about this, refer to the [Connectivity Modes](https://docs.microsoft.com/en-us/azure/azure-arc/data/connectivity)
 
@@ -16,13 +16,12 @@ In the environment provided, the Azure Arc Data controller is already deployed o
 
    ```BASH
    Remove-Item C:\Users\arcadmin\.kube\config
-   
    ```
    
    ```BASH
    Import-AzAksCredential -ResourceGroupName $env:resourceGroup -Name $env:clusterName -Force
-
    ```
+   
 1. Navigate back to **Azure Data studio** and in **Azure Arc Controllers** section, click on **Connect to Existing Azure Arc Controller**.
 
    ![](./media/indirectmode-1.png "Connection")
@@ -50,11 +49,9 @@ In the environment provided, the Azure Arc Data controller is already deployed o
 
     ![](./media/indirectmode-3.png "")
 
- 
-
 ### Task 2: Monitor with Data Controller Dashboard
 
-Now that you are connected to an Azure Arc data controller, let us view the dashboards for the data controller and any SQL managed instances or PostgreSQL Hyperscale server group resources that you have.
+Now that you are connected to an Azure Arc data controller, let us view the dashboards for the data controller and any SQL-managed instances or PostgreSQL Hyperscale server group resources that you have.
 
 1. In the **Connections** panel, under **AZURE ARC CONTROLLERS**, right-click on the **arcdc-indirect** data controller and select **Manage**.
 
@@ -79,7 +76,7 @@ Now that you are connected to an Azure Arc data controller, let us view the dash
 
 ### Task 3: Create Azure Arc-enabled SQL Managed Instance
 
-In this task, you will be creating an SQL Managed Instance using Azure Data Studio. Azure SQL Managed Instance is the intelligent and scalable cloud database service that combines the broadest SQL Server database engine compatibility with all the benefits of a fully managed and evergreen platform as a service.
+In this task, you will be creating an SQL Managed Instance using Azure Data Studio. Azure SQL Managed Instance is an intelligent and scalable cloud database service that combines the broadest SQL Server database engine compatibility with all the benefits of a fully managed and evergreen platform as a service.
 
 1. Open **Azure Data Studio** from the desktop if not already opened. 
    > **Note**: Azure Data Studio is a free cross-platform database tool for data professionals using on-premises and cloud data platforms on Windows, macOS, and Linux
@@ -94,7 +91,7 @@ In this task, you will be creating an SQL Managed Instance using Azure Data Stud
    
 1. On the next page that opens, read the Microsoft Privacy statement, and then click on **Next button** to proceed with the deployment. You can click on the privacy statement link to view the terms and conditions if you want to read through it.
 
-   > **Note**: You will also see a **Required tools** table under the terms and conditions line. These tools are required to deploy the Azure Arc enabled Azure SQL Managed Instance. You don't have to worry about the installation of any of those tools because we have already installed these required tools for you.
+   > **Note**: You will also see a **Required tools** table under the terms and conditions line. These tools are required to deploy the Azure Arc-enabled Azure SQL Managed Instance. You don't have to worry about the installation of any of those tools because we have already installed these required tools for you.
 
    ![](images/deploybsnnext.png "Confirm")
 
@@ -130,11 +127,11 @@ In this task, you will be creating an SQL Managed Instance using Azure Data Stud
      ![](images/devbus.png "Confirm")
      ![](images/deploysqlm.png "Confirm") 
 
-1. Leave the other things default and click on the **Deploy** button to start the deployment of the  **Azure SQL Managed instance - Azure Arc** on the data controller.
+1. Leave the other things to default and click on the **Deploy** button to start the deployment of the  **Azure SQL Managed instance - Azure Arc** on the data controller.
    
 1. If prompted, select **New Python installation** and click on **Next** button.
 
-   > **Note:** If you are not prompted with the below screen you can skip to step 10.
+   > **Note**: If you are not prompted with the below screen you can skip to step 10.
 
    ![](images/configure-python-runtime.png)
   
@@ -142,7 +139,7 @@ In this task, you will be creating an SQL Managed Instance using Azure Data Stud
 
    ![](images/install-dependencies.png)
      
-1. After clicking on Install, a Notebook will open up and the cell execution will start automatically to deploy the **SQL Managed Instance**. Once the deployment is complete, you will see the text **arcsql-Indir is Ready** at the bottom of the notebook as shown in the screenshot. The deployment of **Azure SQL Managed instance - Azure Arc** will take around 5-10 minutes to complete, in this time you can explore through the commands in the notebook
+1. After clicking on Install, a Notebook will open up and the cell execution will start automatically to deploy the **SQL Managed Instance**. Once the deployment is complete, you will see the text **arcsql-Indir is Ready** at the bottom of the notebook as shown in the screenshot. The deployment of **Azure SQL Managed instance - Azure Arc** will take around 5-10 minutes to complete, During this time you can explore through the commands in the notebook
 
    ![](images/readydoneindir.png)
 
@@ -156,7 +153,7 @@ In this task, you will be creating an SQL Managed Instance using Azure Data Stud
 
 In this task, you will learn how to connect to your newly created Azure Arc-enabled Azure SQL Managed instance using Azure Data Studio.
 
-1. Now, Right click on the newly created Azure Arc-enable SQL Managed Instance and click on **Manage**. A new window should open, and you should be able to see the overview of SQL Managed Instance, Copy the **External Endpoint** from the dashboard. We will use the endpoints in next steps to connect to the Azure Arc-enabled SQL Managed Instance. 
+1. Now, Right-click on the newly created Azure Arc-enable SQL Managed Instance and click on **Manage**. A new window should open, and you should be able to see the overview of SQL Managed Instance, Copy the **External Endpoint** from the dashboard. We will use the endpoints in the next steps to connect to the Azure Arc-enabled SQL Managed Instance. 
 
      ![](./media/ads-sqlmi-overview.png "azdata")
 
@@ -164,7 +161,7 @@ In this task, you will learn how to connect to your newly created Azure Arc-enab
 
    ![](images/sql-instance4.png "Confirm")
 
-1. Enter the following in the connection details page:
+1. Enter the following on the connection details page:
 
     - **Connection type** : Select **Microsoft SQL Server** **(1)**
    
@@ -172,7 +169,7 @@ In this task, you will learn how to connect to your newly created Azure Arc-enab
 
       >**Note**: Make sure you have entered **IP Address** with **port number**.
    
-    - **Authentication type** : Select **SQL Login** from the drop down options **(3)**
+    - **Authentication type** : Select **SQL Login** from the drop-down options **(3)**
    
     - **User name** : Enter arcsqluser **(4)**
       ```BASH
@@ -193,13 +190,13 @@ In this task, you will learn how to connect to your newly created Azure Arc-enab
    ![](./media/indirectmode-11.png "azdata")
    
    
-## Task 5: View SQL MI resource and SQL MI logs in Azure portal.
+## Task 5: View SQL MI resource and SQL MI logs in the Azure portal.
    
-Now that we have the SQL Managed Instance created, let us upload some metrics, usages, and logs to the Azure Portal and view SQL Managed Instance Resource in the Azure portal.
+Now that we have the SQL Managed Instance created, let us upload some metrics, usages, and logs to the Azure Portal and view the SQL Managed Instance Resource in the Azure portal.
    
 1. Navigate back to the **command prompt** window. 
 
-1. Run these below commands to check if the variables are set or not.
+1. Run the below commands to check if the variables are set or not.
    
    ```BASH
    echo %WORKSPACE_ID%
@@ -251,7 +248,7 @@ Now that we have the SQL Managed Instance created, let us upload some metrics, u
    SET SPN_AUTHORITY=https://login.microsoftonline.com
    ```
 
-   > **Note**: You can get the workspace ID and key from the Azure portal and service principal details from the Environment Details tab at the top and then navigating to Service Principal details.
+   > **Note**: You can get the workspace ID and key from the Azure portal and service principal details from the Environment Details tab at the top and then navigate to Service Principal details.
 
 1. Export all logs to the specified file:
    
@@ -274,7 +271,7 @@ Now that we have the SQL Managed Instance created, let us upload some metrics, u
 
     ![](media/arcsqlindirportl.png "Confirm")
       
-1. Now you will see some basic information about the Azure Arc enabled SQL Managed Instance.
+1. Now you will see some basic information about the Azure Arc-enabled SQL Managed Instance.
       
     ![](media/arcindirsdjsd.png "Confirm")
    
@@ -286,7 +283,7 @@ Now that we have the SQL Managed Instance created, let us upload some metrics, u
 
 1. Then, from the left navigation menu under **General** select **Logs**
 
-1. Now in your page that opens up, click on the ```X```  at the top right corner as shown in the below image.
+1. Now on your page that opens up, click on the ``X``  at the top right corner as shown in the below image.
 
     ![](images/ex4-t6-closepopup-log.png "Confirm")
    
@@ -294,7 +291,7 @@ Now that we have the SQL Managed Instance created, let us upload some metrics, u
 
     ![](images/ex4-t6-closepopup-log1.png "Confirm")
 
-1. Then, check if CustomLogs is there under Tables section. If you don't see CustomLogs there, refresh the page every 2 minutes until it is available.
+1. Then, check if CustomLogs is there under the Tables section. If you don't see CustomLogs there, refresh the page every 2 minutes until it is available.
      
 1. Once the Custom logs are available, expand Custom Logs at the bottom of the list of tables and you will see a table called **sqlManagedInstances_agent_logs_CL**.
    
@@ -308,7 +305,7 @@ Now that we have the SQL Managed Instance created, let us upload some metrics, u
    
     ![](media/HOL3-EX3-T5-P17.png "Confirm")
 
-    > Note: You might have to resize the editor, to view the logs from the output window.
+    > **Note**: You might have to resize the editor, to view the logs from the output window.
 
 ### In this exercise, you have covered the following:
  
