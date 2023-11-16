@@ -96,7 +96,7 @@ Hyper-V is Microsoft's hardware virtualization product. It lets you create and r
 
 1. Then, you need to Select **ARCHOST- <inject key="DeploymentID/Suffix" />** to connect with the Local Hyper-V server.
 
-    ![](.././media/hybd4.png "ARCHOST Server")
+    ![](.././media/hyd4.png "ARCHOST Server")
 
 1. You will find two guest virtual machines running on the Hyper-V manager. Find a list of guest virtual machines with private IP addresses.
      * **ubuntu-k8s** - ```192.168.0.8```
@@ -210,19 +210,19 @@ Now, let’s onboard the Linux Machine to Azure Arc as an Arc-enabled server. Th
      
    ![](.././media/connected-azure-arc.png "Connected to Arc")
 
-1. Let's verify the onboarding of **ubuntu-k8s** server on Azure Arc from Azure portal. Switch to the browser tab where you have logged into the Azure portal already in step 1 and browse TO **azure-arc** resource group
+1. Let's verify the onboarding of **ubuntu-k8s** machine on Azure Arc from Azure portal. Switch to the browser tab where you have logged into the Azure portal already in step 1 and browse TO **azure-arc** resource group
 
 1. Now click on Refresh from the azure-arc overview page.
 
-1. Then search and verify if **ubuntu-k8s** resource of resource type: **Server - Azure Arc** got created. Click on the resource to get more information.
+1. Then search and verify if **ubuntu-k8s** resource of resource type: **Machine - Azure Arc** got created. Click on the resource to get more information.
 
-   ![](.././media/varify-onboard-arc-ubuntuk8s.png "ubuntu k8s onboarded")
+   ![](.././media/hybd5.png "ubuntu k8s onboarded")
 
-1. On **ubuntu-k8s** Server - Azure Arc **Overview** page, verify that the status is **Connected**. You can also check other details from this tab like Computer name, Operating system, Operating system version and Agent version of the Ubuntu machine.
+1. On **ubuntu-k8s** Machine - Azure Arc **Overview** page, verify that the status is **Connected**. You can also check other details from this tab like Computer name, Operating system, Operating system version and Agent version of the Ubuntu machine.
    
    > **Note**: The operating system and Agent version that you see may not match with the provided screenshot if there were any updates to the Agent/ OS Version.
 
-   ![](.././media/hol1ss1.png "ubuntu k8s onboard status check")
+   ![](.././media/hyd5.png "ubuntu k8s onboard status check")
 
 ## Task 3: Onboard Kubernetes Cluster to Azure Arc
 
@@ -345,21 +345,21 @@ Policies can be applied to Arc-enabled servers the same way they are applied to 
 
     ![](.././media/searchAzureArc1v3.png)
     
-1. Select **Servers** from the options on the left side of the Azure Arc blade.
+1. Select **Machines** from the options on the left side of the Azure Arc blade.
 
-    ![](.././media/aa-hol1-servers.png)
+    ![](.././media/hyd1.png)
     
 1. Click on the **ubuntu-k8s** server from connected machines. 
 
-    ![](.././media/hol1-ex1-t5-s3.png)
+    ![](.././media/hyd2.png)
     
 1. From **ubuntu-k8s** server blade, select **Policies** under **Operations** section on the left side.
 
-    ![](.././media/select-policies.png)
+    ![](.././media/hyd6.png)
     
 1. Click on **Assign policy** to assign a policy to the connected **ubuntu-k8s** machine.
 
-    ![](.././media/assign-policies.png)
+    ![](.././media/hyd7.png)
     
 1. In **Assign policy** window, under **Basics** section, select **ellipse(...)**  from **Policy Definitions**.
 
@@ -396,7 +396,7 @@ Policies can be applied to Arc-enabled servers the same way they are applied to 
     
 1. Now, once the policy assignment is created, you will see Deploy Log Analytics Workspace for Linux on the assigned policies list in the **Not started** state. It will start to deploy the Log Analytics Agent in **ubuntu-k8s** Hyper-V guest VM. Once Log Analytics Agent is deployed in the ubuntu-k8s VM, the compliance state will be updated to **Compliant**. It will take around 20-30 minutes for the process. You can move ahead to the next task and come back later to check the compliance state.
 
-    ![](.././media/ws-compliant.png)    
+    ![](.././media/hyd8.png)    
 
 ## Task 6: Monitor Arc Enabled machines with Azure Monitor
 
@@ -404,17 +404,30 @@ Azure Monitor can collect data directly from your hybrid machines into a Log Ana
 
 In this task, let's configure and collect data from your Linux machine by enabling Azure Monitor for VMs following a simplified set of steps, which streamlines the experience and takes a shorter amount of time.
 
-1. In the Azure Portal, from **ubuntu-k8s** Server - Azure Arc blade, select **Insights** under **Monitoring** section on the left.
+1. In the Azure Portal, from **ubuntu-k8s** Machine - Azure Arc blade, select **Insights** under **Monitoring** section on the left.
 
-    ![](.././media/insights-option.png)
+    ![](.././media/hyd3.png)
     
 1. Click on the **Enable** on Insights blade. You may have to scroll down to see the **Enable** button.
 
     ![](.././media/enable-insights.png)
 
-1. On the Azure Monitor **Insights Onboarding** page, choose the existing **Log Analytics Workspace**  LogAnalyticsWS-<inject key="DeploymentID/Suffix" /> and then click on **configure** button.
+1. On the **Monitoring configuration** page, click on **Create New** button.
 
-    ![](.././media/HOL1-EX1-T6-P3.png)
+    ![](.././media/hyd10.png)
+
+1. On the Create new rule Enter the following details:
+
+    - Data collection rule name: Enter **data-<inject key="DeploymentID/Suffix" /> (1)**
+    - Enable processes and dependencies (Map): Check the box **(2)**
+    - Log Analytics workspaces: Choose the existing Log Analytics workspace **LogAnalyticsWS-<inject key="DeploymentID/Suffix" /> (3)**
+    - Click on **Create (4)**
+
+        ![](.././media/hyd13.png)
+
+1. Review the configuration, and click on **Configure** button.
+
+    ![](.././media/hyd14.png)
 
 1. Once you click on the **Enable** button, you can see a notification on the bell icon(🔔) in the top right corner: which says **validating deployment** and then changes to **Submitting deployment** and finally **Deployment in progress**. The deployment will take approx 15-20 minutes to deploy the insights for Ubuntu-k8s VM as extensions are being installed on your connected machine (ubuntu-k8s).
 
@@ -422,23 +435,21 @@ In this task, let's configure and collect data from your Linux machine by enabli
 
     ![](.././media/submitting-deployment.png)
     
-1. On Azure Arc ubuntu-k8s Insights blade, you will see **Insights deployment is in progress... Please wait.** notification. Once the deployment is completed, you will see a notification in the upper right corner that says **Deployment succeeded**.
+1. Once the deployment is completed, you will see a notification in the upper right corner that says **Deployment succeeded**.
 
-    ![](.././media/insights-dep-in-prog.png)
+    ![](.././media/hyd9.png)
 
-    ![](.././media/deployment-succeeded.png)
-
-  >**Note**: If the MMA installation deployment fails, follow the given workaround here: [Enabling insights workaround](https://github.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/blob/FY-23/HOL-1-azure-arc-servers/Workaroun_MMA_Installation.md)
+    >**Note**: If the MMA installation deployment fails, follow the given workaround here: [Enabling insights workaround](https://github.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/blob/FY-23/HOL-1-azure-arc-servers/Workaroun_MMA_Installation.md)
 
 1. Once the deployment has succeeded, go back to the **Insights** blade for ubuntu-k8s VM and then refresh the page once, you may have to re-click on the **Enable** button and refresh the page again to see the Insights. Data will take around 10 minutes to be routed to the Insights from your Linux machine: ubuntu-k8s.
 
-    ![](.././media/insight11.png)
+    ![](.././media/hyd15.png)
 
     > Note: By this time, the Compliance state of the policy also might have changed. While you wait for the insights to come up, you can check the compliance state in Policies under **Operations** section on the left or you can move on to the next page and come back later to view the insights.
 
 1. Once the Insights are ready, click on the **Performance** blade to review Logical Disk Operations, CPU Utilization, Available Memory, Logical Disk IOPS, Logical Disk MB/s, and much more. It is exciting to see the **graphical representation** of VM performance, whether the VM is deployed on-prem, on other cloud provider platforms, or on any edge technologies.
 
-    ![](.././media/HOL1-EX1-T6-P7.png)
+    ![](.././media/hyd16.png)
     
 1. Click on **Map** and review the **ubuntu-k8s** with few running **Processes**. Also, you can explore machine properties from the right. If there will be any **Alerts** you can check it by clicking on **Alerts** on the right side 👉.
 
