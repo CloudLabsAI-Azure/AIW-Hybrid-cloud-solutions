@@ -12,7 +12,7 @@ In this task, you will select an existing policy definition and create a policy 
 
     ![](.././media/0151.png)
 
-1. From the **Kuberenetes Azure Arc** blade, click on **capabilities**, click on **Azure Policy**.
+1. From the **Kuberenetes Azure Arc** blade, click on **Capabilities**, click on **Azure Policy**.
 
     ![](.././media/HOL2-EX2-T1-P2.png)
     
@@ -32,27 +32,30 @@ In this task, you will select an existing policy definition and create a policy 
 
     ![](.././media/HOL2-Ex2-T1-S6.png)
 
-1. In the **Search** window for available definitions, type ```GitOps``` and select the one named **Configure Kubernetes clusters with specified GitOps configuration using no secrets**.  Then, click on the blue **Select** button below.
+1. In the **Search (1)** window for available definitions, type ```GitOps``` and select the one named **Configure Kubernetes clusters with specified GitOps configuration using no secrets (2)**. Then, click on the **Add (3)** button below.
 
-    ![](.././media/gitops-1.png)
+    ![](.././media/hyd29.png)
 
 1. Click on **Parameters** blade.
 
 1. Provide the following details under **Parameters** tab
 
-    - uncheck the **Only show parameters that require input** box to see all the parameters
+    - uncheck the **Only show parameters that need input or review** box to see all the parameters
     
       ![](.././media/HOL2-Ex2-T1-S9.1.png)
       
     - Configuration resource name: **cluster-config**
+
       ```bash
       cluster-config
       ```
     - Operator instance name: **cluster-config**
+
       ```bash
       cluster-config
       ```
     - Operator namespace: **cluster-config**
+
       ```
       cluster-config
       ```
@@ -61,14 +64,17 @@ In this task, you will select an existing policy definition and create a policy 
     - Operator type: **Flux**
 
     - Operator Parameters: **--git-readonly**
+
       ```
       --git-readonly
       ```
-    - Repository URL: The forked repo name of **https://github.com/Azure/arc-k8s-demo** that you are using for performing the lab
-    - Set the **Enable helm** option to **false**
+    - Repository URL: The forked repo name of **https://github.com/Azure/arc-k8s-demo** that you are using for performing the lab.
+
+    - Set the **Enable helm** option to **false**.
+
     - **Leave the other options set to default**
      
-    ![](.././media/HOL2-Ex2-T1-S9.2.png)
+      ![](.././media/HOL2-Ex2-T1-S9.2.png)
 
 1. Then, Click on **Next** from the bottom of the page.
    
