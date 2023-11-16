@@ -106,7 +106,7 @@ GitOps, as it relates to Kubernetes, is the practice of declaring the desired st
      
      > The config agent polls Azure for new or updated configurations.
 
-## Task 3: Validate the source control configuration
+## Task 3: Validate the SourceControlConfiguration
 
 1. Now, to validate whether the **sourceControlConfiguration** was successfully created and the **compliance** state is Installed, you have to run the command given below. 
    
@@ -123,7 +123,7 @@ GitOps, as it relates to Kubernetes, is the practice of declaring the desired st
   
 2. In the Azure Portal which you have opened in the browser window, navigate to Resource group **azure-arc** RG-> Resource **microk8s-cluster** -> **GitOps**. Ensure that the operator state status is **Succeeded**.
 
-   ![](.././media/hol2tsk3stp2.png) 
+   ![](.././media/hyd27.png) 
   
 ## Task 4: Validate the Kubernetes configuration
 

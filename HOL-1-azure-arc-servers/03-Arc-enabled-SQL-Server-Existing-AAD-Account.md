@@ -148,7 +148,7 @@ In the last exercise, you have seen how to enable security measures and monitori
    
    ![](.././media/H1E3T3S13.png "H1E3T3S13")
   
-1. On **Connect to server** pop-up select SQLVM.
+1. On **Connect to server** pop-up, select **SQLVM** as Server name from drop-down and click on **Connect**.
 
    ![](.././media/H1E3T3S14.png "H1E3T3S14")
    
@@ -160,9 +160,9 @@ In the last exercise, you have seen how to enable security measures and monitori
 
    ![](.././media/H1E3T3S16.png "H1E3T3S16")
  
-1. Then, Go to **SQLVM** Azure Arc - SQL Server resource select the **Best practices assessment** under settings from the left pane and click on **Change license type**.
+1. Then, Go to **sqlvm** SQL Server - Azure Arc resource select the **Best practices assessment** under settings from the left pane and click on **Change license type**.
    
-   > **Note**: Skip and continue from **Step 19** if **change license type** is not available 
+   > **Note**: Skip and continue from **Step 20** if **change license type** option is not available.
    
    ![](.././media/H1E3T3S17.png "H1E3T3S17")
 
@@ -170,9 +170,9 @@ In the last exercise, you have seen how to enable security measures and monitori
 
    ![](.././media/H1E3T3S18.png "H1E3T3S18")
 
-1. Select the log Analytics Workspace as **LogAnalyticsWS-<inject key="DeploymentID/Suffix" />** from the drop-down and click on **Enable assessment**.
+1. Select the log Analytics Workspace as **LogAnalyticsWS-<inject key="DeploymentID/Suffix" /> (1)** from the drop-down and click on **Enable assessment (2)**.
 
-   ![](.././media/H1E3T3S19.png "H1E3T3S19")
+   ![](.././media/hyd28.png "H1E3T3S19")
    
    > **Note**: After enabling the assessment, wait for a few minutes to get it complete. 
  
