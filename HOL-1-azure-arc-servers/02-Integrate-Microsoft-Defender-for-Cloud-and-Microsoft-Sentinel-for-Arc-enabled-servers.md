@@ -17,6 +17,7 @@ You can connect your non-Azure computers in any of the following ways:
    ![](.././media/H1-Ex2-task2-02.png)
    
 1. Now, select the subscription listed and click on **Install agents**.
+   
    > **Note**: If you see that the Install Agents button is not available, It means that the agent will get automatically installed with the help of Defender and log analytics.
 
    ![](.././media/H1-Ex2-task2-03.png)
@@ -35,7 +36,7 @@ You can connect your non-Azure computers in any of the following ways:
     
 1. Now, close the blade and go back to the **Inventory** tab and then you will see a few connected resources. If you don't see any resources, you will have to click on the Refresh button at the top.
 
-1. You can also find the **ubuntu-k8s** Arc-enabled machone available in the resources list because the **LogAnalytics** agent is already enabled for it and the same Log Analytics workspace is connected to Microsoft Defender for Cloud. 
+1. You can also find the **ubuntu-k8s** Arc-enabled machine available in the resources list because the **LogAnalytics** agent is already enabled for it and the same Log Analytics workspace is connected to Microsoft Defender for Cloud. 
 
    > **Note**: Agent monitoring will take a few minutes to update and show the status as **Monitored** for Arc-enabled machine **ubuntu-k8s** as shown in the below screen. You can continue to the next exercise and come back later to check on this.
 
