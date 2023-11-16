@@ -35,7 +35,7 @@ In the last exercise, you have seen how to enable security measures and monitori
 
      Now, click on the **Next: Tags** button.
    
-   ![](.././media/H1E3T1S6.png "sqlsearch")
+      ![](.././media/H1E3T1S6.png "sqlsearch")
    
 1. Leave the default for tags blade and click on **Next: Run Script** button.
  
@@ -72,7 +72,7 @@ In the last exercise, you have seen how to enable security measures and monitori
       * Email/Username: <inject key="AzureAdUserEmail"></inject>
       * Password: <inject key="AzureAdUserPassword"></inject>
 
-   ![](.././media/H1E3T2S5.png "sqlsearch")
+         ![](.././media/H1E3T2S5.png "sqlsearch")
 
 1. After authentication, you will see some outputs which show that the script resumes.
    
