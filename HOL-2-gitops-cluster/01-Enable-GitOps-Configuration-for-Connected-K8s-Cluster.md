@@ -96,7 +96,7 @@ GitOps, as it relates to Kubernetes, is the practice of declaring the desired st
    
      > **Note**: Wait for 5 mins before performing the next step
 
-     > ```Info``` - Once you execute the above command, the manifests in your forked repository provision a few namespaces, deploy workloads and provide some team-specific configuration. Using this repository with GitOps creates the following resources on your Kubernetes cluster:
+     > ``Info`` - Once you execute the above command, the manifests in your forked repository provision a few namespaces, deploy workloads and provide some team-specific configuration. Using this repository with GitOps creates the following resources on your Kubernetes cluster:
 
      > *Namespaces*: cluster-config, team-a, team-b
      
@@ -110,14 +110,14 @@ GitOps, as it relates to Kubernetes, is the practice of declaring the desired st
 
 1. Now, to validate whether the **sourceControlConfiguration** was successfully created and the **compliance** state is Installed, you have to run the command given below. 
    
-   > Note: If the state is pending, retry the same command again after every 1 minute.
+   > **Note**: If the state is pending, retry the same command again after every 1 minute.
 
    ```
    az k8sconfiguration show --resource-group $ResourceGroup --name cluster-config --cluster-name microk8s-cluster --cluster-type connectedClusters
    ```
      > **Note**: that the sourceControlConfiguration resource is updated with compliance status, messages, and debugging information in the output.
 
-   The output should include the following value as given here: ```"complianceState": "Installed"```
+   The output should include the following value as given here: ``"complianceState": "Installed"``
 
    ![](.././media/05.png) 
   
@@ -188,7 +188,7 @@ After config-agent has installed the flux instance, resources held in the git re
     
     Observe in the above image that the previous pod is terminated and a new pod is created based on the updated configuration.
 
-   > ```Note```: If you don't see any change, retry running the command after a couple of minutes
+      > **Note**: If you don't see any change, retry running the command after a couple of minutes
 
 2.  Replace the pod name that you copied in the previous step and run the command
  
