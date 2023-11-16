@@ -1,6 +1,6 @@
-# HOL-2: Exercise 3: Onboard Azure Monitor for containers with Azure Arc enabled Kubernetes cluster
+# HOL-2: Exercise 3: Onboard Azure Monitor for containers with Azure Arc-enabled Kubernetes cluster
 
-In this exercise, you will see how to configure azure monitor for containers and viewing insights for Kubernetes - Azure Arc resource.
+In this exercise, you will see how to configure Azure Monitor for containers and view insights for Kubernetes - Azure Arc resource.
 
 ## Task 1: Configuring Azure Monitor
 
@@ -16,13 +16,13 @@ In this exercise, you will see how to configure azure monitor for containers and
 
    ![](.././media/HOL2-Ex3-T1-S3.png "azuremonitor")
 
-4. You will be able to see the insights data after 30-60 minutes. For now, you can continue with the next HOL and comeback later to review the insights.
+4. You will be able to see the insights data after 30-60 minutes. For now, you can continue with the next HOL and come back later to review the insights.
 
-5. In the Insights pane, refresh the page and filter the **Time range = Last 6 Hours**(1). Click on **Cluster**(2) and review the insights. Now that your cluster is being monitored, where you can watch the monitoring telemetry for the cluster, nodes and pods.
+5. In the Insights pane, refresh the page and filter the **Time range = Last 6 Hours**(1). Click on **Cluster**(2) and review the insights. Now that your cluster is being monitored, you can watch the monitoring telemetry for the cluster, nodes and pods.
 
    ![](.././media/hol2-ex3-4.png "azuremonitor")
 
-6. In the same pane, filter the **Time range = Last 6 Hours**(1) and click on **Nodes**(2) and select **ubuntu-k8s**. Here you can observe that ubuntu-k8s server azure-arc node is being listed below, which defines the integration of Azure Arc connected cluster with Azure Monitor for Containers.
+6. In the same pane, filter the **Time range = Last 6 Hours**(1) and click on **Nodes**(2) and select **ubuntu-k8s**. Here you can observe that the ubuntu-k8s server azure-arc node is listed below, which defines the integration of Azure Arc connected cluster with Azure Monitor for Containers.
 
    ![](.././media/hol2-ex3-5.png "azuremonitor")
 
