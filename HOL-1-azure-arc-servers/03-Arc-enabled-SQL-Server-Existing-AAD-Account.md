@@ -176,11 +176,8 @@ In the last exercise, you have seen how to enable security measures and monitori
    
    > **Note**: After enabling the assessment, wait for a few minutes to get it complete. 
  
-1. Once the assessment is **completed**, click on it to see the results. 
-
-   ![](.././media/H1E3T3S20.png "H1E3T3S20")
    
-1. The **Assessment results** will look like below:
+1. Once the assessment is **completed**, click on it to see the results. The **Assessment results** will look like below:
 
     ![](.././media/H1E3T3S21.png "H1E3T3S21")
       
