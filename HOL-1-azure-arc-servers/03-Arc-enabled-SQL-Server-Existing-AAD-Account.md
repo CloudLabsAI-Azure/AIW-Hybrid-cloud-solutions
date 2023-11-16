@@ -8,7 +8,7 @@ In the last exercise, you have seen how to enable security measures and monitori
       
 1. Click on the search blade at the top and search for ``SQL Server``, select **SQL Server - Azure Arc**.
  
-   ![](.././media/sqlserver.png "sqlsearch")
+   ![](.././media/hyd19.png "sqlsearch")
    
 1. Click on the **Add** button to create the **SQL Server- Azure Arc**. 
  
@@ -84,47 +84,53 @@ In the last exercise, you have seen how to enable security measures and monitori
 
    ![](.././media/H1E3T2S7.png "sqlsearch")
   
-1. Bring back the browser window where you had opened Azure Portal and search for **SQL Server -Azure Arc**. If you are already on that page, you will need to click on the Refresh button. On that page, you will see one resource **SQLVM** that we just created using the PowerShell script in the previous step.
+1. Bring back the browser window where you had opened Azure Portal and search for **SQL Server -Azure Arc**. If you are already on that page, you will need to click on the Refresh button. On that page, you will see one resource **Sqlvm** that we just created using the PowerShell script in the previous step.
 
-   ![](.././media/sqlvm11new.png "sqlsearch")
+   ![](.././media/hyd17.png "sqlsearch")
   
-1. Select the **SQLVM** resource and now you can see the dashboard of **SQLVM** SQL Server -Azure Arc from Azure Portal.
+1. Select the **Sqlvm** resource and now you can see the dashboard of **sqlvm** SQL Server -Azure Arc from Azure Portal.
 
-   ![](.././media/H1E3T2S8.png "H1E3T2S8")
+   ![](.././media/hyd18.png "H1E3T2S8")
 
 ## Task 3: Run on-demand SQL Assessment.
 
 1. Click on the search blade at the top and search for ```Log Analytics workspace```, then select **LogAnalyticsWS-<inject key="DeploymentID/Suffix" />**.
 
-1. Then select **Agents management** from the left side menu. Click on **Log Analytics agent instructions** and copy the value of **Workspace ID** and **Primary Key** and save it into a Notepad or Notepad++ for later use.
+1. Then select **Agents** from the left side menu. Click on **Log Analytics agent instructions** and copy the value of **Workspace ID** and **Primary Key** and save it into a Notepad or Notepad++ for later use.
  
    ![](.././media/H1E3T3S2.png "sqlsearch")
 
-1. Now, search for **Servers - Azure Arc** from search box and click on **Servers - Azure Arc**.
+1. Now, search for **Machines - Azure Arc** from search box and click on **Machines - Azure Arc**.
  
-   ![](.././media/server-azure-arc-search.png "server-azure-arc-search") 
+   ![](.././media/hyd20.png "server-azure-arc-search") 
    
 1. Select **sqlvm** from the list of Azure Arc servers.
 
-   ![](.././media/select-sql-vm.png "select-sql-vm")
+   ![](.././media/hyd21.png "select-sql-vm")
     
 1. Click on the **Extension** button from the left side menu and click on the **+ Add** button to add a new extension.
  
-   ![](.././media/mma.png "sqlsearch")
+   ![](.././media/hyd22.png "sqlsearch")
     
-1. Select the **Log Analytics Agent - Azure Arc** extension.
+1. Click on the **+ Add** button to add a new extension.
+
+   ![](.././media/hyd23.png "sqlsearch")
+
+1. Search and select the **Log Analytics Agent - Azure Arc** extension and click on the **Next** button to continue.
  
-   ![](.././media/extension1.png "sqlsearch")
-    
-1. Now click on the **Next** button to continue. 
+   ![](.././media/hyd24.png "sqlsearch")    
    
 1. At this step, you must enter the Log Analytics workspace ID and a key to install the MMA ( Microsoft Monitoring Agent ) in the **sqlvm**.
   
-1. Now, enter the Workspace ID and Key that you copied from the previous step, click on **Review + Create** button and then click on **Create** on the next window.
+1. Now, enter the Workspace ID and Key that you copied from the previous step, click on **Review + Create** button.
  
-   ![](.././media/create1.png "sqlsearch")
-  
-   The deployment will take around 5 to 10 minutes to complete. You have to wait for this deployment to be successful to proceed to the next step.
+   ![](.././media/hyd25.png "sqlsearch")
+
+1. Review the configuration, and click on **Create**.
+
+   ![](.././media/hyd26.png "sqlsearch")
+
+   > **Note**: The deployment will take around 5 to 10 minutes to complete. You have to wait for this deployment to be successful to proceed to the next step.
    
 1. Open **sqlvm** from the Hyper-V Manager by double clicking on **sqlvm**.
 
