@@ -344,10 +344,10 @@ In this exercise, let's create an **Azure Arc-enabled SQL Managed Instance** usi
 
       >**Note**: In the above section the (Gi) is referring to the storage in Gigabytes.  
       
-    After adding all the above details click on the **Apply** button.
+    After adding all the above details click on the **Apply** button.  
         
-      ![](./media/arcstorage.png "Lab Environment")
-        
+      ![](./media/sqlman-5.png "Lab Environment")
+   
 1. Under the Administrator account, enter the below details:
 
      - **Managed Instance admin login**:  Enter **arcsqluser**
