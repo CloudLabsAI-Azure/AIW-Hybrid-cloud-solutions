@@ -327,10 +327,10 @@ In this exercise, let's create an **Azure Arc-enabled SQL Managed Instance** usi
        - CPU vCores Request: Enter ```2``` **(6)**
   
        - Memory Limit (in Gi): Enter ```4``` **(7)**
-   
+         
        - CPU vCores Limit: Enter ```2``` **(8)**
        
-          ![](./media/arcreplica.png "Lab Environment")
+        ![](./media/arcreplica.png "Lab Environment")
        
      - Instance Storage
        - Data storage class: leave default
