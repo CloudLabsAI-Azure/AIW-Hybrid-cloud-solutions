@@ -329,8 +329,8 @@ In this exercise, let's create an **Azure Arc-enabled SQL Managed Instance** usi
        - Memory Limit (in Gi): Enter ```4``` **(7)**
          
        - CPU vCores Limit: Enter ```2``` **(8)**
-
-          ![](./media/arcreplica.png "Lab Environment")
+         
+          ![](./media/arcr.png "Lab Environment")
          
      - Instance Storage
        - Data storage class: leave default
@@ -344,10 +344,10 @@ In this exercise, let's create an **Azure Arc-enabled SQL Managed Instance** usi
 
       >**Note**: In the above section the (Gi) is referring to the storage in Gigabytes.  
       
-    After adding all the above details click on the **Apply** button.  
-  
+    After adding all the above details click on the **Apply** button.
+        
       ![](./media/arcstorage.png "Lab Environment")
-   
+        
 1. Under the Administrator account, enter the below details:
 
      - **Managed Instance admin login**:  Enter **arcsqluser**
@@ -356,9 +356,9 @@ In this exercise, let's create an **Azure Arc-enabled SQL Managed Instance** usi
      
      - **Confirm Password**: Enter **Password.1!!**
 
-   After adding all the required details, click on the **Review + create** button to review all details.    
-   
-      ![sds](./media/sqlman-6.png "Lab Environment")
+   After adding all the required details, click on the **Review + create** button to review all details.
+
+   ![sds](./media/sqlman-6.png "Lab Environment")
     
 1. Now Click on the **Create** button to start the deployment.  
    
