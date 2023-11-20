@@ -314,15 +314,22 @@ In this exercise, let's create an **Azure Arc-enabled SQL Managed Instance** usi
        
      - For Development use only: **Check the box (2)**
        
-     - High availability: Select **1 replica (3)**
+     - License Type: **License Included (3)**
+       
+        ![](./media/arcbasiclicense.png "Lab Environment")
+       
+     - High availability: Select **1 replica (4)**
        
      - Instance Compute
        
-       - Memory Limit (in Gi): Enter ```4``` **(3)**
+       - Memory Request (in Gi): Enter ```4``` **(5)**
    
-       - CPU vCores Limit: Enter ```2``` **(4)**
-        
-            ![](./media/checkboxnew.png "Lab Environment")
+       - CPU vCores Request: Enter ```2``` **(6)**
+  
+       - Memory Limit (in Gi): Enter ```4``` **(7)**
+   
+       - CPU vCores Limit: Enter ```2``` **(8)**
+            ![](./media/arcreplica.png "Lab Environment")
      
      - Instance Storage
        - Data storage class: leave default
@@ -338,7 +345,7 @@ In this exercise, let's create an **Azure Arc-enabled SQL Managed Instance** usi
       
     After adding all the above details click on the **Apply** button.  
         
-      ![](./media/sqlman-5.png "Lab Environment")
+      ![](./media/arcstorage.png "Lab Environment")
    
 1. Under the Administrator account, enter the below details:
 
