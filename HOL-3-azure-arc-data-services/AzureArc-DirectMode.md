@@ -39,6 +39,15 @@ In this exercise, you will be connecting an existing Kubernetes cluster to Azure
    ```   
   
     ![](media/install-extensions.png "Lab Environment")
+1. Now run the below command to get the latest version of extensions.
+  
+   ```
+   az extension update --name k8s-extension
+   az extension update --name connectedk8s
+   az extension update --name k8s-configuration
+   az extension update --name customlocation
+   az extension update --name arcdata 
+   ```
    
 1. You can validate that you have all the required extensions with the latest versions by running the below command:
    
@@ -123,7 +132,7 @@ In this task, you will be connecting an existing Kubernetes cluster to Azure usi
 1. Run the below command to deploy the extension of Azure Arc-enabled Data Services on the Azure Arc Kubernetes cluster.
   
      ```
-    az k8s-extension create --name azdata --extension-type microsoft.arcdataservices --cluster-type connectedClusters -c Arc-Data-Demo-DirectMode -g azure-arc --scope cluster --release-namespace azure-arc --config Microsoft.CustomLocation.ServiceAccount=sa-bootstrapper --auto-upgrade false --version 1.17.0
+    az k8s-extension create --name azdata --extension-type microsoft.arcdataservices --cluster-type connectedClusters -c Arc-Data-Demo-DirectMode -g azure-arc --scope cluster --release-namespace azure-arc --config Microsoft.CustomLocation.ServiceAccount=sa-bootstrapper --auto-upgrade false --version 1.25.0
      ```
    > **Note**: The above command will take up to 5 minutes to complete the creation of azdata extension, please wait for it to complete before proceeding to the next task.
 
