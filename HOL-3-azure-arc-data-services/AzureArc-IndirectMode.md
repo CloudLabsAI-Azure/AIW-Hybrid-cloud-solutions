@@ -184,7 +184,9 @@ In this task, you will learn how to connect to your newly created Azure Arc-enab
     - Click on **Connect** **(6)**
    
       ![](./media/cntctosdf.png "azdata")
-   
+
+      **Note:** If you see a connection error message then click on **Enable trust server certificate.**
+
 1. You are now successfully connected with your Azure Arc-enabled SQL MI Server. You can see it under servers. You can explore the SQL Managed Instance - Azure Arc Dashboard to view the databases and run a query.
 
    ![](./media/indirectmode-11.png "azdata")
