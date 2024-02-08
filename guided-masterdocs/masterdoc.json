@@ -2,22 +2,22 @@
     {
       "Name": "Deploy GitOps configurations to the Kubernetes cluster in Azure Arc and enable Azure Policy",
       "Language": "English",
-      "BaseURL": "https://github.com/Srikanthssp/AIW-Hybrid-cloud-solutions",
+      "BaseURL": "https://github.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions",
       "Files": [
         {
-          "RawFilePath": "https://raw.githubusercontent.com/Srikanthssp/AIW-Hybrid-cloud-solutions/guidedlabs/guided-gettingstarted.md",
+          "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/guidedlabs/guided-gettingstarted.md",
           "Order": 1
         },
         {
-          "RawFilePath": "https://raw.githubusercontent.com/Srikanthssp/AIW-Hybrid-cloud-solutions/guidedlabs/HOL-2-gitops-cluster/01-Enable-GitOps-Configuration-for-Connected-K8s-Cluster.md",
+          "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/guidedlabs/HOL-2-gitops-cluster/01-Enable-GitOps-Configuration-for-Connected-K8s-Cluster.md",
           "Order": 2
         },
         {
-          "RawFilePath": "https://raw.githubusercontent.com/Srikanthssp/AIW-Hybrid-cloud-solutions/guidedlabs/HOL-2-gitops-cluster/02-Enforce-GitOps-using-Azure-Policy-for-Azure-Arc-Enabled-Kubernetes.md",
+          "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/guidedlabs/HOL-2-gitops-cluster/02-Enforce-GitOps-using-Azure-Policy-for-Azure-Arc-Enabled-Kubernetes.md",
           "Order": 3
         },
         {
-          "RawFilePath": "https://raw.githubusercontent.com/Srikanthssp/AIW-Hybrid-cloud-solutions/guidedlabs/HOL-2-gitops-cluster/03-Onboard-Azure-Monitor-for-containers-with-Azure-Arc-enabled-Kubernetes-cluster.md",
+          "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-Hybrid-cloud-solutions/guidedlabs/HOL-2-gitops-cluster/03-Onboard-Azure-Monitor-for-containers-with-Azure-Arc-enabled-Kubernetes-cluster.md",
           "Order": 4
         }
       ]
