@@ -1,4 +1,4 @@
-# HOL-2: Exercise 3: Onboard Azure Monitor for containers with Azure Arc-enabled Kubernetes cluster
+# Exercise 3: Onboard Azure Monitor for containers with Azure Arc-enabled Kubernetes cluster
 
 In this exercise, you will see how to configure Azure Monitor for containers and view insights for Kubernetes - Azure Arc resource.
 
