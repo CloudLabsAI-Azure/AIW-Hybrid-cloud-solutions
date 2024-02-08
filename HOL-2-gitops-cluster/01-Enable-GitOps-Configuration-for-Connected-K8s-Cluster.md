@@ -1,4 +1,4 @@
-# HOL-2: Exercise 1: Enable GitOps Configuration on connected K8s Cluster
+# Exercise 1: Enable GitOps Configuration on connected K8s Cluster
 
 #### Develop cloud-native apps, operate anywhere
 
