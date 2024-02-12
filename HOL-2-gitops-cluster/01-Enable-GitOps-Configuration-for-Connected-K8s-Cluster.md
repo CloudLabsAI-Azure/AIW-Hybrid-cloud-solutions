@@ -202,7 +202,7 @@ Now let us verify if the Kubernetes cluster is connected to Azure Arc and is in 
    
    The output should be similar as shown below:
    
-   ![](.././media/get-pods.png)
+   ![](.././media/exc1-1.png)
 
 
 ## Task 5: Configure Kubernetes Cluster with GitOps using Azure CLI
