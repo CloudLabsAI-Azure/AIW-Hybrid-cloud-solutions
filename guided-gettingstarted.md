@@ -4,7 +4,7 @@
  
 1. You can see a virtual machine desktop 💻 (LabVM/ARCHOST) is loaded on the left side of your browser. Use this virtual machine throughout the workshop to perform the lab.
 
-    ![](./media/GS14.png "Lab Environment")
+    ![](./media/ngs1n.png "Lab Environment")
 
 ### **Virtual Machine & Lab Guide**
  
@@ -44,7 +44,7 @@ Feel free to start, stop, or restart your virtual machine as needed from the **R
  
    - **Password:** <inject key="AzureAdUserPassword"></inject>
  
-      ![](./media/GS1.png)
+      ![](./media/GS3.png)
  
 4. If you see the pop-up **Stay Signed in?**, click **No**.
 
