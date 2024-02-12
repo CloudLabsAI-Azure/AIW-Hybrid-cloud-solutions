@@ -8,6 +8,8 @@ GitOps, as it relates to Kubernetes, is the practice of declaring the desired st
 
 ## Task 1: Fork the GitHub Arc K8s demo repository
 
+In this task, you'll navigate to the GitHub repository containing the Azure Arc-enabled Kubernetes demo configurations. By forking this repository to your own GitHub account, you'll have the necessary access to modify and deploy Kubernetes configurations using GitOps methodology. This step is essential for subsequent tasks involving configuration deployment and updates.
+
 1. Launch the following GitHub repository URL ```https://github.com/Azure/arc-k8s-demo```. In the upper right corner you will see **Sign in** and **Sign up** options, if you already have a github account then click on **Sign in**, otherwise **Sign up**.
 
    ![](.././media/01.png) 
@@ -174,6 +176,8 @@ In this task, you will onboard the local Kubernetes cluster to Azure Arc. So, he
 
 ## Task 4: Verify if the Kubernetes cluster is connected to Azure Arc
 
+In this task, you'll verify the successful connection of the Kubernetes cluster to Azure Arc. By executing Azure CLI commands and navigating to the Azure portal, you'll confirm the existence of the Kubernetes cluster resource under the specified resource group. Additionally, you'll ensure the proper deployment of operators within the cluster's namespace, validating the establishment of the Azure Arc connection and its associated components.
+
 Now let us verify if the Kubernetes cluster is connected to Azure Arc and is in a healthy state.
 
 1. Verify whether the cluster is connected by running the following command:
@@ -199,6 +203,11 @@ Now let us verify if the Kubernetes cluster is connected to Azure Arc and is in 
    The output should be similar as shown below:
    
    ![](.././media/get-pods.png)
+
+
+## Task 5: Configure Kubernetes Cluster with GitOps using Azure CLI
+
+In this task, you will configure a Kubernetes cluster using GitOps methodology through Azure CLI. This GitOps setup will create namespaces, deploy workloads, and provide team-specific configurations based on the manifests in the forked repository.
 
 1. Copy the below command to any text editor
 
@@ -226,7 +235,9 @@ Now let us verify if the Kubernetes cluster is connected to Azure Arc and is in 
      
      > The config agent polls Azure for new or updated configurations.
 
-## Task 3: Validate the SourceControlConfiguration
+## Task 6: Validate the SourceControlConfiguration
+
+In this task, you will validate the SourceControlConfiguration to ensure successful creation and compliance status. You'll run an Azure CLI command to check if the compliance state is "Installed", and if not, retry periodically until it reflects the desired state. Additionally, you'll navigate to the Azure Portal to confirm the GitOps operator's state status under the specified Resource Group and Resource, ensuring the successful setup of the GitOps configuration.
 
 1. Now, to validate whether the **sourceControlConfiguration** was successfully created and the **compliance** state is Installed, you have to run the command given below. 
    
@@ -245,7 +256,9 @@ Now let us verify if the Kubernetes cluster is connected to Azure Arc and is in 
 
    ![](.././media/hyd27.png) 
   
-## Task 4: Validate the Kubernetes configuration
+## Task 7: Validate the Kubernetes configuration
+
+In this task, you will verify the successful creation of namespaces, deployments, and resources in the Kubernetes cluster. By executing provided kubectl commands, you'll confirm the creation of specified namespaces and the deployment of the Flux operator in the cluster-config namespace. Additionally, you'll explore other resources deployed as part of the configuration repository to ensure the proper functioning of GitOps.
 
 After config-agent has installed the flux instance, resources held in the git repository should begin to flow to the cluster. 
 
@@ -277,7 +290,9 @@ After config-agent has installed the flux instance, resources held in the git re
    kubectl -n team-a get cm -o yaml
    ```
 
-## Task 5: Make changes to cluster declarations in the Git repo.
+## Task 8: Make changes to cluster declarations in the Git repo.
+
+In this task, you'll access an Ubuntu-K8s VM through PuTTY and verify the presence of a specific pod using kubectl get pods command. Then, you'll navigate to your forked repository on GitHub (https://github.com/<yourGitHubaccountusername>/arc-k8s-demo) and locate the arc-k8s-demo.yaml file under cluster-apps. You'll edit this YAML file to modify the CPU request to 120, committing the changes to confirm the updated configuration in the repository.
 
 1.  Run the following command in the SSH session that is already opened to the ubuntu-k8s from putty and confirm that you are able to see the **arc-k8s-demo-** pod.
 
@@ -297,7 +312,9 @@ After config-agent has installed the flux instance, resources held in the git re
    ![](.././media/pods3.png)
    
 
-## Task 6: Verify changes are deployed to the cluster.
+## Task 9: Verify changes are deployed to the cluster.
+
+In this task, you'll confirm the deployment of changes made to the cluster declarations in the Git repository. By accessing the Ubuntu-K8s VM via PuTTY, you'll check for the creation of a new pod based on the updated configuration using the **kubectl get pods** command. Upon identifying the new pod, you'll copy its name and execute **kubectl get pod <podname> -o yaml** to inspect its details, specifically observing the updated CPU request value. This process ensures that changes made to the Git repository are successfully deployed and reflected in the Kubernetes cluster.
 
 1.  Run the following command in the SSH Session that you have opened to the ubuntu-k8s VM from Putty and copy the pod name starting with **arc-k8s-demo-**
 
