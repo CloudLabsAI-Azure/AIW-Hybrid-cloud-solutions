@@ -1,8 +1,12 @@
 # Exercise 3: Onboard Azure Monitor for containers with Azure Arc-enabled Kubernetes cluster
 
+Contoso's Central IT team is enhancing their monitoring capabilities by configuring Azure Monitor for their Kubernetes clusters. This involves setting up Container insights with a Log Analytics workspace to collect and analyze telemetry data from the Kubernetes cluster. Once configured, they will be able to monitor the cluster's performance and health, enabling proactive management and troubleshooting.
+
 In this exercise, you will see how to configure Azure Monitor for containers and view insights for Kubernetes - Azure Arc resource.
 
 ## Task 1: Configuring Azure Monitor
+
+In this task, you'll configure Azure Monitor for the Kubernetes cluster connected to Azure Arc. By navigating to the Azure Arc resource group and selecting the specific Kubernetes cluster, you'll access the monitoring settings. From there, you'll proceed to configure Container insights by selecting the appropriate Log Analytics workspace. This configuration enables the collection and visualization of insights data from the Kubernetes cluster, facilitating monitoring and analysis of its performance and health status
 
 1. Navigate to **azure-arc** resource group and select **microk8s-cluster** Kubernetes - Azure Arc resource from the resources listed.
 
