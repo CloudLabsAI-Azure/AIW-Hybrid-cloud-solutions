@@ -192,7 +192,7 @@ Now let us verify if the Kubernetes cluster is connected to Azure Arc and is in 
 
 1. Click on Refresh on the azure-arc overview page and then look for the resource named **microk8s-cluster** of resource type **Azure Arc enabled Kubernetes resource**.
 
-   ![](.././media/hol1ss3.png "Varify in Azure")
+   ![](.././media/exc1-2.png "Verify in Azure")
 
 1. Azure Arc enabled Kubernetes to deploy a few operators into the azure-arc namespace. You can view these deployments and pods by running the command in the terminal of the ubuntu-k8s VM:
 
