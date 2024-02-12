@@ -91,7 +91,5 @@ In this task, you will select an existing policy definition and create a policy 
 1. You can check if your cluster is **compliant** or **not** against **“Configure Kubernetes clusters with specified GitOps configuration using no secrets”** policy you assigned in the previous step by looking at the Compliance State Column. It will be **Compliant** within 20 Minutes, sometimes it can take more than that as well. 
 
      ![](.././media/policy-5.png)
-     
-   > **Note**: If the compliance state shows as **Non-compliant** even after 10-15 minutes, you will need to create a remediation task in the next task and after some time you will see the complaint state changed to **Compliant**. If you didn't find the policy in the list, then search for ``GitOps`` in the **Search box** of the same pane.
    
 You don't have to wait for the compliance state to change. You can move ahead to the next exercise and later come back to this page to review the state.
