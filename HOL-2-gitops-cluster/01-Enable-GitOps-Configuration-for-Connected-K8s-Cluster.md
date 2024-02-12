@@ -16,9 +16,9 @@ GitOps, as it relates to Kubernetes, is the practice of declaring the desired st
 
    ![](.././media/02.png)
 
-## Task 2: Deploy App using az k8sconfiguration
+## Task 2: Configuring Azure CLI and PuTTY for Ubuntu-K8s VM
 
-1. Using the Azure CLI extension for **k8sconfiguration**, link connected cluster to personal git repository. Provide this configuration a name **cluster-config**, instruct the agent to deploy the operator in the **cluster-config** namespace, and give the operator **cluster-admin** permissions. 
+In this task, you will configure access to an Ubuntu-K8s VM using PuTTY, upgrade Azure CLI packages, install dependencies, and set up the Azure Arc agent. Additionally, you'll copy essential variables from a file in the ARCHOST VM and utilize them to log into Azure. This setup is essential for subsequent operations and deployments within the Kubernetes cluster.
 
 1. From the start menu of the **ARCHOST** VM, search for **putty** and open it with a double click or another way.
 
@@ -54,18 +54,23 @@ GitOps, as it relates to Kubernetes, is the practice of declaring the desired st
    demo@pass123
    ```
     
- 1. Run the below commands to upgrade the az packages and az module. 
+1. Run the below commands to upgrade the az packages and az module. 
    
      ```
       curl https://bootstrap.pypa.io/get-pip.py > get-pip.py
+      python3 get-pip.py
       apt install pip
       python3 get-pip.py
       python3 -m pip install -U pip
       python3 -m pip install --upgrade pip --target /opt/az/lib/python3.6/site-packages/
       az upgrade -y
-      init 6 #TO restart
+      init 6
     ```
-
+    > **Note**: If in case, the above commands fail then please run the below-mentioned command:
+    
+    ```
+     sudo apt-get install python3-pip
+    ```
 1. Open a new Putty session, re-perform the steps from step 2 to step 6 of the same task to get the upgraded packages and then continue from step 9.
 
 1. Next, you have to navigate back to the Desktop of the provided virtual Machine ARCHOST VM 💻, and then click on the `installArcAgentLinux.txt` file to open it.
@@ -79,6 +84,121 @@ GitOps, as it relates to Kubernetes, is the practice of declaring the desired st
 1. Once it is executed, you have declared the values of AppID, AppSecret, TenantID, SubscriptionID, ResourceGroup, and location, and then logged into Azure using the 7th line. You can also find the values of these variables in the **Environment Details** tab. These variables are required for the next steps.
 
     ![](.././media/variableazlogin.png "azlogin")
+
+
+## Task 3: Onboard Kubernetes Cluster to Azure Arc
+
+In this task, you will onboard the local Kubernetes cluster to Azure Arc. So, here we onboard **MicroK8s** Kubernetes cluster to Azure Arc which is hosted on **ubuntu-k8s** VM. We already have the Microk8s Kubernetes cluster ready and configured with the Arc-enabled CLI extensions.
+
+   > **Note**: If you have closed the putty after completing **task 2**, then perform the first 8 steps of task 2 again and then return to perform this task. Make sure that you perform all steps with the root user in the ubuntu-k8s VM.
+
+1. To install helm, you need to run the following commands within the terminal of the ubuntu-k8s VM that is opened in Putty:
+            
+     > **Info**: Helm is a Kubernetes deployment tool for automating the creation, packaging, configuration, and deployment of applications and services to Kubernetes clusters. The Kubernetes app's manifests are stored in helm charts.
+   ```
+   curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3
+   chmod 700 get_helm.sh
+   ./get_helm.sh
+   ```
+   **Note**: In case you see `Could not find git. It is required  for plugin installation.` warning, please ignore it and continue with the lab.
+    
+   ![](.././media/installhelm.png "installhelm")
+
+1. Next, you have to run the below command to ensure the Azure CLI version and customlocation extension for Az CLI are the latest.
+
+    ```
+    az upgrade -y
+    az extension add --name customlocation
+    ```
+    
+    >**Note**: If you face any exceptions while updating the CLI version, please rerun the command again.
+
+1. Then, you will update the Arc-enabled Kubernetes CLI extension to ensure that we are always using the latest k8s extension for Azure CLI.
+
+   ```
+   az extension update --name connectedk8s
+   ```
+    
+   ![](.././media/update-k8s-extensions-new.png "Update Az k8s extensions")
+    
+1. Now, you can check the status of the Kubernetes cluster by running ```microk8s.status``` in **ubuntu-k8s** VM. To check the status once the command is executed, you have to scroll up to the top of the output to view the status. If the status is **microk8s is running**, you can proceed to the next step. But, if it is in a stopped state, you have to run the ```microk8s start``` command to restart the Kubernetes cluster.
+
+   - Command to check the status of the Kubernetes cluster
+     ```
+     microk8s.status
+     ```
+     
+   - Command to start the Kubernetes cluster
+     ```
+     microk8s start
+     ```
+     
+   >**Note**: In case you see any error,  Open a new Putty session, re-perform the steps from step 2 to step 4 of the same task 2, run the below command to refresh the certificates and retry the step.
+
+   ```
+   microk8s refresh-certs
+   ```
+
+   ![](.././media/k8s-status-running.png "check cluster cluster")
+
+1. Next, you will write the config file to the $HOME/.kube directory by executing the below command.
+
+     > **Info**: A kubeconfig file is a file used to configure access to Kubernetes when used in conjunction with the kubectl commandline tool (or other clients).
+
+   ```
+   cd $HOME
+   mkdir .kube
+   cd .kube
+   microk8s config > config
+   cd ..
+   ```
+
+   ![](.././media/kube.png "kube") 
+
+1. Now, you will Connect the Kubernetes cluster to Azure Arc by executing the below command. This command will take a few minutes to onboard the Kubernetes cluster to Azure Arc.
+
+   ```
+   az connectedk8s connect --name microk8s-cluster --resource-group $ResourceGroup -l $location
+   ```
+    
+   ![](.././media/connect-k8sv2.png "Connect Kubernetes")
+   
+   > **Note**: While running the above command, if you face an error stating **Could not retrieve credential from local cache**, run the following command to log in to the azure portal again.
+   ```
+   az login -u $AppID --service-principal --tenant $TenantID -p $AppSecret
+   ```
+   
+1. Once the previous command is executed successfully, the **provisioning state** in output will show as succeeded.
+
+   ![](.././media/k8s-connectedv2.png "Kubernetes Cluster Connected")    
+
+## Task 4: Verify if the Kubernetes cluster is connected to Azure Arc
+
+Now let us verify if the Kubernetes cluster is connected to Azure Arc and is in a healthy state.
+
+1. Verify whether the cluster is connected by running the following command:
+   
+   ```
+   az connectedk8s list -g $ResourceGroup -o table
+   ```
+     
+   ![](.././media/check-k8s-connectionv2.png "Varify Micro-k8s cluster is connected")
+   
+1. Navigate to the Resource Group from the Azure portal navigation pane and click on the Resource Group named **azure-arc**. 
+
+1. Click on Refresh on the azure-arc overview page and then look for the resource named **microk8s-cluster** of resource type **Azure Arc enabled Kubernetes resource**.
+
+   ![](.././media/hol1ss3.png "Varify in Azure")
+
+1. Azure Arc enabled Kubernetes to deploy a few operators into the azure-arc namespace. You can view these deployments and pods by running the command in the terminal of the ubuntu-k8s VM:
+
+   ```
+   kubectl -n azure-arc get deployments,pods
+   ```
+   
+   The output should be similar as shown below:
+   
+   ![](.././media/get-pods.png)
 
 1. Copy the below command to any text editor
 
