@@ -92,7 +92,7 @@ In this task, you will configure access to an Ubuntu-K8s VM using PuTTY, upgrade
 
 In this task, you will onboard the local Kubernetes cluster to Azure Arc. So, here we onboard **MicroK8s** Kubernetes cluster to Azure Arc which is hosted on **ubuntu-k8s** VM. We already have the Microk8s Kubernetes cluster ready and configured with the Arc-enabled CLI extensions.
 
-   > **Note**: If you have closed the putty after completing **task 2**, then perform the first 8 steps of task 2 again and then return to perform this task. Make sure that you perform all steps with the root user in the ubuntu-k8s VM.
+   > **Note**: Make sure that you perform all steps with the root user in the ubuntu-k8s VM.
 
 1. To install helm, you need to run the following commands within the terminal of the ubuntu-k8s VM that is opened in Putty:
             
