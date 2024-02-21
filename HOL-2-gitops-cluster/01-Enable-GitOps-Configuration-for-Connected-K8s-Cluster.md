@@ -68,6 +68,7 @@ In this task, you will configure access to an Ubuntu-K8s VM using PuTTY, upgrade
       az upgrade -y
       init 6
     ```
+
     > **Note**: If in case, the above commands fail then please run the below-mentioned command:
     
     ```
@@ -113,7 +114,11 @@ In this task, you will onboard the local Kubernetes cluster to Azure Arc. So, he
     az extension add --name customlocation
     ```
     
-    >**Note**: If you face any exceptions while updating the CLI version, please rerun the command again.
+    >**Note**: If you face any exceptions while updating the CLI version, please run the below command and rerun the **az upgrade -y** command.
+
+    ```
+     sudo apt-get install python3-pip
+    ```
 
 1. Then, you will update the Arc-enabled Kubernetes CLI extension to ensure that we are always using the latest k8s extension for Azure CLI.
 
