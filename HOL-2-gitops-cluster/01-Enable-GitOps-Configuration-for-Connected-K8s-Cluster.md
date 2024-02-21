@@ -10,7 +10,7 @@ GitOps, as it relates to Kubernetes, is the practice of declaring the desired st
 
 In this task, you'll navigate to the GitHub repository containing the Azure Arc-enabled Kubernetes demo configurations. By forking this repository to your own GitHub account, you'll have the necessary access to modify and deploy Kubernetes configurations using GitOps methodology. This step is essential for subsequent tasks involving configuration deployment and updates.
 
-1. Launch the following GitHub repository URL ```https://github.com/Azure/arc-k8s-demo```. In the upper right corner you will see **Sign in** and **Sign up** options, if you already have a github account then click on **Sign in**, otherwise **Sign up**.
+1. Open browser and Launch the following GitHub repository URL ```https://github.com/Azure/arc-k8s-demo```. In the upper right corner you will see **Sign in** and **Sign up** options, if you already have a github account then click on **Sign in**, otherwise **Sign up**.
 
    ![](.././media/01.png) 
 
@@ -73,7 +73,7 @@ In this task, you will configure access to an Ubuntu-K8s VM using PuTTY, upgrade
     ```
      sudo apt-get install python3-pip
     ```
-1. Open a new Putty session, re-perform the steps from step 2 to step 6 of the same task to get the upgraded packages and then continue from step 9.
+1. Open a new Putty session, re-perform the steps from step 2 to step 5 of the same task to get the upgraded packages and then continue from step 9.
 
 1. Next, you have to navigate back to the Desktop of the provided virtual Machine ARCHOST VM 💻, and then click on the `installArcAgentLinux.txt` file to open it.
 
