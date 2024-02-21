@@ -20,7 +20,7 @@ In this task, you'll configure Azure Monitor for the Kubernetes cluster connecte
 
    ![](.././media/hyd31.png "azuremonitor")
 
-4. You will be able to see the insights data after 30-60 minutes. For now, you can continue with the next HOL and come back later to review the insights.
+4. You will be able to see the insights data after 30-60 minutes.
 
 5. In the Insights pane, refresh the page and filter the **Time range = Last 6 Hours (1)**. Click on **Cluster (2)** and review the insights. Now that your cluster is being monitored, you can watch the monitoring telemetry for the cluster, nodes and pods.
 
